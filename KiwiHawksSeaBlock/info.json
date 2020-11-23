@@ -1,9 +1,9 @@
 {
-  "name": "SeaBlock",
-  "version": "0.4.8",
-  "factorio_version": "0.18",
-  "title": "Sea Block",
-  "author": "Trainwreck",
+  "name": "KiwiHawksSeaBlock",
+  "version": "1.0.0",
+  "factorio_version": "1.0",
+  "title": "KiwiHawk's Sea Block",
+  "author": "KiwiHawk",
   "homepage": "https://forums.factorio.com/viewtopic.php?t=43759",
   "description": "No ore patches, expand from a small island. Also install the 'Sea Block Pack' mod for a complete modpack",
   "dependencies": [
