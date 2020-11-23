@@ -53,7 +53,7 @@ data:extend({
 {
   type = "technology",
   name = "sb-startup1",
-  icon = "__SeaBlock__/graphics/technology/ore.png",
+  icon = "__KiwiHawksSeaBlock__/graphics/technology/ore.png",
   icon_size = 128,
   effects = {
     {type = "unlock-recipe", recipe = "basic-circuit-board"},
@@ -75,7 +75,7 @@ data:extend({
 {
   type = "technology",
   name = "sb-startup2",
-  icon = "__SeaBlock__/graphics/technology/basic-circuit-board.png",
+  icon = "__KiwiHawksSeaBlock__/graphics/technology/basic-circuit-board.png",
   icon_size = 128,
   effects = {
     {type = "unlock-recipe", recipe = "inserter"},
@@ -100,7 +100,7 @@ data:extend({
 {
   type = "technology",
   name = "sb-startup3",
-  icon = "__SeaBlock__/graphics/technology/coal.png",
+  icon = "__KiwiHawksSeaBlock__/graphics/technology/coal.png",
   icon_size = 128,
   effects = {
     {type = "unlock-recipe", recipe = "wood-bricks"},
@@ -136,7 +136,7 @@ data:extend({
 {
   type = "technology",
   name = "sb-startup4",
-  icon = "__SeaBlock__/graphics/technology/lab.png",
+  icon = "__KiwiHawksSeaBlock__/graphics/technology/lab.png",
   icon_size = 128,
   effects = {
     {type = "unlock-recipe", recipe = "automation-science-pack"}
