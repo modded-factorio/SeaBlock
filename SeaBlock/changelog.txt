@@ -1,0 +1,237 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.4.8
+Date: 18. 8. 2020
+  Changes:
+    - Extra check for crash site disable remote call
+---------------------------------------------------------------------------------------------------
+Version: 0.4.7
+Date: 18. 8. 2020
+  Changes:
+    - Disable factorio 1.0 crash landing freeplay start
+    - Always enable kovarex enrichment tech
+    - Redundant normal/expensive recipe handling
+---------------------------------------------------------------------------------------------------
+Version: 0.4.6
+Date: 5. 7. 2020
+  Changes:
+    - Check autoplace controls are unused before removing
+---------------------------------------------------------------------------------------------------
+Version: 0.4.5
+Date: 30. 5. 2020
+  Changes:
+    - Adjust blue algae tech requirements back down to green science
+    - Add thermal water recipe for use with thermal bore
+    - Move jivolite and crotinum ore crystallization unlocks to Advanced mechanical refining
+---------------------------------------------------------------------------------------------------
+Version: 0.4.4
+Date: 8. 3. 2020
+  Changes:
+    - Add extra fluid output to extended angels washing plants if present
+---------------------------------------------------------------------------------------------------
+Version: 0.4.3
+Date: 1. 3. 2020
+  Changes:
+    - Adjust electronics tech prerequisites
+---------------------------------------------------------------------------------------------------
+Version: 0.4.2
+Date: 24. 2. 2020
+  Changes:
+    - Update for recent Angel's changes: crystallization icons, solder smelting
+    - Remove extra crystallization recipes (uranium, chrome etc)
+---------------------------------------------------------------------------------------------------
+Version: 0.4.1
+Date: 13. 2. 2020
+  Changes:
+    - Fix ore crystallization recipe icons and names
+    - Reduce science cost of solder smelting technology and its prerequisites
+---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 10. 2. 2020
+  Changes:
+    - Factorio 0.18 update
+    - Remove alginic acid solder recipe
+    - Update tech tree dependencies/prerequisites for Angel's changes
+    - Remove fuel_value for some Angel's fluids
+---------------------------------------------------------------------------------------------------
+Version: 0.3.8
+Date: 29. 12. 2019
+  Changes:
+    - Remove duplicate transport science pack unlock
+---------------------------------------------------------------------------------------------------
+Version: 0.3.7
+Date: 8. 9. 2019
+  Changes:
+    - Make KS_Power optional dependency
+---------------------------------------------------------------------------------------------------
+Version: 0.3.6
+Date: 26. 7. 2019
+  Changes:
+    - Move chemical processing 1 and basic automation technologies earlier in tech tree
+    - Mineralized water crystallization icon tweaks
+---------------------------------------------------------------------------------------------------
+Version: 0.3.5
+Date: 5. 5. 2019
+  Changes:
+    - player -> character api update
+    - Increase fluid_usage_per_tick of diesel generator
+---------------------------------------------------------------------------------------------------
+Version: 0.3.4
+Date: 28. 4. 2019
+  Changes:
+    - Updates for recent changes in angels mods
+    - Switch over to angels charcoal. Decrease fuel_value to 4MJ
+    - Electronics tech unlocks metal mixing furnace
+    - Increase algae crafting speeds
+    - Use wood bricks instead of wood for ScienceCostTweaker sample scaffold
+    - Use wood pellets instead of wood for polishing wheel
+    - Use wooden board instead of wood for phenolic board
+    - Remove naphtha -> wood recipe
+    - Increase liquid fuel values. Adjust solid fuel recipes to balance. Increase blue cellulose required for algae liquefaction
+---------------------------------------------------------------------------------------------------
+Version: 0.3.3
+Date: 11. 4. 2019
+  Changes:
+    - Scripting bugfixes. Use add_research to set starting tech, check valid_for_read on item stacks.
+---------------------------------------------------------------------------------------------------
+Version: 0.3.2
+Date: 31. 3. 2019
+  Changes:
+    - Decrease amount of sulfuric waste water from blue cellulose liquefaction
+    - Adjust random placement of trees, plants and fish
+---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 24. 3. 2019
+  Changes:
+    - Increase worm density
+    - Copy icon size when updating circuit board tech icon
+    - Remove changes to various algae related crafting speeds (MK1 algae farm, cellulose fiber, wood pellets)
+    - Move green algae -> cellulose fiber recipe unlock to the wood processing startup tech
+    - Reduce cost of SpaceMod ftl theory D1 and D2 technologies
+    - Disable coal liquefaction tech
+    - Disable bob distillery techs
+    - Add remote call so pvp scenario does not overwrite starting rock with silo
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 18. 3. 2019
+  Changes:
+    - Factorio 0.17 update
+    - Remove change to ScienceCostTweakerM flash fuel recipe
+    - Reduce enriched fuel block fuel value
+---------------------------------------------------------------------------------------------------
+Version: 0.2.17
+Date: 19. 11. 2018
+  Changes:
+    - Slightly reduce cellulose fiber and wood pellet crafting time.
+    - Remove ScienceCostTweaker waste byproduct reduction.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.16
+Date: 16. 9. 2018
+  Changes:
+    - Adjust crude oil fuel value
+    - More expensive/normal recipe checks for compatibility with other mods
+---------------------------------------------------------------------------------------------------
+Version: 0.2.15
+Date: 10. 9. 2018
+  Changes:
+    - Expensive/Normal check when adjusting recipe results
+---------------------------------------------------------------------------------------------------
+Version: 0.2.14
+Date: 2. 9. 2018
+  Changes:
+    - Increase liquid rubber production back to petrochem 0.7.9 levels
+    - Fix angelsbioprocessing seeded-dish/alien-pre-artifact mix up
+    - Adjust Angel's alien fish and puffer nest spawning. Add migration script to add fish and nests to existing saves.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.13
+Date: 19. 8. 2018
+  Changes:
+    - Make SpaceX fusion reactor adjustment include SpaceX production multiplier setting.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.12
+Date: 15. 7. 2018
+  Changes:
+    - Undo SpaceX technology cost increase.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.11
+Date: 11. 6. 2018
+  Changes:
+    - Fix lab tech not unlocking if game is saved then loaded before crafting lab
+---------------------------------------------------------------------------------------------------
+Version: 0.2.10
+Date: 11. 6. 2018
+  Changes:
+    - Fix issues when running with multiplayer pvp scenario
+    - Update for ScienceCostTweakerM tech tree changes
+---------------------------------------------------------------------------------------------------
+Version: 0.2.9
+Date: 3. 6. 2018
+  Changes:
+    - Defensive programming check when moving tech unlocks
+---------------------------------------------------------------------------------------------------
+Version: 0.2.8
+Date: 18. 5. 2018
+  Changes:
+    - Update for changed ScienceCostTweakerM recipes
+    - Remove dissolution sulfuric acid consumption reduction
+    - Remove red-wire->insulated-cable change to bioprocessor recipe
+---------------------------------------------------------------------------------------------------
+Version: 0.2.7
+Date: 22. 4. 2018
+  Changes:
+    - Remove fuel_value from hydrogen and glycerol
+    - Increase amount of hydrazine consumed when making solid fuel
+    - Make KS Power oil burning recipes use angels icons and names
+    - Increase fluid_usage_per_tick of bobpower fluid generators (now 4/60)
+    - Reduce amount of ore recycled from ScienceCostTweaker waste products
+    - Move blue science recipe unlocks from advanced-electronics to advanced-research
+---------------------------------------------------------------------------------------------------
+Version: 0.2.6
+Date: 2. 4. 2018
+  Changes:
+    - Enable Angel's arboretums. Spawn some arboretum trees on islands.
+    - Remove changes to yellow belt and splitter recipes.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.5
+Date: 18. 3. 2018
+  Changes:
+    - Unlock basic transport belt for lab startup tech
+    - Use steel instead of tin for yellow belts and splitters
+---------------------------------------------------------------------------------------------------
+Version: 0.2.4
+Date: 13. 3. 2018
+  Changes:
+    - Move sulfuric waste water processing from water-treatment-2 to water-treatment
+---------------------------------------------------------------------------------------------------
+Version: 0.2.3
+Date: 4. 3. 2018
+  Changes:
+    - Add fluid-generator-3 tech requirement for KS Power diesel generator
+---------------------------------------------------------------------------------------------------
+Version: 0.2.2
+Date: 25. 2. 2018
+  Changes:
+    - Add hidden flag to disabled items (coal, cellulose-fiber-board...)
+    - Adjust cliff collision to allow cliffs to spawn on shoreline
+    - Remove researching_speed bonus from lab-2. Base lab-2 speed is now the same as other labs.
+    - Merge Bob's fluids item group into Bob's materials. Leaves a total of 15 item groups which fit into 3 rows of 5 groups in the crafting window.
+    - Reduce number of fusion construction bots required to build an assembly bot (5 -> 1)
+    - Reduce number of portable fusion reactors required to build the SpaceMod fusion reactor (100 -> 50)
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1
+Date: 24. 1. 2018
+  Changes:
+    - Restore collision for cliffs
+    - Update bio-wood-processing startup technologies
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0
+Date: 8. 1. 2018
+  Features:
+    - Update for factorio 0.16
+    - Technology tree basic tutorial.
+  Changes:
+    - Remove most starter technologies, adjust starting equipment.
+    - Reduce number of module slots in lab-2 when running with ScienceCostTweaker
+    - Replace coke with charcoal
+    - Add recipe for making multi phase oil from blue algae
+    - Add dependency on KS_Power, starting equipment includes wind turbines
+    - Increase amount of resin used in furnace rubber recipe
