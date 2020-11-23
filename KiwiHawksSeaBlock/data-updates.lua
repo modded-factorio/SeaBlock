@@ -210,6 +210,17 @@ for k,v in pairs(data.raw.technology['slag-processing-2'].unit.ingredients) do
   end
 end
 
+-- Sulfur 1 tech: Remove prerequisite Advanced lead smelting 1
+bobmods.lib.tech.remove_prerequisite('angels-sulfur-processing-1', 'angels-lead-smelting-1')
+
+-- Move Sulfur Dioxide Gas from Sulfur processing 2 to Sulfur processing 1
+bobmods.lib.tech.remove_recipe_unlock('angels-sulfur-processing-2', 'gas-sulfur-dioxide')
+bobmods.lib.tech.add_recipe_unlock('angels-sulfur-processing-1', 'gas-sulfur-dioxide')
+
+-- Move Sulfur from Sulfur processing 3 to Sulfur processing 1
+bobmods.lib.tech.remove_recipe_unlock('angels-sulfur-processing-3', 'solid-sulfur')
+bobmods.lib.tech.add_recipe_unlock('angels-sulfur-processing-1', 'solid-sulfur')
+
 -- Red science level research for slag processing 1
 data.raw.technology['slag-processing-1'].unit = {
   count = 20,

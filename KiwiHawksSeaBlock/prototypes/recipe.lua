@@ -107,8 +107,14 @@ data:extend({
     name = "sb-blue-algae-liquefaction",
     localised_name = {"recipe-name.sb-blue-algae-liquefaction",
       {"fluid-name.liquid-multi-phase-oil"}, {"fluid-name.water-yellow-waste"}, {"fluid-name.gas-carbon-dioxide"}},
-    icon = "__angelspetrochem__/graphics/icons/liquid-multi-phase-oil.png",
-    icon_size = 32,
+    icons = 
+      angelsmods.functions.create_liquid_recipe_icon(
+        {
+          "crude-oil",
+          "gas-raw-1"
+        },
+        {{100, 100, 100}, {171, 161, 055}, {127, 163, 109}}
+      ),
     category = "oil-processing",
     enabled = false,
     energy_required = 5,

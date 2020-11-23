@@ -70,7 +70,8 @@ for _,v in ipairs({
   'protection-field-goopless',
   'slag-processing-7',
   'slag-processing-8',
-  'slag-processing-9'
+  'slag-processing-9',
+  'bob-coal-from-wood'
 }) do
   removerecipes[v] = true
 end
