@@ -1,3 +1,60 @@
+local unlocktech = function(force, tech)
+  if tech.researched then
+    for _,v in ipairs(tech.effects) do
+      if v.type == 'unlock-recipe' then
+        force.recipes[v.recipe].enabled = true
+      end
+    end
+  end
+end
+
+for _, force in pairs(game.forces) do
+  force.reset_technologies()
+  unlocktech(force, force.technologies['slag-processing-1'])
+  unlocktech(force, force.technologies['slag-processing-2'])
+end
+
+for _, force in pairs(game.forces) do
+  force.reset_recipes()
+end
+
+for _, force in pairs(game.forces) do
+  if force.technologies['angels-advanced-chemistry-1'].researched then
+    force.technologies['angels-coal-cracking'].researched = true
+  end
+end
+
+for _, force in pairs(game.forces) do
+  force.technologies['sb-startup1'].researched = true
+  force.technologies['sb-startup2'].researched = true
+  force.technologies['bio-wood-processing'].researched = true
+  force.technologies['sb-startup4'].researched = true
+end
+
+for _,force in pairs(game.forces) do
+  if force.technologies['logistics'].researched and force.technologies['bob-logistics-0'] then
+    force.technologies['bob-logistics-0'].researched = true
+  end
+end
+
+local plants = {
+  'desert-tree', 'temperate-tree', 'swamp-tree',
+  'desert-garden', 'temperate-garden', 'swamp-garden'
+}
+-- Remove old gardens so trees have room to spawn
+for _,plant in pairs(plants) do
+  for _,entity in pairs(game.surfaces[1].find_entities_filtered{name = plant}) do
+    entity.destroy()
+  end
+end
+game.surfaces[1].regenerate_entity(plants)
+
+for _,force in pairs(game.forces) do
+  if force.technologies['sb-startup4'].researched and force.technologies['sct-research-t1'] then
+    force.technologies['sct-research-t1'].researched = true
+  end
+end
+
 require "util"
 
 local function regensurface(surface)
@@ -69,4 +126,8 @@ end
 regensurface(game.surfaces['nauvis'])
 if game.surfaces['battle_surface_1'] then
   regensurface(game.surfaces['battle_surface_1'])
+end
+
+for _, force in pairs(game.forces) do
+  force.technologies['bio-processing-brown'].researched = true
 end
