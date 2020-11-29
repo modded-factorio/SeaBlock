@@ -378,7 +378,7 @@ local function new_random_seed()
   enemy_random_seed = enemy_random_seed + 1
   return enemy_random_seed
 end
-local function worm_autoplace(distance, probability, order, falloff)
+local function worm_autoplace(distance, probability, order, falloff, control_name)
   local d = noise.var("distance") - noise.var("starting_area_radius")
   p = noise.clamp((d - distance * 128) / 128, 0, 1)
   if falloff then
@@ -391,6 +391,7 @@ local function worm_autoplace(distance, probability, order, falloff)
   })
 
   return {
+    control = control_name,
     order = order,
     force = "enemy",
     probability_expression = p,
@@ -398,31 +399,31 @@ local function worm_autoplace(distance, probability, order, falloff)
   }
 end
 
-data.raw.turret['small-worm-turret'].autoplace = worm_autoplace(0, 1, 'z', true)
-data.raw.turret['medium-worm-turret'].autoplace = worm_autoplace(1, 1, 'y', true)
+data.raw.turret['small-worm-turret'].autoplace = worm_autoplace(0, 1, 'z', true, "enemy-base")
+data.raw.turret['medium-worm-turret'].autoplace = worm_autoplace(1, 1, 'y', true, "enemy-base")
 if data.raw.turret['bob-big-explosive-worm-turret'] then
-  data.raw.turret['bob-big-explosive-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false)
+  data.raw.turret['bob-big-explosive-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false, "enemy-base")
 end
 if data.raw.turret['bob-big-fire-worm-turret'] then
-  data.raw.turret['bob-big-fire-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false)
+  data.raw.turret['bob-big-fire-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false, "enemy-base")
 end
 if data.raw.turret['bob-big-poison-worm-turret'] then
-  data.raw.turret['bob-big-poison-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false)
+  data.raw.turret['bob-big-poison-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false, "enemy-base")
 end
 if data.raw.turret['bob-big-piercing-worm-turret'] then
-  data.raw.turret['bob-big-piercing-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false)
+  data.raw.turret['bob-big-piercing-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false, "enemy-base")
 end
 if data.raw.turret['bob-big-electric-worm-turret'] then
-  data.raw.turret['bob-big-electric-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false)
+  data.raw.turret['bob-big-electric-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false, "enemy-base")
 end
 if data.raw.turret['bob-giant-worm-turret'] then
-  data.raw.turret['bob-giant-worm-turret'].autoplace = worm_autoplace(2, 0.6, 'u', false)
+  data.raw.turret['bob-giant-worm-turret'].autoplace = worm_autoplace(2, 0.6, 'u', false, "enemy-base")
 end
 if data.raw.turret['behemoth-worm-turret'] then
-  data.raw.turret['big-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false)
-  data.raw.turret['behemoth-worm-turret'].autoplace = worm_autoplace(2, 0.2, 't', false)
+  data.raw.turret['big-worm-turret'].autoplace = worm_autoplace(1.5, 0.5, 'v', false, "enemy-base")
+  data.raw.turret['behemoth-worm-turret'].autoplace = worm_autoplace(2, 0.2, 't', false, "enemy-base")
 else
-  data.raw.turret['big-worm-turret'].autoplace = worm_autoplace(2, 1, 'v', false)
+  data.raw.turret['big-worm-turret'].autoplace = worm_autoplace(2, 1, 'v', false, "enemy-base")
 end
 data.raw.tree['puffer-nest'].autoplace = worm_autoplace(0, 0.01, 's', false)
 

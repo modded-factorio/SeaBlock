@@ -25,7 +25,6 @@ seablock.giveitems = function(entity)
     {"stone", 50},
     {"small-electric-pole", 50},
     {"small-lamp", 12},
-
     {"iron-plate", 1200},
     {"basic-circuit-board", 200},
     {"stone-pipe", 100},

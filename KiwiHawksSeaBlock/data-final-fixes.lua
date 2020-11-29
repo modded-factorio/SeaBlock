@@ -314,5 +314,8 @@ data.raw['map-gen-presets']['default']['rich-resources'] = nil
 data.raw['map-gen-presets']['default']['ribbon-world'] = nil
 data.raw['map-gen-presets']['default']['island'] = nil
 
+data.raw['map-settings']['map-settings']['enemy_evolution'].enabled = false
+data.raw['map-settings']['map-settings']['enemy_expansion'].enabled = false
+
 -- Spacemod updates
 require "SpaceMod-updates"
