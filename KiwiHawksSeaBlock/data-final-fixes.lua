@@ -270,6 +270,10 @@ for k,v in pairs(data.raw.technology) do
   end
 end
 
+-- Electric Engines: Move to green science
+bobmods.lib.tech.remove_prerequisite('electric-engine', 'angels-advanced-oil-processing')
+bobmods.lib.tech.remove_science_pack('electric-engine', 'chemical-science-pack')
+
 -- No resource placement
 for k,v in pairs(data.raw.resource) do
   v.autoplace = nil
