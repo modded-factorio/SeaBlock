@@ -17,8 +17,8 @@ end
 
 seablock.giveitems = function(entity)
   local landfill = 'landfill'
-  if game.item_prototypes['landfill-sand-3'] then
-    landfill = 'landfill-sand-3'
+  if settings.startup['kiwihawksb-default-landfill'] and game.item_prototypes[settings.startup['kiwihawksb-default-landfill'].value] then
+    landfill = settings.startup['kiwihawksb-default-landfill'].value
   end
   local stuff = {
     {landfill, 1000},

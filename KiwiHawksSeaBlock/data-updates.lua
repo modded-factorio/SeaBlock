@@ -92,9 +92,9 @@ for k,v in pairs(data.raw.item) do
   end
 end
 
--- Prefer sand for basic landfill crafting
-if data.raw.item['landfill-sand-3'] then
-  data.raw.recipe['landfill'].result = "landfill-sand-3"
+-- Set prefered type for basic landfill crafting
+if settings.startup['kiwihawksb-default-landfill'] and data.raw.item[settings.startup['kiwihawksb-default-landfill'].value] then
+  data.raw.recipe['landfill'].result = settings.startup['kiwihawksb-default-landfill'].value
 end
 
 -- Speed up algae farm
