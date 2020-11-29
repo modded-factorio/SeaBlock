@@ -389,11 +389,12 @@ if data.raw.item['wind-turbine-2'] then
   table.insert(data.raw.technology['steel-processing'].effects,
     { type = 'unlock-recipe', recipe = 'wind-turbine-2' })
 end
-data.raw.technology['steel-processing'].prerequisites = {'chemical-processing-1'}
-data.raw.technology['steel-processing'].unit.count = 20
 
 -- No natural gas, use methane for manganese pellet smelting
 lib.substingredient("pellet-manganese-smelting", "gas-natural-1", "gas-methane")
+
+-- Remove steel's prerequiste on Chemical processing 1
+data.raw.technology['steel-processing'].prerequisites = nil
 
 -- Repurpose thermal extractor
 local extractor = data.raw['mining-drill']['thermal-extractor']
@@ -568,7 +569,6 @@ local startuptechs = {
   ['stone-wall'] = true,
   ['basic-chemistry'] = true,
   ['ore-crushing'] = true,
-  ['chemical-processing-1'] = true,
   ['military'] = true,
   ['angels-sulfur-processing-1'] = true,
   ['water-treatment'] = true,
@@ -780,7 +780,7 @@ data.raw.fluid['crude-oil'].fuel_value = '0.5MJ'
 if data.raw.fluid['diesel-fuel'] then
   data.raw.fluid['diesel-fuel'].fuel_value = '1MJ'
 end
-data.raw.item['enriched-fuel'].fuel_value = '24MJ'
+data.raw.item['enriched-fuel'].fuel_value = '50MJ'
 data.raw.item['enriched-fuel'].stack_size = 50
 
 lib.substingredient('solid-fuel-methane', 'gas-methane', nil, 40)

@@ -9,6 +9,7 @@ Date: ???
     - Blue algae liquefaction recipe unlock moved from Oil processing to Gas and oil extraction
     - Blue algae liquefaction recipe moved from Oil Refinery to Oil and Gas Separator
     - Electric Engines no longer require blue science
+    - Prerequisite Chemical processing 1 removed from Steel processing
   Bugfixes:
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal
