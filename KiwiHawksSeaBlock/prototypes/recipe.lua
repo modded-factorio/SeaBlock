@@ -110,8 +110,7 @@ data:extend({
     icons = 
       angelsmods.functions.create_liquid_recipe_icon(
         {
-          "crude-oil",
-          "gas-raw-1"
+          "blue-cellulose-fiber"
         },
         {{100, 100, 100}, {171, 161, 055}, {127, 163, 109}}
       ),
