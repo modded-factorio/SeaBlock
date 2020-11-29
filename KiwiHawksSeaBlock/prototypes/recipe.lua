@@ -114,7 +114,7 @@ data:extend({
         },
         {{100, 100, 100}, {171, 161, 055}, {127, 163, 109}}
       ),
-    category = "oil-processing",
+    category = "petrochem-separation",
     enabled = false,
     energy_required = 5,
     ingredients = {
@@ -122,8 +122,8 @@ data:extend({
       {type = "fluid", name = "steam", amount = 100}
     },
     results = {
-      {type = "fluid", name = "liquid-multi-phase-oil", amount = 100},
       {type = "fluid", name = "water-yellow-waste", amount = 60},
+      {type = "fluid", name = "liquid-multi-phase-oil", amount = 100},
       {type = "fluid", name = "gas-carbon-dioxide", amount = 20}
     },
     subgroup = "bio-processing-blue",
@@ -131,6 +131,6 @@ data:extend({
   }
 })
 
-table.insert(data.raw.technology['angels-oil-processing'].prerequisites, 'bio-processing-blue')
-table.insert(data.raw.technology['angels-oil-processing'].effects,
+table.insert(data.raw.technology['oil-gas-extraction'].prerequisites, 'bio-processing-blue')
+table.insert(data.raw.technology['oil-gas-extraction'].effects,
   {type = "unlock-recipe", recipe = "sb-blue-algae-liquefaction"})
