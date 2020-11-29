@@ -1,12 +1,9 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.1.0
-Date: 23.11.2020
+Version: 1.0.0
+Date: ???
   Changes:
     - Forked Sea Block
-  Bugfixes:
-    - Fixed missing icon "liquid-multi-phase-oil.png"
-    - Removed coal and crushed coal
-    - Moved recipes for Sulfur and Sulfur dioxide gas back to Sulfur processing 1
+    - Updated to 1.1
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.8
 Date: 18. 8. 2020

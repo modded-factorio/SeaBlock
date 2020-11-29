@@ -182,6 +182,7 @@ for i = 1,6 do
     enabled = false
   }
 end
+
 -- Want angels ores 1,3,5,6 (Saphirite, Stiratite, Rubyte, Bobmonium) available from the start,
 -- so shuffle crystallization recipe unlocks around
 local slag1start = lib.findeffectidx(data.raw.technology['slag-processing-1'].effects, 'slag-processing-1')
@@ -528,7 +529,6 @@ local startuprecipes = {
   ['stone-crushed'] = true,
   ['stone-brick'] = true,
   ['crystallizer'] = true,
-
   ['dirt-water-separation'] = true,
   ['sb-cellulose-foraging'] = true,
   ['sb-water-mineralized-crystallization'] = true,
@@ -564,8 +564,8 @@ local startuptechs = {
   ['automation'] = true,
   ['logistics'] = true,
   ['optics'] = true,
-  ['turrets'] = true,
-  ['stone-walls'] = true,
+  ['gun-turret'] = true,
+  ['stone-wall'] = true,
   ['basic-chemistry'] = true,
   ['ore-crushing'] = true,
   ['chemical-processing-1'] = true,
@@ -584,7 +584,6 @@ local startuptechs = {
   ['angels-coal-processing'] = true,
   ['bio-wood-processing-2'] = true,
   ['bio-processing-green'] = true,
-
   ['landfill'] = true
 }
 if data.raw.technology['logistics-0'] then
