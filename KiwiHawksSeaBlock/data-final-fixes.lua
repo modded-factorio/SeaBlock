@@ -1,8 +1,10 @@
 local lib = require("lib")
 
+
 -- Adjust resin production amount to how it was in petrochem 0.7.9.
 -- TODO: Revisit this after Angel adds more liquid rubber recipes
 lib.substresult('liquid-rubber-1', 'liquid-rubber', nil, 20)
+
 
 -- Reset solid-resin recipe icon to remove the II stamp
 data.raw.recipe['solid-resin'].icon = nil
@@ -322,4 +324,4 @@ data.raw['map-settings']['map-settings']['enemy_evolution'].enabled = false
 data.raw['map-settings']['map-settings']['enemy_expansion'].enabled = false
 
 -- Spacemod updates
-require "SpaceMod-updates"
+require "data-final-fixes/SpaceMod"
