@@ -15,6 +15,26 @@ data.raw.recipe['solid-resin'].icons = nil
 bobmods.lib.tech.remove_prerequisite('electric-engine', 'angels-advanced-oil-processing')
 bobmods.lib.tech.remove_science_pack('electric-engine', 'chemical-science-pack')
 
+
+-- Reduce burner heat source neighbour bonus
+local reactors = {
+  'burner-reactor',
+  'burner-reactor-2',
+  'burner-reactor-3',
+  'fluid-reactor',
+  'fluid-reactor-2',
+  'fluid-reactor-3'
+}
+
+for _, v in pairs(reactors) do
+  local r = data.raw.reactor[v]
+  if r then
+    r.neighbour_bonus = 0.125
+  end
+end
+
+
+require "data-final-fixes/logistics"
 require "data-final-fixes/unobtainable_items"
 require "data-final-fixes/mapgen"
 require "data-final-fixes/SpaceMod"
