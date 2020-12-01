@@ -11,7 +11,7 @@ if mods["LandfillPainting"] then
   data:extend({
     {
       type = 'string-setting',
-      name = 'kiwihawksb-default-landfill',
+      name = 'sb-default-landfill',
       setting_type = 'startup',
       default_value = tiletypes[1],
       allowed_values = tiletypes
