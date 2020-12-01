@@ -28,10 +28,26 @@ for _,v in pairs(data.raw) do
     end
   end
 end
+---[[
+log('KH dat')
 local controls = data.raw['autoplace-control']
 for k,v in pairs(controls) do
   if k ~= "enemy-base" and not keepcontrols[k] then
     controls[k] = nil
+  else
+    log(k)
+  end
+end
+---]]
+for k,v in pairs(data.raw['map-gen-presets']['default']) do
+  if v.autoplace_controls then
+    for k2,v2 in pairs(v.autoplace_controls) do
+      if k2 ~= "enemy-base" and not keepcontrols[k2] then
+        v.autoplace_controls[k] = nil
+      else
+        log(k2)
+      end 
+    end
   end
 end
 
@@ -42,6 +58,6 @@ data.raw['map-gen-presets']['default']['rich-resources'] = nil
 data.raw['map-gen-presets']['default']['ribbon-world'] = nil
 data.raw['map-gen-presets']['default']['island'] = nil
 
-data.raw['map-settings']['map-settings']['enemy_evolution'].enabled = false
-data.raw['map-settings']['map-settings']['enemy_expansion'].enabled = false
+--data.raw['map-settings']['map-settings']['enemy_evolution'].enabled = false
+--data.raw['map-settings']['map-settings']['enemy_expansion'].enabled = false
 
