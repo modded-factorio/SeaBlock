@@ -508,17 +508,3 @@ data.raw['noise-expression']['elevation'].expression =
       v = (v * elevation_scale) - (waterline * (elevation_scale - 1)) -- Increase gradient for cliffs while leaving waterline unchanged
       return v
   end)
-
-data.raw['map-gen-presets']['default']["seablock"] =
-  {
-    order = "h",
-    basic_settings =
-    {
-      property_expression_names =
-      {
-        elevation = "0_17-island"
-      },
-      default_enable_all_autoplace_controls = false,
-      water = 'none'
-    }
-  }

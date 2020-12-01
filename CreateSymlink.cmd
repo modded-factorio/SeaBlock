@@ -1,1 +1,0 @@
-mklink /D "C:\Users\Graham\AppData\Roaming\Factorio\mods1.1\KiwiHawksSeaBlock_1.0.0" "C:\Users\Graham\Documents\GitHub\SeaBlock\KiwiHawksSeaBlock"
