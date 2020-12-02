@@ -12,6 +12,7 @@ Date: ???
     - Prerequisite Chemical processing 1 removed from Steel processing
     - Enriched fuel block fuel value increased from 24MJ to 50MJ
     - Added setting for preferred landfill type (if LandfillPainting is installed)
+    - Merged in A Sea Block Config mod
   Bugfixes:
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal
@@ -71,6 +72,13 @@ Date: 10. 2. 2020
     - Remove alginic acid solder recipe
     - Update tech tree dependencies/prerequisites for Angel's changes
     - Remove fuel_value for some Angel's fluids
+---------------------------------------------------------------------------------------------------
+Version: 0.4.0 A Sea Block Config
+Date: 10. 2. 2020
+  Changes:
+    - Factorio 0.18 update
+    - Reduce neighbour bonus for heat source burners
+    - Force Bob's nuclear update setting on
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.8
 Date: 29. 12. 2019
@@ -137,6 +145,12 @@ Date: 18. 3. 2019
     - Remove change to ScienceCostTweakerM flash fuel recipe
     - Reduce enriched fuel block fuel value
 ---------------------------------------------------------------------------------------------------
+Version: 0.3.0 A Sea Block Config
+Date: 18. 3. 2019
+  Changes:
+    - Factorio 0.17 update
+    - Override boblogistic belt speeds
+---------------------------------------------------------------------------------------------------
 Version: 0.2.17
 Date: 19. 11. 2018
   Changes:
@@ -187,6 +201,11 @@ Date: 3. 6. 2018
   Changes:
     - Defensive programming check when moving tech unlocks
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.4 A Sea Block Config
+Date: 1. 6. 2018
+  Changes:
+    - Reorder setup to allow other mods to remove setting overrides
+---------------------------------------------------------------------------------------------------
 Version: 0.2.8
 Date: 18. 5. 2018
   Changes:
@@ -226,6 +245,11 @@ Date: 4. 3. 2018
   Changes:
     - Add fluid-generator-3 tech requirement for KS Power diesel generator
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.3 A Sea Block Config
+Date: 4. 3. 2018
+  Changes:
+    - Set basic transport belt underground distance (if present)
+---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 25. 2. 2018
   Changes:
@@ -236,11 +260,21 @@ Date: 25. 2. 2018
     - Reduce number of fusion construction bots required to build an assembly bot (5 -> 1)
     - Reduce number of portable fusion reactors required to build the SpaceMod fusion reactor (100 -> 50)
 ---------------------------------------------------------------------------------------------------
+Version: 0.2.2 A Sea Block Config
+Date: 25. 2. 2018
+  Changes:
+    - Undo boblogistic changes to logistic request chest unlock. Back to being unlocked by logistic system technology.
+---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 24. 1. 2018
   Changes:
     - Restore collision for cliffs
     - Update bio-wood-processing startup technologies
+---------------------------------------------------------------------------------------------------
+Version: 0.2.1 A Sea Block Config
+Date: 24. 1. 2018
+  Changes:
+    - Reduce cargo capacity of Bob's logistic bots
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 8. 1. 2018
@@ -254,3 +288,12 @@ Date: 8. 1. 2018
     - Add recipe for making multi phase oil from blue algae
     - Add dependency on KS_Power, starting equipment includes wind turbines
     - Increase amount of resin used in furnace rubber recipe
+---------------------------------------------------------------------------------------------------
+Version: 0.2.0 A Sea Block Config
+Date: 8. 1. 2018
+  Changes:
+    - Disable bobplates cheaper steel
+    - Reduce number of beacon module slots. Two modules per beacon regardless of level.
+    - Undo boblogistics changes to logistic-system technology. High tech and production science packs restored.
+    - Add setting for changing ScienceCostTweaker multiplier when SpaceMod is present.
+
