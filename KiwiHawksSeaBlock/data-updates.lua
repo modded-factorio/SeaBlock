@@ -199,18 +199,6 @@ lib.moveeffect('slag-processing-4', 'slag-processing-2', 'ore-advanced-crushing'
 -- Move crystallization ore recipes up above crushed ores
 data.raw['item-subgroup']['slag-processing-1'].order = "ab"
 
--- Remove blue science requirement for slag-processing-2 technology
--- Needed for gold ore
--- Update: Not needed for gold now we unlock Rubyte ore with the above technology shuffle.
--- Leave change in because slag-processing-2 unlocks ceramic filters, which are quite helpful.
--- Also, having a source of silver (from crotinnum) early allows making resin/rubber
-for k,v in pairs(data.raw.technology['slag-processing-2'].unit.ingredients) do
-  if v[1] == 'chemical-science-pack' then
-    table.remove(data.raw.technology['slag-processing-2'].unit.ingredients, k)
-    break
-  end
-end
-
 -- Sulfur 1 tech: Remove prerequisite Advanced lead smelting 1
 bobmods.lib.tech.remove_prerequisite('angels-sulfur-processing-1', 'angels-lead-smelting-1')
 
