@@ -257,8 +257,11 @@ if data.raw['item-group']['sct-science'] then
       v.group = 'bob-resource-products'
     end
   end
-end
 
+  -- Change tech to use lab icon from SCT
+  data.raw.tool['sb-lab-tool'].icon = '__ScienceCostTweakerM__/graphics/sct-lab-t1/icon-64.png'
+end
+  
 -- No fuel value on these because they are also smelting inputs
 -- https://forums.factorio.com/viewtopic.php?f=23&t=46634
 data.raw.item['wood-bricks'].fuel_value = nil
