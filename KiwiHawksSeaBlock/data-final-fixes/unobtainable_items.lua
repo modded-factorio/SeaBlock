@@ -72,19 +72,9 @@ end
 -- then any recipe that uses an unobtainable item is removed
 local unobtainable = {}
 for _,v in ipairs({
-  --'raw-wood',
-  --'solid-oil-residual',
   'coal',
   'coal-crushed',
   'circuit-wood-fiber-board',
-
-  --'gas-acid',
-  --'angels-barrel-gas-acid',
-  --'gas-acid-barrel',
-
-  --'gas-raw-1',
-  --'angels-barrel-gas-raw-1',
-  --'gas-raw-1-barrel',
 
   'liquid-condensates',
   'angels-barrel-liquid-condensates',
@@ -130,13 +120,11 @@ for k,v in pairs(recipes) do
   end
   for _, recipe in ipairs(iset) do
     local items = {}
-    --local allitemsdbg = {}
     for _, ingredient in pairs(recipe.ingredients) do
       local item = ingredient[1] or ingredient.name
       if unobtainable[item] then
         items[item] = true
       end
-      --allitemsdbg[item] = true
     end
     local results = {}
     if recipe.result then
@@ -146,17 +134,6 @@ for k,v in pairs(recipes) do
         table.insert(results, w.name)
       end
     end
-  --[[
-  if k == 'empty-lithia-water-barrel' then
-    print ("recipe " .. k)
-    for a,_ in pairs(allitemsdbg) do
-      print("  ingredient " .. a)
-    end
-    for _,a in pairs(results) do
-      print(" result " .. a)
-    end
-  end
-  ]]--
     if next(items) ~= nil then
       for _,r in pairs(results) do
         if unobtainable[r] ~= nil then
@@ -165,9 +142,6 @@ for k,v in pairs(recipes) do
       end
     else
       for _,r in pairs(results) do
-        if unobtainable[r] then
-          --print(" item " .. r .. " obtainable from recipe " .. k)
-        end
         unobtainable[r] = nil
       end
     end
@@ -181,13 +155,12 @@ while work do
     for _, inputarray in pairs(inputs) do
       for input, _  in pairs(inputarray) do
         if unobtainable[input] == nil then -- Input is obtainable
-	  inputarray[input] = nil
-	  if next(inputarray) == nil then
-            --print (" item " .. item .. " obtainable via item " .. input)
-	    unobtainable[item] = nil
-	    work = true
-	  end
-	end
+          inputarray[input] = nil
+          if next(inputarray) == nil then
+            unobtainable[item] = nil
+            work = true
+          end
+        end
       end
     end
   end
@@ -206,8 +179,6 @@ for k,v in pairs(unobtainable) do
     if not lib.tablefind(item.flags, "hidden") then
       table.insert(item.flags, "hidden")
     end
-  else
-    --print("no item " .. k)
   end
 end
 
@@ -223,7 +194,7 @@ local function keeprecipe(r)
       local ingredient = v[1] or v.name
       if ingredient and unobtainable[ingredient] then
         count = count + 1
-	break
+        break
       end
     end
   end
@@ -232,7 +203,6 @@ end
 
 for k,v in pairs(data.raw.recipe) do
   if not keeprecipe(v) then
-    --print("remove recipe " .. k)
     removerecipes[k] = true
   end
 end

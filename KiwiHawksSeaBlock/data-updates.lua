@@ -19,7 +19,7 @@ local function makeextractorlayers(bottom, top)
         shift = {0, 0},
         frame_count = 16,
         x = 288 * 2,
-	animation_speed = 0.5
+        animation_speed = 0.5
       })
   end
   table.insert(layers,
@@ -43,7 +43,7 @@ local function makeextractorlayers(bottom, top)
         shift = {0, 0},
         frame_count = 16,
         x = 0,
-	animation_speed = 0.5
+        animation_speed = 0.5
       })
   end
   return { layers = layers }
@@ -76,10 +76,6 @@ table.insert(data.raw.technology['advanced-electronics'].prerequisites, "resin-1
 
 -- Increase cost of resin->rubber smelting to encourage use of angels rubber synthesis
 lib.substingredient('bob-rubber', 'resin', nil, 4)
-
--- Add unlock for new solder recipe
---table.insert(data.raw.technology['electronics'].effects, { type = "unlock-recipe", recipe = "solder-alginic" })
---lib.moveeffect('mixing-furnace', 'alloy-processing-1', 'electronics')
 
 -- No wood for electric poles, use wood bricks instead
 data.raw.recipe['small-electric-pole'].ingredients = {{ "wood-bricks", 1 }, { "copper-cable", 2}}
@@ -219,21 +215,6 @@ data.raw.technology['slag-processing-1'].unit = {
 
 -- Disable coal cracking technology
 data.raw.technology['angels-coal-cracking'].enabled = false
-
--- Add alien bioprocessing prerequisite for technologies that need alien artifacts
---local artifacttech = 'bio-processing-alien'
---if data.raw.technology['big-alien-artifacts'] and
---  (data.raw.technology['big-alien-artifacts'].enabled == nil or
---   data.raw.technology['big-alien-artifacts'].enabled) then
---   artifacttech = 'big-alien-artifacts'
---end
---if data.raw.technology['alien-research'] then
---  table.insert(data.raw.technology['alien-research'].prerequisites, artifacttech)
---end
-
--- No way to make light fuel/fuel oil, so use methanol instead
--- Update: can make light-oil now with bioprocessing or algae liqufaction.
---lib.substingredient("sct-t3-flash-fuel", "light-oil", "gas-methanol")
 
 -- Move misc sciencey things over to science tab
 if data.raw['item-group']['sct-science'] then
@@ -545,8 +526,6 @@ local sbtechs = {
   ['sb-startup1'] = true,
   ['sb-startup2'] = true,
   ['bio-wood-processing'] = true,
-  --['sb-startup3'] = true,
-  --['sb-startup-sulfur'] = true,
   ['sb-startup4'] = true
 }
 if data.raw.technology['sct-lab-t1'] then
@@ -712,10 +691,8 @@ data.raw.technology['bio-wood-processing'].unit = {
   time = 5
 }
 lib.takeeffect('bio-wood-processing', 'wood-pellets')
---lib.takeeffect('bio-wood-processing', 'gas-carbon-dioxide-from-wood')
 lib.moveeffect('cellulose-fiber-algae', 'bio-processing-brown', 'bio-wood-processing', 2)
 lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 3)
---lib.moveeffect('wood-from-cellulose', 'bio-wood-processing', 'bio-wood-processing-3')
 table.insert(data.raw.technology['bio-wood-processing-2'].effects,
   {type = 'unlock-recipe', recipe = 'sb-wood-bricks-charcoal'})
 table.insert(data.raw.technology['bio-wood-processing'].effects, 3,
@@ -733,11 +710,6 @@ lib.takeeffect('bio-wood-processing-2', 'wood-charcoal')
 
 -- Remove brown algae tech
 data.raw.technology['bio-processing-green'].prerequisites = {'water-treatment'}
---local brownidx = lib.tablefind(data.raw.technology['bio-processing-blue'].prerequisites, 'bio-processing-brown')
---if brownidx ~= nil then
---  table.remove(data.raw.technology['bio-processing-blue'].prerequisites, brownidx)
---end
---data.raw.technology['bio-processing-brown'].enabled = false
 
 data.raw.technology['bio-paper-1'].prerequisites = {}
 data.raw.technology['landfill'].prerequisites = {}

@@ -80,7 +80,6 @@ data:extend({
   effects = {
     {type = "unlock-recipe", recipe = "inserter"},
     {type = "unlock-recipe", recipe = "algae-green-simple"},
-    --{type = "unlock-recipe", recipe = "gas-carbon-dioxide-from-wood"},
     {type = "unlock-recipe", recipe = "pipe"},
     {type = "unlock-recipe", recipe = "pipe-to-ground"},
     {type = "unlock-recipe", recipe = "copper-pipe"},
@@ -96,43 +95,6 @@ data:extend({
     time = 5
   }
 },
---[[
-{
-  type = "technology",
-  name = "sb-startup3",
-  icon = "__KiwiHawksSeaBlock__/graphics/technology/coal.png",
-  icon_size = 128,
-  effects = {
-    {type = "unlock-recipe", recipe = "wood-bricks"},
-    {type = "unlock-recipe", recipe = "sb-wood-bricks-charcoal"},
-    {type = "unlock-recipe", recipe = "carbon-separation-2"},
-    {type = "unlock-recipe", recipe = "lab"}
-  },
-  prerequisites = {"sb-startup2"},
-  unit = {
-    count = 1,
-    ingredients = {{"sb-algae-green-tool", 1}},
-    time = 5
-  }
-},
-{
-  type = "technology",
-  name = "sb-startup-sulfur",
-  icon = "__base__/graphics/technology/sulfur-processing.png",
-  icon_size = 128,
-  effects = {
-    --{type = "unlock-recipe", recipe = "gas-sulfur-dioxide"},
-    --{type = "unlock-recipe", recipe = "liquid-sulfuric-acid"},
-    --{type = "unlock-recipe", recipe = "yellow-waste-water-purification"}
-  },
-  prerequisites = {"sb-startup3"},
-  unit = {
-    count = 1,
-    ingredients = {{"sb-sulfur-tool", 1}},
-    time = 5
-  }
-},
-]]--
 {
   type = "technology",
   name = "sb-startup4",

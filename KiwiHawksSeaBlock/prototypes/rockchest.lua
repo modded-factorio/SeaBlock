@@ -16,7 +16,6 @@ data:extend({
     max_health = 100,
     corpse = "small-remnants",
     collision_box = {{0.0, 0.0}, {0.35, 0.35}},
-    --fast_replaceable_group = "container",
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
     inventory_size = 40,
     open_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
