@@ -18,6 +18,7 @@ Date: ???
     - Removed coal and crushed coal
     - Moved recipes for Sulfur and Sulfur dioxide gas back to Sulfur processing 1
     - Added missing science packs to Logistics System 3, Logistics Warehouses, and Logistics Silos
+    - Added Thermal Water Extraction as a prerequisite for Fish Pressing
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.8
 Date: 18. 8. 2020

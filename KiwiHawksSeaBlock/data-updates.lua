@@ -481,6 +481,10 @@ bore.fixed_recipe = "thermal-bore-water"
 table.insert(data.raw.technology['thermal-water-extraction'].effects,
   { type = "unlock-recipe", recipe = "thermal-bore-water" })
 
+-- Fish Pressing requires thermal water so add a prerequisite
+bobmods.lib.tech.add_prerequisite('bio-pressing-fish', 'thermal-water-extraction')
+
+
 -- Circuit network wires should not require rubber
 data.raw.recipe['green-wire'].ingredients = {{ "electronic-circuit", 1 }, { "copper-cable", 1 }}
 data.raw.recipe['red-wire'].ingredients = {{ "electronic-circuit", 1 }, { "copper-cable", 1 }}
