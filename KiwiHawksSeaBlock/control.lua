@@ -34,8 +34,7 @@ seablock.giveitems = function(entity)
     {"copper-pipe", 5},
     {"iron-gear-wheel", 25},
     {"iron-stick", 96},
-    {"pipe-to-ground", 2},
-    {"electronic-circuit", 10}
+    {"pipe-to-ground", 2}
   }
   if game.item_prototypes["wind-turbine-2"] then
     table.insert(stuff, {"wind-turbine-2", 120})

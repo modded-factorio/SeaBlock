@@ -13,6 +13,8 @@ Date: ???
     - Enriched fuel block fuel value increased from 24MJ to 50MJ
     - Added setting for preferred landfill type (if LandfillPainting is installed)
     - Merged in A Sea Block Config mod
+    - Hydro Plant 1 now requires Basic Circuit Boards instead of Electronic Circuits
+    - Removed Electronic Circuits from starting resources
   Bugfixes:
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal

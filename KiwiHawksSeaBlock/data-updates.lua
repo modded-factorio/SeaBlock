@@ -497,6 +497,9 @@ else
   end
 end
 
+-- Swap Hydro Plant 1 to take Basic circuit board (basic-circuit-board) instead of Green circuits (electronic-circuit) as we want it craftable from the start
+bobmods.lib.recipe.replace_ingredient('hydro-plant', 'electronic-circuit', 'basic-circuit-board')
+
 local startuprecipes = {
   ['angels-electrolyser'] = true,
   ['liquifier'] = true,
