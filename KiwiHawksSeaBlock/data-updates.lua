@@ -717,7 +717,6 @@ table.insert(data.raw.technology['bio-wood-processing-2'].effects,
 table.insert(data.raw.technology['bio-wood-processing'].effects, 3,
   {type = 'unlock-recipe', recipe = 'small-electric-pole'})
 data.raw.technology['bio-wood-processing-2'].prerequisites = { lasttech }
-data.raw.technology['bio-arboretum-1'].prerequisites = { lasttech }
 lib.moveeffect('pellet-coke', 'angels-coal-cracking', 'angels-coal-processing-2')
 
 -- Reduce angels charcoal fuel value
