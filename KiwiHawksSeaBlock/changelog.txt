@@ -19,6 +19,8 @@ Date: ???
     - Recipe Resin > Rubber unlocked by Rubbers rather than being available from start
     - Removed prerequisite Advanced Oil Processing from technology Rubbers
     - Recipe Liquid Rubber > Rubber unlocked by technology Rubber only instead of also being unlocked by technology Rubbers
+    - Moved Algae Farm 2 from Green Algae Processing to Blue Algae Processing
+    - Moved Green Algae Processing earlier in the tech tree
   Bugfixes:
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal
@@ -28,6 +30,7 @@ Date: ???
     - Fixed lab icon on Sacrificial electromagnet technology (if Science Cost Tweaker is installed)
     - Steam Powered Inserter was unlocked from the start
     - Restored Farming 1 as a prerequisite for Arboretum 1
+    - Added Wood Processing 2 as a prerequisite for Basic Chemistry
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.8
 Date: 18. 8. 2020

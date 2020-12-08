@@ -499,6 +499,9 @@ movealleffects('basic-chemistry-3', 'basic-chemistry-2')
 data.raw.technology['basic-chemistry-2'].unit = data.raw.technology['basic-chemistry-3'].unit
 data.raw.technology['basic-chemistry-3'].enabled = false
 
+-- Make Basic Chemistry depend on Wood Processing 2. Required for Charcoal > Carbon Dioxide
+bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
+
 -- unlock lab and optional components with bio-wood-processing
 if data.raw.technology['sct-lab-t1'] then
   for k,v in pairs(data.raw.technology['sct-lab-t1'].effects) do
@@ -815,6 +818,19 @@ end
 data.raw.tool['sb-basic-circuit-board-tool'].icon = data.raw.item['basic-circuit-board'].icon
 data.raw.tool['sb-basic-circuit-board-tool'].icon_mipmaps = data.raw.item['basic-circuit-board'].icon_mipmaps
 data.raw.tool['sb-basic-circuit-board-tool'].icon_size = data.raw.item['basic-circuit-board'].icon_size
+
+--[[
+  Make Green Algae 2 available sooner:
+  - Make Red Algae depend on Blue Algae instead of Green Algae
+  - Move Algae Farm 2 to Blue Algae (from Green Algae)
+  - Make Green Algae depend on Basic Chemistry instead of Water Treatment
+--]]
+bobmods.lib.tech.remove_prerequisite('bio-processing-red', 'bio-processing-green')
+bobmods.lib.tech.add_prerequisite('bio-processing-red', 'bio-processing-blue')
+bobmods.lib.tech.remove_recipe_unlock('bio-processing-green', 'algae-farm-2')
+bobmods.lib.tech.add_recipe_unlock('bio-processing-blue', 'algae-farm-2')
+bobmods.lib.tech.remove_prerequisite('bio-processing-green', 'water-treatment')
+bobmods.lib.tech.add_prerequisite('bio-processing-green', 'basic-chemistry')
 
 -- Blue algae
 data.raw.technology['bio-processing-blue'].prerequisites = { 'bio-processing-green' }
