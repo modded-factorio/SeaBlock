@@ -275,7 +275,7 @@ data.raw.item['wood-bricks'].fuel_category = nil
 -- Crystallizer  5 circuit board                                             5 copper-pipe
 
 -- Second stage:
--- Hydro plant   5 electronic      5
+-- Hydro plant   5 circuit board   5
 -- Clarifier     5 circuit board                        5
 -- Algae farm    5 circuit board                                  16
 local knowningredients = {
@@ -304,7 +304,7 @@ local knowningredients = {
 },
 ['hydro-plant'] = {
   {'iron-plate', 10},
-  {'electronic-circuit', 5},
+  {'basic-circuit-board', 5},
   {'pipe', 5},
   {'stone-brick', 10}
 },
@@ -515,9 +515,6 @@ else
     data.raw.recipe['lab'].enabled = false
   end
 end
-
--- Swap Hydro Plant 1 to take Basic circuit board (basic-circuit-board) instead of Green circuits (electronic-circuit) as we want it craftable from the start
-bobmods.lib.recipe.replace_ingredient('hydro-plant', 'electronic-circuit', 'basic-circuit-board')
 
 local startuprecipes = {
   ['angels-electrolyser'] = true,
