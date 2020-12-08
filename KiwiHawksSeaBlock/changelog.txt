@@ -21,6 +21,7 @@ Date: ???
     - Recipe Liquid Rubber > Rubber unlocked by technology Rubber only instead of also being unlocked by technology Rubbers
     - Moved Algae Farm 2 from Green Algae Processing to Blue Algae Processing
     - Moved Green Algae Processing earlier in the tech tree
+    - Moved Water Treatment earlier in the tech tree
   Bugfixes:
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal

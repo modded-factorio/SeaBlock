@@ -502,6 +502,11 @@ data.raw.technology['basic-chemistry-3'].enabled = false
 -- Make Basic Chemistry depend on Wood Processing 2. Required for Charcoal > Carbon Dioxide
 bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
 
+-- Move Water Treatment from Electronics to Slag Processing 1. It no longer unlocks Hydro Plant (which itself no longer requires Green Circuits)
+-- Slag Processing 1 is first source of Sulfuric Waste Water
+bobmods.lib.tech.remove_prerequisite('water-treatment', 'electronics')
+bobmods.lib.tech.add_prerequisite('water-treatment', 'slag-processing-1')
+
 -- unlock lab and optional components with bio-wood-processing
 if data.raw.technology['sct-lab-t1'] then
   for k,v in pairs(data.raw.technology['sct-lab-t1'].effects) do
