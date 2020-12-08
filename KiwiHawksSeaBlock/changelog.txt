@@ -26,6 +26,7 @@ Date: ???
     - Added missing science packs to Logistics System 3, Logistics Warehouses, and Logistics Silos
     - Added Thermal Water Extraction as a prerequisite for Fish Pressing
     - Fixed lab icon on Sacrificial electromagnet technology (if Science Cost Tweaker is installed)
+    - Steam Powered Inserter was unlocked from the start
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.8
 Date: 18. 8. 2020

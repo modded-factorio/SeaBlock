@@ -626,12 +626,12 @@ local function ironrecipe(recipe)
     ['stone-furnace'] = true
   }
   local function scaningredients(recipe)
-    local haveiron = true
+    local haveiron = false
     for k,v in pairs(recipe.ingredients) do
       local nameidx = 1
       if v.name then nameidx = 'name' end
-      if not ironnames[v[nameidx]] then
-        haveiron = false
+      if ironnames[v[nameidx]] then
+        haveiron = true
       end
     end
     foundiron = foundiron or haveiron
