@@ -15,6 +15,10 @@ Date: ???
     - Merged in A Sea Block Config mod
     - Hydro Plant 1 now requires Basic Circuit Boards instead of Electronic Circuits
     - Removed Electronic Circuits from starting resources
+    - Moved recipe Insulated Wire from Electronics to Rubbers
+    - Recipe Resin > Rubber unlocked by Rubbers rather than being available from start
+    - Removed prerequisite Advanced Oil Processing from technology Rubbers
+    - Recipe Liquid Rubber > Rubber unlocked by technology Rubber only instead of also being unlocked by technology Rubbers
   Bugfixes:
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal

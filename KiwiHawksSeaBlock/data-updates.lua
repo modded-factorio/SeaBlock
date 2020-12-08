@@ -74,8 +74,27 @@ end
 -- Add resin prerequisite for advanced electronics
 table.insert(data.raw.technology['advanced-electronics'].prerequisites, "resin-1")
 
--- Increase cost of resin->rubber smelting to encourage use of angels rubber synthesis
+--[[
+======
+Rubber
+======
+Increase cost of resin->rubber smelting to encourage use of angels rubber synthesis
+
+Tech: Rubbers
+- Resin > Rubber  (previously unlocked from start)
+- Rubber > Insulated Wire (previously unlocked by Electronics)
+
+Tech: Rubber
+- Liquid Rubber
+- Liquid Rubber > Rubber
+--]]
 lib.substingredient('bob-rubber', 'resin', nil, 4)
+bobmods.lib.tech.remove_recipe_unlock('electronics', 'insulated-cable')
+bobmods.lib.tech.remove_recipe_unlock('rubbers', 'solid-rubber')
+bobmods.lib.tech.add_recipe_unlock('rubbers', 'bob-rubber')
+bobmods.lib.tech.add_recipe_unlock('rubbers', 'insulated-cable')
+bobmods.lib.tech.remove_prerequisite('rubbers', 'angels-oil-processing')
+bobmods.lib.recipe.enabled('bob-rubber', false)
 
 -- No wood for electric poles, use wood bricks instead
 data.raw.recipe['small-electric-pole'].ingredients = {{ "wood-bricks", 1 }, { "copper-cable", 2}}
