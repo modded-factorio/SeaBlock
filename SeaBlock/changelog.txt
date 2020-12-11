@@ -22,6 +22,8 @@ Date: ???
     - Moved Algae Farm 2 from Green Algae Processing to Blue Algae Processing
     - Moved Green Algae Processing earlier in the tech tree
     - Moved Water Treatment earlier in the tech tree
+    - Enforced removal of Bob's Chemical Plants and Electrolysers
+    - Disabled Burner and Steam Powered Assembling Machines
   Bugfixes:
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal

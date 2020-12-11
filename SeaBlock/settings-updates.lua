@@ -6,6 +6,21 @@ function update_settings(arr)
   end
 end
 
+-- Angel's Petrochemical Processing
+update_settings({
+  {'angels-disable-bobs-electrolysers', 'bool-setting', true},
+  {'angels-disable-bobs-chemical-plants', 'bool-setting', true},
+  {'angels-disable-bobs-distilleries', 'bool-setting', true}
+})
+
+-- Bob's Assembling Machines
+update_settings({
+  {'bobmods-assembly-chemicalplants', 'bool-setting', false},
+  {'bobmods-assembly-electrolysers', 'bool-setting', false},
+  {'bobmods-assembly-distilleries', 'bool-setting', false},
+  {'bobmods-assembly-burner', 'bool-setting', false}
+})
+
 -- Bob's Enemies
 update_settings({
   {'bobmods-enemies-enableartifacts', 'bool-setting', true},

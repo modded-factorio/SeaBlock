@@ -54,7 +54,6 @@ for _,v in ipairs({
   'alien-artifact-green-from-basic',
   'alien-artifact-blue-from-basic',
   'alien-artifact-purple-from-basic',
-  'bob-distillery',
   'water-thermal-lithia',
   'thermal-water-filtering-1',
   'thermal-water-filtering-2',
