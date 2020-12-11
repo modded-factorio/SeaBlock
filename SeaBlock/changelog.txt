@@ -2,8 +2,7 @@
 Version: 0.5.0
 Date: ???
   Changes:
-    - Forked Sea Block
-    - Updated to 1.1
+    - Factorio 1.1 update
     - Map settings Enemy Evolution and Expansion hidden
     - Worms will only spawn if map setting Enemy Bases is enabled
     - Blue algae liquefaction recipe unlock moved from Oil processing to Gas and oil extraction
