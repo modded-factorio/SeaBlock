@@ -62,7 +62,9 @@ for _,v in ipairs({
   'slag-processing-7',
   'slag-processing-8',
   'slag-processing-9',
-  'bob-coal-from-wood'
+  'bob-coal-from-wood',
+  'angelsore1-crushed-hand',
+  'angelsore3-crushed-hand'
 }) do
   removerecipes[v] = true
 end

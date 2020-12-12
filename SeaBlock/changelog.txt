@@ -23,6 +23,7 @@ Date: ???
     - Moved Water Treatment earlier in the tech tree
     - Enforced removal of Bob's Chemical Plants and Electrolysers
     - Disabled Burner and Steam Powered Assembling Machines
+    - Disabled recipe Stiratite ore crushing by hand and Saphirite ore crushing by hand
   Bugfixes:
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal
