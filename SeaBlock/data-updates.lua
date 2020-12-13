@@ -845,3 +845,7 @@ for k,v in pairs(data.raw.technology['bio-processing-blue'].unit.ingredients) do
     break
   end
 end
+
+if data.raw.recipe['liquid-fish-atmosphere'] then
+  data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'
+end
