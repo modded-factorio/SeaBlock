@@ -276,7 +276,7 @@ Date: 24. 1. 2018
 Version: 0.2.0
 Date: 8. 1. 2018
   Features:
-    - Update for factorio 0.16
+    - Factorio 0.16 update
     - Technology tree basic tutorial.
   Changes:
     - Remove most starter technologies, adjust starting equipment.
