@@ -845,21 +845,3 @@ for k,v in pairs(data.raw.technology['bio-processing-blue'].unit.ingredients) do
     break
   end
 end
-
-local function disabletech(name)
-  if data.raw.technology[name] then
-    data.raw.technology[name].enabled = false
-  end
-end
-for _,v in pairs({
-  'water-bore-1',
-  'water-bore-2',
-  'water-bore-3',
-  'water-bore-4',
-  'coal-liquefaction',
-  'bob-distillery-2',
-  'bob-distillery-3',
-  'bob-distillery-4',
-  'bob-distillery-5'}) do
-  disabletech(v)
-end
