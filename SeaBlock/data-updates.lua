@@ -584,7 +584,6 @@ local startuptechs = {
   ['angels-solder-smelting-1'] = true,
   ['angels-coal-processing'] = true,
   ['bio-wood-processing-2'] = true,
-  ['bio-processing-green'] = true,
   ['landfill'] = true
 }
 if data.raw.technology['logistics-0'] then
