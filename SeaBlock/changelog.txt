@@ -6,7 +6,6 @@ Date: ???
     - Worms will only spawn if map setting Enemy Bases is enabled
     - Blue algae liquefaction recipe unlock moved from Oil processing to Gas and oil extraction
     - Blue algae liquefaction recipe moved from Oil Refinery to Oil and Gas Separator
-    - Electric Engines no longer require blue science
     - Prerequisite Chemical processing 1 removed from Steel processing
     - Enriched fuel block fuel value increased from 24MJ to 50MJ
     - Added setting for preferred landfill type (if LandfillPainting is installed)
@@ -28,6 +27,7 @@ Date: ???
     - Fixed missing icon "liquid-multi-phase-oil.png"
     - Removed coal and crushed coal
     - Moved recipes for Sulfur and Sulfur dioxide gas back to Sulfur processing 1
+    - Prevented Electric Engines from requiring blue science
     - Added missing science packs to Logistics System 3, Logistics Warehouses, and Logistics Silos
     - Added Thermal Water Extraction as a prerequisite for Fish Pressing
     - Fixed lab icon on Sacrificial electromagnet technology (if Science Cost Tweaker is installed)
