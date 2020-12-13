@@ -17,8 +17,7 @@ update_settings({
 update_settings({
   {'bobmods-assembly-chemicalplants', 'bool-setting', false},
   {'bobmods-assembly-electrolysers', 'bool-setting', false},
-  {'bobmods-assembly-distilleries', 'bool-setting', false},
-  {'bobmods-assembly-burner', 'bool-setting', false}
+  {'bobmods-assembly-distilleries', 'bool-setting', false}
 })
 
 -- Bob's Enemies
@@ -91,4 +90,8 @@ for k,v in pairs(setting_updates) do
       s.value = v[2]
     end
   end
+end
+
+if data.raw['bool-setting']['bobmods-assembly-burner'] then
+   data.raw['bool-setting']['bobmods-assembly-burner'].default_value = false
 end

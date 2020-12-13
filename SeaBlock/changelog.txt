@@ -20,7 +20,6 @@ Date: ???
     - Moved Green Algae Processing earlier in the tech tree
     - Moved Water Treatment earlier in the tech tree
     - Enforced removal of Bob's Chemical Plants and Electrolysers
-    - Disabled Burner and Steam Powered Assembling Machines
     - Disabled recipe Stiratite ore crushing by hand and Saphirite ore crushing by hand
     - Artificial fish water can now be made in a regular chemical plant
   Bugfixes:
