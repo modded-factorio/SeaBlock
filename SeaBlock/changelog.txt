@@ -1,6 +1,11 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.5.0
+Version: 0.5.1
 Date: ???
+  Bugfixes:
+    - Fixed crash on startup when PickerAtheneum was enabled
+---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 16.12.2020
   Changes:
     - Factorio 1.1 update
     - Worms will only spawn if map setting Enemy Bases is enabled
