@@ -149,6 +149,7 @@ lib.substingredient('solid-nitroglycerin', 'coal', 'wood-charcoal')
 lib.substingredient('carbon', 'coal', 'wood-charcoal')
 lib.substingredient('sct-mil-circuit1', 'coal', 'wood-charcoal')
 lib.substingredient('steam-science-pack', 'coal', 'wood-charcoal')
+lib.substingredient('road', 'coal', 'wood-charcoal')
 
 --data.raw.recipe['carbon-separation-2'].energy_required = 1
 lib.substingredient('carbon-separation-2', 'coal', 'wood-charcoal', 1)
