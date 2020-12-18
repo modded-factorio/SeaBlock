@@ -1,9 +1,9 @@
 if mods["LandfillPainting"] then
   local tiletypes = {
-    'landfill',
-    'landfill-dry-dirt',
     'landfill-dirt-4',
+    'landfill-dry-dirt',
     'landfill-grass-1',
+    'landfill-landfill',
     'landfill-red-desert-1',
     'landfill-sand-3'
   }
@@ -13,7 +13,7 @@ if mods["LandfillPainting"] then
       type = 'string-setting',
       name = 'sb-default-landfill',
       setting_type = 'startup',
-      default_value = tiletypes[1],
+      default_value = tiletypes[6],
       allowed_values = tiletypes
     }
   })

@@ -3,6 +3,7 @@ Version: 0.5.1
 Date: ???
   Bugfixes:
     - Fixed crash on startup when PickerAtheneum was enabled
+    - Default landfill type changed from base game Landfill to Sand
   Changes:
     - Cleared fuel value from disabled fuels
     - Added compatibility for Transport Drones mod
