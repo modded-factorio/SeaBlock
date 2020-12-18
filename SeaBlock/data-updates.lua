@@ -789,6 +789,16 @@ data.raw.fluid['gas-ethylene'].fuel_value = nil
 data.raw.fluid['gas-benzene'].fuel_value = nil
 data.raw.fluid['gas-ethanol'].fuel_value = nil
 
+-- Clear fuel value so these don't appear in Helmod's fuel picker
+data.raw.item['carbon'].fuel_emissions_multiplier = nil
+data.raw.item['carbon'].fuel_value = nil
+data.raw.item['carbon'].fuel_category = nil
+data.raw.item['coal'].fuel_emissions_multiplier = nil
+data.raw.item['coal'].fuel_value = nil
+data.raw.item['coal'].fuel_category = nil
+data.raw.item['coal-crushed'].fuel_value = nil
+data.raw.item['coal-crushed'].fuel_category = nil
+
 if data.raw.fluid['glycerol'] then
   data.raw.fluid['glycerol'].fuel_value = nil
 end

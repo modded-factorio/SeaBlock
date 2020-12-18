@@ -3,6 +3,8 @@ Version: 0.5.1
 Date: ???
   Bugfixes:
     - Fixed crash on startup when PickerAtheneum was enabled
+  Changes:
+    - Cleared fuel value from disabled fuels
   Info:
     - Added incompatibility with A Sea Block Config. It has been merged in and should not be installed
 ---------------------------------------------------------------------------------------------------
