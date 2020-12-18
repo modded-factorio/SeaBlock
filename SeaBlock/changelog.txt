@@ -4,6 +4,7 @@ Date: ???
   Bugfixes:
     - Fixed crash on startup when PickerAtheneum was enabled
     - Default landfill type changed from base game Landfill to Sand
+    - Fixed Basic circuit board tech icon issue with graphics reskin mods
   Changes:
     - Cleared fuel value from disabled fuels
     - Added compatibility for Transport Drones mod

@@ -34,6 +34,12 @@ for _, v in pairs(reactors) do
 end
 
 
+-- Refresh icon as it may have been overwritten
+data.raw.tool['sb-basic-circuit-board-tool'].icon = data.raw.item['basic-circuit-board'].icon
+data.raw.tool['sb-basic-circuit-board-tool'].icon_size = data.raw.item['basic-circuit-board'].icon_size
+data.raw.tool['sb-basic-circuit-board-tool'].icon_mipmaps = data.raw.item['basic-circuit-board'].icon_mipmaps
+
+
 require "data-final-fixes/logistics"
 require "data-final-fixes/unobtainable_items"
 require "data-final-fixes/mapgen"
