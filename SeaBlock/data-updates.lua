@@ -513,7 +513,10 @@ if data.raw.technology['sct-lab-t1'] then
   for k,v in pairs(data.raw.technology['sct-lab-t1'].effects) do
     table.insert(data.raw.technology['bio-wood-processing'].effects, v)
   end
+  -- Remove empty SCT Lab tech
   data.raw.technology['sct-lab-t1'].effects = {}
+  data.raw.technology['sct-lab-t1'].enabled = false
+  data.raw.technology['sct-lab-t1'].hidden = true
 else
   table.insert(data.raw.technology['bio-wood-processing'].effects,
     {type = "unlock-recipe", recipe = "lab"})

@@ -10,6 +10,7 @@ Date: ???
     - Cleared fuel value from disabled fuels
     - Added compatibility for Transport Drones mod
     - Angel's Petrochemical Processing setting Enable converter valve and conversion recipes defaults to false
+    - Removed empty SCT lab tech
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 Date: 16.12.2020
