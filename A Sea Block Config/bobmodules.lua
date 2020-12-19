@@ -1,3 +1,4 @@
+-- Bob's Modules
 seablockconfig:extend({
   {'bobmods-modules-enablegreenmodules', 'bool-setting', false},
   {'bobmods-modules-enablerawspeedmodules', 'bool-setting', false},
@@ -23,4 +24,3 @@ seablockconfig:extend({
   {'bobmods-modules-start-penalty-pollution', 'double-setting', 0.02},
   {'bobmods-modules-start-penalty-consumption', 'double-setting', 0.4}
 })
-

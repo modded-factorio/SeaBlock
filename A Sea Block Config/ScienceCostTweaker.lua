@@ -1,3 +1,4 @@
+-- ScienceCostTweaker Mod (mexmer)
 seablockconfig:extend({
   {'sct-recipes', 'string-setting', 'bobsmods'},
 })

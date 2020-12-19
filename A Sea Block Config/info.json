@@ -1,7 +1,7 @@
 {
   "name": "A Sea Block Config",
-  "version": "0.4.0",
-  "factorio_version": "0.18",
+  "version": "0.5.1",
+  "factorio_version": "1.1",
   "title": "A Sea Block Config",
   "author": "Trainwreck",
   "description": "Sets SeaBlock preferred settings in other mods.",

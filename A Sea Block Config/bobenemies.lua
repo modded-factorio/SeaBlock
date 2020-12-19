@@ -1,3 +1,4 @@
+--- Bob's Enemies
 seablockconfig:extend({
   {'bobmods-enemies-enableartifacts', 'bool-setting', true},
   {'bobmods-enemies-enablesmallartifacts', 'bool-setting', true},

@@ -8,8 +8,11 @@ function seablockconfig:extend(arr)
   end
 end
 
-require "bobplates"
+require "angelspetrochem"
+require "bobassembly"
 require "bobenemies"
-require "bobmodules"
 require "bobmining"
+require "bobmodules"
+require "bobplates"
+require "reskins-bobs"
 require "ScienceCostTweaker"

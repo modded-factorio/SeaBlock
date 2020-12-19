@@ -9,6 +9,7 @@
   "description": "No ore patches, expand from a small island. Also install the 'Sea Block Pack' mod for a complete modpack",
   "dependencies": [
     "base",
+    "A Sea Block Config",
     "angelsbioprocessing",
     "angelsrefining",
     "angelspetrochem",
@@ -21,7 +22,6 @@
     "? A Sea Block Config",
     "? LandfillPainting",
     "? ScienceCostTweakerM",
-    "? SpaceMod",
-    "! A Sea Block Config"
+    "? SpaceMod"
   ]
 }

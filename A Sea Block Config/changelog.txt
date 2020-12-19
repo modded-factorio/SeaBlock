@@ -1,4 +1,13 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: ???
+  Changes:
+    - Factorio 1.1 update
+    - Disabled Bob's Chemical Plants, Electrolysers, and Distilleries
+    - Removed logistics changes (moved to Sea Block)
+    - Artisanal Reskins: Bob's Mods setting Circuit style set to Colored Vanilla
+    - Disabled Bob's Steam Mining Drills
+---------------------------------------------------------------------------------------------------
 Version: 0.4.0
 Date: 10. 2. 2020
   Changes:
