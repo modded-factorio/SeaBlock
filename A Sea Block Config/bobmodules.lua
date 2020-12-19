@@ -1,0 +1,26 @@
+seablockconfig:extend({
+  {'bobmods-modules-enablegreenmodules', 'bool-setting', false},
+  {'bobmods-modules-enablerawspeedmodules', 'bool-setting', false},
+  {'bobmods-modules-enablerawproductivitymodules', 'bool-setting', false},
+  {'bobmods-modules-enablegodmodules', 'bool-setting', false},
+  {'bobmods-modules-enableproductivitylimitation', 'bool-setting', true},
+  {'bobmods-modules-productivityhasspeed', 'bool-setting', true},
+  {'bobmods-modules-transmitproductivity', 'bool-setting', false},
+  {'bobmods-modules-perlevel-bonus-speed', 'double-setting', 0.05},
+  {'bobmods-modules-perlevel-bonus-pollution', 'double-setting', 0.025},
+  {'bobmods-modules-perlevel-bonus-consumption', 'double-setting', 0.05},
+  {'bobmods-modules-perlevel-bonus-productivity', 'double-setting', 0.015},
+  {'bobmods-modules-perlevel-bonus-pollutioncreate', 'double-setting', 0.2},
+  {'bobmods-modules-perlevel-penalty-speed', 'double-setting', 0},
+  {'bobmods-modules-perlevel-penalty-pollution', 'double-setting', 0.01},
+  {'bobmods-modules-perlevel-penalty-consumption', 'double-setting', 0.05},
+  {'bobmods-modules-start-bonus-speed', 'double-setting', 0.2},
+  {'bobmods-modules-start-bonus-pollution', 'double-setting', 0},
+  {'bobmods-modules-start-bonus-consumption', 'double-setting', 0.2},
+  {'bobmods-modules-start-bonus-productivity', 'double-setting', 0},
+  {'bobmods-modules-start-bonus-pollutioncreate', 'double-setting', 0},
+  {'bobmods-modules-start-penalty-speed', 'double-setting', 0.15},
+  {'bobmods-modules-start-penalty-pollution', 'double-setting', 0.02},
+  {'bobmods-modules-start-penalty-consumption', 'double-setting', 0.4}
+})
+
