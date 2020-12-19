@@ -746,6 +746,9 @@ data.raw.technology['bio-processing-brown'].prerequisites = {}
 data.raw.technology['bio-paper-1'].unit.ingredients = {}
 data.raw.technology['landfill'].unit.ingredients = {}
 data.raw.technology['bio-processing-brown'].unit.ingredients = {}
+bobmods.lib.tech.remove_prerequisite('bio-processing-paste', 'bio-processing-brown')
+data.raw.technology['bio-processing-brown'].enabled = false
+data.raw.technology['bio-processing-brown'].hidden = true
 
 -- Make hydrazine solid fuel match fuel_value
 if data.raw.fluid['hydrazine'] then

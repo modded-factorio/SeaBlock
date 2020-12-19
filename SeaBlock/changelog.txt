@@ -11,6 +11,7 @@ Date: ???
     - Added compatibility for Transport Drones mod
     - Angel's Petrochemical Processing setting Enable converter valve and conversion recipes defaults to false
     - Removed empty SCT lab tech
+    - Removed empty Brown Algae Processing tech
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 Date: 16.12.2020
