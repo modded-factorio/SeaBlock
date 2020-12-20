@@ -835,11 +835,6 @@ for k,v in pairs(data.raw.module) do
   end
 end
 
--- Update circuit board tool icon to match mod settings
-data.raw.tool['sb-basic-circuit-board-tool'].icon = data.raw.item['basic-circuit-board'].icon
-data.raw.tool['sb-basic-circuit-board-tool'].icon_mipmaps = data.raw.item['basic-circuit-board'].icon_mipmaps
-data.raw.tool['sb-basic-circuit-board-tool'].icon_size = data.raw.item['basic-circuit-board'].icon_size
-
 --[[
   Make Green Algae 2 available sooner:
   - Make Red Algae depend on Blue Algae instead of Green Algae

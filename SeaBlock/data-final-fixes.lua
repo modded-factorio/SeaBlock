@@ -34,11 +34,12 @@ for _, v in pairs(reactors) do
 end
 
 
--- Refresh icon as it may have been overwritten
-data.raw.tool['sb-basic-circuit-board-tool'].icon = data.raw.item['basic-circuit-board'].icon
-data.raw.tool['sb-basic-circuit-board-tool'].icon_size = data.raw.item['basic-circuit-board'].icon_size
-data.raw.tool['sb-basic-circuit-board-tool'].icon_mipmaps = data.raw.item['basic-circuit-board'].icon_mipmaps
-
+-- Refresh circuit board icon as it may have been overwritten
+if data.raw.tool['sb-basic-circuit-board-tool'] and data.raw.item['basic-circuit-board'] then
+  data.raw.tool['sb-basic-circuit-board-tool'].icon = data.raw.item['basic-circuit-board'].icon
+  data.raw.tool['sb-basic-circuit-board-tool'].icon_size = data.raw.item['basic-circuit-board'].icon_size
+  data.raw.tool['sb-basic-circuit-board-tool'].icon_mipmaps = data.raw.item['basic-circuit-board'].icon_mipmaps
+end
 
 require "data-final-fixes/logistics"
 require "data-final-fixes/unobtainable_items"
