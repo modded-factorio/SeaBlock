@@ -52,3 +52,15 @@ data.raw.technology['electronics'].prerequisites = {
 if data.raw.recipe['liquid-fish-atmosphere'] then
   data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'
 end
+
+if data.raw.technology['pumpjack'] then
+  data.raw.technology['pumpjack'].hidden = true
+end
+
+if not seablock.trigger.mining_productivity then
+  for i = 1, 4, 1 do
+    if data.raw.technology['mining-productivity-' .. i] then
+      data.raw.technology['mining-productivity-' .. i].hidden = true
+    end
+  end
+end

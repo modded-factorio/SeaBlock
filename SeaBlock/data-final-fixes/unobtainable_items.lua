@@ -46,7 +46,8 @@ local removerecipes = {}
 for _,v in ipairs({
   'bob-resin-wood',
   'burner-mining-drill',
-  --'electric-mining-drill',
+  'electric-mining-drill',
+  'pumpjack',
   'slag-processing-nuc',
   'alien-artifact-red-from-basic',
   'alien-artifact-orange-from-basic',
@@ -76,18 +77,18 @@ for _,v in ipairs({
   'coal',
   'coal-crushed',
   'circuit-wood-fiber-board',
-
   'liquid-condensates',
   'angels-barrel-liquid-condensates',
   'liquid-condensates-barrel',
-
   'gas-natural-1',
   'angels-barrel-gas-natural-1',
   'gas-natural-1-barrel',
-
   'lithia-water',
   'angels-barrel-lithia-water',
-  'lithia-water-barrel'
+  'lithia-water-barrel',
+  'burner-mining-drill',
+  'electric-mining-drill',
+  'pumpjack'
 }) do
   unobtainable[v] = {}
 end
