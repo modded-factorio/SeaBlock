@@ -21,19 +21,9 @@ data:extend({
 },
 {
   type = "tool",
-  name = "sb-algae-green-tool",
-  localised_name = {"item-name.algae-green"},
-  icon = "__angelsbioprocessing__/graphics/icons/algae-green.png",
-  icon_size = 32,
-  flags = {"hidden"},
-  stack_size = 100,
-  durability = 1
-},
-{
-  type = "tool",
-  name = "sb-sulfur-tool",
-  localised_name = {"item-name.sulfur"},
-  icon = "__angelspetrochem__/graphics/icons/solid-sulfur.png",
+  name = "sb-algae-brown-tool",
+  localised_name = {"item-name.algae-brown"},
+  icon = "__angelsbioprocessing__/graphics/icons/algae-brown.png",
   icon_size = 32,
   flags = {"hidden"},
   stack_size = 100,
@@ -56,15 +46,8 @@ data:extend({
   icon = "__SeaBlock__/graphics/technology/ore.png",
   icon_size = 128,
   effects = {
-    {type = "unlock-recipe", recipe = "basic-circuit-board"},
-    {type = "unlock-recipe", recipe = "copper-cable"},
     {type = "unlock-recipe", recipe = "algae-farm"},
-    {type = "unlock-recipe", recipe = "algae-brown"},
-    {type = "unlock-recipe", recipe = "hydro-plant"},
-    {type = "unlock-recipe", recipe = "clarifier"},
-    {type = "unlock-recipe", recipe = "water-purification"},
-    {type = "unlock-recipe", recipe = "iron-chest"},
-    {type = "unlock-recipe", recipe = "solid-alginic-acid"}
+    {type = "unlock-recipe", recipe = "algae-green-simple"},
   },
   unit = {
     count = 1,
@@ -75,20 +58,36 @@ data:extend({
 {
   type = "technology",
   name = "sb-startup2",
+  icon = "__angelsbioprocessing__/graphics/technology/algae-farm-tech.png",
+  icon_size = 128,
+  effects = {
+    {type = "unlock-recipe", recipe = "basic-circuit-board"},
+    {type = "unlock-recipe", recipe = "copper-cable"}
+  },
+  prerequisites = {"sb-startup1"},
+  unit = {
+    count = 1,
+    ingredients = {{"sb-algae-brown-tool", 1}},
+    time = 5
+  }
+},
+{
+  type = "technology",
+  name = "sb-startup3",
   icon = "__SeaBlock__/graphics/technology/basic-circuit-board.png",
   icon_size = 128,
   effects = {
     {type = "unlock-recipe", recipe = "inserter"},
-    {type = "unlock-recipe", recipe = "algae-green-simple"},
     {type = "unlock-recipe", recipe = "pipe"},
     {type = "unlock-recipe", recipe = "pipe-to-ground"},
     {type = "unlock-recipe", recipe = "copper-pipe"},
     {type = "unlock-recipe", recipe = "copper-pipe-to-ground"},
     {type = "unlock-recipe", recipe = "iron-stick"},
     {type = "unlock-recipe", recipe = "iron-gear-wheel"},
-    {type = "unlock-recipe", recipe = "burner-inserter"}
+    {type = "unlock-recipe", recipe = "burner-inserter"},
+    {type = "unlock-recipe", recipe = "iron-chest"}
   },
-  prerequisites = {"sb-startup1"},
+  prerequisites = {"bio-wood-processing", "bio-paper-1"},
   unit = {
     count = 1,
     ingredients = {{"sb-basic-circuit-board-tool", 1}},
@@ -103,7 +102,7 @@ data:extend({
   effects = {
     {type = "unlock-recipe", recipe = "automation-science-pack"}
   },
-  prerequisites = {"bio-wood-processing"},
+  prerequisites = {"sb-startup3"},
   unit = {
     count = 1,
     ingredients = {{"sb-lab-tool", 1}},
@@ -121,9 +120,7 @@ else
   data.raw.recipe['automation-science-pack'].enabled = false
 end
 if data.raw.recipe['basic-transport-belt'] then
-  table.insert(data.raw.technology['sb-startup2'].effects,
-    {type = "unlock-recipe", recipe = "basic-transport-belt"})
+  table.insert(data.raw.technology['sb-startup3'].effects, {type = "unlock-recipe", recipe = "basic-transport-belt"})
 else
-  table.insert(data.raw.technology['sb-startup2'].effects,
-    {type = "unlock-recipe", recipe = "transport-belt"})
+  table.insert(data.raw.technology['sb-startup3'].effects, {type = "unlock-recipe", recipe = "transport-belt"})
 end

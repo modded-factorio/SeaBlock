@@ -2,9 +2,7 @@ seablock = {}
 
 seablock.giveresearch = function(force)
   local techs = {
-    'landfill',
-    'bio-paper-1',
-    'bio-processing-brown'
+    'landfill'
   }
   local newforce = force.technologies['sb-startup1'].researched == false
   for _,v in ipairs(techs) do
@@ -21,7 +19,7 @@ seablock.giveitems = function(entity)
     landfill = settings.startup['sb-default-landfill'].value
   end
   local stuff = {
-    {landfill, 1000},
+    {"landfill", 1000},
     {"stone", 50},
     {"small-electric-pole", 50},
     {"small-lamp", 12},
@@ -30,9 +28,9 @@ seablock.giveitems = function(entity)
     {"stone-pipe", 100},
     {"stone-pipe-to-ground", 50},
     {"stone-brick", 500},
-    {"pipe", 27},
+    {"pipe", 22},
     {"copper-pipe", 5},
-    {"iron-gear-wheel", 25},
+    {"iron-gear-wheel", 20},
     {"iron-stick", 96},
     {"pipe-to-ground", 2}
   }
@@ -90,21 +88,23 @@ local function init()
     remote.call("freeplay", "set_disable_crashsite", true)
   end
   global.unlocks = {
-    ['angels-ore3-crushed'] = 'sb-startup1',
-    ['basic-circuit-board'] = 'sb-startup2',
-    ['algae-green'] = 'bio-wood-processing',
+    ['angels-ore3-crushed'] = {'sb-startup1'},
+    ['algae-brown'] = {'sb-startup2', 'bio-wood-processing', 'bio-paper-1'},
+    ['basic-circuit-board'] = {'sb-startup3', 'sct-lab-t1'},
   }
   if game.technology_prototypes['sct-automation-science-pack'] then
-    global.unlocks['lab'] = 'sct-automation-science-pack'
+    global.unlocks['lab'] = {'sct-automation-science-pack'}
   else
-    global.unlocks['lab'] = 'sb-startup4'
+    global.unlocks['lab'] = {'sb-startup4'}
   end
 end
 local function haveitem(player, itemname, crafted)
   local unlock = global.unlocks[itemname]
   -- Special case for basic-circuit because it is part of starting equipment
   if unlock and (itemname ~= 'basic-circuit-board' or crafted) then
-    player.force.technologies[unlock].researched = true
+    for _,v in ipairs(unlock) do
+      player.force.technologies[v].researched = true
+    end
   end
 end
 
@@ -136,8 +136,10 @@ script.on_event(defines.events.on_player_main_inventory_changed, function(e)
     return
   end
   for k,v in pairs(global.unlocks) do
-    if not player.force.technologies[v].researched and inv.get_item_count(k) > 0 then
-      haveitem(player, k, false)
+    for _,v2 in ipairs(v) do
+      if player.force.technologies[v2] and not player.force.technologies[v2].researched and inv.get_item_count(k) > 0 then
+        haveitem(player, k, false)
+      end
     end
   end
 end)

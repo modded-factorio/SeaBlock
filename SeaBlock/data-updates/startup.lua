@@ -1,15 +1,13 @@
 local lib = require "lib"
 
 -- First stage:                    pipe  pipe-to-ground iron-gear iron-stick
--- Electrolyser  5 circuit board                                  20
+-- Electrolyser  5 circuit board                                  20*4
 -- Liquifier     5 circuit board         2
 -- Flare stack   5 circuit board*2 10*2
 -- Offshore pump 2 circuit board*2 1*2                  10*2
 -- Crystallizer  5 circuit board                                             5 copper-pipe
 
 -- Second stage:
--- Hydro plant   5 circuit board   5
--- Clarifier     5 circuit board                        5
 -- Algae farm    5 circuit board                                  16
 
 local knowningredients = {
@@ -36,12 +34,6 @@ local knowningredients = {
   {'copper-pipe', 5},
   {'stone-brick', 10}
 },
-['hydro-plant'] = {
-  {'iron-plate', 10},
-  {'basic-circuit-board', 5},
-  {'pipe', 5},
-  {'stone-brick', 10}
-},
 ['algae-farm'] = {
   {'iron-plate', 10},
   {'basic-circuit-board', 5},
@@ -52,12 +44,6 @@ local knowningredients = {
   {'iron-plate', 5},
   {'basic-circuit-board', 5},
   {'pipe', 10},
-  {'stone-brick', 10}
-},
-['clarifier'] = {
-  {'iron-plate', 10},
-  {'basic-circuit-board', 5},
-  {'iron-gear-wheel', 5},
   {'stone-brick', 10}
 },
 ['seafloor-pump'] = {
@@ -108,17 +94,11 @@ for k,v in pairs(knowningredients) do
   end
 end
 
--- unlock lab and optional components with bio-wood-processing
+-- unlock lab and optional components with Basic Circuit Board
 if data.raw.technology['sct-lab-t1'] then
-  for k,v in pairs(data.raw.technology['sct-lab-t1'].effects) do
-    table.insert(data.raw.technology['bio-wood-processing'].effects, v)
-  end
-  -- Remove empty SCT Lab tech
-  data.raw.technology['sct-lab-t1'].effects = {}
-  data.raw.technology['sct-lab-t1'].enabled = false
-  data.raw.technology['sct-lab-t1'].hidden = true
+  bobmods.lib.tech.add_prerequisite('sct-lab-t1', 'sb-startup3')
 else
-  table.insert(data.raw.technology['bio-wood-processing'].effects, {type = "unlock-recipe", recipe = "lab"})
+  bobmods.lib.tech.add_recipe_unlock('sb-startup3', 'lab')
   if data.raw.recipe['lab'].normal then
     data.raw.recipe['lab'].normal.enabled = false
     data.raw.recipe['lab'].expensive.enabled = false
@@ -141,8 +121,6 @@ local startuprecipes = {
   ['sb-water-mineralized-crystallization'] = true,
   ['iron-plate'] = true,
   ['copper-plate'] = true,
-  ['angelsore1-crushed-hand'] = true,
-  ['angelsore3-crushed-hand'] = true,
   ['angelsore1-crushed-smelting'] = true,
   ['angelsore3-crushed-smelting'] = true,
   ['wood-pellets'] = true,
@@ -154,9 +132,12 @@ local startuprecipes = {
 
 local sbtechs = {
   ['sb-startup1'] = true,
-  ['sb-startup2'] = true,
+  ['bio-paper-1'] = true,
   ['bio-wood-processing'] = true,
-  ['sb-startup4'] = true
+  ['sb-startup2'] = true,
+  ['sb-startup3'] = true,
+  ['sb-startup4'] = true,
+  ['landfill'] = true
 }
 if data.raw.technology['sct-lab-t1'] then
   sbtechs['sct-lab-t1'] = true
@@ -198,10 +179,15 @@ end
 local lasttech = 'sb-startup4'
 if data.raw.technology['sct-automation-science-pack'] then
   lasttech = 'sct-automation-science-pack'
-  data.raw.technology['sct-automation-science-pack'].prerequisites = { 'bio-wood-processing' }
+  bobmods.lib.tech.add_prerequisite('sct-automation-science-pack', 'sct-lab-t1')
   data.raw.technology['sct-automation-science-pack'].unit = {
     count = 1,
     ingredients = {{"sb-lab-tool", 1}},
+    time = 5
+  }
+  data.raw.technology['sct-lab-t1'].unit = {
+    count = 1,
+    ingredients = {},
     time = 5
   }
   data.raw.technology['sb-startup4'].enabled = false
@@ -250,8 +236,7 @@ end
 for k,v in pairs(data.raw.recipe) do
   local r = v.normal or v
   if (r.enabled == nil or r.enabled == true or r.enabled == 'true') and
-    ironrecipe(v) and
-    not v.hidden then
+    ironrecipe(v) and not v.hidden then
     if not movedrecipes[k] then
       table.insert(disabledrecipes, k)
     end
@@ -310,7 +295,7 @@ end
 data.raw.technology['bio-wood-processing'].prerequisites = {'sb-startup2'}
 data.raw.technology['bio-wood-processing'].unit = {
   count = 1,
-  ingredients = {{"sb-algae-green-tool", 1}},
+  ingredients = {},
   time = 5
 }
 lib.takeeffect('bio-wood-processing', 'wood-pellets')
@@ -319,4 +304,13 @@ lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 3)
 table.insert(data.raw.technology['bio-wood-processing'].effects, 3, {type = 'unlock-recipe', recipe = 'small-electric-pole'})
 data.raw.technology['bio-wood-processing-2'].prerequisites = {lasttech}
 
-
+-- Make bio-paper-1 a startup tutorial tech
+data.raw.technology['bio-paper-1'].prerequisites = {'sb-startup2'}
+data.raw.technology['bio-paper-1'].unit = {
+  count = 1,
+  ingredients = {},
+  time = 5
+}
+bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'solid-alginic-acid')
+bobmods.lib.tech.add_recipe_unlock('bio-paper-1', 'solid-alginic-acid')
+bobmods.lib.tech.remove_prerequisite('bio-paper-2', 'bio-paper-1')
