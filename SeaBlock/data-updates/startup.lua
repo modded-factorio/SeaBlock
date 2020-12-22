@@ -147,34 +147,33 @@ if data.raw.technology['sct-automation-science-pack'] then
 end
 
 local startuptechs = {
-  ['automation'] = true,
-  ['logistics'] = true,
-  ['optics'] = true,
-  ['gun-turret'] = true,
-  ['stone-wall'] = true,
-  ['basic-chemistry'] = true,
-  ['ore-crushing'] = true,
-  ['military'] = true,
-  ['angels-sulfur-processing-1'] = true,
-  ['water-treatment'] = true,
-  ['water-washing-1'] = true,
-  ['slag-processing-1'] = true,
-  ['angels-fluid-control'] = true,
-  ['angels-metallurgy-1'] = true,
-  ['angels-iron-smelting-1'] = true,
-  ['angels-copper-smelting-1'] = true,
-  ['angels-tin-smelting-1'] = true,
-  ['angels-lead-smelting-1'] = true,
-  ['angels-solder-smelting-1'] = true,
-  ['angels-coal-processing'] = true,
-  ['bio-wood-processing-2'] = true,
-  ['landfill'] = true
+  ['automation'] = {true},
+  ['logistics'] = {true},
+  ['optics'] = {true},
+  ['gun-turret'] = {true},
+  ['stone-wall'] = {true},
+  ['basic-chemistry'] = {true},
+  ['ore-crushing'] = {true},
+  ['military'] = {true},
+  ['angels-sulfur-processing-1'] = {true},
+  ['water-treatment'] = {true},
+  ['water-washing-1'] = {true},
+  ['slag-processing-1'] = {true},
+  ['angels-fluid-control'] = {true},
+  ['angels-metallurgy-1'] = {true},
+  ['angels-iron-smelting-1'] = {true},
+  ['angels-copper-smelting-1'] = {true},
+  ['bio-wood-processing-2'] = {true},
+  ['landfill'] = {true},
+  ['steel-processing'] = {true},
+  -- Don't reduce the science pack cost of green algae
+  ['bio-processing-green'] = {false}
 }
 if data.raw.technology['logistics-0'] then
-  startuptechs['logistics-0'] = true
+  startuptechs['logistics-0'] = {true}
 end
 if data.raw.technology['basic-automation'] then
-  startuptechs['basic-automation'] = true
+  startuptechs['basic-automation'] = {true}
 end
 local lasttech = 'sb-startup4'
 if data.raw.technology['sct-automation-science-pack'] then
@@ -198,6 +197,7 @@ for k,v in pairs(sbtechs) do
   for _,effect in pairs(data.raw.technology[k].effects or {}) do
     movedrecipes[effect.recipe] = true
   end
+  data.raw.technology[k].ignore_tech_cost_multiplier = true
 end
 local disabledrecipes = {}
 
@@ -284,11 +284,12 @@ for k,_ in pairs(startuprecipes) do
 end
 
 -- Limit research required for startup techs.
-for k,_ in pairs(startuptechs) do
-  if data.raw.technology[k].unit.count > 20 then
+for k,v in pairs(startuptechs) do
+  if v[1] and data.raw.technology[k].unit.count > 20 then
     data.raw.technology[k].unit.count = 20
     data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
   end
+  data.raw.technology[k].ignore_tech_cost_multiplier = true
 end
 
 -- Make bio-wood-processing a startup tutorial tech

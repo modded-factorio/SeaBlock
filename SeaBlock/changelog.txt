@@ -16,6 +16,7 @@ Date: ???
     - Brown algae processing moved later in the tech tree
     - Lithia salt and Sodium carbonate moved to brown algae processing
     - Bob's Tech setting Science Pack colors update default value set to false. Currently only applies if SCT is disabled
+    - Startup techs ignore tech cost multiplier
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 Date: 16.12.2020
