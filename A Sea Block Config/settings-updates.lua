@@ -14,7 +14,7 @@ end
 
 for k,v in pairs(seablockconfig.data) do
   local t = v[1] -- t:setting-type (bool-setting | int-setting | double-setting | string-setting)
-  if t then
+  if data.raw[t] then
     local s = data.raw[t][k]
     if s then
       s.hidden = true
