@@ -64,3 +64,8 @@ if not seablock.trigger.mining_productivity then
     end
   end
 end
+
+-- Add prerequisite for Tin and Lead
+if settings.startup['bobmods-logistics-beltoverhaul'].value then
+  bobmods.lib.tech.add_prerequisite('logistics', 'slag-processing-1')
+end

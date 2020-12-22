@@ -19,6 +19,7 @@ Date: ???
     - Startup techs ignore tech cost multiplier
     - Hid Electric mining drill and pumpjack
     - Hid Mining Productivity techs (unless Seablock Mining mod is enabled)
+    - Added Slag Processing 1 as a prerequisite for Logistics (if Bob's logistics setting Transport belt overhaul is enabled)
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 Date: 16.12.2020
