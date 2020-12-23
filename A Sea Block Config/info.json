@@ -4,7 +4,7 @@
   "factorio_version": "1.1",
   "title": "A Sea Block Config",
   "author": "Trainwreck",
-  "description": "Sets SeaBlock preferred settings in other mods.",
+  "description": "Sets Sea Block preferred settings in other mods.",
   "dependencies": [
     "base"
   ]

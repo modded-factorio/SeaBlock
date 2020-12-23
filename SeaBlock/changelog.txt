@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.1
-Date: ???
+Date: 23.12.2020
   Bugfixes:
     - Fixed crash on startup when PickerAtheneum was enabled
     - Default landfill type changed from base game Landfill to Sand
