@@ -1,3 +1,18 @@
+log('KH test')
+local i = 0
+
+for k,v in pairs(data.raw.technology) do
+  if v.prerequisites then
+    for k2,v2 in pairs(v.prerequisites) do
+      if v2 == 'sct-automation-science-pack' then
+        i = i + 1
+      end
+    end
+  end
+end
+
+log(i)
+
 local lib = require("lib")
 
 
@@ -45,3 +60,5 @@ require "data-final-fixes/logistics"
 require "data-final-fixes/unobtainable_items"
 require "data-final-fixes/mapgen"
 require "data-final-fixes/SpaceMod"
+
+bobmods.lib.tech.prerequisite_cleanup()
