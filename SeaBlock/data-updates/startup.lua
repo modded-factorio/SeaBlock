@@ -290,6 +290,7 @@ for k,v in pairs(startuptechs) do
     data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
   end
   data.raw.technology[k].ignore_tech_cost_multiplier = true
+  data.raw.technology[k].time = 15
 end
 
 -- Make bio-wood-processing a startup tutorial tech
