@@ -21,12 +21,9 @@ end
 
 -- petroleum gas/methane has same solid fuel value as naphtha.
 data.raw.fluid['liquid-fuel-oil'].fuel_value = '1MJ'
-data.raw.fluid['light-oil'].fuel_value = '1MJ'
 data.raw.fluid['liquid-fuel'].fuel_value = '1MJ'
 data.raw.fluid['liquid-naphtha'].fuel_value = '0.5MJ'
-data.raw.fluid['heavy-oil'].fuel_value = '0.5MJ'
 data.raw.fluid['gas-methane'].fuel_value = '0.5MJ'
-data.raw.fluid['petroleum-gas'].fuel_value = '0.5MJ'
 data.raw.fluid['crude-oil'].fuel_value = '0.5MJ'
 -- 20 petroleum gas + 20 light fuel = 30 diesel
 -- 20/100*21.5 + 20/50*21.5 = 12.9MJ = 30 diesel
@@ -40,19 +37,28 @@ lib.substingredient('solid-fuel-methane', 'gas-methane', nil, 40)
 lib.substingredient('solid-fuel-naphtha', 'liquid-naphtha', nil, 40)
 lib.substingredient('solid-fuel-fuel-oil', 'liquid-fuel-oil', nil, 20)
 
-data.raw.fluid['hydrogen'].fuel_value = nil
-data.raw.fluid['gas-hydrogen'].fuel_value = nil
-data.raw.fluid['gas-ethane'].fuel_value = nil
-data.raw.fluid['gas-butane'].fuel_value = nil
-data.raw.fluid['gas-propene'].fuel_value = nil
-data.raw.fluid['gas-methanol'].fuel_value = nil
-data.raw.fluid['gas-ethylene'].fuel_value = nil
-data.raw.fluid['gas-benzene'].fuel_value = nil
-data.raw.fluid['gas-ethanol'].fuel_value = nil
-
-
-if data.raw.fluid['glycerol'] then
-  data.raw.fluid['glycerol'].fuel_value = nil
+for _,v in pairs({
+  'hydrogen',
+  'gas-hydrogen',
+  'gas-ethane',
+  'gas-butane',
+  'gas-propene',
+  'gas-methanol',
+  'gas-ethylene',
+  'gas-benzene',
+  'gas-ethanol',
+  'heavy-oil',
+  'light-oil',
+  'petroleum-gas',
+  'sour-gas',
+  'deuterium',
+  'hydrazine',
+  'alien-fire',
+  'glycerol'
+  }) do
+  if data.raw.fluid[v] then
+    data.raw.fluid[v].fuel_value = nil
+  end
 end
 
 -- Make bobpower hydrazine generator use angels hydrazine
