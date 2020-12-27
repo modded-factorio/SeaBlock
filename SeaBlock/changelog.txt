@@ -64,6 +64,20 @@ Date: 16.12.2020
     - Restored Farming 1 as a prerequisite for Arboretum 1
     - Added Wood Processing 2 as a prerequisite for Basic Chemistry
 ---------------------------------------------------------------------------------------------------
+Version: 0.4.10
+Date: 28.12.2020
+  Bugfixes:
+    - Added missing dependency Bob's Metals, Chemicals and Intermediates
+---------------------------------------------------------------------------------------------------
+Version: 0.4.9
+Date: 24.12.2020
+  Info:
+    - Merged in changes from kiwihawksseablockpatch. This is no longer required
+  Bugfixes:
+    - Fixed missing icon "liquid-multi-phase-oil.png"
+    - Removed coal and crushed coal
+    - Moved recipes for Sulfur and Sulfur dioxide gas back to Sulfur processing 1
+---------------------------------------------------------------------------------------------------
 Version: 0.4.8
 Date: 18. 8. 2020
   Changes:
