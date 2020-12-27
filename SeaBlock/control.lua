@@ -103,7 +103,9 @@ local function haveitem(player, itemname, crafted)
   -- Special case for basic-circuit because it is part of starting equipment
   if unlock and (itemname ~= 'basic-circuit-board' or crafted) then
     for _,v in ipairs(unlock) do
-      player.force.technologies[v].researched = true
+      if player.force.technologies[v] then
+        player.force.technologies[v].researched = true
+      end
     end
   end
 end
