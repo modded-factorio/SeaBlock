@@ -1,20 +1,4 @@
-log('KH test')
-local i = 0
-
-for k,v in pairs(data.raw.technology) do
-  if v.prerequisites then
-    for k2,v2 in pairs(v.prerequisites) do
-      if v2 == 'sct-automation-science-pack' then
-        i = i + 1
-      end
-    end
-  end
-end
-
-log(i)
-
 local lib = require("lib")
-
 
 -- Adjust resin production amount to how it was in petrochem 0.7.9.
 -- TODO: Revisit this after Angel adds more liquid rubber recipes
