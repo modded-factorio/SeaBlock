@@ -45,4 +45,7 @@ require "data-final-fixes/unobtainable_items"
 require "data-final-fixes/mapgen"
 require "data-final-fixes/SpaceMod"
 
+data.raw.recipe['copper-cable'].allow_decomposition = true
+data.raw.recipe['paper-bleaching-1'].allow_decomposition = true
+
 bobmods.lib.tech.prerequisite_cleanup()
