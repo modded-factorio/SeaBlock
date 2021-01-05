@@ -69,3 +69,23 @@ end
 if settings.startup['bobmods-logistics-beltoverhaul'].value then
   bobmods.lib.tech.add_prerequisite('logistics', 'slag-processing-1')
 end
+
+-- Tidy prerequisite for Bronze & Brass
+bobmods.lib.tech.add_prerequisite('alloy-processing', 'angels-bronze-smelting-1')
+if data.raw.technology['fluid-generator-1'] then
+  bobmods.lib.tech.replace_prerequisite('fluid-generator-1', 'alloy-processing', 'angels-bronze-smelting-1')
+end
+bobmods.lib.tech.replace_prerequisite('logistics-2', 'alloy-processing', 'angels-bronze-smelting-1')
+bobmods.lib.tech.remove_prerequisite('steel-mixing-furnace', 'alloy-processing')
+bobmods.lib.tech.remove_prerequisite('chemical-science-pack', 'alloy-processing')
+bobmods.lib.tech.remove_prerequisite('tungsten-alloy-processing', 'alloy-processing')
+bobmods.lib.tech.remove_prerequisite('nitinol-processing', 'alloy-processing')
+bobmods.lib.tech.remove_prerequisite('electric-mixing-furnace', 'alloy-processing')
+bobmods.lib.tech.add_prerequisite('bob-fluid-handling-2', 'alloy-processing')
+
+bobmods.lib.tech.remove_prerequisite('zinc-processing', 'electrolysis-1')
+bobmods.lib.tech.replace_prerequisite('battery-3', 'zinc-processing', 'angels-zinc-smelting-1')
+bobmods.lib.tech.replace_prerequisite('electric-pole-2', 'zinc-processing', 'angels-brass-smelting-1')
+bobmods.lib.tech.replace_prerequisite('electric-substation-2', 'zinc-processing', 'angels-brass-smelting-1')
+bobmods.lib.tech.replace_prerequisite('bob-bullets', 'zinc-processing', 'angels-gunmetal-smelting-1')
+bobmods.lib.tech.replace_prerequisite('bob-shotgun-shells', 'zinc-processing', 'angels-gunmetal-smelting-1')

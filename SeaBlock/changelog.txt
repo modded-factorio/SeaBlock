@@ -8,6 +8,7 @@ Date: ???
     - Metal mixing furnace recipes moved to Sintering oven or Blast furnace
     - Stone metal mixing furnaces are available at the start of the game
     - Bob's assembling machines mod setting Fluid burning furnaces defaults to false
+    - Renamed Brass and Bronze processing techs. Tidied up prerequisites
   Bugfixes:
     - Fixed crash in tutorial when SCT was not enabled
     - Cellulose Pulp was not usable as intermediate when hand crafting
