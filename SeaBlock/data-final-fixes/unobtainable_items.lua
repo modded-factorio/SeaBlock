@@ -88,7 +88,11 @@ for _,v in ipairs({
   'lithia-water-barrel',
   'burner-mining-drill',
   'electric-mining-drill',
-  'pumpjack'
+  'pumpjack',
+  'stone-chemical-furnace',
+  'steel-chemical-furnace',
+  'fluid-chemical-furnace',
+  'electric-chemical-furnace'
 }) do
   unobtainable[v] = {}
 end

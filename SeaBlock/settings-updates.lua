@@ -9,3 +9,7 @@ end
 if data.raw['bool-setting']['bobmods-tech-colorupdate'] then
   data.raw['bool-setting']['bobmods-tech-colorupdate'].default_value = false
 end
+
+if data.raw['bool-setting']['bobmods-assembly-oilfurnaces'] then
+  data.raw['bool-setting']['bobmods-assembly-oilfurnaces'].default_value = false
+end

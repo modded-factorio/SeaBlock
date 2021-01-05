@@ -127,7 +127,10 @@ local startuprecipes = {
   ['slag-processing-stone'] = true,
   ['water-mineralized'] = true,
   ['stone-pipe'] = true,
-  ['stone-pipe-to-ground'] = true
+  ['stone-pipe-to-ground'] = true,
+  ['stone-mixing-furnace'] = true,
+  ['stone-mixing-furnace-from-stone-furnace'] = true,
+  ['stone-furnace-from-stone-mixing-furnace'] = true
 }
 
 local sbtechs = {
@@ -167,14 +170,11 @@ local startuptechs = {
   ['landfill'] = {true},
   ['steel-processing'] = {true},
   -- Don't reduce the science pack cost of green algae
-  ['bio-processing-green'] = {false}
+  ['bio-processing-green'] = {false},
+  ['logistics-0'] = {true},
+  ['basic-automation'] = {true}
 }
-if data.raw.technology['logistics-0'] then
-  startuptechs['logistics-0'] = {true}
-end
-if data.raw.technology['basic-automation'] then
-  startuptechs['basic-automation'] = {true}
-end
+
 local lasttech = 'sb-startup4'
 if data.raw.technology['sct-automation-science-pack'] then
   lasttech = 'sct-automation-science-pack'
@@ -275,7 +275,9 @@ for _,v in pairs(disabledrecipes) do
 end
 for k,_ in pairs(startuprecipes) do
   local recipe = data.raw.recipe[k]
-  if recipe.normal then
+  if not recipe then
+    -- Do nothing
+  elseif recipe.normal then
     recipe.normal.enabled = true
     recipe.expensive.enabled = true
   else
@@ -285,12 +287,14 @@ end
 
 -- Limit research required for startup techs.
 for k,v in pairs(startuptechs) do
-  if v[1] and data.raw.technology[k].unit.count > 20 then
-    data.raw.technology[k].unit.count = 20
-    data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
+  if data.raw.technology[k] then
+    if v[1] and data.raw.technology[k].unit.count > 20 then
+      data.raw.technology[k].unit.count = 20
+      data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
+    end
+    data.raw.technology[k].ignore_tech_cost_multiplier = true
+    data.raw.technology[k].time = 15
   end
-  data.raw.technology[k].ignore_tech_cost_multiplier = true
-  data.raw.technology[k].time = 15
 end
 
 -- Make bio-wood-processing a startup tutorial tech

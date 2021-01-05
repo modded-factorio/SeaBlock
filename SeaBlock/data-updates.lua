@@ -1,6 +1,7 @@
 require "data-updates/algae"
 require "data-updates/coal"
 require "data-updates/fuel"
+require "data-updates/furnaces"
 require "data-updates/misc"
 require "data-updates/resin"
 require "data-updates/rubber"

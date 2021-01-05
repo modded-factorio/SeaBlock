@@ -4,6 +4,10 @@ Date: ???
   Changes:
     - Cleared fuel value from disabled fluids
     - Standardise research time for startup techs
+    - Removed Bob's Chemical furnaces. Recipes moved to Angel's Chemical furnaces
+    - Metal mixing furnace recipes moved to Sintering oven or Blast furnace
+    - Stone metal mixing furnaces are available at the start of the game
+    - Bob's assembling machines mod setting Fluid burning furnaces defaults to false
   Bugfixes:
     - Fixed crash in tutorial when SCT was not enabled
 ---------------------------------------------------------------------------------------------------
