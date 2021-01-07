@@ -93,3 +93,17 @@ bobmods.lib.tech.replace_prerequisite('bob-shotgun-shells', 'zinc-processing', '
 -- Add fluid handling as a prerequisite for Oil and gas extraction
 -- Else Electric engine doesn't depend on Engine
 bobmods.lib.tech.add_prerequisite('oil-gas-extraction', 'fluid-handling')
+
+-- Move recipes that shouldn't be unlocked at startup
+bobmods.lib.tech.add_recipe_unlock('geode-crystallization-1', 'bob-ruby-3')
+bobmods.lib.tech.add_recipe_unlock('geode-crystallization-1', 'bob-sapphire-3')
+bobmods.lib.tech.add_recipe_unlock('geode-crystallization-1', 'bob-emerald-3')
+bobmods.lib.tech.add_recipe_unlock('geode-crystallization-1', 'bob-amethyst-3')
+bobmods.lib.tech.add_recipe_unlock('geode-crystallization-1', 'bob-topaz-3')
+bobmods.lib.tech.add_recipe_unlock('geode-crystallization-1', 'bob-diamond-3')
+bobmods.lib.recipe.enabled('bob-ruby-3', false)
+bobmods.lib.recipe.enabled('bob-sapphire-3', false)
+bobmods.lib.recipe.enabled('bob-emerald-3', false)
+bobmods.lib.recipe.enabled('bob-amethyst-3', false)
+bobmods.lib.recipe.enabled('bob-topaz-3', false)
+bobmods.lib.recipe.enabled('bob-diamond-3', false)
