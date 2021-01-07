@@ -13,6 +13,7 @@ Date: ???
     - Fixed crash in tutorial when SCT was not enabled
     - Cellulose Pulp was not usable as intermediate when hand crafting
     - Fixed Total raw tooltip for Basic circuit board
+    - Fixed Electric engine tech did not require Engine
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.1
 Date: 23.12.2020

@@ -89,3 +89,7 @@ bobmods.lib.tech.replace_prerequisite('electric-pole-2', 'zinc-processing', 'ang
 bobmods.lib.tech.replace_prerequisite('electric-substation-2', 'zinc-processing', 'angels-brass-smelting-1')
 bobmods.lib.tech.replace_prerequisite('bob-bullets', 'zinc-processing', 'angels-gunmetal-smelting-1')
 bobmods.lib.tech.replace_prerequisite('bob-shotgun-shells', 'zinc-processing', 'angels-gunmetal-smelting-1')
+
+-- Add fluid handling as a prerequisite for Oil and gas extraction
+-- Else Electric engine doesn't depend on Engine
+bobmods.lib.tech.add_prerequisite('oil-gas-extraction', 'fluid-handling')
