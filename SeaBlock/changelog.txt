@@ -14,6 +14,7 @@ Date: ???
     - Reshuffled early game smelting technologies and recipe unlocks
     - Disabled recipes Silicon > Glass and Silver ore > Silver plate
     - Removed recipe Carbon > Carbon Dioxide
+    - Moved garden duplication recipes to Alien farming
   Bugfixes:
     - Fixed crash in tutorial when SCT was not enabled
     - Cellulose Pulp was not usable as intermediate when hand crafting
