@@ -94,36 +94,19 @@ bobmods.lib.tech.replace_prerequisite('bob-shotgun-shells', 'zinc-processing', '
 bobmods.lib.tech.add_prerequisite('oil-gas-extraction', 'fluid-handling')
 
 -- Move recipes that shouldn't be unlocked at startup
-local function MoveStartupRecipes(recipes, technology)
-  for _,v in pairs(recipes) do
-    bobmods.lib.tech.add_recipe_unlock(technology, v)
-    bobmods.lib.recipe.enabled(v, false)
-  end
-end
-
-MoveStartupRecipes(
-  {
-    'bob-ruby-3',
-    'bob-sapphire-3',
-    'bob-emerald-3',
-    'bob-amethyst-3',
-    'bob-topaz-3',
-    'bob-diamond-3'
-  },
-  'geode-crystallization-1'
-)
-MoveStartupRecipes(
-  {
-    'alien-artifact-red-from-small',
-    'alien-artifact-yellow-from-small',
-    'alien-artifact-orange-from-small',
-    'alien-artifact-blue-from-small',
-    'alien-artifact-purple-from-small',
-    'alien-artifact-green-from-small',
-    'alien-artifact-from-small'
-  },
-  'bio-processing-alien-3'
-)
+lib.add_recipe_unlock('geode-crystallization-1', 'bob-ruby-3')
+lib.add_recipe_unlock('geode-crystallization-1', 'bob-sapphire-3')
+lib.add_recipe_unlock('geode-crystallization-1', 'bob-emerald-3')
+lib.add_recipe_unlock('geode-crystallization-1', 'bob-amethyst-3')
+lib.add_recipe_unlock('geode-crystallization-1', 'bob-topaz-3')
+lib.add_recipe_unlock('geode-crystallization-1', 'bob-diamond-3')
+lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-red-from-small')
+lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-yellow-from-small')
+lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-orange-from-small')
+lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-blue-from-small')
+lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-purple-from-small')
+lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-green-from-small')
+lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-from-small')
 
 bobmods.lib.tech.remove_recipe_unlock('chemical-processing-2', 'carbon-dioxide')
 lib.remove_recipe('carbon-dioxide')
