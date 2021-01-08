@@ -30,3 +30,7 @@ bobmods.lib.tech.add_new_science_pack('bio-refugium-butchery-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-fish-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
+
+-- Remove empty tech Thermal water processing
+bobmods.lib.tech.remove_prerequisite('water-treatment-4', 'thermal-water-processing')
+data.raw.technology['thermal-water-processing'].hidden = true
