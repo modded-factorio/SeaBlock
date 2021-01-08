@@ -34,3 +34,17 @@ bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
 -- Remove empty tech Thermal water processing
 bobmods.lib.tech.remove_prerequisite('water-treatment-4', 'thermal-water-processing')
 data.raw.technology['thermal-water-processing'].hidden = true
+
+-- Smelting techs don't need to depend on Coal processing 2 as carbon is unlocked earlier
+bobmods.lib.tech.remove_prerequisite('angels-aluminium-smelting-1', 'angels-coal-processing-2')
+bobmods.lib.tech.remove_prerequisite('angels-cobalt-smelting-1', 'angels-coal-processing-2')
+bobmods.lib.tech.remove_prerequisite('angels-lead-smelting-2', 'angels-coal-processing-2')
+bobmods.lib.tech.remove_prerequisite('angels-manganese-smelting-1', 'angels-coal-processing-2')
+bobmods.lib.tech.remove_prerequisite('angels-tin-smelting-2', 'angels-coal-processing-2')
+bobmods.lib.tech.remove_prerequisite('angels-titanium-smelting-1', 'angels-coal-processing-2')
+bobmods.lib.tech.remove_prerequisite('angels-zinc-smelting-2', 'angels-coal-processing-2')
+bobmods.lib.tech.remove_prerequisite('angels-chrome-smelting-1', 'angels-coal-processing-2')
+bobmods.lib.tech.remove_prerequisite('angels-iron-smelting-2', 'angels-coal-processing-2')
+-- Add a new prerequisite so Coal processing 2 isn't a dead end
+-- Probably will want this for Carbon monoxide
+bobmods.lib.tech.add_prerequisite('gas-synthesis', 'angels-coal-processing-2')
