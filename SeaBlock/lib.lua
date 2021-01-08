@@ -44,6 +44,49 @@ lib.moveeffect = function(name, fromtech, totech, insertindex)
     table.insert(data.raw.technology[totech].effects, effect)
   end
 end
+
+local function add_recipe_unlock(technology, recipe, insertindex)
+  local addit = true
+  if not technology.effects then
+    technology.effects = {}
+  end
+  for i, effect in pairs(technology.effects) do
+    if effect.type == "unlock-recipe" and effect.recipe == recipe then
+      addit = false
+    end
+  end
+  if addit then
+    bobmods.lib.recipe.enabled(recipe, false)
+    if insertindex then
+      table.insert(technology.effects, insertindex, {type = "unlock-recipe", recipe = recipe})
+    else
+      table.insert(technology.effects, {type = "unlock-recipe", recipe = recipe})
+    end
+  end
+end
+
+lib.add_recipe_unlock = function(technology, recipe, insertindex)
+  if
+    type(technology) == "string" and
+    type(recipe) == "string" and
+    data.raw.technology[technology] and
+    data.raw.recipe[recipe]
+  then
+    add_recipe_unlock(data.raw.technology[technology], recipe, insertindex)
+
+    if data.raw.technology[technology].normal then
+      add_recipe_unlock(data.raw.technology[technology].normal, recipe, insertindex)
+    end
+    if data.raw.technology[technology].expensive then
+      add_recipe_unlock(data.raw.technology[technology].expensive, recipe, insertindex)
+    end
+  else
+    log(debug.traceback())
+    bobmods.lib.error.technology(technology)
+    bobmods.lib.error.recipe(recipe)
+  end
+end
+
 lib.iteraterecipes = function(recipe, func)
   if recipe.normal then
     func(recipe.normal)
@@ -137,4 +180,29 @@ lib.tablefind = function(table, item)
   end
   return nil
 end
+
+lib.remove_recipe = function(recipe)
+  if data.raw.recipe[recipe] then
+    bobmods.lib.recipe.enabled(recipe, false)
+    if data.raw.recipe[recipe].normal then
+      data.raw.recipe[recipe].normal.hidden = true
+    end
+    if data.raw.recipe[recipe].expensive then
+      data.raw.recipe[recipe].expensive.hidden = true
+    end
+    if not data.raw.recipe[recipe].normal and not data.raw.recipe[recipe].expensive then
+      data.raw.recipe[recipe].hidden = true
+    end
+  end
+end
+
+lib.copy_icon = function(to, from)
+  if to and from then
+    to.icon = from.icon
+    to.icons = from.icons
+    to.icon_size = from.icon_size
+    to.icon_mipmaps = from.icon_mipmaps
+  end
+end
+
 return lib

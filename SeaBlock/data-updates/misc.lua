@@ -39,15 +39,14 @@ bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
 bobmods.lib.tech.replace_prerequisite('water-treatment', 'electronics', 'slag-processing-1')
 
 
-data.raw.technology['water-washing-1'].prerequisites = {'ore-crushing'} -- Allow skipping of waste water recycling
+data.raw.technology['water-washing-1'].prerequisites = {'automation'} -- Allow skipping of waste water recycling
 lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
 data.raw.technology['electronics'].prerequisites = {
   'angels-solder-smelting-basic',
-  'automation',
-  'angels-tin-smelting-1',
   'angels-coal-processing'
 }
 
+lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
 
 if data.raw.recipe['liquid-fish-atmosphere'] then
   data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'

@@ -11,6 +11,8 @@ Date: ???
     - Renamed Brass and Bronze processing techs. Tidied up prerequisites
     - Raw gem recipes unlocked by Geode crystallization 1
     - Alien artifact recipes unlocked by Alien bio processing 3
+    - Reshuffled early game smelting technologies and recipe unlocks
+    - Disabled recipes Silicon > Glass and Silver ore > Silver plate
   Bugfixes:
     - Fixed crash in tutorial when SCT was not enabled
     - Cellulose Pulp was not usable as intermediate when hand crafting
