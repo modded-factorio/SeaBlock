@@ -136,3 +136,4 @@ table.insert(data.raw.technology['thermal-water-extraction'].effects,
 
 -- Fish Pressing requires thermal water so add a prerequisite
 bobmods.lib.tech.add_prerequisite('bio-pressing-fish', 'thermal-water-extraction')
+bobmods.lib.tech.add_prerequisite('thermal-water-extraction', 'bio-processing-brown')
