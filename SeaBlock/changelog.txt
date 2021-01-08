@@ -15,6 +15,7 @@ Date: ???
     - Disabled recipes Silicon > Glass and Silver ore > Silver plate
     - Removed recipe Carbon > Carbon Dioxide
     - Moved garden duplication recipes to Alien farming
+    - Added bio science to relevant techs
     - Moved Small storage tanks to Fluid control
     - Removed empty technologies
   Bugfixes:
