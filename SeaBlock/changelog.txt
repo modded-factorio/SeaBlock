@@ -18,6 +18,7 @@ Date: ???
     - Added bio science to relevant techs
     - Moved Small storage tanks to Fluid control
     - Removed empty technologies
+    - Moved Manganese techs down a tier
   Bugfixes:
     - Fixed crash in tutorial when SCT was not enabled
     - Cellulose Pulp was not usable as intermediate when hand crafting

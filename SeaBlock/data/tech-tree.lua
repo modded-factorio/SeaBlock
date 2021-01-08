@@ -48,3 +48,19 @@ bobmods.lib.tech.remove_prerequisite('angels-iron-smelting-2', 'angels-coal-proc
 -- Add a new prerequisite so Coal processing 2 isn't a dead end
 -- Probably will want this for Carbon monoxide
 bobmods.lib.tech.add_prerequisite('gas-synthesis', 'angels-coal-processing-2')
+
+-- Move Manganese down a tier
+-- T1:
+bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-1', 'logistic-science-pack')
+bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-1', 'angels-metallurgy-2', 'angels-metallurgy-1')
+bobmods.lib.tech.add_prerequisite('angels-manganese-smelting-1', 'angels-iron-smelting-1')
+lib.moveeffect('molten-iron-smelting-2', 'angels-iron-smelting-2', 'angels-manganese-smelting-1')
+data.raw.recipe['molten-iron-smelting-2'].category = 'induction-smelting'
+
+-- T2:
+bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-2', 'chemical-science-pack')
+bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-2', 'ore-processing-2', 'ore-processing-1')
+
+-- T3:
+bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-3', 'production-science-pack')
+bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-3', 'ore-processing-3', 'ore-processing-2')
