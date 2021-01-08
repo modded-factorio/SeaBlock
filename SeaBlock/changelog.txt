@@ -13,6 +13,7 @@ Date: ???
     - Alien artifact recipes unlocked by Alien bio processing 3
     - Reshuffled early game smelting technologies and recipe unlocks
     - Disabled recipes Silicon > Glass and Silver ore > Silver plate
+    - Removed recipe Carbon > Carbon Dioxide
   Bugfixes:
     - Fixed crash in tutorial when SCT was not enabled
     - Cellulose Pulp was not usable as intermediate when hand crafting

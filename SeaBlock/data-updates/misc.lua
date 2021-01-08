@@ -124,3 +124,6 @@ MoveStartupRecipes(
   },
   'bio-processing-alien-3'
 )
+
+bobmods.lib.tech.remove_recipe_unlock('chemical-processing-2', 'carbon-dioxide')
+lib.remove_recipe('carbon-dioxide')
