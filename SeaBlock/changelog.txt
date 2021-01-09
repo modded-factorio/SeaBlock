@@ -8,7 +8,8 @@ Date: ???
     - Metal mixing furnace recipes moved to Sintering oven or Blast furnace
     - Stone metal mixing furnaces are available at the start of the game
     - Bob's assembling machines mod setting Fluid burning furnaces defaults to false
-    - Renamed Brass and Bronze processing techs. Tidied up prerequisites
+    - Renamed Brass and Bronze processing techs
+    - Tidied up tech prerequisites
     - Raw gem recipes unlocked by Geode crystallization 1
     - Alien artifact recipes unlocked by Alien bio processing 3
     - Reshuffled early game smelting technologies and recipe unlocks
