@@ -67,3 +67,38 @@ bobmods.lib.tech.replace_prerequisite('angels-aluminium-smelting-2', 'angels-man
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-3', 'production-science-pack')
 bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-3', 'ore-processing-3', 'ore-processing-2')
 bobmods.lib.tech.replace_prerequisite('angels-titanium-smelting-2', 'angels-manganese-smelting-2', 'angels-manganese-smelting-3')
+
+-- Move Silicon up a tier
+-- T1:
+bobmods.lib.tech.add_new_science_pack('angels-silicon-smelting-1', 'logistic-science-pack', 1)
+bobmods.lib.tech.replace_prerequisite('angels-silicon-smelting-1', 'angels-metallurgy-1', 'angels-metallurgy-2')
+bobmods.lib.tech.replace_prerequisite('angels-steel-smelting-2', 'angels-silicon-smelting-2', 'angels-silicon-smelting-1')
+
+-- T2:
+bobmods.lib.tech.add_new_science_pack('angels-silicon-smelting-2', 'chemical-science-pack', 1)
+bobmods.lib.tech.replace_prerequisite('angels-silicon-smelting-2', 'ore-processing-1', 'ore-processing-2')
+bobmods.lib.tech.replace_prerequisite('angels-aluminium-smelting-3', 'angels-silicon-smelting-3', 'angels-silicon-smelting-2')
+
+-- T3:
+bobmods.lib.tech.add_new_science_pack('angels-silicon-smelting-3', 'production-science-pack', 1)
+bobmods.lib.tech.replace_prerequisite('angels-silicon-smelting-3', 'ore-processing-2', 'ore-processing-3')
+bobmods.lib.tech.replace_prerequisite('angels-silicon-smelting-3', 'angels-aluminium-smelting-1', 'angels-aluminium-smelting-2')
+
+-- Move Nickel up a tier
+-- T1:
+bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-1', 'logistic-science-pack', 1)
+bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-1', 'angels-metallurgy-1', 'angels-metallurgy-2')
+bobmods.lib.tech.replace_prerequisite('angels-iron-smelting-3', 'angels-nickel-smelting-2', 'angels-nickel-smelting-1')
+
+-- T2:
+bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-2', 'chemical-science-pack', 1)
+bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-2', 'ore-processing-1', 'ore-processing-2')
+bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-2', 'strand-casting-1', 'strand-casting-2')
+bobmods.lib.tech.replace_prerequisite('angels-steel-smelting-3', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
+bobmods.lib.tech.replace_prerequisite('angels-titanium-smelting-2', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
+bobmods.lib.tech.replace_prerequisite('angels-tungsten-smelting-2', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
+
+-- T3:
+bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-3', 'production-science-pack', 1)
+bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-3', 'strand-casting-2', 'strand-casting-3')
+bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-3', 'ore-processing-2', 'ore-processing-3')

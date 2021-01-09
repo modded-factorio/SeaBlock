@@ -19,6 +19,8 @@ Date: ???
     - Moved Small storage tanks to Fluid control
     - Removed empty technologies
     - Moved Manganese techs down a tier
+    - Moved Silicon techs up a tier
+    - Moved Nickel techs up a tier
   Bugfixes:
     - Fixed crash in tutorial when SCT was not enabled
     - Cellulose Pulp was not usable as intermediate when hand crafting

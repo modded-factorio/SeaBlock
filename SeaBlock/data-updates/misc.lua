@@ -110,3 +110,5 @@ lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-from-small')
 
 bobmods.lib.tech.remove_recipe_unlock('chemical-processing-2', 'carbon-dioxide')
 lib.remove_recipe('carbon-dioxide')
+
+bobmods.lib.tech.remove_prerequisite('tungsten-processing', 'angels-nickel-smelting-1')
