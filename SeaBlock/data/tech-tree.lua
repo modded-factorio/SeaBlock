@@ -60,7 +60,10 @@ data.raw.recipe['molten-iron-smelting-2'].category = 'induction-smelting'
 -- T2:
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-2', 'chemical-science-pack')
 bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-2', 'ore-processing-2', 'ore-processing-1')
+bobmods.lib.tech.replace_prerequisite('angels-steel-smelting-2', 'angels-manganese-smelting-1', 'angels-manganese-smelting-2')
+bobmods.lib.tech.replace_prerequisite('angels-aluminium-smelting-2', 'angels-manganese-smelting-1', 'angels-manganese-smelting-2')
 
 -- T3:
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-3', 'production-science-pack')
 bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-3', 'ore-processing-3', 'ore-processing-2')
+bobmods.lib.tech.replace_prerequisite('angels-titanium-smelting-2', 'angels-manganese-smelting-2', 'angels-manganese-smelting-3')
