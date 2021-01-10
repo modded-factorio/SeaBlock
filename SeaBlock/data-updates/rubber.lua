@@ -1,26 +1,19 @@
 local lib = require "lib"
 
---[[
-======
-Rubber
-======
-Increase cost of resin->rubber smelting to encourage use of angels rubber synthesis
-
-Tech: Rubbers
-- Resin > Rubber  (previously unlocked from start)
-- Rubber > Insulated Wire (previously unlocked by Electronics)
-
-Tech: Rubber
-- Liquid Rubber
-- Liquid Rubber > Rubber
---]]
+--Increase cost of resin->rubber smelting to encourage use of angels rubber synthesis
 lib.substingredient('bob-rubber', 'resin', nil, 4)
-bobmods.lib.tech.remove_recipe_unlock('electronics', 'insulated-cable')
+
+-- Merge tech Rubbers into Rubber
 bobmods.lib.tech.remove_recipe_unlock('rubbers', 'solid-rubber')
-bobmods.lib.tech.add_recipe_unlock('rubbers', 'bob-rubber')
-bobmods.lib.tech.add_recipe_unlock('rubbers', 'insulated-cable')
-bobmods.lib.tech.remove_prerequisite('rubbers', 'angels-oil-processing')
-bobmods.lib.recipe.enabled('bob-rubber', false)
+bobmods.lib.tech.replace_prerequisite('rubber', 'rubbers', 'resin-1')
+bobmods.lib.tech.replace_prerequisite('bio-arboretum-desert-1', 'rubbers', 'rubber')
+if mods['bobpower'] then
+  bobmods.lib.tech.add_prerequisite('electric-pole-3', 'rubber')
+  bobmods.lib.tech.add_prerequisite('electric-substation-3', 'rubber')
+end
+lib.add_recipe_unlock('rubber', 'bob-rubber', 2)
+lib.moveeffect('insulated-cable', 'electronics', 'rubber')
+data.raw.technology['rubbers'].hidden = true
 
 -- Circuit network wires should not require rubber
 data.raw.recipe['green-wire'].ingredients = {{ "electronic-circuit", 1 }, { "copper-cable", 1 }}

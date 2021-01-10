@@ -5,11 +5,6 @@ local lib = require("lib")
 lib.substresult('liquid-rubber-1', 'liquid-rubber', nil, 20)
 
 
--- Reset solid-resin recipe icon to remove the II stamp
-data.raw.recipe['solid-resin'].icon = nil
-data.raw.recipe['solid-resin'].icons = nil
-
-
 -- Electric Engines: Move to green science
 bobmods.lib.tech.remove_prerequisite('electric-engine', 'angels-advanced-oil-processing')
 bobmods.lib.tech.remove_science_pack('electric-engine', 'chemical-science-pack')

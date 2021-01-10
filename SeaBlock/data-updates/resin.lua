@@ -1,10 +1,10 @@
 local lib = require "lib"
 
--- Change resin item icon to match resin recipe icon
-local resinrecipe = data.raw.recipe['solid-resin']
-if resinrecipe and (resinrecipe.icon or resinrecipe.icons) then
-  lib.copy_icon(data.raw.item['resin'], resinrecipe)
-end
-
 -- Add resin prerequisite for advanced electronics
-table.insert(data.raw.technology['advanced-electronics'].prerequisites, "resin-1")
+bobmods.lib.tech.add_prerequisite('advanced-electronics', 'resin-1')
+-- Merge tech Resins into Resin-1
+bobmods.lib.tech.remove_prerequisite('resin-1', 'resins')
+bobmods.lib.tech.remove_prerequisite('angels-stone-smelting-2', 'resins')
+bobmods.lib.tech.remove_recipe_unlock('resins', 'solid-resin')
+bobmods.lib.tech.replace_prerequisite('bio-arboretum-temperate-1', 'resins', 'resin-1')
+data.raw.technology['resins'].hidden = true
