@@ -84,10 +84,14 @@ bobmods.lib.tech.add_prerequisite('bob-fluid-handling-2', 'alloy-processing')
 
 bobmods.lib.tech.remove_prerequisite('zinc-processing', 'electrolysis-1')
 bobmods.lib.tech.replace_prerequisite('battery-3', 'zinc-processing', 'angels-zinc-smelting-1')
-bobmods.lib.tech.replace_prerequisite('electric-pole-2', 'zinc-processing', 'angels-brass-smelting-1')
-bobmods.lib.tech.replace_prerequisite('electric-substation-2', 'zinc-processing', 'angels-brass-smelting-1')
-bobmods.lib.tech.replace_prerequisite('bob-bullets', 'zinc-processing', 'angels-gunmetal-smelting-1')
-bobmods.lib.tech.replace_prerequisite('bob-shotgun-shells', 'zinc-processing', 'angels-gunmetal-smelting-1')
+if mods['bobpower'] then
+  bobmods.lib.tech.replace_prerequisite('electric-pole-2', 'zinc-processing', 'angels-brass-smelting-1')
+  bobmods.lib.tech.replace_prerequisite('electric-substation-2', 'zinc-processing', 'angels-brass-smelting-1')
+end
+if mods['bobwarfare'] then
+  bobmods.lib.tech.replace_prerequisite('bob-bullets', 'zinc-processing', 'angels-gunmetal-smelting-1')
+  bobmods.lib.tech.replace_prerequisite('bob-shotgun-shells', 'zinc-processing', 'angels-gunmetal-smelting-1')
+end
 
 -- Add fluid handling as a prerequisite for Oil and gas extraction
 -- Else Electric engine doesn't depend on Engine
@@ -100,13 +104,15 @@ lib.add_recipe_unlock('geode-crystallization-1', 'bob-emerald-3')
 lib.add_recipe_unlock('geode-crystallization-1', 'bob-amethyst-3')
 lib.add_recipe_unlock('geode-crystallization-1', 'bob-topaz-3')
 lib.add_recipe_unlock('geode-crystallization-1', 'bob-diamond-3')
-lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-red-from-small')
-lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-yellow-from-small')
-lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-orange-from-small')
-lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-blue-from-small')
-lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-purple-from-small')
-lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-green-from-small')
-lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-from-small')
+if mods['bobenemies'] then
+  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-red-from-small')
+  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-yellow-from-small')
+  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-orange-from-small')
+  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-blue-from-small')
+  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-purple-from-small')
+  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-green-from-small')
+  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-from-small')
+end
 
 bobmods.lib.tech.remove_recipe_unlock('chemical-processing-2', 'carbon-dioxide')
 lib.remove_recipe('carbon-dioxide')
