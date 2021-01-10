@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.2
-Date: ???
+Date: 11.01.2021
   Changes:
     - Cleared fuel value from disabled fluids
     - Standardise research time for startup techs
