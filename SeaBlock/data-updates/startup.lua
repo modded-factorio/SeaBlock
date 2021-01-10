@@ -149,29 +149,31 @@ end
 
 local startuptechs = {
   ['automation'] = {true},
-  ['logistics'] = {true},
   ['optics'] = {true},
   ['gun-turret'] = {true},
   ['stone-wall'] = {true},
   ['basic-chemistry'] = {true},
-  ['ore-crushing'] = {true},
   ['military'] = {true},
   ['angels-sulfur-processing-1'] = {true},
-  ['water-treatment'] = {true},
+  -- Don't reduce the science pack cost of water treatment
+  ['water-treatment'] = {false},
   ['water-washing-1'] = {true},
   ['slag-processing-1'] = {true},
   ['angels-fluid-control'] = {true},
-  ['angels-metallurgy-1'] = {true},
-  ['angels-iron-smelting-1'] = {true},
-  ['angels-copper-smelting-1'] = {true},
   ['bio-wood-processing-2'] = {true},
   ['landfill'] = {true},
-  ['steel-processing'] = {true},
   -- Don't reduce the science pack cost of green algae
-  ['bio-processing-green'] = {false},
-  ['logistics-0'] = {true},
-  ['basic-automation'] = {true}
+  ['bio-processing-green'] = {false}
 }
+
+if data.raw.technology['logistics-0'] then
+  startuptechs['logistics-0'] = {true}
+else
+  startuptechs['logistics'] = {true}
+end
+if data.raw.technology['basic-automation'] then
+  startuptechs['basic-automation'] = {true}
+end
 
 local lasttech = 'sb-startup4'
 if data.raw.technology['sct-automation-science-pack'] then
