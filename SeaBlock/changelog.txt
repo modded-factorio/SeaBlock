@@ -3,6 +3,7 @@ Version: 0.5.3
 Date: ???
   Changes:
     - Buffed Lead 3
+    - Added fuel value to tool tips for burnable fluids
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
 ---------------------------------------------------------------------------------------------------
