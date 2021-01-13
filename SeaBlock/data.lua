@@ -10,6 +10,7 @@ require "prototypes/recipe-category"
 require "prototypes/technology"
 require "prototypes/rockchest"
 require "mapgen"
+require "data/recipe"
 require "data/tech-tree"
 
 table.insert(data.raw.character.character.crafting_categories, "crafting-handonly")
