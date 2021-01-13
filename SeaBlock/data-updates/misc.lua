@@ -60,6 +60,7 @@ if not seablock.trigger.mining_productivity then
   for i = 1, 4, 1 do
     if data.raw.technology['mining-productivity-' .. i] then
       data.raw.technology['mining-productivity-' .. i].hidden = true
+      data.raw.technology['mining-productivity-' .. i].effects = {}
     end
   end
 end
