@@ -19,7 +19,7 @@
     "bobplates",
     "? KS_Power_quickfix",
     "? LandfillPainting",
-    "? ScienceCostTweakerM",
+    "? ScienceCostTweakerM >= 1.1.5",
     "? SpaceMod"
   ]
 }
