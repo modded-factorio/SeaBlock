@@ -3,6 +3,8 @@ Version: 0.5.3
 Date: ???
   Changes:
     - Buffed Lead 3
+  Bugfixes:
+    - Fixed crash when Train Construction Site is enabled
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.2
 Date: 11.01.2021

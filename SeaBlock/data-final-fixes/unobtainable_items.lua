@@ -218,8 +218,10 @@ for k,v in pairs(removerecipes) do
   if recipe then
     if recipe.normal then
       recipe.normal.enabled = false
+    end
+    if recipe.expensive then
       recipe.expensive.enabled = false
-    else
+    elseif not recipe.normal then
       recipe.enabled = false
     end
   end
