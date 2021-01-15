@@ -4,8 +4,12 @@ Date: ???
   Changes:
     - Buffed Lead 3
     - Added fuel value to tool tips for burnable fluids
+    - Merged in A Sea Block Config mod
+    - Disabled Bob's burner power phase setting
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
+  Info:
+    - Added incompatibility with A Sea Block Config. It has been merged in and should not be installed
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.2
 Date: 11.01.2021
@@ -58,6 +62,10 @@ Date: 23.12.2020
     - Hid Mining Productivity techs (unless Seablock Mining mod is enabled)
     - Added Slag Processing 1 as a prerequisite for Logistics (if Bob's logistics setting Transport belt overhaul is enabled)
     - Removed unnecessary prerequisites
+  A Sea Block Config::
+    - Disabled Bob's Chemical Plants, Electrolysers, and Distilleries
+    - Artisanal Reskins: Bob's Mods setting Circuit style set to Colored Vanilla
+    - Disabled Bob's Steam Mining Drills
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 Date: 16.12.2020
@@ -161,6 +169,10 @@ Date: 10. 2. 2020
     - Remove alginic acid solder recipe
     - Update tech tree dependencies/prerequisites for Angel's changes
     - Remove fuel_value for some Angel's fluids
+  A Sea Block Config:
+    - Factorio 0.18 update
+    - Reduce neighbour bonus for heat source burners
+    - Force Bob's nuclear update setting on
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.8
 Date: 29. 12. 2019
@@ -226,6 +238,8 @@ Date: 18. 3. 2019
     - Factorio 0.17 update
     - Remove change to ScienceCostTweakerM flash fuel recipe
     - Reduce enriched fuel block fuel value
+  A Sea Block Config:
+    - Override boblogistic belt speeds
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.17
 Date: 19. 11. 2018
@@ -276,6 +290,8 @@ Version: 0.2.9
 Date: 3. 6. 2018
   Changes:
     - Defensive programming check when moving tech unlocks
+  A Sea Block Config:
+    - Reorder setup to allow other mods to remove setting overrides
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.8
 Date: 18. 5. 2018
@@ -315,6 +331,8 @@ Version: 0.2.3
 Date: 4. 3. 2018
   Changes:
     - Add fluid-generator-3 tech requirement for KS Power diesel generator
+  A Sea Block Config:
+    - Set basic transport belt underground distance (if present)
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.2
 Date: 25. 2. 2018
@@ -325,12 +343,16 @@ Date: 25. 2. 2018
     - Merge Bob's fluids item group into Bob's materials. Leaves a total of 15 item groups which fit into 3 rows of 5 groups in the crafting window.
     - Reduce number of fusion construction bots required to build an assembly bot (5 -> 1)
     - Reduce number of portable fusion reactors required to build the SpaceMod fusion reactor (100 -> 50)
+  A Sea Block Config:
+    - Undo boblogistic changes to logistic request chest unlock. Back to being unlocked by logistic system technology.
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.1
 Date: 24. 1. 2018
   Changes:
     - Restore collision for cliffs
     - Update bio-wood-processing startup technologies
+  A Sea Block Config:
+    - Reduce cargo capacity of Bob's logistic bots
 ---------------------------------------------------------------------------------------------------
 Version: 0.2.0
 Date: 8. 1. 2018
@@ -344,3 +366,8 @@ Date: 8. 1. 2018
     - Add recipe for making multi phase oil from blue algae
     - Add dependency on KS_Power, starting equipment includes wind turbines
     - Increase amount of resin used in furnace rubber recipe
+  A Sea Block Config:
+    - Disable bobplates cheaper steel
+    - Reduce number of beacon module slots. Two modules per beacon regardless of level.
+    - Undo boblogistics changes to logistic-system technology. High tech and production science packs restored.
+    - Add setting for changing ScienceCostTweaker multiplier when SpaceMod is present.

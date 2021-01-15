@@ -9,7 +9,6 @@
   "description": "Cutting edge version of the Sea Block mod pack. Contains dependencies on all mods distributed as part of the Sea Block Pack. This mod does nothing by itself.",
   "dependencies": [
     "base",
-    "A Sea Block Config",
     "angelsaddons-storage",
     "angelsbioprocessing",
     "angelspetrochem",
