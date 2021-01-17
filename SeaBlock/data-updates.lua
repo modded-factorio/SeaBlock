@@ -1,4 +1,5 @@
 require "data-updates/algae"
+require "data-updates/clowns"
 require "data-updates/coal"
 require "data-updates/fuel"
 require "data-updates/furnaces"
