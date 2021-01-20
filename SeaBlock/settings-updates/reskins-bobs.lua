@@ -1,2 +1,4 @@
 -- Artisanal Reskins: Bob's Mods
-seablock.overwrite_setting('string-setting', 'reskins-bobs-do-bobelectronics-circuit-style', 'colored-vanilla')
+if mods['reskins-bobs'] then
+  seablock.overwrite_setting('string-setting', 'reskins-bobs-do-bobelectronics-circuit-style', 'colored-vanilla')
+end
