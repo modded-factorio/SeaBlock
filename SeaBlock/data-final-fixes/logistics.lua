@@ -47,13 +47,8 @@ if data.raw.beacon['beacon-3'] then
 end
 
 -- Undo boblogistcs changes to logistic system research
-data.raw.technology['logistic-system'].unit.ingredients = {
-  {"automation-science-pack", 1},
-  {"logistic-science-pack", 1},
-  {"chemical-science-pack", 1},
-  {"production-science-pack", 1},
-  {"utility-science-pack", 1}
-}
+bobmods.lib.tech.add_new_science_pack('logistic-system', 'production-science-pack', 1)
+bobmods.lib.tech.add_new_science_pack('logistic-system', 'utility-science-pack', 1)
 
 local logisticstechs = {
   'logistic-system-2',
@@ -63,18 +58,12 @@ local logisticstechs = {
 }
 
 for _, v in pairs(logisticstechs) do
-  local r = data.raw.technology[v]
-  if r then
-    r.unit.ingredients = {
-      {"automation-science-pack", 1},
-      {"logistic-science-pack", 1},
-      {"chemical-science-pack", 1},
-      {"production-science-pack", 1},
-      {"utility-science-pack", 1}
-    }
+  if data.raw.technology[v] then
+    bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
+    bobmods.lib.tech.add_new_science_pack(v, 'utility-science-pack', 1)
+
     if data.raw.tool['advanced-logistic-science-pack'] then
-      table.insert(r.unit.ingredients,
-        {"advanced-logistic-science-pack", 1})
+      bobmods.lib.tech.add_new_science_pack(v, 'advanced-logistic-science-pack', 1)
     end
   end
 end

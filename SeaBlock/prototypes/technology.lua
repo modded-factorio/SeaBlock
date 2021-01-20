@@ -113,16 +113,11 @@ data:extend({
 }
 })
 
-data.raw.recipe['copper-pipe-to-ground'].enabled = false
-data.raw.recipe['basic-circuit-board'].enabled = false
-if data.raw.recipe['automation-science-pack'].normal then
-  data.raw.recipe['automation-science-pack'].normal.enabled = false
-  data.raw.recipe['automation-science-pack'].expensive.enabled = false
-else
-  data.raw.recipe['automation-science-pack'].enabled = false
-end
+bobmods.lib.recipe.enabled('copper-pipe-to-ground', false)
+bobmods.lib.recipe.enabled('basic-circuit-board', false)
+bobmods.lib.recipe.enabled('automation-science-pack', false)
 if data.raw.recipe['basic-transport-belt'] then
-  table.insert(data.raw.technology['sb-startup3'].effects, {type = "unlock-recipe", recipe = "basic-transport-belt"})
+  bobmods.lib.tech.add_recipe_unlock('sb-startup3', 'basic-transport-belt')
 else
-  table.insert(data.raw.technology['sb-startup3'].effects, {type = "unlock-recipe", recipe = "transport-belt"})
+  bobmods.lib.tech.add_recipe_unlock('sb-startup3', 'transport-belt')
 end

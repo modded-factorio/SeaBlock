@@ -23,12 +23,7 @@ bobmods.lib.tech.replace_prerequisite('bio-processing-green', 'bio-processing-br
 
 -- Blue algae
 data.raw.technology['bio-processing-blue'].prerequisites = {'bio-processing-brown'}
-for k,v in pairs(data.raw.technology['bio-processing-blue'].unit.ingredients) do
-  if v[1] == 'chemical-science-pack' or v.name == 'chemical-science-pack' then
-    table.remove(data.raw.technology['bio-processing-blue'].unit.ingredients, k)
-    break
-  end
-end
+bobmods.lib.tech.remove_science_pack('bio-processing-blue', 'chemical-science-pack')
 
 -- Make these craftable by hand
 data.raw.recipe['solid-alginic-acid'].category = "crafting"
@@ -36,7 +31,7 @@ data.raw.recipe['wooden-board-paper'].category = "crafting"
 
 -- Fix handcrafting trying to use wrong crafting path
 data.raw.recipe['wooden-board'].category = "electronics-machine"
-data.raw.recipe['wooden-board'].enabled = false
+bobmods.lib.recipe.enabled('wooden-board', false)
 table.insert(data.raw.technology['bio-wood-processing-3'].effects, {type = "unlock-recipe", recipe = "wooden-board"})
 
 data.raw.recipe['cellulose-fiber-algae'].allow_as_intermediate = false

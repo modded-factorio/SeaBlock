@@ -196,6 +196,20 @@ lib.remove_recipe = function(recipe)
   end
 end
 
+lib.hide_technology = function(technology)
+  if data.raw.technology[technology] then
+    if data.raw.technology[technology].normal then
+      data.raw.technology[technology].normal.hidden = true
+    end
+    if data.raw.technology[technology].expensive then
+      data.raw.technology[technology].expensive.hidden = true
+    end
+    if not data.raw.technology[technology].normal and not data.raw.technology[technology].expensive then
+      data.raw.technology[technology].hidden = true
+    end
+  end
+end
+
 lib.copy_icon = function(to, from)
   if to and from then
     to.icon = from.icon

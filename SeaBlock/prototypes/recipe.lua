@@ -132,6 +132,5 @@ data:extend({
   }
 })
 
-table.insert(data.raw.technology['oil-gas-extraction'].prerequisites, 'bio-processing-blue')
-table.insert(data.raw.technology['oil-gas-extraction'].effects,
-  {type = "unlock-recipe", recipe = "sb-blue-algae-liquefaction"})
+bobmods.lib.tech.add_prerequisite('oil-gas-extraction', 'bio-processing-blue')
+bobmods.lib.tech.add_recipe_unlock('oil-gas-extraction', 'sb-blue-algae-liquefaction')

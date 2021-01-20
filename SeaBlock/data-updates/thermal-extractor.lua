@@ -80,8 +80,7 @@ extractor.animation = {
 }
 extractor.crafting_categories = { "thermal-extractor" }
 extractor.fixed_recipe = "thermal-extractor-water"
-table.insert(data.raw.technology['thermal-water-extraction-2'].effects,
-  { type = "unlock-recipe", recipe = "thermal-extractor-water" })
+bobmods.lib.tech.add_recipe_unlock('thermal-water-extraction-2', 'thermal-extractor-water')
 
 local bore = data.raw['mining-drill']['thermal-bore']
 data.raw['mining-drill']['thermal-bore'] = nil
@@ -131,8 +130,7 @@ bore.animation = {
 }
 bore.crafting_categories = { "thermal-bore" }
 bore.fixed_recipe = "thermal-bore-water"
-table.insert(data.raw.technology['thermal-water-extraction'].effects,
-  { type = "unlock-recipe", recipe = "thermal-bore-water" })
+bobmods.lib.tech.add_recipe_unlock('thermal-water-extraction', 'thermal-bore-water')
 
 -- Fish Pressing requires thermal water so add a prerequisite
 bobmods.lib.tech.add_prerequisite('bio-pressing-fish', 'thermal-water-extraction')

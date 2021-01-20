@@ -13,7 +13,7 @@ if mods['bobpower'] then
 end
 lib.add_recipe_unlock('rubber', 'bob-rubber', 2)
 lib.moveeffect('insulated-cable', 'electronics', 'rubber')
-data.raw.technology['rubbers'].hidden = true
+lib.hide_technology('rubbers')
 
 -- Circuit network wires should not require rubber
 data.raw.recipe['green-wire'].ingredients = {{ "electronic-circuit", 1 }, { "copper-cable", 1 }}

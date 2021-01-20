@@ -71,7 +71,7 @@ if data.raw.generator['petroleum-generator'] then
   data.raw.generator['petroleum-generator'].fluid_usage_per_tick = 10/60
   -- KS_Power diesel generator is 100% efficient, put it after bob's fluid generators in tech tree
   if data.raw.technology['fluid-generator-3'] then
-    table.insert(data.raw.technology['petroleum-generator'].prerequisites, "fluid-generator-3")
-    table.insert(data.raw.technology['petroleum-generator'].unit.ingredients, {"production-science-pack", 1})
+    bobmods.lib.tech.add_prerequisite('petroleum-generator', 'fluid-generator-3')
+    bobmods.lib.tech.add_new_science_pack('petroleum-generator', 'production-science-pack', 1)
   end
 end

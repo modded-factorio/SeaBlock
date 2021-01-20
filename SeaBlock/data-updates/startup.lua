@@ -79,7 +79,7 @@ local knowningredients = {
 }
 }
 
-data.raw.recipe['angels-flare-stack'].enabled = true
+bobmods.lib.recipe.enabled('angels-flare-stack', true)
 data.raw.technology['angels-flare-stack'].enabled = false
 for k,v in pairs(knowningredients) do
   local recipe = data.raw.recipe[k]
@@ -99,12 +99,7 @@ if data.raw.technology['sct-lab-t1'] then
   bobmods.lib.tech.add_prerequisite('sct-lab-t1', 'sb-startup3')
 else
   bobmods.lib.tech.add_recipe_unlock('sb-startup3', 'lab')
-  if data.raw.recipe['lab'].normal then
-    data.raw.recipe['lab'].normal.enabled = false
-    data.raw.recipe['lab'].expensive.enabled = false
-  else
-    data.raw.recipe['lab'].enabled = false
-  end
+  bobmods.lib.recipe.enabled('lab', false)
 end
 
 local startuprecipes = {
@@ -238,10 +233,7 @@ for k,v in pairs(data.raw.recipe) do
     if not movedrecipes[k] then
       table.insert(disabledrecipes, k)
     end
-    r.enabled = false
-    if v.normal then
-      v.expensive.enabled = false
-    end
+    bobmods.lib.recipe.enabled(k, false)
   end
 end
 
@@ -269,17 +261,11 @@ end
 
 -- Disabled recipes are enabled at last stage of startup. (Laboratory research)
 for _,v in pairs(disabledrecipes) do
-  table.insert(data.raw.technology[lasttech].effects, {type="unlock-recipe", recipe=v})
+  bobmods.lib.tech.add_recipe_unlock(lasttech, v)
 end
 for k,_ in pairs(startuprecipes) do
-  local recipe = data.raw.recipe[k]
-  if not recipe then
-    -- Do nothing
-  elseif recipe.normal then
-    recipe.normal.enabled = true
-    recipe.expensive.enabled = true
-  else
-    recipe.enabled = true
+  if data.raw.recipe[k] then
+    bobmods.lib.recipe.enabled(k, true)
   end
 end
 
@@ -305,7 +291,7 @@ data.raw.technology['bio-wood-processing'].unit = {
 lib.takeeffect('bio-wood-processing', 'wood-pellets')
 lib.moveeffect('cellulose-fiber-algae', 'bio-processing-brown', 'bio-wood-processing', 2)
 lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 3)
-table.insert(data.raw.technology['bio-wood-processing'].effects, 3, {type = 'unlock-recipe', recipe = 'small-electric-pole'})
+lib.add_recipe_unlock('bio-wood-processing', 'small-electric-pole', 4)
 data.raw.technology['bio-wood-processing-2'].prerequisites = {lasttech}
 
 -- Make bio-paper-1 a startup tutorial tech

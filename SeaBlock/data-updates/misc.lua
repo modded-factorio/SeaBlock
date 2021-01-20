@@ -2,16 +2,17 @@ local lib = require "lib"
 
 if data.raw.item['wind-turbine-2'] then
   lib.substingredient('wind-turbine-2', 'iron-plate', 'steel-plate', 2)
-  data.raw.recipe['wind-turbine-2'].enabled = false
-  table.insert(data.raw.technology['steel-processing'].effects, {type = 'unlock-recipe', recipe = 'wind-turbine-2'})
+  bobmods.lib.recipe.enabled('wind-turbine-2', false)
+  bobmods.lib.tech.add_recipe_unlock('steel-processing', 'wind-turbine-2')
 end
 
 -- No natural gas, use methane for manganese pellet smelting
 lib.substingredient("pellet-manganese-smelting", "gas-natural-1", "gas-methane")
 
 -- Remove steel's prerequiste on Chemical processing 1
-data.raw.technology['steel-processing'].prerequisites = nil
-
+bobmods.lib.tech.replace_prerequisite('steel-processing', 'electrolysis-1', 'slag-processing-1')
+bobmods.lib.tech.remove_prerequisite('steel-processing', 'chemical-processing-1')
+      
 -- Merge basic chemistry 2 into basic chemistry
 local function movealleffects(from, to)
   for _,v in pairs(data.raw.technology[from].effects) do
@@ -52,14 +53,12 @@ if data.raw.recipe['liquid-fish-atmosphere'] then
   data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'
 end
 
-if data.raw.technology['pumpjack'] then
-  data.raw.technology['pumpjack'].hidden = true
-end
+lib.hide_technology('pumpjack')
 
 if not seablock.trigger.mining_productivity then
   for i = 1, 4, 1 do
     if data.raw.technology['mining-productivity-' .. i] then
-      data.raw.technology['mining-productivity-' .. i].hidden = true
+      lib.hide_technology('mining-productivity-' .. i)
       data.raw.technology['mining-productivity-' .. i].effects = {}
     end
   end
@@ -135,6 +134,5 @@ bobmods.lib.tech.replace_prerequisite('bio-plastic-1', 'plastics', 'plastic-1')
 if data.raw.technology['sct-lab-t3'] then
   bobmods.lib.tech.remove_prerequisite('sct-lab-t3', 'plastics')
 end
-if data.raw.technology['plastics'] then
-  data.raw.technology['plastics'].hidden = true
-end
+lib.hide_technology('plastics')
+

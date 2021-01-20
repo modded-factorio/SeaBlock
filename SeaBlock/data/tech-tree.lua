@@ -33,7 +33,7 @@ bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
 
 -- Remove empty tech Thermal water processing
 bobmods.lib.tech.remove_prerequisite('water-treatment-4', 'thermal-water-processing')
-data.raw.technology['thermal-water-processing'].hidden = true
+lib.hide_technology('thermal-water-processing')
 
 -- Smelting techs don't need to depend on Coal processing 2 as carbon is unlocked earlier
 bobmods.lib.tech.remove_prerequisite('angels-aluminium-smelting-1', 'angels-coal-processing-2')

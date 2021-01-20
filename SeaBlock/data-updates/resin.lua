@@ -7,4 +7,4 @@ bobmods.lib.tech.remove_prerequisite('resin-1', 'resins')
 bobmods.lib.tech.remove_prerequisite('angels-stone-smelting-2', 'resins')
 bobmods.lib.tech.remove_recipe_unlock('resins', 'solid-resin')
 bobmods.lib.tech.replace_prerequisite('bio-arboretum-temperate-1', 'resins', 'resin-1')
-data.raw.technology['resins'].hidden = true
+lib.hide_technology('resins')

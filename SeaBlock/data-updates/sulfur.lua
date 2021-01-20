@@ -17,8 +17,8 @@ lib.addresult('washing-1', {type = "fluid", name = "gas-hydrogen-sulfide", amoun
 
 
 -- Sulfuric acid prerequisites
-table.insert(data.raw.technology['slag-processing-1'].prerequisites, 'angels-sulfur-processing-1')
-table.insert(data.raw.technology['angels-sulfur-processing-1'].prerequisites, 'water-washing-1')
+bobmods.lib.tech.add_prerequisite('slag-processing-1', 'angels-sulfur-processing-1')
+bobmods.lib.tech.add_prerequisite('angels-sulfur-processing-1', 'water-washing-1')
 
 
 -- Sulfur 1 tech: Remove prerequisite Advanced lead smelting 1
