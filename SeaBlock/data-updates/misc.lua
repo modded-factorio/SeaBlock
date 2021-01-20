@@ -146,3 +146,8 @@ if data.raw.technology['sct-lab-t3'] then
 end
 lib.hide_technology('plastics')
 
+
+-- Buff Lime filtering
+lib.substingredient('filter-lime', 'solid-lime', nil, 1)
+data.raw.recipe['filter-lime'].energy_required = 1
+data.raw.recipe['angels-sulfur-scrubber'].energy_required = 6

@@ -13,7 +13,7 @@ for _,v in pairs({"", "-2", "-3", "-4"}) do
     table.insert(washingplant.fluid_boxes, washing_fluid_box)
   end
 end
-lib.addresult('washing-1', {type = "fluid", name = "gas-hydrogen-sulfide", amount = 5})
+lib.addresult('washing-1', {type = "fluid", name = "gas-hydrogen-sulfide", amount = 2})
 
 
 -- Sulfuric acid prerequisites

@@ -10,6 +10,9 @@ Date: ???
     - Reshuffled early game technology and recipe unlocks
     - Moved Clarifier from Water treatment to Washing 1
     - Removed Water treatment from startup techs
+    - Reduced Hydrogen sulfide gas from Viscous mud water washing
+    - Reduced lime and time required for Porus lime filters
+    - Reduced time required for Sulfur air scrubbing
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
   Info:
