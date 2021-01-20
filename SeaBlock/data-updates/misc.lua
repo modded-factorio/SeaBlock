@@ -67,6 +67,13 @@ if not seablock.trigger.mining_productivity then
   end
 end
 
+-- Remove resources so mining recipes don't show in FNEI
+for k,v in pairs(data.raw['resource']) do
+  if k ~='iron-ore' and k ~= 'coal' then
+    data.raw['resource'][k] = nil
+  end
+end
+
 -- Add prerequisite for Tin and Lead
 if settings.startup['bobmods-logistics-beltoverhaul'].value then
   bobmods.lib.tech.add_prerequisite('logistics', 'slag-processing-1')
