@@ -46,8 +46,10 @@ data:extend({
   icon = "__SeaBlock__/graphics/technology/ore.png",
   icon_size = 128,
   effects = {
+    {type = "unlock-recipe", recipe = "angelsore1-crushed-smelting"},
+    {type = "unlock-recipe", recipe = "angelsore3-crushed-smelting"},
     {type = "unlock-recipe", recipe = "algae-farm"},
-    {type = "unlock-recipe", recipe = "algae-green-simple"},
+    {type = "unlock-recipe", recipe = "algae-green-simple"}
   },
   unit = {
     count = 1,

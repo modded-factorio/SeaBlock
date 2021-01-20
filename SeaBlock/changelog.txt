@@ -7,6 +7,7 @@ Date: ???
     - Merged in A Sea Block Config mod
     - Disabled Bob's burner power phase setting
     - Added compatibility for MadClown01's Extended AngelBob Minerals
+    - Reshuffled early game technology and recipe unlocks
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
   Info:

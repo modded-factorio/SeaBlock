@@ -30,9 +30,11 @@ for i = 1,6 do
   }
 end
 
--- Angels ores 1, 3 (Saphirite, Stiratite) available from the start,
+-- Angels ores 1, 3 (Saphirite, Stiratite) available from tutorial tech 1,
 -- Angels ores 5, 6 (Rubyte, Bobmonium) available from Slag processing 1
 -- Angels ores 2, 4 (Jivolite, Crotinnium) available from Advanced mechanical refining
+bobmods.lib.recipe.enabled('angelsore1-crushed-smelting', false)
+bobmods.lib.recipe.enabled('angelsore3-crushed-smelting', false)
 lib.moveeffect('catalysator-brown', 'slag-processing-1', 'advanced-ore-refining-1', 3)
 local slag1start = lib.findeffectidx(data.raw.technology['slag-processing-1'].effects, 'slag-processing-1')
 lib.moveeffect('slag-processing-5', 'slag-processing-2', 'slag-processing-1', slag1start + 3)
