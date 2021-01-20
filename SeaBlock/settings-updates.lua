@@ -19,9 +19,9 @@ function seablock.overwrite_setting(setting_type, setting_name, value)
       if setting_type == 'bool-setting' then
         s.forced_value = value
       else
+        s.default_value = value
         s.allowed_values = {value}
       end
-      s.default_value = value
       s.hidden = true
     else
       log('Error: missing setting ' .. setting_name)
