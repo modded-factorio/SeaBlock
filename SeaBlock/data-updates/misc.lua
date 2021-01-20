@@ -39,9 +39,12 @@ bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
 -- Slag Processing 1 is first source of Sulfuric Waste Water
 bobmods.lib.tech.replace_prerequisite('water-treatment', 'electronics', 'slag-processing-1')
 
-
 data.raw.technology['water-washing-1'].prerequisites = {'automation'} -- Allow skipping of waste water recycling
 lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
+lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
+
+-- Increase tech cost to 50
+data.raw.technology['water-treatment'].unit.count = 50
 data.raw.technology['electronics'].prerequisites = {
   'angels-solder-smelting-basic',
   'angels-coal-processing'

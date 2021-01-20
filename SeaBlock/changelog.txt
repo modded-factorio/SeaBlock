@@ -8,6 +8,8 @@ Date: ???
     - Disabled Bob's burner power phase setting
     - Added compatibility for MadClown01's Extended AngelBob Minerals
     - Reshuffled early game technology and recipe unlocks
+    - Moved Clarifier from Water treatment to Washing 1
+    - Removed Water treatment from startup techs
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
   Info:

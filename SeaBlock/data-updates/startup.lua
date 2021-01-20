@@ -148,8 +148,6 @@ local startuptechs = {
   ['basic-chemistry'] = {true},
   ['military'] = {true},
   ['angels-sulfur-processing-1'] = {true},
-  -- Don't reduce the science pack cost of water treatment
-  ['water-treatment'] = {false},
   ['water-washing-1'] = {true},
   ['slag-processing-1'] = {true},
   ['angels-fluid-control'] = {true},
