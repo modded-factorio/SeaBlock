@@ -126,12 +126,12 @@ local startuprecipes = {
 
 local sbtechs = {
   ['sb-startup1'] = true,
+  ['landfill'] = true,
+  ['sb-startup2'] = true,
   ['bio-paper-1'] = true,
   ['bio-wood-processing'] = true,
-  ['sb-startup2'] = true,
   ['sb-startup3'] = true,
-  ['sb-startup4'] = true,
-  ['landfill'] = true
+  ['sb-startup4'] = true
 }
 if data.raw.technology['sct-lab-t1'] then
   sbtechs['sct-lab-t1'] = true
@@ -152,7 +152,6 @@ local startuptechs = {
   ['slag-processing-1'] = {true},
   ['angels-fluid-control'] = {true},
   ['bio-wood-processing-2'] = {true},
-  ['landfill'] = {true},
   -- Don't reduce the science pack cost of green algae
   ['bio-processing-green'] = {false}
 }
@@ -277,6 +276,18 @@ for k,v in pairs(startuptechs) do
     data.raw.technology[k].ignore_tech_cost_multiplier = true
     data.raw.technology[k].time = 15
   end
+end
+
+-- Make landfill a startup tutorial tech
+data.raw.technology['landfill'].prerequisites = {'sb-startup1'}
+data.raw.technology['landfill'].unit = {
+  count = 1,
+  ingredients = {},
+  time = 5
+}
+bobmods.lib.tech.remove_prerequisite('water-washing-2', 'landfill')
+if mods['Explosive Excavation'] then
+  bobmods.lib.tech.remove_prerequisite('blasting-charges', 'landfill')
 end
 
 -- Make bio-wood-processing a startup tutorial tech

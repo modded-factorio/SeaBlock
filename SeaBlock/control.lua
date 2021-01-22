@@ -1,13 +1,6 @@
 seablock = {}
 
 seablock.giveresearch = function(force)
-  local techs = {
-    'landfill'
-  }
-  local newforce = force.technologies['sb-startup1'].researched == false
-  for _,v in ipairs(techs) do
-    force.technologies[v].researched = true
-  end
   if newforce then
     force.add_research("sb-startup1")
   end
@@ -88,7 +81,7 @@ local function init()
     remote.call("freeplay", "set_disable_crashsite", true)
   end
   global.unlocks = {
-    ['angels-ore3-crushed'] = {'sb-startup1'},
+    ['angels-ore3-crushed'] = {'sb-startup1', 'landfill'},
     ['algae-brown'] = {'sb-startup2', 'bio-wood-processing', 'bio-paper-1'},
     ['basic-circuit-board'] = {'sb-startup3', 'sct-lab-t1'},
   }

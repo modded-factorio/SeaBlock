@@ -66,7 +66,7 @@ data:extend({
     {type = "unlock-recipe", recipe = "basic-circuit-board"},
     {type = "unlock-recipe", recipe = "copper-cable"}
   },
-  prerequisites = {"sb-startup1"},
+  prerequisites = {"landfill"},
   unit = {
     count = 1,
     ingredients = {{"sb-algae-brown-tool", 1}},

@@ -10,6 +10,3 @@ end
 if settings.startup['sb-default-landfill'] and data.raw.item[settings.startup['sb-default-landfill'].value] then
   data.raw.recipe['landfill'].result = settings.startup['sb-default-landfill'].value
 end
-
-data.raw.technology['landfill'].prerequisites = {}
-data.raw.technology['landfill'].unit.ingredients = {}
