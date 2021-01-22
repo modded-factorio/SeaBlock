@@ -13,6 +13,7 @@ Date: ???
     - Reduced Hydrogen sulfide gas from Viscous mud water washing
     - Reduced lime and time required for Porus lime filters
     - Reduced time required for Sulfur air scrubbing
+    - Reduced cost of mud landfill
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
   Info:
