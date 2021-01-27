@@ -1,7 +1,7 @@
 require "data-updates/algae"
-require "data-updates/boilers"
 require "data-updates/clowns"
 require "data-updates/coal"
+require "data-updates/effectivity"
 require "data-updates/fuel"
 require "data-updates/furnaces"
 require "data-updates/misc"

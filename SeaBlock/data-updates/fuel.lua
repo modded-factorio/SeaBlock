@@ -15,12 +15,22 @@ data.raw.item['wood-bricks'].fuel_category = nil
 data.raw.item['wood-charcoal'].fuel_value = string.format("%dMJ", 4 * FUEL_FACTOR)
 data.raw.item['pellet-coke'].fuel_value = string.format("%dMJ", 24 * FUEL_FACTOR)
 
--- multiply some fuel values with factor
+-- multiply other fuel values with factor
+data.raw.item['cellulose-fiber'].fuel_value = multiply_fuel_value(data.raw.item['cellulose-fiber'].fuel_value, FUEL_FACTOR)
+data.raw.item['wood'].fuel_value = multiply_fuel_value(data.raw.item['wood'].fuel_value, FUEL_FACTOR)
 data.raw.item['wood-pellets'].fuel_value = multiply_fuel_value(data.raw.item['wood-pellets'].fuel_value, FUEL_FACTOR)
 data.raw.item['solid-fuel'].fuel_value = multiply_fuel_value(data.raw.item['solid-fuel'].fuel_value, FUEL_FACTOR)
+data.raw.item['solid-carbon'].fuel_value = multiply_fuel_value(data.raw.item['solid-carbon'].fuel_value, FUEL_FACTOR)
+
 if data.raw.fluid['hydrazine'] then
   data.raw.fluid['hydrazine'].fuel_value = multiply_fuel_value(data.raw.fluid['hydrazine'].fuel_value, FUEL_FACTOR)
 end
+
+-- don't increase vehicle fuels, because vehicle effectivity remain unchanged
+-- rocket-booster, rocket-fuel, nuclear-fuel
+
+-- don't increase fuel cells, as nuclear reactors remain unchanged
+-- uranium-fuel-cell, deuterium-fuel-cell, plutonium-fuel-cell, thorium-fuel-cell, thorium-plutonium-fuel-cell
 
 -- Make hydrazine solid fuel match fuel_value
 if data.raw.fluid['hydrazine'] then
