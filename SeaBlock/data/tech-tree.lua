@@ -30,6 +30,7 @@ bobmods.lib.tech.add_new_science_pack('bio-refugium-butchery-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-fish-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
 
 -- Remove empty tech Thermal water processing
 bobmods.lib.tech.remove_prerequisite('water-treatment-4', 'thermal-water-processing')
@@ -102,3 +103,60 @@ bobmods.lib.tech.replace_prerequisite('angels-tungsten-smelting-2', 'angels-nick
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-3', 'production-science-pack', 1)
 bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-3', 'strand-casting-2', 'strand-casting-3')
 bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-3', 'ore-processing-2', 'ore-processing-3')
+
+
+-- Add missing Science Pack Tech prerequisites
+
+-- Bio
+if mods['ScienceCostTweakerM'] then
+  bobmods.lib.tech.add_prerequisite('bio-desert-farming-1', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-swamp-farming-1', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-temperate-farming-1', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-pressing', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-arboretum-2', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-arboretum-desert-1', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-arboretum-swamp-1', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-processing-alien-2', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-refugium-fish-2', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-refugium-hatchery', 'sct-bio-science-pack')
+end
+
+-- Logistics / Green
+bobmods.lib.tech.add_prerequisite('water-washing-2', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-fermentation', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-nutrient-paste', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('advanced-ore-refining-1', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-paper-2', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-processing-blue', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-wood-processing-3', 'logistic-science-pack')
+if mods['angelsaddons-storage'] then
+  bobmods.lib.tech.add_prerequisite('pressure-tanks', 'logistic-science-pack')
+end
+
+-- Chemical / Blue
+bobmods.lib.tech.add_prerequisite('thermal-water-extraction-2', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('water-treatment-4', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-plastic-2', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('slag-processing-2', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-advanced-gas-processing', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-advanced-oil-processing', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-paper-3', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('gas-steam-cracking-2', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('oil-steam-cracking-2', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('bob-robo-modular-2', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('exoskeleton-equipment-2', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('ore-leaching', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('bob-robotics-2', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('personal-roboport-mk2-equipment', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-arboretum-desert-3', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-arboretum-swamp-3', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('bio-arboretum-temperate-3', 'chemical-science-pack')
+
+-- Military / Gray
+bobmods.lib.tech.add_prerequisite('angels-explosives-1', 'military-science-pack')
+
+-- Utility
+bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-science-pack')
+bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'utility-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-nuclear-fuel', 'utility-science-pack')
+bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
