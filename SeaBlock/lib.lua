@@ -200,12 +200,15 @@ lib.hide_technology = function(technology)
   if data.raw.technology[technology] then
     if data.raw.technology[technology].normal then
       data.raw.technology[technology].normal.hidden = true
+      data.raw.technology[technology].normal.enabled = false
     end
     if data.raw.technology[technology].expensive then
       data.raw.technology[technology].expensive.hidden = true
+      data.raw.technology[technology].expensive.enabled = false
     end
     if not data.raw.technology[technology].normal and not data.raw.technology[technology].expensive then
       data.raw.technology[technology].hidden = true
+      data.raw.technology[technology].enabled = false
     end
   end
 end
