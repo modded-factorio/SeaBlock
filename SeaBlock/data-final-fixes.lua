@@ -45,4 +45,8 @@ require "data-final-fixes/descriptions"
 data.raw.recipe['copper-cable'].allow_decomposition = true
 data.raw.recipe['paper-bleaching-1'].allow_decomposition = true
 
+for _,v in pairs(data.raw.character) do
+  table.insert(v.crafting_categories, "crafting-handonly")
+end
+
 bobmods.lib.tech.prerequisite_cleanup()
