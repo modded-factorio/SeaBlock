@@ -59,3 +59,23 @@ end
 
 -- Remove smelting from crafting_categories so machine doesn't appear in Helmod
 data.raw['assembling-machine']['electric-chemical-furnace'].crafting_categories = {'chemical-furnace'}
+
+-- Fix up furnace tech icons
+if not mods['reskins-bobs'] then
+  for _,v in pairs({
+    'fluid-mixing-furnace',
+    'steel-mixing-furnace'
+  }) do
+    lib.copy_icon(data.raw.technology[v], data.raw.technology['advanced-material-processing'])
+  end
+
+  for _,v in pairs({
+    'electric-mixing-furnace',
+    'multi-purpose-furnace-1',
+    'multi-purpose-furnace-2',
+    'advanced-material-processing-3',
+    'advanced-material-processing-4'
+  }) do
+    lib.copy_icon(data.raw.technology[v], data.raw.technology['advanced-material-processing-2'])
+  end
+end
