@@ -42,8 +42,14 @@ if mods['bobpower'] then
     data.raw["reactor"]["burner-reactor-2"].energy_source.effectivity = TIER4
     data.raw["reactor"]["burner-reactor-3"].energy_source.effectivity = TIER5
 
+    -- for some reason, all bob's fluid-reactors share the same energy_source instance. So, first copy before adjusting
+    data.raw["reactor"]["fluid-reactor"].energy_source = table.deepcopy(data.raw["reactor"]["fluid-reactor"].energy_source)
     data.raw["reactor"]["fluid-reactor"].energy_source.effectivity = TIER3
+    
+    data.raw["reactor"]["fluid-reactor-2"].energy_source = table.deepcopy(data.raw["reactor"]["fluid-reactor-2"].energy_source)
     data.raw["reactor"]["fluid-reactor-2"].energy_source.effectivity = TIER4
+
+    data.raw["reactor"]["fluid-reactor-3"].energy_source = table.deepcopy(data.raw["reactor"]["fluid-reactor-3"].energy_source)
     data.raw["reactor"]["fluid-reactor-3"].energy_source.effectivity = TIER5
 
     log("changed boiler effectivity")
@@ -55,7 +61,7 @@ if data.raw["boiler"]["oil-steam-boiler"] then
 end
 
 if data.raw["generator"]["petroleum-generator"] then
-    data.raw["generator"]["petroleum-generator"].energy_source.effectivity = TIER5
+    data.raw["generator"]["petroleum-generator"].effectivity = TIER5
 end
 
 if data.raw["burner-generator"]["burner-generator"] then
