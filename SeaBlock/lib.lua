@@ -38,7 +38,7 @@ lib.moveeffect = function(name, fromtech, totech, insertindex)
     log('Effect ' .. name .. ' not found in tech ' .. fromtech)
     return
   end
-  if insertindex then
+  if insertindex and insertindex <= #data.raw.technology[totech].effects then
     table.insert(data.raw.technology[totech].effects, insertindex, effect)
   else
     table.insert(data.raw.technology[totech].effects, effect)
@@ -57,7 +57,7 @@ local function add_recipe_unlock(technology, recipe, insertindex)
   end
   if addit then
     bobmods.lib.recipe.enabled(recipe, false)
-    if insertindex then
+    if insertindex and insertindex <= #technology.effects then
       table.insert(technology.effects, insertindex, {type = "unlock-recipe", recipe = recipe})
     else
       table.insert(technology.effects, {type = "unlock-recipe", recipe = recipe})
