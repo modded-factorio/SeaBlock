@@ -15,11 +15,14 @@ Date: ???
     - Reduced time required for Sulfur air scrubbing
     - Reduced cost of mud landfill
     - Hid settings from other mods that have no effect with Sea Block
+    - Removed bio sicence from Fish refugium 2
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
     - Fixed Forage for cellulose fiber recipe not usable with mods that replace the default character
+    - Fixed Cobalt Processing not researchable with some combinations of mods
   Info:
     - A Sea Block Config mod has been merged in and should be removed
+    - KS Power mod has been updated for 1.1 so can be installed instead of the patched version ⚡KS Power_quickfix
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.2
 Date: 11.01.2021

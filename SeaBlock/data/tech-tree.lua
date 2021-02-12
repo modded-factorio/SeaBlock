@@ -17,6 +17,7 @@ lib.moveeffect('bob-small-storage-tank', 'electrolysis-1', 'angels-fluid-control
 
 -- Add bio science to techs
 -- Don't add to techs on the path to Alien Farming. This is where garden / bio token duplication is unlocked
+-- Also need Fish refugium 2 available
 bobmods.lib.tech.add_new_science_pack('bio-refugium-biter-1', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-biter-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-biter-3', 'token-bio', 1)
@@ -27,7 +28,6 @@ bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-4', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-pressing', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-pressing-fish', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-butchery-2', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-refugium-fish-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
@@ -117,7 +117,6 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('bio-arboretum-desert-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-arboretum-swamp-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-processing-alien-2', 'sct-bio-science-pack')
-  bobmods.lib.tech.add_prerequisite('bio-refugium-fish-2', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-refugium-hatchery', 'sct-bio-science-pack')
 end
 
