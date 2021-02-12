@@ -1,5 +1,6 @@
 local lib = require "lib"
-local FUEL_FACTOR = 2
+local SOLID_FUEL_FACTOR = 2
+local FLUID_FUEL_FACTOR = 1
 
 local function multiply_fuel_value(fuel_value, factor)
     local count, unit = fuel_value:match("([%d\\.]+)([%a]+)")
@@ -12,18 +13,18 @@ data.raw.item['wood-bricks'].fuel_value = nil
 data.raw.item['wood-bricks'].fuel_category = nil
 
 -- Reduce angels charcoal fuel value
-data.raw.item['wood-charcoal'].fuel_value = multiply_fuel_value("4MJ", FUEL_FACTOR)
-data.raw.item['pellet-coke'].fuel_value = multiply_fuel_value("24MJ", FUEL_FACTOR)
+data.raw.item['wood-charcoal'].fuel_value = multiply_fuel_value("4MJ", SOLID_FUEL_FACTOR)
+data.raw.item['pellet-coke'].fuel_value = multiply_fuel_value("24MJ", SOLID_FUEL_FACTOR)
 
 -- multiply other fuel values with factor
-data.raw.item['cellulose-fiber'].fuel_value = multiply_fuel_value(data.raw.item['cellulose-fiber'].fuel_value, FUEL_FACTOR)
-data.raw.item['wood'].fuel_value = multiply_fuel_value(data.raw.item['wood'].fuel_value, FUEL_FACTOR)
-data.raw.item['wood-pellets'].fuel_value = multiply_fuel_value(data.raw.item['wood-pellets'].fuel_value, FUEL_FACTOR)
-data.raw.item['solid-fuel'].fuel_value = multiply_fuel_value(data.raw.item['solid-fuel'].fuel_value, FUEL_FACTOR)
-data.raw.item['solid-carbon'].fuel_value = multiply_fuel_value(data.raw.item['solid-carbon'].fuel_value, FUEL_FACTOR)
+data.raw.item['cellulose-fiber'].fuel_value = multiply_fuel_value(data.raw.item['cellulose-fiber'].fuel_value, SOLID_FUEL_FACTOR)
+data.raw.item['wood'].fuel_value = multiply_fuel_value(data.raw.item['wood'].fuel_value, SOLID_FUEL_FACTOR)
+data.raw.item['wood-pellets'].fuel_value = multiply_fuel_value(data.raw.item['wood-pellets'].fuel_value, SOLID_FUEL_FACTOR)
+data.raw.item['solid-fuel'].fuel_value = multiply_fuel_value(data.raw.item['solid-fuel'].fuel_value, SOLID_FUEL_FACTOR)
+data.raw.item['solid-carbon'].fuel_value = multiply_fuel_value(data.raw.item['solid-carbon'].fuel_value, SOLID_FUEL_FACTOR)
 
 if data.raw.fluid['hydrazine'] then
-  data.raw.fluid['hydrazine'].fuel_value = multiply_fuel_value(data.raw.fluid['hydrazine'].fuel_value, FUEL_FACTOR)
+  data.raw.fluid['hydrazine'].fuel_value = multiply_fuel_value(data.raw.fluid['hydrazine'].fuel_value, FLUID_FUEL_FACTOR)
 end
 
 -- don't increase vehicle fuels, because vehicle effectivity remain unchanged
@@ -43,17 +44,17 @@ if data.raw.fluid['hydrazine'] then
 end
 
 -- petroleum gas/methane has same solid fuel value as naphtha.
-data.raw.fluid['liquid-fuel-oil'].fuel_value = multiply_fuel_value("1MJ", FUEL_FACTOR)
-data.raw.fluid['liquid-fuel'].fuel_value = multiply_fuel_value("1MJ", FUEL_FACTOR)
-data.raw.fluid['liquid-naphtha'].fuel_value = multiply_fuel_value("0.5MJ", FUEL_FACTOR)
-data.raw.fluid['gas-methane'].fuel_value = multiply_fuel_value("0.5MJ", FUEL_FACTOR)
-data.raw.fluid['crude-oil'].fuel_value = multiply_fuel_value("0.5MJ", FUEL_FACTOR)
+data.raw.fluid['liquid-fuel-oil'].fuel_value = multiply_fuel_value("1MJ", FLUID_FUEL_FACTOR)
+data.raw.fluid['liquid-fuel'].fuel_value = multiply_fuel_value("1MJ", FLUID_FUEL_FACTOR)
+data.raw.fluid['liquid-naphtha'].fuel_value = multiply_fuel_value("0.5MJ", FLUID_FUEL_FACTOR)
+data.raw.fluid['gas-methane'].fuel_value = multiply_fuel_value("0.5MJ", FLUID_FUEL_FACTOR)
+data.raw.fluid['crude-oil'].fuel_value = multiply_fuel_value("0.5MJ", FLUID_FUEL_FACTOR)
 -- 20 petroleum gas + 20 light fuel = 30 diesel
 -- 20/100*21.5 + 20/50*21.5 = 12.9MJ = 30 diesel
 if data.raw.fluid['diesel-fuel'] then
-  data.raw.fluid['diesel-fuel'].fuel_value = multiply_fuel_value("1MJ", FUEL_FACTOR)
+  data.raw.fluid['diesel-fuel'].fuel_value = multiply_fuel_value("1MJ", FLUID_FUEL_FACTOR)
 end
-data.raw.item['enriched-fuel'].fuel_value = multiply_fuel_value("50MJ", FUEL_FACTOR)
+data.raw.item['enriched-fuel'].fuel_value = multiply_fuel_value("50MJ", SOLID_FUEL_FACTOR)
 data.raw.item['enriched-fuel'].stack_size = 50
 
 lib.substingredient('solid-fuel-methane', 'gas-methane', nil, 40)
