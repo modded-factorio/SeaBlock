@@ -32,6 +32,11 @@ bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
 
+-- At least one of these is required to feed fish
+data.raw.technology['bio-desert-farming-1'].ignore_tech_cost_multiplier = true
+data.raw.technology['bio-swamp-farming-1'].ignore_tech_cost_multiplier = true
+data.raw.technology['bio-temperate-farming-1'].ignore_tech_cost_multiplier = true
+
 -- Remove empty tech Thermal water processing
 bobmods.lib.tech.remove_prerequisite('water-treatment-4', 'thermal-water-processing')
 lib.hide_technology('thermal-water-processing')

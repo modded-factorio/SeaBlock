@@ -16,6 +16,7 @@ Date: ???
     - Reduced cost of mud landfill
     - Hid settings from other mods that have no effect with Sea Block
     - Removed bio sicence from Fish refugium 2
+    - Set techs Desert farming 1, Swamp farming 1, and Temperate farming 1 to ignore tech cost modifier
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
     - Fixed Forage for cellulose fiber recipe not usable with mods that replace the default character
