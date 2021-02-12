@@ -15,6 +15,7 @@ Date: ???
     - Reduced time required for Sulfur air scrubbing
     - Reduced cost of mud landfill
     - Hid settings from other mods that have no effect with Sea Block
+    - Removed bio sicence from Fish refugium 2
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
     - Fixed Forage for cellulose fiber recipe not usable with mods that replace the default character
