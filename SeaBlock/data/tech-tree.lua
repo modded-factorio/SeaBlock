@@ -133,6 +133,7 @@ bobmods.lib.tech.add_prerequisite('advanced-ore-refining-1', 'logistic-science-p
 bobmods.lib.tech.add_prerequisite('bio-paper-2', 'logistic-science-pack')
 bobmods.lib.tech.add_prerequisite('bio-processing-blue', 'logistic-science-pack')
 bobmods.lib.tech.add_prerequisite('bio-wood-processing-3', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-metallurgy-2', 'logistic-science-pack')
 if mods['angelsaddons-storage'] then
   bobmods.lib.tech.add_prerequisite('pressure-tanks', 'logistic-science-pack')
 end

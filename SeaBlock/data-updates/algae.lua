@@ -22,7 +22,7 @@ bobmods.lib.tech.add_recipe_unlock('bio-processing-blue', 'algae-farm-2')
 bobmods.lib.tech.replace_prerequisite('bio-processing-green', 'bio-processing-brown', 'basic-chemistry')
 
 -- Blue algae
-data.raw.technology['bio-processing-blue'].prerequisites = {'bio-processing-brown'}
+bobmods.lib.tech.replace_prerequisite('bio-processing-blue', 'bio-processing-red', 'bio-processing-brown')
 bobmods.lib.tech.remove_science_pack('bio-processing-blue', 'chemical-science-pack')
 
 -- Make these craftable by hand
