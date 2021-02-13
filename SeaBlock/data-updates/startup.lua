@@ -118,11 +118,14 @@ local startuprecipes = {
   ['slag-processing-stone'] = true,
   ['water-mineralized'] = true,
   ['stone-pipe'] = true,
-  ['stone-pipe-to-ground'] = true,
-  ['stone-mixing-furnace'] = true,
-  ['stone-mixing-furnace-from-stone-furnace'] = true,
-  ['stone-furnace-from-stone-mixing-furnace'] = true
+  ['stone-pipe-to-ground'] = true
 }
+
+if settings.startup['bobmods-assembly-multipurposefurnaces'].value then
+  startuprecipes['stone-mixing-furnace'] = true
+  startuprecipes['stone-mixing-furnace-from-stone-furnace'] = true
+  startuprecipes['stone-furnace-from-stone-mixing-furnace'] = true
+end
 
 local sbtechs = {
   ['sb-startup1'] = true,

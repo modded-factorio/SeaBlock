@@ -222,4 +222,19 @@ lib.copy_icon = function(to, from)
   end
 end
 
+lib.hide_item = function(item)
+  local _item = data.raw.item[item]
+  if not _item then
+    _item = data.raw.fluid[item]
+  end
+  if _item then
+    if not _item.flags then
+      _item.flags = {}
+    end
+    if not lib.tablefind(_item.flags, "hidden") then
+      table.insert(_item.flags, "hidden")
+    end
+  end
+end
+
 return lib

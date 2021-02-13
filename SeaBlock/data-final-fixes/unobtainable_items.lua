@@ -88,11 +88,7 @@ for _,v in ipairs({
   'lithia-water-barrel',
   'burner-mining-drill',
   'electric-mining-drill',
-  'pumpjack',
-  'stone-chemical-furnace',
-  'steel-chemical-furnace',
-  'fluid-chemical-furnace',
-  'electric-chemical-furnace'
+  'pumpjack'
 }) do
   unobtainable[v] = {}
 end
@@ -173,19 +169,8 @@ while work do
 end
 
 -- Add hidden flag to disabled items so they don't show up in circuit menu/item filter/FNEI etc.
-for k,v in pairs(unobtainable) do
-  local item = data.raw.item[k]
-  if not item then
-    item = data.raw.fluid[k]
-  end
-  if item then
-    if not item.flags then
-      item.flags = {}
-    end
-    if not lib.tablefind(item.flags, "hidden") then
-      table.insert(item.flags, "hidden")
-    end
-  end
+for k,_ in pairs(unobtainable) do
+  lib.hide_item(k)
 end
 
 -- Remove any recipe that uses an unobtainable ingredient
