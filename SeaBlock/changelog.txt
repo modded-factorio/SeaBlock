@@ -20,6 +20,7 @@ Date: ???
     - Hid metal mixing furnaces if multi purpose furnaces are disabled
     - Renamed Metal mixing and Multi purpose furnaces to Recipe furnaces. They are exactly the same as regular furnaces except they need a recipe set
     - Renamed Bob's Assembling machines mod setting Multi purpose furnaces to Recipe furnaces
+    - Reduced cost of basic Steel plate smelting from 8 Glowing hot iron plate to 6 Glowing hot iron plate on normal difficulty
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
     - Fixed Forage for cellulose fiber recipe not usable with mods that replace the default character
