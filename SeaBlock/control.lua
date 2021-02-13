@@ -12,7 +12,7 @@ seablock.giveitems = function(entity)
     landfill = settings.startup['sb-default-landfill'].value
   end
   local stuff = {
-    {landfill, 1000},
+    {landfill, 2000},
     {"stone", 50},
     {"small-electric-pole", 50},
     {"small-lamp", 12},
