@@ -237,4 +237,88 @@ lib.hide_item = function(item)
   end
 end
 
+--[[
+  Copied from Artisanal Reskins: Library v1.1.2
+  With permission from Kira
+  https://mods.factorio.com/mod/reskins-library
+  https://github.com/kirazy/reskins-library/
+--]]
+lib.composite_existing_icons = function(target_name, target_type, icons)
+    -- icons = table of ["name"] = {type, shift, scale} or ["name"] = {icon or icons}, where type, shift, and scale are optional, and icon/icons ignores other param values
+
+    -- Check to ensure the target is available
+    local target = data.raw[target_type][target_name]
+    if not target then return end
+
+    -- Initialize the icons table
+    local composite_icon = {}
+
+    -- Iterate through the list of icons to composite
+    for name, params in pairs(icons) do
+        if params.icons then
+            for _, layer in pairs(params.icons) do
+                table.insert(composite_icon, {
+                    icon = layer.icon,
+                    icon_size = layer.icon_size,
+                    icon_mipmaps = layer.icon_mipmaps,
+                    scale = layer.scale or (32 / layer.icon_size),
+                    shift = layer.shift,
+                    tint = layer.tint,
+                })
+            end
+        elseif params.icon then
+            table.insert(composite_icon, {
+                icon = params.icon.icon,
+                icon_size = params.icon.icon_size,
+                icon_mipmaps = params.icon.icon_mipmaps,
+                scale = params.icon.scale or (32 / params.icon.icon_size),
+                shift = params.icon.shift,
+                tint = params.icon.tint,
+            })
+        else
+            -- Check to ensure the object is available to copy from; abort if not
+            local source_type = params.type or "item"
+
+            -- Copy the current entity, return if it doesn't exist
+            if not data.raw[source_type][name] then return end
+            local entity = util.copy(data.raw[source_type][name])
+
+            -- Check for icons definition
+            if entity.icons then
+                -- Transcribe layers to the composite_icon table
+                for _, layer in pairs(entity.icons) do
+                    local icon_size = layer.icon_size or entity.icon_size
+                    table.insert(composite_icon, {
+                        icon = layer.icon,
+                        icon_size = icon_size,
+                        icon_mipmaps = layer.icon_mipmaps or entity.icon_mipmaps,
+                        tint = layer.tint,
+                        scale = layer.scale or (32 / icon_size) * (params.scale or 1),
+                        shift = {
+                            (layer.shift and (layer.shift[1] or layer.shift.x) or 0) * (params.scale or 1) + (params.shift and (params.shift[1] or params.shift.x) or 0),
+                            (layer.shift and (layer.shift[2] or layer.shift.y) or 0) * (params.scale or 1) + (params.shift and (params.shift[2] or params.shift.y) or 0),
+                        }
+                    })
+                end
+            -- Standard icon
+            else
+                -- Fully define an icons layer
+                table.insert(composite_icon, {
+                    icon = entity.icon,
+                    icon_size = entity.icon_size,
+                    icon_mipmaps = entity.icon_mipmaps,
+                    scale = params.scale and (params.scale * 32 / entity.icon_size) or (32 / entity.icon_size),
+                    shift = {
+                        (params.shift and (params.shift[1] or params.shift.x) or 0),
+                        (params.shift and (params.shift[2] or params.shift.y) or 0),
+                    }
+                })
+            end
+        end
+    end
+
+    -- Assign the composite icon
+    reskins.lib.assign_icons(target_name, {type = target_type, icon = composite_icon})
+end
+
 return lib
