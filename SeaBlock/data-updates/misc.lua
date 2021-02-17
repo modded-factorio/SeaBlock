@@ -10,8 +10,9 @@ end
 lib.substingredient("pellet-manganese-smelting", "gas-natural-1", "gas-methane")
 
 -- Remove steel's prerequiste on Chemical processing 1
-bobmods.lib.tech.replace_prerequisite('steel-processing', 'electrolysis-1', 'slag-processing-1')
+bobmods.lib.tech.remove_prerequisite('steel-processing', 'electrolysis-1')
 bobmods.lib.tech.remove_prerequisite('steel-processing', 'chemical-processing-1')
+bobmods.lib.tech.add_prerequisite('steel-processing', 'slag-processing-1')
 
 -- Reduce cost of basic Steel from 8 iron to 6 iron (only for normal difficulty)
 bobmods.lib.recipe.remove_difficulty_ingredient('angels-plate-steel-pre-heating', 'normal', 'angels-plate-hot-iron')
