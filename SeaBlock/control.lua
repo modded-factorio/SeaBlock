@@ -1,5 +1,7 @@
 seablock = seablock or {}
 
+require "starting-items"
+
 function seablock.GiveResearch(force)
   if not force.technologies['sb-startup1'].researched then
     force.add_research("sb-startup1")
@@ -7,33 +9,7 @@ function seablock.GiveResearch(force)
 end
 
 function seablock.GiveItems(entity)
-  local landfill = 'landfill'
-  if settings.startup['sb-default-landfill'] and game.item_prototypes[settings.startup['sb-default-landfill'].value] then
-    landfill = settings.startup['sb-default-landfill'].value
-  end
-  local stuff = {
-    {landfill, 2000},
-    {"stone", 50},
-    {"small-electric-pole", 50},
-    {"small-lamp", 12},
-    {"iron-plate", 1200},
-    {"basic-circuit-board", 200},
-    {"stone-pipe", 100},
-    {"stone-pipe-to-ground", 50},
-    {"stone-brick", 500},
-    {"pipe", 22},
-    {"copper-pipe", 5},
-    {"iron-gear-wheel", 20},
-    {"iron-stick", 96},
-    {"pipe-to-ground", 2}
-  }
-  if game.item_prototypes["wind-turbine-2"] then
-    table.insert(stuff, {"wind-turbine-2", 120})
-  else
-    table.insert(stuff, {"solar-panel", 38})
-    table.insert(stuff, {"accumulator", 32})
-  end
-  for _,v in ipairs(stuff) do
+  for _,v in pairs(global.starting_items) do
     entity.insert{name = v[1], count = v[2]}
   end
 end
@@ -46,6 +22,7 @@ end
 
 local function init()
   SetPvp()
+  seablock.Populate_Starting_Items(global, game.item_prototypes)
   if remote.interfaces.freeplay and remote.interfaces.freeplay.set_disable_crashsite then
     remote.call("freeplay", "set_disable_crashsite", true)
   end

@@ -23,6 +23,7 @@ Date: ???
     - Increased starting landfill from 1k to 2k
     - Updated crystallization recipe icons
     - Unsubscribe from relevant event handlers after home rock has been placed / all tutorial techs have been unlocked
+    - Added table of starting tech and items for YAFC to read
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
     - Fixed Forage for cellulose fiber recipe not usable with mods that replace the default character

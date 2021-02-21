@@ -1,3 +1,5 @@
+require 'starting-items'
+
 -- First stage:   circuit board  pipe  pipe-to-ground  iron-gear  iron-stick  copper-pipe
 -- Electrolyser   5                                               20*4
 -- Liquifier      5                    2
@@ -314,3 +316,16 @@ data.raw.technology['bio-paper-1'].unit = {
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'solid-alginic-acid')
 bobmods.lib.tech.add_recipe_unlock('bio-paper-1', 'solid-alginic-acid')
 bobmods.lib.tech.remove_prerequisite('bio-paper-2', 'bio-paper-1')
+
+if data.data_crawler then
+  data.script_enabled = data.script_enabled or {}
+
+  for k,_ in pairs(sbtechs) do
+    table.insert(data.script_enabled, {type = 'technology', name = k})
+  end
+  
+  seablock.Populate_Starting_Items(seablock.starting_items, data.raw.item)
+  for _,v in pairs(seablock.starting_items) do
+    table.insert(data.script_enabled, {type = 'item', name = v[1]})
+  end
+end
