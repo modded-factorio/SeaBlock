@@ -77,6 +77,9 @@ local function init()
     function(e)
       local player = game.players[e.player_index]
       player.remove_item{name = 'burner-mining-drill', count = 1}
+      player.remove_item{name = 'burner-ore-crusher', count = 1}
+      player.remove_item{name = 'stone-furnace', count = 1}
+      player.remove_item{name = 'iron-plate', count = 8}
       player.remove_item{name = 'wood', count = 1}
     end
   )
