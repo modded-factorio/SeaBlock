@@ -324,7 +324,7 @@ if data.data_crawler then
     table.insert(data.script_enabled, {type = 'technology', name = k})
   end
   
-  seablock.Populate_Starting_Items(seablock.starting_items, data.raw.item)
+  seablock.Populate_Starting_Items(seablock, data.raw.item)
   for _,v in pairs(seablock.starting_items) do
     table.insert(data.script_enabled, {type = 'item', name = v[1]})
   end
