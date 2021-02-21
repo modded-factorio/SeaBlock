@@ -5,7 +5,6 @@ Date: ???
     - Buffed Lead 3
     - Added fuel value to tool tips for burnable fluids
     - Merged in A Sea Block Config mod
-    - Disabled Bob's burner power phase setting
     - Added compatibility for MadClown01's Extended AngelBob Minerals
     - Reshuffled early game technology and recipe unlocks
     - Moved Clarifier from Water treatment to Washing 1
