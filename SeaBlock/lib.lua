@@ -252,7 +252,7 @@ function seablock.lib.hide_item(item)
 end
 
 --[[
-  Copied from Artisanal Reskins: Library v1.1.2
+  Modified from code copied from Artisanal Reskins: Library v1.1.2
   With permission from Kira
   https://mods.factorio.com/mod/reskins-library
   https://github.com/kirazy/reskins-library/
@@ -334,6 +334,146 @@ function seablock.reskins.composite_existing_icons(target_name, target_type, ico
     end
 
     -- Assign the composite icon
-    reskins.lib.assign_icons(target_name, {type = target_type, icon = composite_icon})
+    seablock.reskins.assign_icons(target_name, {type = target_type, icon = composite_icon})
 end
 
+function seablock.reskins.assign_icons(name, inputs)
+    -- Inputs required by this function
+    -- type            - Entity type
+    -- icon            - Table or string defining icon
+    -- icon_size       - Pixel size of icons
+    -- icon_mipmaps    - Number of mipmaps present in the icon image file
+
+    -- Initialize paths
+    local entity
+    if inputs.type then
+        entity = data.raw[inputs.type][name]
+    end
+
+    -- Recipes are exceptions to the usual pattern
+    local item, item_with_data, explosion, remnant
+    if inputs.type ~= "recipe" then
+        item = data.raw["item"][name]
+        item_with_data = data.raw["item-with-entity-data"][name]
+        explosion = data.raw["explosion"][name.."-explosion"]
+        remnant = data.raw["corpse"][name.."-remnants"]
+    end
+
+    -- Check whether icon or icons, ensure the key we're not using is erased
+    if type(inputs.icon) == "table" then
+        -- Set icon_size and icon_mipmaps per icons specification
+        for n = 1, #inputs.icon do
+            if not inputs.icon[n].icon_size then
+                inputs.icon[n].icon_size = inputs.icon_size
+            end
+
+            if not inputs.icon[n].icon_mipmaps then
+                inputs.icon[n].icon_mipmaps = inputs.icon_mipmaps or 1
+            end
+        end
+
+        -- Create icons that have multiple layers
+        if entity then
+            entity.icon = nil
+            entity.icons = inputs.icon
+        end
+
+        if item then
+            item.icon = nil
+            item.icons = inputs.icon
+        end
+
+        if item_with_data then
+            item_with_data.icon = nil
+            item_with_data.icons = inputs.icon
+        end
+
+        if explosion then
+            explosion.icon = nil
+            explosion.icons = inputs.icon
+        end
+
+        if remnant then
+            remnant.icon = nil
+            remnant.icons = inputs.icon
+        end
+    else
+        -- Create icons that do not have multiple layers
+        if entity then
+            entity.icons = nil
+            entity.icon = inputs.icon
+            entity.icon_size = inputs.icon_size
+            entity.icon_mipmaps = inputs.icon_mipmaps
+        end
+
+        if item then
+            item.icons = nil
+            item.icon = inputs.icon
+            item.icon_size = inputs.icon_size
+            item.icon_mipmaps = inputs.icon_mipmaps
+        end
+
+        if item_with_data then
+            item_with_data.icons = nil
+            item_with_data.icon = inputs.icon
+            item_with_data.icon_size = inputs.icon_size
+            item_with_data.icon_mipmaps = inputs.icon_mipmaps
+        end
+
+        if explosion then
+            explosion.icons = nil
+            explosion.icon = inputs.icon
+            explosion.icon_size = inputs.icon_size
+            explosion.icon_mipmaps = inputs.icon_mipmaps
+        end
+
+        if remnant then
+            remnant.icons = nil
+            remnant.icon = inputs.icon
+            remnant.icon_size = inputs.icon_size
+            remnant.icon_mipmaps = inputs.icon_mipmaps
+        end
+    end
+
+    -- Handle picture definitions
+    if entity then
+        if inputs.icon_picture and inputs.make_entity_pictures then
+            entity.pictures = inputs.icon_picture
+        end
+    end
+
+    if item then
+        if inputs.icon_picture and inputs.make_icon_pictures  then
+            item.pictures = inputs.icon_picture
+        end
+    end
+
+    -- item-with-entity-data prototypes ignore pictures field as of 1.0
+    -- this has been left active in the hopes the default behavior is adjusted
+    if item_with_data then
+        if inputs.icon_picture and inputs.make_icon_pictures then
+            item_with_data.pictures = inputs.icon_picture
+        end
+    end
+
+    -- Clear out recipe so that icon is inherited properly
+    if inputs.type ~= "recipe" then
+        seablock.reskins.clear_icon_specification(name, "recipe")
+    end
+end
+
+function seablock.reskins.clear_icon_specification(name, type)
+    -- Inputs required by this function:
+    -- type        - Entity type
+
+    -- Fetch entity
+    local entity = data.raw[type][name]
+
+    -- If the entity exists, clear the icon specification
+    if entity then
+        entity.icon = nil
+        entity.icons = nil
+        entity.icon_size = nil
+        entity.icon_mipmaps = nil
+    end
+end
