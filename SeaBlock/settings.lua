@@ -1,3 +1,5 @@
+seablock = seablock or {}
+
 if mods["LandfillPainting"] then
   local tiletypes = {
     'landfill-dirt-4',

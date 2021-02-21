@@ -1,5 +1,3 @@
-local lib = require "lib"
-
 -- No fuel value on these because they are also smelting inputs
 -- https://forums.factorio.com/viewtopic.php?f=23&t=46634
 data.raw.item['wood-bricks'].fuel_value = nil
@@ -15,7 +13,7 @@ if data.raw.fluid['hydrazine'] then
   data.raw.fluid['gas-hydrazine'].fuel_value = hydrazinevalue
   if hydrazinevalue:sub(-2) == 'kJ' then
     local hydrazinevaluekj = tonumber(hydrazinevalue:sub(1, -3))
-    lib.substingredient('solid-fuel-hydrazine', 'gas-hydrazine', nil, math.floor(24000 / hydrazinevaluekj))
+    seablock.lib.substingredient('solid-fuel-hydrazine', 'gas-hydrazine', nil, math.floor(24000 / hydrazinevaluekj))
   end
 end
 
@@ -33,9 +31,9 @@ end
 data.raw.item['enriched-fuel'].fuel_value = '50MJ'
 data.raw.item['enriched-fuel'].stack_size = 50
 
-lib.substingredient('solid-fuel-methane', 'gas-methane', nil, 40)
-lib.substingredient('solid-fuel-naphtha', 'liquid-naphtha', nil, 40)
-lib.substingredient('solid-fuel-fuel-oil', 'liquid-fuel-oil', nil, 20)
+seablock.lib.substingredient('solid-fuel-methane', 'gas-methane', nil, 40)
+seablock.lib.substingredient('solid-fuel-naphtha', 'liquid-naphtha', nil, 40)
+seablock.lib.substingredient('solid-fuel-fuel-oil', 'liquid-fuel-oil', nil, 20)
 
 for _,v in pairs({
   'hydrogen',

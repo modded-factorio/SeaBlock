@@ -1,12 +1,16 @@
-local lib = {}
-lib.findname = function(t, name)
+seablock = seablock or {}
+seablock.lib = {}
+seablock.reskins = {}
+
+function seablock.lib.findname(t, name)
   for i,v in ipairs(t) do
     if v.name == name then
       return v
     end
   end
 end
-lib.removename = function(t, name)
+
+function seablock.lib.removename(t, name)
   for i,v in ipairs(t) do
     if v.name == name then
       table.remove(t, i)
@@ -14,7 +18,8 @@ lib.removename = function(t, name)
     end
   end
 end
-lib.takeeffect = function(tech, name)
+
+function seablock.lib.takeeffect(tech, name)
   if not data.raw.technology[tech] then
     return nil
   end
@@ -25,15 +30,17 @@ lib.takeeffect = function(tech, name)
     end
   end
 end
-lib.findeffectidx = function(effects, name)
+
+function seablock.lib.findeffectidx(effects, name)
   for i,v in ipairs(effects) do
     if v.recipe == name then
       return i
     end
   end
 end
-lib.moveeffect = function(name, fromtech, totech, insertindex)
-  local effect = lib.takeeffect(fromtech, name)
+
+function seablock.lib.moveeffect(name, fromtech, totech, insertindex)
+  local effect = seablock.lib.takeeffect(fromtech, name)
   if not effect then
     log('Effect ' .. name .. ' not found in tech ' .. fromtech)
     return
@@ -65,7 +72,7 @@ local function add_recipe_unlock(technology, recipe, insertindex)
   end
 end
 
-lib.add_recipe_unlock = function(technology, recipe, insertindex)
+function seablock.lib.add_recipe_unlock(technology, recipe, insertindex)
   if
     type(technology) == "string" and
     type(recipe) == "string" and
@@ -87,7 +94,7 @@ lib.add_recipe_unlock = function(technology, recipe, insertindex)
   end
 end
 
-lib.iteraterecipes = function(recipe, func)
+function seablock.lib.iteraterecipes(recipe, func)
   if recipe.normal then
     func(recipe.normal)
   end
@@ -98,7 +105,8 @@ lib.iteraterecipes = function(recipe, func)
     func(recipe)
   end
 end
-lib.recipeforeach = function(recipename, itemname, func, tablename)
+
+function seablock.lib.recipeforeach(recipename, itemname, func, tablename)
   local doline = function(recipe)
     for _, line in pairs(recipe[tablename]) do
       local nameidx = 1
@@ -110,9 +118,10 @@ lib.recipeforeach = function(recipename, itemname, func, tablename)
       end
     end
   end
-  lib.iteraterecipes(data.raw.recipe[recipename], doline)
+  seablock.lib.iteraterecipes(data.raw.recipe[recipename], doline)
 end
-lib.substingredient = function(name, from, to, count)
+
+function seablock.lib.substingredient(name, from, to, count)
   local t = data.raw.recipe[name]
   if t then
     local dosubst = function(ingredient, nameidx, amountidx)
@@ -123,10 +132,11 @@ lib.substingredient = function(name, from, to, count)
         ingredient[amountidx] = count
       end
     end
-    lib.recipeforeach(name, from, dosubst, 'ingredients')
+    seablock.lib.recipeforeach(name, from, dosubst, 'ingredients')
   end
 end
-lib.removeingredient = function(name, ingredient)
+
+function seablock.lib.removeingredient(name, ingredient)
   local t = data.raw.recipe[name]
   if t then
     local doremove = function(recipe)
@@ -137,10 +147,11 @@ lib.removeingredient = function(name, ingredient)
         end
       end
     end
-    lib.iteraterecipes(t, doremove)
+    seablock.lib.iteraterecipes(t, doremove)
   end
 end
-lib.substresult = function(name, from, to, count)
+
+function seablock.lib.substresult(name, from, to, count)
   local t = data.raw.recipe[name]
   if t then
     local dosubst = function(result, nameidx, amountidx)
@@ -151,19 +162,21 @@ lib.substresult = function(name, from, to, count)
         result[amountidx] = count
       end
     end
-    lib.recipeforeach(name, from, dosubst, 'results')
+    seablock.lib.recipeforeach(name, from, dosubst, 'results')
   end
 end
-lib.addresult = function(name, resulttable)
+
+function seablock.lib.addresult(name, resulttable)
   local t = data.raw.recipe[name]
   if t then
     local doadd = function(recipe)
       table.insert(recipe.results, resulttable)
     end
-    lib.iteraterecipes(t, doadd)
+    seablock.lib.iteraterecipes(t, doadd)
   end
 end
-lib.findtechunlock = function(recipename)
+
+function seablock.lib.findtechunlock(recipename)
   for _,tech in pairs(data.raw.technology) do
     for _,effect in pairs(tech.effects or {}) do
       if effect.type == "unlock-recipe" and effect.recipe == recipename then
@@ -172,7 +185,8 @@ lib.findtechunlock = function(recipename)
     end
   end
 end
-lib.tablefind = function(table, item)
+
+function seablock.lib.tablefind(table, item)
   for k, v in pairs(table) do
     if v == item then
       return k
@@ -181,7 +195,7 @@ lib.tablefind = function(table, item)
   return nil
 end
 
-lib.remove_recipe = function(recipe)
+function seablock.lib.remove_recipe(recipe)
   if data.raw.recipe[recipe] then
     bobmods.lib.recipe.enabled(recipe, false)
     if data.raw.recipe[recipe].normal then
@@ -196,7 +210,7 @@ lib.remove_recipe = function(recipe)
   end
 end
 
-lib.hide_technology = function(technology)
+function seablock.lib.hide_technology(technology)
   if data.raw.technology[technology] then
     if data.raw.technology[technology].normal then
       data.raw.technology[technology].normal.hidden = true
@@ -213,7 +227,7 @@ lib.hide_technology = function(technology)
   end
 end
 
-lib.copy_icon = function(to, from)
+function seablock.lib.copy_icon(to, from)
   if to and from then
     to.icon = from.icon
     to.icons = from.icons
@@ -222,7 +236,7 @@ lib.copy_icon = function(to, from)
   end
 end
 
-lib.hide_item = function(item)
+function seablock.lib.hide_item(item)
   local _item = data.raw.item[item]
   if not _item then
     _item = data.raw.fluid[item]
@@ -231,7 +245,7 @@ lib.hide_item = function(item)
     if not _item.flags then
       _item.flags = {}
     end
-    if not lib.tablefind(_item.flags, "hidden") then
+    if not seablock.lib.tablefind(_item.flags, "hidden") then
       table.insert(_item.flags, "hidden")
     end
   end
@@ -243,7 +257,7 @@ end
   https://mods.factorio.com/mod/reskins-library
   https://github.com/kirazy/reskins-library/
 --]]
-lib.composite_existing_icons = function(target_name, target_type, icons)
+function seablock.reskins.composite_existing_icons(target_name, target_type, icons)
     -- icons = table of ["name"] = {type, shift, scale} or ["name"] = {icon or icons}, where type, shift, and scale are optional, and icon/icons ignores other param values
 
     -- Check to ensure the target is available
@@ -280,7 +294,9 @@ lib.composite_existing_icons = function(target_name, target_type, icons)
             local source_type = params.type or "item"
 
             -- Copy the current entity, return if it doesn't exist
-            if not data.raw[source_type][name] then return end
+            if not data.raw[source_type][name] then
+              return
+            end
             local entity = util.copy(data.raw[source_type][name])
 
             -- Check for icons definition
@@ -321,4 +337,3 @@ lib.composite_existing_icons = function(target_name, target_type, icons)
     reskins.lib.assign_icons(target_name, {type = target_type, icon = composite_icon})
 end
 
-return lib

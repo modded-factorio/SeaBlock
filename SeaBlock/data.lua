@@ -5,6 +5,7 @@ if mods['seablock-mining'] then
   seablock.trigger.mining_productivity = true
 end
 
+require "lib"
 require "prototypes/recipe"
 require "prototypes/recipe-category"
 require "prototypes/technology"

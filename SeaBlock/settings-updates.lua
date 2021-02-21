@@ -1,7 +1,3 @@
-if not seablock then
-  seablock = {}
-end
-
 function seablock.set_setting_default_value(setting_type, setting_name, value)
   if data.raw[setting_type] then
     local s = data.raw[setting_type][setting_name]

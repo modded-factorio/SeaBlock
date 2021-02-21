@@ -1,8 +1,6 @@
-local lib = require("lib")
-
 -- Adjust resin production amount to how it was in petrochem 0.7.9.
 -- TODO: Revisit this after Angel adds more liquid rubber recipes
-lib.substresult('liquid-rubber-1', 'liquid-rubber', nil, 20)
+seablock.lib.substresult('liquid-rubber-1', 'liquid-rubber', nil, 20)
 
 
 -- Electric Engines: Move to green science

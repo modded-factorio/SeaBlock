@@ -1,4 +1,4 @@
-seablock = {}
+seablock = seablock or {}
 
 seablock.giveresearch = function(force)
   if newforce then

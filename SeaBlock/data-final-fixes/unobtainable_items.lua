@@ -1,5 +1,3 @@
-local lib = require("lib")
-
 -- Rename internal item names to keep mods like FNEI searching properly
 local itemrename =
 {
@@ -38,7 +36,7 @@ local function updaterecipe(recipe)
   end
 end
 for _,v in pairs(data.raw.recipe) do
-  lib.iteraterecipes(v, updaterecipe)
+  seablock.lib.iteraterecipes(v, updaterecipe)
 end
 
 -- Recipes to unconditionally remove
@@ -170,7 +168,7 @@ end
 
 -- Add hidden flag to disabled items so they don't show up in circuit menu/item filter/FNEI etc.
 for k,_ in pairs(unobtainable) do
-  lib.hide_item(k)
+  seablock.lib.hide_item(k)
 end
 
 -- Remove any recipe that uses an unobtainable ingredient

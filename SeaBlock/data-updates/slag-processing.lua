@@ -1,13 +1,11 @@
-local lib = require "lib"
-
 -- Decrease amount of crushed stone for slag-slurry so it's still better than mineralized water crystallization
-lib.substingredient('stone-crushed-dissolution', 'stone-crushed', nil, 20)
+seablock.lib.substingredient('stone-crushed-dissolution', 'stone-crushed', nil, 20)
 
 -- Angels sludge crystalization usually gives normal smeltable ores. This would be far too easy,
 -- so change recipes to give the weird ores that need extra processing steps.
 for i = 1,6 do
   local recipe = data.raw.recipe["slag-processing-" .. i]
-  lib.copy_icon(recipe, {})
+  seablock.lib.copy_icon(recipe, {})
   recipe.localised_name = {"recipe-name.slag-processing", {"item-name.angels-ore" .. i}}
   recipe.order = "a-a [angels-ore-" .. i .. "]"
 
@@ -35,31 +33,31 @@ end
 -- Angels ores 2, 4 (Jivolite, Crotinnium) available from Advanced mechanical refining
 bobmods.lib.recipe.enabled('angelsore1-crushed-smelting', false)
 bobmods.lib.recipe.enabled('angelsore3-crushed-smelting', false)
-lib.moveeffect('catalysator-brown', 'slag-processing-1', 'advanced-ore-refining-1', 3)
-local slag1start = lib.findeffectidx(data.raw.technology['slag-processing-1'].effects, 'slag-processing-1')
-lib.moveeffect('slag-processing-5', 'slag-processing-2', 'slag-processing-1', slag1start + 3)
-lib.moveeffect('slag-processing-6', 'slag-processing-2', 'slag-processing-1', slag1start + 4)
-lib.add_recipe_unlock('slag-processing-1', 'angelsore5-crushed', slag1start + 5)
-lib.add_recipe_unlock('slag-processing-1', 'angelsore6-crushed', slag1start + 6)
-lib.add_recipe_unlock('slag-processing-1', 'angelsore5-crushed-smelting', slag1start + 7)
-lib.add_recipe_unlock('slag-processing-1', 'angelsore6-crushed-smelting', slag1start + 8)
+seablock.lib.moveeffect('catalysator-brown', 'slag-processing-1', 'advanced-ore-refining-1', 3)
+local slag1start = seablock.lib.findeffectidx(data.raw.technology['slag-processing-1'].effects, 'slag-processing-1')
+seablock.lib.moveeffect('slag-processing-5', 'slag-processing-2', 'slag-processing-1', slag1start + 3)
+seablock.lib.moveeffect('slag-processing-6', 'slag-processing-2', 'slag-processing-1', slag1start + 4)
+seablock.lib.add_recipe_unlock('slag-processing-1', 'angelsore5-crushed', slag1start + 5)
+seablock.lib.add_recipe_unlock('slag-processing-1', 'angelsore6-crushed', slag1start + 6)
+seablock.lib.add_recipe_unlock('slag-processing-1', 'angelsore5-crushed-smelting', slag1start + 7)
+seablock.lib.add_recipe_unlock('slag-processing-1', 'angelsore6-crushed-smelting', slag1start + 8)
 
 local slag2start = 0
-lib.moveeffect('slag-processing-2', 'slag-processing-1', 'ore-advanced-crushing', slag2start + 1)
-lib.moveeffect('slag-processing-4', 'slag-processing-2', 'ore-advanced-crushing', slag2start + 2)
-lib.moveeffect('angelsore2-crushed', 'ore-crushing', 'ore-advanced-crushing', slag2start + 3)
-lib.moveeffect('angelsore4-crushed', 'ore-crushing', 'ore-advanced-crushing', slag2start + 4)
-lib.moveeffect('angelsore2-crushed-processing', 'ore-crushing', 'ore-advanced-crushing', slag2start + 7)
-lib.moveeffect('angelsore4-crushed-processing', 'ore-crushing', 'ore-advanced-crushing', slag2start + 8)
+seablock.lib.moveeffect('slag-processing-2', 'slag-processing-1', 'ore-advanced-crushing', slag2start + 1)
+seablock.lib.moveeffect('slag-processing-4', 'slag-processing-2', 'ore-advanced-crushing', slag2start + 2)
+seablock.lib.moveeffect('angelsore2-crushed', 'ore-crushing', 'ore-advanced-crushing', slag2start + 3)
+seablock.lib.moveeffect('angelsore4-crushed', 'ore-crushing', 'ore-advanced-crushing', slag2start + 4)
+seablock.lib.moveeffect('angelsore2-crushed-processing', 'ore-crushing', 'ore-advanced-crushing', slag2start + 7)
+seablock.lib.moveeffect('angelsore4-crushed-processing', 'ore-crushing', 'ore-advanced-crushing', slag2start + 8)
 
-lib.add_recipe_unlock('ore-crushing', 'iron-plate')
-lib.add_recipe_unlock('ore-crushing', 'copper-plate')
-lib.add_recipe_unlock('ore-crushing', 'lead-plate')
-lib.add_recipe_unlock('ore-crushing', 'tin-plate')
+seablock.lib.add_recipe_unlock('ore-crushing', 'iron-plate')
+seablock.lib.add_recipe_unlock('ore-crushing', 'copper-plate')
+seablock.lib.add_recipe_unlock('ore-crushing', 'lead-plate')
+seablock.lib.add_recipe_unlock('ore-crushing', 'tin-plate')
 
 -- Hide unwanted recipes
-lib.remove_recipe('quartz-glass')
-lib.remove_recipe('silver-plate')
+seablock.lib.remove_recipe('quartz-glass')
+seablock.lib.remove_recipe('silver-plate')
 
 -- Add prerequisites
 bobmods.lib.tech.add_prerequisite('ore-floatation', 'ore-advanced-crushing')
@@ -67,7 +65,7 @@ bobmods.lib.tech.add_prerequisite('advanced-ore-refining-1', 'ore-advanced-crush
 bobmods.lib.tech.add_prerequisite('angels-metallurgy-1', 'ore-crushing')
 
 -- Move Mechanical Refining under Slag Processing 1
-lib.moveeffect('ore-crusher', 'ore-crushing', 'automation')
+seablock.lib.moveeffect('ore-crusher', 'ore-crushing', 'automation')
 bobmods.lib.tech.remove_prerequisite('slag-processing-1', 'ore-crushing')
 bobmods.lib.tech.replace_prerequisite('ore-crushing', 'automation', 'slag-processing-1')
 
@@ -75,7 +73,7 @@ bobmods.lib.tech.replace_prerequisite('ore-crushing', 'automation', 'slag-proces
 data.raw['item-subgroup']['slag-processing-1'].order = "ab"
 
 -- Copy Ore Processing Machine tech icon to Mechanical Refining
-lib.copy_icon(data.raw.technology['ore-crushing'], data.raw.technology['advanced-ore-refining-1'])
+seablock.lib.copy_icon(data.raw.technology['ore-crushing'], data.raw.technology['advanced-ore-refining-1'])
 
 -- Red science level research for slag processing 1
 data.raw.technology['slag-processing-1'].unit = {

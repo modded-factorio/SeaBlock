@@ -1,82 +1,80 @@
-local lib = require "lib"
-
--- First stage:                    pipe  pipe-to-ground iron-gear iron-stick
--- Electrolyser  5 circuit board                                  20*4
--- Liquifier     5 circuit board         2
--- Flare stack   5 circuit board*2 10*2
--- Offshore pump 2 circuit board*2 1*2                  10*2
--- Crystallizer  5 circuit board                                             5 copper-pipe
+-- First stage:   circuit board  pipe  pipe-to-ground  iron-gear  iron-stick  copper-pipe
+-- Electrolyser   5                                               20*4
+-- Liquifier      5                    2
+-- Flare stack    5*2            10*2
+-- Offshore pump  2*2            1*2                   10*2
+-- Crystallizer   5                                                           5
 
 -- Second stage:
--- Algae farm    5 circuit board                                  16
+-- Algae farm     5                                               16
 
 local knowningredients = {
-['angels-electrolyser'] = {
-  {'iron-plate', 10},
-  {'basic-circuit-board', 5},
-  {'iron-stick', 20},
-  {'stone-brick', 10}
-},
-['liquifier'] = {
-  {'iron-plate', 10},
-  {'basic-circuit-board', 5},
-  {'pipe-to-ground', 2},
-  {'stone-brick', 10}
-},
-['offshore-pump'] = {
-  {'basic-circuit-board', 2},
-  {'pipe', 1},
-  {'iron-gear-wheel', 10}
-},
-['crystallizer'] = {
-  {'iron-plate', 10},
-  {'basic-circuit-board', 5},
-  {'copper-pipe', 5},
-  {'stone-brick', 10}
-},
-['algae-farm'] = {
-  {'iron-plate', 10},
-  {'basic-circuit-board', 5},
-  {'iron-stick', 16},
-  {'stone-brick', 25}
-},
-['angels-flare-stack'] = {
-  {'iron-plate', 5},
-  {'basic-circuit-board', 5},
-  {'pipe', 10},
-  {'stone-brick', 10}
-},
-['seafloor-pump'] = {
-  {'iron-plate', 5},
-  {'basic-circuit-board', 2},
-  {'pipe', 5}
-},
-['washing-plant'] = {
-  {'iron-plate', 10},
-  {'basic-circuit-board', 5},
-  {'pipe', 10},
-  {'stone-brick', 10}
-},
-['angels-chemical-plant'] = {
-  {'iron-plate', 5},
-  {'iron-gear-wheel', 5},
-  {'basic-circuit-board', 5},
-  {'pipe', 5}
-},
-['filtration-unit'] = {
-  {'iron-plate', 5},
-  {'basic-circuit-board', 5},
-  {'pipe', 10},
-  {'stone-brick', 10}
-},
-['filter-frame'] = {
-  {'iron-plate', 1},
-  {'iron-stick', 2}
-},
-['burner-ore-crusher'] = {
-  {'stone', 5},
-  {'stone-furnace', 1}
-}
+  ['angels-electrolyser'] = {
+    {'iron-plate', 10},
+    {'basic-circuit-board', 5},
+    {'iron-stick', 20},
+    {'stone-brick', 10}
+  },
+  ['liquifier'] = {
+    {'iron-plate', 10},
+    {'basic-circuit-board', 5},
+    {'pipe-to-ground', 2},
+    {'stone-brick', 10}
+  },
+  ['offshore-pump'] = {
+    {'basic-circuit-board', 2},
+    {'pipe', 1},
+    {'iron-gear-wheel', 10}
+  },
+  ['crystallizer'] = {
+    {'iron-plate', 10},
+    {'basic-circuit-board', 5},
+    {'copper-pipe', 5},
+    {'stone-brick', 10}
+  },
+  ['algae-farm'] = {
+    {'iron-plate', 10},
+    {'basic-circuit-board', 5},
+    {'iron-stick', 16},
+    {'stone-brick', 25}
+  },
+  ['angels-flare-stack'] = {
+    {'iron-plate', 5},
+    {'basic-circuit-board', 5},
+    {'pipe', 10},
+    {'stone-brick', 10}
+  },
+  ['seafloor-pump'] = {
+    {'iron-plate', 5},
+    {'basic-circuit-board', 2},
+    {'pipe', 5}
+  },
+  ['washing-plant'] = {
+    {'iron-plate', 10},
+    {'basic-circuit-board', 5},
+    {'pipe', 10},
+    {'stone-brick', 10}
+  },
+  ['angels-chemical-plant'] = {
+    {'iron-plate', 5},
+    {'iron-gear-wheel', 5},
+    {'basic-circuit-board', 5},
+    {'pipe', 5}
+  },
+  ['filtration-unit'] = {
+    {'iron-plate', 5},
+    {'basic-circuit-board', 5},
+    {'pipe', 10},
+    {'stone-brick', 10}
+  },
+  ['filter-frame'] = {
+    {'iron-plate', 1},
+    {'iron-stick', 2}
+  },
+  ['burner-ore-crusher'] = {
+    {'stone', 5},
+    {'stone-furnace', 1}
+  }
 }
 
 bobmods.lib.recipe.enabled('angels-flare-stack', true)
@@ -222,7 +220,7 @@ local function ironrecipe(recipe)
     end
     foundiron = foundiron or haveiron
   end
-  lib.iteraterecipes(recipe, scaningredients)
+  seablock.lib.iteraterecipes(recipe, scaningredients)
   return foundiron
 end
 -- Disable recipes that shouldn't consume startup items
@@ -300,10 +298,10 @@ data.raw.technology['bio-wood-processing'].unit = {
   ingredients = {},
   time = 5
 }
-lib.takeeffect('bio-wood-processing', 'wood-pellets')
-lib.moveeffect('cellulose-fiber-algae', 'bio-processing-brown', 'bio-wood-processing', 2)
-lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 3)
-lib.add_recipe_unlock('bio-wood-processing', 'small-electric-pole', 4)
+seablock.lib.takeeffect('bio-wood-processing', 'wood-pellets')
+seablock.lib.moveeffect('cellulose-fiber-algae', 'bio-processing-brown', 'bio-wood-processing', 2)
+seablock.lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 3)
+seablock.lib.add_recipe_unlock('bio-wood-processing', 'small-electric-pole', 4)
 data.raw.technology['bio-wood-processing-2'].prerequisites = {lasttech}
 
 -- Make bio-paper-1 a startup tutorial tech

@@ -1,13 +1,11 @@
-local lib = require "lib"
-
 if data.raw.item['wind-turbine-2'] then
-  lib.substingredient('wind-turbine-2', 'iron-plate', 'steel-plate', 2)
+  seablock.lib.substingredient('wind-turbine-2', 'iron-plate', 'steel-plate', 2)
   bobmods.lib.recipe.enabled('wind-turbine-2', false)
   bobmods.lib.tech.add_recipe_unlock('steel-processing', 'wind-turbine-2')
 end
 
 -- No natural gas, use methane for manganese pellet smelting
-lib.substingredient("pellet-manganese-smelting", "gas-natural-1", "gas-methane")
+seablock.lib.substingredient("pellet-manganese-smelting", "gas-natural-1", "gas-methane")
 
 -- Remove steel's prerequiste on Chemical processing 1
 bobmods.lib.tech.remove_prerequisite('steel-processing', 'electrolysis-1')
@@ -45,8 +43,8 @@ bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
 bobmods.lib.tech.replace_prerequisite('water-treatment', 'electronics', 'slag-processing-1')
 
 data.raw.technology['water-washing-1'].prerequisites = {'automation'} -- Allow skipping of waste water recycling
-lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
-lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
+seablock.lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
+seablock.lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
 
 -- Increase tech cost to 50
 data.raw.technology['water-treatment'].unit.count = 50
@@ -55,18 +53,18 @@ data.raw.technology['electronics'].prerequisites = {
   'angels-coal-processing'
 }
 
-lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
+seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
 
 if data.raw.recipe['liquid-fish-atmosphere'] then
   data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'
 end
 
-lib.hide_technology('pumpjack')
+seablock.lib.hide_technology('pumpjack')
 
 if not seablock.trigger.mining_productivity then
   for i = 1, 4, 1 do
     if data.raw.technology['mining-productivity-' .. i] then
-      lib.hide_technology('mining-productivity-' .. i)
+      seablock.lib.hide_technology('mining-productivity-' .. i)
       data.raw.technology['mining-productivity-' .. i].effects = {}
     end
   end
@@ -113,30 +111,30 @@ end
 bobmods.lib.tech.add_prerequisite('oil-gas-extraction', 'fluid-handling')
 
 -- Move recipes that shouldn't be unlocked at startup
-lib.add_recipe_unlock('geode-crystallization-1', 'bob-ruby-3')
-lib.add_recipe_unlock('geode-crystallization-1', 'bob-sapphire-3')
-lib.add_recipe_unlock('geode-crystallization-1', 'bob-emerald-3')
-lib.add_recipe_unlock('geode-crystallization-1', 'bob-amethyst-3')
-lib.add_recipe_unlock('geode-crystallization-1', 'bob-topaz-3')
-lib.add_recipe_unlock('geode-crystallization-1', 'bob-diamond-3')
+seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-ruby-3')
+seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-sapphire-3')
+seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-emerald-3')
+seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-amethyst-3')
+seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-topaz-3')
+seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-diamond-3')
 if mods['bobenemies'] then
-  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-red-from-small')
-  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-yellow-from-small')
-  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-orange-from-small')
-  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-blue-from-small')
-  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-purple-from-small')
-  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-green-from-small')
-  lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-from-small')
+  seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-red-from-small')
+  seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-yellow-from-small')
+  seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-orange-from-small')
+  seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-blue-from-small')
+  seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-purple-from-small')
+  seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-green-from-small')
+  seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-from-small')
 end
 
 bobmods.lib.tech.remove_recipe_unlock('chemical-processing-2', 'carbon-dioxide')
-lib.remove_recipe('carbon-dioxide')
+seablock.lib.remove_recipe('carbon-dioxide')
 
 bobmods.lib.tech.remove_prerequisite('tungsten-processing', 'angels-nickel-smelting-1')
 
 -- Merge tech Plastics into Plastic 1
-lib.moveeffect('plastic-pipe', 'plastics', 'plastic-1')
-lib.moveeffect('plastic-pipe-to-ground', 'plastics', 'plastic-1')
+seablock.lib.moveeffect('plastic-pipe', 'plastics', 'plastic-1')
+seablock.lib.moveeffect('plastic-pipe-to-ground', 'plastics', 'plastic-1')
 bobmods.lib.tech.remove_recipe_unlock('plastics', 'solid-plastic')
 bobmods.lib.tech.remove_prerequisite('plastic-1', 'plastics')
 bobmods.lib.tech.remove_prerequisite('plastic-1', 'angels-advanced-chemistry-1')
@@ -149,10 +147,10 @@ bobmods.lib.tech.replace_prerequisite('bio-plastic-1', 'plastics', 'plastic-1')
 if data.raw.technology['sct-lab-t3'] then
   bobmods.lib.tech.remove_prerequisite('sct-lab-t3', 'plastics')
 end
-lib.hide_technology('plastics')
+seablock.lib.hide_technology('plastics')
 
 
 -- Buff Lime filtering
-lib.substingredient('filter-lime', 'solid-lime', nil, 1)
+seablock.lib.substingredient('filter-lime', 'solid-lime', nil, 1)
 data.raw.recipe['filter-lime'].energy_required = 1
 data.raw.recipe['angels-sulfur-scrubber'].energy_required = 6

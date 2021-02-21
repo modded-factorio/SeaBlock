@@ -1,5 +1,3 @@
-local lib = require "lib"
-
 -- Setup recipe bases
 
 local sludge_icons = {
@@ -89,5 +87,5 @@ for name,base_icons in pairs(slag_processing_list) do
 end
 
 for name,sources in pairs(composite_recipes) do
-  lib.composite_existing_icons(name, "recipe", sources)
+  seablock.reskins.composite_existing_icons(name, "recipe", sources)
 end

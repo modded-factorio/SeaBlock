@@ -1,5 +1,3 @@
-local lib = require "lib"
-
 -- Will need a lot of landfill
 data.raw.recipe['landfill'].ingredients = {{ "stone-crushed", 10 }}
 for k,v in pairs(data.raw.item) do
@@ -14,7 +12,7 @@ if settings.startup['sb-default-landfill'] and data.raw.item[settings.startup['s
 end
 
 local function BuffLandfill(recipe)
-  lib.substingredient(recipe, 'solid-mud', nil, 5)
+  seablock.lib.substingredient(recipe, 'solid-mud', nil, 5)
   bobmods.lib.recipe.set_energy_required(recipe, 2)   
 end
 

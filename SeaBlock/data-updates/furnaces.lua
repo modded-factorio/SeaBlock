@@ -1,4 +1,3 @@
-local lib = require "lib"
 local fluid_furnaces = settings.startup['bobmods-assembly-oilfurnaces'].value
 
 local function SetRecipeCategory(recipes, category)
@@ -39,25 +38,25 @@ bobmods.lib.tech.remove_recipe_unlock('alloy-processing', 'stone-mixing-furnace-
 bobmods.lib.tech.remove_recipe_unlock('alloy-processing', 'stone-furnace-from-stone-mixing-furnace')
 
 -- Remove Chemical Furnaces
-lib.hide_item('stone-chemical-furnace')
-lib.hide_item('steel-chemical-furnace')
-lib.hide_item('electric-chemical-furnace')
+seablock.lib.hide_item('stone-chemical-furnace')
+seablock.lib.hide_item('steel-chemical-furnace')
+seablock.lib.hide_item('electric-chemical-furnace')
 
-lib.substingredient('electric-chemical-mixing-furnace', 'electric-chemical-furnace', 'electric-furnace')
+seablock.lib.substingredient('electric-chemical-mixing-furnace', 'electric-chemical-furnace', 'electric-furnace')
 
 bobmods.lib.tech.remove_recipe_unlock('chemical-processing-1', 'stone-chemical-furnace')
 bobmods.lib.tech.remove_recipe_unlock('chemical-processing-1', 'stone-chemical-furnace-from-stone-furnace')
 bobmods.lib.tech.remove_recipe_unlock('chemical-processing-1', 'stone-furnace-from-stone-chemical-furnace')
 
-lib.remove_recipe('stone-chemical-furnace')
-lib.remove_recipe('stone-furnace-from-stone-chemical-furnace')
-lib.remove_recipe('stone-chemical-furnace-from-stone-furnace')
-lib.remove_recipe('steel-chemical-furnace')
-lib.remove_recipe('steel-chemical-furnace-from-steel-furnace')
-lib.remove_recipe('steel-furnace-from-steel-chemical-furnace')
-lib.remove_recipe('electric-furnace-from-electric-chemical-furnace')
-lib.remove_recipe('electric-chemical-furnace')
-lib.remove_recipe('electric-chemical-furnace-from-electric-furnace')
+seablock.lib.remove_recipe('stone-chemical-furnace')
+seablock.lib.remove_recipe('stone-furnace-from-stone-chemical-furnace')
+seablock.lib.remove_recipe('stone-chemical-furnace-from-stone-furnace')
+seablock.lib.remove_recipe('steel-chemical-furnace')
+seablock.lib.remove_recipe('steel-chemical-furnace-from-steel-furnace')
+seablock.lib.remove_recipe('steel-furnace-from-steel-chemical-furnace')
+seablock.lib.remove_recipe('electric-furnace-from-electric-chemical-furnace')
+seablock.lib.remove_recipe('electric-chemical-furnace')
+seablock.lib.remove_recipe('electric-chemical-furnace-from-electric-furnace')
 
 data.raw['assembling-machine']['stone-chemical-furnace'].next_upgrade = nil
 data.raw['assembling-machine']['electric-chemical-furnace'].next_upgrade = nil
@@ -70,11 +69,11 @@ if data.raw.technology['multi-purpose-furnace-1'] then
 end
 
 if fluid_furnaces then
-  lib.hide_item('fluid-chemical-furnace')
-  lib.remove_recipe('steel-chemical-furnace-from-fluid-chemical-furnace')
-  lib.remove_recipe('fluid-chemical-furnace')
-  lib.remove_recipe('fluid-chemical-furnace-from-fluid-furnace')
-  lib.remove_recipe('fluid-furnace-from-fluid-chemical-furnace')
+  seablock.lib.hide_item('fluid-chemical-furnace')
+  seablock.lib.remove_recipe('steel-chemical-furnace-from-fluid-chemical-furnace')
+  seablock.lib.remove_recipe('fluid-chemical-furnace')
+  seablock.lib.remove_recipe('fluid-chemical-furnace-from-fluid-furnace')
+  seablock.lib.remove_recipe('fluid-furnace-from-fluid-chemical-furnace')
   data.raw.technology['fluid-chemical-furnace'].enabled = false
 end
 
