@@ -1,12 +1,12 @@
 seablock = seablock or {}
 
-seablock.giveresearch = function(force)
-  if newforce then
+function seablock.GiveResearch(force)
+  if not force.technologies['sb-startup1'].researched then
     force.add_research("sb-startup1")
   end
 end
 
-seablock.giveitems = function(entity)
+function seablock.GiveItems(entity)
   local landfill = 'landfill'
   if settings.startup['sb-default-landfill'] and game.item_prototypes[settings.startup['sb-default-landfill'].value] then
     landfill = settings.startup['sb-default-landfill'].value
@@ -69,14 +69,14 @@ script.on_event(defines.events.on_chunk_generated, function(e)
   end
 end)
 
-local function setpvp()
+local function SetPvp()
   if remote.interfaces.pvp then
     remote.call("pvp", "set_config", {silo_offset = {x = 16, y = 16}})
   end
 end
 
 local function init()
-  setpvp()
+  SetPvp()
   if remote.interfaces.freeplay and remote.interfaces.freeplay.set_disable_crashsite then
     remote.call("freeplay", "set_disable_crashsite", true)
   end
@@ -91,6 +91,7 @@ local function init()
     global.unlocks['lab'] = {'sb-startup4'}
   end
 end
+
 local function haveitem(player, itemname, crafted)
   local unlock = global.unlocks[itemname]
   -- Special case for basic-circuit because it is part of starting equipment
@@ -103,64 +104,76 @@ local function haveitem(player, itemname, crafted)
   end
 end
 
-script.on_event(defines.events.on_player_crafted_item, function(e)
-  local player = game.players[e.player_index]
-  if e.item_stack.valid_for_read then
-    haveitem(player, e.item_stack.name, true)
-  end
-end)
-
-script.on_event(defines.events.on_picked_up_item, function(e)
-  local player = game.players[e.player_index]
-  if e.item_stack.valid_for_read then
-    haveitem(player, e.item_stack.name, false)
-  end
-end)
-
-script.on_event(defines.events.on_player_cursor_stack_changed, function(e)
-  local player = game.players[e.player_index]
-  if player.cursor_stack and player.cursor_stack.valid_for_read then
-    haveitem(player, player.cursor_stack.name, false)
-  end
-end)
-
-script.on_event(defines.events.on_player_main_inventory_changed, function(e)
-  local player = game.players[e.player_index]
-  local inv = player.get_inventory(defines.inventory.character_main)
-  if not inv then -- Compatibility with BlueprintLab_Bud17
-    return
-  end
-  for k,v in pairs(global.unlocks) do
-    for _,v2 in ipairs(v) do
-      if player.force.technologies[v2] and not player.force.technologies[v2].researched and inv.get_item_count(k) > 0 then
-        haveitem(player, k, false)
-      end
+script.on_event(defines.events.on_player_crafted_item,
+  function(e)
+    local player = game.players[e.player_index]
+    if e.item_stack.valid_for_read then
+      haveitem(player, e.item_stack.name, true)
     end
   end
-end)
+)
 
-script.on_init(init)
-script.on_configuration_changed(function(cfg)
-  init()
-  -- Heavy handed fix for mods that forget migration scripts
-  for _, force in pairs(game.forces) do
-    force.reset_technologies()
-    force.reset_recipes()
-    for _,tech in pairs(force.technologies) do
-      if tech.researched then
-        for _, effect in pairs(tech.effects) do
-          if effect.type == "unlock-recipe" then
-            force.recipes[effect.recipe].enabled = true
-          end
+script.on_event(defines.events.on_picked_up_item,
+  function(e)
+    local player = game.players[e.player_index]
+    if e.item_stack.valid_for_read then
+      haveitem(player, e.item_stack.name, false)
+    end
+  end
+)
+
+script.on_event(defines.events.on_player_cursor_stack_changed,
+  function(e)
+    local player = game.players[e.player_index]
+    if player.cursor_stack and player.cursor_stack.valid_for_read then
+      haveitem(player, player.cursor_stack.name, false)
+    end
+  end
+)
+
+script.on_event(defines.events.on_player_main_inventory_changed,
+  function(e)
+    local player = game.players[e.player_index]
+    local inv = player.get_inventory(defines.inventory.character_main)
+    if not inv then -- Compatibility with BlueprintLab_Bud17
+      return
+    end
+    for k,v in pairs(global.unlocks) do
+      for _,v2 in ipairs(v) do
+        if player.force.technologies[v2] and not player.force.technologies[v2].researched and inv.get_item_count(k) > 0 then
+          haveitem(player, k, false)
         end
       end
     end
-    if force.technologies['kovarex-enrichment-process'] then
-      force.technologies['kovarex-enrichment-process'].enabled = true
+  end
+)
+
+script.on_init(init)
+script.on_configuration_changed(
+  function(cfg)
+    init()
+    -- Heavy handed fix for mods that forget migration scripts
+    for _, force in pairs(game.forces) do
+      force.reset_technologies()
+      force.reset_recipes()
+      for _,tech in pairs(force.technologies) do
+        if tech.researched then
+          for _, effect in pairs(tech.effects) do
+            if effect.type == "unlock-recipe" then
+              force.recipes[effect.recipe].enabled = true
+            end
+          end
+        end
+      end
+      if force.technologies['kovarex-enrichment-process'] then
+        force.technologies['kovarex-enrichment-process'].enabled = true
+      end
     end
   end
-end)
+)
 
-script.on_load(function()
-  setpvp()
-end)
+script.on_load(
+  function()
+    SetPvp()
+  end
+)
