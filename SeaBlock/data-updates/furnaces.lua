@@ -86,7 +86,7 @@ if not mods['reskins-bobs'] then
     'fluid-mixing-furnace',
     'steel-mixing-furnace'
   }) do
-    lib.copy_icon(data.raw.technology[v], data.raw.technology['advanced-material-processing'])
+    seablock.lib.copy_icon(data.raw.technology[v], data.raw.technology['advanced-material-processing'])
   end
 
   for _,v in pairs({
@@ -96,7 +96,7 @@ if not mods['reskins-bobs'] then
     'advanced-material-processing-3',
     'advanced-material-processing-4'
   }) do
-    lib.copy_icon(data.raw.technology[v], data.raw.technology['advanced-material-processing-2'])
+    seablock.lib.copy_icon(data.raw.technology[v], data.raw.technology['advanced-material-processing-2'])
   end
 end
 
@@ -105,23 +105,23 @@ if settings.startup['bobmods-assembly-multipurposefurnaces'].value then
   data.raw.technology['multi-purpose-furnace-1'].localised_name = {'technology-name.multi-purpose-furnace-1'}
   data.raw.technology['multi-purpose-furnace-2'].localised_name = {'technology-name.multi-purpose-furnace-2'}
 else
-  lib.remove_recipe('stone-mixing-furnace')
-  lib.remove_recipe('steel-mixing-furnace')
-  lib.remove_recipe('electric-mixing-furnace')
+  seablock.lib.remove_recipe('stone-mixing-furnace')
+  seablock.lib.remove_recipe('steel-mixing-furnace')
+  seablock.lib.remove_recipe('electric-mixing-furnace')
   
-  lib.remove_recipe('stone-mixing-furnace-from-stone-furnace')
-  lib.remove_recipe('stone-furnace-from-stone-mixing-furnace')  
-  lib.remove_recipe('steel-mixing-furnace-from-steel-furnace')
-  lib.remove_recipe('steel-furnace-from-steel-mixing-furnace')
-  lib.remove_recipe('electric-mixing-furnace-from-electric-furnace')
-  lib.remove_recipe('electric-furnace-from-electric-mixing-furnace')
+  seablock.lib.remove_recipe('stone-mixing-furnace-from-stone-furnace')
+  seablock.lib.remove_recipe('stone-furnace-from-stone-mixing-furnace')  
+  seablock.lib.remove_recipe('steel-mixing-furnace-from-steel-furnace')
+  seablock.lib.remove_recipe('steel-furnace-from-steel-mixing-furnace')
+  seablock.lib.remove_recipe('electric-mixing-furnace-from-electric-furnace')
+  seablock.lib.remove_recipe('electric-furnace-from-electric-mixing-furnace')
   
-  lib.hide_technology('steel-mixing-furnace')
-  lib.hide_technology('electric-mixing-furnace')
+  seablock.lib.hide_technology('steel-mixing-furnace')
+  seablock.lib.hide_technology('electric-mixing-furnace')
   
-  lib.hide_item('stone-mixing-furnace')
-  lib.hide_item('steel-mixing-furnace')
-  lib.hide_item('electric-mixing-furnace')
+  seablock.lib.hide_item('stone-mixing-furnace')
+  seablock.lib.hide_item('steel-mixing-furnace')
+  seablock.lib.hide_item('electric-mixing-furnace')
   
   data.raw['assembling-machine']['stone-mixing-furnace'].next_upgrade = nil
   
@@ -131,12 +131,12 @@ else
   data.raw['assembling-machine']['electric-mixing-furnace'].crafting_categories = {'chemical-furnace'}
   
   if fluid_furnaces then
-    lib.remove_recipe('fluid-mixing-furnace')
-    lib.remove_recipe('steel-mixing-furnace-from-fluid-mixing-furnace')
-    lib.remove_recipe('fluid-mixing-furnace-from-fluid-furnace')
-    lib.remove_recipe('fluid-furnace-from-fluid-mixing-furnace')  
-    lib.hide_technology('fluid-mixing-furnace')
-    lib.hide_item('fluid-mixing-furnace')
+    seablock.lib.remove_recipe('fluid-mixing-furnace')
+    seablock.lib.remove_recipe('steel-mixing-furnace-from-fluid-mixing-furnace')
+    seablock.lib.remove_recipe('fluid-mixing-furnace-from-fluid-furnace')
+    seablock.lib.remove_recipe('fluid-furnace-from-fluid-mixing-furnace')  
+    seablock.lib.hide_technology('fluid-mixing-furnace')
+    seablock.lib.hide_item('fluid-mixing-furnace')
     data.raw['assembling-machine']['fluid-mixing-furnace'].crafting_categories = {'chemical-furnace'}
   end
 end
