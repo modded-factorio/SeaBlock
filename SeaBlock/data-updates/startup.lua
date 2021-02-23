@@ -121,7 +121,7 @@ local startuprecipes = {
   ['stone-pipe-to-ground'] = true
 }
 
-if settings.startup['bobmods-assembly-multipurposefurnaces'].value then
+if settings.startup['bobmods-assembly-multipurposefurnaces'] and settings.startup['bobmods-assembly-multipurposefurnaces'].value then
   startuprecipes['stone-mixing-furnace'] = true
   startuprecipes['stone-mixing-furnace-from-stone-furnace'] = true
   startuprecipes['stone-furnace-from-stone-mixing-furnace'] = true
