@@ -14,15 +14,15 @@ function seablock.GiveItems(entity)
   end
 end
 
-local function SetPvp()
+local function set_pvp()
   if remote.interfaces.pvp then
     remote.call("pvp", "set_config", {silo_offset = {x = 16, y = 16}})
   end
 end
 
 local function init()
-  SetPvp()
-  seablock.Populate_Starting_Items(global, game.item_prototypes)
+  set_pvp()
+  seablock.populate_starting_items(global, game.item_prototypes)
   if remote.interfaces.freeplay and remote.interfaces.freeplay.set_disable_crashsite then
     remote.call("freeplay", "set_disable_crashsite", true)
   end
@@ -187,6 +187,6 @@ script.on_configuration_changed(
 
 script.on_load(
   function()
-    SetPvp()
+    set_pvp()
   end
 )

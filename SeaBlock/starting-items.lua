@@ -1,6 +1,6 @@
 seablock = seablock or {}
 
-function seablock.Populate_Starting_Items(dest, items)
+function seablock.populate_starting_items(dest, items)
   dest.starting_items = {
     {'stone', 65},
     {'small-electric-pole', 50},

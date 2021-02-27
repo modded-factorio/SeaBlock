@@ -1,5 +1,3 @@
-require 'starting-items'
-
 -- First stage:   circuit board  pipe  pipe-to-ground  iron-gear  iron-stick  copper-pipe
 -- Electrolyser   5                                               20*4
 -- Liquifier      5                    2
@@ -127,47 +125,6 @@ if settings.startup['bobmods-assembly-multipurposefurnaces'] and settings.startu
   startuprecipes['stone-furnace-from-stone-mixing-furnace'] = true
 end
 
-local sbtechs = {
-  ['sb-startup1'] = true,
-  ['landfill'] = true,
-  ['sb-startup2'] = true,
-  ['bio-paper-1'] = true,
-  ['bio-wood-processing'] = true,
-  ['sb-startup3'] = true,
-  ['sb-startup4'] = true
-}
-if data.raw.technology['sct-lab-t1'] then
-  sbtechs['sct-lab-t1'] = true
-end
-if data.raw.technology['sct-automation-science-pack'] then
-  sbtechs['sct-automation-science-pack'] = true
-end
-
-local startuptechs = {
-  ['automation'] = {true},
-  ['optics'] = {true},
-  ['gun-turret'] = {true},
-  ['stone-wall'] = {true},
-  ['basic-chemistry'] = {true},
-  ['military'] = {true},
-  ['angels-sulfur-processing-1'] = {true},
-  ['water-washing-1'] = {true},
-  ['slag-processing-1'] = {true},
-  ['angels-fluid-control'] = {true},
-  ['bio-wood-processing-2'] = {true},
-  -- Don't reduce the science pack cost of green algae
-  ['bio-processing-green'] = {false}
-}
-
-if data.raw.technology['logistics-0'] then
-  startuptechs['logistics-0'] = {true}
-else
-  startuptechs['logistics'] = {true}
-end
-if data.raw.technology['basic-automation'] then
-  startuptechs['basic-automation'] = {true}
-end
-
 local lasttech = 'sb-startup4'
 if data.raw.technology['sct-automation-science-pack'] then
   lasttech = 'sct-automation-science-pack'
@@ -186,7 +143,7 @@ if data.raw.technology['sct-automation-science-pack'] then
 end
 
 local movedrecipes = table.deepcopy(startuprecipes)
-for k,v in pairs(sbtechs) do
+for k,v in pairs(seablock.scripted_techs) do
   for _,effect in pairs(data.raw.technology[k].effects or {}) do
     movedrecipes[effect.recipe] = true
   end
@@ -239,16 +196,16 @@ end
 
 -- Add prerequisites to technologies which are not part of the selected startup techs.
 for k,v in pairs(data.raw.technology) do
-  if (v.enabled == nil or v.enabled == true or v.enabled == 'true') and not sbtechs[k] then
+  if (v.enabled == nil or v.enabled == true or v.enabled == 'true') and not seablock.scripted_techs[k] then
     if not v.prerequisites or #v.prerequisites == 0 then
       local prerequisite = 'slag-processing-1'
-      if startuptechs[k] then
+      if seablock.startup_techs[k] then
         prerequisite = lasttech
       end
       v.prerequisites = {prerequisite}
     end
   end
-  if v.effects and not sbtechs[k] then
+  if v.effects and not seablock.scripted_techs[k] then
     local neweffects = {}
     for _,effect in pairs(v.effects) do
       if effect.type ~= "unlock-recipe" or not movedrecipes[effect.recipe] then
@@ -270,7 +227,7 @@ for k,_ in pairs(startuprecipes) do
 end
 
 -- Limit research required for startup techs.
-for k,v in pairs(startuptechs) do
+for k,v in pairs(seablock.startup_techs) do
   if data.raw.technology[k] then
     if v[1] and data.raw.technology[k].unit.count > 20 then
       data.raw.technology[k].unit.count = 20
@@ -316,16 +273,3 @@ data.raw.technology['bio-paper-1'].unit = {
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'solid-alginic-acid')
 bobmods.lib.tech.add_recipe_unlock('bio-paper-1', 'solid-alginic-acid')
 bobmods.lib.tech.remove_prerequisite('bio-paper-2', 'bio-paper-1')
-
-if data.data_crawler then
-  data.script_enabled = data.script_enabled or {}
-
-  for k,_ in pairs(sbtechs) do
-    table.insert(data.script_enabled, {type = 'technology', name = k})
-  end
-  
-  seablock.Populate_Starting_Items(seablock, data.raw.item)
-  for _,v in pairs(seablock.starting_items) do
-    table.insert(data.script_enabled, {type = 'item', name = v[1]})
-  end
-end
