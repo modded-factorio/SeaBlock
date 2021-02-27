@@ -1,6 +1,7 @@
 seablock = seablock or {}
 
-require "starting-items"
+require 'starting-items'
+require 'remote'
 
 function seablock.give_research(force)
   if not force.technologies['sb-startup1'].researched then
@@ -9,8 +10,8 @@ function seablock.give_research(force)
 end
 
 function seablock.give_items(entity)
-  for _,v in pairs(global.starting_items) do
-    entity.insert{name = v[1], count = v[2]}
+  for item,quantity in pairs(global.starting_items) do
+    entity.insert{name = item, count = quantity}
   end
 end
 

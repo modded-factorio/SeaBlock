@@ -49,6 +49,6 @@ for k,_ in pairs(seablock.scripted_techs) do
 end
 
 seablock.populate_starting_items(seablock, data.raw.item)
-for _,v in pairs(seablock.starting_items) do
-  table.insert(data.script_enabled, {type = 'item', name = v[1]})
+for k,_ in pairs(seablock.starting_items) do
+  table.insert(data.script_enabled, {type = 'item', name = k})
 end
