@@ -15,6 +15,18 @@ function seablock.give_items(entity)
   end
 end
 
+function seablock.have_item(player, itemname, crafted)
+  local unlock = global.unlocks[itemname]
+  -- Special case for basic-circuit because it is part of starting equipment
+  if unlock and (itemname ~= 'basic-circuit-board' or crafted) then
+    for _,v in ipairs(unlock) do
+      if player.force.technologies[v] then
+        player.force.technologies[v].researched = true
+      end
+    end
+  end
+end
+
 local function set_pvp()
   if remote.interfaces.pvp then
     remote.call("pvp", "set_config", {silo_offset = {x = 16, y = 16}})
@@ -48,121 +60,86 @@ local function init()
     created_items['wood'] = nil
     remote.call("freeplay", "set_created_items", created_items)
   end
+end
 
-  -- Add event handlers
-  script.on_event(defines.events.on_player_joined_game,
-    function(e)
-      seablock.give_research(game.players[e.player_index].force)
+script.on_event(defines.events.on_player_joined_game,
+  function(e)
+    seablock.give_research(game.players[e.player_index].force)
+  end
+)
+
+script.on_event(defines.events.on_force_created,
+  function(e)
+    seablock.give_research(e.force)
+  end
+)
+
+script.on_event(defines.events.on_chunk_generated,
+  function(e)
+    local surface = e.surface;
+    if surface.name ~= "nauvis" and surface.name:sub(1, 14) ~= "battle_surface" then
+      return
     end
-  )
-
-  script.on_event(defines.events.on_force_created,
-    function(e)
-      seablock.give_research(e.force)
-    end
-  )
-
-  script.on_event(defines.events.on_chunk_generated,
-    function(e)
-      local surface = e.surface;
-      if surface.name ~= "nauvis" and surface.name:sub(1, 14) ~= "battle_surface" then
-        return
+    local ltx = e.area.left_top.x
+    local lty = e.area.left_top.y
+    local rbx = e.area.right_bottom.x
+    local rby = e.area.right_bottom.y
+    for k,v in pairs(surface.map_gen_settings.starting_points) do
+      if v.x >= ltx and v.y >= lty and v.x < rbx and v.y < rby then
+        local chest = surface.create_entity({name = "rock-chest", position = v, force = game.forces.neutral})
+        seablock.give_items(chest)
+        script.on_event(defines.events.on_chunk_generated, nil)
       end
-      local ltx = e.area.left_top.x
-      local lty = e.area.left_top.y
-      local rbx = e.area.right_bottom.x
-      local rby = e.area.right_bottom.y
-      for k,v in pairs(surface.map_gen_settings.starting_points) do
-        if v.x >= ltx and v.y >= lty and v.x < rbx and v.y < rby then
-          local chest = surface.create_entity({name = "rock-chest", position = v, force = game.forces.neutral})
-          seablock.give_items(chest)
-          script.on_event(defines.events.on_chunk_generated, nil)
+    end
+  end
+)
+
+script.on_event(defines.events.on_player_crafted_item,
+  function(e)
+    local player = game.players[e.player_index]
+    if e.item_stack.valid_for_read then
+      seablock.have_item(player, e.item_stack.name, true)
+    end
+  end
+)
+
+script.on_event(defines.events.on_picked_up_item,
+  function(e)
+    local player = game.players[e.player_index]
+    if e.item_stack.valid_for_read then
+      seablock.have_item(player, e.item_stack.name, false)
+    end
+  end
+)
+
+script.on_event(defines.events.on_player_cursor_stack_changed,
+  function(e)
+    local player = game.players[e.player_index]
+    if player.cursor_stack and player.cursor_stack.valid_for_read then
+      seablock.have_item(player, player.cursor_stack.name, false)
+    end
+  end
+)
+
+script.on_event(defines.events.on_player_main_inventory_changed,
+  function(e)
+    local player = game.players[e.player_index]
+    local inv = player.get_inventory(defines.inventory.character_main)
+    if not inv then -- Compatibility with BlueprintLab_Bud17
+      return
+    end
+    for k,v in pairs(global.unlocks) do
+      for _,v2 in ipairs(v) do
+        if player.force.technologies[v2] and not player.force.technologies[v2].researched and inv.get_item_count(k) > 0 then
+          seablock.have_item(player, k, false)
         end
       end
     end
-  )
-
-  script.on_event(defines.events.on_player_crafted_item,
-    function(e)
-      local player = game.players[e.player_index]
-      if e.item_stack.valid_for_read then
-        seablock.haveitem(player, e.item_stack.name, true)
-      end
-    end
-  )
-
-  script.on_event(defines.events.on_picked_up_item,
-    function(e)
-      local player = game.players[e.player_index]
-      if e.item_stack.valid_for_read then
-        seablock.haveitem(player, e.item_stack.name, false)
-      end
-    end
-  )
-
-  script.on_event(defines.events.on_player_cursor_stack_changed,
-    function(e)
-      local player = game.players[e.player_index]
-      if player.cursor_stack and player.cursor_stack.valid_for_read then
-        seablock.haveitem(player, player.cursor_stack.name, false)
-      end
-    end
-  )
-
-  script.on_event(defines.events.on_player_main_inventory_changed,
-    function(e)
-      local player = game.players[e.player_index]
-      local inv = player.get_inventory(defines.inventory.character_main)
-      if not inv then -- Compatibility with BlueprintLab_Bud17
-        return
-      end
-      for k,v in pairs(global.unlocks) do
-        for _,v2 in ipairs(v) do
-          if player.force.technologies[v2] and not player.force.technologies[v2].researched and inv.get_item_count(k) > 0 then
-            seablock.haveitem(player, k, false)
-          end
-        end
-      end
-    end
-  )
-end
-
-local function check_tutorial_complete(player)
-  -- Check if all tutorial techs have been unlocked
-  -- If so, unsubscribe from events
-  local I = 0
-  for item,techs in pairs(global.unlocks) do
-    for _,tech in pairs(techs) do
-      if not player.force.technologies[tech].researched then
-        I = I + 1
-      end
-    end
   end
-  
-  if I == 0 then 
-    script.on_event(defines.events.on_player_crafted_item, nil)
-    script.on_event(defines.events.on_picked_up_item, nil)
-    script.on_event(defines.events.on_player_cursor_stack_changed, nil)
-    script.on_event(defines.events.on_player_main_inventory_changed, nil)
-    script.on_event(defines.events.on_player_joined_game, nil)
-    script.on_event(defines.events.on_force_created, nil)
-  end
-end
-
-function seablock.haveitem(player, itemname, crafted)
-  local unlock = global.unlocks[itemname]
-  -- Special case for basic-circuit because it is part of starting equipment
-  if unlock and (itemname ~= 'basic-circuit-board' or crafted) then
-    for _,v in ipairs(unlock) do
-      if player.force.technologies[v] then
-        player.force.technologies[v].researched = true
-        check_tutorial_complete(player)
-      end
-    end
-  end
-end
+)
 
 script.on_init(init)
+
 script.on_configuration_changed(
   function(cfg)
     init()

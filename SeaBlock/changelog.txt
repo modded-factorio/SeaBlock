@@ -22,7 +22,6 @@ Date: ???
     - Reduced cost of basic Steel plate smelting from 8 Glowing hot iron plate to 6 Glowing hot iron plate on normal difficulty
     - Increased starting landfill from 1k to 2k
     - Updated crystallization recipe icons
-    - Unsubscribe from relevant event handlers after home rock has been placed / all tutorial techs have been unlocked
     - Added table of starting tech and items for YAFC to read
     - Added remote interface to allow other mods to modify starting tech and items
   Bugfixes:
