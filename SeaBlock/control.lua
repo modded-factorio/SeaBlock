@@ -37,6 +37,17 @@ local function init()
     global.unlocks['lab'] = {'sb-startup4'}
   end
 
+  if remote.interfaces["freeplay"] then
+    local created_items = remote.call("freeplay", "get_created_items")
+    created_items['iron-plate'] = nil
+    created_items['burner-mining-drill'] = nil
+    created_items['burner-ore-crusher'] = nil
+    created_items['stone-furnace'] = nil
+    created_items['iron-plate'] = nil
+    created_items['wood'] = nil
+    remote.call("freeplay", "set_created_items", created_items)
+  end
+
   -- Add event handlers
   script.on_event(defines.events.on_player_joined_game,
     function(e)
@@ -47,17 +58,6 @@ local function init()
   script.on_event(defines.events.on_force_created,
     function(e)
       seablock.GiveResearch(e.force)
-    end
-  )
-
-  script.on_event(defines.events.on_player_created,
-    function(e)
-      local player = game.players[e.player_index]
-      player.remove_item{name = 'burner-mining-drill', count = 1}
-      player.remove_item{name = 'burner-ore-crusher', count = 1}
-      player.remove_item{name = 'stone-furnace', count = 1}
-      player.remove_item{name = 'iron-plate', count = 8}
-      player.remove_item{name = 'wood', count = 1}
     end
   )
 
