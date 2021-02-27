@@ -2,13 +2,13 @@ seablock = seablock or {}
 
 require "starting-items"
 
-function seablock.GiveResearch(force)
+function seablock.give_research(force)
   if not force.technologies['sb-startup1'].researched then
     force.add_research("sb-startup1")
   end
 end
 
-function seablock.GiveItems(entity)
+function seablock.give_items(entity)
   for _,v in pairs(global.starting_items) do
     entity.insert{name = v[1], count = v[2]}
   end
@@ -51,13 +51,13 @@ local function init()
   -- Add event handlers
   script.on_event(defines.events.on_player_joined_game,
     function(e)
-      seablock.GiveResearch(game.players[e.player_index].force)
+      seablock.give_research(game.players[e.player_index].force)
     end
   )
 
   script.on_event(defines.events.on_force_created,
     function(e)
-      seablock.GiveResearch(e.force)
+      seablock.give_research(e.force)
     end
   )
 
@@ -74,7 +74,7 @@ local function init()
       for k,v in pairs(surface.map_gen_settings.starting_points) do
         if v.x >= ltx and v.y >= lty and v.x < rbx and v.y < rby then
           local chest = surface.create_entity({name = "rock-chest", position = v, force = game.forces.neutral})
-          seablock.GiveItems(chest)
+          seablock.give_items(chest)
           script.on_event(defines.events.on_chunk_generated, nil)
         end
       end
