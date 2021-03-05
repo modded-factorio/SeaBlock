@@ -1,18 +1,18 @@
 -- First stage:   circuit board  pipe  pipe-to-ground  iron-gear  iron-stick  copper-pipe
--- Electrolyser   5                                               20*4
+-- Electrolyser   5                                               22*4
 -- Liquifier      5                    2
 -- Flare stack    5*2            10*2
 -- Offshore pump  2*2            1*2                   10*2
 -- Crystallizer   5                                                           5
 
 -- Second stage:
--- Algae farm     5                                               16
+-- Algae farm     5                                               10*2
 
 local knowningredients = {
   ['angels-electrolyser'] = {
     {'iron-plate', 10},
     {'basic-circuit-board', 5},
-    {'iron-stick', 20},
+    {'iron-stick', 22},
     {'stone-brick', 10}
   },
   ['liquifier'] = {
@@ -35,7 +35,7 @@ local knowningredients = {
   ['algae-farm'] = {
     {'iron-plate', 10},
     {'basic-circuit-board', 5},
-    {'iron-stick', 16},
+    {'iron-stick', 10},
     {'stone-brick', 25}
   },
   ['angels-flare-stack'] = {

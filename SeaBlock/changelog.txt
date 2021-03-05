@@ -25,6 +25,7 @@ Date: ???
     - Added table of starting tech and items for YAFC to read
     - Added remote interface to allow other mods to modify starting tech and items
     - Added compost voiding recipe
+    - Slightly changed starting items
   Bugfixes:
     - Fixed crash when Train Construction Site is enabled
     - Fixed Forage for cellulose fiber recipe not usable with mods that replace the default character
