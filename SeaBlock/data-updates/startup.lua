@@ -234,7 +234,7 @@ for k,v in pairs(seablock.startup_techs) do
       data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
     end
     data.raw.technology[k].ignore_tech_cost_multiplier = true
-    data.raw.technology[k].time = 15
+    data.raw.technology[k].unit.time = 15
   end
 end
 
