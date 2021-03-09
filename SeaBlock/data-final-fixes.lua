@@ -1,8 +1,6 @@
-local lib = require("lib")
-
 -- Adjust resin production amount to how it was in petrochem 0.7.9.
 -- TODO: Revisit this after Angel adds more liquid rubber recipes
-lib.substresult('liquid-rubber-1', 'liquid-rubber', nil, 20)
+seablock.lib.substresult('liquid-rubber-1', 'liquid-rubber', nil, 20)
 
 
 -- Electric Engines: Move to green science
@@ -36,6 +34,7 @@ if data.raw.tool['sb-basic-circuit-board-tool'] and data.raw.item['basic-circuit
 end
 
 require "data-final-fixes/logistics"
+require "data-final-fixes/slag-processing"
 require "data-final-fixes/tech-tree"
 require "data-final-fixes/unobtainable_items"
 require "data-final-fixes/mapgen"

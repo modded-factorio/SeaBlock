@@ -1,4 +1,3 @@
-local lib = require "lib"
 local SOLID_FUEL_FACTOR = 2
 local FLUID_FUEL_FACTOR = 1
 
@@ -39,7 +38,7 @@ if data.raw.fluid['hydrazine'] then
   data.raw.fluid['gas-hydrazine'].fuel_value = hydrazinevalue
   if hydrazinevalue:sub(-2) == 'kJ' then
     local hydrazinevaluekj = tonumber(hydrazinevalue:sub(1, -3))
-    lib.substingredient('solid-fuel-hydrazine', 'gas-hydrazine', nil, math.floor(24000 / hydrazinevaluekj))
+    seablock.lib.substingredient('solid-fuel-hydrazine', 'gas-hydrazine', nil, math.floor(24000 / hydrazinevaluekj))
   end
 end
 
@@ -57,9 +56,9 @@ end
 data.raw.item['enriched-fuel'].fuel_value = multiply_fuel_value("50MJ", SOLID_FUEL_FACTOR)
 data.raw.item['enriched-fuel'].stack_size = 50
 
-lib.substingredient('solid-fuel-methane', 'gas-methane', nil, 40)
-lib.substingredient('solid-fuel-naphtha', 'liquid-naphtha', nil, 40)
-lib.substingredient('solid-fuel-fuel-oil', 'liquid-fuel-oil', nil, 20)
+seablock.lib.substingredient('solid-fuel-methane', 'gas-methane', nil, 40)
+seablock.lib.substingredient('solid-fuel-naphtha', 'liquid-naphtha', nil, 40)
+seablock.lib.substingredient('solid-fuel-fuel-oil', 'liquid-fuel-oil', nil, 20)
 
 for _,v in pairs({
   'hydrogen',

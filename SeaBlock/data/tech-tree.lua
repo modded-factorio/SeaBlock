@@ -1,19 +1,17 @@
-local lib = require "lib"
-
 -- Move garden duplication recipes to a tech that doesn't require bio science
 
-lib.moveeffect('desert-garden-cultivating-b', 'bio-desert-farm', 'bio-farm-alien')
-lib.moveeffect('swamp-garden-cultivating-b', 'bio-swamp-farm', 'bio-farm-alien')
-lib.moveeffect('temperate-garden-cultivating-b', 'bio-temperate-farm', 'bio-farm-alien')
+seablock.lib.moveeffect('desert-garden-cultivating-b', 'bio-desert-farm', 'bio-farm-alien')
+seablock.lib.moveeffect('swamp-garden-cultivating-b', 'bio-swamp-farm', 'bio-farm-alien')
+seablock.lib.moveeffect('temperate-garden-cultivating-b', 'bio-temperate-farm', 'bio-farm-alien')
 
 bobmods.lib.tech.remove_prerequisite('bio-desert-farm', 'bio-farm-alien')
 bobmods.lib.tech.remove_prerequisite('bio-swamp-farm', 'bio-farm-alien')
 bobmods.lib.tech.remove_prerequisite('bio-temperate-farm', 'bio-farm-alien')
 
 -- Move storage tanks so bob's techs can be removed
-local i = lib.findeffectidx(data.raw.technology['angels-fluid-control'].effects, 'angels-storage-tank-3')
-lib.moveeffect('bob-small-inline-storage-tank', 'electrolysis-1', 'angels-fluid-control', i)
-lib.moveeffect('bob-small-storage-tank', 'electrolysis-1', 'angels-fluid-control', i + 1)
+local i = seablock.lib.findeffectidx(data.raw.technology['angels-fluid-control'].effects, 'angels-storage-tank-3')
+seablock.lib.moveeffect('bob-small-inline-storage-tank', 'electrolysis-1', 'angels-fluid-control', i)
+seablock.lib.moveeffect('bob-small-storage-tank', 'electrolysis-1', 'angels-fluid-control', i + 1)
 
 -- Add bio science to techs
 -- Don't add to techs on the path to Alien Farming. This is where garden / bio token duplication is unlocked
@@ -32,9 +30,14 @@ bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
 
+-- At least one of these is required to feed fish
+data.raw.technology['bio-desert-farming-1'].ignore_tech_cost_multiplier = true
+data.raw.technology['bio-swamp-farming-1'].ignore_tech_cost_multiplier = true
+data.raw.technology['bio-temperate-farming-1'].ignore_tech_cost_multiplier = true
+
 -- Remove empty tech Thermal water processing
 bobmods.lib.tech.remove_prerequisite('water-treatment-4', 'thermal-water-processing')
-lib.hide_technology('thermal-water-processing')
+seablock.lib.hide_technology('thermal-water-processing')
 
 -- Smelting techs don't need to depend on Coal processing 2 as carbon is unlocked earlier
 bobmods.lib.tech.remove_prerequisite('angels-aluminium-smelting-1', 'angels-coal-processing-2')
@@ -55,7 +58,7 @@ bobmods.lib.tech.add_prerequisite('gas-synthesis', 'angels-coal-processing-2')
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-1', 'logistic-science-pack')
 bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-1', 'angels-metallurgy-2', 'angels-metallurgy-1')
 bobmods.lib.tech.add_prerequisite('angels-manganese-smelting-1', 'angels-iron-smelting-1')
-lib.moveeffect('molten-iron-smelting-2', 'angels-iron-smelting-2', 'angels-manganese-smelting-1')
+seablock.lib.moveeffect('molten-iron-smelting-2', 'angels-iron-smelting-2', 'angels-manganese-smelting-1')
 data.raw.recipe['molten-iron-smelting-2'].category = 'induction-smelting'
 
 -- T2:
@@ -128,6 +131,7 @@ bobmods.lib.tech.add_prerequisite('advanced-ore-refining-1', 'logistic-science-p
 bobmods.lib.tech.add_prerequisite('bio-paper-2', 'logistic-science-pack')
 bobmods.lib.tech.add_prerequisite('bio-processing-blue', 'logistic-science-pack')
 bobmods.lib.tech.add_prerequisite('bio-wood-processing-3', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-metallurgy-2', 'logistic-science-pack')
 if mods['angelsaddons-storage'] then
   bobmods.lib.tech.add_prerequisite('pressure-tanks', 'logistic-science-pack')
 end

@@ -1,5 +1,3 @@
-local lib = require "lib"
-
 if mods['Clowns-Extended-Minerals'] then
   data:extend(
     {
@@ -339,15 +337,15 @@ if mods['Clowns-Extended-Minerals'] then
     }
   )
 
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-9', 23)
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-8', 21)
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-7', 19)
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-6', 16)
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-5', 13)
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-4', 10)
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-3', 7)
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-2', 4)
-  lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-1', 1)
-  lib.add_recipe_unlock('water-washing-2', 'sb-clowns-resource-1')
-  lib.add_recipe_unlock('oil-gas-extraction', 'sb-clowns-resource-2')
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-9', 23)
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-8', 21)
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-7', 19)
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-6', 16)
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-5', 13)
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-4', 10)
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-3', 7)
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-2', 4)
+  seablock.lib.add_recipe_unlock('clowns-ore-crushing', 'sb-slag-processing-clowns-1', 1)
+  seablock.lib.add_recipe_unlock('water-washing-2', 'sb-clowns-resource-1')
+  seablock.lib.add_recipe_unlock('oil-gas-extraction', 'sb-clowns-resource-2')
 end

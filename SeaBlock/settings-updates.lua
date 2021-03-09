@@ -1,7 +1,3 @@
-if not seablock then
-  seablock = {}
-end
-
 function seablock.set_setting_default_value(setting_type, setting_name, value)
   if data.raw[setting_type] then
     local s = data.raw[setting_type][setting_name]
@@ -37,12 +33,10 @@ require "settings-updates/bobassembly"
 require "settings-updates/bobenemies"
 require "settings-updates/bobinserters"
 require "settings-updates/bobmining"
-require "settings-updates/bobmodules"
 require "settings-updates/bobores"
 require "settings-updates/bobplates"
 require "settings-updates/bobpower"
 require "settings-updates/bobrevamp"
 require "settings-updates/bobtech"
-require "settings-updates/reskins-bobs"
 require "settings-updates/ScienceCostTweakerM"
 require "settings-updates/SpaceMod"
