@@ -154,3 +154,8 @@ seablock.lib.hide_technology('plastics')
 seablock.lib.substingredient('filter-lime', 'solid-lime', nil, 1)
 data.raw.recipe['filter-lime'].energy_required = 1
 data.raw.recipe['angels-sulfur-scrubber'].energy_required = 6
+
+-- Make Long Inserters a startup tech
+if data.raw.technology['logistics-0'] then
+  bobmods.lib.tech.replace_prerequisite('long-inserters-1', 'logistics', 'logistics-0')
+end
