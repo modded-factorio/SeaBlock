@@ -88,7 +88,6 @@ script.on_event(defines.events.on_chunk_generated,
       if v.x >= ltx and v.y >= lty and v.x < rbx and v.y < rby then
         local chest = surface.create_entity({name = "rock-chest", position = v, force = game.forces.neutral})
         seablock.give_items(chest)
-        script.on_event(defines.events.on_chunk_generated, nil)
       end
     end
   end
