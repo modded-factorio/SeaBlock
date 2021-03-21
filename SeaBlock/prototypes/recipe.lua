@@ -75,7 +75,8 @@ data:extend({
       {type = "item", name = "cellulose-fiber", amount = 1}
     },
     order = "ab[sb-cellulose-foraging]",
-    allow_as_intermediate = false
+    allow_as_intermediate = true,
+    allow_decomposition = false
   },
   {
     -- Balance assuming blue algae is about equal to green algae in MJ value.
