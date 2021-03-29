@@ -72,7 +72,7 @@ end
 
 -- Remove resources so mining recipes don't show in FNEI
 for k,v in pairs(data.raw['resource']) do
-  if k ~='iron-ore' and k ~= 'coal' then
+  if k ~='iron-ore' and k ~= 'coal' and k~= "deep_oil" then
     data.raw['resource'][k] = nil
   end
 end
