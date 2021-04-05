@@ -23,8 +23,18 @@ bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-1', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-3', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-4', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-pressing', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-pressing-fish', 'token-bio', 1)
+if data.raw.technology['bio-pressing'] then
+  bobmods.lib.tech.add_new_science_pack('bio-pressing', 'token-bio', 1)
+else
+  bobmods.lib.tech.add_new_science_pack('bio-pressing-1', 'token-bio', 1)
+  bobmods.lib.tech.add_new_science_pack('bio-pressing-2', 'token-bio', 1)
+end
+if data.raw.technology['bio-pressing-fish'] then
+  bobmods.lib.tech.add_new_science_pack('bio-pressing-fish', 'token-bio', 1)
+else
+  bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-1', 'token-bio', 1)
+  bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-2', 'token-bio', 1)
+end
 bobmods.lib.tech.add_new_science_pack('bio-refugium-butchery-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
@@ -58,7 +68,11 @@ bobmods.lib.tech.add_prerequisite('gas-synthesis', 'angels-coal-processing-2')
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-1', 'logistic-science-pack')
 bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-1', 'angels-metallurgy-2', 'angels-metallurgy-1')
 bobmods.lib.tech.add_prerequisite('angels-manganese-smelting-1', 'angels-iron-smelting-1')
-seablock.lib.moveeffect('molten-iron-smelting-2', 'angels-iron-smelting-2', 'angels-manganese-smelting-1')
+if bobmods.lib.tech.has_recipe_unlock('angels-iron-smelting-2', 'molten-iron-smelting-2') then
+  seablock.lib.moveeffect('molten-iron-smelting-2', 'angels-iron-smelting-2', 'angels-manganese-smelting-1')
+else
+  seablock.lib.moveeffect('molten-iron-smelting-2', 'angels-iron-casting-2', 'angels-manganese-smelting-1')
+end
 data.raw.recipe['molten-iron-smelting-2'].category = 'induction-smelting'
 
 -- T2:
@@ -71,6 +85,7 @@ bobmods.lib.tech.replace_prerequisite('angels-aluminium-smelting-2', 'angels-man
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-3', 'production-science-pack')
 bobmods.lib.tech.replace_prerequisite('angels-manganese-smelting-3', 'ore-processing-3', 'ore-processing-2')
 bobmods.lib.tech.replace_prerequisite('angels-titanium-smelting-2', 'angels-manganese-smelting-2', 'angels-manganese-smelting-3')
+bobmods.lib.tech.replace_prerequisite('angels-titanium-casting-2', 'angels-manganese-smelting-2', 'angels-manganese-smelting-3')
 
 -- Move Silicon up a tier
 -- T1:
@@ -82,6 +97,7 @@ bobmods.lib.tech.replace_prerequisite('angels-steel-smelting-2', 'angels-silicon
 bobmods.lib.tech.add_new_science_pack('angels-silicon-smelting-2', 'chemical-science-pack', 1)
 bobmods.lib.tech.replace_prerequisite('angels-silicon-smelting-2', 'ore-processing-1', 'ore-processing-2')
 bobmods.lib.tech.replace_prerequisite('angels-aluminium-smelting-3', 'angels-silicon-smelting-3', 'angels-silicon-smelting-2')
+bobmods.lib.tech.replace_prerequisite('angels-aluminium-casting-3', 'angels-silicon-smelting-3', 'angels-silicon-smelting-2')
 
 -- T3:
 bobmods.lib.tech.add_new_science_pack('angels-silicon-smelting-3', 'production-science-pack', 1)
@@ -102,10 +118,21 @@ bobmods.lib.tech.replace_prerequisite('angels-steel-smelting-3', 'angels-nickel-
 bobmods.lib.tech.replace_prerequisite('angels-titanium-smelting-2', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
 bobmods.lib.tech.replace_prerequisite('angels-tungsten-smelting-2', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
 
+bobmods.lib.tech.add_new_science_pack('angels-nickel-casting-2', 'chemical-science-pack', 1)
+bobmods.lib.tech.replace_prerequisite('angels-nickel-casting-2', 'ore-processing-1', 'ore-processing-2')
+bobmods.lib.tech.replace_prerequisite('angels-nickel-casting-2', 'strand-casting-1', 'strand-casting-2')
+bobmods.lib.tech.replace_prerequisite('angels-steel-smelting-3', 'angels-nickel-casting-3', 'angels-nickel-smelting-2')
+bobmods.lib.tech.replace_prerequisite('angels-titanium-casting-2', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
+
+
 -- T3:
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-3', 'production-science-pack', 1)
 bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-3', 'strand-casting-2', 'strand-casting-3')
 bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-3', 'ore-processing-2', 'ore-processing-3')
+
+bobmods.lib.tech.add_new_science_pack('angels-nickel-casting-3', 'production-science-pack', 1)
+bobmods.lib.tech.replace_prerequisite('angels-nickel-casting-3', 'strand-casting-2', 'strand-casting-3')
+bobmods.lib.tech.replace_prerequisite('angels-nickel-casting-3', 'ore-processing-2', 'ore-processing-3')
 
 
 -- Add missing Science Pack Tech prerequisites
@@ -115,7 +142,11 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('bio-desert-farming-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-swamp-farming-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-temperate-farming-1', 'sct-bio-science-pack')
-  bobmods.lib.tech.add_prerequisite('bio-pressing', 'sct-bio-science-pack')
+  if data.raw.technology['bio-pressing'] then
+    bobmods.lib.tech.add_prerequisite('bio-pressing', 'sct-bio-science-pack')
+  else
+    bobmods.lib.tech.add_prerequisite('bio-pressing-1', 'sct-bio-science-pack')
+  end
   bobmods.lib.tech.add_prerequisite('bio-arboretum-2', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-arboretum-desert-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-arboretum-swamp-1', 'sct-bio-science-pack')

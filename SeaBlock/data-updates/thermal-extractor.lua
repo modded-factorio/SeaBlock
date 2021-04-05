@@ -133,5 +133,9 @@ bore.fixed_recipe = "thermal-bore-water"
 bobmods.lib.tech.add_recipe_unlock('thermal-water-extraction', 'thermal-bore-water')
 
 -- Fish Pressing requires thermal water so add a prerequisite
-bobmods.lib.tech.add_prerequisite('bio-pressing-fish', 'thermal-water-extraction')
+if data.raw.technology['bio-pressing-fish'] then
+  bobmods.lib.tech.add_prerequisite('bio-pressing-fish', 'thermal-water-extraction')
+else
+  bobmods.lib.tech.add_prerequisite('bio-pressing-fish-1', 'thermal-water-extraction')
+end
 bobmods.lib.tech.add_prerequisite('thermal-water-extraction', 'bio-processing-brown')

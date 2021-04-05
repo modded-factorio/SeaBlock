@@ -42,6 +42,10 @@ bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
 -- Slag Processing 1 is first source of Sulfuric Waste Water
 bobmods.lib.tech.replace_prerequisite('water-treatment', 'electronics', 'slag-processing-1')
 
+-- Fix Slag Processing 1 prerequisites
+bobmods.lib.tech.add_prerequisite('slag-processing-1', 'angels-sulfur-processing-1')
+bobmods.lib.tech.remove_prerequisite('slag-processing-1', 'water-treatment-2')
+
 data.raw.technology['water-washing-1'].prerequisites = {'automation'} -- Allow skipping of waste water recycling
 seablock.lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
 seablock.lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
@@ -53,7 +57,9 @@ data.raw.technology['electronics'].prerequisites = {
   'angels-coal-processing'
 }
 
-seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
+if bobmods.lib.tech.has_recipe_unlock('angels-tin-smelting-1', 'basic-tinned-copper-wire') then
+  seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
+end
 
 if data.raw.recipe['liquid-fish-atmosphere'] then
   data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'

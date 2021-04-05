@@ -15,7 +15,6 @@ seablock.lib.addresult('washing-1', {type = "fluid", name = "gas-hydrogen-sulfid
 
 
 -- Sulfuric acid prerequisites
-bobmods.lib.tech.add_prerequisite('slag-processing-1', 'angels-sulfur-processing-1')
 bobmods.lib.tech.add_prerequisite('angels-sulfur-processing-1', 'water-washing-1')
 
 

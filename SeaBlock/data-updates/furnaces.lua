@@ -101,7 +101,7 @@ if not mods['reskins-bobs'] then
 end
 
 -- Disable metal mixing furnaces if multi purpose furnaces are disabled
-if settings.startup['bobmods-assembly-multipurposefurnaces'] and settings.startup['bobmods-assembly-multipurposefurnaces'].value then
+if mods['bobassembly'] and settings.startup['bobmods-assembly-multipurposefurnaces'] and settings.startup['bobmods-assembly-multipurposefurnaces'].value then
   data.raw.technology['multi-purpose-furnace-1'].localised_name = {'technology-name.multi-purpose-furnace-1'}
   data.raw.technology['multi-purpose-furnace-2'].localised_name = {'technology-name.multi-purpose-furnace-2'}
 else
