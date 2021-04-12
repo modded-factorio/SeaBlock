@@ -152,7 +152,11 @@ bobmods.lib.tech.replace_prerequisite('bio-arboretum-swamp-1', 'plastics', 'plas
 bobmods.lib.tech.replace_prerequisite('bio-plastic-1', 'plastics', 'plastic-1')
 if data.raw.technology['sct-lab-t3'] then
   bobmods.lib.tech.remove_prerequisite('sct-lab-t3', 'plastics')
+  bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-cobalt-steel-smelting-1')
+  bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-glass-smelting-1')
+  bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-aluminium-smelting-1')
 end
+
 seablock.lib.hide_technology('plastics')
 
 

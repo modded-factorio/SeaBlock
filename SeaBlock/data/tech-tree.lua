@@ -59,9 +59,14 @@ bobmods.lib.tech.remove_prerequisite('angels-titanium-smelting-1', 'angels-coal-
 bobmods.lib.tech.remove_prerequisite('angels-zinc-smelting-2', 'angels-coal-processing-2')
 bobmods.lib.tech.remove_prerequisite('angels-chrome-smelting-1', 'angels-coal-processing-2')
 bobmods.lib.tech.remove_prerequisite('angels-iron-smelting-2', 'angels-coal-processing-2')
+
 -- Add a new prerequisite so Coal processing 2 isn't a dead end
 -- Probably will want this for Carbon monoxide
 bobmods.lib.tech.add_prerequisite('gas-synthesis', 'angels-coal-processing-2')
+
+-- Add other prerequisites
+bobmods.lib.tech.add_prerequisite('gardens', 'electronics')
+bobmods.lib.tech.add_prerequisite('uranium-processing', 'ore-leaching')
 
 -- Move Manganese down a tier
 -- T1:
@@ -163,6 +168,7 @@ bobmods.lib.tech.add_prerequisite('bio-paper-2', 'logistic-science-pack')
 bobmods.lib.tech.add_prerequisite('bio-processing-blue', 'logistic-science-pack')
 bobmods.lib.tech.add_prerequisite('bio-wood-processing-3', 'logistic-science-pack')
 bobmods.lib.tech.add_prerequisite('angels-metallurgy-2', 'logistic-science-pack')
+bobmods.lib.tech.add_prerequisite('basic-chemistry-2', 'logistic-science-pack')
 if mods['angelsaddons-storage'] then
   bobmods.lib.tech.add_prerequisite('pressure-tanks', 'logistic-science-pack')
 end
@@ -185,12 +191,17 @@ bobmods.lib.tech.add_prerequisite('personal-roboport-mk2-equipment', 'chemical-s
 bobmods.lib.tech.add_prerequisite('bio-arboretum-desert-3', 'chemical-science-pack')
 bobmods.lib.tech.add_prerequisite('bio-arboretum-swamp-3', 'chemical-science-pack')
 bobmods.lib.tech.add_prerequisite('bio-arboretum-temperate-3', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-metallurgy-3', 'chemical-science-pack')
 
 -- Military / Gray
 bobmods.lib.tech.add_prerequisite('angels-explosives-1', 'military-science-pack')
+
+-- Production
+bobmods.lib.tech.add_prerequisite('angels-metallurgy-4', 'production-science-pack')
 
 -- Utility
 bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-science-pack')
 bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'utility-science-pack')
 bobmods.lib.tech.add_prerequisite('angels-nuclear-fuel', 'utility-science-pack')
 bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'production-science-pack')
