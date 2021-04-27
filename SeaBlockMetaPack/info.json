@@ -1,6 +1,6 @@
 {
   "name": "SeaBlockMetaPack",
-  "version": "1.1.2",
+  "version": "1.1.3",
   "factorio_version": "1.1",
   "title": "Sea Block Pack",
   "author": "Trainwreck",
@@ -32,6 +32,7 @@
     "CircuitProcessing",
     "Explosive Excavation",
     "FNEI",
+    "Helmod",
     "KS_Power",
     "LandfillPainting",
     "ScienceCostTweakerM",
