@@ -185,3 +185,9 @@ seablock.lib.substingredient('solid-wood-pulp', 'cellulose-fiber', nil, 4)
 seablock.lib.substingredient('solid-wood-pulp', 'solid-alginic-acid', nil, 1)
 seablock.lib.substresult('solid-wood-pulp', 'solid-wood-pulp', nil, 4)
 data.raw.recipe['solid-wood-pulp'].energy_required = 1
+
+-- Tidy up ore silo prerequisites
+if mods['angelsaddons-storage'] then
+  bobmods.lib.tech.remove_prerequisite('ore-silos', 'angels-coal-processing')
+  bobmods.lib.tech.replace_prerequisite('ore-silos', 'ore-crushing', 'ore-advanced-crushing')
+end
