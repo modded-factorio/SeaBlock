@@ -47,8 +47,6 @@ seablock.lib.moveeffect('slag-processing-2', 'slag-processing-1', 'ore-advanced-
 seablock.lib.moveeffect('slag-processing-4', 'slag-processing-2', 'ore-advanced-crushing', slag2start + 2)
 seablock.lib.moveeffect('angelsore2-crushed', 'ore-crushing', 'ore-advanced-crushing', slag2start + 3)
 seablock.lib.moveeffect('angelsore4-crushed', 'ore-crushing', 'ore-advanced-crushing', slag2start + 4)
-seablock.lib.moveeffect('angelsore2-crushed-processing', 'ore-crushing', 'ore-advanced-crushing', slag2start + 7)
-seablock.lib.moveeffect('angelsore4-crushed-processing', 'ore-crushing', 'ore-advanced-crushing', slag2start + 8)
 
 seablock.lib.add_recipe_unlock('ore-crushing', 'iron-plate')
 seablock.lib.add_recipe_unlock('ore-crushing', 'copper-plate')
@@ -58,6 +56,10 @@ seablock.lib.add_recipe_unlock('ore-crushing', 'tin-plate')
 -- Hide unwanted recipes
 seablock.lib.remove_recipe('quartz-glass')
 seablock.lib.remove_recipe('silver-plate')
+bobmods.lib.tech.remove_recipe_unlock('ore-crushing', 'angelsore2-crushed-processing')
+bobmods.lib.tech.remove_recipe_unlock('ore-crushing', 'angelsore4-crushed-processing')
+seablock.lib.remove_recipe('angelsore2-crushed-processing')
+seablock.lib.remove_recipe('angelsore4-crushed-processing')
 
 -- Add prerequisites
 bobmods.lib.tech.add_prerequisite('ore-floatation', 'ore-advanced-crushing')
