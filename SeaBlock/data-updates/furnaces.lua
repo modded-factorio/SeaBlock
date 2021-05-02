@@ -122,14 +122,14 @@ else
   seablock.lib.hide_item('stone-mixing-furnace')
   seablock.lib.hide_item('steel-mixing-furnace')
   seablock.lib.hide_item('electric-mixing-furnace')
-  
+
   data.raw['assembling-machine']['stone-mixing-furnace'].next_upgrade = nil
-  
+
   -- Change crafting_categories so machines don't appear in Helmod
   data.raw['assembling-machine']['stone-mixing-furnace'].crafting_categories = {'chemical-furnace'}
   data.raw['assembling-machine']['steel-mixing-furnace'].crafting_categories = {'chemical-furnace'}
   data.raw['assembling-machine']['electric-mixing-furnace'].crafting_categories = {'chemical-furnace'}
-  
+
   if fluid_furnaces then
     seablock.lib.remove_recipe('fluid-mixing-furnace')
     seablock.lib.remove_recipe('steel-mixing-furnace-from-fluid-mixing-furnace')

@@ -33,7 +33,7 @@ data.raw.recipe['wooden-board-paper'].category = "crafting"
 -- Fix handcrafting trying to use wrong crafting path
 data.raw.recipe['wooden-board'].category = "electronics-machine"
 bobmods.lib.recipe.enabled('wooden-board', false)
-table.insert(data.raw.technology['bio-wood-processing-3'].effects, {type = "unlock-recipe", recipe = "wooden-board"})
+bobmods.lib.tech.add_recipe_unlock('bio-wood-processing-3', 'wooden-board')
 
 data.raw.recipe['cellulose-fiber-algae'].allow_as_intermediate = false
 data.raw.recipe['cellulose-fiber-raw-wood'].allow_as_intermediate = false
