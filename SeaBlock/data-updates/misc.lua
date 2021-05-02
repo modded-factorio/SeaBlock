@@ -170,11 +170,6 @@ end
 
 -- Adjust for handcrafting boards
 
-if data.raw.item['solid-alginic-acid'] then
-  -- Change item subgroup to work around base game bug: https://forums.factorio.com/viewtopic.php?p=540381
-  data.raw.item['solid-alginic-acid'].subgroup = 'bio-paper'
-end
-
 -- Divide by 2
 seablock.lib.substingredient('solid-alginic-acid', 'algae-brown', nil, 5)
 seablock.lib.substresult('solid-alginic-acid', 'solid-alginic-acid', nil, 1)
@@ -184,7 +179,7 @@ data.raw.recipe['solid-alginic-acid'].energy_required = 5
 seablock.lib.substingredient('solid-wood-pulp', 'cellulose-fiber', nil, 4)
 seablock.lib.substingredient('solid-wood-pulp', 'solid-alginic-acid', nil, 1)
 seablock.lib.substresult('solid-wood-pulp', 'solid-wood-pulp', nil, 4)
-data.raw.recipe['solid-wood-pulp'].energy_required = 1
+data.raw.recipe['solid-wood-pulp'].energy_required = 0.8
 
 -- Tidy up ore silo prerequisites
 if mods['angelsaddons-storage'] then
