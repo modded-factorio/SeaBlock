@@ -50,8 +50,6 @@ data.raw.technology['water-washing-1'].prerequisites = {'automation'} -- Allow s
 seablock.lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
 seablock.lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
 
--- Increase tech cost to 50
-data.raw.technology['water-treatment'].unit.count = 50
 data.raw.technology['electronics'].prerequisites = {
   'angels-solder-smelting-basic',
   'angels-coal-processing'
