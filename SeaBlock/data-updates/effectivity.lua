@@ -89,11 +89,11 @@ end
 
 --ks power
 if data.raw["boiler"]["oil-steam-boiler"] then
-    data.raw["boiler"]["oil-steam-boiler"].energy_source.effectivity = SOLID_TIER2
+    data.raw["boiler"]["oil-steam-boiler"].energy_source.effectivity = FLUID_TIER3
 end
 
 if data.raw["generator"]["petroleum-generator"] then
-    data.raw["generator"]["petroleum-generator"].effectivity = SOLID_TIER5
+    data.raw["generator"]["petroleum-generator"].effectivity = FLUID_TIER5
 end
 
 if data.raw["burner-generator"]["burner-generator"] then
