@@ -32,7 +32,8 @@ seablock.startup_techs = {
   ['angels-fluid-control'] = {true},
   ['bio-wood-processing-2'] = {true},
   -- Don't reduce the science pack cost of green algae
-  ['bio-processing-green'] = {false}
+  ['bio-processing-green'] = {false},
+  ['long-inserters-1'] = {true}
 }
 
 if data.raw.technology['logistics-0'] then

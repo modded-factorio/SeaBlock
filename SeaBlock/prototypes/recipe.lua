@@ -55,12 +55,7 @@ data:extend({
     results = {
       {type = "item", name = "angels-ore1", amount = 2, probability = 0.55},
       {type = "item", name = "angels-ore3", amount = 1, probability = 0.7},
-    },
-    icons = {
-      { icon = data.raw.item['angels-ore3'].icon, icon_size = data.raw.item['angels-ore3'].icon_size, scale = 0.5, shift = { 4, 4 } },
-      { icon = data.raw.item['angels-ore1'].icon, icon_size = data.raw.item['angels-ore1'].icon_size, scale = 0.5, shift = { -4, -4 }}
-    },
-    icon_size = 32
+    }
   },
   {
     type = "recipe",
@@ -75,7 +70,8 @@ data:extend({
       {type = "item", name = "cellulose-fiber", amount = 1}
     },
     order = "ab[sb-cellulose-foraging]",
-    allow_as_intermediate = false
+    allow_as_intermediate = true,
+    allow_decomposition = false
   },
   {
     -- Balance assuming blue algae is about equal to green algae in MJ value.

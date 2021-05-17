@@ -1,3 +1,37 @@
+data.raw.tile['sand-4'] = table.deepcopy(data.raw.tile['sand-1'])
+data.raw.tile['sand-5'] = table.deepcopy(data.raw.tile['sand-2'])
+data.raw.tile['sand-4'].name = 'sand-4'
+data.raw.tile['sand-5'].name = 'sand-5'
+
+data.raw.tile['dry-dirt'].vehicle_friction_modifier = 1.8
+data.raw.tile['dirt-1'].vehicle_friction_modifier = 1.8
+data.raw.tile['dirt-2'].vehicle_friction_modifier = 1.8
+data.raw.tile['dirt-3'].vehicle_friction_modifier = 1.8
+
+data.raw.tile['dirt-4'].vehicle_friction_modifier = 1.8
+data.raw.tile['dirt-5'].vehicle_friction_modifier = 1.8
+data.raw.tile['dirt-6'].vehicle_friction_modifier = 1.8
+data.raw.tile['dirt-7'].vehicle_friction_modifier = 1.8
+
+data.raw.tile['grass-1'].vehicle_friction_modifier = 1.8
+data.raw.tile['grass-3'].vehicle_friction_modifier = 1.8
+data.raw.tile['grass-2'].vehicle_friction_modifier = 1.8
+data.raw.tile['grass-4'].vehicle_friction_modifier = 1.8
+
+data.raw.tile['red-desert-0'].vehicle_friction_modifier = 1.8
+data.raw.tile['red-desert-1'].vehicle_friction_modifier = 1.8
+data.raw.tile['red-desert-2'].vehicle_friction_modifier = 1.8
+data.raw.tile['red-desert-3'].vehicle_friction_modifier = 1.8
+
+data.raw.tile['sand-1'].vehicle_friction_modifier = 1.8
+data.raw.tile['sand-2'].vehicle_friction_modifier = 1.8
+data.raw.tile['sand-3'].vehicle_friction_modifier = 1.8
+data.raw.tile['sand-4'].vehicle_friction_modifier = 1.8
+data.raw.tile['sand-5'].vehicle_friction_modifier = 1.8
+
+data.raw.tile['landfill'].vehicle_friction_modifier = 1.8
+
+
 for _,v in pairs(data.raw.tile) do
   v.autoplace = nil
 end
@@ -18,7 +52,7 @@ local function scale_elevation(x)
   return (x - waterline) * elevation_scale + waterline
 end
 -- low lying sand
-data.raw.tile['sand-1'].autoplace = {
+data.raw.tile['sand-4'].autoplace = {
   peaks = {
   { -- Around cliff islands
     influence = 5,
@@ -55,7 +89,7 @@ data.raw.tile['sand-1'].autoplace = {
 }}
 
 -- highground sand
-data.raw.tile['sand-2'].autoplace = {
+data.raw.tile['sand-5'].autoplace = {
   peaks = {
   {
     influence = 5,
@@ -128,7 +162,7 @@ data.raw.tree['desert-garden'].autoplace = {
     }
   },
   order = "yc",
-  tile_restriction = {'sand-2'}
+  tile_restriction = {'sand-5'}
 }
 
 data.raw.tree['temperate-garden'].autoplace = {
@@ -151,7 +185,7 @@ data.raw.tree['temperate-garden'].autoplace = {
     }
   },
   order = "ya",
-  tile_restriction = {'sand-2'}
+  tile_restriction = {'sand-5'}
 }
 
 data.raw.tree['swamp-garden'].autoplace = {
@@ -166,7 +200,7 @@ data.raw.tree['swamp-garden'].autoplace = {
     }
   },
   order = "yb",
-  tile_restriction = {'sand-2'}
+  tile_restriction = {'sand-5'}
 }
 
 data.raw.tree['desert-tree'].autoplace = {
@@ -201,7 +235,7 @@ data.raw.tree['desert-tree'].autoplace = {
     }
   },
   order = "za",
-  tile_restriction = {'sand-2'}
+  tile_restriction = {'sand-5'}
 }
 data.raw.tree['temperate-tree'].autoplace = {
   max_probability = 0.1,
@@ -223,7 +257,7 @@ data.raw.tree['temperate-tree'].autoplace = {
     }
   },
   order = "zc",
-  tile_restriction = {'sand-2'}
+  tile_restriction = {'sand-5'}
 }
 
 data.raw.tree['swamp-tree'].autoplace = {
@@ -245,7 +279,7 @@ data.raw.tree['swamp-tree'].autoplace = {
     }
   },
   order = "zb",
-  tile_restriction = {'sand-2'}
+  tile_restriction = {'sand-5'}
 }
 
 data.raw.tile['water'].autoplace = {

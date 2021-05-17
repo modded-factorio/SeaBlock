@@ -42,18 +42,22 @@ bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
 -- Slag Processing 1 is first source of Sulfuric Waste Water
 bobmods.lib.tech.replace_prerequisite('water-treatment', 'electronics', 'slag-processing-1')
 
+-- Fix Slag Processing 1 prerequisites
+bobmods.lib.tech.add_prerequisite('slag-processing-1', 'angels-sulfur-processing-1')
+bobmods.lib.tech.remove_prerequisite('slag-processing-1', 'water-treatment-2')
+
 data.raw.technology['water-washing-1'].prerequisites = {'automation'} -- Allow skipping of waste water recycling
 seablock.lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
 seablock.lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
 
--- Increase tech cost to 50
-data.raw.technology['water-treatment'].unit.count = 50
 data.raw.technology['electronics'].prerequisites = {
   'angels-solder-smelting-basic',
   'angels-coal-processing'
 }
 
-seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
+if bobmods.lib.tech.has_recipe_unlock('angels-tin-smelting-1', 'basic-tinned-copper-wire') then
+  seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
+end
 
 if data.raw.recipe['liquid-fish-atmosphere'] then
   data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'
@@ -146,7 +150,11 @@ bobmods.lib.tech.replace_prerequisite('bio-arboretum-swamp-1', 'plastics', 'plas
 bobmods.lib.tech.replace_prerequisite('bio-plastic-1', 'plastics', 'plastic-1')
 if data.raw.technology['sct-lab-t3'] then
   bobmods.lib.tech.remove_prerequisite('sct-lab-t3', 'plastics')
+  bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-cobalt-steel-smelting-1')
+  bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-glass-smelting-1')
+  bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-aluminium-smelting-1')
 end
+
 seablock.lib.hide_technology('plastics')
 
 
@@ -154,3 +162,27 @@ seablock.lib.hide_technology('plastics')
 seablock.lib.substingredient('filter-lime', 'solid-lime', nil, 1)
 data.raw.recipe['filter-lime'].energy_required = 1
 data.raw.recipe['angels-sulfur-scrubber'].energy_required = 6
+
+-- Make Long Inserters a startup tech
+if data.raw.technology['logistics-0'] then
+  bobmods.lib.tech.replace_prerequisite('long-inserters-1', 'logistics', 'logistics-0')
+end
+
+-- Adjust for handcrafting boards
+
+-- Divide by 2
+seablock.lib.substingredient('solid-alginic-acid', 'algae-brown', nil, 5)
+seablock.lib.substresult('solid-alginic-acid', 'solid-alginic-acid', nil, 1)
+data.raw.recipe['solid-alginic-acid'].energy_required = 5
+
+-- Divide by 5
+seablock.lib.substingredient('solid-wood-pulp', 'cellulose-fiber', nil, 4)
+seablock.lib.substingredient('solid-wood-pulp', 'solid-alginic-acid', nil, 1)
+seablock.lib.substresult('solid-wood-pulp', 'solid-wood-pulp', nil, 4)
+data.raw.recipe['solid-wood-pulp'].energy_required = 0.8
+
+-- Tidy up ore silo prerequisites
+if mods['angelsaddons-storage'] then
+  bobmods.lib.tech.remove_prerequisite('ore-silos', 'angels-coal-processing')
+  bobmods.lib.tech.replace_prerequisite('ore-silos', 'ore-crushing', 'ore-advanced-crushing')
+end
