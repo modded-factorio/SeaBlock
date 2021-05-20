@@ -2,11 +2,8 @@
 data.raw.recipe['small-electric-pole'].ingredients = {{ "wood-bricks", 1 }, { "copper-cable", 2}}
 
 -- Wood removal
-seablock.lib.substingredient('sct-bio-sample-scaffold', 'wood', 'wood-bricks')
-seablock.lib.substingredient('polishing-wheel', 'wood', 'wood-pellets')
 seablock.lib.substingredient('phenolic-board', 'wood', 'wooden-board', 2)
 seablock.lib.substingredient('gun-cotton', 'wood', 'cellulose-fiber', 2)
-seablock.lib.takeeffect('plastics', 'synthetic-wood')
 
 -- Remove wood from basic underground belt and splitter recipes
 seablock.lib.removeingredient('basic-underground-belt', 'wood')

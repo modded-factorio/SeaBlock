@@ -67,6 +67,9 @@ bobmods.lib.tech.add_prerequisite('gas-synthesis', 'angels-coal-processing-2')
 -- Add other prerequisites
 bobmods.lib.tech.add_prerequisite('gardens', 'electronics')
 bobmods.lib.tech.add_prerequisite('uranium-processing', 'ore-leaching')
+if mods['ScienceCostTweakerM'] then
+  bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
+end
 
 -- Move Manganese down a tier
 -- T1:
