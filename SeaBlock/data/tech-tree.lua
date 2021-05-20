@@ -205,4 +205,4 @@ bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-scienc
 bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'utility-science-pack')
 bobmods.lib.tech.add_prerequisite('angels-nuclear-fuel', 'utility-science-pack')
 bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
-bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'production-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'utility-science-pack')

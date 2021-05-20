@@ -191,3 +191,6 @@ end
 if not data.raw.tool['advanced-logistic-science-pack'] then
   bobmods.lib.tech.add_prerequisite('logistic-system', 'utility-science-pack')
 end
+
+-- Cobalt Oxide prerequisite for Battery 2
+bobmods.lib.tech.replace_prerequisite('battery-2', 'cobalt-processing', 'angels-cobalt-smelting-2')
