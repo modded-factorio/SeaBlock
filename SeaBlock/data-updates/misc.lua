@@ -186,3 +186,8 @@ if mods['angelsaddons-storage'] then
   bobmods.lib.tech.remove_prerequisite('ore-silos', 'angels-coal-processing')
   bobmods.lib.tech.replace_prerequisite('ore-silos', 'ore-crushing', 'ore-advanced-crushing')
 end
+
+-- Logistic System prerequisite of Pink Science
+if not data.raw.tool['advanced-logistic-science-pack'] then
+  bobmods.lib.tech.add_prerequisite('logistic-system', 'utility-science-pack')
+end

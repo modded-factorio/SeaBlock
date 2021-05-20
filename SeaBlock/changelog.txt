@@ -14,6 +14,7 @@ Date: ???
     - Re-enabled Coal silo (Angel's Addons - Storage Options)
     - Reverted ore crystallization recipe icons
     - Hid unreachable recipes and items
+    - Made Logistic System take pink science rather than yellow science (when possible)
   Bugfixes:
     - Moved Bob's modules settings overrides from Sea Block to Circuit Processing
     - Fixed localised name of Mad Clown's Ore crystallization recipes

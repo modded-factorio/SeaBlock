@@ -198,6 +198,7 @@ bobmods.lib.tech.add_prerequisite('angels-explosives-1', 'military-science-pack'
 
 -- Production
 bobmods.lib.tech.add_prerequisite('angels-metallurgy-4', 'production-science-pack')
+bobmods.lib.tech.add_prerequisite('logistic-system', 'production-science-pack')
 
 -- Utility
 bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-science-pack')

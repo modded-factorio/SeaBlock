@@ -48,7 +48,13 @@ end
 
 -- Undo boblogistcs changes to logistic system research
 bobmods.lib.tech.add_new_science_pack('logistic-system', 'production-science-pack', 1)
-bobmods.lib.tech.add_new_science_pack('logistic-system', 'utility-science-pack', 1)
+if data.raw.tool['advanced-logistic-science-pack'] then
+  bobmods.lib.tech.add_new_science_pack('logistic-system', 'advanced-logistic-science-pack', 1)
+else
+  bobmods.lib.tech.add_new_science_pack('logistic-system', 'utility-science-pack', 1)
+end
+
+bobmods.lib.tech.add_prerequisite('logistic-system', 'bob-robots-2')
 
 local logisticstechs = {
   'logistic-system-2',
