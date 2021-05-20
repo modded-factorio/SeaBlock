@@ -103,6 +103,15 @@ if not found then
     {type = "unlock-recipe", recipe = "logistic-chest-requester"})
 end
 
+if mods['angelsindustries'] then
+  bobmods.lib.tech.remove_recipe_unlock('angels-construction-robots-2', 'angels-logistic-chest-buffer')
+  bobmods.lib.tech.remove_recipe_unlock('cargo-robots', 'angels-logistic-chest-requester')
+  bobmods.lib.tech.remove_recipe_unlock('cargo-robots-2', 'angels-logistic-chest-active-provider')
+  bobmods.lib.tech.add_recipe_unlock('logistic-system', 'angels-logistic-chest-active-provider')
+  bobmods.lib.tech.add_recipe_unlock('logistic-system', 'angels-logistic-chest-buffer')
+  bobmods.lib.tech.add_recipe_unlock('logistic-system', 'angels-logistic-chest-requester')
+end
+
 -- Reduce payload size of Bob's bots
 for i = 2,5 do
   local robot = data.raw['logistic-robot']['bob-logistic-robot-' .. i]
