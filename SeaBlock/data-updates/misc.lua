@@ -194,3 +194,9 @@ end
 
 -- Cobalt Oxide prerequisite for Battery 2
 bobmods.lib.tech.replace_prerequisite('battery-2', 'cobalt-processing', 'angels-cobalt-smelting-2')
+
+-- Saline rebalance
+seablock.lib.substingredient('solid-salt-dissolving', 'solid-salt', nil, 15)
+seablock.lib.substingredient('solid-salt-dissolving', 'water-purified', 'water', 1000)
+seablock.lib.substresult('solid-salt-dissolving', 'water-saline', nil, 1000)
+data.raw.recipe['solid-salt-dissolving'].energy_required = 5
