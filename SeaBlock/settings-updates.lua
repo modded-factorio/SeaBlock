@@ -27,15 +27,18 @@ function seablock.overwrite_setting(setting_type, setting_name, value)
   end
 end
 
+require "settings-updates/angelsindustries"
 require "settings-updates/angelspetrochem"
 require "settings-updates/angelsrefining"
 require "settings-updates/bobassembly"
 require "settings-updates/bobenemies"
+require "settings-updates/boblibrary"
 require "settings-updates/bobmining"
 require "settings-updates/bobores"
 require "settings-updates/bobplates"
 require "settings-updates/bobpower"
 require "settings-updates/bobrevamp"
 require "settings-updates/bobtech"
+require "settings-updates/reskins-angels"
 require "settings-updates/ScienceCostTweakerM"
 require "settings-updates/SpaceMod"
