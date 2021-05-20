@@ -120,10 +120,12 @@ for k,v in pairs(recipes) do
   end
   for _, recipe in ipairs(iset) do
     local items = {}
-    for _, ingredient in pairs(recipe.ingredients) do
-      local item = ingredient[1] or ingredient.name
-      if unobtainable[item] then
-        items[item] = true
+    if recipe.ingredients then
+      for _, ingredient in pairs(recipe.ingredients) do
+        local item = ingredient[1] or ingredient.name
+        if unobtainable[item] then
+          items[item] = true
+        end
       end
     end
     local results = {}
