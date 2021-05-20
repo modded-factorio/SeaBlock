@@ -133,6 +133,8 @@ function seablock.lib.substingredient(name, from, to, count)
       end
     end
     seablock.lib.recipeforeach(name, from, dosubst, 'ingredients')
+  else
+    log(debug.traceback())
   end
 end
 
@@ -195,34 +197,38 @@ function seablock.lib.tablefind(table, item)
   return nil
 end
 
-function seablock.lib.remove_recipe(recipe)
-  if data.raw.recipe[recipe] then
-    bobmods.lib.recipe.enabled(recipe, false)
-    if data.raw.recipe[recipe].normal then
-      data.raw.recipe[recipe].normal.hidden = true
+function seablock.lib.remove_recipe(recipe_name)
+  local recipe = data.raw.recipe[recipe_name]
+  if recipe then
+    if recipe.normal then
+      recipe.normal.hidden = true
+      recipe.normal.enabled = false
     end
-    if data.raw.recipe[recipe].expensive then
-      data.raw.recipe[recipe].expensive.hidden = true
+    if recipe.expensive then
+      recipe.expensive.hidden = true
+      recipe.expensive.enabled = false
     end
-    if not data.raw.recipe[recipe].normal and not data.raw.recipe[recipe].expensive then
-      data.raw.recipe[recipe].hidden = true
+    if not recipe.normal and not recipe.expensive then
+      recipe.hidden = true
+      recipe.enabled = false
     end
   end
 end
 
-function seablock.lib.hide_technology(technology)
-  if data.raw.technology[technology] then
-    if data.raw.technology[technology].normal then
-      data.raw.technology[technology].normal.hidden = true
-      data.raw.technology[technology].normal.enabled = false
+function seablock.lib.hide_technology(technology_name)
+  local technology = data.raw.technology[technology_name]
+  if technology then
+    if technology.normal then
+      technology.normal.hidden = true
+      technology.normal.enabled = false
     end
-    if data.raw.technology[technology].expensive then
-      data.raw.technology[technology].expensive.hidden = true
-      data.raw.technology[technology].expensive.enabled = false
+    if technology.expensive then
+      technology.expensive.hidden = true
+      technology.expensive.enabled = false
     end
-    if not data.raw.technology[technology].normal and not data.raw.technology[technology].expensive then
-      data.raw.technology[technology].hidden = true
-      data.raw.technology[technology].enabled = false
+    if not technology.normal and not technology.expensive then
+      technology.hidden = true
+      technology.enabled = false
     end
   end
 end
@@ -236,17 +242,19 @@ function seablock.lib.copy_icon(to, from)
   end
 end
 
-function seablock.lib.hide_item(item)
-  local _item = data.raw.item[item]
-  if not _item then
-    _item = data.raw.fluid[item]
-  end
-  if _item then
-    if not _item.flags then
-      _item.flags = {}
+function seablock.lib.hide_item(item_name)
+  local item = data.raw.item[item_name]
+  if item then
+    if not item.flags then
+      item.flags = {}
     end
-    if not seablock.lib.tablefind(_item.flags, "hidden") then
-      table.insert(_item.flags, "hidden")
+    if not seablock.lib.tablefind(item.flags, 'hidden') then
+      table.insert(item.flags, 'hidden')
+    end
+  else
+    item = data.raw.fluid[item_name]
+    if item then
+      item.hidden = true
     end
   end
 end

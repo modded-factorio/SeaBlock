@@ -42,28 +42,47 @@ end
 -- Recipes to unconditionally remove
 local removerecipes = {}
 for _,v in ipairs({
+  'alien-artifact-blue-from-basic',
+  'alien-artifact-green-from-basic',
+  'alien-artifact-orange-from-basic',
+  'alien-artifact-purple-from-basic',
+  'alien-artifact-red-from-basic',
+  'alien-artifact-yellow-from-basic',
+  'angels-chemical-void-gas-natural-1',
+  'angels-chemical-void-liquid-condensates',
+  'angels-water-void-lithia-water',
+  'angelsore1-crushed-hand',
+  'angelsore3-crushed-hand',
+  'bob-coal-from-wood',
   'bob-resin-wood',
   'burner-mining-drill',
+  'carbon-from-charcoal',
+  'coal-cracking-1',
+  'coal-cracking-2',
+  'coal-cracking-3',
+  'coal-crushed',
+  'condensates-oil-refining',
+  'condensates-refining',
   'electric-mining-drill',
-  'pumpjack',
-  'slag-processing-nuc',
-  'alien-artifact-red-from-basic',
-  'alien-artifact-orange-from-basic',
-  'alien-artifact-yellow-from-basic',
-  'alien-artifact-green-from-basic',
-  'alien-artifact-blue-from-basic',
-  'alien-artifact-purple-from-basic',
-  'water-thermal-lithia',
-  'thermal-water-filtering-1',
-  'thermal-water-filtering-2',
-  'circuit-paper-board', -- currently useless
+  'empty-gas-natural-1-barrel',
+  'empty-liquid-condensates-barrel',
+  'empty-lithia-water-barrel',
+  'fill-gas-natural-1-barrel',
+  'fill-liquid-condensates-barrel',
+  'fill-lithia-water-barrel',
+  'gas-fractioning-condensates',
+  'gas-separation',
   'protection-field-goopless',
+  'pumpjack',
   'slag-processing-7',
   'slag-processing-8',
   'slag-processing-9',
-  'bob-coal-from-wood',
-  'angelsore1-crushed-hand',
-  'angelsore3-crushed-hand'
+  'solid-coke',
+  'solid-coke-sulfur',
+  'thermal-water-filtering-1',
+  'thermal-water-filtering-2',
+  'water-thermal-lithia',
+  'wood-charcoal'
 }) do
   removerecipes[v] = true
 end
@@ -72,20 +91,18 @@ end
 -- then any recipe that uses an unobtainable item is removed
 local unobtainable = {}
 for _,v in ipairs({
+  'burner-mining-drill',
   'coal',
   'coal-crushed',
-  'circuit-wood-fiber-board',
-  'liquid-condensates',
-  'angels-barrel-liquid-condensates',
-  'liquid-condensates-barrel',
-  'gas-natural-1',
-  'angels-barrel-gas-natural-1',
-  'gas-natural-1-barrel',
-  'lithia-water',
-  'angels-barrel-lithia-water',
-  'lithia-water-barrel',
-  'burner-mining-drill',
+  'cobalt-plate',
   'electric-mining-drill',
+  'gas-natural-1',
+  'gas-natural-1-barrel',
+  'gem-ore',
+  'liquid-condensates',
+  'liquid-condensates-barrel',
+  'lithia-water',
+  'lithia-water-barrel',
   'pumpjack'
 }) do
   unobtainable[v] = {}
@@ -198,18 +215,8 @@ for k,v in pairs(data.raw.recipe) do
   end
 end
 
-for k,v in pairs(removerecipes) do
-  local recipe = data.raw.recipe[k]
-  if recipe then
-    if recipe.normal then
-      recipe.normal.enabled = false
-    end
-    if recipe.expensive then
-      recipe.expensive.enabled = false
-    elseif not recipe.normal then
-      recipe.enabled = false
-    end
-  end
+for k,_ in pairs(removerecipes) do
+  seablock.lib.remove_recipe(k)
 end
 
 -- Remove disabled recipes from technology unlock
