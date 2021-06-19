@@ -201,3 +201,14 @@ seablock.lib.substingredient('solid-salt-dissolving', 'solid-salt', nil, 15)
 seablock.lib.substingredient('solid-salt-dissolving', 'water-purified', 'water', 1000)
 seablock.lib.substresult('solid-salt-dissolving', 'water-saline', nil, 1000)
 data.raw.recipe['solid-salt-dissolving'].energy_required = 5
+
+-- Swap out Nickel and Zinc plates
+seablock.lib.substingredient('roboport-antenna-3', 'nickel-plate', 'titanium-plate', nil)
+bobmods.lib.recipe.remove_ingredient('roboport-antenna-4', 'nickel-plate')
+seablock.lib.substingredient('silver-zinc-battery', 'zinc-plate', 'solid-zinc-oxide', nil)
+
+bobmods.lib.tech.add_prerequisite('battery-3', 'angels-zinc-smelting-3')
+
+seablock.lib.hide_item('nickel-plate')
+seablock.lib.hide_item('zinc-plate')
+seablock.lib.hide_item('cobalt-plate')

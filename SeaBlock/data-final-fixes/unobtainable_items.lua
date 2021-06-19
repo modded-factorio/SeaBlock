@@ -94,7 +94,6 @@ for _,v in ipairs({
   'burner-mining-drill',
   'coal',
   'coal-crushed',
-  'cobalt-plate',
   'electric-mining-drill',
   'gas-natural-1',
   'gas-natural-1-barrel',
