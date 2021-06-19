@@ -12,6 +12,7 @@ end
 seablock.lib.add_recipe_unlock('rubber', 'bob-rubber', 2)
 seablock.lib.moveeffect('insulated-cable', 'electronics', 'rubber')
 seablock.lib.hide_technology('rubbers')
+bobmods.lib.tech.remove_recipe_unlock('bio-arboretum-desert-1', 'solid-rubber')
 
 -- Circuit network wires should not require rubber
 data.raw.recipe['green-wire'].ingredients = {{ "electronic-circuit", 1 }, { "copper-cable", 1 }}

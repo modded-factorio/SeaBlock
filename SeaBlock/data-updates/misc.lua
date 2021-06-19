@@ -139,9 +139,10 @@ bobmods.lib.tech.remove_prerequisite('tungsten-processing', 'angels-nickel-smelt
 -- Merge tech Plastics into Plastic 1
 seablock.lib.moveeffect('plastic-pipe', 'plastics', 'plastic-1')
 seablock.lib.moveeffect('plastic-pipe-to-ground', 'plastics', 'plastic-1')
-bobmods.lib.tech.remove_recipe_unlock('plastics', 'solid-plastic')
+bobmods.lib.tech.remove_recipe_unlock('bio-plastic-1', 'solid-plastic')
+bobmods.lib.tech.remove_recipe_unlock('bio-arboretum-swamp-1', 'solid-plastic')
 bobmods.lib.tech.remove_prerequisite('plastic-1', 'plastics')
-bobmods.lib.tech.remove_prerequisite('plastic-1', 'angels-advanced-chemistry-1')
+bobmods.lib.tech.remove_prerequisite('plastic-1', 'angels-advanced-chemistry-2')
 bobmods.lib.tech.add_prerequisite('plastic-1', 'gas-steam-cracking-1')
 bobmods.lib.tech.add_prerequisite('plastic-1', 'oil-steam-cracking-1')
 bobmods.lib.tech.replace_prerequisite('advanced-electronics', 'plastics', 'plastic-1')

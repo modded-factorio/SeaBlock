@@ -63,6 +63,7 @@ bobmods.lib.tech.remove_prerequisite('angels-iron-smelting-2', 'angels-coal-proc
 -- Add a new prerequisite so Coal processing 2 isn't a dead end
 -- Probably will want this for Carbon monoxide
 bobmods.lib.tech.add_prerequisite('gas-synthesis', 'angels-coal-processing-2')
+bobmods.lib.tech.replace_prerequisite('angels-coal-processing-2', 'water-treatment-2', 'basic-chemistry-3')
 
 -- Add other prerequisites
 bobmods.lib.tech.add_prerequisite('gardens', 'electronics')

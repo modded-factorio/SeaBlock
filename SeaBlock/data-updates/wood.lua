@@ -16,7 +16,16 @@ for k,v in pairs(data.raw.module) do
   end
 end
 
-table.insert(data.raw.technology['bio-wood-processing-2'].effects, {type = 'unlock-recipe', recipe = 'sb-wood-bricks-charcoal'})
+bobmods.lib.tech.remove_recipe_unlock('bio-wood-processing', 'bio-resin-wood-reprocessing')
 
-seablock.lib.takeeffect('bio-wood-processing-2', 'carbon-from-charcoal')
-seablock.lib.takeeffect('bio-wood-processing-2', 'wood-charcoal')
+bobmods.lib.tech.add_recipe_unlock('bio-wood-processing-2', 'sb-wood-bricks-charcoal')
+bobmods.lib.tech.remove_recipe_unlock('bio-wood-processing-2', 'carbon-from-charcoal')
+bobmods.lib.tech.remove_recipe_unlock('bio-wood-processing-2', 'wood-charcoal')
+
+bobmods.lib.tech.replace_prerequisite('bio-wood-processing-3', 'angels-coal-processing-3', 'bio-arboretum-1')
+bobmods.lib.tech.replace_prerequisite('bio-wood-processing-3', 'angels-coal-processing-3', 'bio-arboretum-1')
+
+bobmods.lib.tech.remove_prerequisite('bio-arboretum-1', 'bio-wood-processing')
+
+-- Remove wooden chest from composter recipe
+bobmods.lib.recipe.remove_ingredient('composter', 'wooden-chest')
