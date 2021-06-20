@@ -188,7 +188,9 @@ bobmods.lib.tech.add_prerequisite('bio-paper-3', 'chemical-science-pack')
 bobmods.lib.tech.add_prerequisite('gas-steam-cracking-2', 'chemical-science-pack')
 bobmods.lib.tech.add_prerequisite('oil-steam-cracking-2', 'chemical-science-pack')
 bobmods.lib.tech.add_prerequisite('bob-robo-modular-2', 'chemical-science-pack')
-bobmods.lib.tech.add_prerequisite('exoskeleton-equipment-2', 'chemical-science-pack')
+if mods['bobequipment'] then
+  bobmods.lib.tech.add_prerequisite('exoskeleton-equipment-2', 'chemical-science-pack')
+end
 bobmods.lib.tech.add_prerequisite('ore-leaching', 'chemical-science-pack')
 bobmods.lib.tech.add_prerequisite('bob-robotics-2', 'chemical-science-pack')
 bobmods.lib.tech.add_prerequisite('personal-roboport-mk2-equipment', 'chemical-science-pack')
@@ -206,7 +208,11 @@ bobmods.lib.tech.add_prerequisite('logistic-system', 'production-science-pack')
 
 -- Utility
 bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-science-pack')
-bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'utility-science-pack')
+if mods['bobequipment'] then
+  bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'utility-science-pack')
+end
 bobmods.lib.tech.add_prerequisite('angels-nuclear-fuel', 'utility-science-pack')
-bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
+if mods['bobwarfare'] then
+  bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
+end
 bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'utility-science-pack')

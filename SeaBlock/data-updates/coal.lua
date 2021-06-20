@@ -4,16 +4,23 @@ seablock.lib.substingredient('slowdown-capsule', 'coal', 'wood-charcoal')
 seablock.lib.substingredient('grenade', 'coal', 'wood-charcoal')
 seablock.lib.substingredient('explosives', 'coal', 'wood-charcoal')
 seablock.lib.substingredient('solid-fuel-from-hydrogen', 'coal', 'wood-charcoal')
-seablock.lib.substingredient('alien-poison', 'coal', 'wood-charcoal')
-seablock.lib.substingredient('alien-explosive', 'coal', 'wood-charcoal')
+if mods['bobenemies'] then
+  seablock.lib.substingredient('alien-poison', 'coal', 'wood-charcoal')
+  seablock.lib.substingredient('alien-explosive', 'coal', 'wood-charcoal')
+end
 seablock.lib.substingredient('filter-coal', 'coal', 'wood-charcoal')
 seablock.lib.substingredient('solid-nitroglycerin', 'coal', 'wood-charcoal')
 seablock.lib.substingredient('carbon', 'coal', 'wood-charcoal')
-seablock.lib.substingredient('sct-mil-circuit1', 'coal', 'wood-charcoal')
-seablock.lib.substingredient('steam-science-pack', 'coal', 'wood-charcoal')
-seablock.lib.substingredient('road', 'coal', 'wood-charcoal')
+if mods['ScienceCostTweakerM'] then
+  seablock.lib.substingredient('sct-mil-circuit1', 'coal', 'wood-charcoal')
+end
+if mods['Transport_Drones'] then
+  seablock.lib.substingredient('road', 'coal', 'wood-charcoal')
+end
 seablock.lib.substingredient('carbon-separation-2', 'coal', 'wood-charcoal', 1)
-seablock.lib.substingredient('silo-coal', 'coal-crushed', 'wood-charcoal', 10)
+if mods['angelsaddons-storage'] then
+  seablock.lib.substingredient('silo-coal', 'coal-crushed', 'wood-charcoal', 10)
+end
 
 -- Disable coal cracking technology
 data.raw.technology['angels-coal-cracking'].enabled = false

@@ -219,5 +219,7 @@ end
 
 -- Swap gold for platinum
 seablock.lib.substingredient('processing-electronics', 'gilded-copper-cable', 'angels-wire-platinum', 10)
-seablock.lib.substingredient('module-processor-board-3', 'gold-plate', 'angels-plate-platinum', nil)
+if mods['bobmodules'] then
+  seablock.lib.substingredient('module-processor-board-3', 'gold-plate', 'angels-plate-platinum', nil)
+end
 bobmods.lib.tech.add_prerequisite('advanced-electronics-3', 'angels-platinum-smelting-1')

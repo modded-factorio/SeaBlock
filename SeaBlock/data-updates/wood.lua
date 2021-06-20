@@ -3,7 +3,9 @@ data.raw.recipe['small-electric-pole'].ingredients = {{ "wood-bricks", 1 }, { "c
 
 -- Wood removal
 seablock.lib.substingredient('phenolic-board', 'wood', 'wooden-board', 2)
-seablock.lib.substingredient('gun-cotton', 'wood', 'cellulose-fiber', 2)
+if mods['bobwarfare'] then
+  seablock.lib.substingredient('gun-cotton', 'wood', 'cellulose-fiber', 2)
+end
 
 -- Remove wood from basic underground belt and splitter recipes
 seablock.lib.removeingredient('basic-underground-belt', 'wood')
