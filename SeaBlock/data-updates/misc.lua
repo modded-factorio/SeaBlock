@@ -212,3 +212,7 @@ bobmods.lib.tech.add_prerequisite('battery-3', 'angels-zinc-smelting-3')
 seablock.lib.hide_item('nickel-plate')
 seablock.lib.hide_item('zinc-plate')
 seablock.lib.hide_item('cobalt-plate')
+
+if mods['cargo-ships'] then
+  seablock.lib.hide_item('oil_rig')
+end
