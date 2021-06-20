@@ -57,3 +57,6 @@ end
 angelsmods.trigger.smelting_products["nickel"].plate = false
 angelsmods.trigger.smelting_products["zinc"].plate = false
 angelsmods.trigger.smelting_products["cobalt"].plate = false
+angelsmods.trigger.ores["platinum"] = true
+angelsmods.trigger.smelting_products["platinum"].plate = true
+angelsmods.trigger.smelting_products["platinum"].wire = true
