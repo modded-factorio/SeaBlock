@@ -72,6 +72,28 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
 end
 
+-- Add missing science packs
+for _,v in pairs({
+  'bob-repair-pack-4',
+  'bob-repair-pack-5',
+  'cobalt-processing'
+}) do
+  bobmods.lib.tech.add_new_science_pack(v, 'chemical-science-pack', 1)
+end
+
+for _,v in pairs({
+  'bob-artillery-turret-3',
+  'bob-artillery-wagon-3',
+  'bob-energy-shield-equipment-3',
+  'bob-repair-pack-5',
+  'radars-4',
+  'rocket-control-unit'
+}) do
+  bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
+end
+
+bobmods.lib.tech.add_new_science_pack('resin-3', 'utility-science-pack', 1)
+
 -- Move Manganese down a tier
 -- T1:
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-1', 'logistic-science-pack')
@@ -117,7 +139,6 @@ bobmods.lib.tech.replace_prerequisite('angels-silicon-smelting-3', 'angels-alumi
 -- T1:
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-1', 'logistic-science-pack', 1)
 bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-1', 'angels-metallurgy-1', 'angels-metallurgy-2')
-bobmods.lib.tech.replace_prerequisite('angels-iron-smelting-3', 'angels-nickel-smelting-2', 'angels-nickel-smelting-1')
 
 -- T2:
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-2', 'chemical-science-pack', 1)
@@ -132,7 +153,6 @@ bobmods.lib.tech.replace_prerequisite('angels-nickel-casting-2', 'ore-processing
 bobmods.lib.tech.replace_prerequisite('angels-nickel-casting-2', 'strand-casting-1', 'strand-casting-2')
 bobmods.lib.tech.replace_prerequisite('angels-steel-smelting-3', 'angels-nickel-casting-3', 'angels-nickel-smelting-2')
 bobmods.lib.tech.replace_prerequisite('angels-titanium-casting-2', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
-
 
 -- T3:
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-3', 'production-science-pack', 1)
