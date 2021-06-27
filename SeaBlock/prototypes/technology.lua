@@ -110,32 +110,6 @@ data:extend({
     ingredients = {{"sb-lab-tool", 1}},
     time = 5
   }
-},
-{
-  type = "technology",
-  name = "sb-advanced-algae-processing",
-  icon = "__angelsbioprocessing__/graphics/technology/algae-farm-tech.png",
-  icon_size = 128,
-  order = "c-a",
-  effects = {
-    {type = "unlock-recipe", recipe = "algae-farm-3"},
-    {type = "unlock-recipe", recipe = "algae-brown-burning-wash"}
-  },
-  prerequisites = {
-    "bio-processing-red",
-    "advanced-electronics",
-    "angels-stone-smelting-2",
-    "angels-brass-smelting-1",
-    "angels-aluminium-smelting-1"
-  },
-  unit = {
-    count = 100,
-    ingredients = {
-      {type = "item", name = "automation-science-pack", amount = 1},
-      {type = "item", name = "logistic-science-pack", amount = 1}
-    },
-    time = 15
-  }
 }
 })
 
