@@ -149,9 +149,11 @@ bobmods.lib.tech.replace_prerequisite('advanced-electronics', 'plastics', 'plast
 bobmods.lib.tech.replace_prerequisite('battery', 'plastics', 'plastic-1')
 bobmods.lib.tech.replace_prerequisite('bio-arboretum-swamp-1', 'plastics', 'plastic-1')
 bobmods.lib.tech.replace_prerequisite('bio-plastic-1', 'plastics', 'plastic-1')
+
+
 if data.raw.technology['sct-lab-t3'] then
   bobmods.lib.tech.remove_prerequisite('sct-lab-t3', 'plastics')
-  bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-cobalt-steel-smelting-1')
+  bobmods.lib.tech.remove_prerequisite('sct-lab-t3', 'cobalt-processing')
   bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-glass-smelting-1')
   bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-aluminium-smelting-1')
 end
