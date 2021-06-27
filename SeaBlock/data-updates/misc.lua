@@ -223,3 +223,22 @@ if mods['bobmodules'] then
   seablock.lib.substingredient('module-processor-board-3', 'gold-plate', 'angels-plate-platinum', nil)
 end
 bobmods.lib.tech.add_prerequisite('advanced-electronics-3', 'angels-platinum-smelting-1')
+
+-- Unhide rocket part to make it easier to view recipes
+if data.raw.recipe['rocket-part'] then
+  angelsmods.functions.remove_flag('rocket-part', 'hidden')
+  local r = data.raw.recipe['rocket-part']
+  
+  if r.normal then
+    r.normal.hidden = false
+    r.normal.hide_from_player_crafting = true
+  end
+  if r.expensive then
+    r.expensive.hidden = false
+    r.expensive.hide_from_player_crafting = true
+  end
+  if not r.normal and not r.expensive then
+    r.hidden = false
+    r.hide_from_player_crafting = true
+  end
+end
