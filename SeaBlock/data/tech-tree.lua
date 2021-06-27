@@ -236,3 +236,10 @@ if mods['bobwarfare'] then
   bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
 end
 bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'utility-science-pack')
+
+-- Hide KS Power techs
+if mods['KS_Power'] then
+  seablock.lib.hide_technology('OilBurning')
+  seablock.lib.hide_technology('big-burner-generator')
+  seablock.lib.hide_technology('petroleum-generator')
+end
