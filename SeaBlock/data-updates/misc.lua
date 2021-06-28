@@ -195,24 +195,6 @@ if not data.raw.tool['advanced-logistic-science-pack'] then
   bobmods.lib.tech.add_prerequisite('logistic-system', 'utility-science-pack')
 end
 
--- Swap out cobalt steel intermediates for recipes unlocked at green science
-seablock.lib.substingredient('steam-engine-3', 'cobalt-steel-gear-wheel', 'brass-gear-wheel', nil)
-seablock.lib.substingredient('steam-engine-3', 'cobalt-steel-bearing', 'steel-bearing', nil)
-bobmods.lib.tech.remove_prerequisite('bob-steam-engine-3', 'cobalt-processing')
-
-seablock.lib.substingredient('steam-turbine', 'cobalt-steel-gear-wheel', 'brass-gear-wheel', nil)
-seablock.lib.substingredient('steam-turbine', 'cobalt-steel-bearing', 'steel-bearing', nil)
-bobmods.lib.tech.remove_prerequisite('bob-steam-turbine-1', 'cobalt-processing')
-
-seablock.lib.substingredient('repair-pack-3', 'cobalt-steel-gear-wheel', 'brass-gear-wheel', nil)
-seablock.lib.substingredient('repair-pack-3', 'cobalt-steel-alloy', 'brass-alloy', nil)
-bobmods.lib.tech.replace_prerequisite('bob-repair-pack-3', 'cobalt-processing', 'zinc-processing')
-
-bobmods.lib.tech.replace_prerequisite('battery-2', 'cobalt-processing', 'angels-cobalt-smelting-1')
-if data.raw.technology['rtg'] then
-  bobmods.lib.tech.replace_prerequisite('rtg', 'cobalt-processing', 'angels-cobalt-smelting-1')
-end
-
 
 -- Saline rebalance
 seablock.lib.substingredient('solid-salt-dissolving', 'solid-salt', nil, 15)
@@ -231,18 +213,12 @@ seablock.lib.hide_item('nickel-plate')
 seablock.lib.hide_item('zinc-plate')
 seablock.lib.remove_recipe('bob-zinc-plate')
 bobmods.lib.tech.remove_recipe_unlock('zinc-processing', 'bob-zinc-plate')
-seablock.lib.hide_item('cobalt-plate')
 
 -- Move Nitinol smelting up a tier
 bobmods.lib.tech.replace_prerequisite('angels-nitinol-smelting-1', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
 bobmods.lib.tech.add_prerequisite('angels-nitinol-smelting-1', 'angels-metallurgy-4')
 
 -- Add missing science packs
-for _,v in pairs({
-  'angels-cobalt-steel-smelting-1',
-}) do
-  bobmods.lib.tech.add_new_science_pack(v, 'chemical-science-pack', 1)
-end
 
 for _,v in pairs({
   'angels-nitinol-smelting-1',
