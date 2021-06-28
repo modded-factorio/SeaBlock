@@ -273,3 +273,45 @@ if data.raw.recipe['rocket-part'] then
     r.hide_from_player_crafting = true
   end
 end
+
+for _,v in pairs({
+  'angelsore1-chunk-processing',
+  'angelsore2-chunk-processing',
+  'angelsore3-chunk-processing',
+  'angelsore4-chunk-processing',
+  'angelsore5-chunk-processing',
+  'angelsore6-chunk-processing'
+}) do
+  if data.raw.recipe[v] then
+    data.raw.recipe[v].category = 'ore-sorting-2'
+  end
+end
+bobmods.lib.tech.add_prerequisite('ore-floatation', 'advanced-ore-refining-1')
+
+for _,v in pairs({
+  'angelsore1-crystal-processing',
+  'angelsore2-crystal-processing',
+  'angelsore3-crystal-processing',
+  'angelsore4-crystal-processing',
+  'angelsore5-crystal-processing',
+  'angelsore6-crystal-processing'
+}) do
+  if data.raw.recipe[v] then
+    data.raw.recipe[v].category = 'ore-sorting-3'
+  end
+end
+bobmods.lib.tech.add_prerequisite('ore-leaching', 'advanced-ore-refining-2')
+
+for _,v in pairs({
+  'angelsore1-pure-processing',
+  'angelsore2-pure-processing',
+  'angelsore3-pure-processing',
+  'angelsore4-pure-processing',
+  'angelsore5-pure-processing',
+  'angelsore6-pure-processing'
+}) do
+  if data.raw.recipe[v] then
+    data.raw.recipe[v].category = 'ore-sorting-4'
+  end
+end
+bobmods.lib.tech.add_prerequisite('ore-refining', 'advanced-ore-refining-3')
