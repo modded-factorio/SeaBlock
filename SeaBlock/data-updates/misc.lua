@@ -207,7 +207,14 @@ seablock.lib.substingredient('roboport-antenna-3', 'nickel-plate', 'titanium-pla
 bobmods.lib.recipe.remove_ingredient('roboport-antenna-4', 'nickel-plate')
 seablock.lib.substingredient('silver-zinc-battery', 'zinc-plate', 'solid-zinc-oxide', nil)
 
-bobmods.lib.tech.add_prerequisite('battery-3', 'angels-zinc-smelting-3')
+seablock.lib.unhide_recipe('zinc-ore-processing-alt')
+bobmods.lib.tech.add_recipe_unlock('angels-zinc-smelting-2', 'zinc-ore-processing-alt')
+bobmods.lib.tech.add_prerequisite('battery-3', 'angels-zinc-smelting-2')
+if data.raw.recipe['pellet-zinc-smelting'] then
+  data.raw.recipe['pellet-zinc-smelting'].icons = angelsmods.functions.add_number_icon_layer(
+                                                    angelsmods.functions.get_object_icons("solid-zinc-oxide"),
+                                                    2, angelsmods.smelting.number_tint)
+end
 
 seablock.lib.hide_item('nickel-plate')
 seablock.lib.hide_item('zinc-plate')

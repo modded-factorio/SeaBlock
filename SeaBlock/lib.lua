@@ -215,6 +215,21 @@ function seablock.lib.remove_recipe(recipe_name)
   end
 end
 
+function seablock.lib.unhide_recipe(recipe_name)
+  local recipe = data.raw.recipe[recipe_name]
+  if recipe then
+    if recipe.normal then
+      recipe.normal.hidden = false
+    end
+    if recipe.expensive then
+      recipe.expensive.hidden = false
+    end
+    if not recipe.normal and not recipe.expensive then
+      recipe.hidden = false
+    end
+  end
+end
+
 function seablock.lib.hide_technology(technology_name)
   local technology = data.raw.technology[technology_name]
   if technology then
