@@ -102,8 +102,6 @@ data:extend({
     -- So closer to 80% sulfur return
     type = "recipe",
     name = "sb-blue-algae-liquefaction",
-    localised_name = {"recipe-name.sb-blue-algae-liquefaction",
-      {"fluid-name.liquid-multi-phase-oil"}, {"fluid-name.water-yellow-waste"}, {"fluid-name.gas-carbon-dioxide"}},
     icons = 
       angelsmods.functions.create_liquid_recipe_icon(
         {
