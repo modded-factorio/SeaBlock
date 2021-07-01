@@ -275,3 +275,16 @@ if data.raw.recipe['rocket-part'] then
     r.hide_from_player_crafting = true
   end
 end
+
+-- Hide recipes that take Chrome Ingots
+seablock.lib.remove_recipe('molten-iron-smelting-5')
+bobmods.lib.tech.remove_recipe_unlock('angels-iron-casting-3', 'molten-iron-smelting-5')
+bobmods.lib.tech.remove_prerequisite('angels-iron-casting-3', 'angels-chrome-smelting-1')
+
+seablock.lib.remove_recipe('molten-steel-smelting-5')
+bobmods.lib.tech.remove_recipe_unlock('angels-steel-smelting-3', 'molten-steel-smelting-5')
+bobmods.lib.tech.remove_prerequisite('angels-steel-smelting-3', 'angels-chrome-smelting-1')
+
+seablock.lib.remove_recipe('molten-titanium-smelting-5')
+bobmods.lib.tech.remove_recipe_unlock('angels-titanium-casting-3', 'molten-titanium-smelting-5')
+bobmods.lib.tech.remove_prerequisite('angels-titanium-casting-3', 'angels-chrome-smelting-2')
