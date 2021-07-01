@@ -241,7 +241,9 @@ for _,v in pairs({
   'stack-inserter-4',
   'ultimate-inserter'
 }) do
-  bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
+  if data.raw.technology[v] then
+    bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
+  end
 end
 
 if mods['cargo-ships'] then

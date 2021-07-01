@@ -72,24 +72,18 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
 end
 
--- Add missing science packs
-for _,v in pairs({
-  'bob-repair-pack-4',
-  'bob-repair-pack-5',
-  'cobalt-processing'
-}) do
-  bobmods.lib.tech.add_new_science_pack(v, 'chemical-science-pack', 1)
-end
-
-for _,v in pairs({
+local tech = {
   'bob-artillery-turret-3',
   'bob-artillery-wagon-3',
   'bob-energy-shield-equipment-3',
-  'bob-repair-pack-5',
-  'radars-4',
-  'rocket-control-unit'
-}) do
-  bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
+  'radars-4'}
+if mods['CircuitProcessing'] then
+  table.insert(tech, 'rocket-control-unit')
+end
+for _,v in pairs(tech) do
+  if data.raw.technology[v] then
+    bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
+  end
 end
 
 bobmods.lib.tech.add_new_science_pack('resin-3', 'utility-science-pack', 1)
