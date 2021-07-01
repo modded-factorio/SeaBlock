@@ -123,7 +123,96 @@ data:extend({
     },
     subgroup = "bio-processing-blue",
     order = "d[blue-algae-liquefaction]"
-  }
+  },
+  {
+    type = "item",
+    name = "sb-ore-sorting-facility-5",
+    icons = angelsmods.functions.add_number_icon_layer(
+      {
+        {
+          icon = "__angelsrefining__/graphics/icons/ore-sorting-facility-4.png",
+          icon_size = 32, icon_mipmaps = 1
+        }
+      },
+      5, angelsmods.refining.number_tint),
+    subgroup = "ore-sorter",
+    order = "e[ore-sorting-facility-5]",
+    place_result = "sb-ore-sorting-facility-5",
+    stack_size = 10
+  },
+  {
+    type = "assembling-machine",
+    name = "sb-ore-sorting-facility-5",
+    icons = angelsmods.functions.add_number_icon_layer(
+      {
+        {
+          icon = "__angelsrefining__/graphics/icons/ore-sorting-facility-4.png",
+          icon_size = 32, icon_mipmaps = 1
+        }
+      },
+      5, angelsmods.refining.number_tint),
+    flags = {"placeable-neutral", "player-creation"},
+    minable = {mining_time = 1, result = "sb-ore-sorting-facility-5"},
+    fast_replaceable_group = "ore-sorting-facility",
+    max_health = 300,
+    corpse = "big-remnants",
+    dying_explosion = "medium-explosion",
+    collision_box = {{-3.4, -3.4}, {3.4, 3.4}},
+    selection_box = {{-3.5, -3.5}, {3.5, 3.5}},
+    module_specification = {
+      module_slots = 3
+    },
+    allowed_effects = {"consumption", "speed", "pollution", "productivity"},
+    crafting_categories = {"ore-sorting", "ore-sorting-2", "ore-sorting-3", "ore-sorting-4", "ore-sorting-5"},
+    crafting_speed = 2,
+    energy_source = {
+      type = "electric",
+      usage_priority = "secondary-input",
+      emissions_per_minute = 0.07 * 60
+    },
+    energy_usage = "350kW",
+    animation = {
+      layers = {
+        {
+          filename = "__angelsrefining__/graphics/entity/ore-sorting-facility/1ore-sorting-facility.png",
+          priority = "extra-high",
+          width = 256,
+          height = 256,
+          frame_count = 40,
+          line_length = 8,
+          shift = {0.5, 0},
+          animation_speed = 0.5
+        },
+        {
+          filename = "__angelsrefining__/graphics/entity/ore-sorting-facility/2ore-sorting-facility-overlay.png",
+          priority = "extra-high",
+          width = 256,
+          height = 256,
+          frame_count = 40,
+          line_length = 8,
+          tint = {r = 0.70, g = 0.70, b = 0.10},
+          shift = {0.5, 0},
+          animation_speed = 0.5
+        }
+      }
+    },
+    vehicle_impact_sound = {filename = "__base__/sound/car-metal-impact.ogg", volume = 0.65},
+    working_sound = {
+      sound = {filename = "__angelsrefining__/sound/ore-sorting-facility.ogg"},
+      idle_sound = {filename = "__base__/sound/idle1.ogg", volume = 0.6},
+      apparent_volume = 2.5
+    }
+  },
+  {
+    type = "recipe",
+    name = "sb-ore-sorting-facility-5",
+    energy_required = 5,
+    enabled = false,
+    ingredients = {
+      {type = "item", name = "ore-sorting-facility-4", amount = 1}
+    },
+    result = "ore-sorting-facility-5"
+  },
 })
 
 bobmods.lib.tech.add_prerequisite('oil-gas-extraction', 'bio-processing-blue')
