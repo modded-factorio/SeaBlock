@@ -133,6 +133,7 @@ bobmods.lib.tech.replace_prerequisite('angels-silicon-smelting-3', 'angels-alumi
 -- T1:
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-1', 'logistic-science-pack', 1)
 bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-1', 'angels-metallurgy-1', 'angels-metallurgy-2')
+bobmods.lib.tech.replace_prerequisite('angels-iron-casting-3', 'angels-nickel-smelting-2', 'angels-nickel-smelting-1')
 
 -- T2:
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-2', 'chemical-science-pack', 1)
