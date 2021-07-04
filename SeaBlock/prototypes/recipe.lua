@@ -130,7 +130,7 @@ data:extend({
     icons = angelsmods.functions.add_number_icon_layer(
       {
         {
-          icon = "__angelsrefining__/graphics/icons/ore-sorting-facility-4.png",
+          icon = "__SeaBlock__/graphics/icons/sb-ore-sorting-facility-5.png",
           icon_size = 32, icon_mipmaps = 1
         }
       },
@@ -146,7 +146,7 @@ data:extend({
     icons = angelsmods.functions.add_number_icon_layer(
       {
         {
-          icon = "__angelsrefining__/graphics/icons/ore-sorting-facility-4.png",
+          icon = "__SeaBlock__/graphics/icons/sb-ore-sorting-facility-5.png",
           icon_size = 32, icon_mipmaps = 1
         }
       },
@@ -190,7 +190,7 @@ data:extend({
           height = 256,
           frame_count = 40,
           line_length = 8,
-          tint = {r = 0.70, g = 0.70, b = 0.10},
+          tint = {r = 0.53, g = 0.34, b = 0.71},
           shift = {0.5, 0},
           animation_speed = 0.5
         }
