@@ -26,3 +26,7 @@ bobmods.lib.tech.remove_recipe_unlock('angels-advanced-gas-processing', 'solid-f
 bobmods.lib.tech.remove_prerequisite('circuit-network', 'bio-wood-processing')
 bobmods.lib.tech.remove_recipe_unlock('circuit-network', 'bob-rubber')
 bobmods.lib.tech.remove_recipe_unlock('circuit-network', 'insulated-cable')
+
+-- Unhide solid fuel from hydrogen
+seablock.lib.unhide_recipe('solid-fuel-from-hydrogen')
+seablock.lib.add_recipe_unlock('flammables', 'solid-fuel-from-hydrogen', 4)

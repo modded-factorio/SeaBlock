@@ -110,7 +110,6 @@ for _,v in ipairs({
   'electric-mining-drill',
   'gas-natural-1',
   'gas-natural-1-barrel',
-  'gem-ore',
   'liquid-condensates',
   'liquid-condensates-barrel',
   'lithia-water',
