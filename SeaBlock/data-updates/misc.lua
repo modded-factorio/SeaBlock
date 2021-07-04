@@ -288,3 +288,27 @@ bobmods.lib.tech.remove_prerequisite('angels-steel-smelting-3', 'angels-chrome-s
 seablock.lib.remove_recipe('molten-titanium-smelting-5')
 bobmods.lib.tech.remove_recipe_unlock('angels-titanium-casting-3', 'molten-titanium-smelting-5')
 bobmods.lib.tech.remove_prerequisite('angels-titanium-casting-3', 'angels-chrome-smelting-2')
+
+-- Buff bob's silicon and tungsten recipes
+seablock.lib.substingredient('silicon-carbide', 'silicon-powder', nil, 10)
+seablock.lib.substingredient('silicon-carbide', 'carbon', nil, 10)
+data.raw.recipe['silicon-carbide'].result_count = 20
+
+seablock.lib.substingredient('silicon-nitride', 'silicon-powder', nil, 10)
+seablock.lib.substingredient('silicon-nitride', 'gas-nitrogen', nil, 130)
+data.raw.recipe['silicon-nitride'].result_count = 10
+
+seablock.lib.substingredient('tungsten-carbide', 'tungsten-oxide', nil, 10)
+seablock.lib.substingredient('tungsten-carbide', 'carbon', nil, 10)
+seablock.lib.substresult('tungsten-carbide', 'tungsten-carbide', nil, 20)
+bobmods.lib.recipe.set_energy_required('tungsten-carbide', 6)
+
+seablock.lib.substingredient('tungsten-carbide-2', 'powdered-tungsten', nil, 10)
+seablock.lib.substingredient('tungsten-carbide-2', 'carbon', nil, 10)
+seablock.lib.substresult('tungsten-carbide-2', 'tungsten-carbide', nil, 20)
+bobmods.lib.recipe.set_energy_required('tungsten-carbide-2', 6)
+
+seablock.lib.substingredient('copper-tungsten-alloy', 'powdered-tungsten', nil, 15)
+seablock.lib.substingredient('copper-tungsten-alloy', 'copper-plate', 'powder-copper', 10)
+seablock.lib.substresult('copper-tungsten-alloy', 'copper-tungsten-alloy', nil, 25)
+bobmods.lib.recipe.set_energy_required('copper-tungsten-alloy', 8)
