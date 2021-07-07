@@ -251,7 +251,7 @@ if mods['cargo-ships'] then
 end
 
 -- Swap gold for platinum
-seablock.lib.substingredient('processing-electronics', 'gilded-copper-cable', 'angels-wire-platinum', 10)
+seablock.lib.substingredient('processing-electronics', 'angels-wire-platinum', nil, 20)
 if mods['bobmodules'] then
   seablock.lib.substingredient('module-processor-board-3', 'angels-wire-platinum', 'angels-plate-platinum', nil)
 end
