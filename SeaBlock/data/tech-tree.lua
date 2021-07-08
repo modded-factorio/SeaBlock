@@ -23,22 +23,18 @@ bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-1', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-3', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-4', 'token-bio', 1)
-if data.raw.technology['bio-pressing'] then
-  bobmods.lib.tech.add_new_science_pack('bio-pressing', 'token-bio', 1)
-else
-  bobmods.lib.tech.add_new_science_pack('bio-pressing-1', 'token-bio', 1)
-  bobmods.lib.tech.add_new_science_pack('bio-pressing-2', 'token-bio', 1)
-end
-if data.raw.technology['bio-pressing-fish'] then
-  bobmods.lib.tech.add_new_science_pack('bio-pressing-fish', 'token-bio', 1)
-else
-  bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-1', 'token-bio', 1)
-  bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-2', 'token-bio', 1)
-end
+bobmods.lib.tech.add_new_science_pack('bio-pressing-1', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-pressing-2', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-1', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-butchery-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
+if mods['ScienceCostTweakerM'] then
+  bobmods.lib.tech.add_new_science_pack('habitation', 'token-bio', 1)
+  bobmods.lib.tech.add_new_science_pack('life-support-systems', 'token-bio', 1)
+end
 
 -- At least one of these is required to feed fish
 data.raw.technology['bio-desert-farming-1'].ignore_tech_cost_multiplier = true
