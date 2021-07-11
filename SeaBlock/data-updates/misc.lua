@@ -261,6 +261,8 @@ if mods['bobmodules'] then
   seablock.lib.substingredient('module-processor-board-3', 'angels-wire-platinum', 'angels-plate-platinum', nil)
 end
 bobmods.lib.tech.add_prerequisite('advanced-electronics-3', 'angels-platinum-smelting-1')
+seablock.lib.remove_recipe('angelsore-pure-mix2-processing')
+bobmods.lib.tech.remove_recipe_unlock('advanced-ore-refining-4', 'angelsore-pure-mix2-processing')
 
 -- Unhide rocket part to make it easier to view recipes
 if data.raw.recipe['rocket-part'] then
