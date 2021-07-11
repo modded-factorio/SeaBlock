@@ -216,6 +216,11 @@ if data.raw.recipe['pellet-zinc-smelting'] then
                                                     2, angelsmods.smelting.number_tint)
 end
 
+if mods['angelsindustries'] then
+  seablock.lib.substingredient('angels-thorium-fuel-cell', 'angels-plate-zinc', 'lead-plate', nil)
+  seablock.lib.substingredient('angels-deuterium-fuel-cell', 'angels-plate-zinc', 'lead-plate', nil)
+end
+
 seablock.lib.hide_item('nickel-plate')
 seablock.lib.hide_item('zinc-plate')
 seablock.lib.remove_recipe('bob-zinc-plate')
