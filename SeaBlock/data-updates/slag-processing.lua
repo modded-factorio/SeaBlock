@@ -106,7 +106,7 @@ angelsmods.functions.RB.build(
         energy_required = 5,
         enabled = false,
         ingredients = {
-          {type = "item", name = "sorter-5", amount = 1},
+          {type = "item", name = "ore-sorting-facility-4", amount = 1},
           {type = "item", name = "t5-plate", amount = 12},
           {type = "item", name = "t5-circuit", amount = 12},
           {type = "item", name = "t5-brick", amount = 12},
@@ -118,7 +118,7 @@ angelsmods.functions.RB.build(
         energy_required = 5 * buildingtime,
         enabled = false,
         ingredients = {
-          {type = "item", name = "sorter-5", amount = 1},
+          {type = "item", name = "ore-sorting-facility-4", amount = 1},
           {type = "item", name = "t5-plate", amount = 12 * buildingmulti},
           {type = "item", name = "t5-circuit", amount = 12 * buildingmulti},
           {type = "item", name = "t5-brick", amount = 12 * buildingmulti},
