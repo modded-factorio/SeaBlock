@@ -22,8 +22,6 @@ end
 seablock.startup_techs = {
   ['automation'] = {true},
   ['optics'] = {true},
-  ['gun-turret'] = {true},
-  ['stone-wall'] = {true},
   ['basic-chemistry'] = {true},
   ['military'] = {true},
   ['angels-sulfur-processing-1'] = {true},
@@ -60,3 +58,5 @@ angelsmods.trigger.smelting_products["cobalt"].plate = false
 angelsmods.trigger.ores["platinum"] = true
 angelsmods.trigger.smelting_products["platinum"].plate = true
 angelsmods.trigger.smelting_products["platinum"].wire = true
+
+sctm.enabledebug = false

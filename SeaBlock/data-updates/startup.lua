@@ -112,7 +112,6 @@ local startuprecipes = {
   ['dirt-water-separation'] = true,
   ['sb-cellulose-foraging'] = true,
   ['sb-water-mineralized-crystallization'] = true,
-  ['wood-pellets'] = true,
   ['slag-processing-stone'] = true,
   ['water-mineralized'] = true,
   ['stone-pipe'] = true,
@@ -121,8 +120,6 @@ local startuprecipes = {
 
 if settings.startup['bobmods-assembly-multipurposefurnaces'] and settings.startup['bobmods-assembly-multipurposefurnaces'].value then
   startuprecipes['stone-mixing-furnace'] = true
-  startuprecipes['stone-mixing-furnace-from-stone-furnace'] = true
-  startuprecipes['stone-furnace-from-stone-mixing-furnace'] = true
 end
 
 local lasttech = 'sb-startup4'
@@ -182,6 +179,7 @@ local function ironrecipe(recipe)
   seablock.lib.iteraterecipes(recipe, scaningredients)
   return foundiron
 end
+
 -- Disable recipes that shouldn't consume startup items
 for k,v in pairs(data.raw.recipe) do
   local r = v.normal or v
@@ -257,10 +255,7 @@ data.raw.technology['bio-wood-processing'].unit = {
   ingredients = {},
   time = 5
 }
-seablock.lib.takeeffect('bio-wood-processing', 'wood-pellets')
-seablock.lib.moveeffect('cellulose-fiber-algae', 'bio-processing-brown', 'bio-wood-processing', 2)
-seablock.lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 3)
-seablock.lib.add_recipe_unlock('bio-wood-processing', 'small-electric-pole', 4)
+
 data.raw.technology['bio-wood-processing-2'].prerequisites = {lasttech}
 
 -- Make bio-paper-1 a startup tutorial tech

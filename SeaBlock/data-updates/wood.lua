@@ -31,3 +31,9 @@ bobmods.lib.tech.remove_prerequisite('bio-arboretum-1', 'bio-wood-processing')
 
 -- Remove wooden chest from composter recipe
 bobmods.lib.recipe.remove_ingredient('composter', 'wooden-chest')
+
+
+seablock.lib.moveeffect('cellulose-fiber-algae', 'bio-processing-brown', 'bio-wood-processing', 1)
+seablock.lib.add_recipe_unlock('bio-wood-processing', 'wood-pellets', 2)
+seablock.lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 3)
+seablock.lib.add_recipe_unlock('bio-wood-processing', 'small-electric-pole', 4)

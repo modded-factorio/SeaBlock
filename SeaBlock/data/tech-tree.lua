@@ -234,3 +234,12 @@ if mods['KS_Power'] then
   seablock.lib.hide_technology('big-burner-generator')
   seablock.lib.hide_technology('petroleum-generator')
 end
+
+-- Add unlocks for starting military techs
+seablock.lib.add_recipe_unlock('military', 'pistol', 1)
+seablock.lib.add_recipe_unlock('military', 'firearm-magazine', 3)
+seablock.lib.add_recipe_unlock('military', 'light-armor', 4)
+seablock.lib.add_recipe_unlock('military', 'radar', 5)
+
+bobmods.lib.tech.add_prerequisite('gun-turret', 'military')
+bobmods.lib.tech.add_prerequisite('stone-wall', 'military')
