@@ -319,3 +319,10 @@ seablock.lib.substingredient('copper-tungsten-alloy', 'powdered-tungsten', nil, 
 seablock.lib.substingredient('copper-tungsten-alloy', 'copper-plate', 'powder-copper', 10)
 seablock.lib.substresult('copper-tungsten-alloy', 'copper-tungsten-alloy', nil, 25)
 bobmods.lib.recipe.set_energy_required('copper-tungsten-alloy', 8)
+
+-- Hide steam inserter
+seablock.lib.remove_recipe('steam-inserter')
+seablock.lib.hide_item('steam-inserter')
+if data.raw.inserter['steam-inserter'] then
+  data.raw.inserter['steam-inserter'].next_upgrade = nil
+end
