@@ -192,3 +192,31 @@ data.raw['assembling-machine']['ore-sorting-facility'].crafting_speed = 0.5
 data.raw['assembling-machine']['ore-sorting-facility-2'].crafting_speed = 0.75
 data.raw['assembling-machine']['ore-sorting-facility-3'].crafting_speed = 1.0
 data.raw['assembling-machine']['ore-sorting-facility-4'].crafting_speed = 1.5
+
+-- Add an additional slag to the mixed sorting recipes
+for _,v in pairs({
+  -- Saphirite
+  'angelsore1-crushed-processing',
+  'angelsore1-chunk-processing',
+  'angelsore1-crystal-processing',
+  -- Jivolite
+  'angelsore2-chunk-processing',
+  'angelsore2-crystal-processing',
+  -- Stiratite
+  'angelsore3-crushed-processing',
+  'angelsore3-chunk-processing',
+  'angelsore3-crystal-processing',
+  -- Crotinnium
+  'angelsore4-chunk-processing',
+  'angelsore4-crystal-processing',
+  -- Rubyte
+  'angelsore5-crushed-processing',
+  'angelsore5-chunk-processing',
+  'angelsore5-crystal-processing',
+  -- Bobmonium
+  'angelsore6-crushed-processing',
+  'angelsore6-chunk-processing',
+  'angelsore6-crystal-processing'
+}) do
+  seablock.lib.substresult(v, 'slag', nil, 2)
+end
