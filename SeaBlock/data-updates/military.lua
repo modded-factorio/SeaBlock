@@ -360,6 +360,8 @@ local mil_recipes = {
   'bob-robot-plasma-drone',
   'bob-rocket',
   'bob-sniper-turret-3',
+  'bob-tank-2',
+  'bob-tank-3',
   'bullet',
   'bullet-casing',
   'bullet-magazine',
