@@ -274,6 +274,64 @@ function seablock.lib.hide_item(item_name)
   end
 end
 
+function seablock.lib.hide(type_name, name)
+  if not data.raw[type_name] then
+    log('Unknown type: ' .. type_name)
+  else
+    local item = data.raw[type_name][name]
+    if not item then
+      log('Unknown ' .. type_name .. ': ' .. name)
+    else
+      if type_name == 'fluid' then
+        item.hidden = true
+      else
+        if not item.flags then
+          item.flags = {}
+        end
+        if not seablock.lib.tablefind(item.flags, 'hidden') then
+          table.insert(item.flags, 'hidden')
+        end
+      end
+    end
+  end
+end
+
+function seablock.lib.remove_effect(technology_name, effect_type, effect_key, effect_value)
+  local tech = data.raw.technology[technology_name]
+  if not tech then
+    log('Unknown technology: ' .. technology_name)
+    return
+  end
+
+  if tech.effects then
+    for i, effect in pairs(tech.effects) do
+      if effect.type == effect_type and effect[effect_key] == effect_value then
+        table.remove(tech.effects, i)
+        return
+      end
+    end
+  end
+end
+
+function seablock.lib.add_flag(type, name, flag)
+  if not data.raw[type] then
+    log('Unknown type: ' .. type)
+    return
+  end
+  
+  local item = data.raw[type][name]
+  if not item then
+    log('Unknown ' .. type .. ': ' .. name)
+    return
+  end
+
+  if item.flags then
+    table.insert(item.flags, flag)
+  else
+    item.flags = {flag}
+  end
+end
+
 --[[
   Modified from code copied from Artisanal Reskins: Library v1.1.2
   With permission from Kira

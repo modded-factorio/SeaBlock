@@ -68,6 +68,11 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
 end
 
+-- SpaceMod has a bug so this prerequisite isn't being added. Can be removed if/when they fix the bug
+if mods['SpaceMod'] and mods['bobequipment'] then
+  bobmods.lib.tech.add_prerequisite('protection-fields', 'bob-energy-shield-equipment-6')
+end
+
 local tech = {
   'bob-artillery-turret-3',
   'bob-artillery-wagon-3',
@@ -216,17 +221,44 @@ bobmods.lib.tech.add_prerequisite('angels-explosives-1', 'military-science-pack'
 -- Production
 bobmods.lib.tech.add_prerequisite('angels-metallurgy-4', 'production-science-pack')
 bobmods.lib.tech.add_prerequisite('logistic-system', 'production-science-pack')
+if mods['bobequipment'] then
+  bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-2', 'production-science-pack')
+end
+if mods['bobwarfare'] then
+  bobmods.lib.tech.add_prerequisite('bob-power-armor-3', 'production-science-pack')
+end
 
--- Utility
+-- Advanced Logistics / Pink
+if mods['bobequipment'] then
+  bobmods.lib.tech.add_prerequisite('bob-battery-equipment-5', 'advanced-logistic-science-pack')
+  bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-4', 'advanced-logistic-science-pack')
+  bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-3', 'advanced-logistic-science-pack')
+end
+if mods['bobwarfare'] then
+  bobmods.lib.tech.add_prerequisite('bob-power-armor-4', 'advanced-logistic-science-pack')
+end
+
+-- Utility / Yellow
 bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-science-pack')
 if mods['bobequipment'] then
   bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'utility-science-pack')
+  bobmods.lib.tech.add_prerequisite('bob-battery-equipment-6', 'utility-science-pack')
+  bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-5', 'utility-science-pack')
 end
 bobmods.lib.tech.add_prerequisite('angels-nuclear-fuel', 'utility-science-pack')
 if mods['bobwarfare'] then
   bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
 end
 bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'utility-science-pack')
+
+-- Space / White
+if mods['bobequipment'] then
+  bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-6', 'space-science-pack')
+  bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-4', 'space-science-pack')
+end
+if mods['bobwarfare'] then
+  bobmods.lib.tech.add_prerequisite('bob-power-armor-5', 'space-science-pack')
+end
 
 -- Hide KS Power techs
 if mods['KS_Power'] then

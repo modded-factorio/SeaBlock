@@ -34,7 +34,7 @@ if data.raw.tool['sb-basic-circuit-board-tool'] and data.raw.item['basic-circuit
 end
 
 require "data-final-fixes/logistics"
-require "data-final-fixes/slag-processing"
+require "data-final-fixes/icons"
 require "data-final-fixes/tech-tree"
 require "data-final-fixes/unobtainable_items"
 require "data-final-fixes/mapgen"

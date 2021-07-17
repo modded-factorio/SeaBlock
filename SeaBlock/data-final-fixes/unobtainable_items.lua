@@ -244,3 +244,9 @@ for k,v in pairs(data.raw.technology) do
     v.effects = neweffects
   end
 end
+
+-- Clear the list of science packs that alien lab can take
+-- This prevents YAFC warning
+if data.raw.lab['lab-alien'] then
+  data.raw.lab['lab-alien'].inputs = {}
+end

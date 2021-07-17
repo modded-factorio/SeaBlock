@@ -56,12 +56,9 @@ if mods['reskins-angels'] then
       'slag-processing-6'
   }
   for _,name in pairs(slag_processing_list) do
-    local recipe = data.raw.recipe[name]
-    if recipe then
-      recipe.icons = nil
-      recipe.icon = nil
-      recipe.icon_size = nil
-      recipe.icon_mipmaps = nil
-    end
+    seablock.reskins.clear_icon_specification(name, 'recipe')
   end
 end
+
+-- Remove I overlay from explosives recipe
+seablock.reskins.clear_icon_specification('explosives', 'recipe')

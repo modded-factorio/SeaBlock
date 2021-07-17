@@ -121,3 +121,36 @@ if data.raw.recipe['basic-transport-belt'] then
 else
   bobmods.lib.tech.add_recipe_unlock('sb-startup3', 'transport-belt')
 end
+
+
+if mods['bobwarfare'] then
+  data:extend({
+    {
+      type = 'technology',
+      name = 'sb-sniper-rifle',
+      localised_name = {'item-name.sniper-rifle'},
+      icon_size = 256,
+      icon_mipmaps = 4,
+      icon = '__base__/graphics/technology/military.png',
+      effects =
+      {
+        {
+          type = 'unlock-recipe',
+          recipe = 'sniper-rifle'
+        }
+      },
+      prerequisites = {'military-science-pack', 'angels-glass-smelting-1'},
+      unit =
+      {
+        count = 200,
+        ingredients =
+        {
+          {'automation-science-pack', 1},
+          {'logistic-science-pack', 1},
+          {'military-science-pack', 1},
+        },
+        time = 15
+      }
+    }
+  })
+end
