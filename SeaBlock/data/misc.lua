@@ -59,4 +59,6 @@ angelsmods.trigger.ores["platinum"] = true
 angelsmods.trigger.smelting_products["platinum"].plate = true
 angelsmods.trigger.smelting_products["platinum"].wire = true
 
-sctm.enabledebug = false
+if mods['ScienceCostTweakerM'] then
+  sctm.enabledebug = false
+end
