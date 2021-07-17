@@ -336,3 +336,57 @@ if data.raw.technology['thorium-plutonium-fuel-cell'] then
   data.raw.technology['thorium-plutonium-fuel-cell'].icon_size = 64
   data.raw.technology['thorium-plutonium-fuel-cell'].icon_mipmaps = 4
 end
+
+-- Swap out concrete for bricks
+seablock.lib.remove_recipe('concrete')
+seablock.lib.remove_recipe('angels-concrete')
+seablock.lib.remove_recipe('refinied-concrete')
+
+seablock.lib.substingredient('artillery-turret', 'concrete', 'concrete-brick', nil)
+if data.raw.recipe['burner-reactor-2'] then
+  seablock.lib.substingredient('burner-reactor-2', 'concrete', 'reinforced-concrete-brick', nil)
+end
+seablock.lib.substingredient('centrifuge', 'concrete', 'concrete-brick', nil)
+if data.raw.recipe['fluid-reactor-2'] then
+  seablock.lib.substingredient('fluid-reactor-2', 'concrete', 'reinforced-concrete-brick', nil)
+end
+seablock.lib.substingredient('nuclear-reactor', 'concrete', 'concrete-brick', nil)
+seablock.lib.substingredient('rocket-silo', 'concrete', 'reinforced-concrete-brick', nil)
+seablock.lib.substingredient('hazard-concrete', 'concrete', 'concrete-brick', nil)
+seablock.lib.substingredient('refined-hazard-concrete', 'refined-concrete', 'reinforced-concrete-brick', nil)
+
+bobmods.lib.tech.remove_recipe_unlock('concrete', 'concrete')
+bobmods.lib.tech.remove_recipe_unlock('concrete', 'hazard-concrete')
+bobmods.lib.tech.remove_recipe_unlock('concrete', 'refined-concrete')
+bobmods.lib.tech.remove_recipe_unlock('concrete', 'refined-hazard-concrete')
+
+seablock.lib.hide_technology('concrete')
+
+bobmods.lib.tech.replace_prerequisite('angels-stone-smelting-2', 'concrete', 'automation-2')
+bobmods.lib.tech.replace_prerequisite('uranium-processing', 'concrete', 'angels-stone-smelting-2')
+
+bobmods.lib.tech.add_recipe_unlock('angels-stone-smelting-2', 'hazard-concrete')
+bobmods.lib.tech.add_recipe_unlock('angels-stone-smelting-3', 'refined-hazard-concrete')
+
+seablock.lib.hide_item('concrete')
+seablock.lib.hide_item('refined-concrete')
+
+local item = data.raw.item['concrete-brick']
+if item and item.place_as_tile then
+  item.place_as_tile['result'] = 'concrete'
+end
+item = data.raw.item['reinforced-concrete-brick']
+if item and item.place_as_tile then
+  item.place_as_tile['result'] = 'refined-concrete'
+end
+
+item = data.raw.tile['concrete']
+if item then
+  item.minable['result'] = 'concrete-brick'
+  item.placeable_by = {item = 'concrete-brick', count = 1}
+end
+item = data.raw.tile['refined-concrete']
+if item then
+  item.minable['result'] = 'reinforced-concrete-brick'
+  item.placeable_by = {item = 'reinforced-concrete-brick', count = 1}
+end
