@@ -66,6 +66,7 @@ bobmods.lib.tech.add_prerequisite('gardens', 'electronics')
 bobmods.lib.tech.add_prerequisite('uranium-processing', 'ore-leaching')
 if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
+  bobmods.lib.tech.add_prerequisite('sb-bio-processing-advanced', 'sct-bio-science-pack')
 end
 
 -- SpaceMod has a bug so this prerequisite isn't being added. Can be removed if/when they fix the bug

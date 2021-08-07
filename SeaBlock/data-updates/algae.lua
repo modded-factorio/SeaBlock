@@ -3,7 +3,6 @@ data.raw['assembling-machine']['algae-farm'].crafting_speed = 0.75
 
 -- Brown algae
 bobmods.lib.tech.add_prerequisite('bio-processing-brown', 'bio-processing-green')
-bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'algae-farm')
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'algae-green-simple')
 
 -- Green algae
@@ -25,14 +24,14 @@ seablock.lib.moveeffect('gas-methanol-from-wood', 'bio-processing-green', 'angel
   - Make Green Algae depend on Basic Chemistry instead of Water Treatment
 --]]
 bobmods.lib.tech.replace_prerequisite('bio-processing-red', 'bio-processing-green', 'bio-processing-blue')
-seablock.lib.moveeffect('algae-farm-2', 'bio-processing-red', 'bio-processing-blue', 1)
+seablock.lib.moveeffect('algae-farm-2', 'bio-processing-green', 'bio-processing-blue', 1)
 bobmods.lib.tech.remove_prerequisite('bio-processing-green', 'bio-processing-brown')
 bobmods.lib.tech.replace_prerequisite('bio-processing-green', 'basic-chemistry', 'bio-wood-processing-2')
 
 -- Blue algae
 bobmods.lib.tech.replace_prerequisite('bio-processing-blue', 'bio-processing-red', 'bio-processing-brown')
 bobmods.lib.tech.remove_science_pack('bio-processing-blue', 'chemical-science-pack')
-seablock.lib.moveeffect('algae-farm-3', 'bio-processing-blue', 'bio-processing-red', 1)
+bobmods.lib.tech.remove_recipe_unlock('bio-processing-blue', 'algae-farm-4')
 
 
 -- Make these craftable by hand
@@ -62,30 +61,30 @@ angelsmods.functions.RB.build(
   {
     {
       type = "recipe",
-      name = "algae-farm-3",
+      name = "algae-farm-4",
       normal = {
         energy_required = 5,
         enabled = false,
         ingredients = {
-          {type = "item", name = "algaefarm-3", amount = 1},
+          {type = "item", name = "algaefarm-4", amount = 1},
           {type = "item", name = "t3-plate", amount = 11},
           {type = "item", name = "t3-circuit", amount = 4},
           {type = "item", name = "t3-brick", amount = 11},
           {type = "item", name = "t3-pipe", amount = 18}
         },
-        result = "algae-farm-3"
+        result = "algae-farm-4"
       },
       expensive = {
         energy_required = 5 * buildingtime,
         enabled = false,
         ingredients = {
-          {type = "item", name = "algaefarm-3", amount = 1},
+          {type = "item", name = "algaefarm-4", amount = 1},
           {type = "item", name = "t3-plate", amount = 11 * buildingmulti},
           {type = "item", name = "t3-circuit", amount = 4 * buildingmulti},
           {type = "item", name = "t3-brick", amount = 11 * buildingmulti},
           {type = "item", name = "t3-pipe", amount = 18 * buildingmulti}
         },
-        result = "algae-farm-3"
+        result = "algae-farm-4"
       }
     }
   }

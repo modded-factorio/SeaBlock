@@ -110,6 +110,31 @@ data:extend({
     ingredients = {{"sb-lab-tool", 1}},
     time = 5
   }
+},
+{
+  type = 'technology',
+  name = 'sb-bio-processing-advanced',
+  icon = '__angelsbioprocessing__/graphics/technology/algae-farm-tech.png',
+  icon_size = 128,
+  order = 'c-a',
+  prerequisites = {
+    'bio-processing-red'
+  },
+  effects = {
+    {
+      type = 'unlock-recipe',
+      recipe = 'algae-farm-4'
+    }
+  },
+  unit = {
+    count = 50,
+    ingredients = {
+      {type = 'item', name = 'automation-science-pack', amount = 1},
+      {type = 'item', name = 'logistic-science-pack', amount = 1},
+      {type = 'item', name = 'token-bio', amount = 1}
+    },
+    time = 30
+  }
 }
 })
 
