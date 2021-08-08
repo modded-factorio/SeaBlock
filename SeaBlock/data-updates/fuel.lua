@@ -25,6 +25,7 @@ data.raw.fluid['gas-methane'].fuel_value = '0.5MJ'
 data.raw.fluid['crude-oil'].fuel_value = '0.5MJ'
 data.raw.item['enriched-fuel'].fuel_value = '50MJ'
 data.raw.item['enriched-fuel'].stack_size = 50
+data.raw.item['solid-carbon'].fuel_value = '2.5MJ'
 
 seablock.lib.substingredient('solid-fuel-methane', 'gas-methane', nil, 40)
 seablock.lib.substingredient('solid-fuel-naphtha', 'liquid-naphtha', nil, 40)
