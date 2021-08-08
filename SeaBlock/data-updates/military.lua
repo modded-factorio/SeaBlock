@@ -557,6 +557,16 @@ bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-cannon-shell')
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-rounds-magazine')
 
 seablock.lib.substresult('nutrients-refining-2', 'liquid-glycerol', 'water', nil)
+if data.raw.recipe['nutrients-refining-2'] then
+  data.raw.recipe['nutrients-refining-2'].icons =
+    angelsmods.functions.create_liquid_recipe_icon(
+        {
+          "liquid-fuel-oil",
+          {"__base__/graphics/icons/fluid/water.png", 64}
+        },
+        {{214, 146, 040}, {169, 130, 039}, {120, 083, 004}}
+      )
+end
 
 for i = 1, 6 do
   seablock.lib.remove_effect('physical-projectile-damage-' .. i, 'turret-attack', 'turret_id', 'bob-gun-turret-3')
