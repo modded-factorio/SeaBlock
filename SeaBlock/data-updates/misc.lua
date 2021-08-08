@@ -263,6 +263,8 @@ end
 bobmods.lib.tech.add_prerequisite('advanced-electronics-3', 'angels-platinum-smelting-1')
 seablock.lib.substresult('angelsore-pure-mix2-processing', 'platinum-ore', nil, 2)
 seablock.lib.substresult('angelsore9-crystal-processing', 'platinum-ore', nil, 2)
+-- Swap stiratite for crotinnium so all pure ores are used
+seablock.lib.substingredient('angelsore-pure-mix2-processing', 'angels-ore3-pure', 'angels-ore4-pure', nil)
 
 -- Unhide rocket part to make it easier to view recipes
 if data.raw.recipe['rocket-part'] then
