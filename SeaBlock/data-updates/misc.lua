@@ -396,3 +396,8 @@ if item then
   item.minable['result'] = 'refined-concrete'
   item.placeable_by = {item = 'refined-concrete', count = 1}
 end
+
+-- Other prerequisites
+if data.raw.technology['electronics-machine-1'] then
+  bobmods.lib.tech.add_prerequisite('electronics-machine-1', 'electronics')
+end
