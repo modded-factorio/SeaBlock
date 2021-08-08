@@ -261,8 +261,8 @@ if mods['bobmodules'] then
   seablock.lib.substingredient('module-processor-board-3', 'angels-wire-platinum', 'angels-plate-platinum', nil)
 end
 bobmods.lib.tech.add_prerequisite('advanced-electronics-3', 'angels-platinum-smelting-1')
-seablock.lib.remove_recipe('angelsore-pure-mix2-processing')
-bobmods.lib.tech.remove_recipe_unlock('advanced-ore-refining-4', 'angelsore-pure-mix2-processing')
+seablock.lib.substresult('angelsore-pure-mix2-processing', 'platinum-ore', nil, 2)
+seablock.lib.substresult('angelsore9-crystal-processing', 'platinum-ore', nil, 2)
 
 -- Unhide rocket part to make it easier to view recipes
 if data.raw.recipe['rocket-part'] then
@@ -356,7 +356,7 @@ bobmods.lib.tech.replace_prerequisite('rocket-silo', 'concrete', 'angels-stone-s
 bobmods.lib.tech.add_recipe_unlock('angels-stone-smelting-2', 'hazard-concrete')
 bobmods.lib.tech.add_recipe_unlock('angels-stone-smelting-3', 'refined-hazard-concrete')
 
--- Swap tiles
+-- Swap concrete tiles
 local item = data.raw.item['concrete-brick']
 if item and item.place_as_tile then
   item.place_as_tile['result'] = 'concrete'
