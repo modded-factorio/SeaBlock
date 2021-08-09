@@ -39,6 +39,7 @@ Date: ???
     - Hid unreachable recipes and items
     - Compatibility changes for latest Angel's mods
     - Screen was dimmed on game start until Tab key was pressed
+    - Made cliff spawning respect map settings
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.4
 Date: 14.05.2021
