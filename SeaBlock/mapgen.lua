@@ -530,7 +530,7 @@ end
 
 data.raw['noise-expression']['cliffiness'].expression =
   noise.define_noise_function(function(x, y, tile, map)
-    local t = noise.clamp(tile.tier - 0.2, 0, 1) -- No cliffs in starting area
+    local t = noise.clamp((tile.tier - 0.2) * noise.ceil(noise.var("control-setting:cliffs:richness:multiplier")), 0, 1) -- No cliffs in starting area
     return 100 * t
   end)
 data.raw['noise-expression']['elevation'].expression =

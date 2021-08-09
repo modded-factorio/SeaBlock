@@ -3,7 +3,7 @@ for k,v in pairs(data.raw.resource) do
   v.autoplace = nil
 end
 -- No spawners
-for k,v in pairs(data.raw["unit-spawner"]) do
+for k,v in pairs(data.raw['unit-spawner']) do
   v.autoplace = nil
   v.control = nil
 end
@@ -13,11 +13,13 @@ for k,v in pairs(data.raw.tree) do
     k ~= 'temperate-tree' and k ~= 'desert-tree' and k ~= 'swamp-tree' and
     k ~= 'puffer-nest' then
     v.autoplace = nil
+    seablock.lib.add_flag('tree', v.name, 'not-deconstructable')
   end
 end
 -- No rocks
-for k,v in pairs(data.raw["simple-entity"]) do
+for k,v in pairs(data.raw['simple-entity']) do
   v.autoplace = nil
+  seablock.lib.add_flag('simple-entity', v.name, 'not-deconstructable')
 end
 
 local keepcontrols = {}
