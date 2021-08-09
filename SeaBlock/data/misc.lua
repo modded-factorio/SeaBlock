@@ -62,32 +62,3 @@ angelsmods.trigger.smelting_products["platinum"].wire = true
 if mods['ScienceCostTweakerM'] then
   sctm.enabledebug = false
 end
-
-for k,v in pairs({
-  {type = 'tree', name = 'tree-01'},
-  {type = 'tree', name = 'tree-02'},
-  {type = 'tree', name = 'tree-02-red'},
-  {type = 'tree', name = 'tree-03'},
-  {type = 'tree', name = 'tree-04'},
-  {type = 'tree', name = 'tree-05'},
-  {type = 'tree', name = 'tree-06'},
-  {type = 'tree', name = 'tree-06-brown'},
-  {type = 'tree', name = 'tree-07'},
-  {type = 'tree', name = 'tree-08'},
-  {type = 'tree', name = 'tree-08-brown'},
-  {type = 'tree', name = 'tree-08-red'},
-  {type = 'tree', name = 'tree-09'},
-  {type = 'tree', name = 'tree-09-brown'},
-  {type = 'tree', name = 'tree-09-red'},
-  {type = 'tree', name = 'dead-dry-hairy-tree'},
-  {type = 'tree', name = 'dead-grey-trunk'},
-  {type = 'tree', name = 'dead-tree-desert'},
-  {type = 'tree', name = 'dry-hairy-tree'},
-  {type = 'tree', name = 'dry-tree'},
-  {type = 'simple-entity', name = 'angels-crystal-rock'},
-  {type = 'simple-entity', name = 'sand-rock-big'},
-  {type = 'simple-entity', name = 'rock-huge'},
-  {type = 'simple-entity', name = 'rock-big'}
-}) do
-  seablock.lib.add_flag(v.type, v.name, 'not-deconstructable')
-end
