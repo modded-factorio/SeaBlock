@@ -9,9 +9,26 @@ function seablock.give_research(force)
   end
 end
 
-function seablock.give_items(entity)
-  for item,quantity in pairs(global.starting_items) do
-    entity.insert{name = item, count = quantity}
+function seablock.give_items(surface, pos)
+  local has_items = false
+
+  if global.starting_items then
+    for item,quantity in pairs(global.starting_items) do
+      if quantity > 0 then
+        has_items = true
+        break
+      end
+    end
+  end
+
+  if has_items then
+    local chest = surface.create_entity({name = "rock-chest", position = pos, force = game.forces.neutral})
+    
+    for item,quantity in pairs(global.starting_items) do
+      if quantity > 0 then
+        chest.insert{name = item, count = quantity}
+      end
+    end
   end
 end
 
@@ -89,10 +106,9 @@ script.on_event(defines.events.on_chunk_generated,
     local lty = e.area.left_top.y
     local rbx = e.area.right_bottom.x
     local rby = e.area.right_bottom.y
-    for k,v in pairs(surface.map_gen_settings.starting_points) do
-      if v.x >= ltx and v.y >= lty and v.x < rbx and v.y < rby then
-        local chest = surface.create_entity({name = "rock-chest", position = v, force = game.forces.neutral})
-        seablock.give_items(chest)
+    for _,pos in pairs(surface.map_gen_settings.starting_points) do
+      if pos.x >= ltx and pos.y >= lty and pos.x < rbx and pos.y < rby then
+        seablock.give_items(surface, pos)
       end
     end
   end
