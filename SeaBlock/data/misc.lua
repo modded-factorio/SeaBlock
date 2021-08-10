@@ -52,12 +52,13 @@ for k,_ in pairs(seablock.starting_items) do
   table.insert(data.script_enabled, {type = 'item', name = k})
 end
 
-angelsmods.trigger.smelting_products["nickel"].plate = false
-angelsmods.trigger.smelting_products["zinc"].plate = false
-angelsmods.trigger.smelting_products["cobalt"].plate = false
-angelsmods.trigger.ores["platinum"] = true
-angelsmods.trigger.smelting_products["platinum"].plate = true
-angelsmods.trigger.smelting_products["platinum"].wire = true
+angelsmods.trigger.smelting_products['copper'].powder = true
+angelsmods.trigger.smelting_products['nickel'].plate = false
+angelsmods.trigger.smelting_products['zinc'].plate = false
+angelsmods.trigger.smelting_products['cobalt'].plate = false
+angelsmods.trigger.ores['platinum'] = true
+angelsmods.trigger.smelting_products['platinum'].plate = true
+angelsmods.trigger.smelting_products['platinum'].wire = true
 
 if mods['ScienceCostTweakerM'] then
   sctm.enabledebug = false
