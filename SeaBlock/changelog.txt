@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.5
-Date: ???
+Date: 14.08.2021
   Changes:
     - Reverted default settings override of Bob's Adjustable Inserters mod
     - Made Long Inserters ignore tech cost modifier
