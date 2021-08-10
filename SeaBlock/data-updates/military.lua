@@ -21,7 +21,6 @@ local mil_items = {
   {type = 'electric-turret', name = 'bob-plasma-turret-3'},
   {type = 'electric-turret', name = 'bob-plasma-turret-4'},
   {type = 'electric-turret', name = 'bob-plasma-turret-5'},
-  {type = 'electric-turret', name = 'laser-turret'},
   {type = 'fluid-wagon', name = 'bob-armoured-fluid-wagon-2'},
   {type = 'fluid-wagon', name = 'bob-armoured-fluid-wagon'},
   {type = 'fluid', name = 'alien-acid'},
@@ -95,7 +94,6 @@ local mil_items = {
   {type = 'item', name = 'lab-alien'},
   {type = 'item', name = 'land-mine'},
   {type = 'item', name = 'laser-rifle-battery-case'},
-  {type = 'item', name = 'laser-turret'},
   {type = 'item', name = 'liquid-glycerol-barrel'},
   {type = 'item', name = 'liquid-toluene-barrel'},
   {type = 'item', name = 'magazine'},
@@ -429,7 +427,6 @@ local mil_recipes = {
   'laser-rifle-battery-ruby',
   'laser-rifle-battery-sapphire',
   'laser-rifle-battery-topaz',
-  'laser-turret',
   'liquid-glycerol',
   'liquid-toluene-from-benzene',
   'liquid-toluene-from-naphtha',
@@ -532,7 +529,6 @@ bobmods.lib.tech.remove_recipe_unlock('fluid-handling', 'fill-liquid-glycerol-ba
 bobmods.lib.tech.remove_recipe_unlock('fluid-handling', 'fill-liquid-toluene-barrel')
 bobmods.lib.tech.remove_recipe_unlock('fluid-handling', 'fill-nitroglycerin-barrel')
 bobmods.lib.tech.remove_recipe_unlock('gas-steam-cracking-2', 'liquid-toluene-from-benzene')
-bobmods.lib.tech.remove_recipe_unlock('laser-turret', 'laser-turret')
 bobmods.lib.tech.remove_recipe_unlock('military-3', 'combat-shotgun')
 bobmods.lib.tech.remove_recipe_unlock('military-3', 'fire-capsule')
 bobmods.lib.tech.remove_recipe_unlock('military-3', 'poison-capsule')
