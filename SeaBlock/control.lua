@@ -57,9 +57,6 @@ local function init()
     if remote.interfaces.freeplay.set_disable_crashsite then
       remote.call("freeplay", "set_disable_crashsite", true)
     end
-    if remote.interfaces.freeplay.set_skip_intro then
-      remote.call("freeplay", "set_skip_intro", true)
-    end
   end
   global.unlocks = {
     ['angels-ore3-crushed'] = {'sb-startup1', 'landfill'},

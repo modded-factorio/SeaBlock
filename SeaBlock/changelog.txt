@@ -39,7 +39,6 @@ Date: 14.08.2021
     - Fixed localised name of Mad Clown's Ore crystallization recipes
     - Hid unreachable recipes and items
     - Compatibility changes for latest Angel's mods
-    - Screen was dimmed on game start until Tab key was pressed
     - Made cliff spawning respect map settings
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.4
