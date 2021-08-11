@@ -115,12 +115,6 @@ end
 bobmods.lib.tech.add_prerequisite('oil-gas-extraction', 'fluid-handling')
 
 -- Move recipes that shouldn't be unlocked at startup
-seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-ruby-3')
-seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-sapphire-3')
-seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-emerald-3')
-seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-amethyst-3')
-seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-topaz-3')
-seablock.lib.add_recipe_unlock('geode-crystallization-1', 'bob-diamond-3')
 if mods['bobenemies'] then
   seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-red-from-small')
   seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-yellow-from-small')
@@ -233,6 +227,19 @@ bobmods.lib.tech.add_prerequisite('angels-nitinol-smelting-1', 'angels-metallurg
 -- Add missing science packs
 
 for _,v in pairs({
+  'bio-processing-alien-3',
+  'gem-processing-1',
+  'gem-processing-2',
+  'geode-crystallization-1',
+  'geode-crystallization-2',
+  'polishing'
+}) do
+  if data.raw.technology[v] then
+    bobmods.lib.tech.add_new_science_pack(v, 'chemical-science-pack', 1)
+  end
+end
+
+for _,v in pairs({
   'angels-nitinol-smelting-1',
   'bob-fluid-handling-4',
   'bob-robo-modular-4',
@@ -250,6 +257,8 @@ for _,v in pairs({
     bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
   end
 end
+
+bobmods.lib.tech.add_prerequisite('geode-crystallization-1', 'chemical-science-pack')
 
 if mods['cargo-ships'] then
   seablock.lib.hide_item('oil_rig')
@@ -341,7 +350,7 @@ end
 
 -- Swap out concrete for bricks
 
-seablock.lib.substingredient('artillery-turret', 'concrete', 'concrete-brick', nil)
+seablock.lib.substingredient('artillery-turret', 'concrete', 'reinforced-concrete-brick', nil)
 if data.raw.recipe['burner-reactor-2'] then
   seablock.lib.substingredient('burner-reactor-2', 'concrete', 'reinforced-concrete-brick', nil)
 end

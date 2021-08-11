@@ -30,6 +30,9 @@ bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-refugium-butchery-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-shard-1', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-shard-2', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-full', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
 if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_new_science_pack('habitation', 'token-bio', 1)
@@ -230,13 +233,15 @@ if mods['bobwarfare'] then
 end
 
 -- Advanced Logistics / Pink
-if mods['bobequipment'] then
-  bobmods.lib.tech.add_prerequisite('bob-battery-equipment-5', 'advanced-logistic-science-pack')
-  bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-4', 'advanced-logistic-science-pack')
-  bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-3', 'advanced-logistic-science-pack')
-end
-if mods['bobwarfare'] then
-  bobmods.lib.tech.add_prerequisite('bob-power-armor-4', 'advanced-logistic-science-pack')
+if mods['bobtech'] then
+  if mods['bobequipment'] then
+    bobmods.lib.tech.add_prerequisite('bob-battery-equipment-5', 'advanced-logistic-science-pack')
+    bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-4', 'advanced-logistic-science-pack')
+    bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-3', 'advanced-logistic-science-pack')
+  end
+  if mods['bobwarfare'] then
+    bobmods.lib.tech.add_prerequisite('bob-power-armor-4', 'advanced-logistic-science-pack')
+  end
 end
 
 -- Utility / Yellow
