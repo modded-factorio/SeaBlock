@@ -6,6 +6,8 @@ local mil_items = {
   {type = 'ammo-turret', name = 'bob-sniper-turret-3'},
   {type = 'armor', name = 'heavy-armor-2'},
   {type = 'armor', name = 'heavy-armor-3'},
+  {type = 'artillery-turret', name = 'bob-artillery-turret-3'},
+  {type = 'artillery-wagon', name = 'bob-artillery-wagon-3'},
   {type = 'car', name = 'bob-tank-2'},
   {type = 'car', name = 'bob-tank-3'},
   {type = 'cargo-wagon', name = 'bob-armoured-cargo-wagon-2'},
@@ -41,6 +43,7 @@ local mil_items = {
   {type = 'item-with-entity-data', name = 'bob-armoured-fluid-wagon'},
   {type = 'item-with-entity-data', name = 'bob-armoured-locomotive-2'},
   {type = 'item-with-entity-data', name = 'bob-armoured-locomotive'},
+  {type = 'item-with-entity-data', name = 'bob-artillery-wagon-3'},
   {type = 'item-with-entity-data', name = 'bob-tank-2'},
   {type = 'item-with-entity-data', name = 'bob-tank-3'},
   {type = 'item', name = 'acid-bullet-projectile'},
@@ -54,6 +57,7 @@ local mil_items = {
   {type = 'item', name = 'alien-poison-barrel'},
   {type = 'item', name = 'ap-bullet-projectile'},
   {type = 'item', name = 'ap-bullet'},
+  {type = 'item', name = 'bob-artillery-turret-3'},
   {type = 'item', name = 'bob-gun-turret-3'},
   {type = 'item', name = 'bob-gun-turret-4'},
   {type = 'item', name = 'bob-gun-turret-5'},
@@ -161,6 +165,8 @@ local mil_tech = {
   'bob-armoured-fluid-wagon-2',
   'bob-armoured-railway',
   'bob-armoured-railway-2',
+  'bob-artillery-turret-3',
+  'bob-artillery-wagon-3',
   'bob-bullets',
   'bob-distractor-artillery-shells',
   'bob-electric-bullets',
@@ -242,6 +248,7 @@ local mil_tech = {
   'refined-flammables-7', -- Infinite
   'sct-alien-science-pack',
   'sct-lab-alien',
+  'sct-science-pack-gold',
   'slowdown-mine',
   'stronger-explosives-7', -- Infinite
   'uranium-ammo'
@@ -334,6 +341,8 @@ local mil_recipes = {
   'bob-armoured-fluid-wagon-2',
   'bob-armoured-locomotive',
   'bob-armoured-locomotive-2',
+  'bob-artillery-turret-3',
+  'bob-artillery-wagon-3',
   'bob-electric-rocket',
   'bob-explosive-rocket',
   'bob-flame-rocket',
@@ -542,9 +551,6 @@ bobmods.lib.tech.remove_recipe_unlock('military', 'shotgun')
 bobmods.lib.tech.remove_recipe_unlock('oil-steam-cracking-2', 'liquid-toluene-from-naphtha')
 bobmods.lib.tech.remove_recipe_unlock('robotics', 'robot-drone-frame-large')
 bobmods.lib.tech.remove_recipe_unlock('robotics', 'robot-drone-frame')
-if mods['ScienceCostTweakerM'] then
-  bobmods.lib.tech.remove_recipe_unlock('sct-science-pack-gold', 'science-pack-gold')
-end
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'explosive-uranium-cannon-shell')
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'shotgun-uranium-shell')
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-bullet-projectile')
@@ -709,13 +715,11 @@ local mil_techswap = {
 
 for _,v in pairs(mil_techswap) do
   if data.raw.technology[v.tech_name] then
-    -- Bug in Bob's Library so this doesn't work
-    --bobmods.lib.tech.set_science_packs(v.tech_name, v.science_packs)
-    
-    -- This does the same thing
     bobmods.lib.tech.clear_science_packs(v.tech_name)
     for _,science_pack in pairs(v.science_packs) do
-      bobmods.lib.tech.add_science_pack(v.tech_name, science_pack[1], science_pack[2])
+      if data.raw.tool[science_pack[1]] then
+        bobmods.lib.tech.add_new_science_pack(v.tech_name, science_pack[1], science_pack[2])
+      end
     end
   end
 end
@@ -727,7 +731,70 @@ if data.raw.car and data.raw.car['tank'] then
   for i, gun in pairs(guns) do
     if gun == 'tank-flamethrower' then
       table.remove(guns, i)
-      return
+      break
     end
   end
+end
+
+-- Move Tank earlier. Add acid resistance
+bobmods.lib.tech.remove_science_pack('tank', 'chemical-science-pack')
+bobmods.lib.tech.replace_prerequisite('tank', 'military-3', 'military-science-pack')
+local resistances = data.raw.car['tank'].resistances
+for _,v in pairs(resistances) do
+  if v.type == 'acid' then
+    v.decrease = 25
+    break
+  end
+end
+
+if mods['bobwarfare'] then
+  -- Move Plasma turrets later
+  bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-1', 'chemical-science-pack', 1)
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'military-3')
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'battery-2')
+  seablock.lib.substingredient('bob-plasma-turret-1', 'battery', 'lithium-ion-battery', nil)
+  seablock.lib.substingredient('bob-plasma-turret-1', 'electronic-circuit', 'advanced-circuit', 40)
+  seablock.lib.substingredient('bob-plasma-turret-1', 'steel-plate', 'invar-alloy', nil)
+
+  bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-2', 'chemical-science-pack', 1)
+  bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-2', 'production-science-pack', 1)
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'military-4')
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'battery-3')
+  seablock.lib.substingredient('bob-plasma-turret-2', 'battery', 'silver-zinc-battery', nil)
+  seablock.lib.substingredient('bob-plasma-turret-2', 'advanced-circuit', 'processing-unit', 40)
+  seablock.lib.substingredient('bob-plasma-turret-2', 'steel-plate', 'cobalt-steel-alloy', nil)
+ 
+  -- Make Military 4 take Purple science rather than Yellow science
+  bobmods.lib.tech.remove_science_pack('military-4', 'utility-science-pack')
+  bobmods.lib.tech.add_new_science_pack('military-4', 'production-science-pack', 1)
+  bobmods.lib.tech.replace_prerequisite('military-4', 'utility-science-pack', 'production-science-pack')
+
+  -- Walking Vehicle (Antron) can now depend on Military 4
+  bobmods.lib.tech.replace_prerequisite('walking-vehicle', 'military-3', 'military-4')
+
+  -- Keep Power Armor MK2 accessible without Purple science
+  bobmods.lib.tech.replace_prerequisite('power-armor-mk2', 'military-4', 'military-3')
+
+  -- Move Artillery later
+  bobmods.lib.tech.remove_science_pack('bob-artillery-turret-2', 'utility-science-pack', 1)
+  bobmods.lib.tech.remove_science_pack('bob-artillery-wagon-2', 'utility-science-pack', 1)
+  bobmods.lib.tech.add_new_science_pack('bob-artillery-turret-2', 'production-science-pack', 1)
+  bobmods.lib.tech.add_new_science_pack('bob-artillery-wagon-2', 'production-science-pack', 1)
+  bobmods.lib.tech.add_prerequisite('artillery', 'military-3')
+  bobmods.lib.tech.add_prerequisite('artillery', 'cobalt-processing')
+  bobmods.lib.tech.add_prerequisite('artillery', 'angels-stone-smelting-3')
+  seablock.lib.substingredient('artillery-turret', 'iron-gear-wheel', 'cobalt-steel-gear-wheel', nil)
+  seablock.lib.substingredient('artillery-turret', 'concrete', 'reinforced-concrete-brick', nil)
+  seablock.lib.substingredient('artillery-turret', 'steel-plate', 'cobalt-steel-alloy', nil)
+  seablock.lib.substingredient('artillery-wagon', 'iron-gear-wheel', 'cobalt-steel-gear-wheel', nil)
+  seablock.lib.substingredient('artillery-wagon', 'pipe', 'brass-pipe', nil)
+  seablock.lib.substingredient('artillery-wagon', 'steel-plate', 'cobalt-steel-alloy', nil)
+
+  bobmods.lib.tech.add_prerequisite('artillery', 'radars-3')
+  seablock.lib.substingredient('artillery-targeting-remote', 'radar', 'radar-4')
+  
+  bobmods.lib.tech.add_prerequisite('spidertron', 'radars-4')
+  seablock.lib.substingredient('spidertron-remote', 'radar', 'radar-5')
+  
+  bobmods.lib.tech.add_prerequisite('bob-atomic-artillery-shell', 'utility-science-pack')
 end
