@@ -277,7 +277,7 @@ if mods['Clowns-Extended-Minerals'] then
       {
         type = "recipe",
         name = "sb-clowns-resource-1",
-        category = "ore-sorting-t1",
+        category = "ore-refining-t1",
         subgroup = "resource-refining-2",
         enabled = false,
         allow_decomposition = false,
@@ -307,7 +307,7 @@ if mods['Clowns-Extended-Minerals'] then
       {
         type = "recipe",
         name = "sb-clowns-resource-2",
-        category = "ore-sorting-t1",
+        category = "ore-refining-t1",
         subgroup = "resource-refining-2",
         enabled = false,
         allow_decomposition = false,
