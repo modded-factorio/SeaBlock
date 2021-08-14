@@ -410,3 +410,7 @@ end
 if data.raw.technology['electronics-machine-1'] then
   bobmods.lib.tech.add_prerequisite('electronics-machine-1', 'electronics')
 end
+
+-- Nerf early game glass. Just need a little bit for arboretums
+seablock.lib.substingredient('quartz-glass', 'quartz', nil, 10)
+seablock.lib.substresult('quartz-glass', 'glass', nil, 1)

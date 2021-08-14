@@ -50,6 +50,7 @@ seablock.lib.add_recipe_unlock('ore-crushing', 'iron-plate')
 seablock.lib.add_recipe_unlock('ore-crushing', 'copper-plate')
 seablock.lib.add_recipe_unlock('ore-crushing', 'lead-plate')
 seablock.lib.add_recipe_unlock('ore-crushing', 'tin-plate')
+seablock.lib.add_recipe_unlock('ore-crushing', 'quartz-glass')
 
 seablock.lib.unhide_recipe('iron-plate')
 seablock.lib.unhide_recipe('copper-plate')
@@ -57,7 +58,6 @@ seablock.lib.unhide_recipe('lead-plate')
 seablock.lib.unhide_recipe('tin-plate')
 
 -- Hide unwanted recipes
-seablock.lib.remove_recipe('quartz-glass')
 seablock.lib.remove_recipe('silver-plate')
 bobmods.lib.tech.remove_recipe_unlock('ore-crushing', 'angelsore2-crushed-processing')
 bobmods.lib.tech.remove_recipe_unlock('ore-crushing', 'angelsore4-crushed-processing')
