@@ -26,10 +26,10 @@ Date: 14.08.2021
     - Move Nitinol smelting up a tier
     - Hide extra power entities
     - Added Ore sorting facility 5
-    - Buffed recipes for Silicon arbide, Silicon nitride, Tungsten carbide plate, Copper-tungsten plate
+    - Buffed recipes for Silicon carbide, Silicon nitride, Tungsten carbide plate, Copper-tungsten plate
     - SpaceX techs Habitation Modules and Life Support Systems require bio science
     - Doubled the slag produced by ore sorting recipes
-    - Substituted vanillla concrete and refined concrete for concrete bricks in building recipes
+    - Substituted vanilla concrete and refined concrete for concrete bricks in building recipes
     - Swapped concrete and concrete brick title types
     - Reduced fuel value of carbon
     - Hid rocks and trees from deconstruction planner GUI
