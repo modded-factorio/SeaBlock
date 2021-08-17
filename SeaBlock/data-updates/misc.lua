@@ -12,9 +12,9 @@ bobmods.lib.tech.remove_prerequisite('steel-processing', 'electrolysis-1')
 bobmods.lib.tech.remove_prerequisite('steel-processing', 'chemical-processing-1')
 bobmods.lib.tech.add_prerequisite('steel-processing', 'slag-processing-1')
 
--- Reduce cost of basic Steel from 8 iron to 6 iron (only for normal difficulty)
-bobmods.lib.recipe.remove_difficulty_ingredient('angels-plate-steel-pre-heating', 'normal', 'angels-plate-hot-iron')
-bobmods.lib.recipe.add_difficulty_ingredient('angels-plate-steel-pre-heating', 'normal', {type = 'item', name = 'angels-plate-hot-iron', amount = 6})
+-- Reduce cost of basic Steel from 8 iron to 6 iron
+bobmods.lib.recipe.set_result('steel-plate', {type='item', name='angels-plate-hot-iron', amount=1})
+seablock.lib.substingredient('angels-plate-steel-pre-heating', 'angels-plate-hot-iron', nil, 6)
 
 -- Merge basic chemistry 2 into basic chemistry
 local function movealleffects(from, to)
