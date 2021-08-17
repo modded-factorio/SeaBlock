@@ -93,6 +93,7 @@ local mil_items = {
   {type = 'item', name = 'flame-rocket-warhead'},
   {type = 'item', name = 'flamethrower-turret'},
   {type = 'item', name = 'gun-cotton'},
+  {type = 'item', name = 'gunmetal-alloy'},
   {type = 'item', name = 'he-bullet-projectile'},
   {type = 'item', name = 'he-bullet'},
   {type = 'item', name = 'lab-alien'},
@@ -420,6 +421,7 @@ local mil_recipes = {
   'flamethrower-turret',
   'gas-fractioning-residual',
   'gun-cotton',
+  'gunmetal-alloy',
   'he-bullet',
   'he-bullet-magazine',
   'he-bullet-projectile',
@@ -557,6 +559,7 @@ bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-bullet-projectile
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-bullet')
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-cannon-shell')
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-rounds-magazine')
+bobmods.lib.tech.remove_recipe_unlock('zinc-processing', 'gunmetal-alloy')
 
 seablock.lib.substresult('nutrients-refining-2', 'liquid-glycerol', 'water', nil)
 if data.raw.recipe['nutrients-refining-2'] then
@@ -797,4 +800,7 @@ if mods['bobwarfare'] then
   seablock.lib.substingredient('spidertron-remote', 'radar', 'radar-5')
   
   bobmods.lib.tech.add_prerequisite('bob-atomic-artillery-shell', 'utility-science-pack')
+  
+  -- Remove prerequisite as gunmetal smelting tech won't exist as we have disabled the trigger
+  bobmods.lib.tech.remove_prerequisite('bob-armor-making-3', 'angels-gunmetal-smelting-1')
 end
