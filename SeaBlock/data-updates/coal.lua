@@ -18,7 +18,7 @@ if mods['Transport_Drones'] then
   seablock.lib.substingredient('road', 'coal', 'wood-charcoal')
 end
 seablock.lib.substingredient('carbon-separation-2', 'coal', 'wood-charcoal', 1)
-if mods['angelsaddons-storage'] then
+if mods['angelsaddons-storage'] and data.raw.recipe['silo-coal'] then
   seablock.lib.substingredient('silo-coal', 'coal-crushed', 'wood-charcoal', 10)
 end
 
