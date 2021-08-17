@@ -48,9 +48,12 @@ for _,v in pairs({
   'deuterium',
   'hydrazine',
   'alien-fire',
-  'glycerol'
+  'glycerol',
+  'diesel-fuel'
   }) do
   if data.raw.fluid[v] then
     data.raw.fluid[v].fuel_value = nil
   end
 end
+
+seablock.lib.hide('boiler', 'oil-steam-boiler')
