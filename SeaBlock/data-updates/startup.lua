@@ -100,31 +100,7 @@ else
   bobmods.lib.recipe.enabled('lab', false)
 end
 
-local startuprecipes = {
-  ['angels-electrolyser'] = true,
-  ['liquifier'] = true,
-  ['offshore-pump'] = true,
-  ['angels-flare-stack'] = true,
-  ['burner-ore-crusher'] = true,
-  ['stone-crushed'] = true,
-  ['stone-brick'] = true,
-  ['crystallizer'] = true,
-  ['dirt-water-separation'] = true,
-  ['sb-cellulose-foraging'] = true,
-  ['sb-water-mineralized-crystallization'] = true,
-  ['slag-processing-stone'] = true,
-  ['water-mineralized'] = true,
-  ['stone-pipe'] = true,
-  ['stone-pipe-to-ground'] = true
-}
-
-if settings.startup['bobmods-assembly-multipurposefurnaces'] and settings.startup['bobmods-assembly-multipurposefurnaces'].value then
-  startuprecipes['stone-mixing-furnace'] = true
-end
-
-local lasttech = 'sb-startup4'
 if data.raw.technology['sct-automation-science-pack'] then
-  lasttech = 'sct-automation-science-pack'
   bobmods.lib.tech.add_prerequisite('sct-automation-science-pack', 'sct-lab-t1')
   data.raw.technology['sct-automation-science-pack'].unit = {
     count = 1,
@@ -139,7 +115,7 @@ if data.raw.technology['sct-automation-science-pack'] then
   data.raw.technology['sb-startup4'].enabled = false
 end
 
-local movedrecipes = table.deepcopy(startuprecipes)
+local movedrecipes = table.deepcopy(seablock.startup_recipes)
 for k,v in pairs(seablock.scripted_techs) do
   for _,effect in pairs(data.raw.technology[k].effects or {}) do
     movedrecipes[effect.recipe] = true
@@ -193,32 +169,32 @@ for k,v in pairs(data.raw.recipe) do
 end
 
 -- Add prerequisites to technologies which are not part of the selected startup techs.
-for k,v in pairs(data.raw.technology) do
-  if (v.enabled == nil or v.enabled == true or v.enabled == 'true') and not seablock.scripted_techs[k] then
-    if not v.prerequisites or #v.prerequisites == 0 then
+for tech_name,tech in pairs(data.raw.technology) do
+  if (tech.enabled == nil or tech.enabled == true or tech.enabled == 'true') and not seablock.scripted_techs[tech_name] then
+    if not tech.prerequisites or #tech.prerequisites == 0 then
       local prerequisite = 'slag-processing-1'
-      if seablock.startup_techs[k] then
-        prerequisite = lasttech
+      if seablock.startup_techs[tech_name] then
+        prerequisite = seablock.final_scripted_tech
       end
-      v.prerequisites = {prerequisite}
+      tech.prerequisites = {prerequisite}
     end
   end
-  if v.effects and not seablock.scripted_techs[k] then
+  if tech.effects and not seablock.scripted_techs[tech_name] then
     local neweffects = {}
-    for _,effect in pairs(v.effects) do
+    for _,effect in pairs(tech.effects) do
       if effect.type ~= "unlock-recipe" or not movedrecipes[effect.recipe] then
         table.insert(neweffects, effect)
       end
     end
-    v.effects = neweffects
+    tech.effects = neweffects
   end
 end
 
 -- Disabled recipes are enabled at last stage of startup. (Laboratory research)
 for _,v in pairs(disabledrecipes) do
-  bobmods.lib.tech.add_recipe_unlock(lasttech, v)
+  bobmods.lib.tech.add_recipe_unlock(seablock.final_scripted_tech, v)
 end
-for k,_ in pairs(startuprecipes) do
+for k,_ in pairs(seablock.startup_recipes) do
   if data.raw.recipe[k] then
     bobmods.lib.recipe.enabled(k, true)
   end
@@ -255,8 +231,6 @@ data.raw.technology['bio-wood-processing'].unit = {
   ingredients = {},
   time = 5
 }
-
-data.raw.technology['bio-wood-processing-2'].prerequisites = {lasttech}
 
 -- Make bio-paper-1 a startup tutorial tech
 data.raw.technology['bio-paper-1'].prerequisites = {'sb-startup2'}

@@ -1,5 +1,5 @@
 -- No wood for electric poles, use wood bricks instead
-data.raw.recipe['small-electric-pole'].ingredients = {{ "wood-bricks", 1 }, { "copper-cable", 2}}
+seablock.lib.substingredient('small-electric-pole', 'wood', 'wood-bricks', nil)
 
 -- Wood removal
 seablock.lib.substingredient('phenolic-board', 'wood', 'wooden-board', 2)

@@ -1,7 +1,7 @@
 seablock = seablock or {}
 
-function seablock.populate_starting_items(dest, items)
-  dest.starting_items = {
+function seablock.populate_starting_items(items)
+  local starting_items = {
     ['stone'] = 65,
     ['small-electric-pole'] = 50,
     ['small-lamp'] = 12,
@@ -19,10 +19,10 @@ function seablock.populate_starting_items(dest, items)
 
   -- Starting power production
   if items['wind-turbine-2'] then
-    dest.starting_items['wind-turbine-2'] = 120
+    starting_items['wind-turbine-2'] = 120
   else
-    dest.starting_items['solar-panel'] = 38
-    dest.starting_items['accumulator'] = 32
+    starting_items['solar-panel'] = 38
+    starting_items['accumulator'] = 32
   end
 
   -- Starting landfill
@@ -33,5 +33,6 @@ function seablock.populate_starting_items(dest, items)
   else
     landfill = 'landfill'
   end
-  dest.starting_items[landfill] = 2000
+  starting_items[landfill] = 2000
+  return starting_items
 end

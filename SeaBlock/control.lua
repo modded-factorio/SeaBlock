@@ -52,7 +52,7 @@ end
 
 local function init()
   set_pvp()
-  seablock.populate_starting_items(global, game.item_prototypes)
+  global.starting_items = seablock.populate_starting_items(game.item_prototypes)
   if remote.interfaces.freeplay then
     if remote.interfaces.freeplay.set_disable_crashsite then
       remote.call("freeplay", "set_disable_crashsite", true)
