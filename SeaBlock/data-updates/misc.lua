@@ -360,9 +360,6 @@ seablock.lib.substingredient('rocket-silo', 'concrete', 'reinforced-concrete-bri
 bobmods.lib.tech.replace_prerequisite('uranium-processing', 'concrete', 'angels-stone-smelting-2')
 bobmods.lib.tech.replace_prerequisite('rocket-silo', 'concrete', 'angels-stone-smelting-3')
 
-bobmods.lib.tech.add_recipe_unlock('angels-stone-smelting-2', 'hazard-concrete')
-bobmods.lib.tech.add_recipe_unlock('angels-stone-smelting-3', 'refined-hazard-concrete')
-
 -- Swap concrete tiles
 local item = data.raw.item['concrete-brick']
 if item and item.place_as_tile then
