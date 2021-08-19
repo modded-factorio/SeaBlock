@@ -117,10 +117,12 @@ end
 
 local movedrecipes = table.deepcopy(seablock.startup_recipes)
 for k,v in pairs(seablock.scripted_techs) do
-  for _,effect in pairs(data.raw.technology[k].effects or {}) do
-    movedrecipes[effect.recipe] = true
+  if data.raw.technology[k] then
+    for _,effect in pairs(data.raw.technology[k].effects or {}) do
+      movedrecipes[effect.recipe] = true
+    end
+    data.raw.technology[k].ignore_tech_cost_multiplier = true
   end
-  data.raw.technology[k].ignore_tech_cost_multiplier = true
 end
 local disabledrecipes = {}
 
@@ -172,7 +174,7 @@ end
 for tech_name,tech in pairs(data.raw.technology) do
   if (tech.enabled == nil or tech.enabled == true or tech.enabled == 'true') and not seablock.scripted_techs[tech_name] then
     if not tech.prerequisites or #tech.prerequisites == 0 then
-      local prerequisite = 'slag-processing-1'
+      local prerequisite = seablock.final_startup_tech
       if seablock.startup_techs[tech_name] then
         prerequisite = seablock.final_scripted_tech
       end

@@ -46,14 +46,14 @@ bobmods.lib.tech.replace_prerequisite('water-treatment', 'electronics', 'slag-pr
 bobmods.lib.tech.add_prerequisite('slag-processing-1', 'angels-sulfur-processing-1')
 bobmods.lib.tech.remove_prerequisite('slag-processing-1', 'water-treatment-2')
 
-data.raw.technology['water-washing-1'].prerequisites = {'automation'} -- Allow skipping of waste water recycling
+-- Allow skipping of waste water recycling
+bobmods.lib.tech.remove_prerequisite('water-washing-1', 'water-treatment')
+bobmods.lib.tech.remove_prerequisite('water-washing-1', 'steel-processing')
+bobmods.lib.tech.add_prerequisite('water-washing-1', 'automation')
 seablock.lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
 seablock.lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
 
-data.raw.technology['electronics'].prerequisites = {
-  'angels-solder-smelting-basic',
-  'angels-coal-processing'
-}
+bobmods.lib.tech.remove_prerequisite('electronics', 'chemical-processing-1')
 
 if bobmods.lib.tech.has_recipe_unlock('angels-tin-smelting-1', 'basic-tinned-copper-wire') then
   seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
@@ -83,14 +83,11 @@ end
 
 -- Add prerequisite for Tin and Lead
 if settings.startup['bobmods-logistics-beltoverhaul'].value then
-  bobmods.lib.tech.add_prerequisite('logistics', 'slag-processing-1')
+  bobmods.lib.tech.add_prerequisite('logistics', 'ore-crushing')
 end
 
 -- Tidy prerequisite for Bronze & Brass
 bobmods.lib.tech.add_prerequisite('alloy-processing', 'angels-bronze-smelting-1')
-if data.raw.technology['fluid-generator-1'] then
-  bobmods.lib.tech.replace_prerequisite('fluid-generator-1', 'alloy-processing', 'angels-bronze-smelting-1')
-end
 bobmods.lib.tech.replace_prerequisite('logistics-2', 'alloy-processing', 'angels-bronze-smelting-1')
 bobmods.lib.tech.remove_prerequisite('steel-mixing-furnace', 'alloy-processing')
 bobmods.lib.tech.remove_prerequisite('chemical-science-pack', 'alloy-processing')
@@ -145,6 +142,7 @@ if data.raw.technology['sct-lab-t3'] then
   bobmods.lib.tech.remove_prerequisite('sct-lab-t3', 'plastics')
   bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-glass-smelting-1')
   bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-aluminium-smelting-1')
+  bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-brass-smelting-1')
   seablock.lib.remove_recipe('sct-t3-flash-fuel2')
 end
 
