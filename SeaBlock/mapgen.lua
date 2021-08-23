@@ -354,48 +354,7 @@ data.raw.fish['alien-fish-3'].autoplace = {
     tier_from_start_top_property_limit = 0.1
   }}
 }
---[[
-local function worm_autoplace(distance, probability, order, falloff)
-  local ret = {
-    sharpness = 1,
-    control = "enemy-base",
-    richness_multiplier = 1,
-    richness_base = 0,
-    force = "enemy",
-    max_probability = probability or 0.01,
-    random_probability_penalty = 0.05,
-    order = order or 'a',
-    peaks = {
-      {
-        influence = 10,
-	richness_influence = 100,
-	tier_from_start_optimal = distance,
-	tier_from_start_top_property_limit = distance + falloff * 2,
-	tier_from_start_max_range = 2,
-        noise_layer = 'enemy-base',
-        noise_octaves_difference = octaves,
-        noise_persistence = persistence
-      },
-      {
-        influence = 10,
-	elevation_optimal = scale_elevation(4),
-	elevation_range = 5 * elevation_scale,
-	elevation_max_range = 5 * elevation_scale
-      },
-      {
-        influence = -10,
-        starting_area_weight_optimal = 1,
-        starting_area_weight_range = 0.033,
-        starting_area_weight_max_range = 0.033
-      },
-      {
-        influence = -21
-      }
-    }
-  }
-  return ret
-end
-]]--
+
 local noise = require "noise"
 local tne = noise.to_noise_expression
 local enemy_random_seed = 1
