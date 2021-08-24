@@ -56,4 +56,9 @@ for _,v in pairs({
   end
 end
 
-seablock.lib.hide('boiler', 'oil-steam-boiler')
+if mods['KS_Power'] then
+  seablock.lib.hide('boiler', 'oil-steam-boiler')
+  seablock.lib.hide('burner-generator', 'big-burner-generator')
+  seablock.lib.hide('burner-generator', 'burner-generator')
+  seablock.lib.hide('generator', 'petroleum-generator')
+end
