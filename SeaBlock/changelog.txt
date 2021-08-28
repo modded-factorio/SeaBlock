@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.7
 Date: ???
+  Changes:
+    - Disabled Resin to Rubber recipe
+    - Reblanced Insulated wire recipe to increase rubber consumption
   Bugfixes:
     - Fixed startup error with Mad Clown's mods enabled
     - Hid gunmetal item, recipes, and tech

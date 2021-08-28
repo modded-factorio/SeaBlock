@@ -13,5 +13,7 @@ if mods['reskins-angels'] then
   end
 end
 
--- Remove I overlay from explosives recipe
+-- Remove I overlay from recipes
 seablock.reskins.clear_icon_specification('explosives', 'recipe')
+seablock.reskins.clear_icon_specification('liquid-rubber-1', 'recipe')
+seablock.reskins.clear_icon_specification('solid-rubber', 'recipe')

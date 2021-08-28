@@ -35,6 +35,7 @@ end
 
 require "data-final-fixes/logistics"
 require "data-final-fixes/icons"
+require "data-final-fixes/recipe"
 require "data-final-fixes/tech-tree"
 require "data-final-fixes/unobtainable_items"
 require "data-final-fixes/mapgen"

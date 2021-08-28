@@ -70,6 +70,7 @@ bobmods.lib.tech.add_prerequisite('uranium-processing', 'ore-leaching')
 if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
   bobmods.lib.tech.add_prerequisite('sb-bio-processing-advanced', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('utility-science-pack', 'rubber')
 end
 
 -- Clear prerequisites so it's available at end of tutorial
