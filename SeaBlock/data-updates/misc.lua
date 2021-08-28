@@ -405,3 +405,16 @@ end
 -- Nerf early game glass. Just need a little bit for arboretums
 seablock.lib.substingredient('quartz-glass', 'quartz', nil, 10)
 seablock.lib.substresult('quartz-glass', 'glass', nil, 1)
+
+-- Reduce electrolyser volume
+for _,entity_name in pairs({
+  'angels-electrolyser',
+  'angels-electrolyser-2',
+  'angels-electrolyser-3',
+  'angels-electrolyser-4'
+}) do
+  local entity = data.raw['assembling-machine'][entity_name]
+  if entity and entity.working_sound and entity.working_sound.sound then
+    entity.working_sound.sound.volume = 0.75
+  end
+end
