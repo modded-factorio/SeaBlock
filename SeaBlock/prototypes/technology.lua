@@ -164,7 +164,7 @@ if mods['bobwarfare'] then
           recipe = 'sniper-rifle'
         }
       },
-      prerequisites = {'military-science-pack', 'angels-glass-smelting-1'},
+      prerequisites = {'military-science-pack'},
       unit =
       {
         count = 200,
