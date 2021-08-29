@@ -6,6 +6,7 @@ Date: ???
     - Reblanced Insulated wire recipe to increase rubber consumption
     - Removed Glass smelting 1 as prerequisite for Sniper Rifle
     - Reduced Electrolyser volume
+    - Rebalanced Glass mixture recipes
   Bugfixes:
     - Fixed startup error with Mad Clown's mods enabled
     - Hid gunmetal item, recipes, and tech

@@ -418,3 +418,14 @@ for _,entity_name in pairs({
     entity.working_sound.sound.volume = 0.75
   end
 end
+
+-- Rebalance glass mixture recipes
+bobmods.lib.recipe.set_ingredient('glass-mixture-2', {'quartz', 2})
+bobmods.lib.recipe.set_result('glass-mixture-2', {'solid-glass-mixture', 3})
+bobmods.lib.recipe.set_energy_required('glass-mixture-2', 6)
+
+bobmods.lib.recipe.set_ingredient('glass-mixture-3', {'solid-lime', 2})
+bobmods.lib.recipe.set_result('glass-mixture-3', {'solid-glass-mixture', 4})
+bobmods.lib.recipe.set_energy_required('glass-mixture-3', 8)
+
+bobmods.lib.recipe.set_energy_required('glass-mixture-4', 8)
