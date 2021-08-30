@@ -17,3 +17,15 @@ data:extend(
     name = "ore-sorting-5",
   }
 })
+
+if mods['SpaceMod'] then
+  data:extend(
+  {
+    {
+      type = 'item-subgroup',
+      name = 'sb-SpaceMod',
+      group = mods['ScienceCostTweakerM'] and 'sct-science' or 'intermediate-products',
+      order = 'zz[SpaceMod]'
+    }
+  })
+end
