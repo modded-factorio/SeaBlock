@@ -17,7 +17,6 @@ end
 
 bobmods.lib.tech.remove_recipe_unlock('bio-wood-processing', 'bio-resin-wood-reprocessing')
 
-bobmods.lib.tech.add_recipe_unlock('bio-wood-processing-2', 'sb-wood-bricks-charcoal')
 bobmods.lib.tech.remove_recipe_unlock('bio-wood-processing-2', 'carbon-from-charcoal')
 bobmods.lib.tech.remove_recipe_unlock('bio-wood-processing-2', 'wood-charcoal')
 
@@ -31,6 +30,10 @@ bobmods.lib.recipe.remove_ingredient('composter', 'wooden-chest')
 
 
 seablock.lib.moveeffect('cellulose-fiber-algae', 'bio-processing-brown', 'bio-wood-processing', 1)
-seablock.lib.add_recipe_unlock('bio-wood-processing', 'wood-pellets', 2)
-seablock.lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 3)
-seablock.lib.add_recipe_unlock('bio-wood-processing', 'small-electric-pole', 4)
+seablock.lib.add_recipe_unlock('bio-wood-processing', 'cellulose-fiber-raw-wood', 2)
+bobmods.lib.recipe.enabled('cellulose-fiber-raw-wood', false)
+seablock.lib.add_recipe_unlock('bio-wood-processing', 'wood-pellets', 3)
+seablock.lib.moveeffect('wood-bricks', 'bio-wood-processing-3', 'bio-wood-processing', 4)
+seablock.lib.add_recipe_unlock('bio-wood-processing', 'small-electric-pole', 5)
+bobmods.lib.tech.add_recipe_unlock('bio-wood-processing', 'wooden-chest')
+bobmods.lib.recipe.enabled('wooden-chest', false)

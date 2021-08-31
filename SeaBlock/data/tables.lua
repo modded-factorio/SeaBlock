@@ -21,7 +21,7 @@ end
 -- seablock.startup_techs
 -- These techs will depend on the final startup tech
 -- Their time will be standardized to 15 and they  will ignore tech cost modifier
--- If {true} then thir cost will be set to 20 red science
+-- If {true} then their cost will be set to 20 red science
 -- Any other tech with no prerequisites will depend on Slag Processing 1
 seablock.startup_techs = {
   ['angels-fluid-control'] = {true},
