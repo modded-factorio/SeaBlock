@@ -12,4 +12,8 @@ if mods['ScienceCostTweakerM'] then
 
   -- Reduce processing unit cost of S.C.T. high-tech science
   seablock.lib.substingredient('sct-htech-injector', 'processing-unit', nil, 3)
+
+  -- Add prerequisites
+  bobmods.lib.tech.add_prerequisite('military-science-pack', 'angels-brass-smelting-1')
+  bobmods.lib.tech.add_prerequisite('military-science-pack', 'angels-invar-smelting-1')
 end

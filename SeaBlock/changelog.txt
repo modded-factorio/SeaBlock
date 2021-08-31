@@ -7,6 +7,7 @@ Date: ???
     - Removed Glass smelting 1 as prerequisite for Sniper Rifle
     - Reduced Electrolyser volume
     - Rebalanced Glass mixture recipes
+    - Added Brass and Invar smelting as prerequisites for Military science (with SCT)
   Bugfixes:
     - Fixed startup error with Mad Clown's mods enabled
     - Hid gunmetal item, recipes, and tech
