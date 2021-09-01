@@ -74,6 +74,7 @@ if mods['ScienceCostTweakerM'] then
 end
 bobmods.lib.tech.add_prerequisite('tungsten-alloy-processing', 'powder-metallurgy-3')
 bobmods.lib.tech.add_prerequisite('angels-glass-smelting-1', 'silicon-processing')
+bobmods.lib.tech.add_prerequisite('angels-stone-smelting-2', 'silicon-processing')
 
 -- Clear prerequisites so it's available at end of tutorial
 bobmods.lib.tech.remove_prerequisite('bio-wood-processing-2', 'bio-wood-processing')

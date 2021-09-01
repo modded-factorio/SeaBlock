@@ -435,3 +435,12 @@ bobmods.lib.recipe.set_result('glass-mixture-3', {'solid-glass-mixture', 4})
 bobmods.lib.recipe.set_energy_required('glass-mixture-3', 8)
 
 bobmods.lib.recipe.set_energy_required('glass-mixture-4', 8)
+
+-- Rebalance cement recipes
+bobmods.lib.recipe.replace_ingredient('cement-mixture-1', 'quartz', 'silicon-powder')
+
+bobmods.lib.recipe.remove_ingredient('cement-mixture-2', 'iron-ore')
+bobmods.lib.recipe.replace_ingredient('cement-mixture-2', 'quartz', 'silicon-powder')
+bobmods.lib.recipe.set_ingredient('cement-mixture-2', {'solid-lime', 4})
+bobmods.lib.recipe.set_result('cement-mixture-2', {'solid-cement', 4})
+bobmods.lib.recipe.set_energy_required('cement-mixture-2', 16)
