@@ -72,6 +72,7 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('sb-bio-processing-advanced', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('utility-science-pack', 'rubber')
 end
+bobmods.lib.tech.add_prerequisite('tungsten-alloy-processing', 'powder-metallurgy-3')
 
 -- Clear prerequisites so it's available at end of tutorial
 bobmods.lib.tech.remove_prerequisite('bio-wood-processing-2', 'bio-wood-processing')
