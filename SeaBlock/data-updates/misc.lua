@@ -33,7 +33,7 @@ end
 movealleffects('basic-chemistry-2', 'basic-chemistry')
 movealleffects('basic-chemistry-3', 'basic-chemistry-2')
 data.raw.technology['basic-chemistry-2'].unit = data.raw.technology['basic-chemistry-3'].unit
-data.raw.technology['basic-chemistry-3'].enabled = false
+bobmods.lib.recipe.enabled('basic-chemistry-3', false)
 
 -- Make Basic Chemistry depend on Wood Processing 2. Required for Charcoal > Carbon Dioxide
 bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
