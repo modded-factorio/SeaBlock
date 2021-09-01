@@ -402,10 +402,6 @@ if data.raw.technology['electronics-machine-1'] then
   bobmods.lib.tech.add_prerequisite('electronics-machine-1', 'electronics')
 end
 
--- Nerf early game glass. Just need a little bit for arboretums
-seablock.lib.substingredient('quartz-glass', 'quartz', nil, 10)
-seablock.lib.substresult('quartz-glass', 'glass', nil, 1)
-
 -- Reduce electrolyser volume
 for _,entity_name in pairs({
   'angels-electrolyser',
@@ -419,11 +415,21 @@ for _,entity_name in pairs({
   end
 end
 
+-- Nerf early game glass. Just need a little bit for arboretums
+seablock.lib.substingredient('quartz-glass', 'quartz', nil, 10)
+seablock.lib.substresult('quartz-glass', 'glass', nil, 1)
+
 -- Rebalance glass mixture recipes
-bobmods.lib.recipe.set_ingredient('glass-mixture-2', {'quartz', 2})
+bobmods.lib.recipe.remove_ingredient('glass-mixture-1', 'quartz')
+bobmods.lib.recipe.set_ingredient('glass-mixture-1', {'silicon-powder', 1})
+
+bobmods.lib.recipe.remove_ingredient('glass-mixture-2', 'quartz')
+bobmods.lib.recipe.set_ingredient('glass-mixture-2', {'silicon-powder', 2})
 bobmods.lib.recipe.set_result('glass-mixture-2', {'solid-glass-mixture', 3})
 bobmods.lib.recipe.set_energy_required('glass-mixture-2', 6)
 
+bobmods.lib.recipe.remove_ingredient('glass-mixture-3', 'quartz')
+bobmods.lib.recipe.set_ingredient('glass-mixture-3', {'silicon-powder', 1})
 bobmods.lib.recipe.set_ingredient('glass-mixture-3', {'solid-lime', 2})
 bobmods.lib.recipe.set_result('glass-mixture-3', {'solid-glass-mixture', 4})
 bobmods.lib.recipe.set_energy_required('glass-mixture-3', 8)
