@@ -1,37 +1,35 @@
--- Undo boblogistic changes to underground belt lengths, and reduce length of purple and green belts
-if data.raw['underground-belt']['basic-underground-belt'] then
-  data.raw['underground-belt']['basic-underground-belt'].max_distance = 3
-  data.raw['transport-belt']['basic-transport-belt'].speed = 7.5/(60*8)
-  data.raw['underground-belt']['basic-underground-belt'].speed = 7.5/(60*8)
-  data.raw['splitter']['basic-splitter'].speed = 7.5/(60*8)
-end
-data.raw['underground-belt']['underground-belt'].max_distance = 5
-data.raw['transport-belt']['transport-belt'].speed = 15/(60*8)
-data.raw['underground-belt']['underground-belt'].speed = 15/(60*8)
-data.raw['splitter']['splitter'].speed = 15/(60*8)
+-- Overwrite belt lengths
 
-data.raw['underground-belt']['fast-underground-belt'].max_distance = 7
-data.raw['transport-belt']['fast-transport-belt'].speed = 30/(60*8)
-data.raw['underground-belt']['fast-underground-belt'].speed = 30/(60*8)
-data.raw['splitter']['fast-splitter'].speed = 30/(60*8)
-
-data.raw['underground-belt']['express-underground-belt'].max_distance = 9
-data.raw['transport-belt']['express-transport-belt'].speed = 45/(60*8)
-data.raw['underground-belt']['express-underground-belt'].speed = 45/(60*8)
-data.raw['splitter']['express-splitter'].speed = 45/(60*8)
-
-if data.raw['underground-belt']['turbo-underground-belt'] then
-  data.raw['underground-belt']['turbo-underground-belt'].max_distance = 11
-  data.raw['transport-belt']['turbo-transport-belt'].speed = 60/(60*8)
-  data.raw['underground-belt']['turbo-underground-belt'].speed = 60/(60*8)
-  data.raw['splitter']['turbo-splitter'].speed = 60/(60*8)
+local function set_speed(type, name, speed)
+  local item = data.raw[type][name]
+  if item then
+    item.speed = speed / (60 * 8)
+  end
 end
-if data.raw['underground-belt']['ultimate-underground-belt'] then
-  data.raw['underground-belt']['ultimate-underground-belt'].max_distance = 13
-  data.raw['transport-belt']['ultimate-transport-belt'].speed = 75/(60*8)
-  data.raw['underground-belt']['ultimate-underground-belt'].speed = 75/(60*8)
-  data.raw['splitter']['ultimate-splitter'].speed = 75/(60*8)
-end
+
+set_speed('transport-belt', 'basic-transport-belt', 7.5)
+set_speed('underground-belt', 'basic-underground-belt', 7.5)
+set_speed('splitter', 'basic-splitter', 7.5)
+
+set_speed('transport-belt', 'transport-belt', 15)
+set_speed('underground-belt', 'underground-belt', 15)
+set_speed('splitter', 'splitter', 15)
+
+set_speed('transport-belt', 'fast-transport-belt', 30)
+set_speed('underground-belt', 'fast-underground-belt', 30)
+set_speed('splitter', 'fast-splitter', 30)
+
+set_speed('transport-belt', 'express-transport-belt', 45)
+set_speed('underground-belt', 'express-underground-belt', 45)
+set_speed('splitter', 'express-splitter', 45)
+
+set_speed('transport-belt', 'turbo-transport-belt', 60)
+set_speed('underground-belt', 'turbo-underground-belt', 60)
+set_speed('splitter', 'turbo-splitter', 60)
+
+set_speed('transport-belt', 'ultimate-transport-belt', 75)
+set_speed('underground-belt', 'ultimate-underground-belt', 75)
+set_speed('splitter', 'ultimate-splitter', 75)
 
 -- Increase energy consumption of bob's extra beacons
 -- Also reduce module slots and effectivity
