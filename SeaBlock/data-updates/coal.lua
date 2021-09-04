@@ -23,7 +23,7 @@ if mods['angelsaddons-storage'] and data.raw.recipe['silo-coal'] then
 end
 
 -- Disable coal cracking technology
-data.raw.technology['angels-coal-cracking'].enabled = false
+seablock.lib.hide_technology('angels-coal-cracking')
 seablock.lib.moveeffect('pellet-coke', 'angels-coal-cracking', 'angels-coal-processing-2')
 
 -- Clear fuel value so these don't appear in Helmod's fuel picker
