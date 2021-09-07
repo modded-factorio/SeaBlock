@@ -380,21 +380,41 @@ item = data.raw.tile['concrete']
 if item then
   item.minable['result'] = 'concrete-brick'
   item.placeable_by = {item = 'concrete-brick', count = 1}
+  item.walking_speed_modifier = 1.4
 end
 item = data.raw.tile['refined-concrete']
 if item then
   item.minable['result'] = 'reinforced-concrete-brick'
   item.placeable_by = {item = 'reinforced-concrete-brick', count = 1}
+  item.walking_speed_modifier = 1.55
 end
 item = data.raw.tile['tile-concrete-brick']
 if item then
   item.minable['result'] = 'concrete'
   item.placeable_by = {item = 'concrete', count = 1}
+  item.walking_speed_modifier = 1.4
 end
 item = data.raw.tile['tile-reinforced-concrete-brick']
 if item then
   item.minable['result'] = 'refined-concrete'
   item.placeable_by = {item = 'refined-concrete', count = 1}
+  item.walking_speed_modifier = 1.55
+end
+item = data.raw.tile['hazard-concrete-left']
+if item then
+  item.walking_speed_modifier = 1.4
+end
+item = data.raw.tile['hazard-concrete-right']
+if item then
+  item.walking_speed_modifier = 1.4
+end
+item = data.raw.tile['refined-hazard-concrete-left']
+if item then
+  item.walking_speed_modifier = 1.55
+end
+item = data.raw.tile['refined-hazard-concrete-right']
+if item then
+  item.walking_speed_modifier = 1.55
 end
 
 -- Other prerequisites
