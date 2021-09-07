@@ -13,7 +13,6 @@ bobmods.lib.tech.remove_prerequisite('steel-processing', 'chemical-processing-1'
 bobmods.lib.tech.add_prerequisite('steel-processing', 'slag-processing-1')
 
 -- Reduce cost of basic Steel from 8 iron to 6 iron
-bobmods.lib.recipe.set_result('steel-plate', {type='item', name='angels-plate-hot-iron', amount=1})
 seablock.lib.substingredient('angels-plate-steel-pre-heating', 'angels-plate-hot-iron', nil, 6)
 
 -- Merge basic chemistry 2 into basic chemistry
@@ -117,9 +116,6 @@ if mods['bobenemies'] then
   seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-green-from-small')
   seablock.lib.add_recipe_unlock('bio-processing-alien-3', 'alien-artifact-from-small')
 end
-
-bobmods.lib.tech.remove_recipe_unlock('chemical-processing-2', 'carbon-dioxide')
-seablock.lib.remove_recipe('carbon-dioxide')
 
 bobmods.lib.tech.remove_prerequisite('tungsten-processing', 'angels-nickel-smelting-1')
 
