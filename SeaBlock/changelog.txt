@@ -3,7 +3,7 @@ Version: 0.5.7
 Date: ???
   Changes:
     - Disabled Resin to Rubber recipe
-    - Reblanced Insulated wire recipe to increase rubber consumption
+    - Rebalanced Insulated wire recipe to increase rubber consumption
     - Removed Glass smelting 1 as prerequisite for Sniper Rifle
     - Reduced Electrolyser volume
     - Rebalanced Glass mixture recipes
