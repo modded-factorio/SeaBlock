@@ -31,6 +31,7 @@ bobmods.lib.tech.replace_prerequisite('bio-processing-green', 'basic-chemistry',
 
 -- Blue algae
 bobmods.lib.tech.replace_prerequisite('bio-processing-blue', 'bio-processing-red', 'bio-processing-brown')
+bobmods.lib.tech.remove_prerequisite('bio-processing-blue', 'chemical-science-pack')
 bobmods.lib.tech.remove_science_pack('bio-processing-blue', 'chemical-science-pack')
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-blue', 'algae-farm-4')
 data.raw.recipe['algae-blue'].category = 'bio-processing-2'
