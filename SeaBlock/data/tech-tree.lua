@@ -81,11 +81,6 @@ bobmods.lib.tech.remove_prerequisite('bio-wood-processing-2', 'bio-wood-processi
 bobmods.lib.tech.remove_prerequisite('bio-wood-processing-2', 'angels-coal-processing')
 bobmods.lib.tech.remove_prerequisite('bio-wood-processing-2', 'advanced-material-processing')
 
--- SpaceMod has a bug so this prerequisite isn't being added. Can be removed if/when they fix the bug
-if mods['SpaceMod'] and mods['bobequipment'] then
-  bobmods.lib.tech.add_prerequisite('protection-fields', 'bob-energy-shield-equipment-6')
-end
-
 local tech = {
   'bob-artillery-turret-3',
   'bob-artillery-wagon-3',

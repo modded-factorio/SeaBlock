@@ -92,10 +92,3 @@ if data.raw.technology['ftl-theory-D'] then
     end
   end
 end
-
--- SpaceMod is incorrectly adding this prerequisite
--- Space Science Pack should needs to depend on radars now instead of Rocket Silo
--- Bob's Revamp is adding this prerequisite. Should really be added by Bob's Warfare
-if mods['bobwarfare'] then
-  bobmods.lib.tech.remove_prerequisite('rocket-silo', 'radars-4')
-end
