@@ -11,6 +11,7 @@ Date: ???
     - Added Brass and Invar smelting as prerequisites for Military science (with SCT)
     - Hid overwritten settings from Bob's Logistics
     - Standardized concrete walk speed bonuses
+    - Moved Dinitrogen tetroxide gas recipe to chemical plant and added yellow metal catalyst
   Bugfixes:
     - Fixed startup error with Mad Clown's mods enabled
     - Hid gunmetal item, recipes, and tech

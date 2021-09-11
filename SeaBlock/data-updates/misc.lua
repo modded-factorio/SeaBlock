@@ -464,3 +464,9 @@ bobmods.lib.recipe.replace_ingredient('cement-mixture-2', 'quartz', 'silicon-pow
 bobmods.lib.recipe.set_ingredient('cement-mixture-2', {'solid-lime', 4})
 bobmods.lib.recipe.set_result('cement-mixture-2', {'solid-cement', 4})
 bobmods.lib.recipe.set_energy_required('cement-mixture-2', 16)
+
+-- Add yellow metal catalyst to Dinitrogen tetroxide gas recipe
+bobmods.lib.recipe.set_ingredient('gas-dinitrogen-tetroxide', {'catalyst-metal-yellow', 1})
+bobmods.lib.recipe.set_result('gas-dinitrogen-tetroxide', {'catalyst-metal-carrier', 1})
+data.raw.recipe['gas-dinitrogen-tetroxide'].category = 'chemistry'
+data.raw.recipe['gas-dinitrogen-tetroxide'].localised_name = {'fluid-name.gas-dinitrogen-tetroxide'}
