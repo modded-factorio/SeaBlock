@@ -94,6 +94,7 @@ if data.raw['assembling-machine']['ore-sorting-facility-4'] then
   data.raw['assembling-machine']['ore-sorting-facility-4'].next_upgrade = 'sb-ore-sorting-facility-5'
 end
 
+bobmods.lib.tech.add_prerequisite('advanced-ore-refining-2', 'ore-powderizer')
 bobmods.lib.tech.add_prerequisite('advanced-ore-refining-4', 'advanced-electronics-3')
 bobmods.lib.tech.add_prerequisite('advanced-ore-refining-4', 'angels-tungsten-smelting-1')
 bobmods.lib.tech.add_new_science_pack('advanced-ore-refining-4', 'production-science-pack', 1)
