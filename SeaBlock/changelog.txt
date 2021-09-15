@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.7
-Date: ???
+Date: 11.09.2021
   Changes:
     - Disabled Resin to Rubber recipe
     - Rebalanced Insulated wire recipe to increase rubber consumption
