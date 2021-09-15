@@ -185,3 +185,22 @@ script.on_load(
     set_pvp()
   end
 )
+
+script.on_event(defines.events.on_player_created,
+  function(e)
+    local s = game.surfaces['nauvis']
+    if s then
+      local companions = s.find_entities_filtered({name = 'companion'})
+      for _, companion in pairs(companions) do
+        companion.remove_item('coal')
+        companion.insert('wood-pellets')
+        local grid = companion.grid
+        for _, item in pairs(grid.equipment) do
+          if (item.name == 'companion-defense-equipment') or (item.name == 'companion-shield-equipment') then
+            grid.take({equipment = item})
+          end
+        end
+      end
+    end
+  end
+)
