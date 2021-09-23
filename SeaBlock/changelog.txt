@@ -3,6 +3,8 @@ Version: 0.5.8
 Date: ???
   Changes:
     - Added Companion Drones compatibility #108
+  Bugfixes:
+    - Recipes for Bob's pollution cleaning and pollution producing boards were being hidden even if Circuit Processing was disabled #215
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.7
 Date: 11.09.2021
