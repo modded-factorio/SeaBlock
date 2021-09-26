@@ -3,6 +3,7 @@ Version: 0.5.8
 Date: ???
   Changes:
     - Added Companion Drones compatibility #108
+    - Wood bricks now have a fuel value of 18MJ #216
   Bugfixes:
     - Recipes for Bob's pollution cleaning and pollution producing boards were being hidden even if Circuit Processing was disabled #215
 ---------------------------------------------------------------------------------------------------

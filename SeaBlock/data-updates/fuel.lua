@@ -1,9 +1,5 @@
--- No fuel value on these because they are also smelting inputs
--- https://forums.factorio.com/viewtopic.php?f=23&t=46634
-data.raw.item['wood-bricks'].fuel_value = nil
-data.raw.item['wood-bricks'].fuel_category = nil
-
 -- Reduce angels charcoal fuel value
+data.raw.item['wood-bricks'].fuel_value = '18MJ'
 data.raw.item['wood-charcoal'].fuel_value = '4MJ'
 data.raw.item['pellet-coke'].fuel_value = '24MJ'
 
