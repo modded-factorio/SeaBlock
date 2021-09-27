@@ -748,18 +748,18 @@ if mods['bobwarfare'] then
   -- Move Plasma turrets later
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-1', 'chemical-science-pack', 1)
   bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'military-3')
-  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'battery-2')
-  seablock.lib.substingredient('bob-plasma-turret-1', 'battery', 'lithium-ion-battery', nil)
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'angels-cobalt-steel-smelting-1')
   seablock.lib.substingredient('bob-plasma-turret-1', 'electronic-circuit', 'advanced-circuit', 40)
-  seablock.lib.substingredient('bob-plasma-turret-1', 'steel-plate', 'invar-alloy', nil)
+  seablock.lib.substingredient('bob-plasma-turret-1', 'steel-plate', 'cobalt-steel-alloy', nil)
 
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-2', 'chemical-science-pack', 1)
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-2', 'production-science-pack', 1)
   bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'military-4')
-  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'battery-3')
-  seablock.lib.substingredient('bob-plasma-turret-2', 'battery', 'silver-zinc-battery', nil)
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'battery-2')
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'angels-titanium-smelting-1')
+  seablock.lib.substingredient('bob-plasma-turret-2', 'battery', 'lithium-ion-battery', nil)
   seablock.lib.substingredient('bob-plasma-turret-2', 'advanced-circuit', 'processing-unit', 40)
-  seablock.lib.substingredient('bob-plasma-turret-2', 'steel-plate', 'cobalt-steel-alloy', nil)
+  seablock.lib.substingredient('bob-plasma-turret-2', 'steel-plate', 'titanium-plate', nil)
  
   -- Make Military 4 take Purple science rather than Yellow science
   bobmods.lib.tech.remove_science_pack('military-4', 'utility-science-pack')

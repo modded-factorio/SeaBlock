@@ -470,3 +470,9 @@ bobmods.lib.recipe.set_ingredient('gas-dinitrogen-tetroxide', {'catalyst-metal-y
 bobmods.lib.recipe.set_result('gas-dinitrogen-tetroxide', {'catalyst-metal-carrier', 1})
 data.raw.recipe['gas-dinitrogen-tetroxide'].category = 'chemistry'
 data.raw.recipe['gas-dinitrogen-tetroxide'].localised_name = {'fluid-name.gas-dinitrogen-tetroxide'}
+
+-- Chlorate recipes moved to Chlorine Processing 4
+bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'solid-sodium-chlorate')
+bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'solid-sodium-perchlorate')
+bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'liquid-perchloric-acid')
+bobmods.lib.tech.add_prerequisite('rocket-booster-2', 'sb-chlorine-processing-4')
