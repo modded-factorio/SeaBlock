@@ -5,6 +5,8 @@ Date: ???
     - Added Companion Drones compatibility #108
     - Wood bricks now have a fuel value of 18MJ #216
     - Adjusted Plasma turret recipes #218
+    - Acetic acid takes Red metal catalyst rather than Green #219
+    - Hydrazine takes Blue metal catalyst rather than Green #219
   Bugfixes:
     - Recipes for Bob's pollution cleaning and pollution producing boards were being hidden even if Circuit Processing was disabled #215
 ---------------------------------------------------------------------------------------------------
