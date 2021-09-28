@@ -34,7 +34,9 @@ bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-shard-1', 'token-b
 bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-shard-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-full', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
-if mods['ScienceCostTweakerM'] then
+bobmods.lib.tech.add_new_science_pack('bio-plastic-1', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-plastic-2', 'token-bio', 1)
+if mods['SpaceMod'] then
   bobmods.lib.tech.add_new_science_pack('habitation', 'token-bio', 1)
   bobmods.lib.tech.add_new_science_pack('life-support-systems', 'token-bio', 1)
 end
@@ -186,6 +188,7 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('bio-arboretum-swamp-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-processing-alien-2', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-refugium-hatchery', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-fermentation', 'sct-bio-science-pack')
 end
 
 -- Logistics / Green
