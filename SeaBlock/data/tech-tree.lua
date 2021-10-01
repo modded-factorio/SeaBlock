@@ -8,11 +8,6 @@ bobmods.lib.tech.remove_prerequisite('bio-desert-farm', 'bio-farm-alien')
 bobmods.lib.tech.remove_prerequisite('bio-swamp-farm', 'bio-farm-alien')
 bobmods.lib.tech.remove_prerequisite('bio-temperate-farm', 'bio-farm-alien')
 
--- Move storage tanks so bob's techs can be removed
-local i = seablock.lib.findeffectidx(data.raw.technology['angels-fluid-control'].effects, 'angels-storage-tank-3')
-seablock.lib.moveeffect('bob-small-inline-storage-tank', 'electrolysis-1', 'angels-fluid-control', i)
-seablock.lib.moveeffect('bob-small-storage-tank', 'electrolysis-1', 'angels-fluid-control', i + 1)
-
 -- Add bio science to techs
 -- Don't add to techs on the path to Alien Farming. This is where garden / bio token duplication is unlocked
 -- Also need Fish refugium 2 available
