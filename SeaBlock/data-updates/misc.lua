@@ -59,9 +59,7 @@ if bobmods.lib.tech.has_recipe_unlock('angels-tin-smelting-1', 'basic-tinned-cop
   seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
 end
 
-if data.raw.recipe['liquid-fish-atmosphere'] then
-  data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'
-end
+seablock.lib.set_recipe_category('liquid-fish-atmosphere', 'chemistry')
 
 seablock.lib.hide_technology('pumpjack')
 
@@ -474,7 +472,7 @@ seablock.lib.substingredient('gas-hydrazine', 'catalyst-metal-green', 'catalyst-
 -- Add yellow metal catalyst to Dinitrogen tetroxide gas recipe
 bobmods.lib.recipe.set_ingredient('gas-dinitrogen-tetroxide', {'catalyst-metal-yellow', 1})
 bobmods.lib.recipe.set_result('gas-dinitrogen-tetroxide', {'catalyst-metal-carrier', 1})
-data.raw.recipe['gas-dinitrogen-tetroxide'].category = 'chemistry'
+seablock.lib.set_recipe_category('gas-dinitrogen-tetroxide', 'chemistry')
 data.raw.recipe['gas-dinitrogen-tetroxide'].main_product = 'gas-dinitrogen-tetroxide'
 
 -- Chlorate recipes moved to Chlorine Processing 4

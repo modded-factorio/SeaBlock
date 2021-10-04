@@ -145,9 +145,7 @@ for _,v in pairs({
   'angelsore5-chunk-processing',
   'angelsore6-chunk-processing'
 }) do
-  if data.raw.recipe[v] then
-    data.raw.recipe[v].category = 'ore-sorting-2'
-  end
+  seablock.lib.set_recipe_category(v, 'ore-sorting-2')
 end
 bobmods.lib.tech.add_prerequisite('ore-floatation', 'advanced-ore-refining-1')
 
@@ -159,9 +157,7 @@ for _,v in pairs({
   'angelsore5-crystal-processing',
   'angelsore6-crystal-processing'
 }) do
-  if data.raw.recipe[v] then
-    data.raw.recipe[v].category = 'ore-sorting-3'
-  end
+  seablock.lib.set_recipe_category(v, 'ore-sorting-3')
 end
 bobmods.lib.tech.add_prerequisite('ore-leaching', 'advanced-ore-refining-2')
 
@@ -173,9 +169,7 @@ for _,v in pairs({
   'angelsore5-pure-processing',
   'angelsore6-pure-processing'
 }) do
-  if data.raw.recipe[v] then
-    data.raw.recipe[v].category = 'ore-sorting-4'
-  end
+  seablock.lib.set_recipe_category(v, 'ore-sorting-4')
 end
 bobmods.lib.tech.add_prerequisite('ore-refining', 'advanced-ore-refining-3')
 
@@ -183,9 +177,7 @@ for _,v in pairs({
   'angelsore-pure-mix1-processing',
   'angelsore-pure-mix2-processing'
 }) do
-  if data.raw.recipe[v] then
-    data.raw.recipe[v].category = 'ore-sorting-5'
-  end
+  seablock.lib.set_recipe_category(v, 'ore-sorting-5')
 end
 
 -- Slow down Ore Sorting Facilities to make space for our new top tier

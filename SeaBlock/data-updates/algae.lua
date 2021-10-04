@@ -6,11 +6,15 @@ bobmods.lib.tech.add_prerequisite('bio-processing-brown', 'bio-processing-green'
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'algae-green-simple')
 
 -- Green algae
-data.raw.recipe['algae-green'].category = 'bio-processing'
+seablock.lib.set_recipe_category('algae-green', 'bio-processing')
 
 -- Move Lithia Salt to Thermal Water Extraction
 seablock.lib.moveeffect('algae-brown-burning', 'bio-processing-green', 'thermal-water-extraction', 2)
 bobmods.lib.tech.add_prerequisite('lithium-processing', 'thermal-water-extraction')
+
+-- Change lithium crafting category
+seablock.lib.set_recipe_category('lithium', 'petrochem-electrolyser')
+seablock.lib.set_recipe_category('lithium-water-electrolysis', 'petrochem-electrolyser')
 
 -- Move Sodium Carbonate from Brown Algae to Sodium processing
 seablock.lib.moveeffect('algae-brown-burning-wash', 'bio-processing-green', 'sodium-processing', nil)
@@ -34,17 +38,17 @@ bobmods.lib.tech.replace_prerequisite('bio-processing-blue', 'bio-processing-red
 bobmods.lib.tech.remove_prerequisite('bio-processing-blue', 'chemical-science-pack')
 bobmods.lib.tech.remove_science_pack('bio-processing-blue', 'chemical-science-pack')
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-blue', 'algae-farm-4')
-data.raw.recipe['algae-blue'].category = 'bio-processing-2'
+seablock.lib.set_recipe_category('algae-blue', 'bio-processing-2')
 
 -- Alien bacteria
-data.raw.recipe['alien-bacteria'].category = 'bio-processing-3'
+seablock.lib.set_recipe_category('alien-bacteria', 'bio-processing-3')
 
 -- Make these craftable by hand
-data.raw.recipe['solid-alginic-acid'].category = "crafting"
-data.raw.recipe['wooden-board-paper'].category = "crafting"
+seablock.lib.set_recipe_category('solid-alginic-acid', 'crafting')
+seablock.lib.set_recipe_category('wooden-board-paper', 'crafting')
 
 -- Fix handcrafting trying to use wrong crafting path
-data.raw.recipe['wooden-board'].category = "electronics-machine"
+seablock.lib.set_recipe_category('wooden-board', 'electronics-machine')
 bobmods.lib.recipe.enabled('wooden-board', false)
 bobmods.lib.tech.add_recipe_unlock('bio-wood-processing-3', 'wooden-board')
 

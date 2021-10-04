@@ -105,7 +105,7 @@ if bobmods.lib.tech.has_recipe_unlock('angels-iron-smelting-2', 'molten-iron-sme
 else
   seablock.lib.moveeffect('molten-iron-smelting-2', 'angels-iron-casting-2', 'angels-manganese-smelting-1')
 end
-data.raw.recipe['molten-iron-smelting-2'].category = 'induction-smelting'
+seablock.lib.set_recipe_category('molten-iron-smelting-2', 'induction-smelting')
 
 -- T2:
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-2', 'chemical-science-pack')
