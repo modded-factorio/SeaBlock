@@ -4,9 +4,15 @@ seablock.lib.moveeffect('desert-garden-cultivating-b', 'bio-desert-farm', 'bio-f
 seablock.lib.moveeffect('swamp-garden-cultivating-b', 'bio-swamp-farm', 'bio-farm-alien')
 seablock.lib.moveeffect('temperate-garden-cultivating-b', 'bio-temperate-farm', 'bio-farm-alien')
 
-bobmods.lib.tech.remove_prerequisite('bio-desert-farm', 'bio-farm-alien')
-bobmods.lib.tech.remove_prerequisite('bio-swamp-farm', 'bio-farm-alien')
-bobmods.lib.tech.remove_prerequisite('bio-temperate-farm', 'bio-farm-alien')
+-- Swap environment and T2 Farming techs
+
+bobmods.lib.tech.replace_prerequisite('bio-desert-farm', 'bio-desert-farming-2', 'bio-desert-farming-1')
+bobmods.lib.tech.replace_prerequisite('bio-swamp-farm', 'bio-swamp-farming-2', 'bio-swamp-farming-1')
+bobmods.lib.tech.replace_prerequisite('bio-temperate-farm', 'bio-temperate-farming-2', 'bio-temperate-farming-1')
+
+bobmods.lib.tech.replace_prerequisite('bio-desert-farming-2', 'bio-desert-farming-1', 'bio-desert-farm')
+bobmods.lib.tech.replace_prerequisite('bio-swamp-farming-2', 'bio-swamp-farming-1', 'bio-swamp-farm')
+bobmods.lib.tech.replace_prerequisite('bio-temperate-farming-2', 'bio-temperate-farming-1', 'bio-temperate-farm')
 
 -- Add bio science to techs
 -- Don't add to techs on the path to Alien Farming. This is where garden / bio token duplication is unlocked

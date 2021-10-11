@@ -485,3 +485,11 @@ bobmods.lib.tech.add_prerequisite('rocket-booster-2', 'sb-chlorine-processing-4'
 seablock.lib.set_recipe_category('desert-garden-cultivating-b', 'desert-farming')
 seablock.lib.set_recipe_category('swamp-garden-cultivating-b', 'swamp-farming')
 seablock.lib.set_recipe_category('temperate-garden-cultivating-b', 'temperate-farming')
+
+-- Use T2 farms for T2 farming recipes
+seablock.lib.set_recipe_category('desert-4', 'advanced-desert-farming')
+seablock.lib.set_recipe_category('desert-5', 'advanced-desert-farming')
+seablock.lib.set_recipe_category('swamp-4', 'advanced-swamp-farming')
+seablock.lib.set_recipe_category('swamp-5', 'advanced-swamp-farming')
+seablock.lib.set_recipe_category('temperate-4', 'advanced-temperate-farming')
+seablock.lib.set_recipe_category('temperate-5', 'advanced-temperate-farming')
