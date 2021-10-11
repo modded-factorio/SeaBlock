@@ -10,6 +10,7 @@ Date: ???
   Bugfixes:
     - Recipes for Bob's pollution cleaning and pollution producing boards were being hidden even if Circuit Processing was disabled #215
     - Recipes for Lithium and Lithium perchlorate were showing Bob's electroliser in FNEI #224
+    - Garden duplication recipes were requiring T2 farms #225
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.7
 Date: 11.09.2021

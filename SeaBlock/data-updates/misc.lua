@@ -480,3 +480,8 @@ bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'solid-sodium-chl
 bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'solid-sodium-perchlorate')
 bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'liquid-perchloric-acid')
 bobmods.lib.tech.add_prerequisite('rocket-booster-2', 'sb-chlorine-processing-4')
+
+-- Use basic farms for garden duplication
+seablock.lib.set_recipe_category('desert-garden-cultivating-b', 'desert-farming')
+seablock.lib.set_recipe_category('swamp-garden-cultivating-b', 'swamp-farming')
+seablock.lib.set_recipe_category('temperate-garden-cultivating-b', 'temperate-farming')
