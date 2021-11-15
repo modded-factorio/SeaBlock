@@ -9,6 +9,7 @@ Date: ???
     - Hydrazine takes Blue metal catalyst rather than Green #219
     - T2 farming recipes now require T2 farms #226
     - Adjusted farming tech prerequisites #226
+    - Other minor tweaks #220
   Bugfixes:
     - Recipes for Bob's pollution cleaning and pollution producing boards were being hidden even if Circuit Processing was disabled #215
     - Recipes for Lithium and Lithium perchlorate were showing Bob's electroliser in FNEI #224

@@ -60,6 +60,7 @@ if bobmods.lib.tech.has_recipe_unlock('angels-tin-smelting-1', 'basic-tinned-cop
 end
 
 seablock.lib.set_recipe_category('liquid-fish-atmosphere', 'chemistry')
+bobmods.lib.tech.remove_prerequisite('bio-refugium-fish-1', 'water-treatment-3')
 
 seablock.lib.hide_technology('pumpjack')
 
