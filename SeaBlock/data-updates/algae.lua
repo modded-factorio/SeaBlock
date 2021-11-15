@@ -40,6 +40,9 @@ bobmods.lib.tech.remove_science_pack('bio-processing-blue', 'chemical-science-pa
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-blue', 'algae-farm-4')
 seablock.lib.set_recipe_category('algae-blue', 'bio-processing-2')
 
+-- Red algae. Make Calcium carbonate in an assembling machine, not a liquefier
+seablock.lib.set_recipe_category('solid-calcium-carbonate', 'advanced-crafting')
+
 -- Alien bacteria
 seablock.lib.set_recipe_category('alien-bacteria', 'bio-processing-3')
 
