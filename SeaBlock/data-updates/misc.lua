@@ -147,6 +147,13 @@ end
 
 seablock.lib.hide_technology('plastics')
 
+seablock.lib.hide('inserter', 'steam-inserter')
+seablock.lib.hide('mining-drill', 'burner-mining-drill')
+seablock.lib.hide('mining-drill', 'electric-mining-drill')
+seablock.lib.hide('mining-drill', 'pumpjack')
+seablock.lib.hide('storage-tank', 'bob-overflow-valve')
+seablock.lib.hide('storage-tank', 'bob-valve')
+seablock.lib.hide('storage-tank', 'bob-topup-valve')
 
 -- Buff Lime filtering
 seablock.lib.substingredient('filter-lime', 'solid-lime', nil, 1)
@@ -231,6 +238,8 @@ for _,v in pairs({
     bobmods.lib.tech.add_new_science_pack(v, 'chemical-science-pack', 1)
   end
 end
+
+bobmods.lib.tech.add_prerequisite('polishing', 'chemical-science-pack')
 
 for _,v in pairs({
   'angels-nitinol-smelting-1',

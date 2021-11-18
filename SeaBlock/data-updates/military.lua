@@ -23,6 +23,7 @@ local mil_items = {
   {type = 'electric-turret', name = 'bob-plasma-turret-3'},
   {type = 'electric-turret', name = 'bob-plasma-turret-4'},
   {type = 'electric-turret', name = 'bob-plasma-turret-5'},
+  {type = 'fluid-turret', name = 'flamethrower-turret'},
   {type = 'fluid-wagon', name = 'bob-armoured-fluid-wagon-2'},
   {type = 'fluid-wagon', name = 'bob-armoured-fluid-wagon'},
   {type = 'fluid', name = 'alien-acid'},
@@ -130,7 +131,10 @@ local mil_items = {
   {type = 'item', name = 'uranium-bullet-projectile'},
   {type = 'item', name = 'uranium-bullet'},
   {type = 'lab', name = 'lab-alien'},
+  {type = 'land-mine', name = 'distractor-mine'},
   {type = 'land-mine', name = 'land-mine'},
+  {type = 'land-mine', name = 'poison-mine'},
+  {type = 'land-mine', name = 'slowdown-mine'},
   {type = 'locomotive', name = 'bob-armoured-locomotive-2'},
   {type = 'locomotive', name = 'bob-armoured-locomotive'},
   {type = 'tool', name = 'alien-science-pack-blue'},
@@ -141,6 +145,7 @@ local mil_items = {
   {type = 'tool', name = 'alien-science-pack-yellow'},
   {type = 'tool', name = 'alien-science-pack'},
   {type = 'tool', name = 'science-pack-gold'},
+  {type = 'unit', name = 'bob-robot-flamethrower-drone'},
   {type = 'unit', name = 'bob-robot-gun-drone'},
   {type = 'unit', name = 'bob-robot-laser-drone'},
   {type = 'unit', name = 'bob-robot-plasma-drone'}
@@ -797,4 +802,16 @@ if mods['bobwarfare'] then
   
   -- Remove prerequisite as gunmetal smelting tech won't exist as we have disabled the trigger
   bobmods.lib.tech.remove_prerequisite('bob-armor-making-3', 'angels-gunmetal-smelting-1')
+
+  -- Remove dependencies on Alien Research
+  bobmods.lib.tech.remove_prerequisite('bob-power-armor-3', 'alien-research')
+end
+
+if mods['bobequipment'] then
+  -- Remove dependencies on Alien Research
+  bobmods.lib.tech.remove_prerequisite('bob-energy-shield-equipment-4', 'alien-research')
+  bobmods.lib.tech.remove_prerequisite('bob-battery-equipment-4', 'alien-research')
+  bobmods.lib.tech.remove_prerequisite('fusion-reactor-equipment-2', 'alien-research')
+
+  bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-2', 'utility-science-pack')
 end

@@ -72,6 +72,12 @@ for _, v in pairs(logisticstechs) do
   end
 end
 
+if mods['angelsaddons-storage'] then
+  bobmods.lib.tech.replace_prerequisite('logistic-silos', 'logistic-system', 'logistic-system-3')
+  bobmods.lib.tech.replace_prerequisite('angels-logistic-warehouses', 'logistic-system', 'logistic-silos')
+end
+bobmods.lib.tech.add_prerequisite('logistic-system-2', 'utility-science-pack')
+
 -- No logistics chest at green science level.
 local function revertchests(tech)
   local neweffects = {
