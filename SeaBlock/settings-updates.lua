@@ -27,6 +27,7 @@ function seablock.overwrite_setting(setting_type, setting_name, value)
   end
 end
 
+require "settings-updates/angelsbioprocessing"
 require "settings-updates/angelsindustries"
 require "settings-updates/angelspetrochem"
 require "settings-updates/angelsrefining"
