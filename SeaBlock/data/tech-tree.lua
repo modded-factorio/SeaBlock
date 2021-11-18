@@ -4,14 +4,15 @@ seablock.lib.moveeffect('desert-garden-cultivating-b', 'bio-desert-farm', 'bio-f
 seablock.lib.moveeffect('swamp-garden-cultivating-b', 'bio-swamp-farm', 'bio-farm-alien')
 seablock.lib.moveeffect('temperate-garden-cultivating-b', 'bio-temperate-farm', 'bio-farm-alien')
 
-bobmods.lib.tech.remove_prerequisite('bio-desert-farm', 'bio-farm-alien')
-bobmods.lib.tech.remove_prerequisite('bio-swamp-farm', 'bio-farm-alien')
-bobmods.lib.tech.remove_prerequisite('bio-temperate-farm', 'bio-farm-alien')
+-- Swap environment and T2 Farming techs
 
--- Move storage tanks so bob's techs can be removed
-local i = seablock.lib.findeffectidx(data.raw.technology['angels-fluid-control'].effects, 'angels-storage-tank-3')
-seablock.lib.moveeffect('bob-small-inline-storage-tank', 'electrolysis-1', 'angels-fluid-control', i)
-seablock.lib.moveeffect('bob-small-storage-tank', 'electrolysis-1', 'angels-fluid-control', i + 1)
+bobmods.lib.tech.replace_prerequisite('bio-desert-farm', 'bio-desert-farming-2', 'bio-desert-farming-1')
+bobmods.lib.tech.replace_prerequisite('bio-swamp-farm', 'bio-swamp-farming-2', 'bio-swamp-farming-1')
+bobmods.lib.tech.replace_prerequisite('bio-temperate-farm', 'bio-temperate-farming-2', 'bio-temperate-farming-1')
+
+bobmods.lib.tech.replace_prerequisite('bio-desert-farming-2', 'bio-desert-farming-1', 'bio-desert-farm')
+bobmods.lib.tech.replace_prerequisite('bio-swamp-farming-2', 'bio-swamp-farming-1', 'bio-swamp-farm')
+bobmods.lib.tech.replace_prerequisite('bio-temperate-farming-2', 'bio-temperate-farming-1', 'bio-temperate-farm')
 
 -- Add bio science to techs
 -- Don't add to techs on the path to Alien Farming. This is where garden / bio token duplication is unlocked
@@ -34,7 +35,9 @@ bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-shard-1', 'token-b
 bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-shard-2', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-full', 'token-bio', 1)
 bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
-if mods['ScienceCostTweakerM'] then
+bobmods.lib.tech.add_new_science_pack('bio-plastic-1', 'token-bio', 1)
+bobmods.lib.tech.add_new_science_pack('bio-plastic-2', 'token-bio', 1)
+if mods['SpaceMod'] then
   bobmods.lib.tech.add_new_science_pack('habitation', 'token-bio', 1)
   bobmods.lib.tech.add_new_science_pack('life-support-systems', 'token-bio', 1)
 end
@@ -108,7 +111,7 @@ if bobmods.lib.tech.has_recipe_unlock('angels-iron-smelting-2', 'molten-iron-sme
 else
   seablock.lib.moveeffect('molten-iron-smelting-2', 'angels-iron-casting-2', 'angels-manganese-smelting-1')
 end
-data.raw.recipe['molten-iron-smelting-2'].category = 'induction-smelting'
+seablock.lib.set_recipe_category('molten-iron-smelting-2', 'induction-smelting')
 
 -- T2:
 bobmods.lib.tech.remove_science_pack('angels-manganese-smelting-2', 'chemical-science-pack')
@@ -186,6 +189,7 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('bio-arboretum-swamp-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-processing-alien-2', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-refugium-hatchery', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-fermentation', 'sct-bio-science-pack')
 end
 
 -- Logistics / Green
@@ -227,15 +231,12 @@ end
 
 -- Utility / Yellow
 bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-science-pack')
-if mods['bobequipment'] then
-  bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'utility-science-pack')
-  bobmods.lib.tech.add_prerequisite('bob-battery-equipment-6', 'utility-science-pack')
-  bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-5', 'utility-science-pack')
-end
 bobmods.lib.tech.add_prerequisite('angels-nuclear-fuel', 'utility-science-pack')
 if mods['bobwarfare'] then
   bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
 end
+bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'utility-science-pack')
+bobmods.lib.tech.add_prerequisite('power-armor-mk2', 'utility-science-pack')
 
 -- Space / White
 if mods['bobequipment'] then
@@ -261,3 +262,12 @@ seablock.lib.add_recipe_unlock('military', 'radar', 5)
 
 bobmods.lib.tech.add_prerequisite('gun-turret', 'military')
 bobmods.lib.tech.add_prerequisite('stone-wall', 'military')
+
+bobmods.lib.tech.add_prerequisite('worker-robots-speed-1', 'bob-robotics-2')
+bobmods.lib.tech.add_prerequisite('worker-robots-storage-1', 'bob-robotics-2')
+
+if mods['bobequipment'] then
+  bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'power-armor-mk2')
+  bobmods.lib.tech.add_prerequisite('bob-battery-equipment-6', 'power-armor-mk2')
+  bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-5', 'power-armor-mk2')
+end

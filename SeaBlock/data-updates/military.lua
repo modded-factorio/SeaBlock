@@ -23,6 +23,7 @@ local mil_items = {
   {type = 'electric-turret', name = 'bob-plasma-turret-3'},
   {type = 'electric-turret', name = 'bob-plasma-turret-4'},
   {type = 'electric-turret', name = 'bob-plasma-turret-5'},
+  {type = 'fluid-turret', name = 'flamethrower-turret'},
   {type = 'fluid-wagon', name = 'bob-armoured-fluid-wagon-2'},
   {type = 'fluid-wagon', name = 'bob-armoured-fluid-wagon'},
   {type = 'fluid', name = 'alien-acid'},
@@ -130,7 +131,10 @@ local mil_items = {
   {type = 'item', name = 'uranium-bullet-projectile'},
   {type = 'item', name = 'uranium-bullet'},
   {type = 'lab', name = 'lab-alien'},
+  {type = 'land-mine', name = 'distractor-mine'},
   {type = 'land-mine', name = 'land-mine'},
+  {type = 'land-mine', name = 'poison-mine'},
+  {type = 'land-mine', name = 'slowdown-mine'},
   {type = 'locomotive', name = 'bob-armoured-locomotive-2'},
   {type = 'locomotive', name = 'bob-armoured-locomotive'},
   {type = 'tool', name = 'alien-science-pack-blue'},
@@ -141,6 +145,7 @@ local mil_items = {
   {type = 'tool', name = 'alien-science-pack-yellow'},
   {type = 'tool', name = 'alien-science-pack'},
   {type = 'tool', name = 'science-pack-gold'},
+  {type = 'unit', name = 'bob-robot-flamethrower-drone'},
   {type = 'unit', name = 'bob-robot-gun-drone'},
   {type = 'unit', name = 'bob-robot-laser-drone'},
   {type = 'unit', name = 'bob-robot-plasma-drone'}
@@ -457,12 +462,6 @@ local mil_recipes = {
   'poison-capsule',
   'poison-mine',
   'poison-rocket-warhead',
-  'pollution-clean-processor',
-  'pollution-clean-processor-2',
-  'pollution-clean-processor-3',
-  'pollution-create-processor',
-  'pollution-create-processor-2',
-  'pollution-create-processor-3',
   'rifle',
   'robot-brain-combat',
   'robot-brain-combat-2',
@@ -754,18 +753,18 @@ if mods['bobwarfare'] then
   -- Move Plasma turrets later
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-1', 'chemical-science-pack', 1)
   bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'military-3')
-  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'battery-2')
-  seablock.lib.substingredient('bob-plasma-turret-1', 'battery', 'lithium-ion-battery', nil)
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'angels-cobalt-steel-smelting-1')
   seablock.lib.substingredient('bob-plasma-turret-1', 'electronic-circuit', 'advanced-circuit', 40)
-  seablock.lib.substingredient('bob-plasma-turret-1', 'steel-plate', 'invar-alloy', nil)
+  seablock.lib.substingredient('bob-plasma-turret-1', 'steel-plate', 'cobalt-steel-alloy', nil)
 
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-2', 'chemical-science-pack', 1)
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-2', 'production-science-pack', 1)
   bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'military-4')
-  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'battery-3')
-  seablock.lib.substingredient('bob-plasma-turret-2', 'battery', 'silver-zinc-battery', nil)
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'battery-2')
+  bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-2', 'angels-titanium-smelting-1')
+  seablock.lib.substingredient('bob-plasma-turret-2', 'battery', 'lithium-ion-battery', nil)
   seablock.lib.substingredient('bob-plasma-turret-2', 'advanced-circuit', 'processing-unit', 40)
-  seablock.lib.substingredient('bob-plasma-turret-2', 'steel-plate', 'cobalt-steel-alloy', nil)
+  seablock.lib.substingredient('bob-plasma-turret-2', 'steel-plate', 'titanium-plate', nil)
  
   -- Make Military 4 take Purple science rather than Yellow science
   bobmods.lib.tech.remove_science_pack('military-4', 'utility-science-pack')
@@ -803,4 +802,16 @@ if mods['bobwarfare'] then
   
   -- Remove prerequisite as gunmetal smelting tech won't exist as we have disabled the trigger
   bobmods.lib.tech.remove_prerequisite('bob-armor-making-3', 'angels-gunmetal-smelting-1')
+
+  -- Remove dependencies on Alien Research
+  bobmods.lib.tech.remove_prerequisite('bob-power-armor-3', 'alien-research')
+end
+
+if mods['bobequipment'] then
+  -- Remove dependencies on Alien Research
+  bobmods.lib.tech.remove_prerequisite('bob-energy-shield-equipment-4', 'alien-research')
+  bobmods.lib.tech.remove_prerequisite('bob-battery-equipment-4', 'alien-research')
+  bobmods.lib.tech.remove_prerequisite('fusion-reactor-equipment-2', 'alien-research')
+
+  bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-2', 'utility-science-pack')
 end

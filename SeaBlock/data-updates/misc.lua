@@ -58,9 +58,8 @@ if bobmods.lib.tech.has_recipe_unlock('angels-tin-smelting-1', 'basic-tinned-cop
   seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
 end
 
-if data.raw.recipe['liquid-fish-atmosphere'] then
-  data.raw.recipe['liquid-fish-atmosphere'].category = 'chemistry'
-end
+seablock.lib.set_recipe_category('liquid-fish-atmosphere', 'chemistry')
+bobmods.lib.tech.remove_prerequisite('bio-refugium-fish-1', 'water-treatment-3')
 
 seablock.lib.hide_technology('pumpjack')
 
@@ -144,6 +143,13 @@ end
 
 seablock.lib.hide_technology('plastics')
 
+seablock.lib.hide('inserter', 'steam-inserter')
+seablock.lib.hide('mining-drill', 'burner-mining-drill')
+seablock.lib.hide('mining-drill', 'electric-mining-drill')
+seablock.lib.hide('mining-drill', 'pumpjack')
+seablock.lib.hide('storage-tank', 'bob-overflow-valve')
+seablock.lib.hide('storage-tank', 'bob-valve')
+seablock.lib.hide('storage-tank', 'bob-topup-valve')
 
 -- Buff Lime filtering
 seablock.lib.substingredient('filter-lime', 'solid-lime', nil, 1)
@@ -228,6 +234,8 @@ for _,v in pairs({
     bobmods.lib.tech.add_new_science_pack(v, 'chemical-science-pack', 1)
   end
 end
+
+bobmods.lib.tech.add_prerequisite('polishing', 'chemical-science-pack')
 
 for _,v in pairs({
   'angels-nitinol-smelting-1',
@@ -461,8 +469,38 @@ bobmods.lib.recipe.set_ingredient('cement-mixture-2', {'solid-lime', 4})
 bobmods.lib.recipe.set_result('cement-mixture-2', {'solid-cement', 4})
 bobmods.lib.recipe.set_energy_required('cement-mixture-2', 16)
 
+-- Make Acetic Acid take red metal catalyst rather than green metal catalyst
+seablock.lib.substingredient('liquid-acetic-acid-catalyst', 'catalyst-metal-green', 'catalyst-metal-red', nil)
+
+-- Make Hydrazine take blue metal catalyst rather than green metal catalyst
+seablock.lib.substingredient('gas-hydrazine', 'catalyst-metal-green', 'catalyst-metal-blue', nil)
+
 -- Add yellow metal catalyst to Dinitrogen tetroxide gas recipe
 bobmods.lib.recipe.set_ingredient('gas-dinitrogen-tetroxide', {'catalyst-metal-yellow', 1})
 bobmods.lib.recipe.set_result('gas-dinitrogen-tetroxide', {'catalyst-metal-carrier', 1})
-data.raw.recipe['gas-dinitrogen-tetroxide'].category = 'chemistry'
-data.raw.recipe['gas-dinitrogen-tetroxide'].localised_name = {'fluid-name.gas-dinitrogen-tetroxide'}
+seablock.lib.set_recipe_category('gas-dinitrogen-tetroxide', 'chemistry')
+data.raw.recipe['gas-dinitrogen-tetroxide'].main_product = 'gas-dinitrogen-tetroxide'
+
+-- Chlorate recipes moved to Chlorine Processing 4
+bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'solid-sodium-chlorate')
+bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'solid-sodium-perchlorate')
+bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'liquid-perchloric-acid')
+bobmods.lib.tech.add_prerequisite('rocket-booster-2', 'sb-chlorine-processing-4')
+
+-- Use basic farms for garden duplication
+seablock.lib.set_recipe_category('desert-garden-cultivating-b', 'desert-farming')
+seablock.lib.set_recipe_category('swamp-garden-cultivating-b', 'swamp-farming')
+seablock.lib.set_recipe_category('temperate-garden-cultivating-b', 'temperate-farming')
+
+-- Use T2 farms for T2 farming recipes
+seablock.lib.set_recipe_category('desert-4', 'advanced-desert-farming')
+seablock.lib.set_recipe_category('desert-5', 'advanced-desert-farming')
+seablock.lib.set_recipe_category('swamp-4', 'advanced-swamp-farming')
+seablock.lib.set_recipe_category('swamp-5', 'advanced-swamp-farming')
+seablock.lib.set_recipe_category('temperate-4', 'advanced-temperate-farming')
+seablock.lib.set_recipe_category('temperate-5', 'advanced-temperate-farming')
+
+-- Reduce tier of heat exchanger
+if data.raw.technology['bob-heat-exchanger-1'] then
+  bobmods.lib.tech.remove_science_pack('bob-heat-exchanger-1', 'chemical-science-pack')
+end

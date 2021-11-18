@@ -5,7 +5,7 @@ bobmods.lib.tech.remove_prerequisite('grinding', 'chemical-processing-1')
 bobmods.lib.tech.remove_prerequisite('cobalt-processing', 'electrolysis-1')
 bobmods.lib.tech.remove_prerequisite('lithium-processing', 'electrolysis-1')
 
-bobmods.lib.tech.replace_prerequisite('lithium-processing', 'chemical-processing-1', 'chlorine-processing-3')
+bobmods.lib.tech.replace_prerequisite('lithium-processing', 'chemical-processing-1', 'sb-chlorine-processing-4')
 bobmods.lib.tech.add_new_science_pack('lithium-processing', 'chemical-science-pack', 1)
 
 bobmods.lib.tech.remove_prerequisite('plastics', 'electrolysis-2')

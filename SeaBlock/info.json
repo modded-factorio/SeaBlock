@@ -1,6 +1,6 @@
 {
   "name": "SeaBlock",
-  "version": "0.5.7",
+  "version": "0.5.8",
   "factorio_version": "1.1",
   "title": "Sea Block",
   "author": "Trainwreck",
@@ -20,6 +20,7 @@
     "(?) KS_Power_quickfix",
     "? LandfillPainting",
     "? ScienceCostTweakerM >= 1.1.6",
-    "? SpaceMod"
+    "? SpaceMod",
+    "(?) Companion_Drones"
   ]
 }
