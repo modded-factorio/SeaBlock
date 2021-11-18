@@ -18,6 +18,7 @@ Date: ???
     - Recipes for Lithium and Lithium perchlorate were showing Bob's electroliser in FNEI #224
     - Garden duplication recipes were requiring T2 farms #225
     - Calcium carbonate is now made in an Assembling machine rather than a Liquifier #220
+    - Heat unusable at green science #233
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.7
 Date: 11.09.2021

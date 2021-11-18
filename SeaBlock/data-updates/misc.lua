@@ -503,3 +503,8 @@ seablock.lib.set_recipe_category('swamp-4', 'advanced-swamp-farming')
 seablock.lib.set_recipe_category('swamp-5', 'advanced-swamp-farming')
 seablock.lib.set_recipe_category('temperate-4', 'advanced-temperate-farming')
 seablock.lib.set_recipe_category('temperate-5', 'advanced-temperate-farming')
+
+-- Reduce tier of heat exchanger
+if data.raw.technology['bob-heat-exchanger-1'] then
+  bobmods.lib.tech.remove_science_pack('bob-heat-exchanger-1', 'chemical-science-pack')
+end
