@@ -78,7 +78,7 @@ local knowningredients = {
 }
 
 bobmods.lib.recipe.enabled('angels-flare-stack', true)
-data.raw.technology['angels-flare-stack'].enabled = false
+seablock.lib.hide_technology('angels-flare-stack')
 for k,v in pairs(knowningredients) do
   local recipe = data.raw.recipe[k]
   for ek, ev in pairs(recipe.normal or {}) do
@@ -112,7 +112,7 @@ if data.raw.technology['sct-automation-science-pack'] then
     ingredients = {},
     time = 5
   }
-  data.raw.technology['sb-startup4'].enabled = false
+  seablock.lib.hide_technology('sb-startup4')
 end
 
 local movedrecipes = table.deepcopy(seablock.startup_recipes)

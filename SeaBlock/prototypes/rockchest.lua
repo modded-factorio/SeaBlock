@@ -17,7 +17,7 @@ data:extend({
     corpse = "small-remnants",
     collision_box = {{0.0, 0.0}, {0.35, 0.35}},
     selection_box = {{-0.5, -0.5}, {0.5, 0.5}},
-    inventory_size = 40,
+    inventory_size = 60,
     open_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
     close_sound = { filename = "__base__/sound/deconstruct-bricks.ogg" },
     vehicle_impact_sound =  { filename = "__base__/sound/car-stone-impact.ogg", volume = 1.0 },

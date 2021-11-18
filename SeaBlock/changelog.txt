@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.7
-Date: ???
+Date: 11.09.2021
   Changes:
     - Disabled Resin to Rubber recipe
     - Reblanced Insulated wire recipe to increase rubber consumption
@@ -10,6 +10,8 @@ Date: ???
     - Rebalanced Cement recipes
     - Added Brass and Invar smelting as prerequisites for Military science (with SCT)
     - Hid overwritten settings from Bob's Logistics
+    - Standardized concrete walk speed bonuses
+    - Moved Dinitrogen tetroxide gas recipe to chemical plant and added yellow metal catalyst
   Bugfixes:
     - Fixed startup error with Mad Clown's mods enabled
     - Hid gunmetal item, recipes, and tech

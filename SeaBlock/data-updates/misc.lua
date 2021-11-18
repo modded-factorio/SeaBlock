@@ -32,7 +32,7 @@ end
 movealleffects('basic-chemistry-2', 'basic-chemistry')
 movealleffects('basic-chemistry-3', 'basic-chemistry-2')
 data.raw.technology['basic-chemistry-2'].unit = data.raw.technology['basic-chemistry-3'].unit
-bobmods.lib.recipe.enabled('basic-chemistry-3', false)
+seablock.lib.hide_technology('basic-chemistry-3')
 
 -- Make Basic Chemistry depend on Wood Processing 2. Required for Charcoal > Carbon Dioxide
 bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
@@ -376,21 +376,41 @@ item = data.raw.tile['concrete']
 if item then
   item.minable['result'] = 'concrete-brick'
   item.placeable_by = {item = 'concrete-brick', count = 1}
+  item.walking_speed_modifier = 1.4
 end
 item = data.raw.tile['refined-concrete']
 if item then
   item.minable['result'] = 'reinforced-concrete-brick'
   item.placeable_by = {item = 'reinforced-concrete-brick', count = 1}
+  item.walking_speed_modifier = 1.55
 end
 item = data.raw.tile['tile-concrete-brick']
 if item then
   item.minable['result'] = 'concrete'
   item.placeable_by = {item = 'concrete', count = 1}
+  item.walking_speed_modifier = 1.4
 end
 item = data.raw.tile['tile-reinforced-concrete-brick']
 if item then
   item.minable['result'] = 'refined-concrete'
   item.placeable_by = {item = 'refined-concrete', count = 1}
+  item.walking_speed_modifier = 1.55
+end
+item = data.raw.tile['hazard-concrete-left']
+if item then
+  item.walking_speed_modifier = 1.4
+end
+item = data.raw.tile['hazard-concrete-right']
+if item then
+  item.walking_speed_modifier = 1.4
+end
+item = data.raw.tile['refined-hazard-concrete-left']
+if item then
+  item.walking_speed_modifier = 1.55
+end
+item = data.raw.tile['refined-hazard-concrete-right']
+if item then
+  item.walking_speed_modifier = 1.55
 end
 
 -- Other prerequisites
@@ -440,3 +460,9 @@ bobmods.lib.recipe.replace_ingredient('cement-mixture-2', 'quartz', 'silicon-pow
 bobmods.lib.recipe.set_ingredient('cement-mixture-2', {'solid-lime', 4})
 bobmods.lib.recipe.set_result('cement-mixture-2', {'solid-cement', 4})
 bobmods.lib.recipe.set_energy_required('cement-mixture-2', 16)
+
+-- Add yellow metal catalyst to Dinitrogen tetroxide gas recipe
+bobmods.lib.recipe.set_ingredient('gas-dinitrogen-tetroxide', {'catalyst-metal-yellow', 1})
+bobmods.lib.recipe.set_result('gas-dinitrogen-tetroxide', {'catalyst-metal-carrier', 1})
+data.raw.recipe['gas-dinitrogen-tetroxide'].category = 'chemistry'
+data.raw.recipe['gas-dinitrogen-tetroxide'].localised_name = {'fluid-name.gas-dinitrogen-tetroxide'}
