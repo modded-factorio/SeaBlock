@@ -7,7 +7,7 @@ Date: ???
     - Adjusted Plasma turret recipes #218
     - Acetic acid takes Red metal catalyst rather than Green #219
     - Hydrazine takes Blue metal catalyst rather than Green #219
-    - T2 farming recipes now require T2 farms #226
+    - Advanced farming recipes now require specialized farms #226
     - Adjusted farming tech prerequisites #226
     - Other minor tweaks #220
     - Science Cost Tweaker: #232
