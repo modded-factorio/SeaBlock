@@ -1,51 +1,8 @@
--- Move garden duplication recipes to a tech that doesn't require bio science
-
-seablock.lib.moveeffect('desert-garden-cultivating-b', 'bio-desert-farm', 'bio-farm-alien')
-seablock.lib.moveeffect('swamp-garden-cultivating-b', 'bio-swamp-farm', 'bio-farm-alien')
-seablock.lib.moveeffect('temperate-garden-cultivating-b', 'bio-temperate-farm', 'bio-farm-alien')
-
--- Swap environment and T2 Farming techs
-
-bobmods.lib.tech.replace_prerequisite('bio-desert-farm', 'bio-desert-farming-2', 'bio-desert-farming-1')
-bobmods.lib.tech.replace_prerequisite('bio-swamp-farm', 'bio-swamp-farming-2', 'bio-swamp-farming-1')
-bobmods.lib.tech.replace_prerequisite('bio-temperate-farm', 'bio-temperate-farming-2', 'bio-temperate-farming-1')
-
-bobmods.lib.tech.replace_prerequisite('bio-desert-farming-2', 'bio-desert-farming-1', 'bio-desert-farm')
-bobmods.lib.tech.replace_prerequisite('bio-swamp-farming-2', 'bio-swamp-farming-1', 'bio-swamp-farm')
-bobmods.lib.tech.replace_prerequisite('bio-temperate-farming-2', 'bio-temperate-farming-1', 'bio-temperate-farm')
-
 -- Add bio science to techs
--- Don't add to techs on the path to Alien Farming. This is where garden / bio token duplication is unlocked
--- Also need Fish refugium 2 available
-bobmods.lib.tech.add_new_science_pack('bio-refugium-biter-1', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-refugium-biter-2', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-refugium-biter-3', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-1', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-2', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-3', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-refugium-puffer-4', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-pressing-1', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-pressing-2', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-1', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-pressing-fish-2', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-refugium-butchery-2', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-processing-alien-2', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-processing-alien-3', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-shard-1', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-shard-2', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-processing-crystal-full', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-fermentation', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-plastic-1', 'token-bio', 1)
-bobmods.lib.tech.add_new_science_pack('bio-plastic-2', 'token-bio', 1)
 if mods['SpaceMod'] then
   bobmods.lib.tech.add_new_science_pack('habitation', 'token-bio', 1)
   bobmods.lib.tech.add_new_science_pack('life-support-systems', 'token-bio', 1)
 end
-
--- At least one of these is required to feed fish
-data.raw.technology['bio-desert-farming-1'].ignore_tech_cost_multiplier = true
-data.raw.technology['bio-swamp-farming-1'].ignore_tech_cost_multiplier = true
-data.raw.technology['bio-temperate-farming-1'].ignore_tech_cost_multiplier = true
 
 -- Remove empty tech Thermal water processing
 bobmods.lib.tech.remove_prerequisite('water-treatment-4', 'thermal-water-processing')
