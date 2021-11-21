@@ -19,6 +19,7 @@ Date: ???
     - Garden duplication recipes were requiring T2 farms #225
     - Calcium carbonate is now made in an Assembling machine rather than a Liquifier #220
     - Heat unusable at green science #233
+    - Bob's Vehicle Equipment mod techs required disabled science packs #231
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.7
 Date: 11.09.2021
