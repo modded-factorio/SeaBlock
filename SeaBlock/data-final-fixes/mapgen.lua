@@ -2,11 +2,13 @@
 for k,v in pairs(data.raw.resource) do
   v.autoplace = nil
 end
+
 -- No spawners
 for k,v in pairs(data.raw['unit-spawner']) do
   v.autoplace = nil
   v.control = nil
 end
+
 -- No trees
 for k,v in pairs(data.raw.tree) do
   if k ~= 'temperate-garden' and k ~= 'desert-garden' and k ~= 'swamp-garden' and
@@ -16,20 +18,26 @@ for k,v in pairs(data.raw.tree) do
     seablock.lib.add_flag('tree', v.name, 'not-deconstructable')
   end
 end
+
 -- No rocks
 for k,v in pairs(data.raw['simple-entity']) do
   v.autoplace = nil
   seablock.lib.add_flag('simple-entity', v.name, 'not-deconstructable')
 end
 
-local keepcontrols = {}
-for _,v in pairs(data.raw) do
-  for _,v2 in pairs(v) do
-    if v2.autoplace and v2.autoplace.control then
-      keepcontrols[v2.autoplace.control] = true
-    end
+-- Keep worms and Alien Biomes controls (to prevent crash)
+local keepcontrols = {
+  ['cold'] = true,
+  ['hot']  = true
+}
+
+local turrets = data.raw['turret']
+for turret_name, turret in pairs(turrets) do
+  if turret.autoplace and turret.autoplace.control then
+    keepcontrols[turret.autoplace.control] = true
   end
 end
+
 local controls = data.raw['autoplace-control']
 for k,v in pairs(controls) do
   if k ~= "enemy-base" and not keepcontrols[k] then
