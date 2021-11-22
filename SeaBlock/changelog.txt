@@ -5,8 +5,6 @@ Date: ???
     - Added Companion Drones compatibility #108
     - Wood bricks now have a fuel value of 18MJ #216
     - Adjusted Plasma turret recipes #218
-    - Acetic acid takes Red metal catalyst rather than Green #219
-    - Hydrazine takes Blue metal catalyst rather than Green #219
     - Advanced farming recipes now require specialized farms #226
     - Adjusted farming tech prerequisites #226
     - Other minor tweaks #220
