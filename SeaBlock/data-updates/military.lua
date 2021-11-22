@@ -900,6 +900,10 @@ for _,v in pairs(resistances) do
 end
 
 if mods['bobwarfare'] then
+  -- Make sniper turrets tech more expensive
+  seablock.lib.set_technology_unit_count('bob-sniper-turrets-1', 100)
+  seablock.lib.set_technology_unit_count('bob-sniper-turrets-2', 100)
+
   -- Move Plasma turrets later
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-1', 'chemical-science-pack', 1)
   bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'military-3')

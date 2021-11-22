@@ -339,6 +339,22 @@ function seablock.lib.set_recipe_category(recipe_name, category)
   end
 end
 
+function seablock.lib.set_technology_unit_count(technology_name, count)
+  local technology = data.raw.technology[technology_name]
+  if technology then
+    if (not technology.normal) and (not technology.expensive) then
+      technology.unit.count = count
+    else
+      if technology.normal then
+        technology.normal.unit.count = count
+      end
+      if technology.expensive then
+        technology.expensive.unit.count = count
+      end
+    end
+  end
+end
+
 --[[
   Modified from code copied from Artisanal Reskins: Library v1.1.2
   With permission from Kira

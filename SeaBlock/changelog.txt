@@ -11,6 +11,7 @@ Date: ???
     - Science Cost Tweaker: #232
       - All green science intermediates are craftable in an Electronics assembly machine
       - Removed Sulfur lightsource from blue science
+    - Rebalanced Sniper turret tech cost #236
   Bugfixes:
     - Recipes for Bob's pollution cleaning and pollution producing boards were being hidden even if Circuit Processing was disabled #215
     - Recipes for Lithium and Lithium perchlorate were showing Bob's electroliser in FNEI #224
