@@ -141,7 +141,7 @@ data:extend({
   name = "sb-chlorine-processing-4",
   localised_name = {'', {'technology-name.chlorine-processing'}, ' 4'},
   localised_description = {'technology-description.chlorine-processing'},
-  icons = angelsmods.functions.create_gas_tech_icon("lll"),
+  icons = angelsmods.functions.create_gas_tech_icon("ClClCl"),
   prerequisites = {
     "chlorine-processing-3",
     "sodium-processing",
