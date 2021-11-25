@@ -441,32 +441,6 @@ data:extend({
     name = 'swamp-garden-noise'
   }
 })
---[[
-autoplace = data.raw.tile['water'].autoplace
-for _,peak in pairs(autoplace.peaks) do
-  print("")
-  for k,v in pairs(peak) do
-    print(k .. " = " .. v)
-  end
-end
-]]--
---[[
-local function search(t, path, s)
-  for k,v in pairs(t) do
-    p = path .. "." .. k
-    if string.find(k, s) then
-      print(p)
-    end
-    if type(v) == 'string' and string.find(v, s) then
-      print(p .. '=' .. v)
-    end
-    if type(v) == 'table' then
-      search(v, p, s)
-    end
-  end
-end
-search(data.raw, "data.raw", "autoplace")
-]]--
 
 local function make_basis_noise_function(seed0,seed1,outscale0,inscale0)
   outscale0 = outscale0 or 1

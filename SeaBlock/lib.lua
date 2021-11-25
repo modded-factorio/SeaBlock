@@ -291,6 +291,10 @@ function seablock.lib.hide(type_name, name)
         if not seablock.lib.tablefind(item.flags, 'hidden') then
           table.insert(item.flags, 'hidden')
         end
+        
+        if type_name == 'item' then
+          table.insert(item.flags, 'hide-from-bonus-gui')
+        end
       end
     end
   end
@@ -336,6 +340,22 @@ function seablock.lib.set_recipe_category(recipe_name, category)
   local recipe = data.raw.recipe[recipe_name]
   if recipe then
     recipe.category = category
+  end
+end
+
+function seablock.lib.set_technology_unit_count(technology_name, count)
+  local technology = data.raw.technology[technology_name]
+  if technology then
+    if (not technology.normal) and (not technology.expensive) then
+      technology.unit.count = count
+    else
+      if technology.normal then
+        technology.normal.unit.count = count
+      end
+      if technology.expensive then
+        technology.expensive.unit.count = count
+      end
+    end
   end
 end
 

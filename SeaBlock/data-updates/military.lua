@@ -712,6 +712,156 @@ local mil_techswap = {
                      {'advanced-logistic-science-pack', 1},
                      {'utility-science-pack', 1},
                      {'space-science-pack', 1}}
+  },
+  -- 150 Red, Green, Blue, Purple
+  {
+    tech_name = 'vehicle-battery-equipment-4',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1}}
+  },
+  -- 200 Red, Green, Blue, Purple, Pink
+  {
+    tech_name = 'vehicle-battery-equipment-5',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1}}
+  },
+  -- 250 Red, Green, Blue, Purple, Pink, Yellow
+  {
+    tech_name = 'vehicle-battery-equipment-6',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1},
+                     {'utility-science-pack', 1}}
+  },
+  -- 200 Red, Green, Military, Blue, Purple, Pink
+  {
+    tech_name = 'vehicle-energy-shield-equipment-4',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'military-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1}}
+  },
+  -- 250 Red, Green, Military, Blue, Purple, Pink, Yellow
+  {
+    tech_name = 'vehicle-energy-shield-equipment-5',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'military-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1},
+                     {'utility-science-pack', 1}}
+  },
+  -- 300 Red, Green, Military, Blue, Purple, Pink, Yellow, White
+  {
+    tech_name = 'vehicle-energy-shield-equipment-6',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'military-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1},
+                     {'utility-science-pack', 1},
+                     {'space-science-pack', 1}}
+  },
+  -- 200 Red, Green, Blue, Purple, Pink
+  {
+    tech_name = 'vehicle-fusion-cell-equipment-4',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1}}
+  },
+  -- 250 Red, Green, Blue, Purple, Pink, Yellow
+  {
+    tech_name = 'vehicle-fusion-cell-equipment-5',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1},
+                     {'utility-science-pack', 1}}
+  },
+  -- 300 Red, Green, Blue, Purple, Pink, Yellow, White
+  {
+    tech_name = 'vehicle-fusion-cell-equipment-6',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1},
+                     {'utility-science-pack', 1},
+                     {'space-science-pack', 1}}
+  },
+  -- 300 Red, Green, Blue, Purple
+  {
+    tech_name = 'vehicle-big-turret-equipment-4',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'military-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1}}
+  },
+  -- 350 Red, Green, Blue, Purple, Pink
+  {
+    tech_name = 'vehicle-big-turret-equipment-5',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'military-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1}}
+  },
+  -- 400 Red, Green, Blue, Purple, Pink, Yellow
+  {
+    tech_name = 'vehicle-big-turret-equipment-6',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'military-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1},
+                     {'utility-science-pack', 1}}
+  },
+  -- 350 Red, Green, Blue, Purple, Pink
+  {
+    tech_name = 'vehicle-fusion-reactor-equipment-4',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1}}
+  },
+  -- 400 Red, Green, Blue, Purple, Pink, Yellow
+  {
+    tech_name = 'vehicle-fusion-reactor-equipment-5',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1},
+                     {'utility-science-pack', 1}}
+  },
+  -- 450 Red, Green, Blue, Purple, Pink, Yellow, White
+  {
+    tech_name = 'vehicle-fusion-reactor-equipment-6',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1},
+                     {'advanced-logistic-science-pack', 1},
+                     {'utility-science-pack', 1},
+                     {'space-science-pack', 1}}
   }
 }
 
@@ -750,6 +900,10 @@ for _,v in pairs(resistances) do
 end
 
 if mods['bobwarfare'] then
+  -- Make sniper turrets tech more expensive
+  seablock.lib.set_technology_unit_count('bob-sniper-turrets-1', 100)
+  seablock.lib.set_technology_unit_count('bob-sniper-turrets-2', 100)
+
   -- Move Plasma turrets later
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-1', 'chemical-science-pack', 1)
   bobmods.lib.tech.add_prerequisite('bob-plasma-turrets-1', 'military-3')
@@ -814,4 +968,33 @@ if mods['bobequipment'] then
   bobmods.lib.tech.remove_prerequisite('fusion-reactor-equipment-2', 'alien-research')
 
   bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-2', 'utility-science-pack')
+end
+
+if mods['bobvehicleequipment'] then
+  -- Remove dependencies on Alien Research
+  bobmods.lib.tech.remove_prerequisite('vehicle-battery-equipment-4', 'alien-research')
+  bobmods.lib.tech.remove_prerequisite('vehicle-big-turret-equipment-4', 'alien-research')
+  bobmods.lib.tech.remove_prerequisite('vehicle-energy-shield-equipment-4', 'alien-research')
+  bobmods.lib.tech.remove_prerequisite('vehicle-fusion-cell-equipment-4', 'alien-research')
+  bobmods.lib.tech.remove_prerequisite('vehicle-fusion-reactor-equipment-4', 'alien-research')
+
+  bobmods.lib.tech.add_prerequisite('vehicle-big-turret-equipment-4', 'military-4')
+
+  if mods['bobtech'] then
+    bobmods.lib.tech.add_prerequisite('vehicle-battery-equipment-5', 'advanced-logistic-science-pack')
+    bobmods.lib.tech.add_prerequisite('vehicle-big-turret-equipment-5', 'advanced-logistic-science-pack')
+    bobmods.lib.tech.add_prerequisite('vehicle-energy-shield-equipment-4', 'advanced-logistic-science-pack')
+    bobmods.lib.tech.add_prerequisite('vehicle-fusion-cell-equipment-4', 'advanced-logistic-science-pack')
+    bobmods.lib.tech.add_prerequisite('vehicle-fusion-reactor-equipment-4', 'advanced-logistic-science-pack')
+  end
+
+  bobmods.lib.tech.add_prerequisite('vehicle-battery-equipment-6', 'utility-science-pack')
+  bobmods.lib.tech.add_prerequisite('vehicle-big-turret-equipment-6', 'utility-science-pack')
+  bobmods.lib.tech.add_prerequisite('vehicle-energy-shield-equipment-5', 'utility-science-pack')
+  bobmods.lib.tech.add_prerequisite('vehicle-fusion-cell-equipment-5', 'utility-science-pack')
+  bobmods.lib.tech.add_prerequisite('vehicle-fusion-reactor-equipment-5', 'utility-science-pack')
+
+  bobmods.lib.tech.add_prerequisite('vehicle-energy-shield-equipment-6', 'space-science-pack')
+  bobmods.lib.tech.add_prerequisite('vehicle-fusion-cell-equipment-6', 'space-science-pack')
+  bobmods.lib.tech.add_prerequisite('vehicle-fusion-reactor-equipment-6', 'space-science-pack')
 end
