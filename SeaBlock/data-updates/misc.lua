@@ -240,6 +240,8 @@ for _,v in pairs({
 end
 
 bobmods.lib.tech.add_prerequisite('polishing', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('chlorine-processing-3', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('angels-sulfur-processing-4', 'chemical-science-pack')
 
 for _,v in pairs({
   'angels-nitinol-smelting-1',
