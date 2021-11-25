@@ -291,6 +291,10 @@ function seablock.lib.hide(type_name, name)
         if not seablock.lib.tablefind(item.flags, 'hidden') then
           table.insert(item.flags, 'hidden')
         end
+        
+        if type_name == 'item' then
+          table.insert(item.flags, 'hide-from-bonus-gui')
+        end
       end
     end
   end
