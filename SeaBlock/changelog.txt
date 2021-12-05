@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.8
-Date: ???
+Date: 05.12.2021
   Changes:
     - Added Companion Drones compatibility #108
     - Wood bricks now have a fuel value of 18MJ #216
@@ -19,6 +19,7 @@ Date: ???
     - Calcium carbonate is now made in an Assembling machine rather than a Liquifier #220
     - Heat unusable at green science #233
     - Bob's Vehicle Equipment mod techs required disabled science packs #231
+    - Electronics recipes with a fluid ingredient were showing in machines that with no fluid input #227
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.7
 Date: 11.09.2021
