@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.8
-Date: ???
+Date: 05.12.2021
   Changes:
     - Added Companion Drones compatibility #108
     - Wood bricks now have a fuel value of 18MJ #216
