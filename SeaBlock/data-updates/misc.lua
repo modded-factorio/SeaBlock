@@ -498,7 +498,6 @@ seablock.lib.set_recipe_category('superior-circuit-board', 'electronics-with-flu
 seablock.lib.set_recipe_category('multi-layer-circuit-board', 'electronics-with-fluid')
 seablock.lib.set_recipe_category('processing-unit', 'electronics-with-fluid')
 seablock.lib.set_recipe_category('advanced-processing-unit', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('angels-glass-fiber-board', 'crafting-with-fluid')
 
 for _, machine_name in pairs({
   'assembling-machine-2',
