@@ -162,13 +162,13 @@ data:extend({
     }
   },
   unit = {
-    count = 50,
+    count = 100,
     ingredients = {
-      {type = "item", name = "automation-science-pack", amount = 50},
-      {type = "item", name = "logistic-science-pack", amount = 50},
-      {type = "item", name = "chemical-science-pack", amount = 50}
+      {type = "item", name = "automation-science-pack", amount = 1},
+      {type = "item", name = "logistic-science-pack", amount = 1},
+      {type = "item", name = "chemical-science-pack", amount = 1}
     },
-    time = 15
+    time = 30
   },
   order = "c-a"
 }
