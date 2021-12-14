@@ -12,7 +12,7 @@ function seablock.populate_starting_items(items)
     ['stone-brick'] = 500,
     ['pipe'] = 22,
     ['copper-pipe'] = 5,
-    ['iron-gear-wheel'] = 20,
+    ['iron-gear-wheel'] = 28,
     ['iron-stick'] = 108,
     ['pipe-to-ground'] = 2
   }

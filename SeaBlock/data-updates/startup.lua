@@ -7,6 +7,7 @@
 
 -- Second stage:
 -- Algae farm     5                                               10*2
+-- Composter      2x2                                   4x2
 
 local knowningredients = {
   ['angels-electrolyser'] = {
@@ -37,6 +38,12 @@ local knowningredients = {
     {'basic-circuit-board', 5},
     {'iron-stick', 10},
     {'stone-brick', 25}
+  },
+  ['composter'] = {
+    {'basic-circuit-board', 2},
+    {'iron-gear-wheel', 4},
+    {'stone-brick', 20},
+    {'iron-plate', 20}
   },
   ['angels-flare-stack'] = {
     {'iron-plate', 5},
@@ -233,14 +240,3 @@ data.raw.technology['bio-wood-processing'].unit = {
   ingredients = {},
   time = 5
 }
-
--- Make bio-paper-1 a startup tutorial tech
-data.raw.technology['bio-paper-1'].prerequisites = {'sb-startup2'}
-data.raw.technology['bio-paper-1'].unit = {
-  count = 1,
-  ingredients = {},
-  time = 5
-}
-bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'solid-alginic-acid')
-bobmods.lib.tech.add_recipe_unlock('bio-paper-1', 'solid-alginic-acid')
-bobmods.lib.tech.remove_prerequisite('bio-paper-2', 'bio-paper-1')

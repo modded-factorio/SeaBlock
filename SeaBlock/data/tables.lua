@@ -5,7 +5,6 @@ seablock.scripted_techs = {
   ['sb-startup1'] = true,
   ['landfill'] = true,
   ['sb-startup2'] = true,
-  ['bio-paper-1'] = true,
   ['bio-wood-processing'] = true,
   ['sb-startup3'] = true,
   ['sb-startup4'] = true

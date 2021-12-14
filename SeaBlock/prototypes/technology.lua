@@ -21,9 +21,9 @@ data:extend({
 },
 {
   type = "tool",
-  name = "sb-algae-brown-tool",
-  localised_name = {"item-name.algae-brown"},
-  icon = "__angelsbioprocessing__/graphics/icons/algae-brown.png",
+  name = "sb-cellulose-tool",
+  localised_name = {"item-name.cellulose-fiber"},
+  icon = "__angelsbioprocessing__/graphics/icons/cellulose-fiber.png",
   icon_size = 32,
   flags = {"hidden"},
   stack_size = 100,
@@ -63,13 +63,14 @@ data:extend({
   icon = "__angelsbioprocessing__/graphics/technology/algae-farm-tech.png",
   icon_size = 128,
   effects = {
+    {type = "unlock-recipe", recipe = "wooden-board"},
     {type = "unlock-recipe", recipe = "basic-circuit-board"},
     {type = "unlock-recipe", recipe = "copper-cable"}
   },
   prerequisites = {"landfill"},
   unit = {
     count = 1,
-    ingredients = {{"sb-algae-brown-tool", 1}},
+    ingredients = {{"sb-cellulose-tool", 1}},
     time = 5
   }
 },
@@ -89,7 +90,7 @@ data:extend({
     {type = "unlock-recipe", recipe = "burner-inserter"},
     {type = "unlock-recipe", recipe = "iron-chest"}
   },
-  prerequisites = {"bio-wood-processing", "bio-paper-1"},
+  prerequisites = {"bio-wood-processing"},
   unit = {
     count = 1,
     ingredients = {{"sb-basic-circuit-board-tool", 1}},

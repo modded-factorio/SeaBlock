@@ -46,10 +46,6 @@ seablock.lib.set_recipe_category('solid-calcium-carbonate', 'advanced-crafting')
 -- Alien bacteria
 seablock.lib.set_recipe_category('alien-bacteria', 'bio-processing-3')
 
--- Make these craftable by hand
-seablock.lib.set_recipe_category('solid-alginic-acid', 'crafting')
-seablock.lib.set_recipe_category('wooden-board-paper', 'crafting')
-
 -- Fix handcrafting trying to use wrong crafting path
 seablock.lib.set_recipe_category('wooden-board', 'electronics-machine')
 bobmods.lib.recipe.enabled('wooden-board', false)
