@@ -135,42 +135,6 @@ data:extend({
     },
     time = 30
   }
-},
-{
-  type = "technology",
-  name = "sb-chlorine-processing-4",
-  localised_name = {'', {'technology-name.chlorine-processing'}, ' 4'},
-  localised_description = {'technology-description.chlorine-processing'},
-  icons = angelsmods.functions.create_gas_tech_icon("ClClCl"),
-  prerequisites = {
-    "chlorine-processing-3",
-    "sodium-processing",
-    "angels-advanced-chemistry-3"
-  },
-  effects = {
-    {
-      type = "unlock-recipe",
-      recipe = "solid-sodium-chlorate"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "solid-sodium-perchlorate"
-    },
-    {
-      type = "unlock-recipe",
-      recipe = "liquid-perchloric-acid"
-    }
-  },
-  unit = {
-    count = 50,
-    ingredients = {
-      {type = "item", name = "automation-science-pack", amount = 50},
-      {type = "item", name = "logistic-science-pack", amount = 50},
-      {type = "item", name = "chemical-science-pack", amount = 50}
-    },
-    time = 15
-  },
-  order = "c-a"
 }
 })
 

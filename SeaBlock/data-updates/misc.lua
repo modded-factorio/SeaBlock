@@ -469,23 +469,6 @@ bobmods.lib.recipe.set_ingredient('cement-mixture-2', {'solid-lime', 4})
 bobmods.lib.recipe.set_result('cement-mixture-2', {'solid-cement', 4})
 bobmods.lib.recipe.set_energy_required('cement-mixture-2', 16)
 
--- Add yellow metal catalyst to Dinitrogen tetroxide gas recipe
-bobmods.lib.recipe.set_ingredient('gas-dinitrogen-tetroxide', {'catalyst-metal-yellow', 1})
-bobmods.lib.recipe.set_result('gas-dinitrogen-tetroxide', {'catalyst-metal-carrier', 1})
-seablock.lib.set_recipe_category('gas-dinitrogen-tetroxide', 'chemistry')
-data.raw.recipe['gas-dinitrogen-tetroxide'].main_product = 'gas-dinitrogen-tetroxide'
-
--- Chlorate recipes moved to Chlorine Processing 4
-bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'solid-sodium-chlorate')
-bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'solid-sodium-perchlorate')
-bobmods.lib.tech.remove_recipe_unlock('chlorine-processing-3', 'liquid-perchloric-acid')
-bobmods.lib.tech.add_prerequisite('rocket-booster-2', 'sb-chlorine-processing-4')
-
--- Reduce tier of heat exchanger
-if data.raw.technology['bob-heat-exchanger-1'] then
-  bobmods.lib.tech.remove_science_pack('bob-heat-exchanger-1', 'chemical-science-pack')
-end
-
 -- Prevent recipes showing up in machines that can't craft the recipe due to not having a fluid input
 seablock.lib.set_recipe_category('module-circuit-board', 'electronics-with-fluid')
 seablock.lib.set_recipe_category('module-processor-board', 'electronics-with-fluid')
