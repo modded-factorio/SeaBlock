@@ -3,6 +3,8 @@ Version: 0.5.9
 Date: ???
   Changes:
     - Added setting to give each player their own set of starting items #242
+  Bugfixes:
+    - Fixed Chlorine Processing 4 tech cost #210
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.8
 Date: 05.12.2021
@@ -10,6 +12,7 @@ Date: 05.12.2021
     - Added Companion Drones compatibility #108
     - Wood bricks now have a fuel value of 18MJ #216
     - Adjusted Plasma turret recipes #218
+    - Moved perchlorate recipes to new tech Chlorine Processing 4 #218
     - Advanced farming recipes now require specialized farms #226
     - Adjusted farming tech prerequisites #226
     - Other minor tweaks #220
