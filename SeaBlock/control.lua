@@ -12,8 +12,8 @@ end
 function seablock.give_items(surface, pos)
   local has_items = false
 
-  if global.starting_items then
-    for item,quantity in pairs(global.starting_items) do
+  if global.starting_items and (not (settings.startup['sb-multiplayer-start'] and settings.startup['sb-multiplayer-start'].value)) then
+    for item, quantity in pairs(global.starting_items) do
       if quantity > 0 then
         has_items = true
         break
@@ -77,6 +77,15 @@ local function init()
     created_items['stone-furnace'] = nil
     created_items['iron-plate'] = nil
     created_items['wood'] = nil
+    
+    if settings.startup['sb-multiplayer-start'] and settings.startup['sb-multiplayer-start'].value then
+      for item, quantity in pairs(global.starting_items) do
+        if quantity > 0 then
+          created_items[item] = quantity
+        end
+      end
+    end
+
     remote.call("freeplay", "set_created_items", created_items)
   end
 end
