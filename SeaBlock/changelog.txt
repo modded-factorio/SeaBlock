@@ -4,6 +4,7 @@ Date: ???
   Changes:
     - Added setting to give each player their own set of starting items #242
     - Compatibility changes for latest Angel's mods #210
+    - Increased output of Thermal water bore from 5 to 20 Thermal water #241
   Bugfixes:
     - Fixed Chlorine Processing 4 tech cost #210
 ---------------------------------------------------------------------------------------------------

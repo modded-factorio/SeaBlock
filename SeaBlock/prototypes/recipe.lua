@@ -22,7 +22,7 @@ data:extend({
       {type = "item", name = "lithium-chloride", amount = 1}
     },
     results = {
-      {type = "fluid", name = "thermal-water", amount = 5}
+      {type = "fluid", name = "thermal-water", amount = 20}
     }
   },
   {
