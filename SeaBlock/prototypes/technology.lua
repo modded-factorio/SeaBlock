@@ -54,7 +54,7 @@ data:extend({
   unit = {
     count = 1,
     ingredients = {{"sb-angelsore3-tool", 1}},
-    time = 5
+    time = 1
   }
 },
 {
@@ -70,7 +70,7 @@ data:extend({
   unit = {
     count = 1,
     ingredients = {{"sb-algae-brown-tool", 1}},
-    time = 5
+    time = 1
   }
 },
 {
@@ -93,7 +93,7 @@ data:extend({
   unit = {
     count = 1,
     ingredients = {{"sb-basic-circuit-board-tool", 1}},
-    time = 5
+    time = 1
   }
 },
 {
@@ -108,7 +108,7 @@ data:extend({
   unit = {
     count = 1,
     ingredients = {{"sb-lab-tool", 1}},
-    time = 5
+    time = 1
   }
 },
 {

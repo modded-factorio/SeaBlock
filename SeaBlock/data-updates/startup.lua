@@ -105,12 +105,12 @@ if data.raw.technology['sct-automation-science-pack'] then
   data.raw.technology['sct-automation-science-pack'].unit = {
     count = 1,
     ingredients = {{"sb-lab-tool", 1}},
-    time = 5
+    time = 1
   }
   data.raw.technology['sct-lab-t1'].unit = {
     count = 1,
     ingredients = {},
-    time = 5
+    time = 1
   }
   seablock.lib.hide_technology('sb-startup4')
 end
@@ -219,7 +219,7 @@ data.raw.technology['landfill'].prerequisites = {'sb-startup1'}
 data.raw.technology['landfill'].unit = {
   count = 1,
   ingredients = {},
-  time = 5
+  time = 1
 }
 bobmods.lib.tech.remove_prerequisite('water-washing-2', 'landfill')
 if mods['Explosive Excavation'] then
@@ -231,7 +231,7 @@ data.raw.technology['bio-wood-processing'].prerequisites = {'sb-startup2'}
 data.raw.technology['bio-wood-processing'].unit = {
   count = 1,
   ingredients = {},
-  time = 5
+  time = 1
 }
 
 -- Make bio-paper-1 a startup tutorial tech
@@ -239,7 +239,7 @@ data.raw.technology['bio-paper-1'].prerequisites = {'sb-startup2'}
 data.raw.technology['bio-paper-1'].unit = {
   count = 1,
   ingredients = {},
-  time = 5
+  time = 1
 }
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'solid-alginic-acid')
 bobmods.lib.tech.add_recipe_unlock('bio-paper-1', 'solid-alginic-acid')
