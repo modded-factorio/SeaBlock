@@ -2,12 +2,6 @@
 bobmods.lib.tech.remove_prerequisite('cobalt-processing', 'chemical-processing-1')
 bobmods.lib.tech.remove_prerequisite('grinding', 'chemical-processing-1')
 
-bobmods.lib.tech.remove_prerequisite('cobalt-processing', 'electrolysis-1')
-bobmods.lib.tech.remove_prerequisite('lithium-processing', 'electrolysis-1')
-
-bobmods.lib.tech.remove_prerequisite('plastics', 'electrolysis-2')
-bobmods.lib.tech.remove_prerequisite('battery-3', 'electrolysis-2')
-
 bobmods.lib.tech.remove_prerequisite('cobalt-processing', 'chemical-processing-2')
 bobmods.lib.tech.remove_prerequisite('silicon-processing', 'chemical-processing-2')
 bobmods.lib.tech.remove_prerequisite('advanced-electronics', 'chemical-processing-2')
