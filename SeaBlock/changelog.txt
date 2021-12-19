@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.9
-Date: ???
+Date: 19.12.2021
   Changes:
     - Added setting to give each player their own set of starting items #242
     - Compatibility changes for latest Angel's mods #210
