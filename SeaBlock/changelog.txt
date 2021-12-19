@@ -3,6 +3,7 @@ Version: 0.5.9
 Date: ???
   Changes:
     - Added setting to give each player their own set of starting items #242
+    - Compatibility changes for latest Angel's mods #210
   Bugfixes:
     - Fixed Chlorine Processing 4 tech cost #210
 ---------------------------------------------------------------------------------------------------
