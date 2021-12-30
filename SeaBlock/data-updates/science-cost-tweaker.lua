@@ -16,4 +16,7 @@ if mods['ScienceCostTweakerM'] then
   -- Add prerequisites
   bobmods.lib.tech.add_prerequisite('military-science-pack', 'angels-brass-smelting-1')
   bobmods.lib.tech.add_prerequisite('military-science-pack', 'angels-invar-smelting-1')
+  
+  -- Hide empty tech (Lab 2 will have been moved to it's own tech sct-lab-lab2
+  seablock.lib.hide_technology('advanced-research')
 end

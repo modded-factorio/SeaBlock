@@ -152,7 +152,6 @@ local mil_items = {
 }
 
 local mil_tech = {
-  'advanced-research',
   'alien-blue-research',
   'alien-green-research',
   'alien-orange-research',
