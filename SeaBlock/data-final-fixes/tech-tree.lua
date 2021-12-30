@@ -1,6 +1,7 @@
 -- Remove empty bob's techs
 bobmods.lib.tech.remove_prerequisite('cobalt-processing', 'chemical-processing-1')
 bobmods.lib.tech.remove_prerequisite('grinding', 'chemical-processing-1')
+bobmods.lib.tech.remove_prerequisite('lithium-processing', 'chemical-processing-1')
 
 bobmods.lib.tech.remove_prerequisite('cobalt-processing', 'chemical-processing-2')
 bobmods.lib.tech.remove_prerequisite('silicon-processing', 'chemical-processing-2')
