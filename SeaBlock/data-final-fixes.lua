@@ -29,9 +29,7 @@ end
 
 -- Refresh circuit board icon as it may have been overwritten
 if data.raw.tool['sb-basic-circuit-board-tool'] and data.raw.item['basic-circuit-board'] then
-  data.raw.tool['sb-basic-circuit-board-tool'].icon = data.raw.item['basic-circuit-board'].icon
-  data.raw.tool['sb-basic-circuit-board-tool'].icon_size = data.raw.item['basic-circuit-board'].icon_size
-  data.raw.tool['sb-basic-circuit-board-tool'].icon_mipmaps = data.raw.item['basic-circuit-board'].icon_mipmaps
+  seablock.lib.copy_icon(data.raw.tool['sb-basic-circuit-board-tool'], data.raw.item['basic-circuit-board'])
 end
 
 require "data-final-fixes/logistics"
