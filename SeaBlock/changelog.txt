@@ -2,7 +2,7 @@
 Version: 0.5.11
 Date: ???
   Bugfixes:
-    - Lab 2 could not be researched (without SCT)
+    - Lab 2 could not be researched (without SCT) #244
     - Error when using custom colors for tiers with Artisanal Reskins #251
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.10
