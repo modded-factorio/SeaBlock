@@ -300,6 +300,8 @@ bobmods.lib.tech.remove_prerequisite('angels-iron-casting-3', 'angels-chrome-sme
 seablock.lib.remove_recipe('molten-steel-smelting-5')
 bobmods.lib.tech.remove_recipe_unlock('angels-steel-smelting-3', 'molten-steel-smelting-5')
 bobmods.lib.tech.remove_prerequisite('angels-steel-smelting-3', 'angels-chrome-smelting-1')
+bobmods.lib.tech.remove_prerequisite('angels-steel-smelting-3', 'angels-tungsten-smelting-1')
+bobmods.lib.tech.add_prerequisite('angels-steel-smelting-3', 'angels-cobalt-smelting-1')
 
 seablock.lib.remove_recipe('molten-titanium-smelting-5')
 bobmods.lib.tech.remove_recipe_unlock('angels-titanium-casting-3', 'molten-titanium-smelting-5')
@@ -425,6 +427,7 @@ end
 if data.raw.technology['electronics-machine-1'] then
   bobmods.lib.tech.add_prerequisite('electronics-machine-1', 'electronics')
 end
+bobmods.lib.tech.add_prerequisite('bio-pressing-1', 'bio-nutrient-paste')
 
 -- Reduce electrolyser volume
 for _,entity_name in pairs({
