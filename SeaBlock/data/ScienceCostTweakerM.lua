@@ -12,4 +12,7 @@ if mods['ScienceCostTweakerM'] then
   seablock.lib.set_recipe_category('sct-prod-chipcase', 'electronics-with-fluid')
 
   bobmods.lib.recipe.remove_ingredient('chemical-science-pack', 'sct-t3-sulfur-lightsource')
+
+  -- Allow productivity modules in bio science
+  bobmods.lib.module.add_productivity_limitation('sct-bio-science-pack')
 end

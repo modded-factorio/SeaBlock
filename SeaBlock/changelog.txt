@@ -4,6 +4,7 @@ Date: ???
   Changes:
     - Science Cost Tweaker: #247
       - Purple and some military science intermediates are craftable in an Electronics assembling machine
+      - Bio science can use productivity modules
   Bugfixes:
     - Lab 2 could not be researched (without SCT) #244
     - Error when using custom colors for tiers with Artisanal Reskins #251
