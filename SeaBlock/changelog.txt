@@ -1,6 +1,9 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.11
 Date: ???
+  Changes:
+    - Science Cost Tweaker: #247
+      - Purple and some military science intermediates are craftable in an Electronics assembling machine
   Bugfixes:
     - Lab 2 could not be researched (without SCT) #244
     - Error when using custom colors for tiers with Artisanal Reskins #251
@@ -30,7 +33,7 @@ Date: 05.12.2021
     - Adjusted farming tech prerequisites #226
     - Other minor tweaks #220
     - Science Cost Tweaker: #232
-      - All green science intermediates are craftable in an Electronics assembly machine
+      - All green science intermediates are craftable in an Electronics assembling machine
       - Removed Sulfur lightsource from blue science
     - Rebalanced Sniper turret tech cost #236
   Bugfixes:
