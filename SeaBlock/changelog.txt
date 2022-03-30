@@ -10,6 +10,7 @@ Date: ???
   Bugfixes:
     - Lab 2 could not be researched (without SCT) #244
     - Error when using custom colors for tiers with Artisanal Reskins #251
+    - Some disabled techs were not being hidden #252
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.10
 Date: 30.12.2021

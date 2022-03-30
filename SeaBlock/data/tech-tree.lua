@@ -225,3 +225,8 @@ if mods['bobequipment'] then
   bobmods.lib.tech.add_prerequisite('bob-battery-equipment-6', 'power-armor-mk2')
   bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-5', 'power-armor-mk2')
 end
+
+seablock.lib.hide_technology('sulfur-processing')
+seablock.lib.hide_technology('oil-processing')
+seablock.lib.hide_technology('advanced-oil-processing')
+seablock.lib.hide_technology('coal-liquefaction')
