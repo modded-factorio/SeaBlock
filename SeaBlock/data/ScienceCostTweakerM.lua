@@ -10,6 +10,7 @@ if mods['ScienceCostTweakerM'] then
   seablock.lib.set_recipe_category('sct-prod-bioprocessor', 'electronics')
   seablock.lib.set_recipe_category('sct-prod-overclocker', 'electronics-with-fluid')
   seablock.lib.set_recipe_category('sct-prod-chipcase', 'electronics-with-fluid')
+  seablock.lib.set_recipe_subgroup('sct-t3-sulfur-lightsource', 'sct-labparts')
 
   bobmods.lib.recipe.remove_ingredient('chemical-science-pack', 'sct-t3-sulfur-lightsource')
 

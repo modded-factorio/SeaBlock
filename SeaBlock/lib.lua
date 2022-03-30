@@ -343,6 +343,13 @@ function seablock.lib.set_recipe_category(recipe_name, category)
   end
 end
 
+function seablock.lib.set_recipe_subgroup(recipe_name, subgroup)
+  local recipe = data.raw.recipe[recipe_name]
+  if recipe then
+    recipe.subgroup = subgroup
+  end
+end
+
 function seablock.lib.set_technology_unit_count(technology_name, count)
   local technology = data.raw.technology[technology_name]
   if technology then
