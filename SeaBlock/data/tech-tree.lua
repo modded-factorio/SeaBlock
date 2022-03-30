@@ -136,17 +136,14 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('bio-desert-farming-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-swamp-farming-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-temperate-farming-1', 'sct-bio-science-pack')
-  if data.raw.technology['bio-pressing'] then
-    bobmods.lib.tech.add_prerequisite('bio-pressing', 'sct-bio-science-pack')
-  else
-    bobmods.lib.tech.add_prerequisite('bio-pressing-1', 'sct-bio-science-pack')
-  end
+  bobmods.lib.tech.add_prerequisite('bio-pressing-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-arboretum-2', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-arboretum-desert-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-arboretum-swamp-1', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-processing-alien-2', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-refugium-hatchery', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-fermentation', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('bio-processing-crystal-splinter-1', 'sct-bio-science-pack')
 end
 
 -- Logistics / Green

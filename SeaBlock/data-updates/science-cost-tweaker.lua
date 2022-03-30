@@ -19,4 +19,12 @@ if mods['ScienceCostTweakerM'] then
   
   -- Hide empty tech (Lab 2 will have been moved to it's own tech sct-lab-lab2
   seablock.lib.hide_technology('advanced-research')
+
+  if data.raw.technology['sct-lab-t3'] then
+    bobmods.lib.tech.remove_prerequisite('sct-lab-t3', 'plastics')
+    bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-glass-smelting-1')
+    bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-aluminium-smelting-1')
+    bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-brass-smelting-1')
+    seablock.lib.remove_recipe('sct-t3-flash-fuel2')
+  end
 end

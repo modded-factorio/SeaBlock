@@ -11,9 +11,6 @@ end
 seablock.lib.substingredient('filter-coal', 'coal', 'wood-charcoal')
 seablock.lib.substingredient('solid-nitroglycerin', 'coal', 'wood-charcoal')
 seablock.lib.substingredient('carbon', 'coal', 'wood-charcoal')
-if mods['ScienceCostTweakerM'] then
-  seablock.lib.substingredient('sct-mil-circuit1', 'coal', 'wood-charcoal')
-end
 if mods['Transport_Drones'] then
   seablock.lib.substingredient('road', 'coal', 'wood-charcoal')
 end
