@@ -16,4 +16,12 @@ if mods['ScienceCostTweakerM'] then
 
   -- Allow productivity modules in bio science
   bobmods.lib.module.add_productivity_limitation('sct-bio-science-pack')
+
+  -- Rename Lab 2 to Exoplanetary Studies Lab
+  if data.raw.item['lab-2'] then
+    data.raw.item['lab-2'].localised_name = {'item-name.sct-lab-lab2'}
+  end
+  if data.raw.lab['lab-2'] then
+    data.raw.lab['lab-2'].localised_name = {'entity-name.sct-lab-lab2'}
+  end
 end
