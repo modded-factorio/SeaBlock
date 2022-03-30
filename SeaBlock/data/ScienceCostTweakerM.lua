@@ -17,11 +17,27 @@ if mods['ScienceCostTweakerM'] then
   -- Allow productivity modules in bio science
   bobmods.lib.module.add_productivity_limitation('sct-bio-science-pack')
 
-  -- Rename Lab 2 to Exoplanetary Studies Lab
-  if data.raw.item['lab-2'] then
-    data.raw.item['lab-2'].localised_name = {'item-name.sct-lab-lab2'}
-  end
-  if data.raw.lab['lab-2'] then
-    data.raw.lab['lab-2'].localised_name = {'entity-name.sct-lab-lab2'}
+  if mods['bobtech'] then
+    -- Rename Lab 2 to Exoplanetary Studies Lab
+    if data.raw.item['lab-2'] then
+      data.raw.item['lab-2'].localised_name = {'item-name.sct-lab-lab2'}
+    end
+    if data.raw.lab['lab-2'] then
+      data.raw.lab['lab-2'].localised_name = {'entity-name.sct-lab-lab2'}
+    end
+
+    bobmods.lib.recipe.set_ingredients('lab-2',
+      {
+        {'rocket-silo', 1},
+        {'nitinol-alloy', 100},
+        {'express-stack-filter-inserter', 2},
+        {'advanced-processing-unit', 20}
+      })
+    bobmods.lib.tech.add_prerequisite('sct-lab-lab2', 'rocket-silo')
+    if data.raw.technology['stack-inserter-4'] then
+      bobmods.lib.tech.add_prerequisite('sct-lab-lab2', 'stack-inserter-4')
+    else
+      bobmods.lib.tech.add_prerequisite('sct-lab-lab2', 'stack-inserter-2')
+    end
   end
 end

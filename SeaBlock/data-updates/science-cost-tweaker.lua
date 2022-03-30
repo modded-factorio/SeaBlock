@@ -2,7 +2,7 @@ if mods['ScienceCostTweakerM'] then
   if data.raw.item['lab-2'] then
     -- Update lab MK2 ingredients and energy usage
     seablock.lib.substingredient('lab-2', 'advanced-circuit', 'advanced-processing-unit')
-    data.raw.lab['lab-2'].energy_usage = "3MW"
+    data.raw.lab['lab-2'].energy_usage = "10MW"
     -- Only two module slots for lab-2 if s.c.t. is installed (other labs have no module slots)
     data.raw.lab['lab-2'].module_specification.module_slots = 2
   end
