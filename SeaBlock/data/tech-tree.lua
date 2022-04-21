@@ -159,38 +159,14 @@ bobmods.lib.tech.add_prerequisite('bob-robo-modular-2', 'chemical-science-pack')
 if mods['bobequipment'] then
   bobmods.lib.tech.add_prerequisite('exoskeleton-equipment-2', 'chemical-science-pack')
 end
-bobmods.lib.tech.add_prerequisite('bob-robotics-2', 'chemical-science-pack')
-bobmods.lib.tech.add_prerequisite('personal-roboport-mk2-equipment', 'chemical-science-pack')
 
 -- Production
 bobmods.lib.tech.add_prerequisite('logistic-system', 'production-science-pack')
-if mods['bobequipment'] then
-  bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-2', 'production-science-pack')
-end
-if mods['bobwarfare'] then
-  bobmods.lib.tech.add_prerequisite('bob-power-armor-3', 'production-science-pack')
-end
-
--- Advanced Logistics / Pink
-if mods['bobtech'] then
-  if mods['bobequipment'] then
-    bobmods.lib.tech.add_prerequisite('bob-battery-equipment-5', 'advanced-logistic-science-pack')
-    bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-4', 'advanced-logistic-science-pack')
-    bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-3', 'advanced-logistic-science-pack')
-  end
-  if mods['bobwarfare'] then
-    bobmods.lib.tech.add_prerequisite('bob-power-armor-4', 'advanced-logistic-science-pack')
-  end
-end
 
 -- Utility / Yellow
 bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-science-pack')
 bobmods.lib.tech.add_prerequisite('angels-nuclear-fuel', 'utility-science-pack')
-if mods['bobwarfare'] then
-  bobmods.lib.tech.add_prerequisite('logistic-spidertron', 'utility-science-pack')
-end
 bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'utility-science-pack')
-bobmods.lib.tech.add_prerequisite('power-armor-mk2', 'utility-science-pack')
 
 -- Space / White
 if mods['bobequipment'] then
@@ -217,11 +193,8 @@ seablock.lib.add_recipe_unlock('military', 'radar', 5)
 bobmods.lib.tech.add_prerequisite('gun-turret', 'military')
 bobmods.lib.tech.add_prerequisite('stone-wall', 'military')
 
-bobmods.lib.tech.add_prerequisite('worker-robots-speed-1', 'bob-robotics-2')
-bobmods.lib.tech.add_prerequisite('worker-robots-storage-1', 'bob-robotics-2')
-
 if mods['bobequipment'] then
-  bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-4', 'power-armor-mk2')
+  bobmods.lib.tech.add_prerequisite('personal-laser-defense-equipment-5', 'power-armor-mk2')
   bobmods.lib.tech.add_prerequisite('bob-battery-equipment-6', 'power-armor-mk2')
   bobmods.lib.tech.add_prerequisite('bob-energy-shield-equipment-5', 'power-armor-mk2')
 end

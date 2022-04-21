@@ -135,6 +135,7 @@ bobmods.lib.tech.replace_prerequisite('advanced-electronics', 'plastics', 'plast
 bobmods.lib.tech.replace_prerequisite('battery', 'plastics', 'plastic-1')
 bobmods.lib.tech.replace_prerequisite('bio-arboretum-swamp-1', 'plastics', 'plastic-1')
 bobmods.lib.tech.replace_prerequisite('bio-plastic-1', 'plastics', 'plastic-1')
+bobmods.lib.tech.replace_prerequisite('fluid-canister-processing', 'plastics', 'plastic-1')
 
 
 seablock.lib.hide_technology('plastics')

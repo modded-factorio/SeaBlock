@@ -7,6 +7,7 @@ Date: ???
       - Bio science can use productivity modules
       - Renamed Lab 2 to Exoplanetary Studies Lab
       - Changed recipe and energy consumption of Exoplanetary Studies Lab
+    - Compatibility changes for Bob's mods 1.1.5 #262
   Bugfixes:
     - Lab 2 could not be researched (without SCT) #244
     - Error when using custom colors for tiers with Artisanal Reskins #251
