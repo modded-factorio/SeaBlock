@@ -144,6 +144,7 @@ if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('bio-refugium-hatchery', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-fermentation', 'sct-bio-science-pack')
   bobmods.lib.tech.add_prerequisite('bio-processing-crystal-splinter-1', 'sct-bio-science-pack')
+  bobmods.lib.tech.add_prerequisite('gardens-3', 'sct-bio-science-pack')
 end
 
 -- Logistics / Green
