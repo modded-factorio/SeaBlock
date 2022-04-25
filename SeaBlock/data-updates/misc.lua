@@ -335,16 +335,6 @@ if data.raw.inserter['steam-inserter'] then
   data.raw.inserter['steam-inserter'].next_upgrade = nil
 end
 
--- Fix Bob's nuclear tech icons missized
-if data.raw.technology['plutonium-fuel-cell'] then
-  data.raw.technology['plutonium-fuel-cell'].icon_size = 64
-  data.raw.technology['plutonium-fuel-cell'].icon_mipmaps = 4
-end
-if data.raw.technology['thorium-plutonium-fuel-cell'] then
-  data.raw.technology['thorium-plutonium-fuel-cell'].icon_size = 64
-  data.raw.technology['thorium-plutonium-fuel-cell'].icon_mipmaps = 4
-end
-
 -- Swap out concrete for bricks
 
 seablock.lib.substingredient('artillery-turret', 'concrete', 'reinforced-concrete-brick', nil)
