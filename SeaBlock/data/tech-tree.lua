@@ -27,6 +27,7 @@ bobmods.lib.tech.replace_prerequisite('angels-coal-processing-2', 'water-treatme
 -- Add other prerequisites
 bobmods.lib.tech.add_prerequisite('gardens', 'electronics')
 bobmods.lib.tech.add_prerequisite('uranium-processing', 'ore-leaching')
+bobmods.lib.tech.add_prerequisite('thorium-processing', 'ore-electro-whinning-cell')
 if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
   bobmods.lib.tech.add_prerequisite('sb-bio-processing-advanced', 'sct-bio-science-pack')
