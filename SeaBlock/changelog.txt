@@ -7,6 +7,8 @@ Date: ???
       - Bio science can use productivity modules
       - Renamed Lab 2 to Exoplanetary Studies Lab
       - Changed recipe and energy consumption of Exoplanetary Studies Lab
+    - Added missing tech prerequisites #252
+    - Added purple and yellow science packs to Radio Thermoelectric Generator tech #252
   Bugfixes:
     - Lab 2 could not be researched (without SCT) #244
     - Error when using custom colors for tiers with Artisanal Reskins #251
