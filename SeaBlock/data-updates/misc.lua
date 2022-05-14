@@ -245,14 +245,25 @@ for _,v in pairs({
   'logistics-5',
   'personal-roboport-mk4-equipment',
   'stack-inserter-4',
-  'ultimate-inserter'
+  'ultimate-inserter',
+  'rtg'
 }) do
   if data.raw.technology[v] then
     bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
   end
 end
 
+for _,v in pairs({
+  'rtg'
+}) do
+  if data.raw.technology[v] then
+    bobmods.lib.tech.add_new_science_pack(v, 'utility-science-pack', 1)
+  end
+end
+
 bobmods.lib.tech.add_prerequisite('geode-crystallization-1', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite('rtg', 'production-science-pack')
+bobmods.lib.tech.add_prerequisite('rtg', 'utility-science-pack')
 
 if mods['cargo-ships'] then
   seablock.lib.hide_item('oil_rig')
