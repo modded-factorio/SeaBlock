@@ -32,3 +32,6 @@ data.raw.item['coal'].fuel_value = nil
 data.raw.item['coal'].fuel_category = nil
 data.raw.item['coal-crushed'].fuel_value = nil
 data.raw.item['coal-crushed'].fuel_category = nil
+
+data.raw.recipe['coolant-used-filtration-1'].localised_name = {'recipe-name.coolant-used-filtration-1'}
+data.raw.recipe['coolant-used-filtration-2'].localised_name = {'recipe-name.coolant-used-filtration-2'}
