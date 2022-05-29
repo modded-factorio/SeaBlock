@@ -502,3 +502,38 @@ for _, machine_name in pairs({
     table.insert(machine.crafting_categories, 'electronics-with-fluid')
   end
 end
+
+bobmods.lib.tech.add_prerequisite("angels-advanced-gas-processing", "gas-steam-cracking-2")
+
+-- Clay Brick prerequisites
+bobmods.lib.tech.add_prerequisite("advanced-ore-refining-1", "angels-stone-smelting-1")
+bobmods.lib.tech.add_prerequisite("angels-cooling", "angels-stone-smelting-1")
+bobmods.lib.tech.add_prerequisite("angels-metallurgy-2", "angels-stone-smelting-1")
+bobmods.lib.tech.add_prerequisite("water-washing-2", "angels-stone-smelting-1")
+
+-- Concrete Brick prerequisites
+bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "angels-stone-smelting-2")
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-2", "angels-stone-smelting-2")
+bobmods.lib.tech.add_prerequisite("angels-metallurgy-3", "angels-stone-smelting-2")
+bobmods.lib.tech.add_prerequisite("bio-refugium-puffer-1", "angels-stone-smelting-2")
+bobmods.lib.tech.add_prerequisite("water-treatment-3", "angels-stone-smelting-2")
+
+-- Reinforced concrete brick
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "angels-stone-smelting-3")
+bobmods.lib.tech.add_prerequisite("slag-processing-2", "angels-stone-smelting-3")
+bobmods.lib.tech.add_prerequisite("thermal-water-extraction-2", "angels-stone-smelting-3")
+bobmods.lib.tech.add_prerequisite("water-treatment-4", "angels-stone-smelting-3")
+
+-- Advanced circuit
+bobmods.lib.tech.add_prerequisite("tank", "advanced-electronics")
+
+-- Processing unit
+bobmods.lib.tech.add_prerequisite("water-treatment-4", "advanced-electronics-2")
+
+-- Advanced processing unit
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-4", "advanced-electronics-3")
+bobmods.lib.tech.add_prerequisite("angels-metallurgy-5", "advanced-electronics-3")
+
+-- Move Electrowinning cell 3 unlock
+bobmods.lib.tech.remove_recipe_unlock("ore-electro-whinning-cell", "electro-whinning-cell-3")
+bobmods.lib.tech.add_recipe_unlock("advanced-ore-refining-4", "electro-whinning-cell-3")

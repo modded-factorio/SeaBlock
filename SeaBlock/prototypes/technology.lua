@@ -118,7 +118,9 @@ data:extend({
   icon_size = 128,
   order = 'c-a',
   prerequisites = {
-    'bio-processing-red'
+    'bio-processing-red',
+    'advanced-electronics',
+    'angels-stone-smelting-2'
   },
   effects = {
     {
