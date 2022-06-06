@@ -58,13 +58,13 @@ seablock.lib.unhide_recipe('lead-plate')
 seablock.lib.unhide_recipe('tin-plate')
 
 -- Hide unwanted recipes
-seablock.lib.remove_recipe('silver-plate')
+bobmods.lib.recipe.hide_recipe('silver-plate')
 bobmods.lib.tech.remove_recipe_unlock('ore-crushing', 'angelsore2-crushed-processing')
 bobmods.lib.tech.remove_recipe_unlock('ore-crushing', 'angelsore4-crushed-processing')
-seablock.lib.remove_recipe('angelsore2-crushed-processing')
-seablock.lib.remove_recipe('angelsore4-crushed-processing')
-seablock.lib.remove_recipe('angelsore5-crushed-smelting')
-seablock.lib.remove_recipe('angelsore6-crushed-smelting')
+bobmods.lib.recipe.hide_recipe('angelsore2-crushed-processing')
+bobmods.lib.recipe.hide_recipe('angelsore4-crushed-processing')
+bobmods.lib.recipe.hide_recipe('angelsore5-crushed-smelting')
+bobmods.lib.recipe.hide_recipe('angelsore6-crushed-smelting')
 
 -- Add prerequisites
 bobmods.lib.tech.add_prerequisite('ore-floatation', 'ore-advanced-crushing')

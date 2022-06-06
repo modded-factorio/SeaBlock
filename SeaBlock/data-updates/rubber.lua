@@ -6,7 +6,7 @@ if mods['bobpower'] then
   bobmods.lib.tech.add_prerequisite('electric-pole-3', 'rubber')
   bobmods.lib.tech.add_prerequisite('electric-substation-3', 'rubber')
 end
-seablock.lib.remove_recipe('bob-rubber')
+bobmods.lib.recipe.hide_recipe('bob-rubber')
 seablock.lib.moveeffect('insulated-cable', 'electronics', 'rubber')
 seablock.lib.hide_technology('rubbers')
 bobmods.lib.tech.remove_recipe_unlock('bio-arboretum-desert-1', 'solid-rubber')

@@ -518,7 +518,7 @@ for _,v in pairs(mil_tech) do
 end
 
 for _,v in pairs(mil_recipes) do
-  seablock.lib.remove_recipe(v)
+  bobmods.lib.recipe.hide_recipe(v)
 end
 
 bobmods.lib.tech.remove_recipe_unlock('angels-advanced-gas-processing', 'gas-fractioning-residual')
@@ -890,8 +890,8 @@ end
 
 if mods['bobwarfare'] then
   -- Make sniper turrets tech more expensive
-  seablock.lib.set_technology_unit_count('bob-sniper-turrets-1', 100)
-  seablock.lib.set_technology_unit_count('bob-sniper-turrets-2', 100)
+  bobmods.lib.tech.set_science_pack_count('bob-sniper-turrets-1', 100)
+  bobmods.lib.tech.set_science_pack_count('bob-sniper-turrets-2', 100)
 
   -- Move Plasma turrets later
   bobmods.lib.tech.add_new_science_pack('bob-plasma-turrets-1', 'chemical-science-pack', 1)

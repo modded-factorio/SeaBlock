@@ -197,24 +197,6 @@ function seablock.lib.tablefind(table, item)
   return nil
 end
 
-function seablock.lib.remove_recipe(recipe_name)
-  local recipe = data.raw.recipe[recipe_name]
-  if recipe then
-    if recipe.normal then
-      recipe.normal.hidden = true
-      recipe.normal.enabled = false
-    end
-    if recipe.expensive then
-      recipe.expensive.hidden = true
-      recipe.expensive.enabled = false
-    end
-    if not recipe.normal and not recipe.expensive then
-      recipe.hidden = true
-      recipe.enabled = false
-    end
-  end
-end
-
 function seablock.lib.unhide_recipe(recipe_name)
   local recipe = data.raw.recipe[recipe_name]
   if recipe then
@@ -347,22 +329,6 @@ function seablock.lib.set_recipe_subgroup(recipe_name, subgroup)
   local recipe = data.raw.recipe[recipe_name]
   if recipe then
     recipe.subgroup = subgroup
-  end
-end
-
-function seablock.lib.set_technology_unit_count(technology_name, count)
-  local technology = data.raw.technology[technology_name]
-  if technology then
-    if (not technology.normal) and (not technology.expensive) then
-      technology.unit.count = count
-    else
-      if technology.normal then
-        technology.normal.unit.count = count
-      end
-      if technology.expensive then
-        technology.expensive.unit.count = count
-      end
-    end
   end
 end
 
