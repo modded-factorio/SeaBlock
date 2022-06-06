@@ -679,16 +679,6 @@ local mil_techswap = {
                      {'utility-science-pack', 1},
                      {'space-science-pack', 1}}
   },
-  -- 250 Red, Green, Military, Blue, Purple, Yellow
-  {
-    tech_name = 'fusion-reactor-equipment-2',
-    science_packs = {{'automation-science-pack', 1},
-                     {'logistic-science-pack', 1},
-                     {'military-science-pack', 1},
-                     {'chemical-science-pack', 1},
-                     {'production-science-pack', 1},
-                     {'utility-science-pack', 1}}
-  },
   -- 300 Red, Green, Military, Blue, Purple, Pink, Yellow
   {
     tech_name = 'fusion-reactor-equipment-3',
@@ -929,6 +919,7 @@ if mods['bobwarfare'] then
 
   -- Keep Power Armor MK2 accessible without Purple science
   bobmods.lib.tech.replace_prerequisite('power-armor-mk2', 'military-4', 'military-3')
+  bobmods.lib.tech.add_prerequisite('power-armor-mk2', 'utility-science-pack')
 
   -- Move Artillery later
   bobmods.lib.tech.remove_science_pack('bob-artillery-turret-2', 'utility-science-pack', 1)
@@ -964,9 +955,7 @@ if mods['bobequipment'] then
   -- Remove dependencies on Alien Research
   bobmods.lib.tech.remove_prerequisite('bob-energy-shield-equipment-4', 'alien-research')
   bobmods.lib.tech.remove_prerequisite('bob-battery-equipment-4', 'alien-research')
-  bobmods.lib.tech.remove_prerequisite('fusion-reactor-equipment-2', 'alien-research')
-
-  bobmods.lib.tech.add_prerequisite('fusion-reactor-equipment-2', 'utility-science-pack')
+  bobmods.lib.tech.remove_prerequisite('fusion-reactor-equipment-3', 'alien-research')
 end
 
 if mods['bobvehicleequipment'] then

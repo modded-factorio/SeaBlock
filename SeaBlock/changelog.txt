@@ -10,6 +10,7 @@ Date: ???
     - Added missing tech prerequisites #252, #265
     - Added purple and yellow science packs to Radio Thermoelectric Generator tech #252
     - Renamed recipes and entities containing the word "coal" #252
+    - Compatibility changes for Bob's mods 1.1.5 #262
   Bugfixes:
     - Lab 2 could not be researched (without SCT) #244
     - Error when using custom colors for tiers with Artisanal Reskins #251

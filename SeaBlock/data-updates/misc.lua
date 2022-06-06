@@ -135,6 +135,7 @@ bobmods.lib.tech.replace_prerequisite('advanced-electronics', 'plastics', 'plast
 bobmods.lib.tech.replace_prerequisite('battery', 'plastics', 'plastic-1')
 bobmods.lib.tech.replace_prerequisite('bio-arboretum-swamp-1', 'plastics', 'plastic-1')
 bobmods.lib.tech.replace_prerequisite('bio-plastic-1', 'plastics', 'plastic-1')
+bobmods.lib.tech.replace_prerequisite('fluid-canister-processing', 'plastics', 'plastic-1')
 
 
 seablock.lib.hide_technology('plastics')
@@ -339,16 +340,6 @@ seablock.lib.remove_recipe('steam-inserter')
 seablock.lib.hide_item('steam-inserter')
 if data.raw.inserter['steam-inserter'] then
   data.raw.inserter['steam-inserter'].next_upgrade = nil
-end
-
--- Fix Bob's nuclear tech icons missized
-if data.raw.technology['plutonium-fuel-cell'] then
-  data.raw.technology['plutonium-fuel-cell'].icon_size = 64
-  data.raw.technology['plutonium-fuel-cell'].icon_mipmaps = 4
-end
-if data.raw.technology['thorium-plutonium-fuel-cell'] then
-  data.raw.technology['thorium-plutonium-fuel-cell'].icon_size = 64
-  data.raw.technology['thorium-plutonium-fuel-cell'].icon_mipmaps = 4
 end
 
 -- Swap out concrete for bricks
