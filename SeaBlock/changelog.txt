@@ -16,6 +16,7 @@ Date: ???
     - Error when using custom colors for tiers with Artisanal Reskins #251
     - Some disabled techs were not being hidden #252
     - Fixed setting "SpaceX ignore tech price multiplier" #256
+    - Made SpaceX Drydock Assembly Component use modular roboports if regular roboports are disabled #261
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.10
 Date: 30.12.2021
