@@ -10,6 +10,7 @@ Date: ???
     - Added missing tech prerequisites #252, #265
     - Added purple and yellow science packs to Radio Thermoelectric Generator tech #252
     - Renamed recipes and entities containing the word "coal" #252
+    - When playing multiplayer, each player will get their own copy of the starting items. Home Rock will not spawn #259
     - Compatibility changes for Bob's mods 1.1.5 #262
   Bugfixes:
     - Lab 2 could not be researched (without SCT) #244

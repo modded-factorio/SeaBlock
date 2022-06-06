@@ -12,7 +12,7 @@ end
 function seablock.give_items(surface, pos)
   local has_items = false
 
-  if global.starting_items and (not (settings.startup['sb-multiplayer-start'] and settings.startup['sb-multiplayer-start'].value)) then
+  if global.starting_items and (not game.is_multiplayer()) then
     for item, quantity in pairs(global.starting_items) do
       if quantity > 0 then
         has_items = true
@@ -78,7 +78,7 @@ local function init()
     created_items['iron-plate'] = nil
     created_items['wood'] = nil
     
-    if settings.startup['sb-multiplayer-start'] and settings.startup['sb-multiplayer-start'].value then
+    if not game.is_multiplayer() then
       for item, quantity in pairs(global.starting_items) do
         if quantity > 0 then
           created_items[item] = quantity

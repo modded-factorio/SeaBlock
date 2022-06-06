@@ -20,12 +20,3 @@ if mods["LandfillPainting"] then
     }
   })
 end
-
-data:extend({
-  {
-    type = 'bool-setting',
-    name = 'sb-multiplayer-start',
-    setting_type = 'startup',
-    default_value = false
-  }
-})
