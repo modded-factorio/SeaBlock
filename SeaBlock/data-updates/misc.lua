@@ -257,7 +257,7 @@ bobmods.lib.tech.add_prerequisite('geode-crystallization-1', 'chemical-science-p
 
 if mods['bobrevamp'] then
   bobmods.lib.tech.add_new_science_pack('rtg', 'production-science-pack', 1)
-  bobmods.lib.tech.add_new_science_pack('rtg', 'production-science-pack', 1)
+  bobmods.lib.tech.add_new_science_pack('rtg', 'utility-science-pack', 1)
   bobmods.lib.tech.add_prerequisite('rtg', 'production-science-pack')
   bobmods.lib.tech.add_prerequisite('rtg', 'utility-science-pack')
 end
