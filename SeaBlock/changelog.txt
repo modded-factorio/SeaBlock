@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.11
-Date: ???
+Date: 06.06.2022
   Changes:
     - Science Cost Tweaker: #247
       - Purple and some military science intermediates are craftable in an Electronics assembling machine
