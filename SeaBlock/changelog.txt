@@ -1,3 +1,7 @@
+Version: 0.5.12
+Date: ???
+  Bugfixes:
+    - Basic Chemistry 2 tech missing green science #269
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.11
 Date: 06.06.2022

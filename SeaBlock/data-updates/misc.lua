@@ -31,7 +31,7 @@ local function movealleffects(from, to)
 end
 movealleffects('basic-chemistry-2', 'basic-chemistry')
 movealleffects('basic-chemistry-3', 'basic-chemistry-2')
-bobmods.lib.tech.set_science_pack_count(data.raw.technology['basic-chemistry-2'].unit, data.raw.technology['basic-chemistry-3'].unit)
+bobmods.lib.tech.add_new_science_pack('basic-chemistry-2', 'logistic-science-pack', 1)
 seablock.lib.hide_technology('basic-chemistry-3')
 
 -- Make Basic Chemistry depend on Wood Processing 2. Required for Charcoal > Carbon Dioxide
