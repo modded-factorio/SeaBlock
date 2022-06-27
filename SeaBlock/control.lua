@@ -9,7 +9,7 @@ function seablock.give_research(force)
   end
 end
 
-function seablock.give_items(surface, pos)
+function seablock.init_singleplayer(surface, pos)
   local has_items = false
 
   if global.starting_items and (not game.is_multiplayer()) then
@@ -23,10 +23,19 @@ function seablock.give_items(surface, pos)
 
   if has_items then
     local chest = surface.create_entity({name = "rock-chest", position = pos, force = game.forces.neutral})
-    
     for item,quantity in pairs(global.starting_items) do
       if quantity > 0 then
         chest.insert{name = item, count = quantity}
+      end
+    end
+  end
+
+  -- remove startup items from player in singleplayer.
+  if not game.is_multiplayer() then
+    local inv = game.players[1].get_main_inventory()
+    for item,quantity in pairs(global.starting_items) do
+      if quantity > 0 then
+        inv.remove{name = item, count = quantity}
       end
     end
   end
@@ -77,12 +86,10 @@ local function init()
     created_items['stone-furnace'] = nil
     created_items['iron-plate'] = nil
     created_items['wood'] = nil
-    
-    if not game.is_multiplayer() then
-      for item, quantity in pairs(global.starting_items) do
-        if quantity > 0 then
-          created_items[item] = quantity
-        end
+    -- game.is_multiplayer() is not working in on_init, always give items to player and remove in singleplayer.
+    for item, quantity in pairs(global.starting_items) do
+      if quantity > 0 then
+        created_items[item] = quantity
       end
     end
 
@@ -114,7 +121,7 @@ script.on_event(defines.events.on_chunk_generated,
     local rby = e.area.right_bottom.y
     for _,pos in pairs(surface.map_gen_settings.starting_points) do
       if pos.x >= ltx and pos.y >= lty and pos.x < rbx and pos.y < rby then
-        seablock.give_items(surface, pos)
+        seablock.init_singleplayer(surface, pos)
       end
     end
   end
