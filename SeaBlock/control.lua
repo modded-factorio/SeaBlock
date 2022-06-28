@@ -9,7 +9,7 @@ function seablock.give_research(force)
   end
 end
 
-function seablock.init_singleplayer(surface, pos)
+function seablock.create_rock_chest(surface, pos)
   local has_items = false
 
   if global.starting_items and (not game.is_multiplayer()) then
@@ -26,16 +26,6 @@ function seablock.init_singleplayer(surface, pos)
     for item,quantity in pairs(global.starting_items) do
       if quantity > 0 then
         chest.insert{name = item, count = quantity}
-      end
-    end
-  end
-
-  -- remove startup items from player in singleplayer.
-  if not game.is_multiplayer() then
-    local inv = game.players[1].get_main_inventory()
-    for item,quantity in pairs(global.starting_items) do
-      if quantity > 0 then
-        inv.remove{name = item, count = quantity}
       end
     end
   end
@@ -86,13 +76,6 @@ local function init()
     created_items['stone-furnace'] = nil
     created_items['iron-plate'] = nil
     created_items['wood'] = nil
-    -- game.is_multiplayer() is not working in on_init, always give items to player and remove in singleplayer.
-    for item, quantity in pairs(global.starting_items) do
-      if quantity > 0 then
-        created_items[item] = quantity
-      end
-    end
-
     remote.call("freeplay", "set_created_items", created_items)
   end
 end
@@ -121,7 +104,7 @@ script.on_event(defines.events.on_chunk_generated,
     local rby = e.area.right_bottom.y
     for _,pos in pairs(surface.map_gen_settings.starting_points) do
       if pos.x >= ltx and pos.y >= lty and pos.x < rbx and pos.y < rby then
-        seablock.init_singleplayer(surface, pos)
+        seablock.create_rock_chest(surface, pos)
       end
     end
   end
@@ -199,6 +182,19 @@ script.on_configuration_changed(
 script.on_load(
   function()
     set_pvp()
+  end
+)
+
+script.on_event(defines.events.on_player_created,
+  function (e)
+    if game.is_multiplayer() then
+      local inv = game.players[e.player_index].get_main_inventory()
+      for item,quantity in pairs(global.starting_items) do
+        if quantity > 0 then
+          inv.insert{name = item, count = quantity}
+        end
+      end
+    end
   end
 )
 
