@@ -187,7 +187,7 @@ script.on_load(
 
 script.on_event(defines.events.on_player_created,
   function (e)
-    if game.is_multiplayer() then
+    if global.starting_items and game.is_multiplayer() then
       local inv = game.players[e.player_index].get_main_inventory()
       for item,quantity in pairs(global.starting_items) do
         if quantity > 0 then
