@@ -38,6 +38,9 @@
     "? SpaceMod >= 1.1.1",
 
     "(?) KS_Power_quickfix",
-    "(?) Companion_Drones"
+    "(?) Companion_Drones",
+    
+    "! alien-biomes",
+    "! angelsexploration"
   ]
 }

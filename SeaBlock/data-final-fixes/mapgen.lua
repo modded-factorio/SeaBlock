@@ -25,12 +25,7 @@ for k,v in pairs(data.raw['simple-entity']) do
   seablock.lib.add_flag('simple-entity', v.name, 'not-deconstructable')
 end
 
--- Keep worms and Alien Biomes controls (to prevent crash)
-local keepcontrols = {
-  ['cold'] = true,
-  ['hot']  = true
-}
-
+local keepcontrols = {}
 local turrets = data.raw['turret']
 for turret_name, turret in pairs(turrets) do
   if turret.autoplace and turret.autoplace.control then
