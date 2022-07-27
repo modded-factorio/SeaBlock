@@ -34,6 +34,7 @@ seablock.startup_techs = {
   ['long-inserters-1'] = {true},
   ['military'] = {true},
   ['optics'] = {true},
+  ['sb-steam-power'] = {true},
   ['slag-processing-1'] = {true},
   ['water-washing-1'] = {true}
 }

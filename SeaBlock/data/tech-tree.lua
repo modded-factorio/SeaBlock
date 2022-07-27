@@ -206,3 +206,9 @@ seablock.lib.hide_technology('sulfur-processing')
 seablock.lib.hide_technology('oil-processing')
 seablock.lib.hide_technology('advanced-oil-processing')
 seablock.lib.hide_technology('coal-liquefaction')
+
+if mods['bobpower'] then
+  bobmods.lib.tech.add_prerequisite('bob-boiler-2', 'sb-steam-power')
+  bobmods.lib.tech.add_prerequisite('bob-steam-engine-2', 'sb-steam-power')
+end
+bobmods.lib.tech.add_prerequisite('angels-coal-processing', 'sb-steam-power')
