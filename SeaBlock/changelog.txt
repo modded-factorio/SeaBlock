@@ -1,10 +1,11 @@
+---------------------------------------------------------------------------------------------------
 Version: 0.5.12
 Date: ???
   Changes:
     - Added tech Steam power #271
   Bugfixes:
-    - Basic Chemistry 2 tech missing green science #269
     - Fix multiple startitems in rock-chest and playerinventory #268
+    - Basic Chemistry 2 tech missing green science #269
     - Fixed setting "SpaceX ignore tech price multiplier" #273
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.11
