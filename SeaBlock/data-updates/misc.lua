@@ -8,12 +8,7 @@ end
 seablock.lib.substingredient("pellet-manganese-smelting", "gas-natural-1", "gas-methane")
 
 -- Remove steel's prerequiste on Chemical processing 1
-bobmods.lib.tech.remove_prerequisite('steel-processing', 'electrolysis-1')
 bobmods.lib.tech.remove_prerequisite('steel-processing', 'chemical-processing-1')
-bobmods.lib.tech.add_prerequisite('steel-processing', 'slag-processing-1')
-
--- Reduce cost of basic Steel from 8 iron to 6 iron
-seablock.lib.substingredient('angels-plate-steel-pre-heating', 'angels-plate-hot-iron', nil, 6)
 
 -- Merge basic chemistry 2 into basic chemistry
 local function movealleffects(from, to)
@@ -33,21 +28,20 @@ movealleffects('basic-chemistry-2', 'basic-chemistry')
 movealleffects('basic-chemistry-3', 'basic-chemistry-2')
 bobmods.lib.tech.add_new_science_pack('basic-chemistry-2', 'logistic-science-pack', 1)
 seablock.lib.hide_technology('basic-chemistry-3')
+-- Move gas shift recipes back
+seablock.lib.moveeffect('water-gas-shift-1', 'basic-chemistry', 'basic-chemistry-2')
+seablock.lib.moveeffect('water-gas-shift-2', 'basic-chemistry', 'basic-chemistry-2')
 
 -- Make Basic Chemistry depend on Wood Processing 2. Required for Charcoal > Carbon Dioxide
 bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
 
 -- Move Water Treatment from Electronics to Slag Processing 1. Hydro Plant no longer requires Green Circuits
 -- Slag Processing 1 is first source of Sulfuric Waste Water
-bobmods.lib.tech.replace_prerequisite('water-treatment', 'electronics', 'slag-processing-1')
-
--- Fix Slag Processing 1 prerequisites
-bobmods.lib.tech.add_prerequisite('slag-processing-1', 'angels-sulfur-processing-1')
-bobmods.lib.tech.remove_prerequisite('slag-processing-1', 'water-treatment-2')
+bobmods.lib.tech.remove_prerequisite('water-treatment', 'angels-fluid-control')
+bobmods.lib.tech.add_prerequisite('water-treatment', 'slag-processing-1')
 
 -- Allow skipping of waste water recycling
 bobmods.lib.tech.remove_prerequisite('water-washing-1', 'water-treatment')
-bobmods.lib.tech.remove_prerequisite('water-washing-1', 'steel-processing')
 bobmods.lib.tech.add_prerequisite('water-washing-1', 'automation')
 seablock.lib.moveeffect('yellow-waste-water-purification', 'water-treatment-2', 'water-treatment')
 seablock.lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
@@ -121,24 +115,6 @@ if mods['bobenemies'] then
 end
 
 bobmods.lib.tech.remove_prerequisite('tungsten-processing', 'angels-nickel-smelting-1')
-
--- Merge tech Plastics into Plastic 1
-seablock.lib.moveeffect('plastic-pipe', 'plastics', 'plastic-1')
-seablock.lib.moveeffect('plastic-pipe-to-ground', 'plastics', 'plastic-1')
-bobmods.lib.tech.remove_recipe_unlock('bio-plastic-1', 'solid-plastic')
-bobmods.lib.tech.remove_recipe_unlock('bio-arboretum-swamp-1', 'solid-plastic')
-bobmods.lib.tech.remove_prerequisite('plastic-1', 'plastics')
-bobmods.lib.tech.remove_prerequisite('plastic-1', 'angels-advanced-chemistry-2')
-bobmods.lib.tech.add_prerequisite('plastic-1', 'gas-steam-cracking-1')
-bobmods.lib.tech.add_prerequisite('plastic-1', 'oil-steam-cracking-1')
-bobmods.lib.tech.replace_prerequisite('advanced-electronics', 'plastics', 'plastic-1')
-bobmods.lib.tech.replace_prerequisite('battery', 'plastics', 'plastic-1')
-bobmods.lib.tech.replace_prerequisite('bio-arboretum-swamp-1', 'plastics', 'plastic-1')
-bobmods.lib.tech.replace_prerequisite('bio-plastic-1', 'plastics', 'plastic-1')
-bobmods.lib.tech.replace_prerequisite('fluid-canister-processing', 'plastics', 'plastic-1')
-
-
-seablock.lib.hide_technology('plastics')
 
 seablock.lib.hide('inserter', 'steam-inserter')
 seablock.lib.hide('mining-drill', 'burner-mining-drill')
@@ -255,7 +231,7 @@ end
 
 bobmods.lib.tech.add_prerequisite('geode-crystallization-1', 'chemical-science-pack')
 
-if mods['bobrevamp'] then
+if mods['bobrevamp'] and (not mods['bobclasses']) then
   bobmods.lib.tech.add_new_science_pack('rtg', 'production-science-pack', 1)
   bobmods.lib.tech.add_new_science_pack('rtg', 'utility-science-pack', 1)
   bobmods.lib.tech.add_prerequisite('rtg', 'production-science-pack')
@@ -334,6 +310,7 @@ seablock.lib.substingredient('copper-tungsten-alloy', 'powdered-tungsten', nil, 
 seablock.lib.substingredient('copper-tungsten-alloy', 'copper-plate', 'powder-copper', 10)
 seablock.lib.substresult('copper-tungsten-alloy', 'copper-tungsten-alloy', nil, 25)
 bobmods.lib.recipe.set_energy_required('copper-tungsten-alloy', 8)
+bobmods.lib.tech.add_prerequisite('tungsten-alloy-processing', 'angels-copper-smelting-2')
 
 -- Hide steam inserter
 bobmods.lib.recipe.hide_recipe('steam-inserter')
@@ -496,11 +473,33 @@ end
 
 bobmods.lib.tech.add_prerequisite("angels-advanced-gas-processing", "gas-steam-cracking-2")
 
+-- Bronze prerequisites
+bobmods.lib.tech.add_prerequisite("ore-floatation", "alloy-processing")
+bobmods.lib.tech.add_prerequisite("water-washing-2", "alloy-processing")
+bobmods.lib.tech.add_prerequisite("thermal-water-extraction", "alloy-processing")
+bobmods.lib.tech.add_prerequisite("angels-cooling", "alloy-processing")
+bobmods.lib.tech.add_prerequisite("gas-steam-cracking-1", "alloy-processing")
+bobmods.lib.tech.add_prerequisite("bio-nutrient-paste", "alloy-processing")
+bobmods.lib.tech.add_prerequisite("ore-processing-1", "alloy-processing")
+bobmods.lib.tech.add_prerequisite("powder-metallurgy-1", "alloy-processing")
+
 -- Clay Brick prerequisites
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-1", "angels-stone-smelting-1")
 bobmods.lib.tech.add_prerequisite("angels-cooling", "angels-stone-smelting-1")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-2", "angels-stone-smelting-1")
 bobmods.lib.tech.add_prerequisite("water-washing-2", "angels-stone-smelting-1")
+bobmods.lib.tech.add_prerequisite("oil-gas-extraction", "angels-stone-smelting-1")
+bobmods.lib.tech.add_prerequisite("gardens", "angels-stone-smelting-1")
+
+-- Brass prerequisites
+bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-2", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("angels-metallurgy-3", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("bio-refugium-puffer-1", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("bio-desert-farm", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("bio-swamp-farm", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("bio-temperate-farm", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("water-treatment-3", "zinc-processing")
 
 -- Concrete Brick prerequisites
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "angels-stone-smelting-2")
@@ -508,12 +507,31 @@ bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-2", "angels-stone-s
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-3", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("bio-refugium-puffer-1", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("water-treatment-3", "angels-stone-smelting-2")
+bobmods.lib.tech.add_prerequisite("bio-refugium-hatchery", "angels-stone-smelting-2")
+
+-- Titanium prerequisites
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "titanium-processing")
+bobmods.lib.tech.add_prerequisite("water-treatment-4", "titanium-processing")
+bobmods.lib.tech.add_prerequisite("slag-processing-2", "titanium-processing")
+bobmods.lib.tech.add_prerequisite("angels-metallurgy-4", "titanium-processing")
+bobmods.lib.tech.add_prerequisite("bio-refugium-biter-1", "titanium-processing")
 
 -- Reinforced concrete brick
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("slag-processing-2", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("thermal-water-extraction-2", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("water-treatment-4", "angels-stone-smelting-3")
+bobmods.lib.tech.add_prerequisite("angels-metallurgy-4", "angels-stone-smelting-3")
+
+-- Tungsten prerequisites
+bobmods.lib.tech.add_prerequisite("advanced-ore-refining-4", "tungsten-processing")
+
+-- Copper tungsten / tungsten carbide prerequisites
+bobmods.lib.tech.add_prerequisite("angels-nitrogen-processing-4", "tungsten-alloy-processing")
+bobmods.lib.tech.add_prerequisite("ore-processing-5", "tungsten-alloy-processing")
+
+-- Nitinol prerequisites
+bobmods.lib.tech.add_prerequisite("ore-processing-5", "nitinol-processing")
 
 -- Advanced circuit
 bobmods.lib.tech.add_prerequisite("tank", "advanced-electronics")

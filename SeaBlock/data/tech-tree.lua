@@ -26,7 +26,7 @@ bobmods.lib.tech.replace_prerequisite('angels-coal-processing-2', 'water-treatme
 
 -- Add other prerequisites
 bobmods.lib.tech.add_prerequisite('gardens', 'electronics')
-bobmods.lib.tech.add_prerequisite('uranium-processing', 'ore-leaching')
+bobmods.lib.tech.replace_prerequisite('uranium-processing', 'slag-processing-2', 'ore-leaching')
 bobmods.lib.tech.add_prerequisite('thorium-processing', 'ore-electro-whinning-cell')
 if mods['ScienceCostTweakerM'] then
   bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
@@ -106,6 +106,7 @@ bobmods.lib.tech.replace_prerequisite('angels-silicon-smelting-3', 'angels-alumi
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-1', 'logistic-science-pack', 1)
 bobmods.lib.tech.replace_prerequisite('angels-nickel-smelting-1', 'angels-metallurgy-1', 'angels-metallurgy-2')
 bobmods.lib.tech.replace_prerequisite('angels-iron-casting-3', 'angels-nickel-smelting-2', 'angels-nickel-smelting-1')
+bobmods.lib.tech.add_prerequisite('angels-nickel-smelting-1', 'basic-chemistry-3')
 
 -- T2:
 bobmods.lib.tech.add_new_science_pack('angels-nickel-smelting-2', 'chemical-science-pack', 1)

@@ -509,7 +509,7 @@ bobmods.lib.tech.remove_recipe_unlock('fluid-handling', 'fill-alien-poison-barre
 bobmods.lib.tech.remove_recipe_unlock('fluid-handling', 'fill-liquid-glycerol-barrel')
 bobmods.lib.tech.remove_recipe_unlock('fluid-handling', 'fill-liquid-toluene-barrel')
 bobmods.lib.tech.remove_recipe_unlock('fluid-handling', 'fill-nitroglycerin-barrel')
-bobmods.lib.tech.remove_recipe_unlock('gas-steam-cracking-2', 'liquid-toluene-from-benzene')
+bobmods.lib.tech.remove_recipe_unlock('angels-advanced-chemistry-3', 'liquid-toluene-from-benzene')
 bobmods.lib.tech.remove_recipe_unlock('military-3', 'combat-shotgun')
 bobmods.lib.tech.remove_recipe_unlock('military-3', 'fire-capsule')
 bobmods.lib.tech.remove_recipe_unlock('military-3', 'poison-capsule')
@@ -520,7 +520,7 @@ bobmods.lib.tech.remove_recipe_unlock('military-4', 'cluster-grenade')
 bobmods.lib.tech.remove_recipe_unlock('military-4', 'piercing-shotgun-shell')
 bobmods.lib.tech.remove_recipe_unlock('military', 'shotgun-shell')
 bobmods.lib.tech.remove_recipe_unlock('military', 'shotgun')
-bobmods.lib.tech.remove_recipe_unlock('oil-steam-cracking-2', 'liquid-toluene-from-naphtha')
+bobmods.lib.tech.remove_recipe_unlock('angels-advanced-chemistry-3', 'liquid-toluene-from-naphtha')
 bobmods.lib.tech.remove_recipe_unlock('robotics', 'robot-drone-frame-large')
 bobmods.lib.tech.remove_recipe_unlock('robotics', 'robot-drone-frame')
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'explosive-uranium-cannon-shell')
@@ -530,6 +530,21 @@ bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-bullet')
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-cannon-shell')
 bobmods.lib.tech.remove_recipe_unlock('uranium-ammo', 'uranium-rounds-magazine')
 bobmods.lib.tech.remove_recipe_unlock('zinc-processing', 'gunmetal-alloy')
+
+bobmods.lib.tech.remove_recipe_unlock('fluid-barrel-processing', 'fill-nitroglycerin-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-barrel-processing', 'empty-nitroglycerin-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-barrel-processing', 'fill-liquid-toluene-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-barrel-processing', 'empty-liquid-toluene-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-barrel-processing', 'fill-liquid-glycerol-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-barrel-processing', 'empty-liquid-glycerol-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-canister-processing', 'fill-alien-acid-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-canister-processing', 'empty-alien-acid-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-canister-processing', 'fill-alien-explosive-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-canister-processing', 'empty-alien-explosive-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-canister-processing', 'fill-alien-poison-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-canister-processing', 'empty-alien-poison-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-canister-processing', 'fill-alien-fire-barrel')
+bobmods.lib.tech.remove_recipe_unlock('fluid-canister-processing', 'empty-alien-fire-barrel')
 
 seablock.lib.substresult('nutrients-refining-2', 'liquid-glycerol', 'water', nil)
 if data.raw.recipe['nutrients-refining-2'] then
@@ -734,14 +749,14 @@ local mil_techswap = {
                      {'utility-science-pack', 1},
                      {'space-science-pack', 1}}
   },
-  -- 200 Red, Green, Blue, Purple, Pink
+  -- 200 Red, Green, Blue, Purple, Yellow
   {
     tech_name = 'vehicle-fusion-cell-equipment-4',
     science_packs = {{'automation-science-pack', 1},
                      {'logistic-science-pack', 1},
                      {'chemical-science-pack', 1},
                      {'production-science-pack', 1},
-                     {'advanced-logistic-science-pack', 1}}
+                     {'utility-science-pack', 1}}
   },
   -- 250 Red, Green, Blue, Purple, Pink, Yellow
   {
@@ -763,6 +778,15 @@ local mil_techswap = {
                      {'advanced-logistic-science-pack', 1},
                      {'utility-science-pack', 1},
                      {'space-science-pack', 1}}
+  },
+  -- 250 Red, Green, Blue, Purple
+  {
+    tech_name = 'vehicle-big-turret-equipment-3',
+    science_packs = {{'automation-science-pack', 1},
+                     {'logistic-science-pack', 1},
+                     {'military-science-pack', 1},
+                     {'chemical-science-pack', 1},
+                     {'production-science-pack', 1}}
   },
   -- 300 Red, Green, Blue, Purple
   {
@@ -794,14 +818,14 @@ local mil_techswap = {
                      {'advanced-logistic-science-pack', 1},
                      {'utility-science-pack', 1}}
   },
-  -- 350 Red, Green, Blue, Purple, Pink
+  -- 350 Red, Green, Blue, Purple, Yellow
   {
     tech_name = 'vehicle-fusion-reactor-equipment-4',
     science_packs = {{'automation-science-pack', 1},
                      {'logistic-science-pack', 1},
                      {'chemical-science-pack', 1},
                      {'production-science-pack', 1},
-                     {'advanced-logistic-science-pack', 1}}
+                     {'utility-science-pack', 1}}
   },
   -- 400 Red, Green, Blue, Purple, Pink, Yellow
   {
@@ -939,6 +963,7 @@ if mods['bobvehicleequipment'] then
   bobmods.lib.tech.remove_prerequisite('vehicle-fusion-reactor-equipment-4', 'alien-research')
 
   bobmods.lib.tech.add_prerequisite('vehicle-big-turret-equipment-4', 'military-4')
+  bobmods.lib.tech.add_prerequisite('vehicle-laser-defense-equipment-5', 'utility-science-pack')
 
   if mods['bobtech'] then
     bobmods.lib.tech.add_prerequisite('vehicle-battery-equipment-5', 'advanced-logistic-science-pack')

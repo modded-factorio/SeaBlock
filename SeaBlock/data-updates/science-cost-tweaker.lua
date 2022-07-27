@@ -25,6 +25,7 @@ if mods['ScienceCostTweakerM'] then
     bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-glass-smelting-1')
     bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-aluminium-smelting-1')
     bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-brass-smelting-1')
+    bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-silver-smelting-1')
     bobmods.lib.recipe.hide_recipe('sct-t3-flash-fuel2')
   end
 end

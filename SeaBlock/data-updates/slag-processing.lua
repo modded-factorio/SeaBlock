@@ -75,7 +75,9 @@ bobmods.lib.tech.add_prerequisite('angels-solder-smelting-basic', 'ore-crushing'
 -- Move Mechanical Refining under Slag Processing 1
 seablock.lib.moveeffect('ore-crusher', 'ore-crushing', 'automation')
 bobmods.lib.tech.remove_prerequisite('slag-processing-1', 'ore-crushing')
-bobmods.lib.tech.replace_prerequisite('ore-crushing', 'automation', 'slag-processing-1')
+bobmods.lib.tech.remove_prerequisite('slag-processing-1', 'logistic-science-pack')
+bobmods.lib.tech.remove_prerequisite('ore-crushing', 'basic-chemistry')
+bobmods.lib.tech.add_prerequisite('ore-crushing', 'slag-processing-1')
 
 -- Move crystallization ore recipes up above crushed ores
 data.raw['item-subgroup']['slag-processing-1'].order = "ab"
