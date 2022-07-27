@@ -3,6 +3,8 @@ Version: 0.5.12
 Date: ???
   Changes:
     - Added tech Steam power #271
+    - Marked Alien Biomes mod as incompatible #263
+    - Marked Angel's Exploration mod as incompatible #264
   Bugfixes:
     - Fixed duplicate starting items in rock-chest as well as player inventory #268
     - Basic Chemistry 2 tech missing green science #269
