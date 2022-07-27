@@ -4,7 +4,7 @@ Date: ???
   Changes:
     - Added tech Steam power #271
   Bugfixes:
-    - Fix multiple startitems in rock-chest and playerinventory #268
+    - Fixed duplicate starting items in rock-chest as well as player inventory #268
     - Basic Chemistry 2 tech missing green science #269
     - Fixed setting "SpaceX ignore tech price multiplier" #273
 ---------------------------------------------------------------------------------------------------
