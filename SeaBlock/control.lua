@@ -175,6 +175,11 @@ script.on_configuration_changed(
       if force.technologies['kovarex-enrichment-process'] then
         force.technologies['kovarex-enrichment-process'].enabled = true
       end
+
+      if force.technologies['sct-automation-science-pack'] and force.technologies['sb-startup4'] and force.technologies['sb-startup4'].researched then
+        force.technologies['sct-lab-t1'].researched = true
+        force.technologies['sct-automation-science-pack'].researched = true
+      end
     end
   end
 )
