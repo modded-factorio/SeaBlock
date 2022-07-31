@@ -9,7 +9,7 @@ local function makestripes(filename, count)
 end
 
 local function makeextractorlayers(bottom, top)
-  layers = {}
+  local layers = {}
   if top then
     table.insert(layers,
       {

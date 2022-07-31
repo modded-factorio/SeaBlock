@@ -27,7 +27,7 @@ function seablock.populate_starting_items(items)
 
   -- Starting landfill
   local landfill
-  setting = settings.startup['sb-default-landfill']
+  local setting = settings.startup['sb-default-landfill']
   if setting and items[setting.value] then
     landfill = setting.value
   else

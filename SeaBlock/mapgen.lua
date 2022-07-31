@@ -364,7 +364,7 @@ local function new_random_seed()
 end
 local function worm_autoplace(distance, probability, order, falloff, control_name)
   local d = noise.var("distance") - noise.var("starting_area_radius")
-  p = noise.clamp((d - distance * 128) / 128, 0, 1)
+  local p = noise.clamp((d - distance * 128) / 128, 0, 1)
   if falloff then
     p = p * noise.clamp(((distance + 2) * 128 - d) / 128, 0, 1)
   end
