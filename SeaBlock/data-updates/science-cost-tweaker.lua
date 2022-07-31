@@ -9,6 +9,7 @@ if mods['ScienceCostTweakerM'] then
 
   -- Change tech to use lab icon from SCT
   data.raw.tool['sb-lab-tool'].icon = '__ScienceCostTweakerM__/graphics/sct-lab-t1/icon-64.png'
+  data.raw.tool['sb-lab-tool'].icon_mipmaps = 0
 
   -- Reduce processing unit cost of S.C.T. high-tech science
   seablock.lib.substingredient('sct-htech-injector', 'processing-unit', nil, 3)
