@@ -69,8 +69,6 @@ bobmods.lib.recipe.hide_recipe('angelsore6-crushed-smelting')
 -- Add prerequisites
 bobmods.lib.tech.add_prerequisite('ore-floatation', 'ore-advanced-crushing')
 bobmods.lib.tech.add_prerequisite('advanced-ore-refining-1', 'ore-advanced-crushing')
-bobmods.lib.tech.add_prerequisite('angels-metallurgy-1', 'ore-crushing')
-bobmods.lib.tech.add_prerequisite('angels-solder-smelting-basic', 'ore-crushing')
 
 -- Move Mechanical Refining under Slag Processing 1
 seablock.lib.moveeffect('ore-crusher', 'ore-crushing', 'automation')
@@ -97,7 +95,6 @@ bobmods.lib.tech.add_prerequisite('advanced-ore-refining-2', 'ore-powderizer')
 bobmods.lib.tech.add_prerequisite('advanced-ore-refining-2', 'advanced-electronics')
 bobmods.lib.tech.add_prerequisite('advanced-ore-refining-4', 'advanced-electronics-3')
 bobmods.lib.tech.add_prerequisite('advanced-ore-refining-4', 'angels-tungsten-smelting-1')
-bobmods.lib.tech.add_new_science_pack('advanced-ore-refining-4', 'production-science-pack', 1)
 seablock.lib.add_recipe_unlock('advanced-ore-refining-4', 'sb-ore-sorting-facility-5', 3)
 
 local buildingmulti = angelsmods.marathon.buildingmulti
