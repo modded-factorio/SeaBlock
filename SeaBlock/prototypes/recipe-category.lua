@@ -15,10 +15,6 @@ data:extend(
   {
     type = "recipe-category",
     name = "ore-sorting-5",
-  },
-  {
-    type = "recipe-category",
-    name = "electronics-with-fluid"
   }
 })
 

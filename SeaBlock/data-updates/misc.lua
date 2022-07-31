@@ -443,34 +443,6 @@ bobmods.lib.recipe.set_ingredient('cement-mixture-2', {'solid-lime', 4})
 bobmods.lib.recipe.set_result('cement-mixture-2', {'solid-cement', 4})
 bobmods.lib.recipe.set_energy_required('cement-mixture-2', 16)
 
--- Prevent recipes showing up in machines that can't craft the recipe due to not having a fluid input
-seablock.lib.set_recipe_category('module-circuit-board', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('module-processor-board', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('module-processor-board-2', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('module-processor-board-3', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('intergrated-electronics', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('processing-electronics', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('circuit-board', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('superior-circuit-board', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('multi-layer-circuit-board', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('processing-unit', 'electronics-with-fluid')
-seablock.lib.set_recipe_category('advanced-processing-unit', 'electronics-with-fluid')
-
-for _, machine_name in pairs({
-  'assembling-machine-2',
-  'assembling-machine-3',
-  'assembling-machine-4',
-  'assembling-machine-5',
-  'assembling-machine-6',
-  'electronics-machine-2',
-  'electronics-machine-3'
-}) do
-  local machine = data.raw['assembling-machine'][machine_name]
-  if machine then
-    table.insert(machine.crafting_categories, 'electronics-with-fluid')
-  end
-end
-
 bobmods.lib.tech.add_prerequisite("angels-advanced-gas-processing", "gas-steam-cracking-2")
 
 -- Bronze prerequisites
