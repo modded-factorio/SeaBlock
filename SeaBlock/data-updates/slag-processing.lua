@@ -82,9 +82,6 @@ bobmods.lib.tech.add_prerequisite('ore-crushing', 'slag-processing-1')
 -- Move crystallization ore recipes up above crushed ores
 data.raw['item-subgroup']['slag-processing-1'].order = "ab"
 
--- Copy Ore Processing Machine tech icon to Mechanical Refining
-seablock.lib.copy_icon(data.raw.technology['ore-crushing'], data.raw.technology['advanced-ore-refining-1'])
-
 -- Red science level research for slag processing 1
 data.raw.technology['slag-processing-1'].unit = {
   count = 20,

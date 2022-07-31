@@ -21,3 +21,6 @@ angelsmods.trigger.ores['platinum'] = true
 angelsmods.trigger.smelting_products['platinum'].plate = true
 angelsmods.trigger.smelting_products['platinum'].wire = true
 angelsmods.trigger.smelting_products["gunmetal"].plate = false
+
+-- Copy Ore Processing Machine tech icon to Mechanical Refining
+seablock.lib.copy_icon(data.raw.technology['ore-crushing'], data.raw.technology['advanced-ore-refining-1'])
