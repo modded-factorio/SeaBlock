@@ -490,7 +490,7 @@ for _,v in pairs(mil_tech) do
 end
 
 for _,v in pairs(mil_recipes) do
-  bobmods.lib.recipe.hide_recipe(v)
+  bobmods.lib.recipe.hide(v)
 end
 
 bobmods.lib.tech.remove_recipe_unlock('angels-advanced-gas-processing', 'gas-fractioning-residual')

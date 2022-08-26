@@ -235,7 +235,7 @@ for k,v in pairs(data.raw.recipe) do
 end
 
 for k,_ in pairs(removerecipes) do
-  bobmods.lib.recipe.hide_recipe(k)
+  bobmods.lib.recipe.hide(k)
 end
 
 -- Remove disabled recipes from technology unlock

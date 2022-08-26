@@ -1,5 +1,5 @@
 -- Merge tech Rubbers into Rubber
-bobmods.lib.recipe.hide_recipe('bob-rubber')
+bobmods.lib.recipe.hide('bob-rubber')
 seablock.lib.moveeffect('insulated-cable', 'electronics', 'rubbers')
 
 -- Circuit network wires should not require rubber

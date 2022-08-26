@@ -186,7 +186,7 @@ end
 
 seablock.lib.hide_item('nickel-plate')
 seablock.lib.hide_item('zinc-plate')
-bobmods.lib.recipe.hide_recipe('bob-zinc-plate')
+bobmods.lib.recipe.hide('bob-zinc-plate')
 bobmods.lib.tech.remove_recipe_unlock('zinc-processing', 'bob-zinc-plate')
 
 -- Move Nitinol smelting up a tier
@@ -273,17 +273,17 @@ if data.raw.recipe['rocket-part'] then
 end
 
 -- Hide recipes that take Chrome Ingots
-bobmods.lib.recipe.hide_recipe('molten-iron-smelting-5')
+bobmods.lib.recipe.hide('molten-iron-smelting-5')
 bobmods.lib.tech.remove_recipe_unlock('angels-iron-casting-3', 'molten-iron-smelting-5')
 bobmods.lib.tech.remove_prerequisite('angels-iron-casting-3', 'angels-chrome-smelting-1')
 
-bobmods.lib.recipe.hide_recipe('molten-steel-smelting-5')
+bobmods.lib.recipe.hide('molten-steel-smelting-5')
 bobmods.lib.tech.remove_recipe_unlock('angels-steel-smelting-3', 'molten-steel-smelting-5')
 bobmods.lib.tech.remove_prerequisite('angels-steel-smelting-3', 'angels-chrome-smelting-1')
 bobmods.lib.tech.remove_prerequisite('angels-steel-smelting-3', 'angels-tungsten-smelting-1')
 bobmods.lib.tech.add_prerequisite('angels-steel-smelting-3', 'angels-cobalt-smelting-1')
 
-bobmods.lib.recipe.hide_recipe('molten-titanium-smelting-5')
+bobmods.lib.recipe.hide('molten-titanium-smelting-5')
 bobmods.lib.tech.remove_recipe_unlock('angels-titanium-casting-3', 'molten-titanium-smelting-5')
 bobmods.lib.tech.remove_prerequisite('angels-titanium-casting-3', 'angels-chrome-smelting-2')
 
@@ -313,7 +313,7 @@ bobmods.lib.recipe.set_energy_required('copper-tungsten-alloy', 8)
 bobmods.lib.tech.add_prerequisite('tungsten-alloy-processing', 'angels-copper-smelting-2')
 
 -- Hide steam inserter
-bobmods.lib.recipe.hide_recipe('steam-inserter')
+bobmods.lib.recipe.hide('steam-inserter')
 seablock.lib.hide_item('steam-inserter')
 if data.raw.inserter['steam-inserter'] then
   data.raw.inserter['steam-inserter'].next_upgrade = nil

@@ -24,7 +24,7 @@ seablock.lib.set_recipe_category('lithium', 'petrochem-electrolyser')
 seablock.lib.set_recipe_category('lithium-water-electrolysis', 'petrochem-electrolyser')
 
 bobmods.lib.tech.remove_recipe_unlock('water-treatment-3', 'solid-lithium')
-bobmods.lib.recipe.hide_recipe('solid-lithium')
+bobmods.lib.recipe.hide('solid-lithium')
 
 -- Move Sodium Carbonate from Brown Algae to Sodium processing
 seablock.lib.moveeffect('algae-brown-burning-wash', 'bio-processing-green', 'sodium-processing', nil)
