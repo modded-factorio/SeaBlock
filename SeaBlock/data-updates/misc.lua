@@ -278,10 +278,7 @@ bobmods.lib.tech.remove_recipe_unlock('angels-iron-casting-3', 'molten-iron-smel
 bobmods.lib.tech.remove_prerequisite('angels-iron-casting-3', 'angels-chrome-smelting-1')
 
 bobmods.lib.recipe.hide('molten-steel-smelting-5')
-bobmods.lib.tech.remove_recipe_unlock('angels-steel-smelting-3', 'molten-steel-smelting-5')
-bobmods.lib.tech.remove_prerequisite('angels-steel-smelting-3', 'angels-chrome-smelting-1')
-bobmods.lib.tech.remove_prerequisite('angels-steel-smelting-3', 'angels-tungsten-smelting-1')
-bobmods.lib.tech.add_prerequisite('angels-steel-smelting-3', 'angels-cobalt-smelting-1')
+bobmods.lib.tech.hide('angels-steel-smelting-4')
 
 bobmods.lib.recipe.hide('molten-titanium-smelting-5')
 bobmods.lib.tech.remove_recipe_unlock('angels-titanium-casting-3', 'molten-titanium-smelting-5')
@@ -399,6 +396,7 @@ if data.raw.technology['electronics-machine-1'] then
   bobmods.lib.tech.add_prerequisite('electronics-machine-1', 'electronics')
 end
 bobmods.lib.tech.add_prerequisite('bio-pressing-1', 'bio-nutrient-paste')
+bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-3', 'ore-leaching')
 
 -- Reduce electrolyser volume
 for _,entity_name in pairs({
@@ -482,21 +480,18 @@ bobmods.lib.tech.add_prerequisite("water-treatment-3", "angels-stone-smelting-2"
 bobmods.lib.tech.add_prerequisite("bio-refugium-hatchery", "angels-stone-smelting-2")
 
 -- Titanium prerequisites
-bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "titanium-processing")
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-4", "titanium-processing")
 bobmods.lib.tech.add_prerequisite("water-treatment-4", "titanium-processing")
-bobmods.lib.tech.add_prerequisite("slag-processing-2", "titanium-processing")
+bobmods.lib.tech.add_prerequisite("slag-processing-3", "titanium-processing")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-4", "titanium-processing")
 bobmods.lib.tech.add_prerequisite("bio-refugium-biter-1", "titanium-processing")
 
 -- Reinforced concrete brick
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "angels-stone-smelting-3")
-bobmods.lib.tech.add_prerequisite("slag-processing-2", "angels-stone-smelting-3")
+bobmods.lib.tech.add_prerequisite("slag-processing-3", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("thermal-water-extraction-2", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("water-treatment-4", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-4", "angels-stone-smelting-3")
-
--- Tungsten prerequisites
-bobmods.lib.tech.add_prerequisite("advanced-ore-refining-4", "tungsten-processing")
 
 -- Copper tungsten / tungsten carbide prerequisites
 bobmods.lib.tech.add_prerequisite("angels-nitrogen-processing-4", "tungsten-alloy-processing")
@@ -510,6 +505,7 @@ bobmods.lib.tech.add_prerequisite("tank", "advanced-electronics")
 
 -- Processing unit
 bobmods.lib.tech.add_prerequisite("water-treatment-4", "advanced-electronics-2")
+bobmods.lib.tech.add_prerequisite("bio-refugium-biter-1", "advanced-electronics-2")
 
 -- Advanced processing unit
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-4", "advanced-electronics-3")

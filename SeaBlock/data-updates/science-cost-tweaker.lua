@@ -27,6 +27,18 @@ if mods['ScienceCostTweakerM'] then
     bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-aluminium-smelting-1')
     bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-brass-smelting-1')
     bobmods.lib.tech.add_prerequisite('sct-lab-t3', 'angels-silver-smelting-1')
+    bobmods.lib.tech.replace_prerequisite('sct-lab-t3', 'bob-solar-energy-2', 'solar-energy')
     bobmods.lib.recipe.hide('sct-t3-flash-fuel2')
+  end
+
+  -- Make yellow science require purple science
+  for _, tech_name in pairs({
+    'fusion-reactor-equipment',
+    'power-armor-mk2',
+    'rocket-fuel',
+    'sct-lab-t4',
+    'sct-utility-science-pack'
+  }) do
+    bobmods.lib.tech.add_new_science_pack(tech_name, 'production-science-pack', 1)
   end
 end

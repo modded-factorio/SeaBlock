@@ -158,19 +158,11 @@ bobmods.lib.tech.add_prerequisite('bio-wood-processing-3', 'logistic-science-pac
 bobmods.lib.tech.add_prerequisite('basic-chemistry-2', 'logistic-science-pack')
 
 -- Chemical / Blue
-bobmods.lib.tech.add_prerequisite('water-treatment-4', 'chemical-science-pack')
-bobmods.lib.tech.add_prerequisite('bob-robo-modular-2', 'chemical-science-pack')
-if mods['bobequipment'] then
-  bobmods.lib.tech.add_prerequisite('exoskeleton-equipment-2', 'chemical-science-pack')
-end
 
 -- Production
 bobmods.lib.tech.add_prerequisite('logistic-system', 'production-science-pack')
 
 -- Utility / Yellow
-bobmods.lib.tech.add_prerequisite('angels-advanced-chemistry-4', 'utility-science-pack')
-bobmods.lib.tech.add_prerequisite('angels-nuclear-fuel', 'utility-science-pack')
-bobmods.lib.tech.add_prerequisite('angels-metallurgy-5', 'utility-science-pack')
 
 -- Space / White
 if mods['bobequipment'] then
