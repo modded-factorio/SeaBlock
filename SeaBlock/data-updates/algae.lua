@@ -8,6 +8,7 @@ bobmods.lib.tech.add_prerequisite('bio-processing-brown', 'bio-processing-green'
 bobmods.lib.tech.remove_recipe_unlock('bio-processing-brown', 'algae-green-simple')
 seablock.lib.moveeffect('algae-brown', 'bio-processing-green', 'bio-processing-brown', nil)
 seablock.lib.moveeffect('algae-farm-2', 'bio-processing-green', 'bio-processing-brown', 1)
+bobmods.lib.tech.ignore_tech_cost_multiplier('bio-processing-brown', false)
 
 -- Green algae
 seablock.lib.set_recipe_category('algae-green', 'bio-processing')

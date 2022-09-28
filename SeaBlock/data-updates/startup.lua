@@ -121,7 +121,7 @@ for k,v in pairs(seablock.scripted_techs) do
     for _,effect in pairs(data.raw.technology[k].effects or {}) do
       movedrecipes[effect.recipe] = true
     end
-    data.raw.technology[k].ignore_tech_cost_multiplier = true
+    bobmods.lib.tech.ignore_tech_cost_multiplier(k, true)
   end
 end
 local disabledrecipes = {}
@@ -209,7 +209,7 @@ for k,v in pairs(seablock.startup_techs) do
       data.raw.technology[k].unit.count = 20
       data.raw.technology[k].unit.ingredients = {{"automation-science-pack", 1}}
     end
-    data.raw.technology[k].ignore_tech_cost_multiplier = true
+    bobmods.lib.tech.ignore_tech_cost_multiplier(k, true)
     data.raw.technology[k].unit.time = 15
   end
 end

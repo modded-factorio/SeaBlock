@@ -13,11 +13,7 @@ if settings.startup['SpaceX-ignore-tech-multiplier'] then
       'ftl-theory-D2',
       'ftl-propulsion'
     }) do
-      local tech = data.raw.technology[tech_name]
-      
-      if tech then
-        tech.ignore_tech_cost_multiplier = true
-      end
+      bobmods.lib.tech.ignore_tech_cost_multiplier(tech_name, true)
     end
   else
     for _, tech_name in pairs({
