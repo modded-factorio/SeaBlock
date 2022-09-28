@@ -274,8 +274,7 @@ end
 
 -- Hide recipes that take Chrome Ingots
 bobmods.lib.recipe.hide('molten-iron-smelting-5')
-bobmods.lib.tech.remove_recipe_unlock('angels-iron-casting-3', 'molten-iron-smelting-5')
-bobmods.lib.tech.remove_prerequisite('angels-iron-casting-3', 'angels-chrome-smelting-1')
+bobmods.lib.tech.hide('angels-iron-casting-4')
 
 bobmods.lib.recipe.hide('molten-steel-smelting-5')
 bobmods.lib.tech.hide('angels-steel-smelting-4')
