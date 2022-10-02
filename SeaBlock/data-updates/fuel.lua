@@ -49,6 +49,7 @@ for _,v in pairs({
   }) do
   if data.raw.fluid[v] then
     data.raw.fluid[v].fuel_value = nil
+    data.raw.fluid[v].emissions_multiplier = nil
   end
 end
 
