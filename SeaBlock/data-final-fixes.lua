@@ -2,13 +2,6 @@
 -- TODO: Revisit this after Angel adds more liquid rubber recipes
 seablock.lib.substresult('liquid-rubber-1', 'liquid-rubber', nil, 20)
 
-
--- Electric Engines: Move to green science
-bobmods.lib.tech.remove_prerequisite('electric-engine', 'angels-advanced-oil-processing')
-bobmods.lib.tech.remove_prerequisite('electric-engine', 'chemical-science-pack')
-bobmods.lib.tech.remove_science_pack('electric-engine', 'chemical-science-pack')
-
-
 -- Reduce burner heat source neighbour bonus
 local reactors = {
   'burner-reactor',

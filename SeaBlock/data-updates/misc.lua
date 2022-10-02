@@ -1,5 +1,5 @@
 if data.raw.item['wind-turbine-2'] then
-  seablock.lib.substingredient('wind-turbine-2', 'iron-plate', 'steel-plate', 2)
+  seablock.lib.substingredient('wind-turbine-2', 'iron-plate', 'steel-plate', 3)
   bobmods.lib.recipe.enabled('wind-turbine-2', false)
   bobmods.lib.tech.add_recipe_unlock('steel-processing', 'wind-turbine-2')
 end
@@ -31,6 +31,7 @@ seablock.lib.hide_technology('basic-chemistry-3')
 -- Move gas shift recipes back
 seablock.lib.moveeffect('water-gas-shift-1', 'basic-chemistry', 'basic-chemistry-2')
 seablock.lib.moveeffect('water-gas-shift-2', 'basic-chemistry', 'basic-chemistry-2')
+bobmods.lib.tech.add_prerequisite('angels-nickel-smelting-1', 'basic-chemistry-2')
 
 -- Make Basic Chemistry depend on Wood Processing 2. Required for Charcoal > Carbon Dioxide
 bobmods.lib.tech.add_prerequisite('basic-chemistry', 'bio-wood-processing-2')
@@ -48,13 +49,7 @@ seablock.lib.moveeffect('clarifier', 'water-treatment', 'water-washing-1', 3)
 
 bobmods.lib.tech.remove_prerequisite('electronics', 'chemical-processing-1')
 
-if bobmods.lib.tech.has_recipe_unlock('angels-tin-smelting-1', 'basic-tinned-copper-wire') then
-  seablock.lib.moveeffect('basic-tinned-copper-wire', 'angels-tin-smelting-1', 'electronics', 1)
-end
-
 seablock.lib.set_recipe_category('liquid-fish-atmosphere', 'chemistry')
-bobmods.lib.tech.remove_prerequisite('bio-refugium-fish-1', 'water-treatment-3')
-
 seablock.lib.hide_technology('pumpjack')
 
 if not seablock.trigger.mining_productivity then
@@ -83,14 +78,12 @@ if settings.startup['bobmods-logistics-beltoverhaul'].value then
 end
 
 -- Tidy prerequisite for Bronze & Brass
-bobmods.lib.tech.add_prerequisite('alloy-processing', 'angels-bronze-smelting-1')
 bobmods.lib.tech.replace_prerequisite('logistics-2', 'alloy-processing', 'angels-bronze-smelting-1')
 bobmods.lib.tech.remove_prerequisite('steel-mixing-furnace', 'alloy-processing')
 bobmods.lib.tech.remove_prerequisite('chemical-science-pack', 'alloy-processing')
 bobmods.lib.tech.remove_prerequisite('tungsten-alloy-processing', 'alloy-processing')
 bobmods.lib.tech.remove_prerequisite('nitinol-processing', 'alloy-processing')
 bobmods.lib.tech.remove_prerequisite('electric-mixing-furnace', 'alloy-processing')
-bobmods.lib.tech.add_prerequisite('bob-fluid-handling-2', 'alloy-processing')
 
 bobmods.lib.tech.remove_prerequisite('zinc-processing', 'electrolysis-1')
 bobmods.lib.tech.replace_prerequisite('battery-3', 'zinc-processing', 'angels-zinc-smelting-1')
@@ -189,10 +182,6 @@ seablock.lib.hide_item('zinc-plate')
 bobmods.lib.recipe.hide('bob-zinc-plate')
 bobmods.lib.tech.remove_recipe_unlock('zinc-processing', 'bob-zinc-plate')
 
--- Move Nitinol smelting up a tier
-bobmods.lib.tech.replace_prerequisite('angels-nitinol-smelting-1', 'angels-nickel-smelting-3', 'angels-nickel-smelting-2')
-bobmods.lib.tech.add_prerequisite('angels-nitinol-smelting-1', 'angels-metallurgy-4')
-
 -- Add missing science packs
 
 for _,v in pairs({
@@ -209,26 +198,6 @@ for _,v in pairs({
 end
 
 bobmods.lib.tech.add_prerequisite('polishing', 'chemical-science-pack')
-
-for _,v in pairs({
-  'angels-nitinol-smelting-1',
-  'bob-fluid-handling-4',
-  'bob-robo-modular-4',
-  'bob-robotics-4',
-  'bob-robots-3',
-  'bob-robots-4',
-  'electric-pole-4',
-  'electric-substation-4',
-  'logistics-5',
-  'personal-roboport-mk4-equipment',
-  'stack-inserter-4',
-  'ultimate-inserter'
-}) do
-  if data.raw.technology[v] then
-    bobmods.lib.tech.add_new_science_pack(v, 'production-science-pack', 1)
-  end
-end
-
 bobmods.lib.tech.add_prerequisite('geode-crystallization-1', 'chemical-science-pack')
 
 if mods['bobrevamp'] and (not mods['bobclasses']) then
@@ -509,7 +478,3 @@ bobmods.lib.tech.add_prerequisite("bio-refugium-biter-1", "advanced-electronics-
 -- Advanced processing unit
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-4", "advanced-electronics-3")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-5", "advanced-electronics-3")
-
--- Move Electrowinning cell 3 unlock
-bobmods.lib.tech.remove_recipe_unlock("ore-electro-whinning-cell", "electro-whinning-cell-3")
-bobmods.lib.tech.add_recipe_unlock("advanced-ore-refining-4", "electro-whinning-cell-3")
