@@ -1,4 +1,4 @@
-require('__core__/lualib/util')
+require("__core__/lualib/util")
 
 local function get_unlocks()
   return util.table.deepcopy(global.unlocks)
@@ -20,13 +20,10 @@ local function set_starting_items(items)
   global.starting_items = items
 end
 
-remote.add_interface(
-    'SeaBlock',
-    {
-        get_unlocks = get_unlocks,
-        set_unlock = set_unlock,
-        get_starting_items = get_starting_items,
-        set_starting_item = set_starting_item,
-        set_starting_items = set_starting_items
-    }
-)
+remote.add_interface("SeaBlock", {
+  get_unlocks = get_unlocks,
+  set_unlock = set_unlock,
+  get_starting_items = get_starting_items,
+  set_starting_item = set_starting_item,
+  set_starting_items = set_starting_items
+})
