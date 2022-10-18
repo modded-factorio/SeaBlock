@@ -1,18 +1,18 @@
-require "data-updates/algae"
-require "data-updates/clowns"
-require "data-updates/coal"
-require "data-updates/fuel"
-require "data-updates/furnaces"
-require "data-updates/groups"
-require "data-updates/military"
-require "data-updates/misc"
-require "data-updates/resin"
-require "data-updates/rubber"
-require "data-updates/science-cost-tweaker"
-require "data-updates/slag-processing"
-require "data-updates/SpaceMod"
-require "data-updates/sulfur"
-require "data-updates/thermal-extractor"
-require "data-updates/wood"
-require "data-updates/startup"
-require "data-updates/landfill"
+require("data-updates/algae")
+require("data-updates/clowns")
+require("data-updates/coal")
+require("data-updates/fuel")
+require("data-updates/furnaces")
+require("data-updates/groups")
+require("data-updates/military")
+require("data-updates/misc")
+require("data-updates/resin")
+require("data-updates/rubber")
+require("data-updates/science-cost-tweaker")
+require("data-updates/slag-processing")
+require("data-updates/SpaceMod")
+require("data-updates/sulfur")
+require("data-updates/thermal-extractor")
+require("data-updates/wood")
+require("data-updates/startup")
+require("data-updates/landfill")
