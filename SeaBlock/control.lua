@@ -12,7 +12,7 @@ end
 function seablock.create_rock_chest(surface, pos)
   local has_items = false
 
-        if global.starting_items and (not game.is_multiplayer()) then
+  if global.starting_items and (not game.is_multiplayer()) then
     for item, quantity in pairs(global.starting_items) do
       if quantity > 0 then
         has_items = true
@@ -209,8 +209,3 @@ if script.active_mods["Companion_Drones"] then
     end
   end)
 end
-
-
-
-
-
