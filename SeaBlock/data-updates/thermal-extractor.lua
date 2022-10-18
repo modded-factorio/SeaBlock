@@ -91,10 +91,12 @@ bore.fluid_boxes = {
     base_area = 1,
     base_level = 1,
     pipe_covers = pipecoverspictures(),
-    pipe_connections = { {
-      type = "output",
-      positions = { { 1, -2 }, { 2, -1 }, { -1, 2 }, { -2, 1 } },
-    } },
+    pipe_connections = {
+      {
+        type = "output",
+        positions = { { 1, -2 }, { 2, -1 }, { -1, 2 }, { -2, 1 } },
+      },
+    },
   },
 }
 

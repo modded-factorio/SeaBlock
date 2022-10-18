@@ -15,7 +15,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-1",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore1" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore1" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
@@ -44,7 +47,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-2",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore2" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore2" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
@@ -73,7 +79,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-3",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore3" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore3" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
@@ -102,7 +111,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-4",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore4" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore4" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
@@ -131,7 +143,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-5",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore5" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore5" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
@@ -160,7 +175,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-6",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore6" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore6" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
@@ -189,7 +207,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-7",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore7" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore7" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
@@ -218,7 +239,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-8",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore8" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore8" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
@@ -247,7 +271,10 @@ if mods["Clowns-Extended-Minerals"] then
     {
       type = "recipe",
       name = "sb-slag-processing-clowns-9",
-      localised_name = { "recipe-name.slag-processing", { "item-name.clown-mat", { "entity-name.clowns-ore9" }, "Ore" } },
+      localised_name = {
+        "recipe-name.slag-processing",
+        { "item-name.clown-mat", { "entity-name.clowns-ore9" }, "Ore" },
+      },
       category = "crystallizing",
       subgroup = "slag-processing-2",
       enabled = false,
