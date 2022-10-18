@@ -1,8 +1,7 @@
-data:extend(
-{
+data:extend({
   {
     type = "recipe-category",
-    name = "crafting-handonly"
+    name = "crafting-handonly",
   },
   {
     type = "recipe-category",
@@ -15,17 +14,16 @@ data:extend(
   {
     type = "recipe-category",
     name = "ore-sorting-5",
-  }
+  },
 })
 
-if mods['SpaceMod'] then
-  data:extend(
-  {
+if mods["SpaceMod"] then
+  data:extend({
     {
-      type = 'item-subgroup',
-      name = 'sb-SpaceMod',
-      group = mods['ScienceCostTweakerM'] and 'sct-science' or 'intermediate-products',
-      order = 'zz[SpaceMod]'
-    }
+      type = "item-subgroup",
+      name = "sb-SpaceMod",
+      group = mods["ScienceCostTweakerM"] and "sct-science" or "intermediate-products",
+      order = "zz[SpaceMod]",
+    },
   })
 end
