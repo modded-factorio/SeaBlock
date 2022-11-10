@@ -163,13 +163,16 @@ script.on_configuration_changed(
     for _, force in pairs(game.forces) do
       force.reset_technologies()
       force.reset_recipes()
-      for _,tech in pairs(force.technologies) do
+      for tech_name, tech in pairs(force.technologies) do
         if tech.researched then
           for _, effect in pairs(tech.effects) do
             if effect.type == "unlock-recipe" then
               force.recipes[effect.recipe].enabled = true
             end
           end
+        end
+        if game.technology_prototypes[tech_name].enabled then
+          force.technologies[tech_name].enabled = true
         end
       end
       if force.technologies['kovarex-enrichment-process'] then
