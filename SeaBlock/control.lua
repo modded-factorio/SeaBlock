@@ -169,9 +169,13 @@ script.on_configuration_changed(
         force.technologies['kovarex-enrichment-process'].enabled = true
       end
 
-      if force.technologies['sct-automation-science-pack'] and force.technologies['sb-startup4'] and force.technologies['sb-startup4'].researched then
-        force.technologies['sct-lab-t1'].researched = true
-        force.technologies['sct-automation-science-pack'].researched = true
+      if
+        force.technologies["sct-automation-science-pack"]
+        and force.technologies["sb-startup4"]
+        and force.technologies["sb-startup4"].researched
+      then
+        force.technologies["sct-lab-t1"].researched = true
+        force.technologies["sct-automation-science-pack"].researched = true
       end
     end
   end
@@ -214,20 +218,8 @@ if script.active_mods['Companion_Drones'] then
         end
       end
     end
-    if force.technologies["kovarex-enrichment-process"] then
-      force.technologies["kovarex-enrichment-process"].enabled = true
-    end
-
-    if
-      force.technologies["sct-automation-science-pack"]
-      and force.technologies["sb-startup4"]
-      and force.technologies["sb-startup4"].researched
-    then
-      force.technologies["sct-lab-t1"].researched = true
-      force.technologies["sct-automation-science-pack"].researched = true
-    end
-  end
-end)
+  )
+end
 
 script.on_load(function()
   set_pvp()
