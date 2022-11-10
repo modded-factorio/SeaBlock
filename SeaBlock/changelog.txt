@@ -10,6 +10,7 @@ Date: ???
     - Fixed duplicate starting items in rock-chest as well as player inventory #268
     - Basic Chemistry 2 tech missing green science #269
     - Fixed setting "SpaceX ignore tech price multiplier" #273
+    - Removed Fuel pollution from fluids with no fuel value #280
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.11
 Date: 06.06.2022
