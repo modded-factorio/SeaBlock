@@ -25,20 +25,19 @@ bobmods.lib.tech.add_prerequisite("gas-synthesis", "angels-coal-processing-2")
 bobmods.lib.tech.replace_prerequisite("angels-coal-processing-2", "water-treatment-2", "basic-chemistry-3")
 
 -- Add other prerequisites
-bobmods.lib.tech.add_prerequisite('gardens', 'electronics')
-if mods['ScienceCostTweakerM'] then
-  bobmods.lib.tech.add_prerequisite('sct-bio-science-pack', 'bio-arboretum-1')
-  bobmods.lib.tech.add_prerequisite('sb-bio-processing-advanced', 'sct-bio-science-pack')
-  bobmods.lib.tech.add_prerequisite('utility-science-pack', 'rubber')
+bobmods.lib.tech.add_prerequisite("gardens", "electronics")
+if mods["ScienceCostTweakerM"] then
+  bobmods.lib.tech.add_prerequisite("sct-bio-science-pack", "bio-arboretum-1")
+  bobmods.lib.tech.add_prerequisite("sb-bio-processing-advanced", "sct-bio-science-pack")
+  bobmods.lib.tech.add_prerequisite("utility-science-pack", "rubber")
 end
-bobmods.lib.tech.add_prerequisite('angels-glass-smelting-1', 'silicon-processing')
-bobmods.lib.tech.add_prerequisite('angels-stone-smelting-2', 'silicon-processing')
+bobmods.lib.tech.add_prerequisite("angels-glass-smelting-1", "silicon-processing")
+bobmods.lib.tech.add_prerequisite("angels-stone-smelting-2", "silicon-processing")
 
 -- Clear prerequisites so it's available at end of tutorial
 bobmods.lib.tech.remove_prerequisite("bio-wood-processing-2", "bio-wood-processing")
 bobmods.lib.tech.remove_prerequisite("bio-wood-processing-2", "angels-coal-processing")
 bobmods.lib.tech.remove_prerequisite("bio-wood-processing-2", "advanced-material-processing")
-
 
 -- Add missing Science Pack Tech prerequisites
 
@@ -104,8 +103,8 @@ if mods["bobequipment"] then
   bobmods.lib.tech.add_prerequisite("bob-energy-shield-equipment-5", "power-armor-mk2")
 end
 
-if mods['bobpower'] then
-  bobmods.lib.tech.add_prerequisite('bob-boiler-2', 'sb-steam-power')
-  bobmods.lib.tech.add_prerequisite('bob-steam-engine-2', 'sb-steam-power')
+if mods["bobpower"] then
+  bobmods.lib.tech.add_prerequisite("bob-boiler-2", "sb-steam-power")
+  bobmods.lib.tech.add_prerequisite("bob-steam-engine-2", "sb-steam-power")
 end
 bobmods.lib.tech.add_prerequisite("angels-coal-processing", "sb-steam-power")

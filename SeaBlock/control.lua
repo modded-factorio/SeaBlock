@@ -146,79 +146,71 @@ end)
 
 script.on_init(init)
 
-script.on_configuration_changed(
-  function(cfg)
-    init()
-    -- Heavy handed fix for mods that forget migration scripts
-    for _, force in pairs(game.forces) do
-      force.reset_technologies()
-      force.reset_recipes()
-      for tech_name, tech in pairs(force.technologies) do
-        if tech.researched then
-          for tech_name, effect in pairs(tech.effects) do
-            if effect.type == "unlock-recipe" then
-              force.recipes[effect.recipe].enabled = true
-            end
+script.on_configuration_changed(function(cfg)
+  init()
+  -- Heavy handed fix for mods that forget migration scripts
+  for _, force in pairs(game.forces) do
+    force.reset_technologies()
+    force.reset_recipes()
+    for tech_name, tech in pairs(force.technologies) do
+      if tech.researched then
+        for tech_name, effect in pairs(tech.effects) do
+          if effect.type == "unlock-recipe" then
+            force.recipes[effect.recipe].enabled = true
           end
         end
-        if game.technology_prototypes[tech_name].enabled then
-          force.technologies[tech_name].enabled = true
-        end
       end
-      if force.technologies['kovarex-enrichment-process'] then
-        force.technologies['kovarex-enrichment-process'].enabled = true
+      if game.technology_prototypes[tech_name].enabled then
+        force.technologies[tech_name].enabled = true
       end
+    end
+    if force.technologies["kovarex-enrichment-process"] then
+      force.technologies["kovarex-enrichment-process"].enabled = true
+    end
 
-      if
-        force.technologies["sct-automation-science-pack"]
-        and force.technologies["sb-startup4"]
-        and force.technologies["sb-startup4"].researched
-      then
-        force.technologies["sct-lab-t1"].researched = true
-        force.technologies["sct-automation-science-pack"].researched = true
+    if
+      force.technologies["sct-automation-science-pack"]
+      and force.technologies["sb-startup4"]
+      and force.technologies["sb-startup4"].researched
+    then
+      force.technologies["sct-lab-t1"].researched = true
+      force.technologies["sct-automation-science-pack"].researched = true
+    end
+  end
+end)
+
+script.on_load(function()
+  set_pvp()
+end)
+
+script.on_event(defines.events.on_player_created, function(e)
+  if global.starting_items and game.is_multiplayer() then
+    local inv = game.players[e.player_index].get_main_inventory()
+    for item, quantity in pairs(global.starting_items) do
+      if quantity > 0 then
+        inv.insert({ name = item, count = quantity })
       end
     end
   end
-)
+end)
 
-script.on_load(
-  function()
-    set_pvp()
-  end
-)
-
-script.on_event(defines.events.on_player_created,
-  function (e)
-    if global.starting_items and game.is_multiplayer() then
-      local inv = game.players[e.player_index].get_main_inventory()
-      for item,quantity in pairs(global.starting_items) do
-        if quantity > 0 then
-          inv.insert{name = item, count = quantity}
-        end
-      end
-    end
-  end
-)
-
-if script.active_mods['Companion_Drones'] then
-  script.on_event(defines.events.on_player_created,
-    function(e)
-      local s = game.surfaces['nauvis']
-      if s then
-        local companions = s.find_entities_filtered({name = 'companion'})
-        for _, companion in pairs(companions) do
-          companion.remove_item('coal')
-          companion.insert('wood-pellets')
-          local grid = companion.grid
-          for _, item in pairs(grid.equipment) do
-            if (item.name == 'companion-defense-equipment') or (item.name == 'companion-shield-equipment') then
-              grid.take({equipment = item})
-            end
+if script.active_mods["Companion_Drones"] then
+  script.on_event(defines.events.on_player_created, function(e)
+    local s = game.surfaces["nauvis"]
+    if s then
+      local companions = s.find_entities_filtered({ name = "companion" })
+      for _, companion in pairs(companions) do
+        companion.remove_item("coal")
+        companion.insert("wood-pellets")
+        local grid = companion.grid
+        for _, item in pairs(grid.equipment) do
+          if (item.name == "companion-defense-equipment") or (item.name == "companion-shield-equipment") then
+            grid.take({ equipment = item })
           end
         end
       end
     end
-  )
+  end)
 end
 
 script.on_load(function()

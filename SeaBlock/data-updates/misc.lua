@@ -1,7 +1,7 @@
-if data.raw.item['wind-turbine-2'] then
-  seablock.lib.substingredient('wind-turbine-2', 'iron-plate', 'steel-plate', 3)
-  bobmods.lib.recipe.enabled('wind-turbine-2', false)
-  bobmods.lib.tech.add_recipe_unlock('steel-processing', 'wind-turbine-2')
+if data.raw.item["wind-turbine-2"] then
+  seablock.lib.substingredient("wind-turbine-2", "iron-plate", "steel-plate", 3)
+  bobmods.lib.recipe.enabled("wind-turbine-2", false)
+  bobmods.lib.tech.add_recipe_unlock("steel-processing", "wind-turbine-2")
 end
 
 -- No natural gas, use methane for manganese pellet smelting
@@ -29,9 +29,9 @@ movealleffects("basic-chemistry-3", "basic-chemistry-2")
 bobmods.lib.tech.add_new_science_pack("basic-chemistry-2", "logistic-science-pack", 1)
 seablock.lib.hide_technology("basic-chemistry-3")
 -- Move gas shift recipes back
-seablock.lib.moveeffect('water-gas-shift-1', 'basic-chemistry', 'basic-chemistry-2')
-seablock.lib.moveeffect('water-gas-shift-2', 'basic-chemistry', 'basic-chemistry-2')
-bobmods.lib.tech.add_prerequisite('angels-nickel-smelting-1', 'basic-chemistry-2')
+seablock.lib.moveeffect("water-gas-shift-1", "basic-chemistry", "basic-chemistry-2")
+seablock.lib.moveeffect("water-gas-shift-2", "basic-chemistry", "basic-chemistry-2")
+bobmods.lib.tech.add_prerequisite("angels-nickel-smelting-1", "basic-chemistry-2")
 
 -- Make Basic Chemistry depend on Wood Processing 2. Required for Charcoal > Carbon Dioxide
 bobmods.lib.tech.add_prerequisite("basic-chemistry", "bio-wood-processing-2")
@@ -49,8 +49,8 @@ seablock.lib.moveeffect("clarifier", "water-treatment", "water-washing-1", 3)
 
 bobmods.lib.tech.remove_prerequisite("electronics", "chemical-processing-1")
 
-seablock.lib.set_recipe_category('liquid-fish-atmosphere', 'chemistry')
-seablock.lib.hide_technology('pumpjack')
+seablock.lib.set_recipe_category("liquid-fish-atmosphere", "chemistry")
+seablock.lib.hide_technology("pumpjack")
 
 if not seablock.trigger.mining_productivity then
   for i = 1, 4, 1 do
@@ -78,12 +78,12 @@ if settings.startup["bobmods-logistics-beltoverhaul"].value then
 end
 
 -- Tidy prerequisite for Bronze & Brass
-bobmods.lib.tech.replace_prerequisite('logistics-2', 'alloy-processing', 'angels-bronze-smelting-1')
-bobmods.lib.tech.remove_prerequisite('steel-mixing-furnace', 'alloy-processing')
-bobmods.lib.tech.remove_prerequisite('chemical-science-pack', 'alloy-processing')
-bobmods.lib.tech.remove_prerequisite('tungsten-alloy-processing', 'alloy-processing')
-bobmods.lib.tech.remove_prerequisite('nitinol-processing', 'alloy-processing')
-bobmods.lib.tech.remove_prerequisite('electric-mixing-furnace', 'alloy-processing')
+bobmods.lib.tech.replace_prerequisite("logistics-2", "alloy-processing", "angels-bronze-smelting-1")
+bobmods.lib.tech.remove_prerequisite("steel-mixing-furnace", "alloy-processing")
+bobmods.lib.tech.remove_prerequisite("chemical-science-pack", "alloy-processing")
+bobmods.lib.tech.remove_prerequisite("tungsten-alloy-processing", "alloy-processing")
+bobmods.lib.tech.remove_prerequisite("nitinol-processing", "alloy-processing")
+bobmods.lib.tech.remove_prerequisite("electric-mixing-furnace", "alloy-processing")
 
 bobmods.lib.tech.remove_prerequisite("zinc-processing", "electrolysis-1")
 bobmods.lib.tech.replace_prerequisite("battery-3", "zinc-processing", "angels-zinc-smelting-1")
@@ -198,8 +198,8 @@ for _, v in pairs({
   end
 end
 
-bobmods.lib.tech.add_prerequisite('polishing', 'chemical-science-pack')
-bobmods.lib.tech.add_prerequisite('geode-crystallization-1', 'chemical-science-pack')
+bobmods.lib.tech.add_prerequisite("polishing", "chemical-science-pack")
+bobmods.lib.tech.add_prerequisite("geode-crystallization-1", "chemical-science-pack")
 
 if mods["bobrevamp"] and not mods["bobclasses"] then
   bobmods.lib.tech.add_new_science_pack("rtg", "production-science-pack", 1)

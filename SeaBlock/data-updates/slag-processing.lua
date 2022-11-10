@@ -12,7 +12,7 @@ for i = 1, 6 do
   recipe.ingredients = nil
   recipe.results = nil
   recipe.energy_required = nil
-  recipe.category = 'crystallizing'
+  recipe.category = "crystallizing"
 
   recipe.normal = {
     energy_required = 4,
