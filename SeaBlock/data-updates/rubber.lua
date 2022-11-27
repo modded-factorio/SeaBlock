@@ -1,4 +1,3 @@
--- Merge tech Rubbers into Rubber
 bobmods.lib.recipe.hide("bob-rubber")
 seablock.lib.moveeffect("insulated-cable", "electronics", "rubbers")
 

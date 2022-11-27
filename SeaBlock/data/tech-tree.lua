@@ -70,6 +70,7 @@ bobmods.lib.tech.add_prerequisite("basic-chemistry-2", "logistic-science-pack")
 bobmods.lib.tech.add_prerequisite("logistic-system", "production-science-pack")
 
 -- Utility / Yellow
+bobmods.lib.tech.add_prerequisite("radars-5", "utility-science-pack")
 
 -- Space / White
 if mods["bobequipment"] then
@@ -98,9 +99,14 @@ bobmods.lib.tech.add_prerequisite("gun-turret", "military")
 bobmods.lib.tech.add_prerequisite("stone-wall", "military")
 
 if mods["bobequipment"] then
-  bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-5", "power-armor-mk2")
-  bobmods.lib.tech.add_prerequisite("bob-battery-equipment-6", "power-armor-mk2")
-  bobmods.lib.tech.add_prerequisite("bob-energy-shield-equipment-5", "power-armor-mk2")
+  if mods["bobwarfare"] then
+    bobmods.lib.tech.add_prerequisite("bob-battery-equipment-6", "bob-power-armor-3")
+    bobmods.lib.tech.add_prerequisite("bob-energy-shield-equipment-5", "bob-power-armor-3")
+    bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-5", "bob-power-armor-3")
+  else
+    bobmods.lib.tech.add_prerequisite("bob-battery-equipment-6", "power-armor-mk2")
+    bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-5", "power-armor-mk2")
+  end
 end
 
 if mods["bobpower"] then

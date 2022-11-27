@@ -1,6 +1,5 @@
 seablock = seablock or {}
 seablock.trigger = seablock.trigger or {}
-angelsmods.trigger.early_sulfuric_acid = true
 
 if mods["seablock-mining"] then
   seablock.trigger.mining_productivity = true

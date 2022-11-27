@@ -21,24 +21,32 @@ if mods["ScienceCostTweakerM"] then
   -- Hide empty tech (Lab 2 will have been moved to it's own tech sct-lab-lab2
   seablock.lib.hide_technology("advanced-research")
 
-  if data.raw.technology["sct-lab-t3"] then
-    bobmods.lib.tech.remove_prerequisite("sct-lab-t3", "plastics")
-    bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-glass-smelting-1")
-    bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-aluminium-smelting-1")
-    bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-brass-smelting-1")
-    bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-silver-smelting-1")
-    bobmods.lib.tech.replace_prerequisite("sct-lab-t3", "bob-solar-energy-2", "solar-energy")
-    bobmods.lib.recipe.hide("sct-t3-flash-fuel2")
-  end
+  bobmods.lib.tech.remove_prerequisite("sct-lab-t3", "plastics")
+  bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-glass-smelting-1")
+  bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-aluminium-smelting-1")
+  bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-brass-smelting-1")
+  bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-silver-smelting-1")
+  bobmods.lib.tech.replace_prerequisite("sct-lab-t3", "bob-solar-energy-2", "solar-energy")
+  bobmods.lib.recipe.hide("sct-t3-flash-fuel2")
 
-  -- Make yellow science require purple science
-  for _, tech_name in pairs({
-    "fusion-reactor-equipment",
-    "power-armor-mk2",
-    "rocket-fuel",
-    "sct-lab-t4",
-    "sct-utility-science-pack",
-  }) do
-    bobmods.lib.tech.add_new_science_pack(tech_name, "production-science-pack", 1)
-  end
+  -- T4 Lab
+  -- Yellow science now requires Purple science
+  bobmods.lib.tech.add_new_science_pack("sct-lab-t4", "production-science-pack", 1)
+  bobmods.lib.tech.add_new_science_pack("sct-utility-science-pack", "production-science-pack", 1)
+
+  -- Adjust any techs that needed Yellow but not Purple
+
+  bobmods.lib.tech.replace_science_pack("power-armor-mk2", "utility-science-pack", "production-science-pack")
+  bobmods.lib.tech.replace_prerequisite("power-armor-mk2", "utility-science-pack", "production-science-pack")
+  bobmods.lib.tech.add_prerequisite("power-armor-mk2", "low-density-structure")
+  bobmods.lib.tech.add_prerequisite("bob-power-armor-3", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-energy-shield-equipment-3", "power-armor-mk2")
+
+  bobmods.lib.tech.replace_science_pack("fusion-reactor-equipment", "utility-science-pack", "production-science-pack")
+  bobmods.lib.tech.replace_prerequisite("fusion-reactor-equipment", "utility-science-pack", "power-armor-mk2")
+  bobmods.lib.tech.add_prerequisite("fusion-reactor-equipment-2", "bob-power-armor-3")
+
+  bobmods.lib.tech.replace_science_pack("vehicle-fusion-reactor-equipment-2", "utility-science-pack", "production-science-pack")
+  bobmods.lib.tech.replace_prerequisite("vehicle-fusion-reactor-equipment-2", "utility-science-pack", "production-science-pack")
+  bobmods.lib.tech.add_prerequisite("vehicle-fusion-reactor-equipment-3", "utility-science-pack")
 end
