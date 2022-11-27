@@ -5,6 +5,7 @@ Date: ???
     - Added tech Steam power #271
     - Marked Alien Biomes mod as incompatible #263
     - Marked Angel's Exploration mod as incompatible #264
+    - Reduced the cost of Circuit wires #286
   Bugfixes:
     - Fixed tech unlocks after adding Science Cost Tweaker mod mid game #260
     - Fixed duplicate starting items in rock-chest as well as player inventory #268
