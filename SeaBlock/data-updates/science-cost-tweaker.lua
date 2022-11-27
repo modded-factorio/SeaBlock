@@ -46,7 +46,15 @@ if mods["ScienceCostTweakerM"] then
   bobmods.lib.tech.replace_prerequisite("fusion-reactor-equipment", "utility-science-pack", "power-armor-mk2")
   bobmods.lib.tech.add_prerequisite("fusion-reactor-equipment-2", "bob-power-armor-3")
 
-  bobmods.lib.tech.replace_science_pack("vehicle-fusion-reactor-equipment-2", "utility-science-pack", "production-science-pack")
-  bobmods.lib.tech.replace_prerequisite("vehicle-fusion-reactor-equipment-2", "utility-science-pack", "production-science-pack")
+  bobmods.lib.tech.replace_science_pack(
+    "vehicle-fusion-reactor-equipment-2",
+    "utility-science-pack",
+    "production-science-pack"
+  )
+  bobmods.lib.tech.replace_prerequisite(
+    "vehicle-fusion-reactor-equipment-2",
+    "utility-science-pack",
+    "production-science-pack"
+  )
   bobmods.lib.tech.add_prerequisite("vehicle-fusion-reactor-equipment-3", "utility-science-pack")
 end
