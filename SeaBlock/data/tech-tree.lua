@@ -110,7 +110,5 @@ if mods["bobequipment"] then
 end
 
 if mods["bobpower"] then
-  bobmods.lib.tech.add_prerequisite("bob-boiler-2", "sb-steam-power")
-  bobmods.lib.tech.add_prerequisite("bob-steam-engine-2", "sb-steam-power")
+  bobmods.lib.tech.add_prerequisite("angels-coal-processing", "steam-power")
 end
-bobmods.lib.tech.add_prerequisite("angels-coal-processing", "sb-steam-power")

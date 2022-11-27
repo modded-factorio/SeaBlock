@@ -34,7 +34,6 @@ seablock.startup_techs = {
   ["long-inserters-1"] = { true },
   ["military"] = { true },
   ["optics"] = { true },
-  ["sb-steam-power"] = { true },
   ["slag-processing-1"] = { true },
   ["water-washing-1"] = { true },
 }
@@ -43,6 +42,11 @@ if data.raw.technology["logistics-0"] then
   seablock.startup_techs["logistics-0"] = { true }
 else
   seablock.startup_techs["logistics"] = { true }
+end
+
+-- Added by bobpower
+if data.raw.technology["steam-power"] then
+  seablock.startup_techs["steam-power"] = { true }
 end
 
 -- seablock.startup_recipes
