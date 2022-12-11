@@ -3,13 +3,14 @@ local move_item = angelsmods.functions.move_item
 if not mods["angelsindustries"] then
   -- Move misc sciencey things over to intermediate products tab
   for k, v in pairs(data.raw["item-subgroup"]) do
-    if v.group == "bob-resource-products" or v.group == "bob-fluid-products" then
+    if v.group == "bob-resource-products" or v.group == "bob-fluid-products" or v.group == "bob-intermediate-products" then
       v.group = "intermediate-products"
     end
   end
 
   move_item("battery", "bob-intermediates", "f-cba[battery]")
   move_item("iron-gear-wheel", "bob-gears", "aa[iron-gear-wheel]")
+  move_item("thorium-processing", "bob-nuclear", "l[thorium-processing]", "recipe")
 end
 
 if mods["SpaceMod"] then
