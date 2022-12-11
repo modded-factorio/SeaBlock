@@ -3,7 +3,11 @@ local move_item = angelsmods.functions.move_item
 if not mods["angelsindustries"] then
   -- Move misc sciencey things over to intermediate products tab
   for k, v in pairs(data.raw["item-subgroup"]) do
-    if v.group == "bob-resource-products" or v.group == "bob-fluid-products" or v.group == "bob-intermediate-products" then
+    if
+      v.group == "bob-resource-products"
+      or v.group == "bob-fluid-products"
+      or v.group == "bob-intermediate-products"
+    then
       v.group = "intermediate-products"
     end
   end
