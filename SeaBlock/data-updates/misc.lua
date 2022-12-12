@@ -421,6 +421,7 @@ bobmods.lib.tech.add_prerequisite("gas-steam-cracking-1", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("ore-floatation", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("ore-processing-1", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("powder-metallurgy-2", "alloy-processing")
+bobmods.lib.tech.add_prerequisite("strand-casting-1", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("thermal-water-extraction", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("water-washing-2", "alloy-processing")
 
