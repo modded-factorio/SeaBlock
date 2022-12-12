@@ -17,6 +17,8 @@ if mods["ScienceCostTweakerM"] then
   -- Add prerequisites
   bobmods.lib.tech.add_prerequisite("military-science-pack", "angels-brass-smelting-1")
   bobmods.lib.tech.add_prerequisite("military-science-pack", "angels-invar-smelting-1")
+  bobmods.lib.tech.add_prerequisite("utility-science-pack", "battery-2")
+  bobmods.lib.tech.add_prerequisite("utility-science-pack", "ceramics")
 
   -- Hide empty tech (Lab 2 will have been moved to it's own tech sct-lab-lab2
   seablock.lib.hide_technology("advanced-research")
@@ -36,15 +38,12 @@ if mods["ScienceCostTweakerM"] then
 
   -- Adjust any techs that needed Yellow but not Purple
 
-  bobmods.lib.tech.replace_science_pack("power-armor-mk2", "utility-science-pack", "production-science-pack")
-  bobmods.lib.tech.replace_prerequisite("power-armor-mk2", "utility-science-pack", "production-science-pack")
-  bobmods.lib.tech.add_prerequisite("power-armor-mk2", "low-density-structure")
-  bobmods.lib.tech.add_prerequisite("bob-power-armor-3", "utility-science-pack")
-  bobmods.lib.tech.add_prerequisite("bob-energy-shield-equipment-3", "power-armor-mk2")
-
   bobmods.lib.tech.replace_science_pack("fusion-reactor-equipment", "utility-science-pack", "production-science-pack")
-  bobmods.lib.tech.replace_prerequisite("fusion-reactor-equipment", "utility-science-pack", "power-armor-mk2")
-  bobmods.lib.tech.add_prerequisite("fusion-reactor-equipment-2", "bob-power-armor-3")
+  bobmods.lib.tech.replace_prerequisite("fusion-reactor-equipment", "utility-science-pack", "production-science-pack")
+  bobmods.lib.tech.add_prerequisite("fusion-reactor-equipment", "low-density-structure")
+  if mods["bobequipment"] then
+    bobmods.lib.tech.add_prerequisite("fusion-reactor-equipment-2", "utility-science-pack")
+  end
 
   if mods["bobvehicleequipment"] then
     bobmods.lib.tech.replace_science_pack(

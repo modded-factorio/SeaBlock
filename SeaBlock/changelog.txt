@@ -2,10 +2,11 @@
 Version: 0.5.12
 Date: ???
   Changes:
-    - Added tech Steam power #271
     - Marked Alien Biomes mod as incompatible #263
     - Marked Angel's Exploration mod as incompatible #264
+    - Added tech Steam power #271
     - Reduced the cost of Circuit wires #286
+    - Adjusted science packs required for Power Armor research #287
     - Added Thermal Water Bore to ingredients for Thermal Water Extractor #290
   Bugfixes:
     - Fixed tech unlocks after adding Science Cost Tweaker mod mid game #260
