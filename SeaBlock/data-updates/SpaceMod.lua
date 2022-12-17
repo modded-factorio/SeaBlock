@@ -10,4 +10,9 @@ if mods["SpaceMod"] then
       { type = "item", name = "bob-robo-charge-port-large", amount = 10 },
     })
   end
+
+  bobmods.lib.tech.add_science_pack("ftl-theory-D2", "production-science-pack", 1)
+  bobmods.lib.tech.remove_prerequisite("ftl-propulsion", "ftl-theory-D1")
+  bobmods.lib.tech.add_prerequisite("ftl-theory-D2", "ftl-theory-D1")
+  bobmods.lib.tech.remove_prerequisite("ftl-theory-D2", "ftl-theory-C")
 end

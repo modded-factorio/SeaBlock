@@ -7,6 +7,7 @@ Date: ???
     - Added tech Steam power #271
     - Reduced the cost of Circuit wires #286
     - Adjusted science packs required for Power Armor research #287
+    - Adjusted science packs for FTL techs (SpaceX) #288
     - Added Thermal Water Bore to ingredients for Thermal Water Extractor #290
   Bugfixes:
     - Fixed tech unlocks after adding Science Cost Tweaker mod mid game #260
