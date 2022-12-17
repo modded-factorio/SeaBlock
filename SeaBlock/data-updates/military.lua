@@ -972,7 +972,7 @@ if mods["bobwarfare"] then
 
   -- Remove dependencies on Alien Research
   bobmods.lib.tech.remove_prerequisite("bob-power-armor-3", "alien-research")
-  
+
   -- Adjust Power Armor
   bobmods.lib.tech.remove_science_pack("power-armor", "chemical-science-pack")
   bobmods.lib.tech.add_science_pack("power-armor", "military-science-pack", 1)
