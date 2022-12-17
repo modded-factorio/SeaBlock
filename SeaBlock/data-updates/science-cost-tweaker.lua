@@ -21,7 +21,9 @@ if mods["ScienceCostTweakerM"] then
   bobmods.lib.tech.add_prerequisite("utility-science-pack", "ceramics")
   
   if mods["bobmodules"] then
-    if not bobmods.modules.ModulesLab then
+    if bobmods.modules.ModulesLab then
+      bobmods.lib.tech.add_prerequisite("sct-lab-modules", "bio-processing-crystal-splinter-1")
+    else
       bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "lab-module")
       bobmods.lib.tech.hide("sct-lab-modules")
       bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "module-processor-board")
