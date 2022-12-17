@@ -19,6 +19,17 @@ if mods["ScienceCostTweakerM"] then
   bobmods.lib.tech.add_prerequisite("military-science-pack", "angels-invar-smelting-1")
   bobmods.lib.tech.add_prerequisite("utility-science-pack", "battery-2")
   bobmods.lib.tech.add_prerequisite("utility-science-pack", "ceramics")
+  
+  if mods["bobmodules"] then
+    if not bobmods.modules.ModulesLab then
+      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "lab-module")
+      bobmods.lib.tech.hide("sct-lab-modules")
+      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "module-processor-board")
+      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "speed-processor")
+      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "effectivity-processor")
+      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "productivity-processor")
+    end
+  end
 
   -- Hide empty tech (Lab 2 will have been moved to it's own tech sct-lab-lab2
   seablock.lib.hide_technology("advanced-research")
