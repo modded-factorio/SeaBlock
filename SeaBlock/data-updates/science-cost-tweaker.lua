@@ -19,7 +19,7 @@ if mods["ScienceCostTweakerM"] then
   bobmods.lib.tech.add_prerequisite("military-science-pack", "angels-invar-smelting-1")
   bobmods.lib.tech.add_prerequisite("utility-science-pack", "battery-2")
   bobmods.lib.tech.add_prerequisite("utility-science-pack", "ceramics")
-  
+
   if mods["bobmodules"] then
     if bobmods.modules.ModulesLab then
       bobmods.lib.tech.add_prerequisite("sct-lab-modules", "bio-processing-crystal-splinter-1")
