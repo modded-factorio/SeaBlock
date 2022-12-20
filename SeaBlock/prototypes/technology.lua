@@ -182,7 +182,6 @@ if mods["bobwarfare"] then
 end
 
 if mods["angelsaddons-storage"] then
-  
   data:extend({
     {
       type = "technology",
@@ -258,6 +257,5 @@ if mods["angelsaddons-storage"] then
       },
       order = "e",
     },
-
   })
 end

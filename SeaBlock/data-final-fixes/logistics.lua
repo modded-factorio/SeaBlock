@@ -82,7 +82,7 @@ if mods["angelsaddons-storage"] then
   bobmods.lib.tech.add_prerequisite("logistic-silos", "logistic-robotics")
   bobmods.lib.tech.add_prerequisite("logistic-silos", "chemical-science-pack")
   bobmods.lib.tech.remove_science_pack("logistic-silos", "advanced-logistic-science-pack")
-  
+
   bobmods.lib.tech.replace_prerequisite("angels-logistic-warehouses", "logistic-system", "logistic-silos")
   bobmods.lib.tech.remove_recipe_unlock("angels-logistic-warehouses", "angels-warehouse-active-provider")
   bobmods.lib.tech.remove_recipe_unlock("angels-logistic-warehouses", "angels-warehouse-requester")
