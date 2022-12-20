@@ -57,8 +57,8 @@ bobmods.lib.tech.add_prerequisite("logistic-system", "bob-robots-2")
 local logisticstechs = {
   "logistic-system-2",
   "logistic-system-3",
-  "angels-logistic-warehouses",
-  "logistic-silos",
+  "angels-logistic-warehouses-2",
+  "logistic-silos-2",
 }
 
 for _, v in pairs(logisticstechs) do
@@ -73,8 +73,21 @@ for _, v in pairs(logisticstechs) do
 end
 
 if mods["angelsaddons-storage"] then
-  bobmods.lib.tech.replace_prerequisite("logistic-silos", "logistic-system", "logistic-system-3")
+  bobmods.lib.tech.remove_recipe_unlock("logistic-silos", "silo-active-provider")
+  bobmods.lib.tech.remove_recipe_unlock("logistic-silos", "silo-requester")
+  bobmods.lib.tech.remove_recipe_unlock("logistic-silos", "silo-buffer")
+  bobmods.lib.tech.remove_prerequisite("logistic-silos", "logistic-system")
+  bobmods.lib.tech.remove_prerequisite("logistic-silos", "logistic-system-3")
+  bobmods.lib.tech.add_prerequisite("logistic-silos", "construction-robotics")
+  bobmods.lib.tech.add_prerequisite("logistic-silos", "logistic-robotics")
+  bobmods.lib.tech.add_prerequisite("logistic-silos", "chemical-science-pack")
+  bobmods.lib.tech.remove_science_pack("logistic-silos", "advanced-logistic-science-pack")
+  
   bobmods.lib.tech.replace_prerequisite("angels-logistic-warehouses", "logistic-system", "logistic-silos")
+  bobmods.lib.tech.remove_recipe_unlock("angels-logistic-warehouses", "angels-warehouse-active-provider")
+  bobmods.lib.tech.remove_recipe_unlock("angels-logistic-warehouses", "angels-warehouse-requester")
+  bobmods.lib.tech.remove_recipe_unlock("angels-logistic-warehouses", "angels-warehouse-buffer")
+  bobmods.lib.tech.remove_science_pack("angels-logistic-warehouses", "advanced-logistic-science-pack")
 end
 bobmods.lib.tech.add_prerequisite("logistic-system-2", "utility-science-pack")
 

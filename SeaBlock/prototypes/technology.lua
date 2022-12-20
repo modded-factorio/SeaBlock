@@ -180,3 +180,84 @@ if mods["bobwarfare"] then
     },
   })
 end
+
+if mods["angelsaddons-storage"] then
+  
+  data:extend({
+    {
+      type = "technology",
+      name = "logistic-silos-2",
+      icon = "__angelsaddons-storage__/graphics/technology/logistic-silo-tech.png",
+      icon_size = 128,
+      prerequisites = {
+        "logistic-system-3",
+        "logistic-silos",
+      },
+      effects = {
+        {
+          type = "unlock-recipe",
+          recipe = "silo-active-provider",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "silo-requester",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "silo-buffer",
+        },
+      },
+      unit = {
+        count = 75,
+        ingredients = {
+          { type = "item", name = "automation-science-pack", amount = 1 },
+          { type = "item", name = "logistic-science-pack", amount = 1 },
+          { type = "item", name = "chemical-science-pack", amount = 1 },
+          { type = "item", name = "production-science-pack", amount = 1 },
+          { type = "item", name = "utility-science-pack", amount = 1 },
+          { type = "item", name = "advanced-logistic-science-pack", amount = 1 },
+        },
+        time = 15,
+      },
+      order = "c-k-d-c",
+    },
+    {
+      type = "technology",
+      name = "angels-logistic-warehouses-2",
+      icon = "__angelsaddons-storage__/graphics/technology/warehouses-logistics.png",
+      icon_size = 128,
+      prerequisites = {
+        "angels-logistic-warehouses",
+        "logistic-silos-2",
+      },
+      effects = {
+        {
+          type = "unlock-recipe",
+          recipe = "angels-warehouse-active-provider",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "angels-warehouse-requester",
+        },
+        {
+          type = "unlock-recipe",
+          recipe = "angels-warehouse-buffer",
+        },
+      },
+      unit = {
+        count = 75,
+        ingredients = {
+          { type = "item", name = "automation-science-pack", amount = 1 },
+          { type = "item", name = "logistic-science-pack", amount = 1 },
+          { type = "item", name = "chemical-science-pack", amount = 1 },
+          { type = "item", name = "production-science-pack", amount = 1 },
+          { type = "item", name = "utility-science-pack", amount = 1 },
+          { type = "item", name = "advanced-logistic-science-pack", amount = 1 },
+        },
+        time = 15,
+      },
+      order = "e",
+    },
+
+  })
+end
