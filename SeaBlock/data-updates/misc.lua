@@ -292,6 +292,8 @@ end
 seablock.lib.substingredient("artillery-turret", "concrete", "reinforced-concrete-brick", nil)
 if data.raw.recipe["burner-reactor-2"] then
   seablock.lib.substingredient("burner-reactor-2", "concrete", "concrete-brick", nil)
+  bobmods.lib.tech.remove_prerequisite("burner-reactor-2", "concrete")
+  bobmods.lib.tech.add_prerequisite("burner-reactor-2", "angels-stone-smelting-2")
 end
 seablock.lib.substingredient("centrifuge", "concrete", "concrete-brick", nil)
 if data.raw.recipe["fluid-reactor-2"] then
