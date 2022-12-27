@@ -293,15 +293,9 @@ seablock.lib.substingredient("artillery-turret", "concrete", "reinforced-concret
 if data.raw.recipe["burner-reactor-2"] then
   seablock.lib.substingredient("burner-reactor-2", "concrete", "concrete-brick", nil)
 end
-if data.raw.recipe["burner-reactor-3"] then
-  seablock.lib.substingredient("burner-reactor-3", "concrete", "reinforced-concrete-brick", nil)
-end
 seablock.lib.substingredient("centrifuge", "concrete", "concrete-brick", nil)
 if data.raw.recipe["fluid-reactor-2"] then
   seablock.lib.substingredient("fluid-reactor-2", "concrete", "concrete-brick", nil)
-end
-if data.raw.recipe["fluid-reactor-3"] then
-  seablock.lib.substingredient("fluid-reactor-3", "concrete", "reinforced-concrete-brick", nil)
 end
 seablock.lib.substingredient("nuclear-reactor", "concrete", "concrete-brick", nil)
 seablock.lib.substingredient("rocket-silo", "concrete", "reinforced-concrete-brick", nil)
