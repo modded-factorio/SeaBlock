@@ -97,17 +97,7 @@ seablock.lib.add_recipe_unlock("military", "repair-pack", nil)
 
 bobmods.lib.tech.add_prerequisite("gun-turret", "military")
 bobmods.lib.tech.add_prerequisite("stone-wall", "military")
-
-if mods["bobequipment"] then
-  if mods["bobwarfare"] then
-    bobmods.lib.tech.add_prerequisite("bob-battery-equipment-6", "bob-power-armor-3")
-    bobmods.lib.tech.add_prerequisite("bob-energy-shield-equipment-5", "bob-power-armor-3")
-    bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-5", "bob-power-armor-3")
-  else
-    bobmods.lib.tech.add_prerequisite("bob-battery-equipment-6", "power-armor-mk2")
-    bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-5", "power-armor-mk2")
-  end
-end
+bobmods.lib.tech.add_prerequisite("space-science-pack", "military")
 
 if mods["bobpower"] then
   bobmods.lib.tech.add_prerequisite("angels-coal-processing", "steam-power")

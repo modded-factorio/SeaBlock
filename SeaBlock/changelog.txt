@@ -2,11 +2,13 @@
 Version: 0.5.12
 Date: ???
   Changes:
-    - Added tech Steam power #271
     - Marked Alien Biomes mod as incompatible #263
     - Marked Angel's Exploration mod as incompatible #264
+    - Added tech Steam power #271
     - Reduced the cost of Circuit wires #286
-    - Adjusted burner reactor ingredients
+    - Adjusted science packs required for Power Armor research #287
+    - Adjusted science packs for FTL techs (SpaceX) #288
+    - Added Thermal Water Bore to ingredients for Thermal Water Extractor #290
   Bugfixes:
     - Fixed tech unlocks after adding Science Cost Tweaker mod mid game #260
     - Fixed duplicate starting items in rock-chest as well as player inventory #268

@@ -131,4 +131,11 @@ if data.raw.technology["ftl-theory-D"] then
       data.raw.technology[tech].unit.count = data.raw.technology[tech].unit.count / 10
     end
   end
+
+  if mods["bobtech"] then
+    bobmods.lib.tech.add_science_pack("ftl-theory-D2", "advanced-logistic-science-pack", 1)
+    bobmods.lib.tech.remove_prerequisite("ftl-theory-D1", "ftl-theory-D")
+    bobmods.lib.tech.add_prerequisite("ftl-theory-D1", "ftl-theory-C")
+    bobmods.lib.tech.add_prerequisite("ftl-theory-D2", "ftl-theory-D")
+  end
 end

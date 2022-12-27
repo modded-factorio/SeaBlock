@@ -1,3 +1,5 @@
+local move_item = angelsmods.functions.move_item
+
 -- Repurpose thermal extractor
 
 local function makestripes(filename, count)
@@ -78,6 +80,8 @@ extractor.animation = {
 extractor.crafting_categories = { "thermal-extractor" }
 extractor.fixed_recipe = "thermal-extractor-water"
 bobmods.lib.tech.add_recipe_unlock("thermal-water-extraction-2", "thermal-extractor-water")
+move_item("thermal-extractor", "water-treatment-building", "f[thermal-extractor]-b[extractor]", "item")
+bobmods.lib.recipe.add_ingredient("thermal-extractor", { "thermal-bore", 1 })
 
 local bore = data.raw["mining-drill"]["thermal-bore"]
 data.raw["mining-drill"]["thermal-bore"] = nil
@@ -130,6 +134,7 @@ bore.animation = {
 bore.crafting_categories = { "thermal-bore" }
 bore.fixed_recipe = "thermal-bore-water"
 bobmods.lib.tech.add_recipe_unlock("thermal-water-extraction", "thermal-bore-water")
+move_item("thermal-bore", "water-treatment-building", "f[thermal-extractor]-a[bore]", "item")
 
 -- Fish Pressing requires thermal water so add a prerequisite
 if data.raw.technology["bio-pressing-fish"] then

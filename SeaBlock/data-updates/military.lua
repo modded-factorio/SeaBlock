@@ -626,7 +626,7 @@ local mil_techswap = {
       { "space-science-pack", 1 },
     },
   },
-  -- 200 Red, Green, Military, Blue, Purple, Yellow
+  -- 200 Red, Green, Military, Blue, Pink / Purple
   {
     tech_name = "bob-power-armor-3",
     science_packs = {
@@ -634,8 +634,7 @@ local mil_techswap = {
       { "logistic-science-pack", 1 },
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
-      { "production-science-pack", 1 },
-      { "utility-science-pack", 1 },
+      { mods["bobtech"] and "advanced-logistic-science-pack" or "production-science-pack", 1 },
     },
   },
   -- 250 Red, Green, Military, Blue, Purple, Pink, Yellow
@@ -947,12 +946,6 @@ if mods["bobwarfare"] then
   -- Walking Vehicle (Antron) can now depend on Military 4
   bobmods.lib.tech.replace_prerequisite("walking-vehicle", "military-3", "military-4")
 
-  -- Keep Power Armor MK2 accessible without Purple science
-  if not mods["ScienceCostTweakerM"] then
-    bobmods.lib.tech.replace_prerequisite("power-armor-mk2", "military-4", "military-3")
-    bobmods.lib.tech.add_prerequisite("power-armor-mk2", "utility-science-pack")
-  end
-
   -- Move Artillery later
   bobmods.lib.tech.remove_science_pack("bob-artillery-turret-2", "utility-science-pack", 1)
   bobmods.lib.tech.remove_science_pack("bob-artillery-wagon-2", "utility-science-pack", 1)
@@ -979,9 +972,47 @@ if mods["bobwarfare"] then
 
   -- Remove dependencies on Alien Research
   bobmods.lib.tech.remove_prerequisite("bob-power-armor-3", "alien-research")
+
+  -- Adjust Power Armor
+  bobmods.lib.tech.remove_science_pack("power-armor", "chemical-science-pack")
+  bobmods.lib.tech.add_science_pack("power-armor", "military-science-pack", 1)
+  bobmods.lib.tech.add_prerequisite("power-armor", "military-science-pack")
+  bobmods.lib.tech.set_science_pack_count("power-armor", 150)
+  bobmods.lib.recipe.replace_ingredient("power-armor", "processing-unit", "advanced-circuit")
+  bobmods.lib.tech.remove_prerequisite("power-armor", "advanced-electronics-2")
+  bobmods.lib.recipe.add_ingredient("power-armor", { type = "item", name = "modular-armor", amount = 1 })
+
+  bobmods.lib.tech.remove_science_pack("power-armor-mk2", "utility-science-pack")
+  bobmods.lib.tech.remove_prerequisite("power-armor-mk2", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("power-armor-mk2", "low-density-structure")
+  bobmods.lib.tech.add_prerequisite("power-armor-mk2", "advanced-electronics-2")
+  bobmods.lib.tech.set_science_pack_count("power-armor-mk2", 200)
+  bobmods.lib.tech.replace_prerequisite("power-armor-mk2", "military-4", "military-3")
+  bobmods.lib.recipe.add_ingredient("power-armor-mk2", { type = "item", name = "power-armor", amount = 1 })
+
+  if mods["bobtech"] then
+    bobmods.lib.tech.remove_prerequisite("bob-power-armor-3", "production-science-pack")
+    bobmods.lib.tech.add_prerequisite("bob-power-armor-3", "advanced-logistic-science-pack")
+  else
+    bobmods.lib.tech.add_prerequisite("bob-power-armor-3", "military-4")
+  end
+  bobmods.lib.tech.add_prerequisite("bob-power-armor-4", "utility-science-pack")
 end
 
 if mods["bobequipment"] then
+  -- Batteries
+  bobmods.lib.tech.remove_prerequisite("battery-mk2-equipment", "power-armor")
+  bobmods.lib.tech.add_prerequisite("battery-mk2-equipment", "advanced-electronics-2")
+  if mods["bobtech"] then
+    bobmods.lib.tech.add_prerequisite("bob-battery-equipment-5", "advanced-logistic-science-pack")
+  end
+
+  -- Personal Laser Defense
+  bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-5", "utility-science-pack")
+
+  -- Energy Shield
+  bobmods.lib.tech.add_prerequisite("energy-shield-mk2-equipment", "advanced-electronics-2")
+
   -- Remove dependencies on Alien Research
   bobmods.lib.tech.remove_prerequisite("bob-energy-shield-equipment-4", "alien-research")
   bobmods.lib.tech.remove_prerequisite("bob-battery-equipment-4", "alien-research")
