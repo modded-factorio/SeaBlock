@@ -6,10 +6,8 @@ seablock.lib.substresult("liquid-rubber-1", "liquid-rubber", nil, 20)
 local reactors = {
   "burner-reactor",
   "burner-reactor-2",
-  "burner-reactor-3",
   "fluid-reactor",
   "fluid-reactor-2",
-  "fluid-reactor-3",
 }
 
 for _, v in pairs(reactors) do
