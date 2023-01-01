@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.12
-Date: ???
+Date: 01.01.2023
   Changes:
     - Marked Alien Biomes mod as incompatible #263
     - Marked Angel's Exploration mod as incompatible #264
