@@ -9,7 +9,7 @@ if mods["CircuitProcessing"] then
   bobmods.lib.tech.add_prerequisite("effectivity-module", "rubbers")
   bobmods.lib.tech.add_prerequisite("productivity-module", "rubbers")
   bobmods.lib.tech.add_prerequisite("speed-module", "rubbers")
-  
+
   bobmods.lib.tech.add_prerequisite("effectivity-module-3", "gem-processing-2")
   bobmods.lib.tech.add_prerequisite("productivity-module-3", "gem-processing-2")
   bobmods.lib.tech.add_prerequisite("speed-module-3", "gem-processing-2")
