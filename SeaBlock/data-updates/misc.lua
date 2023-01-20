@@ -371,6 +371,9 @@ end
 bobmods.lib.tech.add_prerequisite("bio-pressing-1", "bio-nutrient-paste")
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "ore-leaching")
 
+bobmods.lib.tech.add_prerequisite("resins", "automation-2")
+bobmods.lib.tech.add_prerequisite("plastics", "automation-2")
+
 -- Nerf early game glass. Just need a little bit for arboretums
 seablock.lib.substingredient("quartz-glass", "quartz", nil, 10)
 seablock.lib.substresult("quartz-glass", "glass", nil, 1)

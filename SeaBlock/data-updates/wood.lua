@@ -15,8 +15,6 @@ for k, v in pairs(data.raw.module) do
   end
 end
 
-bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing", "bio-resin-wood-reprocessing")
-
 bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing-2", "carbon-from-charcoal")
 bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing-2", "wood-charcoal")
 
