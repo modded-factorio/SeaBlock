@@ -378,6 +378,10 @@ bobmods.lib.tech.add_prerequisite("plastics", "automation-2")
 seablock.lib.substingredient("quartz-glass", "quartz", nil, 10)
 seablock.lib.substresult("quartz-glass", "glass", nil, 1)
 
+-- Biologically active tile has been hidden so no need for the prerequisites
+bobmods.lib.tech.remove_prerequisite("bio-farm-2", "angels-glass-smelting-1")
+bobmods.lib.tech.remove_prerequisite("bio-farm-2", "angels-stone-smelting-2")
+
 -- Rebalance glass mixture recipes
 bobmods.lib.recipe.remove_ingredient("glass-mixture-1", "quartz")
 bobmods.lib.recipe.set_ingredient("glass-mixture-1", { "silicon-powder", 1 })
