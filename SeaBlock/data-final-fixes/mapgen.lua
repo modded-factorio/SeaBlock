@@ -25,7 +25,7 @@ for k, v in pairs(data.raw["simple-entity"]) do
   seablock.lib.add_flag("simple-entity", v.name, "not-deconstructable")
 end
 
-if settings.startup["Landblock-mode-Seablock"] == false then
+if settings.startup["Landblock-mode-Seablock-setting"] == false then
   -- No spawners
   for k, v in pairs(data.raw["unit-spawner"]) do
     v.autoplace = nil
