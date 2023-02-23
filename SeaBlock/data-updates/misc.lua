@@ -63,12 +63,14 @@ end
 
 -- Remove resources so mining recipes don't show in FNEI
 -- Have to leave at least one resource or game will not load
-for k, v in pairs(data.raw["resource"]) do
-  if k == "coal" then
-    v.minable.result = nil
-    v.minable.results = nil
-  else
-    data.raw["resource"][k] = nil
+if settings.startup["No-minerals-mode-setting"].value == true then
+  for k, v in pairs(data.raw["resource"]) do
+    if k == "coal" then
+      v.minable.result = nil
+      v.minable.results = nil
+    else
+      data.raw["resource"][k] = nil
+    end
   end
 end
 

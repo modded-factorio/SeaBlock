@@ -1,7 +1,8 @@
 if settings.startup["No-minerals-mode-setting"].value == true then
--- No resource placement
-for k, v in pairs(data.raw.resource) do
-  v.autoplace = nil
+	-- No resource placement
+	for k, v in pairs(data.raw.resource) do
+		v.autoplace = nil
+	end
 end
 
 if settings.startup["No-trees-mode-setting"].value == true then
