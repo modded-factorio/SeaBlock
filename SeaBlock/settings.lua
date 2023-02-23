@@ -20,3 +20,14 @@ if mods["LandfillPainting"] then
     },
   })
 end
+
+data:extend({
+    {
+      type = "bool-setting",
+      name = "Landblock-mode-Seablock-setting",
+      setting_type = "startup",
+      default_value = false
+    }
+})
+
+      
