@@ -31,7 +31,7 @@ data.raw.tile["sand-5"].vehicle_friction_modifier = 1.8
 
 data.raw.tile["landfill"].vehicle_friction_modifier = 1.8
 
-if settings.startup["Landblock-mode-Seablock-setting"] == false then
+if settings.startup["Landblock-mode-Seablock-setting"].value == false then
 
 	for _, v in pairs(data.raw.tile) do
 	  v.autoplace = nil

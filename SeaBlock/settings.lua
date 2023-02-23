@@ -30,4 +30,20 @@ data:extend({
     }
 })
 
-      
+data:extend({
+    {
+      type = "bool-setting",
+      name = "No-minerals-mode-setting",
+      setting_type = "startup",
+      default_value = true
+    }
+})
+
+data:extend({
+    {
+      type = "bool-setting",
+      name = "No-trees-mode-setting",
+      setting_type = "startup",
+      default_value = true
+    }
+})

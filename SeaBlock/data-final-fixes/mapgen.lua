@@ -1,31 +1,33 @@
+if settings.startup["No-minerals-mode-setting"].value == true then
 -- No resource placement
 for k, v in pairs(data.raw.resource) do
   v.autoplace = nil
 end
 
--- No trees
-for k, v in pairs(data.raw.tree) do
-  if
-    k ~= "temperate-garden"
-    and k ~= "desert-garden"
-    and k ~= "swamp-garden"
-    and k ~= "temperate-tree"
-    and k ~= "desert-tree"
-    and k ~= "swamp-tree"
-    and k ~= "puffer-nest"
-  then
-    v.autoplace = nil
-    seablock.lib.add_flag("tree", v.name, "not-deconstructable")
-  end
-end
+if settings.startup["No-trees-mode-setting"].value == true then
+	-- No trees
+	for k, v in pairs(data.raw.tree) do
+	  if
+		k ~= "temperate-garden"
+		and k ~= "desert-garden"
+		and k ~= "swamp-garden"
+		and k ~= "temperate-tree"
+		and k ~= "desert-tree"
+		and k ~= "swamp-tree"
+		and k ~= "puffer-nest"
+	  then
+		v.autoplace = nil
+		seablock.lib.add_flag("tree", v.name, "not-deconstructable")
+	  end
+	end
 
--- No rocks
-for k, v in pairs(data.raw["simple-entity"]) do
-  v.autoplace = nil
-  seablock.lib.add_flag("simple-entity", v.name, "not-deconstructable")
+	-- No rocks
+	for k, v in pairs(data.raw["simple-entity"]) do
+	  v.autoplace = nil
+	  seablock.lib.add_flag("simple-entity", v.name, "not-deconstructable")
+	end
 end
-
-if settings.startup["Landblock-mode-Seablock-setting"] == false then
+if settings.startup["Landblock-mode-Seablock-setting"].value == false then
   -- No spawners
   for k, v in pairs(data.raw["unit-spawner"]) do
     v.autoplace = nil
