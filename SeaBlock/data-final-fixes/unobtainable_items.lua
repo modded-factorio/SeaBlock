@@ -106,7 +106,7 @@ for _, v in ipairs({
   "bio-tile",
   "burner-generator",
   "burner-mining-drill",
---"coal",
+  "coal",
   "coal-crushed",
   "diesel-fuel",
   "diesel-fuel-barrel",
@@ -125,8 +125,24 @@ for _, v in ipairs({
 }) do
   unobtainable[v] = {}
 end
-if settings.startup["No-minerals-mode-setting"].value == true then
-	unobtainable["coal"] = {}
+
+if settings.startup["No-minerals-mode-setting"].value == false then
+  for _, v in ipairs({
+  "burner-mining-drill",
+  "coal-crushed",
+  "electric-mining-drill"
+  }) do
+  removerecipes[v] = false
+  end
+	
+  for _, v in ipairs({
+  "burner-mining-drill",
+  "coal",
+  "coal-crushed",
+  "electric-mining-drill"
+  }) do
+  unobtainable[v] = nil
+  end
 end
 
 -- unobtainable[key] -> { { a, and b, and .. }, or { c, ... } or, { d, and e, and f, ...}... }
