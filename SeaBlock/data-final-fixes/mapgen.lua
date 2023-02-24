@@ -78,6 +78,14 @@ for tree_name, turret in pairs(trees) do
 	keepcontrols[turret.autoplace.control] = true
   end
 end
+
+local trees = data.raw["simple-entity"]
+for tree_name, turret in pairs(trees) do
+  if turret.autoplace and turret.autoplace.control then
+	keepcontrols[turret.autoplace.control] = true
+  end
+end
+
 end
 
 local controls = data.raw["autoplace-control"]
