@@ -106,7 +106,7 @@ for _, v in ipairs({
   "bio-tile",
   "burner-generator",
   "burner-mining-drill",
-  "coal",
+--"coal",
   "coal-crushed",
   "diesel-fuel",
   "diesel-fuel-barrel",
@@ -124,6 +124,9 @@ for _, v in ipairs({
   "pumpjack",
 }) do
   unobtainable[v] = {}
+end
+if settings.startup["No-minerals-mode-setting"].value == true then
+	unobtainable["coal"] = {}
 end
 
 -- unobtainable[key] -> { { a, and b, and .. }, or { c, ... } or, { d, and e, and f, ...}... }
