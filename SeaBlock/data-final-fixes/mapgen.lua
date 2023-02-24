@@ -38,6 +38,9 @@ if settings.startup["Landblock-mode-Seablock-setting"].value == false then
   end
 end
 
+--if settings.startup["Landblock-mode-Seablock-setting"].value == true then
+
+--else
 
 local keepcontrols = {}
 local turrets = data.raw["turret"]
@@ -48,12 +51,15 @@ end
 end
 
 if settings.startup["Landblock-mode-Seablock-setting"].value == true then
-local enemies = data.raw["unit-spawner"]
-for enemies_name, turret in pairs(enemies) do
+local enem = data.raw["unit-spawner"]
+for enemies_name, turret in pairs(enem) do
 if turret.autoplace and turret.autoplace.control then
   keepcontrols[turret.autoplace.control] = true
 end
 end
+
+keepcontrols["angels-biter-slider"] = true
+
 end
 
 if settings.startup["No-minerals-mode-setting"].value == false then

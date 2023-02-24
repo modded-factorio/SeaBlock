@@ -470,7 +470,7 @@ local function make_basis_noise_function(seed0, seed1, outscale0, inscale0)
   end
 end
 
---if settings.startup["Landblock-mode-Seablock-setting"].value == false then
+if settings.startup["Landblock-mode-Seablock-setting"].value == false then
   data.raw["noise-expression"]["cliffiness"].expression = noise.define_noise_function(function(x, y, tile, map)
     local t = noise.clamp((tile.tier - 0.2) * noise.ceil(noise.var("control-setting:cliffs:richness:multiplier")), 0, 1) -- No cliffs in starting area
       return 100 * t
@@ -483,7 +483,7 @@ end
     v = (v * elevation_scale) - (waterline * (elevation_scale - 1)) -- Increase gradient for cliffs while leaving waterline unchanged
     return v
   end)
-
+end
 
   for k, v in pairs(data.raw.tree) do
     if v.autoplace.tile_restriction ~= nil then
