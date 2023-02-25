@@ -61,6 +61,7 @@ if not seablock.trigger.mining_productivity then
   end
 end
 
+if settings.startup["No-minerals-mode-setting"].value == false then
 -- Remove resources so mining recipes don't show in FNEI
 -- Have to leave at least one resource or game will not load
 if settings.startup["No-minerals-mode-setting"].value == true then
@@ -73,7 +74,7 @@ if settings.startup["No-minerals-mode-setting"].value == true then
     end
   end
 end
-
+end
 -- Add prerequisite for Tin and Lead
 if settings.startup["bobmods-logistics-beltoverhaul"].value then
   bobmods.lib.tech.add_prerequisite("logistics", "ore-crushing")
