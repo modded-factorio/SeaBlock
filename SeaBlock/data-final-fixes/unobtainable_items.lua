@@ -153,7 +153,7 @@ recipes_to_remove = {
 }
 end
 
-for _, v in ipairs() do
+for _, v in ipairs(recipes_to_remove) do
   removerecipes[v] = true
 end
 
