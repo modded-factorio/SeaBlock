@@ -144,7 +144,7 @@ recipes_to_remove = {
   "slag-processing-7",
   "slag-processing-8",
   "slag-processing-9",
-  "solid-coke",
+--  "solid-coke",
   "solid-coke-sulfur",
   "thermal-water-filtering-1",
   "thermal-water-filtering-2",
