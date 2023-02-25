@@ -61,7 +61,7 @@ if not seablock.trigger.mining_productivity then
   end
 end
 
-if settings.startup["No-minerals-mode-setting"].value == false then
+
 -- Remove resources so mining recipes don't show in FNEI
 -- Have to leave at least one resource or game will not load
 if settings.startup["No-minerals-mode-setting"].value == true then
@@ -74,7 +74,7 @@ if settings.startup["No-minerals-mode-setting"].value == true then
     end
   end
 end
-end
+
 -- Add prerequisite for Tin and Lead
 if settings.startup["bobmods-logistics-beltoverhaul"].value then
   bobmods.lib.tech.add_prerequisite("logistics", "ore-crushing")
@@ -115,9 +115,11 @@ bobmods.lib.tech.remove_prerequisite("tungsten-processing", "angels-nickel-smelt
 bobmods.lib.tech.remove_recipe_unlock("bio-arboretum-swamp-1", "solid-plastic")
 
 seablock.lib.hide("inserter", "steam-inserter")
+if settings.startup["No-minerals-mode-setting"].value == true then
 seablock.lib.hide("mining-drill", "burner-mining-drill")
 seablock.lib.hide("mining-drill", "electric-mining-drill")
 seablock.lib.hide("mining-drill", "pumpjack")
+end
 seablock.lib.hide("storage-tank", "bob-overflow-valve")
 seablock.lib.hide("storage-tank", "bob-valve")
 seablock.lib.hide("storage-tank", "bob-topup-valve")

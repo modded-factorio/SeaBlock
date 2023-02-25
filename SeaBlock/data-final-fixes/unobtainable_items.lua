@@ -210,7 +210,7 @@ end
 for _, v in ipairs(items_to_remove) do
   unobtainable[v] = {}
 end
-
+--[[
 if settings.startup["No-minerals-mode-setting"].value == false then
   for _, v in ipairs({
   "burner-mining-drill",
@@ -219,7 +219,7 @@ if settings.startup["No-minerals-mode-setting"].value == false then
   }) do
   removerecipes[v] = false
   end
---[[	
+  
   for _, v in ipairs({
   "burner-mining-drill",
   "coal",
@@ -227,9 +227,9 @@ if settings.startup["No-minerals-mode-setting"].value == false then
   "electric-mining-drill"
   }) do
   unobtainable[v] = nil
-  end --]]
+  end 
 end
-
+--]]
 -- unobtainable[key] -> { { a, and b, and .. }, or { c, ... } or, { d, and e, and f, ...}... }
 -- a,b,c... are items which if craftable imply key is also craftable and should not be removed
 local recipes = {}
