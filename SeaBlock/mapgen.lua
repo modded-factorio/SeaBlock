@@ -36,6 +36,15 @@ local octaves = -3
 local persistence = 0.2
 local waterline = 9.4
 local elevation_scale = 5
+
+if settings.startup["Landblock-mode-Seablock-setting"].value == true then
+octaves = -3
+persistence = 0.2
+waterline = 1
+elevation_scale = 1
+end
+
+
 local function scale_elevation(x)
   return (x - waterline) * elevation_scale + waterline
 end
@@ -166,7 +175,7 @@ if settings.startup["Landblock-mode-Seablock-setting"].value == false then
 		},
 	  },
 	}
-
+end
 
 local plant_elevation_range = 9.9 * elevation_scale
 data.raw.tree["desert-garden"].autoplace = {
@@ -321,6 +330,174 @@ data.raw.tree["swamp-tree"].autoplace = {
   tile_restriction = { "sand-5" },
 }
 
+
+if settings.startup["Landblock-mode-Seablock-setting"].value == true then
+plant_elevation_range = 10 * elevation_scale
+local elevation_number = 1
+local max_probability_val = 0.2
+data.raw.tree["desert-garden"].autoplace = {
+  max_probability = max_probability_val,
+  random_probability_penalty = 0.05,
+  sharpness = 1,
+  peaks = {
+--[[	{
+	  influence = 1,
+	  min_influence = 0,
+	  elevation_optimal = scale_elevation(elevation_number),
+	  elevation_range = plant_elevation_range,
+	  elevation_max_range = plant_elevation_range,
+	}, --]]
+--[[	{
+	  influence = 0.31, -- Trial and error value to generate size that approximately matches starting area islands
+	  min_influence = 0,
+	  max_influence = 1,
+	  noise_layer = "enemy-base",
+	  noise_octaves_difference = octaves,
+	  noise_persistence = persistence,
+	  tier_from_start_optimal = 0,
+	  tier_from_start_range = 0.1,
+	  tier_from_start_max_range = 0.1,
+	}, --]]
+	{
+	  influence = 1,
+	  max_influence = 0.003,
+	  noise_layer = "desert-garden-noise",
+	  noise_persistence = 0.5,
+	  noise_octaves_difference = -0.1, -- -0.5,
+	},
+  },
+  order = "yc",
+--  tile_restriction = { "sand-5" },
+}
+
+data.raw.tree["temperate-garden"].autoplace = {
+  max_probability = 0.2,
+  random_probability_penalty = 0.05,
+  peaks = {
+--[[	{
+	  influence = 1,
+	  min_influence = 0,
+	  elevation_optimal = scale_elevation(elevation_number),
+	  elevation_range = plant_elevation_range,
+	  elevation_max_range = plant_elevation_range,
+	}, --]]
+	{
+	  influence = 1,
+	  max_influence = 0.003,
+	  noise_layer = "temperate-garden-noise",
+	  noise_persistence = 0.5,
+	  noise_octaves_difference = -0.1, -- -0.5,
+	},
+  },
+  order = "ya",
+--  tile_restriction = { "sand-5" },
+}
+
+data.raw.tree["swamp-garden"].autoplace = {
+  max_probability = 0.05,
+  peaks = {
+--[[	{
+	  influence = 1,
+	  min_influence = 0,
+	  elevation_optimal = scale_elevation(elevation_number),
+	  elevation_range = plant_elevation_range,
+	  elevation_max_range = plant_elevation_range,
+	},--]]
+	{
+	  influence = 1,
+	  max_influence = 0.003,
+	  noise_layer = "swamp-garden-noise",
+	  noise_persistence = 0.5,
+	  noise_octaves_difference = -0.1, -- -0.5,
+	},
+  },
+  order = "yb",
+--  tile_restriction = { "sand-5" },
+}
+
+data.raw.tree["desert-tree"].autoplace = {
+  max_probability = 0.1,
+  random_probability_penalty = 0.025,
+  sharpness = 1,
+  peaks = {
+--[[	{
+	  influence = 1,
+	  min_influence = 0,
+	  elevation_optimal = scale_elevation(elevation_number),
+	  elevation_range = plant_elevation_range,
+	  elevation_max_range = plant_elevation_range,
+	}, --]]
+--[[	{
+	  influence = 0.31, -- Trial and error value to generate size that approximately matches starting area islands
+	  min_influence = 0,
+	  max_influence = 1,
+	  noise_layer = "enemy-base",
+	  noise_octaves_difference = octaves,
+	  noise_persistence = persistence,
+	  tier_from_start_optimal = 0,
+	  tier_from_start_range = 0.1,
+	  tier_from_start_max_range = 0.1,
+	}, --]]
+	{
+	  influence = 1,
+	  max_influence = 0.003,
+	  noise_layer = "desert-tree-noise",
+	  noise_persistence = 0.5,
+	  noise_octaves_difference = -0.1, -- -0.5,
+	},
+  },
+  order = "za",
+--  tile_restriction = { "sand-5" },
+}
+data.raw.tree["temperate-tree"].autoplace = {
+  max_probability = 0.1,
+  random_probability_penalty = 0.025,
+  peaks = {
+--[[	{
+	  influence = 1,
+	  min_influence = 0,
+	  elevation_optimal = scale_elevation(elevation_number),
+	  elevation_range = plant_elevation_range,
+	  elevation_max_range = plant_elevation_range,
+	}, --]]
+	{
+	  influence = 1,
+	  max_influence = 0.003,
+	  noise_layer = "temperate-tree-noise",
+	  noise_persistence = 0.5,
+	  noise_octaves_difference = -0.1, -- -0.5,
+	},
+  },
+  order = "zc",
+--  tile_restriction = { "sand-5" },
+}
+
+data.raw.tree["swamp-tree"].autoplace = {
+  max_probability = 0.05,
+  peaks = {
+--[[	{
+	  influence = 1,
+	  min_influence = 0,
+	  elevation_optimal = scale_elevation(elevation_number),
+	  elevation_range = plant_elevation_range,
+	  elevation_max_range = plant_elevation_range,
+	}, --]]
+	{
+	  influence = 1,
+	  max_influence = 0.003,
+	  noise_layer = "swamp-tree-noise",
+	  noise_persistence = 0.5,
+	  noise_octaves_difference = -0.1, -- -0.5,
+	},
+  },
+  order = "zb",
+--  tile_restriction = { "sand-5" },
+}
+
+end
+
+
+
 data.raw.fish["alien-fish-1"].autoplace = {
   peaks = {
 	{
@@ -363,6 +540,8 @@ data.raw.fish["alien-fish-3"].autoplace = {
 	},
   },
 }
+
+if settings.startup["Landblock-mode-Seablock-setting"].value == false then
 
 local noise = require("noise")
 local tne = noise.to_noise_expression
@@ -422,6 +601,8 @@ data.raw.tree["puffer-nest"].autoplace = worm_autoplace(0, 0.01, "s", false)
 
 for _, v in pairs(data.raw.turret) do
   v.map_generator_bounding_box = nil
+end
+
 end
 
 data:extend({
@@ -490,4 +671,3 @@ end
 	  v.autoplace.tile_restriction = nil
 	end
   end
-end
