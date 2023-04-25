@@ -92,7 +92,6 @@ end
 seablock.lib.add_recipe_unlock("military", "pistol", 1)
 seablock.lib.add_recipe_unlock("military", "firearm-magazine", 3)
 seablock.lib.add_recipe_unlock("military", "light-armor", 4)
-seablock.lib.add_recipe_unlock("military", "radar", 5)
 seablock.lib.add_recipe_unlock("military", "repair-pack", nil)
 
 bobmods.lib.tech.add_prerequisite("gun-turret", "military")

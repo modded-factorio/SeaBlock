@@ -371,9 +371,16 @@ end
 bobmods.lib.tech.add_prerequisite("bio-pressing-1", "bio-nutrient-paste")
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "ore-leaching")
 
+bobmods.lib.tech.add_prerequisite("resins", "automation-2")
+bobmods.lib.tech.add_prerequisite("plastics", "automation-2")
+
 -- Nerf early game glass. Just need a little bit for arboretums
 seablock.lib.substingredient("quartz-glass", "quartz", nil, 10)
 seablock.lib.substresult("quartz-glass", "glass", nil, 1)
+
+-- Biologically active tile has been hidden so no need for the prerequisites
+bobmods.lib.tech.remove_prerequisite("bio-farm-2", "angels-glass-smelting-1")
+bobmods.lib.tech.remove_prerequisite("bio-farm-2", "angels-stone-smelting-2")
 
 -- Rebalance glass mixture recipes
 bobmods.lib.recipe.remove_ingredient("glass-mixture-1", "quartz")
@@ -436,6 +443,9 @@ bobmods.lib.tech.add_prerequisite("water-treatment-3", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-2", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-3", "angels-stone-smelting-2")
+bobmods.lib.tech.add_prerequisite("bio-desert-farm", "angels-stone-smelting-2")
+bobmods.lib.tech.add_prerequisite("bio-swamp-farm", "angels-stone-smelting-2")
+bobmods.lib.tech.add_prerequisite("bio-temperate-farm", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("bio-refugium-hatchery", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("bio-refugium-puffer-1", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("water-treatment-3", "angels-stone-smelting-2")

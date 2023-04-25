@@ -26,3 +26,10 @@ bobmods.lib.tech.add_recipe_unlock("angels-sulfur-processing-1", "gas-sulfur-dio
 -- Move Sulfur from Sulfur processing 3 to Sulfur processing 1
 bobmods.lib.tech.remove_recipe_unlock("angels-sulfur-processing-3", "solid-sulfur")
 bobmods.lib.tech.add_recipe_unlock("angels-sulfur-processing-1", "solid-sulfur")
+
+-- Sulfur is now available sooner so no longer need Sulfur 2 as a prerequisite
+-- Basic chem 2 isn't strictly required but don't want too many techs to depend directly on Green Science tech
+bobmods.lib.tech.remove_prerequisite("explosives", "angels-sulfur-processing-2")
+bobmods.lib.tech.add_prerequisite("explosives", "basic-chemistry-2")
+
+bobmods.lib.tech.remove_prerequisite("battery", "angels-sulfur-processing-2")
