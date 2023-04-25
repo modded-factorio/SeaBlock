@@ -101,3 +101,11 @@ bobmods.lib.tech.add_prerequisite("space-science-pack", "military")
 if mods["bobpower"] then
   bobmods.lib.tech.add_prerequisite("angels-coal-processing", "steam-power")
 end
+
+-- Gems are needed to make higher tier modules
+if data.raw.technology["gem-processing-2"] then
+  --Module with 2 dots has the tech name of 3
+  bobmods.lib.tech.add_prerequisite("speed-module-3", "gem-processing-2")
+  bobmods.lib.tech.add_prerequisite("productivity-module-3", "gem-processing-2")
+  bobmods.lib.tech.add_prerequisite("effectivity-module-3", "gem-processing-2")
+end
