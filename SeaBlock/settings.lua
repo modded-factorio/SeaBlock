@@ -47,3 +47,12 @@ data:extend({
       default_value = true
     }
 })
+
+data:extend({
+    {
+      type = "bool-setting",
+      name = "Cargo-ships-deep-oil-setting",
+      setting_type = "startup",
+      default_value = false
+    }
+})

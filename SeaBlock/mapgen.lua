@@ -541,11 +541,11 @@ data.raw.fish["alien-fish-3"].autoplace = {
   },
 }
 
-if settings.startup["Landblock-mode-Seablock-setting"].value == false then
-
 local noise = require("noise")
 local tne = noise.to_noise_expression
 local enemy_random_seed = 1
+
+if settings.startup["Landblock-mode-Seablock-setting"].value == false then
 local function new_random_seed()
   enemy_random_seed = enemy_random_seed + 1
   return enemy_random_seed
