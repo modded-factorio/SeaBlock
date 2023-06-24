@@ -5,7 +5,7 @@ if settings.startup["No-minerals-mode-setting"].value == true then
 	--No Resource placement execpt deep oil from cargo ships
 	if settings.startup["Cargo-ships-deep-oil-setting"].value == true then
 		for k, v in pairs(data.raw.resource) do
-			if k ~= "deep-oil" then
+			if k ~= "deep_oil" then
 				v.autoplace = nil
 			end
 		end
