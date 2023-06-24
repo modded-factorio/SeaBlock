@@ -95,6 +95,7 @@ local recipes_to_remove = {
   "water-thermal-lithia",
   "wood-charcoal",
 }
+--[[
 if settings.startup["No-minerals-mode-setting"].value == false then
 recipes_to_remove = {
   "alien-artifact-blue-from-basic",
@@ -152,6 +153,45 @@ recipes_to_remove = {
   "wood-charcoal",
 }
 end
+--]]
+
+if settings.startup["Cargo-ships-deep-oil-setting"].value == true then 
+	--remove pumpjack from recipes_to_remove
+	for k, v in ipairs(recipes_to_remove) do
+		if v == "pumpjack" then
+			table.remove(recipes_to_remove, k)
+		end
+	end
+elseif settings.startup["No-minerals-mode-setting"].value == false then
+	--[[
+	remove:
+	 "burner-mining-drill",
+	 "coal-crushed",
+	 "electric-mining-drill",
+	 "pumpjack",
+	 "solid-coke",
+	--]]
+	for k, v in ipairs(recipes_to_remove) do
+		if v == "pumpjack" then
+			table.remove(recipes_to_remove, k)
+			
+		elseif v == "burner-mining-drill" then
+			table.remove(recipes_to_remove, k)
+			
+		elseif v == "coal-crushed" then
+			table.remove(recipes_to_remove, k)
+			
+		elseif v == "electric-mining-drill" then
+			table.remove(recipes_to_remove, k)
+			
+		elseif v == "solid-coke" then
+			table.remove(recipes_to_remove, k)
+		else
+		end
+	end
+else
+end
+	
 
 for _, v in ipairs(recipes_to_remove) do
   removerecipes[v] = true

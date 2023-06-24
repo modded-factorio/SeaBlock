@@ -214,9 +214,10 @@ if mods["bobrevamp"] and not mods["bobclasses"] then
   bobmods.lib.tech.add_prerequisite("rtg", "production-science-pack")
   bobmods.lib.tech.add_prerequisite("rtg", "utility-science-pack")
 end
-
-if mods["cargo-ships"] then
-  seablock.lib.hide_item("oil_rig")
+if settings.startup["Cargo-ships-deep-oil-setting"].value == false then
+  if mods["cargo-ships"] then
+    seablock.lib.hide_item("oil_rig")
+  end
 end
 
 -- Swap gold for platinum
