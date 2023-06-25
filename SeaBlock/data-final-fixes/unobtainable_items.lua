@@ -247,6 +247,15 @@ items_to_remove = {
 }
 end
 
+if settings.startup["Cargo-ships-deep-oil-setting"].value == true then 
+	--remove pumpjack from recipes_to_remove
+	for k, v in ipairs(items_to_remove) do
+		if v == "pumpjack" then
+			table.remove(recipes_to_remove, k)
+		end
+	end
+end
+
 for _, v in ipairs(items_to_remove) do
   unobtainable[v] = {}
 end
