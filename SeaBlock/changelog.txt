@@ -5,6 +5,7 @@ Date: ???
     - Added missing prerequisites #295
   Bugfixes:
     - Fixed Radar being unlocked by both Military and Radars 1 #296
+    - Fixed Exoplanetary Studies Lab recipe not including previous lab tier #303
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.12
 Date: 01.01.2023

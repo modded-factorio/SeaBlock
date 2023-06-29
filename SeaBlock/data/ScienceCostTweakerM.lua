@@ -27,6 +27,7 @@ if mods["ScienceCostTweakerM"] then
     end
 
     bobmods.lib.recipe.set_ingredients("lab-2", {
+      { "sct-lab-t4", 1 },
       { "rocket-silo", 1 },
       { "nitinol-alloy", 100 },
       { "express-stack-filter-inserter", 2 },
