@@ -191,8 +191,8 @@ for _, v in pairs({
   "bio-processing-alien-3",
   "gem-processing-1",
   "gem-processing-2",
+  "gem-processing-3",
   "geode-crystallization-1",
-  "geode-crystallization-2",
   "polishing",
 }) do
   if data.raw.technology[v] then
@@ -253,7 +253,7 @@ bobmods.lib.tech.hide("angels-steel-smelting-4")
 
 bobmods.lib.recipe.hide("molten-titanium-smelting-5")
 bobmods.lib.tech.remove_recipe_unlock("angels-titanium-casting-3", "molten-titanium-smelting-5")
-bobmods.lib.tech.remove_prerequisite("angels-titanium-casting-3", "angels-chrome-smelting-2")
+bobmods.lib.tech.remove_prerequisite("angels-titanium-casting-3", "angels-chrome-smelting-1")
 
 -- Buff bob's silicon and tungsten recipes
 seablock.lib.substingredient("silicon-carbide", "silicon-powder", nil, 10)

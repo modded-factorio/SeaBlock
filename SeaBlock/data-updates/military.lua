@@ -664,6 +664,18 @@ local mil_techswap = {
       { "space-science-pack", 1 },
     },
   },
+  -- 250 Red, Green, Military, Blue, Purple, Pink
+  {
+    tech_name = "fusion-reactor-equipment-2",
+    science_packs = {
+      { "automation-science-pack", 1 },
+      { "logistic-science-pack", 1 },
+      { "military-science-pack", 1 },
+      { "chemical-science-pack", 1 },
+      { "production-science-pack", 1 },
+      { "advanced-logistic-science-pack", 1 },
+    },
+  },
   -- 300 Red, Green, Military, Blue, Purple, Pink, Yellow
   {
     tech_name = "fusion-reactor-equipment-3",
@@ -879,6 +891,18 @@ local mil_techswap = {
       { "production-science-pack", 1 },
       { "advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
+      { "space-science-pack", 1 }
+    },
+  },
+  -- 400 Red, Green, Blue, Purple, Pink, Yellow, White
+  {
+    tech_name = "personal-laser-defense-equipment-6",
+    science_packs = {
+      { "automation-science-pack", 1 },
+      { "logistic-science-pack", 1 },
+      { "chemical-science-pack", 1 },
+      { "production-science-pack", 1 },
+      { "utility-science-pack", 1 },
       { "space-science-pack", 1 },
     },
   },
@@ -1009,6 +1033,7 @@ if mods["bobequipment"] then
 
   -- Personal Laser Defense
   bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-5", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-6", "space-science-pack")
 
   -- Energy Shield
   bobmods.lib.tech.add_prerequisite("energy-shield-mk2-equipment", "advanced-electronics-2")
@@ -1016,7 +1041,8 @@ if mods["bobequipment"] then
   -- Remove dependencies on Alien Research
   bobmods.lib.tech.remove_prerequisite("bob-energy-shield-equipment-4", "alien-research")
   bobmods.lib.tech.remove_prerequisite("bob-battery-equipment-4", "alien-research")
-  bobmods.lib.tech.remove_prerequisite("fusion-reactor-equipment-3", "alien-research")
+  bobmods.lib.tech.remove_prerequisite("fusion-reactor-equipment-2", "alien-research")
+  bobmods.lib.tech.remove_prerequisite("personal-laser-defense-equipment-6", "alien-research")
 end
 
 if mods["bobvehicleequipment"] then

@@ -45,9 +45,14 @@ if mods["ScienceCostTweakerM"] then
   bobmods.lib.recipe.hide("sct-t3-flash-fuel2")
 
   -- T4 Lab
+  bobmods.lib.tech.replace_prerequisite("sct-lab-t4", "gem-processing-2", "gem-processing-3")
+
   -- Yellow science now requires Purple science
   bobmods.lib.tech.add_new_science_pack("sct-lab-t4", "production-science-pack", 1)
   bobmods.lib.tech.add_new_science_pack("sct-utility-science-pack", "production-science-pack", 1)
+
+  bobmods.lib.tech.remove_recipe_unlock("sct-utility-science-pack", "sct-waste-processing-copper")
+  bobmods.lib.tech.remove_recipe_unlock("sct-utility-science-pack", "sct-waste-processing-mixed")
 
   -- Adjust any techs that needed Yellow but not Purple
 
@@ -55,7 +60,7 @@ if mods["ScienceCostTweakerM"] then
   bobmods.lib.tech.replace_prerequisite("fusion-reactor-equipment", "utility-science-pack", "production-science-pack")
   bobmods.lib.tech.add_prerequisite("fusion-reactor-equipment", "low-density-structure")
   if mods["bobequipment"] then
-    bobmods.lib.tech.add_prerequisite("fusion-reactor-equipment-2", "utility-science-pack")
+    bobmods.lib.tech.add_prerequisite("fusion-reactor-equipment-3", "utility-science-pack")
   end
 
   if mods["bobvehicleequipment"] then

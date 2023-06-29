@@ -16,7 +16,7 @@ bobmods.lib.tech.remove_prerequisite("angels-manganese-smelting-1", "angels-coal
 bobmods.lib.tech.remove_prerequisite("angels-tin-smelting-2", "angels-coal-processing-2")
 bobmods.lib.tech.remove_prerequisite("angels-titanium-smelting-1", "angels-coal-processing-2")
 bobmods.lib.tech.remove_prerequisite("angels-zinc-smelting-2", "angels-coal-processing-2")
-bobmods.lib.tech.remove_prerequisite("angels-chrome-smelting-1", "angels-coal-processing-2")
+bobmods.lib.tech.remove_prerequisite("angels-chrome-smelting-1", "angels-coal-processing-3")
 bobmods.lib.tech.remove_prerequisite("angels-iron-smelting-2", "angels-coal-processing-2")
 
 -- Add a new prerequisite so Coal processing 2 isn't a dead end
@@ -103,9 +103,9 @@ if mods["bobpower"] then
 end
 
 -- Gems are needed to make higher tier modules
-if data.raw.technology["gem-processing-2"] then
+if data.raw.technology["gem-processing-3"] then
   --Module with 2 dots has the tech name of 3
-  bobmods.lib.tech.add_prerequisite("speed-module-3", "gem-processing-2")
-  bobmods.lib.tech.add_prerequisite("productivity-module-3", "gem-processing-2")
-  bobmods.lib.tech.add_prerequisite("effectivity-module-3", "gem-processing-2")
+  bobmods.lib.tech.add_prerequisite("speed-module-3", "gem-processing-3")
+  bobmods.lib.tech.add_prerequisite("productivity-module-3", "gem-processing-3")
+  bobmods.lib.tech.add_prerequisite("effectivity-module-3", "gem-processing-3")
 end
