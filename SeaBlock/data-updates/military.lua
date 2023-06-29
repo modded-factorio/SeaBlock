@@ -891,7 +891,7 @@ local mil_techswap = {
       { "production-science-pack", 1 },
       { "advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
-      { "space-science-pack", 1 }
+      { "space-science-pack", 1 },
     },
   },
   -- 400 Red, Green, Blue, Purple, Pink, Yellow, White
