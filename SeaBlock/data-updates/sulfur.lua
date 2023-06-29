@@ -3,7 +3,7 @@ local washing_fluid_box = {
   production_type = "output",
   pipe_covers = pipecoverspictures(),
   base_level = 1,
-  pipe_connections = {{ position = { -3, 0 }, type = "output", } },
+  pipe_connections = { { position = { -3, 0 }, type = "output" } },
 }
 for _, v in pairs({ "", "-2", "-3", "-4" }) do
   local washingplant = data.raw["assembling-machine"]["washing-plant" .. v]
