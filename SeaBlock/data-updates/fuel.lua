@@ -58,4 +58,8 @@ if mods["KS_Power"] then
   seablock.lib.hide("burner-generator", "big-burner-generator")
   seablock.lib.hide("burner-generator", "burner-generator")
   seablock.lib.hide("generator", "petroleum-generator")
+  local turbine = data.raw["electric-energy-interface"]["wind-turbine-2"]
+  if turbine and turbine.energy_source then
+    turbine.energy_source.output_flow_limit = "15kW"
+  end
 end
