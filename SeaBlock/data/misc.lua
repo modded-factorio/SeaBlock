@@ -12,6 +12,11 @@ for k, _ in pairs(starting_items) do
   table.insert(data.script_enabled, { type = "item", name = k })
 end
 
+-- YAFC doesn't recognise that Wind Turbines can generate power
+-- So add Boiler and Steam Engine to script_enabled
+table.insert(data.script_enabled, { type = "item", name = "boiler" })
+table.insert(data.script_enabled, { type = "item", name = "steam-engine" })
+
 -- Set Angel's triggers
 angelsmods.trigger.smelting_products["copper"].powder = true
 angelsmods.trigger.smelting_products["nickel"].plate = false
