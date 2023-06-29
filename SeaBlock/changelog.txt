@@ -7,6 +7,7 @@ Date: ???
     - Fixed Radar being unlocked by both Military and Radars 1 #296
     - Fixed Exoplanetary Studies Lab recipe not including previous lab tier #303
     - Fixed Wind Turbine energy production graph #304
+    - Fixed Washing Plant pipe arrow #305
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.12
 Date: 01.01.2023
