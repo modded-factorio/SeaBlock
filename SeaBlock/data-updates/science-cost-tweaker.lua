@@ -13,46 +13,10 @@ if mods["ScienceCostTweakerM"] then
   -- Reduce processing unit cost of S.C.T. high-tech science
   seablock.lib.substingredient("sct-htech-injector", "processing-unit", nil, 3)
 
-  -- Add prerequisites
-  bobmods.lib.tech.add_prerequisite("military-science-pack", "angels-brass-smelting-1")
-  bobmods.lib.tech.add_prerequisite("military-science-pack", "angels-invar-smelting-1")
-  bobmods.lib.tech.add_prerequisite("utility-science-pack", "battery-2")
-  bobmods.lib.tech.add_prerequisite("utility-science-pack", "ceramics")
-
-  if mods["bobmodules"] then
-    if bobmods.modules.ModulesLab then
-      bobmods.lib.tech.add_prerequisite("sct-lab-modules", "bio-processing-crystal-splinter-1")
-    else
-      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "lab-module")
-      bobmods.lib.tech.hide("sct-lab-modules")
-      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "module-processor-board")
-      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "speed-processor")
-      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "effectivity-processor")
-      bobmods.lib.tech.remove_recipe_unlock("sct-lab-modules", "productivity-processor")
-    end
-  end
-
   -- Hide empty tech (Lab 2 will have been moved to it's own tech sct-lab-lab2
   seablock.lib.hide_technology("advanced-research")
 
-  bobmods.lib.tech.remove_prerequisite("sct-lab-t3", "plastics")
-  bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-glass-smelting-1")
-  bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-aluminium-smelting-1")
-  bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-brass-smelting-1")
-  bobmods.lib.tech.add_prerequisite("sct-lab-t3", "angels-silver-smelting-1")
-  bobmods.lib.tech.replace_prerequisite("sct-lab-t3", "bob-solar-energy-2", "solar-energy")
-  bobmods.lib.recipe.hide("sct-t3-flash-fuel2")
-
-  -- T4 Lab
-  bobmods.lib.tech.replace_prerequisite("sct-lab-t4", "gem-processing-2", "gem-processing-3")
-
   -- Yellow science now requires Purple science
-  bobmods.lib.tech.add_new_science_pack("sct-lab-t4", "production-science-pack", 1)
-  bobmods.lib.tech.add_new_science_pack("sct-utility-science-pack", "production-science-pack", 1)
-
-  bobmods.lib.tech.remove_recipe_unlock("sct-utility-science-pack", "sct-waste-processing-copper")
-  bobmods.lib.tech.remove_recipe_unlock("sct-utility-science-pack", "sct-waste-processing-mixed")
-
   -- Adjust any techs that needed Yellow but not Purple
 
   bobmods.lib.tech.replace_science_pack("fusion-reactor-equipment", "utility-science-pack", "production-science-pack")
