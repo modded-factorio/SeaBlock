@@ -77,14 +77,7 @@ if settings.startup["bobmods-logistics-beltoverhaul"].value then
   bobmods.lib.tech.add_prerequisite("logistics", "ore-crushing")
 end
 
--- Tidy prerequisite for Bronze & Brass
-bobmods.lib.tech.replace_prerequisite("logistics-2", "alloy-processing", "angels-bronze-smelting-1")
-bobmods.lib.tech.remove_prerequisite("steel-mixing-furnace", "alloy-processing")
-bobmods.lib.tech.remove_prerequisite("chemical-science-pack", "alloy-processing")
-bobmods.lib.tech.remove_prerequisite("tungsten-alloy-processing", "alloy-processing")
-bobmods.lib.tech.remove_prerequisite("nitinol-processing", "alloy-processing")
-bobmods.lib.tech.remove_prerequisite("electric-mixing-furnace", "alloy-processing")
-
+-- Tidy prerequisite for Brass
 bobmods.lib.tech.remove_prerequisite("zinc-processing", "electrolysis-1")
 bobmods.lib.tech.replace_prerequisite("battery-3", "zinc-processing", "angels-zinc-smelting-1")
 if mods["bobpower"] then
