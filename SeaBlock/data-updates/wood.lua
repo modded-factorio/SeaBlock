@@ -34,3 +34,7 @@ seablock.lib.moveeffect("wood-bricks", "bio-wood-processing-3", "bio-wood-proces
 seablock.lib.add_recipe_unlock("bio-wood-processing", "small-electric-pole", 5)
 bobmods.lib.tech.add_recipe_unlock("bio-wood-processing", "wooden-chest")
 bobmods.lib.recipe.enabled("wooden-chest", false)
+
+bobmods.lib.tech.remove_recipe_unlock("bio-arboretum-1", "bio-resin-wood-reprocessing")
+bobmods.lib.tech.add_recipe_unlock("resins", "bio-resin-wood-reprocessing")
+bobmods.lib.tech.add_prerequisite("resins", "bio-farm-1")
