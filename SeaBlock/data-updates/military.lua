@@ -811,7 +811,7 @@ local mil_techswap = {
       { "space-science-pack", 1 },
     },
   },
-  -- 250 Red, Green, Blue, Purple
+  -- 250 Red, Green, Military, Blue, Purple
   {
     tech_name = "vehicle-big-turret-equipment-3",
     science_packs = {
@@ -822,7 +822,7 @@ local mil_techswap = {
       { "production-science-pack", 1 },
     },
   },
-  -- 300 Red, Green, Blue, Purple
+  -- 300 Red, Green, Military, Blue, Purple
   {
     tech_name = "vehicle-big-turret-equipment-4",
     science_packs = {
@@ -833,7 +833,7 @@ local mil_techswap = {
       { "production-science-pack", 1 },
     },
   },
-  -- 350 Red, Green, Blue, Purple, Pink
+  -- 350 Red, Green, Military, Blue, Purple, Pink
   {
     tech_name = "vehicle-big-turret-equipment-5",
     science_packs = {
@@ -845,7 +845,7 @@ local mil_techswap = {
       { "advanced-logistic-science-pack", 1 },
     },
   },
-  -- 400 Red, Green, Blue, Purple, Pink, Yellow
+  -- 400 Red, Green, Military, Blue, Purple, Pink, Yellow
   {
     tech_name = "vehicle-big-turret-equipment-6",
     science_packs = {
@@ -894,12 +894,13 @@ local mil_techswap = {
       { "space-science-pack", 1 },
     },
   },
-  -- 400 Red, Green, Blue, Purple, Pink, Yellow, White
+  -- 400 Red, Green, Military, Blue, Purple, Pink, Yellow, White
   {
     tech_name = "personal-laser-defense-equipment-6",
     science_packs = {
       { "automation-science-pack", 1 },
       { "logistic-science-pack", 1 },
+      { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
       { "utility-science-pack", 1 },
