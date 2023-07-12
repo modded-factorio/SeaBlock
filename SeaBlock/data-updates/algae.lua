@@ -11,7 +11,7 @@ seablock.lib.moveeffect("algae-farm-2", "bio-processing-green", "bio-processing-
 bobmods.lib.tech.ignore_tech_cost_multiplier("bio-processing-brown", false)
 
 -- Green algae
-seablock.lib.set_recipe_category("algae-green", "bio-processing")
+bobmods.lib.recipe.set_category("algae-green", "bio-processing")
 bobmods.lib.tech.remove_prerequisite("bio-processing-green", "bio-processing-brown")
 bobmods.lib.tech.remove_prerequisite("bio-processing-green", "water-treatment")
 bobmods.lib.tech.add_prerequisite("bio-processing-green", "bio-wood-processing-2")
@@ -21,8 +21,8 @@ seablock.lib.moveeffect("algae-brown-burning", "bio-processing-green", "thermal-
 bobmods.lib.tech.add_prerequisite("lithium-processing", "thermal-water-extraction")
 
 -- Change lithium crafting category
-seablock.lib.set_recipe_category("lithium", "petrochem-electrolyser")
-seablock.lib.set_recipe_category("lithium-water-electrolysis", "petrochem-electrolyser")
+bobmods.lib.recipe.set_category("lithium", "petrochem-electrolyser")
+bobmods.lib.recipe.set_category("lithium-water-electrolysis", "petrochem-electrolyser")
 
 bobmods.lib.tech.remove_recipe_unlock("water-treatment-3", "solid-lithium")
 bobmods.lib.recipe.hide("solid-lithium")
@@ -41,20 +41,20 @@ bobmods.lib.tech.replace_prerequisite("bio-processing-blue", "bio-processing-red
 bobmods.lib.tech.remove_prerequisite("bio-processing-blue", "chemical-science-pack")
 bobmods.lib.tech.remove_science_pack("bio-processing-blue", "chemical-science-pack")
 bobmods.lib.tech.remove_recipe_unlock("bio-processing-blue", "algae-farm-4")
-seablock.lib.set_recipe_category("algae-blue", "bio-processing-2")
+bobmods.lib.recipe.set_category("algae-blue", "bio-processing-2")
 
 -- Red algae. Make Calcium carbonate in an assembling machine, not a liquefier
-seablock.lib.set_recipe_category("solid-calcium-carbonate", "advanced-crafting")
+bobmods.lib.recipe.set_category("solid-calcium-carbonate", "advanced-crafting")
 
 -- Alien bacteria
-seablock.lib.set_recipe_category("alien-bacteria", "bio-processing-3")
+bobmods.lib.recipe.set_category("alien-bacteria", "bio-processing-3")
 
 -- Make these craftable by hand
-seablock.lib.set_recipe_category("solid-alginic-acid", "crafting")
-seablock.lib.set_recipe_category("wooden-board-paper", "crafting")
+bobmods.lib.recipe.set_category("solid-alginic-acid", "crafting")
+bobmods.lib.recipe.set_category("wooden-board-paper", "crafting")
 
 -- Fix handcrafting trying to use wrong crafting path
-seablock.lib.set_recipe_category("wooden-board", "electronics-machine")
+bobmods.lib.recipe.set_category("wooden-board", "electronics-machine")
 bobmods.lib.recipe.enabled("wooden-board", false)
 bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-3", "wooden-board")
 

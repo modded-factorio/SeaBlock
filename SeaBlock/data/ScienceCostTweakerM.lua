@@ -1,21 +1,6 @@
--- Disable SCT debug to prevent the log from being spammed
 if mods["ScienceCostTweakerM"] then
-  sctm.enabledebug = false
-
-  seablock.lib.set_recipe_category("sct-t2-instruments", "electronics")
-  seablock.lib.set_recipe_category("sct-t2-wafer-stamp", "electronics")
-  seablock.lib.set_recipe_category("sct-mil-circuit1", "electronics")
-  seablock.lib.set_recipe_category("sct-mil-circuit2", "electronics")
-  seablock.lib.set_recipe_category("sct-mil-circuit3", "electronics")
-  seablock.lib.set_recipe_category("sct-prod-bioprocessor", "electronics")
-  seablock.lib.set_recipe_category("sct-prod-overclocker", "electronics-with-fluid")
-  seablock.lib.set_recipe_category("sct-prod-chipcase", "electronics-with-fluid")
-  seablock.lib.set_recipe_subgroup("sct-t3-sulfur-lightsource", "sct-labparts")
-
+  bobmods.lib.recipe.set_subgroup("sct-t3-sulfur-lightsource", "sct-labparts")
   bobmods.lib.recipe.remove_ingredient("chemical-science-pack", "sct-t3-sulfur-lightsource")
-
-  -- Allow productivity modules in bio science
-  bobmods.lib.module.add_productivity_limitation("sct-bio-science-pack")
 
   if mods["bobtech"] then
     -- Rename Lab 2 to Exoplanetary Studies Lab
@@ -34,6 +19,8 @@ if mods["ScienceCostTweakerM"] then
       { "advanced-processing-unit", 20 },
     })
     bobmods.lib.tech.add_prerequisite("sct-lab-lab2", "rocket-silo")
+    bobmods.lib.tech.remove_prerequisite("sct-space-science-pack", "rocket-silo")
+    bobmods.lib.tech.add_prerequisite("sct-space-science-pack", "sct-lab-lab2")
     if data.raw.technology["stack-inserter-4"] then
       bobmods.lib.tech.add_prerequisite("sct-lab-lab2", "stack-inserter-4")
     else

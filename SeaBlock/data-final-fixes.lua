@@ -1,4 +1,4 @@
--- Adjust resin production amount to how it was in petrochem 0.7.9.
+-- Adjust rubber production amount to how it was in petrochem 0.7.9.
 -- TODO: Revisit this after Angel adds more liquid rubber recipes
 seablock.lib.substresult("liquid-rubber-1", "liquid-rubber", nil, 20)
 
