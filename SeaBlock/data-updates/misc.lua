@@ -49,7 +49,7 @@ seablock.lib.moveeffect("clarifier", "water-treatment", "water-washing-1", 3)
 
 bobmods.lib.tech.remove_prerequisite("electronics", "chemical-processing-1")
 
-seablock.lib.set_recipe_category("liquid-fish-atmosphere", "chemistry")
+bobmods.lib.recipe.set_category("liquid-fish-atmosphere", "chemistry")
 seablock.lib.hide_technology("pumpjack")
 
 if not seablock.trigger.mining_productivity then

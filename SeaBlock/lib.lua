@@ -322,20 +322,6 @@ function seablock.lib.add_flag(type, name, flag)
   end
 end
 
-function seablock.lib.set_recipe_category(recipe_name, category)
-  local recipe = data.raw.recipe[recipe_name]
-  if recipe then
-    recipe.category = category
-  end
-end
-
-function seablock.lib.set_recipe_subgroup(recipe_name, subgroup)
-  local recipe = data.raw.recipe[recipe_name]
-  if recipe then
-    recipe.subgroup = subgroup
-  end
-end
-
 --[[
   Modified from code copied from Artisanal Reskins: Library v1.1.2
   With permission from Kira
