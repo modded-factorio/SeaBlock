@@ -281,6 +281,8 @@ function seablock.lib.hide(type_name, name)
         if type_name == "item" then
           table.insert(item.flags, "hide-from-bonus-gui")
         end
+
+        item.next_upgrade = nil
       end
     end
   end
