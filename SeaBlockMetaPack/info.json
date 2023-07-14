@@ -2,11 +2,11 @@
   "name": "SeaBlockMetaPack",
   "version": "1.1.4",
   "factorio_version": "1.1",
-  "title": "Sea Block Pack",
+  "title": "Sea Block Pack - Official",
   "author": "Trainwreck",
   "contact": "https://forums.factorio.com/viewtopic.php?t=43759",
   "homepage": "https://github.com/KiwiHawk/SeaBlock",
-  "description": "Cutting edge version of the Sea Block mod pack. Contains dependencies on all mods distributed as part of the Sea Block Pack. This mod does nothing by itself.",
+  "description": "Enable this mod to get the full recommended Sea Block Mod Pack. Contains dependencies on all mods in the pack. Does nothing by itself.",
   "dependencies": [
     "base",
     "angelsaddons-storage",
