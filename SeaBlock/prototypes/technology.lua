@@ -141,8 +141,36 @@ data:extend({
       time = 30,
     },
   },
+  {
+    type = "technology",
+    name = "steam-power",
+    icon = "__base__/graphics/icons/fluid/steam.png",
+    icon_size = 64,
+    icon_mipmaps = 4,
+    prerequisites = {},
+    effects = {
+      {
+        type = "unlock-recipe",
+        recipe = "boiler",
+      },
+      {
+        type = "unlock-recipe",
+        recipe = "steam-engine",
+      },
+    },
+    unit = {
+      count = 10,
+      ingredients = {
+        { "automation-science-pack", 1 },
+      },
+      time = 10,
+    },
+    order = "a-a",
+  },
 })
 
+bobmods.lib.recipe.enabled("boiler", false)
+bobmods.lib.recipe.enabled("steam-engine", false)
 bobmods.lib.recipe.enabled("copper-pipe-to-ground", false)
 bobmods.lib.recipe.enabled("basic-circuit-board", false)
 bobmods.lib.recipe.enabled("automation-science-pack", false)

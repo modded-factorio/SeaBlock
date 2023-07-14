@@ -98,9 +98,13 @@ bobmods.lib.tech.add_prerequisite("gun-turret", "military")
 bobmods.lib.tech.add_prerequisite("stone-wall", "military")
 bobmods.lib.tech.add_prerequisite("space-science-pack", "military")
 
-if mods["bobpower"] then
-  bobmods.lib.tech.add_prerequisite("angels-coal-processing", "steam-power")
+-- Steam power
+bobmods.lib.tech.add_prerequisite("automation", "steam-power")
+bobmods.lib.tech.add_prerequisite("optics", "steam-power")
+if data.raw.technology["bob-greenhouse"] then
+  bobmods.lib.tech.add_prerequisite("bob-greenhouse", "steam-power")
 end
+bobmods.lib.tech.add_prerequisite("angels-coal-processing", "steam-power")
 
 -- Gems are needed to make higher tier modules
 if data.raw.technology["gem-processing-3"] then
