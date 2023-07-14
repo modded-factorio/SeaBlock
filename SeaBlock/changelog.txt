@@ -2,6 +2,7 @@
 Version: 0.5.13
 Date: ???
   Changes:
+    - Milestones mod compatibility #292
     - Added missing prerequisites #295
   Bugfixes:
     - Fixed Radar being unlocked by both Military and Radars 1 #296
