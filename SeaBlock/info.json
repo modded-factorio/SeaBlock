@@ -18,13 +18,11 @@
     "boblogistics >= 1.1.6",
     "bobores >= 1.1.6",
     "bobplates >= 1.1.6",
-
     "? angelsaddons-storage",
     "? bobassembly",
     "? bobenemies",
     "? bobequipment",
     "? bobinserters",
-    "? bobmining",
     "? bobmodules",
     "? bobpower",
     "? bobrevamp",
@@ -37,10 +35,8 @@
     "? Milestones >= 1.3.19",
     "? ScienceCostTweakerM >= 1.2.0",
     "? SpaceMod >= 1.1.1",
-
     "(?) KS_Power_quickfix",
     "(?) Companion_Drones",
-    
     "! alien-biomes",
     "! angelsexploration"
   ]
