@@ -1,21 +1,23 @@
 require("starting-items")
 
 -- Populate table of starting items and script enabled techs for YAFC to read
-data.script_enabled = data.script_enabled or {}
+if data.data_crawler then
+  data.script_enabled = data.script_enabled or {}
 
-for k, _ in pairs(seablock.scripted_techs) do
-  table.insert(data.script_enabled, { type = "technology", name = k })
+  for k, _ in pairs(seablock.scripted_techs) do
+    table.insert(data.script_enabled, { type = "technology", name = k })
+  end
+
+  local starting_items = seablock.populate_starting_items(data.raw.item)
+  for k, _ in pairs(starting_items) do
+    table.insert(data.script_enabled, { type = "item", name = k })
+  end
+
+  -- YAFC doesn't recognise that Wind Turbines can generate power
+  -- So add Boiler and Steam Engine to script_enabled
+  table.insert(data.script_enabled, { type = "item", name = "boiler" })
+  table.insert(data.script_enabled, { type = "item", name = "steam-engine" })
 end
-
-local starting_items = seablock.populate_starting_items(data.raw.item)
-for k, _ in pairs(starting_items) do
-  table.insert(data.script_enabled, { type = "item", name = k })
-end
-
--- YAFC doesn't recognise that Wind Turbines can generate power
--- So add Boiler and Steam Engine to script_enabled
-table.insert(data.script_enabled, { type = "item", name = "boiler" })
-table.insert(data.script_enabled, { type = "item", name = "steam-engine" })
 
 -- Set Angel's triggers
 angelsmods.trigger.smelting_products["copper"].powder = true
