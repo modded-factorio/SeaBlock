@@ -2,7 +2,7 @@
 -- Electrolyser   5                                               22*4
 -- Liquifier      5                    2
 -- Flare stack    5*2            10*2
--- Offshore pump  2              1                     10  
+-- Offshore pump  2              1                     10
 -- Crystallizer   5                                                           5
 
 local knowningredients = {
