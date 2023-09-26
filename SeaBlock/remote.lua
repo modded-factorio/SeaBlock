@@ -36,8 +36,8 @@ local function milestones_presets()
     script.active_mods["bobtech"] and { type = "item", name = "advanced-logistic-science-pack", quantity = 1 } or nil,
     { type = "item", name = "production-science-pack", quantity = 1 },
     { type = "item", name = "utility-science-pack", quantity = 1 },
-    { type = "item", name = "automation-science-pack", quantity = 1000, next = "x10" },
     { type = "item", name = "space-science-pack", quantity = 1 },
+    { type = "item", name = "automation-science-pack", quantity = 1000, next = "x10" },
     { type = "item", name = bio_science_pack, quantity = 1000, next = "x10" },
     { type = "item", name = "logistic-science-pack", quantity = 1000, next = "x10" },
     { type = "item", name = "military-science-pack", quantity = 1000, next = "x10" },
@@ -59,6 +59,12 @@ local function milestones_presets()
     { type = "item", name = "advanced-circuit", quantity = 1 },
     { type = "item", name = "processing-unit", quantity = 1 },
     { type = "item", name = "advanced-processing-unit", quantity = 1 },
+
+    { type = "item", name = "basic-circuit-board", quantity = 10000, next = "x10"  },
+    { type = "item", name = "electronic-circuit", quantity = 10000, next = "x10"  },
+    { type = "item", name = "advanced-circuit", quantity = 10000, next = "x10"  },
+    { type = "item", name = "processing-unit", quantity = 1000, next = "x10"  },
+    { type = "item", name = "advanced-processing-unit", quantity = 100, next = "x10"  },
 
     { type = "item", name = "steel-plate", quantity = 1 },
     { type = "item", name = "bronze-alloy", quantity = 1 },
@@ -135,6 +141,8 @@ local function milestones_presets()
 
   grouped_milestones["progress2"] = {
     { type = "item", name = "beacon", quantity = 1 },
+    script.active_mods["bobmodules"] and { type = "item", name = "beacon-2", quantity = 1 } or nil,
+    script.active_mods["bobmodules"] and { type = "item", name = "beacon-3", quantity = 1 } or nil,
     { type = "item", name = "rocket-fuel", quantity = 1 },
     { type = "technology", name = "rocket-silo", quantity = 1 },
     { type = "item", name = "nuclear-reactor", quantity = 1 },
