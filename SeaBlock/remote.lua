@@ -60,11 +60,11 @@ local function milestones_presets()
     { type = "item", name = "processing-unit", quantity = 1 },
     { type = "item", name = "advanced-processing-unit", quantity = 1 },
 
-    { type = "item", name = "basic-circuit-board", quantity = 10000, next = "x10"  },
-    { type = "item", name = "electronic-circuit", quantity = 10000, next = "x10"  },
-    { type = "item", name = "advanced-circuit", quantity = 10000, next = "x10"  },
-    { type = "item", name = "processing-unit", quantity = 1000, next = "x10"  },
-    { type = "item", name = "advanced-processing-unit", quantity = 100, next = "x10"  },
+    { type = "item", name = "basic-circuit-board", quantity = 10000, next = "x10" },
+    { type = "item", name = "electronic-circuit", quantity = 10000, next = "x10" },
+    { type = "item", name = "advanced-circuit", quantity = 10000, next = "x10" },
+    { type = "item", name = "processing-unit", quantity = 1000, next = "x10" },
+    { type = "item", name = "advanced-processing-unit", quantity = 100, next = "x10" },
 
     { type = "item", name = "steel-plate", quantity = 1 },
     { type = "item", name = "bronze-alloy", quantity = 1 },
