@@ -1,5 +1,6 @@
 bobmods.lib.recipe.hide("bob-rubber")
-seablock.lib.moveeffect("insulated-cable", "electronics", "rubbers")
+bobmods.lib.tech.remove_recipe_unlock("circuit-network", "insulated-cable")
+bobmods.lib.tech.add_recipe_unlock("rubbers", "insulated-cable")
 
 -- Circuit network wires should not require rubber
 bobmods.lib.recipe.set_ingredients("green-wire", { { "solid-paper", 2 }, { "tinned-copper-cable", 1 } })

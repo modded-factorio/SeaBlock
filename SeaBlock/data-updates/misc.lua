@@ -45,7 +45,6 @@ bobmods.lib.tech.add_prerequisite("water-treatment", "slag-processing-1")
 bobmods.lib.tech.remove_prerequisite("water-washing-1", "water-treatment")
 bobmods.lib.tech.add_prerequisite("water-washing-1", "automation")
 seablock.lib.moveeffect("yellow-waste-water-purification", "water-treatment-2", "water-treatment")
-seablock.lib.moveeffect("clarifier", "water-treatment", "water-washing-1", 3)
 
 bobmods.lib.tech.remove_prerequisite("electronics", "chemical-processing-1")
 

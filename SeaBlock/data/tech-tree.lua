@@ -34,11 +34,6 @@ end
 bobmods.lib.tech.add_prerequisite("angels-glass-smelting-1", "silicon-processing")
 bobmods.lib.tech.add_prerequisite("angels-stone-smelting-2", "silicon-processing")
 
--- Clear prerequisites so it's available at end of tutorial
-bobmods.lib.tech.remove_prerequisite("bio-wood-processing-2", "bio-wood-processing")
-bobmods.lib.tech.remove_prerequisite("bio-wood-processing-2", "angels-coal-processing")
-bobmods.lib.tech.remove_prerequisite("bio-wood-processing-2", "advanced-material-processing")
-
 -- Add missing Science Pack Tech prerequisites
 
 -- Bio

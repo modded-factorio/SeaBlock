@@ -2,11 +2,8 @@
 -- Electrolyser   5                                               22*4
 -- Liquifier      5                    2
 -- Flare stack    5*2            10*2
--- Offshore pump  2*2            1*2                   10*2
+-- Offshore pump  2              1                     10  
 -- Crystallizer   5                                                           5
-
--- Second stage:
--- Algae farm     5                                               10*2
 
 local knowningredients = {
   ["angels-electrolyser"] = {
@@ -230,20 +227,9 @@ if mods["Explosive Excavation"] then
 end
 
 -- Make bio-wood-processing a startup tutorial tech
-data.raw.technology["bio-wood-processing"].prerequisites = { "sb-startup2" }
+data.raw.technology["bio-wood-processing"].prerequisites = { "sb-startup1" }
 data.raw.technology["bio-wood-processing"].unit = {
   count = 1,
   ingredients = {},
   time = 1,
 }
-
--- Make bio-paper-1 a startup tutorial tech
-data.raw.technology["bio-paper-1"].prerequisites = { "sb-startup2" }
-data.raw.technology["bio-paper-1"].unit = {
-  count = 1,
-  ingredients = {},
-  time = 1,
-}
-bobmods.lib.tech.remove_recipe_unlock("bio-processing-brown", "solid-alginic-acid")
-bobmods.lib.tech.add_recipe_unlock("bio-paper-1", "solid-alginic-acid")
-bobmods.lib.tech.remove_prerequisite("bio-paper-2", "bio-paper-1")
