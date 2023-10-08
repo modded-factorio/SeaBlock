@@ -1,6 +1,9 @@
 -- Speed up algae farm
 data.raw["assembling-machine"]["algae-farm"].crafting_speed = 0.75
 
+-- Green algae
+bobmods.lib.recipe.set_category("algae-green", "bio-processing")
+
 -- Improved algae processing
 bobmods.lib.tech.remove_prerequisite("bio-processing-green", "water-treatment")
 bobmods.lib.tech.add_prerequisite("bio-processing-green", "bio-wood-processing-2")
