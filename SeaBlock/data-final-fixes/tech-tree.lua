@@ -14,8 +14,6 @@ seablock.lib.hide_technology("electrolysis-2")
 seablock.lib.hide_technology("chemical-processing-1")
 seablock.lib.hide_technology("chemical-processing-2")
 
-bobmods.lib.tech.remove_recipe_unlock("angels-advanced-gas-processing", "solid-fuel-methane")
-
 -- Unhide solid fuel from hydrogen
 seablock.lib.unhide_recipe("solid-fuel-from-hydrogen")
 seablock.lib.add_recipe_unlock("flammables", "solid-fuel-from-hydrogen", 4)
