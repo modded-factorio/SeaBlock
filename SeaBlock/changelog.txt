@@ -8,7 +8,9 @@ Date: ???
     - Fixed Exoplanetary Studies Lab recipe not including previous lab tier #303
     - Fixed Wind Turbine energy production graph #304
     - Fixed Washing Plant pipe arrow #305
+    - Fixed Companion Drone multiplayer compatibility #307
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.13
 Date: 14.07.2023
   Changes:
     - Milestones mod compatibility #292
