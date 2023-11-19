@@ -61,7 +61,6 @@ end
 bobmods.lib.tech.add_prerequisite("water-washing-2", "logistic-science-pack")
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-1", "logistic-science-pack")
 bobmods.lib.tech.add_prerequisite("bio-processing-blue", "logistic-science-pack")
-bobmods.lib.tech.add_prerequisite("bio-wood-processing-3", "logistic-science-pack")
 bobmods.lib.tech.add_prerequisite("basic-chemistry-2", "logistic-science-pack")
 
 -- Chemical / Blue
