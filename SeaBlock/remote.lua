@@ -217,6 +217,10 @@ local function milestones_presets()
   }
 end
 
+local function get_jetpack_fuels()
+  return { ["enriched-fuel"] = 0.7 }
+end
+
 remote.add_interface("SeaBlock", {
   get_unlocks = get_unlocks,
   set_unlock = set_unlock,
@@ -224,4 +228,5 @@ remote.add_interface("SeaBlock", {
   set_starting_item = set_starting_item,
   set_starting_items = set_starting_items,
   milestones_presets = milestones_presets,
+  jetpack_fuels = get_jetpack_fuels,
 })
