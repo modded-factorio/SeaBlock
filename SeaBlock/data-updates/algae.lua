@@ -27,8 +27,8 @@ bobmods.lib.recipe.set_category("lithium-water-electrolysis", "petrochem-electro
 bobmods.lib.tech.remove_recipe_unlock("water-treatment-3", "solid-lithium")
 bobmods.lib.recipe.hide("solid-lithium")
 
--- Move Sodium Carbonate from Brown Algae to Sodium processing
-seablock.lib.moveeffect("algae-brown-burning-wash", "bio-processing-green", "sodium-processing-1", nil)
+-- Move Sodium Carbonate from Brown Algae to Sodium processing 2
+seablock.lib.moveeffect("algae-brown-burning-wash", "bio-processing-green", "sodium-processing-2", nil)
 
 -- Move Methanol from Cellulose Fibre to Advanced chemistry 1
 seablock.lib.moveeffect("gas-methanol-from-wood", "bio-processing-green", "angels-advanced-chemistry-1", 5)
