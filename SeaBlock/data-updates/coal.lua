@@ -19,6 +19,8 @@ end
 -- Disable coal cracking technology
 seablock.lib.hide_technology("angels-coal-cracking")
 seablock.lib.moveeffect("pellet-coke", "angels-coal-cracking", "angels-coal-processing-2")
+angelsmods.functions.move_item("pellet-coke", "bio-processing-wood", "f[pellet-coke]")
+angelsmods.functions.move_item("pellet-coke", "bio-processing-wood", "f[pellet-coke]", "recipe")
 
 -- Clear fuel value so these don't appear in Helmod's fuel picker
 data.raw.item["carbon"].fuel_emissions_multiplier = nil

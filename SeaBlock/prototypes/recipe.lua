@@ -8,7 +8,7 @@ data:extend({
     ingredients = { { "wood-bricks", 1 } },
     result = "wood-charcoal",
     result_count = 5,
-    subgroup = "petrochem-coal",
+    subgroup = "bio-processing-wood",
   },
   {
     type = "recipe",

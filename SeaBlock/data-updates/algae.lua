@@ -48,7 +48,6 @@ bobmods.lib.recipe.set_category("alien-bacteria", "bio-processing-3")
 bobmods.lib.recipe.set_category("solid-alginic-acid", "crafting")
 
 -- Fix handcrafting trying to use wrong crafting path
-data.raw.recipe["cellulose-fiber-algae"].allow_as_intermediate = false
 data.raw.recipe["cellulose-fiber-raw-wood"].allow_as_intermediate = false
 
 -- Speed up algae->cellulose fiber crafting
