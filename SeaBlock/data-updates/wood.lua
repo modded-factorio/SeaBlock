@@ -31,11 +31,9 @@ bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-2", "sb-wood-bricks-char
 bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-2", "carbon-separation-2")
 
 bobmods.lib.tech.remove_prerequisite("bio-wood-processing-3", "angels-coal-processing")
-bobmods.lib.tech.remove_prerequisite("bio-wood-processing-3", "logistic-science-pack")
 bobmods.lib.tech.add_prerequisite("bio-wood-processing-3", "bio-arboretum-1")
 bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing-3", "wood-bricks")
 bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-3", "cellulose-fiber-raw-wood")
-bobmods.lib.tech.remove_science_pack("bio-wood-processing-3", "logistic-science-pack")
 
 bobmods.lib.tech.add_recipe_unlock("resins", "bio-resin-wood-reprocessing")
 bobmods.lib.tech.add_prerequisite("resins", "bio-farm-1")
