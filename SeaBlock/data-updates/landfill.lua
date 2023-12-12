@@ -34,7 +34,7 @@ end
 data.raw.technology["landfill"].prerequisites = { "water-washing-1" }
 data.raw.technology["landfill"].unit = {
   count = 10,
-  ingredients = { { type = item, name = "automation-science-pack", amount = 1 }},
+  ingredients = { { type = item, name = "automation-science-pack", amount = 1 } },
   time = 15,
 }
 bobmods.lib.tech.remove_prerequisite("water-washing-2", "landfill")
