@@ -3,7 +3,6 @@
 -- They will not have prerequisites added
 seablock.scripted_techs = {
   ["sb-startup1"] = true,
-  ["landfill"] = true,
   ["sb-startup2"] = true,
   ["bio-wood-processing"] = true,
   ["sb-startup3"] = true,

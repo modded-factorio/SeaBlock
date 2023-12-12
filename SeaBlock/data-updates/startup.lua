@@ -214,18 +214,6 @@ for k, v in pairs(seablock.startup_techs) do
   end
 end
 
--- Make landfill a startup tutorial tech
-data.raw.technology["landfill"].prerequisites = { "sb-startup1" }
-data.raw.technology["landfill"].unit = {
-  count = 1,
-  ingredients = {},
-  time = 1,
-}
-bobmods.lib.tech.remove_prerequisite("water-washing-2", "landfill")
-if mods["Explosive Excavation"] then
-  bobmods.lib.tech.remove_prerequisite("blasting-charges", "landfill")
-end
-
 -- Make bio-wood-processing a startup tutorial tech
 data.raw.technology["bio-wood-processing"].prerequisites = { "sb-startup1" }
 data.raw.technology["bio-wood-processing"].unit = {
