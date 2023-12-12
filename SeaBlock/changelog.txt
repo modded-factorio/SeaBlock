@@ -3,6 +3,8 @@ Version: 0.5.14
 Date: ???
   Changes:
     - Added missing prerequisites #295
+    - Changed replaced recipe Forage for Cellulose Fiber with recipe Forage for Driftwood
+    - Reworked tutorial techs, removing paper making
   Bugfixes:
     - Fixed Radar being unlocked by both Military and Radars 1 #296
     - Fixed Exoplanetary Studies Lab recipe not including previous lab tier #303
