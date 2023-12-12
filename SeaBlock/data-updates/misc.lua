@@ -6,6 +6,7 @@ end
 
 -- No natural gas, use methane for manganese pellet smelting
 seablock.lib.substingredient("pellet-manganese-smelting", "gas-natural-1", "gas-methane")
+bobmods.lib.tech.add_prerequisite("angels-manganese-smelting-3", "gas-processing")
 
 -- Remove steel's prerequiste on Chemical processing 1
 bobmods.lib.tech.remove_prerequisite("steel-processing", "chemical-processing-1")
@@ -198,8 +199,9 @@ bobmods.lib.tech.add_prerequisite("geode-crystallization-1", "chemical-science-p
 if mods["bobrevamp"] and not mods["bobclasses"] then
   bobmods.lib.tech.add_new_science_pack("rtg", "production-science-pack", 1)
   bobmods.lib.tech.add_new_science_pack("rtg", "utility-science-pack", 1)
-  bobmods.lib.tech.add_prerequisite("rtg", "production-science-pack")
   bobmods.lib.tech.add_prerequisite("rtg", "utility-science-pack")
+  bobmods.lib.tech.remove_prerequisite("rtg", "angels-coal-processing-3")
+  bobmods.lib.tech.add_prerequisite("rtg", "sodium-processing-2")
 end
 
 if mods["cargo-ships"] then
