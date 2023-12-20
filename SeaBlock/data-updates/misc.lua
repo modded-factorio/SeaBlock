@@ -6,6 +6,7 @@ end
 
 -- No natural gas, use methane for manganese pellet smelting
 seablock.lib.substingredient("pellet-manganese-smelting", "gas-natural-1", "gas-methane")
+bobmods.lib.tech.remove_prerequisite("angels-manganese-smelting-3", "oil-gas-extraction")
 bobmods.lib.tech.add_prerequisite("angels-manganese-smelting-3", "gas-processing")
 
 -- Remove steel's prerequiste on Chemical processing 1

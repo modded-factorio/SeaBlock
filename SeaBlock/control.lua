@@ -199,12 +199,17 @@ if script.active_mods["Companion_Drones"] then
     if s then
       local companions = s.find_entities_filtered({ name = "companion" })
       for _, companion in pairs(companions) do
-        companion.remove_item("coal")
-        companion.insert("wood-pellets")
-        local grid = companion.grid
-        for _, item in pairs(grid.equipment) do
-          if (item.name == "companion-defense-equipment") or (item.name == "companion-shield-equipment") then
-            grid.take({ equipment = item })
+        local inventory = companion.get_main_inventory()
+        local i = companion.remove_item("coal")
+        -- Only do drone inventory cleanup if coal is found
+        -- Else players will get free wood pellets any time a new player joins
+        if i > 0 then
+          companion.insert("wood-pellets")
+          local grid = companion.grid
+          for _, item in pairs(grid.equipment) do
+            if (item.name == "companion-defense-equipment") or (item.name == "companion-shield-equipment") then
+              grid.take({ equipment = item })
+            end
           end
         end
       end

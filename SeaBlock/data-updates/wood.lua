@@ -37,3 +37,4 @@ bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-3", "cellulose-fiber-raw
 
 bobmods.lib.tech.add_recipe_unlock("resins", "bio-resin-wood-reprocessing")
 bobmods.lib.tech.add_prerequisite("resins", "bio-farm-1")
+bobmods.lib.tech.remove_prerequisite("bio-wood-processing-2", "bio-farm-1")
