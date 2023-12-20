@@ -47,7 +47,6 @@ bobmods.lib.tech.add_prerequisite("water-treatment", "slag-processing-1")
 bobmods.lib.tech.remove_prerequisite("water-washing-1", "water-treatment")
 bobmods.lib.tech.add_prerequisite("water-washing-1", "automation")
 seablock.lib.moveeffect("yellow-waste-water-purification", "water-treatment-2", "water-treatment")
-seablock.lib.moveeffect("clarifier", "water-treatment", "water-washing-1", 3)
 
 bobmods.lib.tech.remove_prerequisite("electronics", "chemical-processing-1")
 
@@ -201,8 +200,9 @@ bobmods.lib.tech.add_prerequisite("geode-crystallization-1", "chemical-science-p
 if mods["bobrevamp"] and not mods["bobclasses"] then
   bobmods.lib.tech.add_new_science_pack("rtg", "production-science-pack", 1)
   bobmods.lib.tech.add_new_science_pack("rtg", "utility-science-pack", 1)
-  bobmods.lib.tech.add_prerequisite("rtg", "production-science-pack")
   bobmods.lib.tech.add_prerequisite("rtg", "utility-science-pack")
+  bobmods.lib.tech.remove_prerequisite("rtg", "angels-coal-processing-3")
+  bobmods.lib.tech.add_prerequisite("rtg", "sodium-processing-2")
 end
 
 if mods["cargo-ships"] then

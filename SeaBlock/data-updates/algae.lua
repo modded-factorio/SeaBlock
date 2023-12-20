@@ -1,20 +1,14 @@
 -- Speed up algae farm
 data.raw["assembling-machine"]["algae-farm"].crafting_speed = 0.75
 
--- Brown algae
-bobmods.lib.tech.remove_prerequisite("bio-processing-brown", "automation")
-bobmods.lib.tech.add_prerequisite("bio-processing-brown", "water-treatment")
-bobmods.lib.tech.add_prerequisite("bio-processing-brown", "bio-processing-green")
-bobmods.lib.tech.remove_recipe_unlock("bio-processing-brown", "algae-green-simple")
-seablock.lib.moveeffect("algae-brown", "bio-processing-green", "bio-processing-brown", nil)
-seablock.lib.moveeffect("algae-farm-2", "bio-processing-green", "bio-processing-brown", 1)
-bobmods.lib.tech.ignore_tech_cost_multiplier("bio-processing-brown", false)
-
 -- Green algae
 bobmods.lib.recipe.set_category("algae-green", "bio-processing")
-bobmods.lib.tech.remove_prerequisite("bio-processing-green", "bio-processing-brown")
+
+-- Improved algae processing
 bobmods.lib.tech.remove_prerequisite("bio-processing-green", "water-treatment")
 bobmods.lib.tech.add_prerequisite("bio-processing-green", "bio-wood-processing-2")
+bobmods.lib.tech.add_prerequisite("bio-processing-green", "water-washing-1")
+data.raw.technology["bio-processing-green"].localised_name = { "technology-name.sb-bio-processing-green" }
 
 -- Move Lithia Salt to Thermal Water Extraction
 seablock.lib.moveeffect("algae-brown-burning", "bio-processing-green", "thermal-water-extraction", 2)
@@ -34,10 +28,11 @@ seablock.lib.moveeffect("algae-brown-burning-wash", "bio-processing-green", "sod
 seablock.lib.moveeffect("gas-methanol-from-wood", "bio-processing-green", "angels-advanced-chemistry-1", 5)
 
 -- Make Red Algae depend on Blue Algae instead of Green Algae
-bobmods.lib.tech.replace_prerequisite("bio-processing-red", "bio-processing-green", "bio-processing-blue")
+bobmods.lib.tech.remove_prerequisite("bio-processing-red", "bio-processing-green")
+bobmods.lib.tech.add_prerequisite("bio-processing-red", "bio-processing-blue")
 
 -- Blue algae
-bobmods.lib.tech.replace_prerequisite("bio-processing-blue", "bio-processing-red", "bio-processing-brown")
+bobmods.lib.tech.replace_prerequisite("bio-processing-blue", "bio-processing-red", "bio-processing-green")
 bobmods.lib.tech.remove_prerequisite("bio-processing-blue", "chemical-science-pack")
 bobmods.lib.tech.remove_science_pack("bio-processing-blue", "chemical-science-pack")
 bobmods.lib.tech.remove_recipe_unlock("bio-processing-blue", "algae-farm-4")
@@ -51,14 +46,8 @@ bobmods.lib.recipe.set_category("alien-bacteria", "bio-processing-3")
 
 -- Make these craftable by hand
 bobmods.lib.recipe.set_category("solid-alginic-acid", "crafting")
-bobmods.lib.recipe.set_category("wooden-board-paper", "crafting")
 
 -- Fix handcrafting trying to use wrong crafting path
-bobmods.lib.recipe.set_category("wooden-board", "electronics-machine")
-bobmods.lib.recipe.enabled("wooden-board", false)
-bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-3", "wooden-board")
-
-data.raw.recipe["cellulose-fiber-algae"].allow_as_intermediate = false
 data.raw.recipe["cellulose-fiber-raw-wood"].allow_as_intermediate = false
 
 -- Speed up algae->cellulose fiber crafting

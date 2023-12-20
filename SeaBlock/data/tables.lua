@@ -3,9 +3,7 @@
 -- They will not have prerequisites added
 seablock.scripted_techs = {
   ["sb-startup1"] = true,
-  ["landfill"] = true,
   ["sb-startup2"] = true,
-  ["bio-paper-1"] = true,
   ["bio-wood-processing"] = true,
   ["sb-startup3"] = true,
   ["sb-startup4"] = true,
@@ -55,7 +53,7 @@ seablock.startup_recipes = {
   ["dirt-water-separation"] = true,
   ["liquifier"] = true,
   ["offshore-pump"] = true,
-  ["sb-cellulose-foraging"] = true,
+  ["sb-wood-foraging"] = true,
   ["sb-water-mineralized-crystallization"] = true,
   ["slag-processing-stone"] = true,
   ["stone-pipe"] = true,

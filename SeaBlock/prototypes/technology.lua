@@ -21,16 +21,6 @@ data:extend({
   },
   {
     type = "tool",
-    name = "sb-algae-brown-tool",
-    localised_name = { "item-name.algae-brown" },
-    icon = "__angelsbioprocessing__/graphics/icons/algae-brown.png",
-    icon_size = 32,
-    flags = { "hidden" },
-    stack_size = 100,
-    durability = 1,
-  },
-  {
-    type = "tool",
     name = "sb-lab-tool",
     localised_name = { "item-name.lab" },
     icon = "__base__/graphics/icons/lab.png",
@@ -48,28 +38,11 @@ data:extend({
     effects = {
       { type = "unlock-recipe", recipe = "angelsore1-crushed-smelting" },
       { type = "unlock-recipe", recipe = "angelsore3-crushed-smelting" },
-      { type = "unlock-recipe", recipe = "algae-farm" },
-      { type = "unlock-recipe", recipe = "algae-green-simple" },
+      { type = "unlock-recipe", recipe = "copper-cable" },
     },
     unit = {
       count = 1,
       ingredients = { { "sb-angelsore3-tool", 1 } },
-      time = 1,
-    },
-  },
-  {
-    type = "technology",
-    name = "sb-startup2",
-    icon = "__angelsbioprocessing__/graphics/technology/algae-farm-tech.png",
-    icon_size = 128,
-    effects = {
-      { type = "unlock-recipe", recipe = "basic-circuit-board" },
-      { type = "unlock-recipe", recipe = "copper-cable" },
-    },
-    prerequisites = { "landfill" },
-    unit = {
-      count = 1,
-      ingredients = { { "sb-algae-brown-tool", 1 } },
       time = 1,
     },
   },
@@ -89,7 +62,7 @@ data:extend({
       { type = "unlock-recipe", recipe = "burner-inserter" },
       { type = "unlock-recipe", recipe = "iron-chest" },
     },
-    prerequisites = { "bio-wood-processing", "bio-paper-1" },
+    prerequisites = { "bio-wood-processing" },
     unit = {
       count = 1,
       ingredients = { { "sb-basic-circuit-board-tool", 1 } },
@@ -114,6 +87,8 @@ data:extend({
   {
     type = "technology",
     name = "sb-bio-processing-advanced",
+    localised_name = { "technology-name.bio-processing-green" },
+    localised_description = { "technology-description.bio-processing-green" },
     icon = "__angelsbioprocessing__/graphics/technology/algae-farm-tech.png",
     icon_size = 128,
     order = "c-a",

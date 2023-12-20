@@ -6,6 +6,9 @@ Date: ???
     - Added missing prerequisites #295
     - Added support for Grappling Gun mod #308
     - Added support for Jetpack mod #309
+    - Wood vs Paper changes #310
+      - Replaced recipe Forage for Cellulose Fiber with recipe Forage for Driftwood
+      - Reworked tutorial techs, removing paper making
   Bugfixes:
     - Fixed Radar being unlocked by both Military and Radars 1 #296
     - Fixed Exoplanetary Studies Lab recipe not including previous lab tier #303
