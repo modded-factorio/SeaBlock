@@ -403,12 +403,9 @@ bobmods.lib.recipe.set_ingredient("cement-mixture-2", { "solid-lime", 4 })
 bobmods.lib.recipe.set_result("cement-mixture-2", { "solid-cement", 4 })
 bobmods.lib.recipe.set_energy_required("cement-mixture-2", 16)
 
-bobmods.lib.tech.add_prerequisite("angels-advanced-gas-processing", "gas-steam-cracking-2")
-
 -- Bronze prerequisites
 bobmods.lib.tech.add_prerequisite("angels-cooling", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("bio-nutrient-paste", "alloy-processing")
-bobmods.lib.tech.add_prerequisite("gas-steam-cracking-1", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("ore-floatation", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("ore-processing-1", "alloy-processing")
 bobmods.lib.tech.add_prerequisite("powder-metallurgy-2", "alloy-processing")

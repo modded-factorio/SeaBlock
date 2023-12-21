@@ -493,10 +493,7 @@ for _, v in pairs(mil_recipes) do
   bobmods.lib.recipe.hide(v)
 end
 
-bobmods.lib.tech.remove_recipe_unlock("angels-advanced-chemistry-3", "liquid-toluene-from-benzene")
-bobmods.lib.tech.remove_recipe_unlock("angels-advanced-chemistry-3", "liquid-toluene-from-naphtha")
 bobmods.lib.tech.remove_recipe_unlock("angels-advanced-gas-processing", "gas-fractioning-residual")
-bobmods.lib.tech.remove_recipe_unlock("chlorine-processing-2", "liquid-glycerol")
 bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "empty-liquid-glycerol-barrel")
 bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "empty-liquid-toluene-barrel")
 bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "empty-nitroglycerin-barrel")
