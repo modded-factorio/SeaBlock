@@ -1,6 +1,6 @@
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.14
-Date: ???
+Date: 22.12.2023
   Changes:
     - Added support for Early Construction mod #254
     - Added missing prerequisites #295
