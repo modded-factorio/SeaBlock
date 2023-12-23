@@ -58,7 +58,7 @@ local function init()
     end
   end
   global.unlocks = {
-    ["angels-ore3-crushed"] = { "sb-startup1", "bio-wood-processing", "landfill" },
+    ["angels-ore3-crushed"] = { "sb-startup1", "bio-wood-processing" },
     ["basic-circuit-board"] = { "sb-startup3", "sct-lab-t1" },
   }
   if game.technology_prototypes["sct-automation-science-pack"] then
