@@ -62,17 +62,6 @@ if not seablock.trigger.mining_productivity then
   end
 end
 
--- Remove resources so mining recipes don't show in FNEI
--- Have to leave at least one resource or game will not load
-for k, v in pairs(data.raw["resource"]) do
-  if k == "coal" then
-    v.minable.result = nil
-    v.minable.results = nil
-  else
-    data.raw["resource"][k] = nil
-  end
-end
-
 -- Add prerequisite for Tin and Lead
 if settings.startup["bobmods-logistics-beltoverhaul"].value then
   bobmods.lib.tech.add_prerequisite("logistics", "ore-crushing")
@@ -106,9 +95,11 @@ bobmods.lib.tech.remove_prerequisite("tungsten-processing", "angels-nickel-smelt
 bobmods.lib.tech.remove_recipe_unlock("bio-arboretum-swamp-1", "solid-plastic")
 
 seablock.lib.hide("inserter", "steam-inserter")
+if settings.startup["No-minerals-mode-setting"].value == true then
 seablock.lib.hide("mining-drill", "burner-mining-drill")
 seablock.lib.hide("mining-drill", "electric-mining-drill")
 seablock.lib.hide("mining-drill", "pumpjack")
+end
 seablock.lib.hide("storage-tank", "bob-overflow-valve")
 seablock.lib.hide("storage-tank", "bob-valve")
 seablock.lib.hide("storage-tank", "bob-topup-valve")
@@ -204,9 +195,10 @@ if mods["bobrevamp"] and not mods["bobclasses"] then
   bobmods.lib.tech.remove_prerequisite("rtg", "angels-coal-processing-3")
   bobmods.lib.tech.add_prerequisite("rtg", "sodium-processing-2")
 end
-
-if mods["cargo-ships"] then
-  seablock.lib.hide_item("oil_rig")
+if settings.startup["Cargo-ships-deep-oil-setting"].value == false then
+  if mods["cargo-ships"] then
+    seablock.lib.hide_item("oil_rig")
+  end
 end
 
 -- Swap gold for platinum

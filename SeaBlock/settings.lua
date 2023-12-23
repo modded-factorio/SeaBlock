@@ -20,3 +20,39 @@ if mods["LandfillPainting"] then
     },
   })
 end
+
+data:extend({
+    {
+      type = "bool-setting",
+      name = "Landblock-mode-Seablock-setting",
+      setting_type = "startup",
+      default_value = false
+    }
+})
+
+data:extend({
+    {
+      type = "bool-setting",
+      name = "No-minerals-mode-setting",
+      setting_type = "startup",
+      default_value = true
+    }
+})
+
+data:extend({
+    {
+      type = "bool-setting",
+      name = "No-trees-mode-setting",
+      setting_type = "startup",
+      default_value = true
+    }
+})
+
+data:extend({
+    {
+      type = "bool-setting",
+      name = "Cargo-ships-deep-oil-setting",
+      setting_type = "startup",
+      default_value = false
+    }
+})

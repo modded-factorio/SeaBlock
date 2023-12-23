@@ -26,9 +26,11 @@ angelsmods.functions.move_item("pellet-coke", "bio-processing-wood", "f[pellet-c
 data.raw.item["carbon"].fuel_emissions_multiplier = nil
 data.raw.item["carbon"].fuel_value = nil
 data.raw.item["carbon"].fuel_category = nil
-data.raw.item["coal"].fuel_emissions_multiplier = nil
-data.raw.item["coal"].fuel_value = nil
-data.raw.item["coal"].fuel_category = nil
+if settings.startup["No-minerals-mode-setting"].value == true then
+  data.raw.item["coal"].fuel_emissions_multiplier = nil
+  data.raw.item["coal"].fuel_value = nil
+  data.raw.item["coal"].fuel_category = nil
+end
 data.raw.item["coal-crushed"].fuel_value = nil
 data.raw.item["coal-crushed"].fuel_category = nil
 

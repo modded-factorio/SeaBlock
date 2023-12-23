@@ -40,7 +40,7 @@ end
 
 -- Recipes to unconditionally remove
 local removerecipes = {}
-for _, v in ipairs({
+local recipes_to_remove = {
   "alien-artifact-blue-from-basic",
   "alien-artifact-green-from-basic",
   "alien-artifact-orange-from-basic",
@@ -94,14 +94,113 @@ for _, v in ipairs({
   "thermal-water-filtering-2",
   "water-thermal-lithia",
   "wood-charcoal",
-}) do
+}
+--[[
+if settings.startup["No-minerals-mode-setting"].value == false then
+recipes_to_remove = {
+  "alien-artifact-blue-from-basic",
+  "alien-artifact-green-from-basic",
+  "alien-artifact-orange-from-basic",
+  "alien-artifact-purple-from-basic",
+  "alien-artifact-red-from-basic",
+  "alien-artifact-yellow-from-basic",
+  "angels-chemical-void-gas-natural-1",
+  "angels-chemical-void-liquid-condensates",
+  "angels-water-void-crystal-matrix",
+  "angels-water-void-lithia-water",
+  "angelsore1-crushed-hand",
+  "angelsore3-crushed-hand",
+  "big-burner-generator",
+  "bio-tile",
+  "bob-coal-from-wood",
+  "bob-resin-wood",
+  "burner-generator",
+--  "burner-mining-drill",
+  "carbon-from-charcoal",
+  "coal-cracking-1",
+  "coal-cracking-2",
+  "coal-cracking-3",
+--  "coal-crushed",
+  "condensates-oil-refining",
+  "condensates-refining",
+  "diesel-fuel",
+--  "electric-mining-drill",
+  "empty-crystal-matrix-barrel",
+  "empty-diesel-fuel-barrel",
+  "empty-gas-natural-1-barrel",
+  "empty-liquid-condensates-barrel",
+  "empty-lithia-water-barrel",
+  "fill-crystal-matrix-barrel",
+  "fill-diesel-fuel-barrel",
+  "fill-gas-natural-1-barrel",
+  "fill-liquid-condensates-barrel",
+  "fill-lithia-water-barrel",
+  "gas-fractioning-condensates",
+  "gas-phosgene",
+  "gas-separation",
+  "oil-steam-boiler",
+  "petroleum-generator",
+  "protection-field-goopless",
+--  "pumpjack",
+  "slag-processing-7",
+  "slag-processing-8",
+  "slag-processing-9",
+--  "solid-coke",
+  "solid-coke-sulfur",
+  "thermal-water-filtering-1",
+  "thermal-water-filtering-2",
+  "water-thermal-lithia",
+  "wood-charcoal",
+}
+end
+--]]
+
+if settings.startup["Cargo-ships-deep-oil-setting"].value == true then 
+	--remove pumpjack from recipes_to_remove
+	for k, v in ipairs(recipes_to_remove) do
+		if v == "pumpjack" then
+			table.remove(recipes_to_remove, k)
+		end
+	end
+elseif settings.startup["No-minerals-mode-setting"].value == false then
+	--[[
+	remove:
+	 "burner-mining-drill",
+	 "coal-crushed",
+	 "electric-mining-drill",
+	 "pumpjack",
+	 "solid-coke",
+	--]]
+	for k, v in ipairs(recipes_to_remove) do
+		if v == "pumpjack" then
+			table.remove(recipes_to_remove, k)
+			
+		elseif v == "burner-mining-drill" then
+			table.remove(recipes_to_remove, k)
+			
+		elseif v == "coal-crushed" then
+			table.remove(recipes_to_remove, k)
+			
+		elseif v == "electric-mining-drill" then
+			table.remove(recipes_to_remove, k)
+			
+		elseif v == "solid-coke" then
+			table.remove(recipes_to_remove, k)
+		else
+		end
+	end
+else
+end
+	
+
+for _, v in ipairs(recipes_to_remove) do
   removerecipes[v] = true
 end
 
 -- Items to remove. Recipes are checked to ensure these can't be crafted,
 -- then any recipe that uses an unobtainable item is removed
 local unobtainable = {}
-for _, v in ipairs({
+local items_to_remove = {
   "big-burner-generator",
   "bio-tile",
   "burner-generator",
@@ -122,10 +221,64 @@ for _, v in ipairs({
   "oil-steam-boiler",
   "petroleum-generator",
   "pumpjack",
-}) do
-  unobtainable[v] = {}
+}
+if settings.startup["No-minerals-mode-setting"].value == false then
+items_to_remove = {
+  "big-burner-generator",
+  "bio-tile",
+  "burner-generator",
+--  "burner-mining-drill",
+--  "coal",
+--  "coal-crushed",
+  "diesel-fuel",
+  "diesel-fuel-barrel",
+--  "electric-mining-drill",
+  "gas-natural-1",
+  "gas-natural-1-barrel",
+  "gas-phosgene",
+  "gas-phosgene-barrel",
+  "liquid-condensates",
+  "liquid-condensates-barrel",
+  "lithia-water",
+  "lithia-water-barrel",
+  "oil-steam-boiler",
+  "petroleum-generator",
+  "pumpjack",
+}
 end
 
+if settings.startup["Cargo-ships-deep-oil-setting"].value == true then 
+	--remove pumpjack from recipes_to_remove
+	for k, v in ipairs(items_to_remove) do
+		if v == "pumpjack" then
+			table.remove(recipes_to_remove, k)
+		end
+	end
+end
+
+for _, v in ipairs(items_to_remove) do
+  unobtainable[v] = {}
+end
+--[[
+if settings.startup["No-minerals-mode-setting"].value == false then
+  for _, v in ipairs({
+  "burner-mining-drill",
+  "coal-crushed",
+  "electric-mining-drill"
+  }) do
+  removerecipes[v] = false
+  end
+  
+  for _, v in ipairs({
+  "burner-mining-drill",
+  "coal",
+  "coal-crushed",
+  "electric-mining-drill"
+  }) do
+  unobtainable[v] = nil
+  end 
+end
+--]]
 -- unobtainable[key] -> { { a, and b, and .. }, or { c, ... } or, { d, and e, and f, ...}... }
 -- a,b,c... are items which if craftable imply key is also craftable and should not be removed
 local recipes = {}
