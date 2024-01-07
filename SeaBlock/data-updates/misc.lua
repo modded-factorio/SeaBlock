@@ -68,7 +68,10 @@ for k, v in pairs(data.raw["resource"]) do
   if k == "coal" then
     v.minable.result = nil
     v.minable.results = nil
-  else
+-- Sea-pump-resource is a virtual resource.
+-- to enable beaconed water pumps from angelsrefining
+-- Removing this causes heavy pumps to crash new maps, and disables their modules.
+  elseif k ~= "sea-pump-resource" then 
     data.raw["resource"][k] = nil
   end
 end
