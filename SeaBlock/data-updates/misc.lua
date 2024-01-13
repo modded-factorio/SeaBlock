@@ -65,13 +65,10 @@ end
 -- Remove resources so mining recipes don't show in FNEI
 -- Have to leave at least one resource or game will not load
 for k, v in pairs(data.raw["resource"]) do
-  if k == "coal" then
-    v.minable.result = nil
-    v.minable.results = nil
--- Sea-pump-resource is a virtual resource.
--- to enable beaconed water pumps from angelsrefining
--- Removing this causes heavy pumps to crash new maps, and disables their modules.
-  elseif k ~= "sea-pump-resource" then 
+  -- Sea-pump-resource is a virtual resource.
+  -- When the offshore pump is placed, it is supposed to be replaced by the resource and a mining-drill.
+  -- Removing the resource causes placement of heavy pumps to crash new maps.
+  if k ~= "sea-pump-resource" then 
     data.raw["resource"][k] = nil
   end
 end
