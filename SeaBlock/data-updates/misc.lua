@@ -105,7 +105,6 @@ bobmods.lib.tech.remove_prerequisite("tungsten-processing", "angels-nickel-smelt
 
 bobmods.lib.tech.remove_recipe_unlock("bio-arboretum-swamp-1", "solid-plastic")
 
-seablock.lib.hide("inserter", "steam-inserter")
 seablock.lib.hide("mining-drill", "burner-mining-drill")
 seablock.lib.hide("mining-drill", "electric-mining-drill")
 seablock.lib.hide("mining-drill", "pumpjack")
@@ -276,10 +275,12 @@ bobmods.lib.recipe.set_energy_required("copper-tungsten-alloy", 8)
 bobmods.lib.tech.add_prerequisite("tungsten-alloy-processing", "angels-copper-smelting-2")
 
 -- Hide steam inserter
+seablock.lib.hide("inserter", "steam-inserter")
 bobmods.lib.recipe.hide("steam-inserter")
 seablock.lib.hide_item("steam-inserter")
 if data.raw.inserter["steam-inserter"] then
   data.raw.inserter["steam-inserter"].next_upgrade = nil
+  bobmods.lib.recipe.replace_ingredient_in_all("steam-inserter", "burner-inserter")
 end
 
 -- Swap out concrete for bricks
