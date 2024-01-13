@@ -4,6 +4,7 @@ Date: ???
   Bugfixes:
     - Fixed Landfill tech being automatically researched #312
     - Fixed AAI Loaders compatibility #315
+    - Fixed placement of heavy offshore pumps crashing new seablock maps #317
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.14
 Date: 22.12.2023
