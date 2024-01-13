@@ -3,6 +3,7 @@ Version: 0.5.15
 Date: ???
   Bugfixes:
     - Fixed Landfill tech being automatically researched #312
+    - Fixed AAI Loaders compatibility #315
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.14
 Date: 22.12.2023
