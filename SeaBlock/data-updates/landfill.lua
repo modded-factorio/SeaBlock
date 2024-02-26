@@ -38,3 +38,4 @@ data.raw.technology["landfill"].unit = {
   time = 15,
 }
 bobmods.lib.tech.remove_prerequisite("water-washing-2", "landfill")
+bobmods.lib.tech.ignore_tech_cost_multiplier("landfill", true)
