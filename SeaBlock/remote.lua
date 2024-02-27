@@ -86,7 +86,7 @@ local function milestones_presets()
     { type = "item", name = "nitinol-alloy", quantity = 1 },
 
     { type = "item", name = "plastic-bar", quantity = 1 },
-    { type = "item", name = "resin", quantity = 1 },
+    { type = "fluid", name = "liquid-resin", quantity = 100 },
     { type = "item", name = "rubber", quantity = 1 },
     { type = "item", name = "alien-bacteria", quantity = 1 },
     { type = "item", name = "sulfur", quantity = 1 },

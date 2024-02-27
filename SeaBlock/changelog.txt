@@ -1,4 +1,12 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.5.16
+Date: 27.02.2024
+  Changes:
+    - Hid solid resin item and recipes #322
+  Bugfixes:
+    - Landfill tech not ignoring tech cost multiplier #320
+    - Milestones error when mod setting Default landfill type set to Landfill #321
+---------------------------------------------------------------------------------------------------
 Version: 0.5.15
 Date: 13.01.2024
   Bugfixes:

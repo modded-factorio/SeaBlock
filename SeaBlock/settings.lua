@@ -5,7 +5,7 @@ if mods["LandfillPainting"] then
     "landfill-dirt-4",
     "landfill-dry-dirt",
     "landfill-grass-1",
-    "landfill-landfill",
+    "landfill",
     "landfill-red-desert-1",
     "landfill-sand-3",
   }
