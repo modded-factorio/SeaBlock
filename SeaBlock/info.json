@@ -6,7 +6,7 @@
   "author": "Trainwreck",
   "contact": "",
   "homepage": "https://forums.factorio.com/viewtopic.php?t=93136",
-  "description": "No ore patches, expand from a small island. Also install the 'Sea Block Pack' mod for a complete modpack",
+  "description": "No ore patches, expand from a small island. Also install the 'Sea Block Pack - Official' mod for a complete modpack",
   "dependencies": [
     "base",
     "angelsbioprocessing >= 0.7.23",
