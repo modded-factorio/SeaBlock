@@ -35,6 +35,11 @@ bobmods.lib.tech.add_prerequisite("bio-wood-processing-3", "bio-arboretum-1")
 bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing-3", "wood-bricks")
 bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-3", "cellulose-fiber-raw-wood")
 
-bobmods.lib.tech.add_recipe_unlock("resins", "bio-resin-wood-reprocessing")
-bobmods.lib.tech.add_prerequisite("resins", "bio-farm-1")
+-- Remove solid resin
+bobmods.lib.recipe.hide("bio-resin-wood-reprocessing")
 bobmods.lib.tech.remove_prerequisite("bio-wood-processing-2", "bio-farm-1")
+bobmods.lib.tech.remove_recipe_unlock("resins", "solid-resin")
+bobmods.lib.recipe.hide("solid-resin")
+seablock.lib.hide_item("resin")
+bobmods.lib.tech.remove_recipe_unlock("bio-arboretum-temperate-1", "bio-resin-resin-liquification")
+bobmods.lib.recipe.hide("bio-resin-resin-liquification")
