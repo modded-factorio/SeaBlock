@@ -2,7 +2,7 @@
 Version: 0.5.17
 Date: ??.??.??
   Features:
-    - Added custom Better Victory Screen statistics.
+    - Added custom Better Victory Screen statistics #323
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.16
 Date: 27.02.2024
