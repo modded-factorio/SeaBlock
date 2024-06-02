@@ -423,34 +423,35 @@ bobmods.lib.tech.add_prerequisite("angels-cooling", "angels-stone-smelting-1")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-2", "angels-stone-smelting-1")
 bobmods.lib.tech.add_prerequisite("gardens", "angels-stone-smelting-1")
 bobmods.lib.tech.add_prerequisite("oil-gas-extraction", "angels-stone-smelting-1")
+bobmods.lib.tech.add_prerequisite("water-treatment-2", "angels-stone-smelting-1")
 bobmods.lib.tech.add_prerequisite("water-washing-2", "angels-stone-smelting-1")
 
 -- Brass prerequisites
-bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-2", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-3", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("automation-3", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("bio-desert-farm", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("bio-refugium-puffer-1", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("bio-swamp-farm", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("bio-temperate-farm", "zinc-processing")
+bobmods.lib.tech.add_prerequisite("electronics-machine-2", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("slag-processing-2", "zinc-processing")
 bobmods.lib.tech.add_prerequisite("water-treatment-3", "zinc-processing")
 
 -- Concrete Brick prerequisites
-bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-2", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-3", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("bio-desert-farm", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("bio-swamp-farm", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("bio-temperate-farm", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("bio-refugium-hatchery", "angels-stone-smelting-2")
-bobmods.lib.tech.add_prerequisite("bio-refugium-puffer-1", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("slag-processing-2", "angels-stone-smelting-2")
 bobmods.lib.tech.add_prerequisite("water-treatment-3", "angels-stone-smelting-2")
 
 -- Titanium prerequisites
 bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-4", "titanium-processing")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-4", "titanium-processing")
+bobmods.lib.tech.add_prerequisite("automation-4", "titanium-processing")
 bobmods.lib.tech.add_prerequisite("bio-refugium-biter-1", "titanium-processing")
 bobmods.lib.tech.add_prerequisite("slag-processing-3", "titanium-processing")
 bobmods.lib.tech.add_prerequisite("water-treatment-4", "titanium-processing")
@@ -474,8 +475,3 @@ bobmods.lib.tech.add_prerequisite("tank", "advanced-electronics")
 
 -- Processing unit
 bobmods.lib.tech.add_prerequisite("bio-refugium-biter-1", "advanced-electronics-2")
-bobmods.lib.tech.add_prerequisite("water-treatment-4", "advanced-electronics-2")
-
--- Advanced processing unit
-bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-5", "advanced-electronics-3")
-bobmods.lib.tech.add_prerequisite("angels-metallurgy-5", "advanced-electronics-3")
