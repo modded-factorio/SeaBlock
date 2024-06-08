@@ -3,6 +3,9 @@ Version: 0.5.17
 Date: ??.??.??
   Changes:
     - Added custom Better Victory Screen statistics #323
+    - Handle Ore Sorting Facility 5 changes #327
+      - Stop creating recipe, item, and entity in Sea Block
+      - Added migration of removed Sea Block item and entity to new Angel's item and entity
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.16
 Date: 27.02.2024
