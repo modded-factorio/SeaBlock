@@ -120,16 +120,6 @@ data:extend({
     subgroup = "bio-processing-blue",
     order = "d[blue-algae-liquefaction]",
   },
-  {
-    type = "recipe",
-    name = "sb-ore-sorting-facility-5",
-    energy_required = 5,
-    enabled = false,
-    ingredients = {
-      { type = "item", name = "ore-sorting-facility-4", amount = 1 },
-    },
-    result = "ore-sorting-facility-5",
-  },
 })
 
 bobmods.lib.tech.add_prerequisite("oil-gas-extraction", "bio-processing-blue")
