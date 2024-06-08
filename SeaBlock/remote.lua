@@ -224,23 +224,26 @@ end
 ---@param winning_force LuaForce
 ---@param forces LuaForce[] list of forces that GUI will be show to
 local function better_victory_screen_statistics(winning_force, forces)
-
   -- Landfil is common to all forces. To prevent having to check which
   -- tiles can be used for landfil, and handle paving, etc, we will only
   -- count non-water tiles according to the collision masks.
-  local landfill_count = game.surfaces.nauvis.count_tiles_filtered{collision_mask="water-tile", invert=true}
+  local landfill_count = game.surfaces.nauvis.count_tiles_filtered({ collision_mask = "water-tile", invert = true })
 
-  local stats_by_force = { }
+  local stats_by_force = {}
   for _, force in pairs(forces) do
     local get_output_fluid_count = force.fluid_production_statistics.get_output_count
     stats_by_force[force.name] = {
-      ["production"] = { stats = {
-        ["mineral-sludge-consumed"] = { value = get_output_fluid_count("mineral-sludge"),    order="b" },
-        ["ores-produced"] = { ignore = true },   -- Cannot mine ores
-      }},
-      ["infrastructure"] = { stats = {
-        ["landfill-count"] = {value = landfill_count , order = "i", has_tooltip=true}
-      }}
+      ["production"] = {
+        stats = {
+          ["mineral-sludge-consumed"] = { value = get_output_fluid_count("mineral-sludge"), order = "b" },
+          ["ores-produced"] = { ignore = true }, -- Cannot mine ores
+        },
+      },
+      ["infrastructure"] = {
+        stats = {
+          ["landfill-count"] = { value = landfill_count, order = "i", has_tooltip = true },
+        },
+      },
     }
   end
   return { by_force = stats_by_force }
