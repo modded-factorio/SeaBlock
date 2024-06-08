@@ -93,7 +93,6 @@ bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "advanced-electroni
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-4", "advanced-electronics-3")
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-4", "angels-tungsten-smelting-1")
 
-
 -- Add an additional slag to the mixed sorting recipes
 for _, v in pairs({
   -- Saphirite
