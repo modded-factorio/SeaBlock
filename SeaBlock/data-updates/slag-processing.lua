@@ -88,99 +88,11 @@ data.raw.technology["slag-processing-1"].unit = {
   time = 15,
 }
 
-if data.raw["assembling-machine"]["ore-sorting-facility-4"] then
-  data.raw["assembling-machine"]["ore-sorting-facility-4"].next_upgrade = "sb-ore-sorting-facility-5"
-end
-
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "ore-powderizer")
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-2", "advanced-electronics")
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-4", "advanced-electronics-3")
 bobmods.lib.tech.add_prerequisite("advanced-ore-refining-4", "angels-tungsten-smelting-1")
-seablock.lib.add_recipe_unlock("advanced-ore-refining-4", "sb-ore-sorting-facility-5", 3)
 
-local buildingmulti = angelsmods.marathon.buildingmulti
-local buildingtime = angelsmods.marathon.buildingtime
-
-angelsmods.functions.RB.build({
-  {
-    type = "recipe",
-    name = "sb-ore-sorting-facility-5",
-    normal = {
-      energy_required = 5,
-      enabled = false,
-      ingredients = {
-        { type = "item", name = "ore-sorting-facility-4", amount = 1 },
-        { type = "item", name = "t5-plate", amount = 12 },
-        { type = "item", name = "t5-circuit", amount = 12 },
-        { type = "item", name = "t5-brick", amount = 12 },
-        { type = "item", name = "t5-gears", amount = 8 },
-      },
-      result = "sb-ore-sorting-facility-5",
-    },
-    expensive = {
-      energy_required = 5 * buildingtime,
-      enabled = false,
-      ingredients = {
-        { type = "item", name = "ore-sorting-facility-4", amount = 1 },
-        { type = "item", name = "t5-plate", amount = 12 * buildingmulti },
-        { type = "item", name = "t5-circuit", amount = 12 * buildingmulti },
-        { type = "item", name = "t5-brick", amount = 12 * buildingmulti },
-        { type = "item", name = "t5-gears", amount = 8 * buildingmulti },
-      },
-      result = "sb-ore-sorting-facility-5",
-    },
-  },
-})
-
--- Make ore sorting recipes require a higher tier ore sorting facility
-for _, v in pairs({
-  "angelsore1-chunk-processing",
-  "angelsore2-chunk-processing",
-  "angelsore3-chunk-processing",
-  "angelsore4-chunk-processing",
-  "angelsore5-chunk-processing",
-  "angelsore6-chunk-processing",
-}) do
-  bobmods.lib.recipe.set_category(v, "ore-sorting-2")
-end
-bobmods.lib.tech.add_prerequisite("ore-floatation", "advanced-ore-refining-1")
-
-for _, v in pairs({
-  "angelsore1-crystal-processing",
-  "angelsore2-crystal-processing",
-  "angelsore3-crystal-processing",
-  "angelsore4-crystal-processing",
-  "angelsore5-crystal-processing",
-  "angelsore6-crystal-processing",
-}) do
-  bobmods.lib.recipe.set_category(v, "ore-sorting-3")
-end
-bobmods.lib.tech.add_prerequisite("ore-leaching", "advanced-ore-refining-2")
-
-for _, v in pairs({
-  "angelsore1-pure-processing",
-  "angelsore2-pure-processing",
-  "angelsore3-pure-processing",
-  "angelsore4-pure-processing",
-  "angelsore5-pure-processing",
-  "angelsore6-pure-processing",
-}) do
-  bobmods.lib.recipe.set_category(v, "ore-sorting-4")
-end
-bobmods.lib.tech.add_prerequisite("ore-refining", "advanced-ore-refining-3")
-
-for _, v in pairs({
-  "angelsore-pure-mix1-processing",
-  "angelsore-pure-mix2-processing",
-}) do
-  bobmods.lib.recipe.set_category(v, "ore-sorting-5")
-end
-
--- Slow down Ore Sorting Facilities to make space for our new top tier
-data.raw["assembling-machine"]["ore-sorting-facility"].crafting_speed = 0.5
-data.raw["assembling-machine"]["ore-sorting-facility-2"].crafting_speed = 0.75
-data.raw["assembling-machine"]["ore-sorting-facility-3"].crafting_speed = 1.0
-data.raw["assembling-machine"]["ore-sorting-facility-4"].crafting_speed = 1.5
 
 -- Add an additional slag to the mixed sorting recipes
 for _, v in pairs({

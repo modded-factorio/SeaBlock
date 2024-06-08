@@ -11,7 +11,7 @@
     "base",
     "angelsbioprocessing >= 0.7.23",
     "angelspetrochem >= 0.9.23",
-    "angelsrefining >= 0.12.3",
+    "angelsrefining >= 0.12.8",
     "angelssmelting >= 0.6.20",
     "bobelectronics >= 1.1.6",
     "boblibrary >= 1.1.6",
