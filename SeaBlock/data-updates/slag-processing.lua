@@ -209,3 +209,24 @@ for _, v in pairs({
 }) do
   seablock.lib.substresult(v, "slag", nil, 2)
 end
+
+--Reduce sulfuric-acid needed to dissolve slag/stone/geodes to make sulfur generation from washing a viable early game source
+seablock.lib.substingredient("stone-crushed-dissolution", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("slag-processing-dissolution", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-blue-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-red-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-yellow-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-purple-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-cyan-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-lightgreen-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("crystal-dust-liquify", "sulfuric-acid", nil, 3)
+
+--Reduce amount of sulfuric waste water returned on charcoal filtering to balance out the reduction in sulfuric acid consumed
+seablock.lib.substresult("crystal-slurry-filtering-1", "water-yellow-waste", nil, 15)
+seablock.lib.substresult("crystal-slurry-filtering-conversion-1", "water-yellow-waste", nil, 15)
+seablock.lib.substresult("slag-processing-filtering-1", "water-yellow-waste", nil, 15)
+
+--Remove sulfuric waste water from output of ceramic filtering recipies since the balanced value would become negative
+bobmods.lib.recipe.remove_result("crystal-slurry-filtering-2", "water-yellow-waste")
+bobmods.lib.recipe.remove_result("crystal-slurry-filtering-conversion-2", "water-yellow-waste")
+bobmods.lib.recipe.remove_result("slag-processing-filtering-2", "water-yellow-waste")
