@@ -25,6 +25,7 @@ bobmods.lib.tech.add_prerequisite("bio-wood-processing-2", "bio-processing-brown
 bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing-2", "wood-charcoal")
 bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing-2", "bio-resin-wood-reprocessing")
 bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing-2", "bob-rubber")
+bobmods.lib.tech.remove_recipe_unlock("bio-wood-processing-2", "bio-processor")
 bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-2", "wood-pellets")
 bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-2", "wood-bricks")
 bobmods.lib.tech.add_recipe_unlock("bio-wood-processing-2", "sb-wood-bricks-charcoal")

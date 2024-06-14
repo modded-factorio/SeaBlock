@@ -285,7 +285,6 @@ end
 
 -- Swap out concrete for bricks
 
-seablock.lib.substingredient("artillery-turret", "concrete", "reinforced-concrete-brick", nil)
 if data.raw.recipe["burner-reactor-2"] then
   seablock.lib.substingredient("burner-reactor-2", "concrete", "concrete-brick", nil)
   bobmods.lib.tech.remove_prerequisite("burner-reactor-2", "concrete")
@@ -457,10 +456,10 @@ bobmods.lib.tech.add_prerequisite("slag-processing-3", "titanium-processing")
 bobmods.lib.tech.add_prerequisite("water-treatment-4", "titanium-processing")
 
 -- Reinforced concrete brick
-bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "angels-stone-smelting-3")
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-4", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("angels-metallurgy-4", "angels-stone-smelting-3")
+bobmods.lib.tech.add_prerequisite("bio-refugium-biter-1", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("slag-processing-3", "angels-stone-smelting-3")
-bobmods.lib.tech.add_prerequisite("thermal-water-extraction-2", "angels-stone-smelting-3")
 bobmods.lib.tech.add_prerequisite("water-treatment-4", "angels-stone-smelting-3")
 
 -- Copper tungsten / tungsten carbide prerequisites
