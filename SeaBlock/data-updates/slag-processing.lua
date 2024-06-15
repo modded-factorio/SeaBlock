@@ -1,6 +1,27 @@
 -- Decrease amount of crushed stone for slag-slurry so it's still better than mineralized water crystallization
 seablock.lib.substingredient("stone-crushed-dissolution", "stone-crushed", nil, 20)
 
+--Reduce sulfuric-acid needed to dissolve 
+seablock.lib.substingredient("stone-crushed-dissolution", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("slag-processing-dissolution", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-blue-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-red-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-yellow-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-purple-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-cyan-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("geode-lightgreen-liquify", "sulfuric-acid", nil, 3)
+seablock.lib.substingredient("crystal-dust-liquify", "sulfuric-acid", nil, 3)
+
+--Reduce amount of sulfuric waste water returned on charcoal filtering
+seablock.lib.substresult("crystal-slurry-filtering-1", "water-yellow-waste", nil, 10)
+seablock.lib.substresult("crystal-slurry-filtering-conversion-1", "water-yellow-waste", nil, 10)
+seablock.lib.substresult("slag-processing-filtering-1", "water-yellow-waste", nil, 10)
+
+--Remove sulfuric waste water from output of ceramic filtering recipies
+bobmods.lib.recipe.remove_result("crystal-slurry-filtering-2", "water-yellow-waste")
+bobmods.lib.recipe.remove_result("crystal-slurry-filtering-conversion-2", "water-yellow-waste")
+bobmods.lib.recipe.remove_result("slag-processing-filtering-2", "water-yellow-waste")
+
 -- Angels sludge crystalization usually gives normal smeltable ores. This would be far too easy,
 -- so change recipes to give the weird ores that need extra processing steps.
 for i = 1, 6 do
