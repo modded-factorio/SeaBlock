@@ -54,6 +54,7 @@ Date: 01.01.2023
     - Adjusted science packs required for Power Armor research #287
     - Adjusted science packs for FTL techs (SpaceX) #288
     - Added Thermal Water Bore to ingredients for Thermal Water Extractor #290
+    - Unlocks Logistic Silo/Warehouse (Provider & Storage) earlier #275
   Bugfixes:
     - Fixed tech unlocks after adding Science Cost Tweaker mod mid game #260
     - Fixed duplicate starting items in rock-chest as well as player inventory #268
