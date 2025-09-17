@@ -148,5 +148,5 @@ Use the search function to quickly find:
 
 ---
 
-*This reference section is constantly updated with the latest mod versions and community feedback. If you find any errors or have suggestions for improvement, please contribute using our [WYSIWYG Editor](/editor/) or visit our [GitHub repository](https://github.com/SeaBlock-wiki/SeaBlock-wiki).*
+*This reference section is constantly updated with the latest mod versions and community feedback. If you find any errors or have suggestions for improvement, please contribute using our [WYSIWYG Editor](/editor/) or visit our [GitHub repository](https://github.com/SeaBlock/SeaBlock).*
 

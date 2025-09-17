@@ -2,7 +2,7 @@
 <html>
   <head>
     <!-- Load VitePress CSS -->
-    <link rel="stylesheet" href="/SeaBlock-wiki/assets/vitepress-extracted-renderer.css" />
+    <link rel="stylesheet" href="/SeaBlock/assets/vitepress-extracted-renderer.css" />
     <script>
       console.log('Iframe script loaded')
 
@@ -29,7 +29,7 @@
                 console.log('Loading VitePress extracted renderer...')
                 try {
                   const module = await import(
-                    '/SeaBlock-wiki/assets/vitepress-extracted-renderer.js'
+                    '/SeaBlock/assets/vitepress-extracted-renderer.js'
                   )
                   const VitePressExtractedRenderer =
                     module.VitePressExtractedRenderer || window.VitePressExtractedRenderer
@@ -43,7 +43,7 @@
 
               // Create renderer instance
               renderer = new window.VitePressExtractedRenderer({
-                base: '/SeaBlock-wiki/'
+                base: '/SeaBlock/'
               })
               console.log('VitePress extracted renderer created and initialized')
             }

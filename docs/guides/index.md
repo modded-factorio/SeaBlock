@@ -86,5 +86,5 @@ Building megabases and optimizing for maximum efficiency.
 
 ---
 
-*These guides are living documents. If you find errors, outdated information, or have suggestions for improvement, please contribute to the wiki using our [WYSIWYG Editor](/editor/) or visit our [GitHub repository](https://github.com/SeaBlock-wiki/SeaBlock-wiki).*
+*These guides are living documents. If you find errors, outdated information, or have suggestions for improvement, please contribute to the wiki using our [WYSIWYG Editor](/editor/) or visit our [GitHub repository](https://github.com/SeaBlock/SeaBlock).*
 

@@ -29,7 +29,7 @@
           <iframe
             ref="previewFrame"
             class="preview-frame"
-            src="/SeaBlock-wiki/editor-iframe.html"
+            src="/SeaBlock/editor-iframe.html"
             sandbox="allow-scripts allow-same-origin allow-downloads"
             title="VitePress Preview"
             @load="onIframeLoad"
@@ -157,7 +157,7 @@ const onIframeLoad = () => {
 }
 
 const copyToGitHub = () => {
-  const githubUrl = `https://github.com/SeaBlock-wiki/SeaBlock-wiki/new/main?filename=content/${Date.now()}.md&value=${encodeURIComponent(markdownContent.value)}`
+  const githubUrl = `https://github.com/SeaBlock/SeaBlock/new/main?filename=content/${Date.now()}.md&value=${encodeURIComponent(markdownContent.value)}`
   window.open(githubUrl, '_blank')
 }
 

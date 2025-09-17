@@ -125,7 +125,7 @@ Once you've mastered the basics:
 - **Wiki**: This comprehensive guide
 - **Discord**: [SeaBlock Discord Server](https://discord.gg/SeaBlock)
 - **Reddit**: [r/SeaBlock](https://reddit.com/r/SeaBlock)
-- **GitHub**: [Report issues or suggest improvements](https://github.com/SeaBlock-wiki/SeaBlock-wiki)
+- **GitHub**: [Report issues or suggest improvements](https://github.com/SeaBlock/SeaBlock)
 
 ---
 

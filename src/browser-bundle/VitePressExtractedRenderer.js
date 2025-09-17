@@ -60,7 +60,7 @@ import '@vitepress/theme/editor-styles.css'
 class VitePressExtractedRenderer {
   constructor(options = {}) {
     this.options = {
-      base: '/SeaBlock-wiki/',
+      base: '/SeaBlock/',
       ...options
     }
     this.isInitialized = false

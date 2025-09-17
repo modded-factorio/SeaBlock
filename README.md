@@ -35,7 +35,7 @@ This project uses a dual SSG approach:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/SeaBlock-wiki/SeaBlock-wiki.git
+   git clone https://github.com/SeaBlock/SeaBlock.git
    cd SeaBlock-wiki
    ```
 

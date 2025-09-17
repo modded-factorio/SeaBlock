@@ -7,7 +7,7 @@ export const configData = {
   description: 'The comprehensive guide to SeaBlock mod for Factorio',
 
   // GitHub Pages configuration
-  base: '/seablock/',
+  base: '/SeaBlock/',
 
   // Head configuration
   head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
