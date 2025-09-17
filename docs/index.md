@@ -6,7 +6,7 @@ hero:
   text: 'The comprehensive guide to SeaBlock'
   tagline: 'Everything you need to know about the SeaBlock mod for Factorio'
   image:
-    src: /SeaBlock-header.jpg
+    src: /seablock-header.jpg
     alt: SeaBlock Wiki
   actions:
     - theme: brand
@@ -14,56 +14,48 @@ hero:
       link: /getting-started/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/SeaBlock/SeaBlock
+      link: https://github.com/modded-factorio/SeaBlock
 
 features:
   - title: 🚀 Getting Started
-    details: New to SeaBlock? Start here with our comprehensive beginner's guide covering installation, basic concepts, and your first steps.
+    details: New to SeaBlock? Start here with our beginner's guide covering installation, concepts, and first steps on your lonely island.
     link: /getting-started/
   - title: 📚 Complete Guides
-    details: Detailed walkthroughs for every stage of the game, from early game automation to late game megabase construction.
+    details: Step-by-step walkthroughs for every stage of the game, from early survival to building a late-game megabase.
     link: /guides/
   - title: 🔍 Reference Materials
-    details: Quick reference for recipes, technologies, items, and all the data you need while playing.
+    details: Quick access to recipes, technologies, and item data—perfect for when you need answers mid-factory.
     link: /reference/
-  - title: ✏️ WYSIWYG Editor
-    details: Edit wiki content with our browser-based editor that shows exactly how your changes will look on the live site.
-    link: /editor/
   - title: 🤝 Community Driven
-    details: Built by the community, for the community. Contribute your knowledge and help others learn.
-    link: https://github.com/SeaBlock/SeaBlock
+    details: Built by players, for players. Share strategies, add knowledge, and help grow the SeaBlock community.
+    link: https://github.com/modded-factorio/SeaBlock
   - title: 🆓 Free & Open Source
-    details: Completely free to use, hosted on GitHub Pages, and open source for transparency and community contributions.
-    link: https://github.com/SeaBlock/SeaBlock
+    details: The wiki and the modpack are free to use and open to contributions from everyone.
+    link: https://github.com/modded-factorio/SeaBlock
 ---
 
-## Welcome to the SeaBlock Wiki!
+## Welcome to the SeaBlock Wiki! 🌊
 
-This wiki is your comprehensive guide to the **SeaBlock** mod for Factorio. Whether you're a complete beginner or an experienced player looking for specific information, you'll find everything you need here.
+SeaBlock transforms Factorio into a **survival-factory challenge**: you begin stranded on a tiny rock in the middle of an endless ocean, with no natural ore patches and barely any land. Every resource must be engineered from seawater, algae, and chemistry.  
 
-### What is SeaBlock?
+This wiki is your guide through that journey—from your first crushed stone to the final spaceship launch.
 
-SeaBlock is a total conversion mod for Factorio that transforms the game into a unique experience where you start on a tiny island in the middle of an infinite ocean. You'll need to create everything from scratch using only the resources available from the sea and the sky.
+### What You'll Find Here
 
-### Key Features of This Wiki
+- **Getting Started** – Install SeaBlock and learn the fundamentals of survival and resource generation.  
+- **Guides** – In-depth strategies for early, mid, and late game progression.  
+- **Reference** – Recipes, technologies, and item data at your fingertips.  
+- **Community Insights** – Tips, tricks, and designs contributed by fellow players.  
 
-- **True WYSIWYG Editing**: Edit content with our browser-based editor that shows exactly how your changes will appear
-- **Comprehensive Coverage**: From basic concepts to advanced strategies
-- **Community Driven**: Built and maintained by the SeaBlock community
-- **Always Up-to-Date**: Regular updates with the latest mod versions
-- **Mobile Friendly**: Optimized for all devices
+### Start Your Journey
 
-### Getting Started
+If you’re new, head straight to the [Getting Started guide](/getting-started/) and learn how to survive those first crucial hours.  
+Already building? Explore our [Guides](/guides/) for strategies, or jump into the [Reference](/reference/) section when you need quick answers.
 
-New to SeaBlock? Check out our [Getting Started guide](/getting-started/) to learn the basics and begin your journey.
+### Contribute & Collaborate
 
-Looking for specific information? Browse our [Guides](/guides/) or use the [Reference](/reference/) section for quick lookups.
-
-### Contributing
-
-This wiki is open source and community-driven. Want to contribute? Use our [WYSIWYG Editor](/editor/) to make changes, or visit our [GitHub repository](https://github.com/SeaBlock/SeaBlock) to learn more about contributing.
+This wiki thrives on community knowledge. Whether you’ve designed an efficient algae setup, discovered a smart mid-game trick, or just want to clarify a recipe, your contributions are welcome. Visit our [GitHub repository](https://github.com/modded-factorio/SeaBlock) to get involved.
 
 ---
 
-_Happy building! 🏗️_
-
+_Happy building, and may your seas of sludge turn into seas of science! ⚙️_

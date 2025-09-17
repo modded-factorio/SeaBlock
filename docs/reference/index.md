@@ -1,152 +1,20 @@
-# Reference Materials
+# SeaBlock Reference
 
-Quick reference for recipes, technologies, items, and all the data you need while playing SeaBlock.
+This section is a glossary to help clarify **SeaBlock-specific terms and shorthand** often used in guides, discussions, and community resources. It focuses on naming conventions and recipe/technology references that may be confusing when compared to in-game tooltips.
 
-## Quick Navigation
+## Common Terminology & Abbreviations
 
-- **[Recipes](/reference/recipes)** - All production recipes and ratios
-- **[Technologies](/reference/technologies)** - Research tree and prerequisites
-- **[Items](/reference/items)** - Complete item database
-- **[Buildings](/reference/buildings)** - All buildings and their specifications
-- **[Resources](/reference/resources)** - Raw materials and their sources
+- **Slag 1 / Slag 2** – Refers to Dirty Water Electrolysis and Fast Dirty Water Electrolysis
+- **Algae 1 / Algae 2** – Short for *Green Algae Processing 1* and *2*. Algae 1 produces both green and brown algae; Algae 2 is more efficient and produces only green algae.
+- **Ore Sorting 1 / 2 / 3 / 4** – Refers to the tiers of Angel’s ore sorting. Each tier introduces more precise and efficient ore yields.
+- **Circuits (Brown/Green/Red/Blue/Purple/Yellow)** – Community shorthand for tiers of circuit boards:
+  - Brown = Basic Circuit
+  - Green = Electronic Circuit
+  - Red = Advanced Circuit
+  - Blue = Processing Unit
+  - Black = Advanced Processing Unit
+- **Landfill / Washing** – Often shorthand for the *Water Treatment: Washing* technology, which allows more efficient landfill production.
+- **Solid Fuel Path** – Refers to combining charcoal with hydrogen to produce solid fuel, an early-to-mid game power upgrade.
 
-## Recipe Database
-
-### Metal Processing
-- **Iron Production** - From ore to plates
-- **Copper Production** - Refining and processing
-- **Steel Production** - Advanced metal processing
-- **Aluminum Production** - Lightweight metal processing
-- **Titanium Production** - High-strength metal processing
-
-### Chemical Industry
-- **Basic Chemicals** - Hydrogen, oxygen, and simple compounds
-- **Advanced Chemicals** - Complex organic and inorganic compounds
-- **Petrochemicals** - Oil and gas processing
-- **Fertilizers** - Agricultural chemicals
-
-### Biological Processing
-- **Algae Farming** - Growing and processing algae
-- **Wood Production** - From algae to wood products
-- **Oil Production** - Biological oil sources
-- **Food Production** - Agricultural products
-
-## Technology Tree
-
-### Early Technologies
-- **Basic Processing** - Essential early game research
-- **Power Generation** - Steam, solar, and wind power
-- **Basic Automation** - Inserters, belts, and basic logistics
-
-### Mid Game Technologies
-- **Advanced Processing** - Complex chemical chains
-- **Logistics** - Advanced belt and bot systems
-- **Military** - Defense and weapon systems
-
-### Late Game Technologies
-- **Megabase Technologies** - High-throughput systems
-- **Optimization** - Efficiency and performance improvements
-- **Advanced Materials** - Exotic and high-tech materials
-
-## Item Database
-
-### Raw Materials
-- **Ores** - All ore types and their properties
-- **Liquids** - Water, oil, and chemical fluids
-- **Gases** - Hydrogen, oxygen, and other gases
-- **Biological Materials** - Algae, wood, and organic matter
-
-### Intermediate Products
-- **Plates** - Metal plates and sheets
-- **Chemicals** - Processed chemical compounds
-- **Components** - Electronic and mechanical parts
-- **Fuels** - Various fuel types and their properties
-
-### Finished Products
-- **Science Packs** - All research materials
-- **Military Equipment** - Weapons and armor
-- **Logistics Items** - Belts, inserters, and transport
-- **Buildings** - All construction materials
-
-## Building Specifications
-
-### Production Buildings
-- **Furnaces** - Metal smelting and processing
-- **Chemical Plants** - Chemical processing facilities
-- **Assemblers** - Component and item assembly
-- **Refineries** - Oil and gas processing
-
-### Power Generation
-- **Steam Engines** - Basic power generation
-- **Solar Panels** - Solar power systems
-- **Wind Turbines** - Wind power generation
-- **Nuclear Reactors** - Advanced power systems
-
-### Logistics
-- **Belts** - Item transport systems
-- **Inserters** - Item handling and transfer
-- **Robots** - Automated logistics
-- **Trains** - Long-distance transport
-
-## Resource Sources
-
-### Water-Based Resources
-- **Electrolysis** - Hydrogen and oxygen from water
-- **Algae Farming** - Biological materials from water
-- **Mineral Extraction** - Trace metals from seawater
-
-### Air-Based Resources
-- **Nitrogen Fixation** - Nitrogen from air
-- **CO₂ Capture** - Carbon dioxide processing
-- **Oxygen Production** - Pure oxygen generation
-
-### Land-Based Resources
-- **Landfill** - Expanding your island
-- **Soil** - Agricultural materials
-- **Stone** - Basic construction materials
-
-## Search and Filter
-
-### Quick Search
-Use the search function to quickly find:
-- Specific recipes by name
-- Items by category
-- Technologies by name
-- Buildings by type
-
-### Filtering Options
-- **By Category** - Filter by item type or building category
-- **By Tier** - Filter by technology level
-- **By Mod** - Filter by source mod (Angel's, Bob's, etc.)
-- **By Usage** - Filter by common use cases
-
-## Data Accuracy
-
-### Version Information
-- **Mod Versions** - Compatible with latest SeaBlock mod pack
-- **Last Updated** - Regular updates with new mod versions
-- **Change Log** - Track changes and updates
-
-### Contributing Data
-- **Report Errors** - Help us maintain accuracy
-- **Suggest Additions** - Missing information
-- **Update Information** - Keep data current
-- **Community Input** - Player-tested information
-
-## Mobile Reference
-
-### Mobile-Friendly Design
-- **Responsive Layout** - Works on all devices
-- **Quick Access** - Fast loading and navigation
-- **Offline Capable** - Works without internet connection
-- **Search Function** - Quick lookups while playing
-
-### Integration with Game
-- **Alt+Tab Friendly** - Easy switching between game and wiki
-- **Bookmark System** - Save frequently used pages
-- **Print-Friendly** - Generate PDFs for offline reference
-
----
-
-*This reference section is constantly updated with the latest mod versions and community feedback. If you find any errors or have suggestions for improvement, please contribute using our [WYSIWYG Editor](/editor/) or visit our [GitHub repository](https://github.com/SeaBlock/SeaBlock).*
-
+## Why This Matters
+In-game, recipes and technologies have long formal names like *“Electrolysis 2”*. Players and guides often shorten these to **numbers or nicknames**. This glossary bridges that gap so you can quickly match community discussions with in-game terms.

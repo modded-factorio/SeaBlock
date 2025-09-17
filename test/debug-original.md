@@ -14,7 +14,7 @@ hero:
       link: /getting-started/
     - theme: alt
       text: View on GitHub
-      link: https://github.com/SeaBlock/SeaBlock
+      link: https://github.com/modded-factorio/SeaBlock
 
 features:
   - title: 🚀 Getting Started
@@ -31,10 +31,10 @@ features:
     link: /editor/
   - title: 🤝 Community Driven
     details: Built by the community, for the community. Contribute your knowledge and help others learn.
-    link: https://github.com/SeaBlock/SeaBlock
+    link: https://github.com/modded-factorio/SeaBlock
   - title: 🆓 Free & Open Source
     details: Completely free to use, hosted on GitHub Pages, and open source for transparency and community contributions.
-    link: https://github.com/SeaBlock/SeaBlock
+    link: https://github.com/modded-factorio/SeaBlock
 ---
 
 ## Welcome to the SeaBlock Wiki!
@@ -61,7 +61,7 @@ Looking for specific information? Browse our [Guides](/guides/) or use the [Refe
 
 ### Contributing
 
-This wiki is open source and community-driven. Want to contribute? Use our [WYSIWYG Editor](/editor/) to make changes, or visit our [GitHub repository](https://github.com/SeaBlock/SeaBlock) to learn more about contributing.
+This wiki is open source and community-driven. Want to contribute? Use our [WYSIWYG Editor](/editor/) to make changes, or visit our [GitHub repository](https://github.com/modded-factorio/SeaBlock) to learn more about contributing.
 
 ---
 

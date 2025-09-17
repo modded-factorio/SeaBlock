@@ -157,7 +157,7 @@ const onIframeLoad = () => {
 }
 
 const copyToGitHub = () => {
-  const githubUrl = `https://github.com/SeaBlock/SeaBlock/new/main?filename=content/${Date.now()}.md&value=${encodeURIComponent(markdownContent.value)}`
+  const githubUrl = `https://github.com/modded-factorio/SeaBlock/new/main?filename=content/${Date.now()}.md&value=${encodeURIComponent(markdownContent.value)}`
   window.open(githubUrl, '_blank')
 }
 

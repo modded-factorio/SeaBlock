@@ -14,6 +14,7 @@ export const configData = {
 
   // Theme configuration
   themeConfig: {
+    logo: '/seablock-header.jpg',
     // GitHub repository
     repo: 'modded-factorio/seablock',
     repoLabel: 'GitHub',
@@ -66,7 +67,7 @@ export const configData = {
     socialLinks: [
       { icon: 'github', link: 'https://github.com/modded-factorio/SeaBlock' },
       { icon: 'reddit', link: 'https://www.reddit.com/r/SeaBlock' },
-      { icon: 'discord', link: 'https://discord.gg/0lErw1dQK2Uo9H8y' }
+      { icon: 'discord', link: 'https://discord.com/invite/zq63yqp' }
     ],
 
     // Footer
