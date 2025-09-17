@@ -32,6 +32,7 @@ Surviving the early game in SeaBlock is about learning how to turn water and a f
 - **Complete the Quests**: Crush stiratite, farm green algae, craft a basic circuit board, and build a lab.
 - **Research Automation**: Unlocks assembling machines and inserters.
 - **Next Targets**: Wood Processing 2 (charcoal), Green Algae Processing (Algae II), Slag Processing, and Water Treatment (Washing).
+- **Land Expansion**: Use washing plants to generate landfill more efficiently.
 
 At this stage you should have:
 - Basic copper and iron plate production

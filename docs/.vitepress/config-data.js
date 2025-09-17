@@ -10,7 +10,7 @@ export const configData = {
   base: '/SeaBlock/',
 
   // Head configuration
-  head: [['link', { rel: 'icon', href: '/favicon.ico' }]],
+  head: [['link', { rel: 'icon', href: 'favicon.ico' }]],
 
   // Theme configuration
   themeConfig: {
