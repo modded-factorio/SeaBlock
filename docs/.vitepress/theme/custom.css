@@ -1,0 +1,86 @@
+/* Custom theme styles for SeaBlock Wiki */
+
+:root {
+  /* SeaBlock brand colors */
+  --vp-c-brand-1: #00d4aa;
+  --vp-c-brand-2: #00b894;
+  --vp-c-brand-3: #00a085;
+  
+  /* Custom accent colors */
+  --vp-c-accent-1: #fdcb6e;
+  --vp-c-accent-2: #e17055;
+  --vp-c-accent-3: #6c5ce7;
+}
+
+/* Dark mode brand colors */
+.dark {
+  --vp-c-brand-1: #00d4aa;
+  --vp-c-brand-2: #00b894;
+  --vp-c-brand-3: #00a085;
+}
+
+/* Custom component styles */
+.vp-doc h1 {
+  background: linear-gradient(135deg, var(--vp-c-brand-1), var(--vp-c-accent-1));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* WYSIWYG Editor Integration */
+.wysiwyg-editor {
+  border: 2px solid var(--vp-c-brand-1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.wysiwyg-editor .editor-pane {
+  border-right: 1px solid var(--vp-c-border);
+}
+
+.wysiwyg-editor .preview-pane {
+  background: var(--vp-c-bg);
+}
+
+/* Recipe cards */
+.recipe-card {
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  background: var(--vp-c-bg-soft);
+}
+
+.recipe-card h3 {
+  color: var(--vp-c-brand-1);
+  margin-top: 0;
+}
+
+/* Technology tree styling */
+.tech-tree {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.tech-node {
+  border: 2px solid var(--vp-c-border);
+  border-radius: 8px;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.tech-node:hover {
+  border-color: var(--vp-c-brand-1);
+  transform: translateY(-2px);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tech-tree {
+    grid-template-columns: 1fr;
+  }
+}
+

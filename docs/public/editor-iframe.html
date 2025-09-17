@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+  <head>
+    <!-- Load VitePress CSS -->
+    <link rel="stylesheet" href="/SeaBlock-wiki/assets/vitepress-extracted-renderer.css" />
+    <script>
+      console.log('Iframe script loaded')
+
+      let isReady = false
+
+      // Send ready message immediately
+      window.parent.postMessage({ type: 'iframe-ready' }, '*')
+      isReady = true
+
+      let renderer = null
+
+      window.addEventListener('message', async function (event) {
+        console.log('Iframe received message:', event.data)
+
+        if (event.data.type === 'update-markdown') {
+          const { markdown, isDark, vueBundlePath } = event.data
+          console.log('Updating iframe with markdown, length:', markdown.length)
+
+          try {
+            // Load our VitePressExtractedRenderer if not already loaded
+            if (!renderer) {
+              // Load VitePress extracted renderer
+              if (!window.VitePressExtractedRenderer) {
+                console.log('Loading VitePress extracted renderer...')
+                try {
+                  const module = await import(
+                    '/SeaBlock-wiki/assets/vitepress-extracted-renderer.js'
+                  )
+                  const VitePressExtractedRenderer =
+                    module.VitePressExtractedRenderer || window.VitePressExtractedRenderer
+                  window.VitePressExtractedRenderer = VitePressExtractedRenderer
+                  console.log('VitePress extracted renderer loaded')
+                } catch (error) {
+                  console.error('Failed to load VitePress extracted renderer:', error)
+                  throw new Error('VitePress extracted renderer not available')
+                }
+              }
+
+              // Create renderer instance
+              renderer = new window.VitePressExtractedRenderer({
+                base: '/SeaBlock-wiki/'
+              })
+              console.log('VitePress extracted renderer created and initialized')
+            }
+
+            // Clean up previous mount if exists
+            if (renderer.mountedApp) {
+              renderer.cleanup()
+            }
+
+            // Mount the new content
+            await renderer.mountVitePressPage(document.getElementById('app'), {
+              markdown: markdown,
+              isDark: isDark
+            })
+
+            console.log('Markdown rendered successfully')
+
+            // Notify parent that content was updated
+            window.parent.postMessage({ type: 'content-updated' }, '*')
+          } catch (error) {
+            console.error('Error rendering markdown:', error)
+            document.body.innerHTML = `<div style="padding: 2rem; color: #ef4444;">Error rendering content: ${error.message}</div>`
+          }
+        }
+      })
+
+      // Handle errors
+      window.addEventListener('error', function (event) {
+        console.error('Iframe error:', event.error)
+        window.parent.postMessage(
+          {
+            type: 'iframe-error',
+            error: event.error?.message || 'Unknown error'
+          },
+          '*'
+        )
+      })
+    </script>
+  </head>
+  <body>
+    <div id="app">
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 100vh;
+          font-size: 1.2rem;
+          color: #6b7280;
+        "
+      >
+        Loading VitePress Preview...
+      </div>
+    </div>
+  </body>
+</html>

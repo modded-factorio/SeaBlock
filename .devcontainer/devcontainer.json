@@ -1,0 +1,43 @@
+{
+  "name": "SeaBlock Wiki Development",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:18",
+  "features": {
+    "ghcr.io/devcontainers/features/git:1": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vue.volar",
+        "vue.vscode-typescript-vue-plugin",
+        "bradlc.vscode-tailwindcss",
+        "esbenp.prettier-vscode",
+        "ms-vscode.vscode-json",
+        "yzhang.markdown-all-in-one",
+        "ms-vscode.vscode-markdown"
+      ],
+      "settings": {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "typescript.preferences.importModuleSpecifier": "relative",
+        "vue.codeActions.enabled": true,
+        "vue.complete.casing.tags": "kebab",
+        "vue.complete.casing.props": "camel"
+      }
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "forwardPorts": [5173, 3000],
+  "portsAttributes": {
+    "5173": {
+      "label": "VitePress Dev Server",
+      "onAutoForward": "notify"
+    },
+    "3000": {
+      "label": "WYSIWYG Editor",
+      "onAutoForward": "notify"
+    }
+  },
+  "remoteUser": "node"
+}
+
