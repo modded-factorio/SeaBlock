@@ -157,7 +157,23 @@ const onIframeLoad = () => {
 }
 
 const copyToGitHub = () => {
-  const githubUrl = `https://github.com/modded-factorio/SeaBlock/new/main?filename=content/${Date.now()}.md&value=${encodeURIComponent(markdownContent.value)}`
+  let pagePath = window.location.pathname
+  // Remove base if present
+  const base = '/SeaBlock/'
+  if (pagePath.startsWith(base)) pagePath = pagePath.slice(base.length)
+  // Remove leading slash
+  if (pagePath.startsWith('/')) pagePath = pagePath.slice(1)
+  // If empty, set to index.md
+  if (!pagePath) {
+    pagePath = 'index.md'
+  } else if (pagePath.endsWith('/')) {
+    pagePath += 'index.md'
+  } else if (!pagePath.endsWith('.md')) {
+    pagePath += '.md'
+  }
+  // Always prefix with docs/
+  pagePath = 'docs/' + pagePath
+  const githubUrl = `https://github.com/modded-factorio/SeaBlock/new/wiki?filename=${pagePath}&value=${encodeURIComponent(markdownContent.value)}`
   window.open(githubUrl, '_blank')
 }
 
