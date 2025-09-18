@@ -1,4 +1,4 @@
-# Guides: Multiplier
+# Multiplier
 
 ## Why use a tech research multiplier?
 

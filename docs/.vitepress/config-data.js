@@ -27,7 +27,7 @@ export const configData = {
       { text: 'Reference', link: '/reference/' }
     ],
 
-    // Sidebar
+    // Sidebar hardcoded here for the editor
     sidebar: {
       '/getting-started/': [
         {
