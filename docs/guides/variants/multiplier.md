@@ -13,7 +13,7 @@ Seablock is a complex overhaul mod. If you’re new to this type of mod, it’s 
 To apply the multiplier to FTL technologies, open the "Settings / Mod settings" screen at startup and make sure to uncheck "SpaceX ignore tech price multiplier".
 
 <div style="text-align: center; max-width: 852px; margin: 1em auto;">
-  <img src="../../reference/public/images/Mod_settings_for_applying_the_multiplier.png" alt="Unchecking this box allows the multiplier to be applied to the FTL techs" style="max-width: 100%; height: auto; cursor: zoom-in;" />
+  <img src="/images/Mod_settings_for_applying_the_multiplier.png" alt="Unchecking this box allows the multiplier to be applied to the FTL techs" style="max-width: 100%; height: auto; cursor: zoom-in;" />
   <div style="font-style: italic; font-size: 0.95em; margin-top: 0.5em;">
     Unchecking this box lets the multiplier affect FTL techs
   </div>
@@ -24,7 +24,7 @@ To apply the multiplier to FTL technologies, open the "Settings / Mod settings" 
 When starting a new game, go to the "Advanced" tab and enter your desired value in the "Price multiplier" field.
 
 <div style="text-align: center; max-width: 449px; margin: 1em auto;">
-  <img src="../../reference/public/images/New_game_screen.png" alt="New game screen" style="max-width: 100%; height: auto; cursor: zoom-in;" />
+  <img src="/images/New_game_screen.png" alt="New game screen" style="max-width: 100%; height: auto; cursor: zoom-in;" />
 </div>
 
 ### Existing saves
@@ -50,14 +50,14 @@ For multiplayer, edit the `technology_price_multiplier` key in `./data/map-setti
 The multiplier starts applying to technologies after "Water Treatment".
 
 <div style="text-align: center; max-width: 543px; margin: 1em auto;">
-  <img src="../../reference/public/images/Tech_tree_up_to_water_treatment.png" alt="Tech tree up to water treatment" style="max-width: 100%; height: auto; cursor: zoom-in;" />
+  <img src="/images/Tech_tree_up_to_water_treatment.png" alt="Tech tree up to water treatment" style="max-width: 100%; height: auto; cursor: zoom-in;" />
   <div style="font-style: italic; font-size: 0.95em; margin-top: 0.5em;">
     Techs up to Water Treatment use the default 1x multiplier
   </div>
 </div>
 
 <div style="text-align: center; max-width: 549px; margin: 1em auto;">
-  <img src="../../reference/public/images/Water-treatment.png" alt="Water-treatment" style="max-width: 100%; height: auto; cursor: zoom-in;" />
+  <img src="/images/Water-treatment.png" alt="Water-treatment" style="max-width: 100%; height: auto; cursor: zoom-in;" />
   <div style="font-style: italic; font-size: 0.95em; margin-top: 0.5em;">
     Example: tech cost with 100x multiplier
   </div>
@@ -66,7 +66,7 @@ The multiplier starts applying to technologies after "Water Treatment".
 For example, if a tech normally costs 30, setting the multiplier to 10x will make it cost 300.
 
 <div style="text-align: center; max-width: 549px; margin: 1em auto;">
-  <img src="../../reference/public/images/100x-endgame-cost.png" alt="100x-endgame-cost" style="max-width: 100%; height: auto; cursor: zoom-in;" />
+  <img src="/images/100x-endgame-cost.png" alt="100x-endgame-cost" style="max-width: 100%; height: auto; cursor: zoom-in;" />
   <div style="font-style: italic; font-size: 0.95em; margin-top: 0.5em;">
     The final tech costs 20 million with a 100x multiplier
   </div>

@@ -15,7 +15,7 @@ Helmod is a reliable calculator included in the Sea Block Pack, and Kiwi is work
 ## Circular Recipes (Recycling Outputs)
 
 <div style="float: right; margin-left: 2em; max-width: 340px; text-align: center;">
-  <img src="./public/images/charcoal_using_slag_1.png" alt="Ctrl+Click on Charcoal in Matrix Mode because it's produced and used within the block. Helmod may not automatically recycle the output." style="max-width: 100%; height: auto; cursor: zoom-in;" onclick="document.getElementById('charcoal-dialog').showModal()" />
+  <img src="/images/charcoal_using_slag_1.png" alt="Ctrl+Click on Charcoal in Matrix Mode because it's produced and used within the block. Helmod may not automatically recycle the output." style="max-width: 100%; height: auto; cursor: zoom-in;" onclick="document.getElementById('charcoal-dialog').showModal()" />
   <div style="font-style: italic; font-size: 0.95em; margin-top: 0.5em;">
     Ctrl+Click on Charcoal in Matrix Mode if it’s both produced and consumed in the block, since Helmod may not recycle outputs automatically.
   </div>
@@ -23,7 +23,7 @@ Helmod is a reliable calculator included in the Sea Block Pack, and Kiwi is work
 
 <dialog id="charcoal-dialog" style="padding:0; border:none; background:transparent;" onclick="if(event.target === this) this.close()">
   <div style="background:white; border-radius:8px; box-shadow:0 2px 16px rgba(0,0,0,0.3); padding:1em; text-align:center;">
-    <img src="./public/images/charcoal_using_slag_1.png" alt="Charcoal in Matrix Mode" style="max-width:90vw; max-height:80vh;" />
+    <img src="/images/charcoal_using_slag_1.png" alt="Charcoal in Matrix Mode" style="max-width:90vw; max-height:80vh;" />
     <div style="margin-top:0.5em; font-style:italic; font-size:1em;">Click anywhere outside the image to close.</div>
   </div>
 </dialog>
