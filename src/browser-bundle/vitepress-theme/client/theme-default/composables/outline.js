@@ -1,0 +1,1 @@
+../../../../../../node_modules/vitepress/dist/client/theme-default/composables/outline.js

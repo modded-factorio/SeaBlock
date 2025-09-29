@@ -1,0 +1,20 @@
+# GitHub Pages headers configuration
+# This file configures HTTP headers for GitHub Pages
+
+# WASM files - required for Shiki syntax highlighting
+/*.wasm
+  Cross-Origin-Embedder-Policy: require-corp
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: cross-origin
+
+# JavaScript files
+/*.js
+  Cross-Origin-Resource-Policy: cross-origin
+
+# JSON files (themes)
+/*.json
+  Cross-Origin-Resource-Policy: cross-origin
+
+# CSS files
+/*.css
+  Cross-Origin-Resource-Policy: cross-origin
