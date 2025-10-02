@@ -55,6 +55,7 @@ export const configData = {
           text: 'Reference',
           items: [
             { text: 'Overview', link: '/reference/' },
+            { text: 'Factoriopedia', link: '/reference/factoriopedia' },
             { text: 'Recipes', link: '/reference/recipes' },
             { text: 'Technologies', link: '/reference/technologies' },
             { text: 'Items', link: '/reference/items' }

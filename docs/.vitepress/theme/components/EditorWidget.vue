@@ -1,30 +1,51 @@
 <template>
-  <div v-if="isVisible" class="editor-widget">
-    <div class="editor-overlay" @click="closeEditor"></div>
+  <div
+    v-if="isVisible"
+    class="editor-widget"
+  >
+    <div
+      class="editor-overlay"
+      @click="closeEditor"
+    />
     <div class="editor-container">
       <div class="editor-header">
         <h3>🚀 VitePress Browser Editor</h3>
-        <div class="renderer-status">{{ rendererStatus }}</div>
-        <button @click="closeEditor" class="close-btn">×</button>
+        <div class="renderer-status">
+          {{ rendererStatus }}
+        </div>
+        <button
+          class="close-btn"
+          @click="closeEditor"
+        >
+          ×
+        </button>
       </div>
 
       <div class="editor-content">
         <div class="editor-pane">
-          <div class="pane-header">Markdown Source</div>
+          <div class="pane-header">
+            Markdown Source
+          </div>
           <textarea
             v-model="markdownContent"
             class="markdown-editor"
             placeholder="Enter your markdown content here..."
             @input="updatePreview"
-          ></textarea>
+          />
         </div>
 
-        <div class="splitter" @mousedown="startResize"></div>
+        <div
+          class="splitter"
+          @mousedown="startResize"
+        />
 
         <div class="preview-pane">
           <div class="pane-header">
             VitePress Preview
-            <span v-if="isProcessing" class="processing-indicator">⏳ Processing...</span>
+            <span
+              v-if="isProcessing"
+              class="processing-indicator"
+            >⏳ Processing...</span>
           </div>
           <iframe
             ref="previewFrame"
@@ -33,29 +54,47 @@
             sandbox="allow-scripts allow-same-origin allow-downloads"
             title="VitePress Preview"
             @load="onIframeLoad"
-          ></iframe>
+          />
         </div>
       </div>
 
       <div class="editor-footer">
         <div class="editor-actions">
-          <button @click="copyToGitHub" class="btn btn-primary">📋 Copy to GitHub</button>
-          <button @click="toggleTheme" class="btn btn-secondary">
+          <button
+            class="btn btn-primary"
+            @click="copyToGitHub"
+          >
+            📋 Copy to GitHub
+          </button>
+          <button
+            class="btn btn-secondary"
+            @click="toggleTheme"
+          >
             {{ isDark ? '☀️ Light' : '🌙 Dark' }}
           </button>
-          <button @click="updatePreview" class="btn btn-secondary">🔄 Update Preview</button>
-          <button @click="fullscreenPreview" class="btn btn-secondary">
+          <button
+            class="btn btn-secondary"
+            @click="updatePreview"
+          >
+            🔄 Update Preview
+          </button>
+          <button
+            class="btn btn-secondary"
+            @click="fullscreenPreview"
+          >
             {{ isFullscreen ? '📱 Exit Fullscreen' : '🔍 Fullscreen' }}
           </button>
         </div>
-        <div class="editor-status">{{ markdownContent.length }} characters</div>
+        <div class="editor-status">
+          {{ markdownContent.length }} characters
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted, nextTick } from 'vue'
+import { ref, onMounted, onUnmounted, nextTick } from 'vue'
 
 // Props
 const props = defineProps({
@@ -102,7 +141,7 @@ const updatePreview = async () => {
           type: 'update-markdown',
           markdown: markdownContent.value,
           isDark: isDark.value,
-          vueBundlePath: vueBundlePath
+          vueBundlePath
         }
         console.log('Sending raw markdown to iframe with Vue bundle path:', vueBundlePath)
         previewFrame.value.contentWindow.postMessage(message, '*')
@@ -172,7 +211,7 @@ const copyToGitHub = () => {
     pagePath += '.md'
   }
   // Always prefix with docs/
-  pagePath = 'docs/' + pagePath
+  pagePath = `docs/${  pagePath}`
   const githubUrl = `https://github.com/modded-factorio/SeaBlock/new/wiki?filename=${pagePath}&value=${encodeURIComponent(markdownContent.value)}`
   window.open(githubUrl, '_blank')
 }
@@ -260,7 +299,7 @@ onMounted(async () => {
   console.log('  - Initial content available:', !!props.initialContent)
   if (props.initialContent) {
     console.log('  - Initial content length:', props.initialContent.length)
-    console.log('  - Initial content preview:', props.initialContent.substring(0, 100) + '...')
+    console.log('  - Initial content preview:', `${props.initialContent.substring(0, 100)  }...`)
     console.log('  - Content type:', typeof props.initialContent)
     console.log('  - Has frontmatter:', props.initialContent.startsWith('---'))
   } else {
@@ -307,7 +346,7 @@ defineExpose({
     if (props.initialContent) {
       markdownContent.value = props.initialContent
       console.log('  - Content loaded, length:', props.initialContent.length)
-      console.log('  - Content preview:', props.initialContent.substring(0, 150) + '...')
+      console.log('  - Content preview:', `${props.initialContent.substring(0, 150)  }...`)
     } else {
       console.log('  - No initial content, starting with empty editor')
       markdownContent.value = ''

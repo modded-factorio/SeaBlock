@@ -8,10 +8,11 @@
     "build": "vitepress build docs",
     "preview": "vitepress preview docs",
     "build:browser": "vite build --config vite.extracted.config.js",
-    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md",
-    "lint:fix": "eslint . --ext .vue,.js,.ts,.jsx,.tsx,.md --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
-    "type-check": "vue-tsc --noEmit"
+    "type-check": "vue-tsc --noEmit",
+    "process-data": "node scripts/process-factorio-data.js"
   },
   "dependencies": {
     "@mdit-vue/plugin-component": "^2.1.4",
@@ -53,6 +54,10 @@
     "constants-browserify": "^1.0.0",
     "crypto-browserify": "^3.12.1",
     "eslint": "^8.53.0",
+    "eslint-plugin-import": "^2.32.0",
+    "gifencoder": "^2.0.1",
+    "canvas": "^3.2.0",
+    "eslint-plugin-unused-imports": "^4.2.0",
     "eslint-plugin-vue": "^9.18.1",
     "events": "^3.3.0",
     "fs.promises": "^0.1.2",
@@ -64,6 +69,7 @@
     "prettier": "^3.1.0",
     "process": "^0.11.10",
     "querystring-es3": "^0.2.1",
+    "sharp": "^0.34.4",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "string_decoder": "^1.3.0",

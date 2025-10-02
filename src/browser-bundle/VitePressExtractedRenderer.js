@@ -56,6 +56,9 @@ import { siteData } from '../site-data.js'
 import '@vitepress/theme/custom.css'
 import '@vitepress/theme/editor-styles.css'
 
+// Import Tooltip component
+import Tooltip from '../../docs/.vitepress/components/Tooltip.vue'
+
 // VitePress Extracted Browser Bundle Renderer
 class VitePressExtractedRenderer {
   constructor(options = {}) {
@@ -311,6 +314,9 @@ class VitePressExtractedRenderer {
     })
 
     const app = createApp(VitePressApp)
+
+    // Register global components
+    app.component('Tooltip', Tooltip)
 
     // Provide the symbols at the app level for proper injection
     app.provide(RouterSymbol, router)

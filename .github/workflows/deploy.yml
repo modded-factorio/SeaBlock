@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [wiki]
+    branches: ['**']
   pull_request:
     branches: [wiki]
 
@@ -44,7 +44,7 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    if: github.ref == 'refs/heads/wiki'
+    if: github.ref == 'refs/heads/wiki' || github.event_name == 'push'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

@@ -4,10 +4,17 @@
     <DefaultLayout>
       <template #layout-bottom>
         <!-- Editor Widget -->
-        <EditorWidget ref="editorWidget" :initial-content="currentPageMarkdown" />
+        <EditorWidget
+          ref="editorWidget"
+          :initial-content="currentPageMarkdown"
+        />
 
         <!-- Floating Editor Button -->
-        <button @click="openEditor" class="editor-toggle-btn" title="Open WYSIWYG Editor (Ctrl+E)">
+        <button
+          class="editor-toggle-btn"
+          title="Open WYSIWYG Editor (Ctrl+E)"
+          @click="openEditor"
+        >
           ✏️
         </button>
       </template>
@@ -19,6 +26,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useData } from 'vitepress'
 import DefaultLayout from 'vitepress/dist/client/theme-default/Layout.vue'
+
 import EditorWidget from './components/EditorWidget.vue'
 
 const editorWidget = ref(null)
@@ -72,7 +80,7 @@ onMounted(() => {
   console.log('  - Editor metadata:', editorMetadata.value)
 
   if (currentPageMarkdown.value) {
-    console.log('  - Content preview:', currentPageMarkdown.value.substring(0, 100) + '...')
+    console.log('  - Content preview:', `${currentPageMarkdown.value.substring(0, 100)  }...`)
     console.log('  - Has frontmatter:', editorMetadata.value.hasFrontmatter)
     console.log('  - Page path:', editorMetadata.value.pagePath)
   }

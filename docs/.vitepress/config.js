@@ -1,7 +1,9 @@
-import { defineConfig } from 'vitepress'
-import { configData } from './config-data.js'
 import { readFileSync, readdirSync, statSync } from 'fs'
 import { resolve, basename } from 'path'
+
+import { defineConfig } from 'vitepress'
+
+import { configData } from './config-data.js'
 
 // Clone the imported config data to avoid mutations
 const modifiedConfigData = { ...configData }
