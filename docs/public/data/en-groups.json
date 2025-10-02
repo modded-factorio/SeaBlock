@@ -1,0 +1,1194 @@
+{
+  "logistics": {
+    "type": "item-group",
+    "name": "logistics",
+    "order": "a",
+    "icon": "spritemap:item-group-logistics",
+    "icon_size": 128,
+    "displayName": "Logistics",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "storage",
+        "group": "logistics",
+        "order": "a",
+        "displayName": "storage"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "belt",
+        "group": "logistics",
+        "order": "b",
+        "displayName": "belt"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "inserter",
+        "group": "logistics",
+        "order": "c",
+        "displayName": "inserter"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "energy-pipe-distribution",
+        "group": "logistics",
+        "order": "d",
+        "displayName": "energy-pipe-distribution"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "train-transport",
+        "group": "logistics",
+        "order": "e",
+        "displayName": "train-transport"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "transport",
+        "group": "logistics",
+        "order": "f",
+        "displayName": "transport"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "logistic-network",
+        "group": "logistics",
+        "order": "g",
+        "displayName": "logistic-network"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "circuit-network",
+        "group": "logistics",
+        "order": "h",
+        "displayName": "circuit-network"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "terrain",
+        "group": "logistics",
+        "order": "i",
+        "displayName": "terrain"
+      }
+    ]
+  },
+  "production": {
+    "type": "item-group",
+    "name": "production",
+    "order": "b",
+    "icon": "spritemap:item-group-production",
+    "icon_size": 128,
+    "displayName": "Production",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "tool",
+        "group": "production",
+        "order": "a",
+        "displayName": "tool"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "energy",
+        "group": "production",
+        "order": "b",
+        "displayName": "energy"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "extraction-machine",
+        "group": "production",
+        "order": "c",
+        "displayName": "extraction-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-pump",
+        "group": "production",
+        "order": "c-b",
+        "displayName": "bob-pump"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "smelting-machine",
+        "group": "production",
+        "order": "d",
+        "displayName": "smelting-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-base-smelting-machine-convert",
+        "group": "production",
+        "order": "d-2",
+        "displayName": "bob-base-smelting-machine-convert"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-smelting-machine",
+        "group": "production",
+        "order": "d-a",
+        "displayName": "bob-smelting-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-smelting-machine-convert",
+        "group": "production",
+        "order": "d-a-2",
+        "displayName": "bob-smelting-machine-convert"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "production-machine",
+        "group": "production",
+        "order": "e",
+        "displayName": "production-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-production-machine",
+        "group": "production",
+        "order": "e-a",
+        "displayName": "bob-production-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-assembly-machine",
+        "group": "production",
+        "order": "e-b",
+        "displayName": "bob-assembly-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-chemical-machine",
+        "group": "production",
+        "order": "e-c",
+        "displayName": "bob-chemical-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-electrolyser-machine",
+        "group": "production",
+        "order": "e-d",
+        "displayName": "bob-electrolyser-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-refinery-machine",
+        "group": "production",
+        "order": "e-e",
+        "displayName": "bob-refinery-machine"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "module",
+        "group": "production",
+        "order": "f",
+        "displayName": "module"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "space-related",
+        "group": "production",
+        "order": "g",
+        "displayName": "space-related"
+      }
+    ]
+  },
+  "intermediate-products": {
+    "type": "item-group",
+    "name": "intermediate-products",
+    "order": "c",
+    "order_in_recipe": "0",
+    "icon": "spritemap:item-group-intermediate-products",
+    "icon_size": 128,
+    "displayName": "Intermediate products",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "science-pack",
+        "group": "intermediate-products",
+        "order": "a",
+        "displayName": "science-pack"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "raw-resource",
+        "group": "intermediate-products",
+        "order": "b",
+        "displayName": "raw-resource"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-gears",
+        "group": "intermediate-products",
+        "order": "b-a",
+        "displayName": "bob-gears"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-bearings",
+        "group": "intermediate-products",
+        "order": "b-b",
+        "displayName": "bob-bearings"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "raw-material",
+        "group": "intermediate-products",
+        "order": "c",
+        "displayName": "raw-material"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "intermediate-product",
+        "group": "intermediate-products",
+        "order": "c",
+        "displayName": "intermediate-product"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-electronic-components",
+        "group": "intermediate-products",
+        "order": "e-a2",
+        "displayName": "bob-electronic-components"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-boards",
+        "group": "intermediate-products",
+        "order": "e-a3",
+        "displayName": "bob-boards"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-electronic-boards",
+        "group": "intermediate-products",
+        "order": "e-a4",
+        "displayName": "bob-electronic-boards"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-fuel-cells",
+        "group": "intermediate-products",
+        "order": "e-e3",
+        "displayName": "bob-fuel-cells"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "intermediate-recipe",
+        "group": "intermediate-products",
+        "order": "h",
+        "displayName": "intermediate-recipe"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "uranium-processing",
+        "group": "intermediate-products",
+        "order": "i",
+        "displayName": "uranium-processing"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "internal-process",
+        "group": "intermediate-products",
+        "order": "z",
+        "displayName": "internal-process"
+      }
+    ]
+  },
+  "combat": {
+    "type": "item-group",
+    "name": "combat",
+    "order": "e",
+    "icon": "spritemap:item-group-combat",
+    "icon_size": 128,
+    "displayName": "Combat",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "gun",
+        "group": "combat",
+        "order": "a",
+        "displayName": "gun"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "ammo",
+        "group": "combat",
+        "order": "b",
+        "displayName": "ammo"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "capsule",
+        "group": "combat",
+        "order": "c",
+        "displayName": "capsule"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "armor",
+        "group": "combat",
+        "order": "d",
+        "displayName": "armor"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "equipment",
+        "group": "combat",
+        "order": "e",
+        "displayName": "equipment"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "utility-equipment",
+        "group": "combat",
+        "order": "f",
+        "displayName": "utility-equipment"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "military-equipment",
+        "group": "combat",
+        "order": "g",
+        "displayName": "military-equipment"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "defensive-structure",
+        "group": "combat",
+        "order": "h",
+        "displayName": "defensive-structure"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "turret",
+        "group": "combat",
+        "order": "i",
+        "displayName": "turret"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "ammo-category",
+        "group": "combat",
+        "order": "j",
+        "displayName": "ammo-category"
+      }
+    ]
+  },
+  "fluids": {
+    "type": "item-group",
+    "name": "fluids",
+    "order": "f",
+    "icon": "spritemap:item-group-fluids",
+    "icon_size": 64,
+    "displayName": "Fluids",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "fluid-recipes",
+        "group": "fluids",
+        "order": "a",
+        "displayName": "fluid-recipes"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "fluid",
+        "group": "fluids",
+        "order": "a",
+        "displayName": "fluid"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-fluid-oil",
+        "group": "fluids",
+        "order": "a-b",
+        "displayName": "bob-fluid-oil"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-fluid-electrolysis",
+        "group": "fluids",
+        "order": "a-c",
+        "displayName": "bob-fluid-electrolysis"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-fluid-pump",
+        "group": "fluids",
+        "order": "a-d",
+        "displayName": "bob-fluid-pump"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-gas-bottle",
+        "group": "fluids",
+        "order": "a-e",
+        "displayName": "bob-gas-bottle"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-empty-gas-bottle",
+        "group": "fluids",
+        "order": "a-e2",
+        "displayName": "bob-empty-gas-bottle"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-barrel",
+        "group": "fluids",
+        "order": "a-f",
+        "displayName": "bob-barrel"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-empty-barrel",
+        "group": "fluids",
+        "order": "a-f2",
+        "displayName": "bob-empty-barrel"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-canister",
+        "group": "fluids",
+        "order": "a-g",
+        "displayName": "bob-canister"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-empty-canister",
+        "group": "fluids",
+        "order": "a-g2",
+        "displayName": "bob-empty-canister"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "barrel",
+        "group": "fluids",
+        "order": "d",
+        "displayName": "barrel"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "fill-barrel",
+        "group": "fluids",
+        "order": "e",
+        "displayName": "fill-barrel"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "empty-barrel",
+        "group": "fluids",
+        "order": "f",
+        "displayName": "empty-barrel"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-void",
+        "group": "fluids",
+        "order": "z",
+        "displayName": "bob-void"
+      }
+    ]
+  },
+  "signals": {
+    "type": "item-group",
+    "name": "signals",
+    "order": "g",
+    "icon": "spritemap:item-group-signals",
+    "icon_size": 128,
+    "displayName": "Signals",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "virtual-signal-special",
+        "group": "signals",
+        "order": "a",
+        "displayName": "virtual-signal-special"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "virtual-signal-number",
+        "group": "signals",
+        "order": "b",
+        "displayName": "virtual-signal-number"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "virtual-signal-letter",
+        "group": "signals",
+        "order": "c",
+        "displayName": "virtual-signal-letter"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "virtual-signal-punctuation",
+        "group": "signals",
+        "order": "cb",
+        "displayName": "virtual-signal-punctuation"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "virtual-signal-math",
+        "group": "signals",
+        "order": "cd",
+        "displayName": "virtual-signal-math"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "virtual-signal-color",
+        "group": "signals",
+        "order": "d",
+        "displayName": "virtual-signal-color"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "virtual-signal",
+        "group": "signals",
+        "order": "e",
+        "displayName": "virtual-signal"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "shapes",
+        "group": "signals",
+        "order": "f",
+        "displayName": "shapes"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "arrows",
+        "group": "signals",
+        "order": "g",
+        "displayName": "arrows"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "arrows-misc",
+        "group": "signals",
+        "order": "h",
+        "displayName": "arrows-misc"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "pictographs",
+        "group": "signals",
+        "order": "i",
+        "displayName": "pictographs"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bullets",
+        "group": "signals",
+        "order": "j",
+        "displayName": "bullets"
+      }
+    ]
+  },
+  "enemies": {
+    "type": "item-group",
+    "name": "enemies",
+    "icon": "spritemap:item-group-enemies",
+    "icon_size": 128,
+    "order": "h",
+    "displayName": "Enemies",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "enemies",
+        "group": "enemies",
+        "order": "a",
+        "displayName": "enemies"
+      }
+    ]
+  },
+  "environment": {
+    "type": "item-group",
+    "name": "environment",
+    "icon": "spritemap:item-group-environment",
+    "icon_size": 128,
+    "order": "l",
+    "displayName": "Environment",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "creatures",
+        "group": "environment",
+        "order": "a",
+        "displayName": "creatures"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "cliffs",
+        "group": "environment",
+        "order": "a",
+        "displayName": "cliffs"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "trees",
+        "group": "environment",
+        "order": "aa",
+        "displayName": "trees"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "grass",
+        "group": "environment",
+        "order": "b",
+        "displayName": "grass"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "mineable-fluids",
+        "group": "environment",
+        "order": "ba",
+        "displayName": "mineable-fluids"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "obstacles",
+        "group": "environment",
+        "order": "bb",
+        "displayName": "obstacles"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "corpses",
+        "group": "environment",
+        "order": "c",
+        "displayName": "corpses"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "storage-remnants",
+        "group": "environment",
+        "order": "da",
+        "displayName": "storage-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "belt-remnants",
+        "group": "environment",
+        "order": "db",
+        "displayName": "belt-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "inserter-remnants",
+        "group": "environment",
+        "order": "dc",
+        "displayName": "inserter-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "energy-pipe-distribution-remnants",
+        "group": "environment",
+        "order": "dd",
+        "displayName": "energy-pipe-distribution-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "train-transport-remnants",
+        "group": "environment",
+        "order": "de",
+        "displayName": "train-transport-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "transport-remnants",
+        "group": "environment",
+        "order": "df",
+        "displayName": "transport-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "logistic-network-remnants",
+        "group": "environment",
+        "order": "dg",
+        "displayName": "logistic-network-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "circuit-network-remnants",
+        "group": "environment",
+        "order": "dh",
+        "displayName": "circuit-network-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "energy-remnants",
+        "group": "environment",
+        "order": "di",
+        "displayName": "energy-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "extraction-machine-remnants",
+        "group": "environment",
+        "order": "di",
+        "displayName": "extraction-machine-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "smelting-machine-remnants",
+        "group": "environment",
+        "order": "dj",
+        "displayName": "smelting-machine-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "production-machine-remnants",
+        "group": "environment",
+        "order": "dk",
+        "displayName": "production-machine-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "defensive-structure-remnants",
+        "group": "environment",
+        "order": "dl",
+        "displayName": "defensive-structure-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "generic-remnants",
+        "group": "environment",
+        "order": "dl",
+        "displayName": "generic-remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "scorchmarks",
+        "group": "environment",
+        "order": "dm",
+        "displayName": "scorchmarks"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "remnants",
+        "group": "environment",
+        "order": "dz",
+        "displayName": "remnants"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "wrecks",
+        "group": "environment",
+        "order": "e",
+        "displayName": "wrecks"
+      }
+    ]
+  },
+  "tiles": {
+    "type": "item-group",
+    "name": "tiles",
+    "icon": "spritemap:item-group-tiles",
+    "icon_size": 128,
+    "order": "i",
+    "displayName": "Tiles",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "artificial-tiles",
+        "group": "tiles",
+        "order": "a",
+        "displayName": "artificial-tiles"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "nauvis-tiles",
+        "group": "tiles",
+        "order": "b",
+        "displayName": "nauvis-tiles"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "vulcanus-tiles",
+        "group": "tiles",
+        "order": "c",
+        "displayName": "vulcanus-tiles"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "gleba-water-tiles",
+        "group": "tiles",
+        "order": "d-a",
+        "displayName": "gleba-water-tiles"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "gleba-tiles",
+        "group": "tiles",
+        "order": "d-b",
+        "displayName": "gleba-tiles"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "fulgora-tiles",
+        "group": "tiles",
+        "order": "e",
+        "displayName": "fulgora-tiles"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "aquilo-tiles",
+        "group": "tiles",
+        "order": "f",
+        "displayName": "aquilo-tiles"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "special-tiles",
+        "group": "tiles",
+        "order": "g",
+        "displayName": "special-tiles"
+      }
+    ]
+  },
+  "effects": {
+    "type": "item-group",
+    "name": "effects",
+    "icon": "spritemap:item-group-effects",
+    "icon_size": 128,
+    "order": "y",
+    "displayName": "Effects",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "storage-explosions",
+        "group": "effects",
+        "order": "aa",
+        "displayName": "storage-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "belt-explosions",
+        "group": "effects",
+        "order": "ab",
+        "displayName": "belt-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "inserter-explosions",
+        "group": "effects",
+        "order": "ac",
+        "displayName": "inserter-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "energy-pipe-distribution-explosions",
+        "group": "effects",
+        "order": "ad",
+        "displayName": "energy-pipe-distribution-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "train-transport-explosions",
+        "group": "effects",
+        "order": "ae",
+        "displayName": "train-transport-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "transport-explosions",
+        "group": "effects",
+        "order": "af",
+        "displayName": "transport-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "logistic-network-explosions",
+        "group": "effects",
+        "order": "ag",
+        "displayName": "logistic-network-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "circuit-network-explosions",
+        "group": "effects",
+        "order": "ah",
+        "displayName": "circuit-network-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "energy-explosions",
+        "group": "effects",
+        "order": "ba",
+        "displayName": "energy-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "extraction-machine-explosions",
+        "group": "effects",
+        "order": "bb",
+        "displayName": "extraction-machine-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "smelting-machine-explosions",
+        "group": "effects",
+        "order": "bc",
+        "displayName": "smelting-machine-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "production-machine-explosions",
+        "group": "effects",
+        "order": "bd",
+        "displayName": "production-machine-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "module-explosions",
+        "group": "effects",
+        "order": "be",
+        "displayName": "module-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "campaign-explosions",
+        "group": "effects",
+        "order": "bf",
+        "displayName": "campaign-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "gun-explosions",
+        "group": "effects",
+        "order": "ca",
+        "displayName": "gun-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "defensive-structure-explosions",
+        "group": "effects",
+        "order": "cb",
+        "displayName": "defensive-structure-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "capsule-explosions",
+        "group": "effects",
+        "order": "cc",
+        "displayName": "capsule-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "tree-explosions",
+        "group": "effects",
+        "order": "cd",
+        "displayName": "tree-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "rock-explosions",
+        "group": "effects",
+        "order": "da",
+        "displayName": "rock-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "ground-explosions",
+        "group": "effects",
+        "order": "db",
+        "displayName": "ground-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "decorative-explosions",
+        "group": "effects",
+        "order": "dc",
+        "displayName": "decorative-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "enemy-death-explosions",
+        "group": "effects",
+        "order": "de",
+        "displayName": "enemy-death-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "fluid-explosions",
+        "group": "effects",
+        "order": "df",
+        "displayName": "fluid-explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "explosions",
+        "group": "effects",
+        "order": "dg",
+        "displayName": "explosions"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "hit-effects",
+        "group": "effects",
+        "order": "e",
+        "displayName": "hit-effects"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "particles",
+        "group": "effects",
+        "order": "e",
+        "displayName": "particles"
+      }
+    ]
+  },
+  "other": {
+    "type": "item-group",
+    "name": "other",
+    "icon": "spritemap:item-group-other",
+    "icon_size": 128,
+    "order": "z",
+    "displayName": "Unsorted",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "parameters",
+        "group": "other",
+        "order": "a",
+        "displayName": "parameters"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "qualities",
+        "group": "other",
+        "order": "b",
+        "displayName": "qualities"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "spawnables",
+        "group": "other",
+        "order": "c",
+        "displayName": "spawnables"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "other",
+        "group": "other",
+        "order": "d",
+        "displayName": "other"
+      }
+    ]
+  },
+  "bob-resource-products": {
+    "type": "item-group",
+    "name": "bob-resource-products",
+    "order": "c-g",
+    "icon": "spritemap:item-group-bob-resource-products",
+    "icon_size": 64,
+    "displayName": "Materials",
+    "subgroups": [
+      {
+        "type": "item-subgroup",
+        "name": "bob-ores",
+        "group": "bob-resource-products",
+        "order": "b-a",
+        "displayName": "bob-ores"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-chemical-fuels",
+        "group": "bob-resource-products",
+        "order": "b-a1",
+        "displayName": "bob-chemical-fuels"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-resource",
+        "group": "bob-resource-products",
+        "order": "b-b",
+        "displayName": "bob-resource"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-resource-chemical",
+        "group": "bob-resource-products",
+        "order": "b-b-a",
+        "displayName": "bob-resource-chemical"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-material",
+        "group": "bob-resource-products",
+        "order": "c-a",
+        "displayName": "bob-material"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-material-smelting",
+        "group": "bob-resource-products",
+        "order": "c-a-a",
+        "displayName": "bob-material-smelting"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-material-chemical",
+        "group": "bob-resource-products",
+        "order": "c-a-b",
+        "displayName": "bob-material-chemical"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-material-electrolysis",
+        "group": "bob-resource-products",
+        "order": "c-a-c",
+        "displayName": "bob-material-electrolysis"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-alloy",
+        "group": "bob-resource-products",
+        "order": "c-b",
+        "displayName": "bob-alloy"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-alien-resource",
+        "group": "bob-resource-products",
+        "order": "c-c",
+        "displayName": "bob-alien-resource"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-gems-ore",
+        "group": "bob-resource-products",
+        "order": "c-d",
+        "displayName": "bob-gems-ore"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-gems-raw",
+        "group": "bob-resource-products",
+        "order": "c-e",
+        "displayName": "bob-gems-raw"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-gems-cut",
+        "group": "bob-resource-products",
+        "order": "c-f",
+        "displayName": "bob-gems-cut"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-gems-polished",
+        "group": "bob-resource-products",
+        "order": "c-g",
+        "displayName": "bob-gems-polished"
+      },
+      {
+        "type": "item-subgroup",
+        "name": "bob-nuclear",
+        "group": "bob-resource-products",
+        "order": "c-h",
+        "displayName": "bob-nuclear"
+      }
+    ]
+  }
+}

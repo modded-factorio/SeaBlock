@@ -1,0 +1,1167 @@
+{
+  "fluid-unknown": {
+    "type": "fluid",
+    "name": "fluid-unknown",
+    "icon": "spritemap:fluid-fluid-unknown",
+    "base_color": {},
+    "flow_color": {},
+    "hidden": true,
+    "default_temperature": 0,
+    "max_temperature": 0,
+    "auto_barrel": false,
+    "displayName": "Unknown fluid",
+    "description": "This fluid is not available due to mod removal, it will be restored if the mod is re-enabled.",
+    "tooltip": {
+      "title": "Unknown fluid",
+      "description": "This fluid is not available due to mod removal, it will be restored if the mod is re-enabled.",
+      "icon": "spritemap:fluid-fluid-unknown",
+      "details": [
+        "Default temperature: 0°C",
+        "Max temperature: 0°C"
+      ]
+    }
+  },
+  "parameter-0": {
+    "type": "fluid",
+    "name": "parameter-0",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "0"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-0",
+    "order": "a",
+    "displayName": "Parameter 0",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 0",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-0",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-1": {
+    "type": "fluid",
+    "name": "parameter-1",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "1"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-1",
+    "order": "a",
+    "displayName": "Parameter 1",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 1",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-1",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-2": {
+    "type": "fluid",
+    "name": "parameter-2",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "2"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-2",
+    "order": "a",
+    "displayName": "Parameter 2",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 2",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-2",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-3": {
+    "type": "fluid",
+    "name": "parameter-3",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "3"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-3",
+    "order": "a",
+    "displayName": "Parameter 3",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 3",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-3",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-4": {
+    "type": "fluid",
+    "name": "parameter-4",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "4"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-4",
+    "order": "a",
+    "displayName": "Parameter 4",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 4",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-4",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-5": {
+    "type": "fluid",
+    "name": "parameter-5",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "5"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-5",
+    "order": "a",
+    "displayName": "Parameter 5",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 5",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-5",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-6": {
+    "type": "fluid",
+    "name": "parameter-6",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "6"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-6",
+    "order": "a",
+    "displayName": "Parameter 6",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 6",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-6",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-7": {
+    "type": "fluid",
+    "name": "parameter-7",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "7"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-7",
+    "order": "a",
+    "displayName": "Parameter 7",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 7",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-7",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-8": {
+    "type": "fluid",
+    "name": "parameter-8",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "8"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-8",
+    "order": "a",
+    "displayName": "Parameter 8",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 8",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-8",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "parameter-9": {
+    "type": "fluid",
+    "name": "parameter-9",
+    "subgroup": "parameters",
+    "localised_name": [
+      "parameter-x",
+      "9"
+    ],
+    "parameter": true,
+    "auto_barrel": false,
+    "default_temperature": 25,
+    "base_color": [
+      1,
+      1,
+      0
+    ],
+    "flow_color": [
+      1,
+      1,
+      0
+    ],
+    "icon": "spritemap:fluid-parameter-9",
+    "order": "a",
+    "displayName": "Parameter 9",
+    "description": "",
+    "tooltip": {
+      "title": "Parameter 9",
+      "description": "",
+      "icon": "spritemap:fluid-parameter-9",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "water": {
+    "type": "fluid",
+    "name": "water",
+    "subgroup": "fluid",
+    "default_temperature": 15,
+    "max_temperature": 100,
+    "heat_capacity": "2kJ",
+    "base_color": [
+      0,
+      0.34,
+      0.6
+    ],
+    "flow_color": [
+      0.7,
+      0.7,
+      0.7
+    ],
+    "icon": "spritemap:fluid-water",
+    "order": "a[fluid]-a[water]-a[water]",
+    "displayName": "Water",
+    "description": "",
+    "tooltip": {
+      "title": "Water",
+      "description": "",
+      "icon": "spritemap:fluid-water",
+      "details": [
+        "Default temperature: 15°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "steam": {
+    "type": "fluid",
+    "name": "steam",
+    "subgroup": "fluid",
+    "default_temperature": 15,
+    "max_temperature": 5000,
+    "heat_capacity": "0.2kJ",
+    "icon": "spritemap:fluid-steam",
+    "base_color": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "flow_color": [
+      1,
+      1,
+      1
+    ],
+    "order": "a[fluid]-a[water]-b[steam]",
+    "gas_temperature": 15,
+    "auto_barrel": false,
+    "displayName": "Steam",
+    "description": "",
+    "tooltip": {
+      "title": "Steam",
+      "description": "",
+      "icon": "spritemap:fluid-steam",
+      "details": [
+        "Default temperature: 15°C",
+        "Max temperature: 5000°C"
+      ]
+    }
+  },
+  "sulfuric-acid": {
+    "type": "fluid",
+    "name": "sulfuric-acid",
+    "subgroup": "fluid",
+    "default_temperature": 25,
+    "base_color": [
+      0.75,
+      0.65,
+      0.1
+    ],
+    "flow_color": [
+      0.7,
+      1,
+      0.1
+    ],
+    "icon": "spritemap:fluid-sulfuric-acid",
+    "order": "a[fluid]-b[oil]-f[sulfuric-acid]",
+    "displayName": "Sulfuric acid",
+    "description": "",
+    "tooltip": {
+      "title": "Sulfuric acid",
+      "description": "",
+      "icon": "spritemap:fluid-sulfuric-acid",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "crude-oil": {
+    "type": "fluid",
+    "name": "crude-oil",
+    "subgroup": "fluid",
+    "default_temperature": 25,
+    "base_color": [
+      0,
+      0,
+      0
+    ],
+    "flow_color": [
+      0.5,
+      0.5,
+      0.5
+    ],
+    "icon": "spritemap:fluid-crude-oil",
+    "order": "a[fluid]-b[oil]-a[crude-oil]",
+    "fuel_value": "1.9MJ",
+    "emissions_multiplier": 10,
+    "displayName": "Crude oil",
+    "description": "",
+    "tooltip": {
+      "title": "Crude oil",
+      "description": "",
+      "icon": "spritemap:fluid-crude-oil",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "heavy-oil": {
+    "type": "fluid",
+    "name": "heavy-oil",
+    "subgroup": "fluid",
+    "default_temperature": 25,
+    "base_color": [
+      0.5,
+      0.13,
+      0
+    ],
+    "flow_color": [
+      0.85,
+      0.6,
+      0.3
+    ],
+    "icon": "spritemap:fluid-heavy-oil",
+    "order": "a[fluid]-b[oil]-d[heavy-oil]",
+    "fuel_value": "1MJ",
+    "emissions_multiplier": 3,
+    "displayName": "Heavy oil",
+    "description": "",
+    "tooltip": {
+      "title": "Heavy oil",
+      "description": "",
+      "icon": "spritemap:fluid-heavy-oil",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "light-oil": {
+    "type": "fluid",
+    "name": "light-oil",
+    "subgroup": "fluid",
+    "default_temperature": 25,
+    "base_color": [
+      0.57,
+      0.33,
+      0
+    ],
+    "flow_color": [
+      1,
+      0.73,
+      0.07
+    ],
+    "icon": "spritemap:fluid-light-oil",
+    "order": "a[fluid]-b[oil]-c[light-oil]",
+    "fuel_value": "1.5MJ",
+    "emissions_multiplier": 2,
+    "displayName": "Light oil",
+    "description": "",
+    "tooltip": {
+      "title": "Light oil",
+      "description": "",
+      "icon": "spritemap:fluid-light-oil",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "petroleum-gas": {
+    "type": "fluid",
+    "name": "petroleum-gas",
+    "subgroup": "fluid",
+    "default_temperature": 25,
+    "base_color": [
+      0.3,
+      0.1,
+      0.3
+    ],
+    "flow_color": {
+      "r": 0.6,
+      "g": 0.2,
+      "b": 0.6
+    },
+    "icon": "spritemap:fluid-petroleum-gas",
+    "order": "a[fluid]-b[oil]-b[petroleum-gas]",
+    "gas_temperature": -42,
+    "fuel_value": "2.3MJ",
+    "displayName": "Petroleum gas",
+    "description": "",
+    "tooltip": {
+      "title": "Petroleum gas",
+      "description": "",
+      "icon": "spritemap:fluid-petroleum-gas",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "lubricant": {
+    "type": "fluid",
+    "name": "lubricant",
+    "subgroup": "fluid",
+    "default_temperature": 25,
+    "base_color": [
+      0.15,
+      0.32,
+      0.03
+    ],
+    "flow_color": [
+      0.43,
+      0.75,
+      0.31
+    ],
+    "icon": "spritemap:fluid-lubricant",
+    "order": "a[fluid]-b[oil]-e[lubricant]",
+    "displayName": "Lubricant",
+    "description": "",
+    "tooltip": {
+      "title": "Lubricant",
+      "description": "",
+      "icon": "spritemap:fluid-lubricant",
+      "details": [
+        "Default temperature: 25°C"
+      ]
+    }
+  },
+  "bob-lithia-water": {
+    "type": "fluid",
+    "name": "bob-lithia-water",
+    "default_temperature": 15,
+    "max_temperature": 100,
+    "heat_capacity": "0.2kJ",
+    "base_color": {
+      "r": 0,
+      "g": 0.34,
+      "b": 0.6
+    },
+    "flow_color": {
+      "r": 0.7,
+      "g": 1,
+      "b": 1
+    },
+    "icon": "spritemap:fluid-bob-lithia-water",
+    "icon_size": 32,
+    "subgroup": "fluid",
+    "order": "a[fluid]-a[water-lithia]",
+    "displayName": "Lithia water",
+    "description": "",
+    "tooltip": {
+      "title": "Lithia water",
+      "description": "",
+      "icon": "spritemap:fluid-bob-lithia-water",
+      "details": [
+        "Default temperature: 15°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-pure-water": {
+    "type": "fluid",
+    "name": "bob-pure-water",
+    "icon": "spritemap:fluid-bob-pure-water",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "default_temperature": 15,
+    "max_temperature": 100,
+    "gas_temperature": 100,
+    "heat_capacity": "0.2kJ",
+    "base_color": {
+      "r": 0.3,
+      "g": 0.6,
+      "b": 0.8
+    },
+    "flow_color": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "order": "a[fluid]-a[bob-pure-water]",
+    "displayName": "Pure water",
+    "description": "",
+    "tooltip": {
+      "title": "Pure water",
+      "description": "",
+      "icon": "spritemap:fluid-bob-pure-water",
+      "details": [
+        "Default temperature: 15°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-liquid-air": {
+    "type": "fluid",
+    "name": "bob-liquid-air",
+    "default_temperature": 25,
+    "max_temperature": 100,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0,
+      "g": 0,
+      "b": 0
+    },
+    "flow_color": {
+      "r": 0.5,
+      "g": 1,
+      "b": 1
+    },
+    "icon": "spritemap:fluid-bob-liquid-air",
+    "icon_size": 32,
+    "subgroup": "bob-fluid-pump",
+    "order": "a[fluid]-g[bob-liquid-air]",
+    "gas_temperature": -100,
+    "auto_barrel": false,
+    "displayName": "Compressed air",
+    "description": "",
+    "tooltip": {
+      "title": "Compressed air",
+      "description": "",
+      "icon": "spritemap:fluid-bob-liquid-air",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-hydrogen": {
+    "type": "fluid",
+    "name": "bob-hydrogen",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0.7,
+      "g": 0.7,
+      "b": 0.7
+    },
+    "flow_color": {
+      "r": 1,
+      "g": 1,
+      "b": 1
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-hydrogen",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[hydrogen]",
+    "gas_temperature": -252.76,
+    "fuel_value": "45kJ",
+    "emissions_multiplier": 0.1,
+    "displayName": "Hydrogen",
+    "description": "",
+    "tooltip": {
+      "title": "Hydrogen",
+      "description": "",
+      "icon": "spritemap:fluid-bob-hydrogen",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-oxygen": {
+    "type": "fluid",
+    "name": "bob-oxygen",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0.7,
+      "g": 0,
+      "b": 0
+    },
+    "flow_color": {
+      "r": 1,
+      "g": 0,
+      "b": 0
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-oxygen",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[oxygen]",
+    "gas_temperature": -219,
+    "displayName": "Oxygen",
+    "description": "",
+    "tooltip": {
+      "title": "Oxygen",
+      "description": "",
+      "icon": "spritemap:fluid-bob-oxygen",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-nitrogen": {
+    "type": "fluid",
+    "name": "bob-nitrogen",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0,
+      "g": 0,
+      "b": 1
+    },
+    "flow_color": {
+      "r": 0,
+      "g": 0,
+      "b": 1
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-nitrogen",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[nitrogen]",
+    "gas_temperature": -210,
+    "displayName": "Nitrogen",
+    "description": "",
+    "tooltip": {
+      "title": "Nitrogen",
+      "description": "",
+      "icon": "spritemap:fluid-bob-nitrogen",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-chlorine": {
+    "type": "fluid",
+    "name": "bob-chlorine",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0,
+      "g": 0.7,
+      "b": 0.2
+    },
+    "flow_color": {
+      "r": 0,
+      "g": 1,
+      "b": 0.3
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-chlorine",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[chlorine]",
+    "gas_temperature": -102,
+    "displayName": "Chlorine",
+    "description": "",
+    "tooltip": {
+      "title": "Chlorine",
+      "description": "",
+      "icon": "spritemap:fluid-bob-chlorine",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-hydrogen-chloride": {
+    "type": "fluid",
+    "name": "bob-hydrogen-chloride",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0.2,
+      "g": 0.7,
+      "b": 0
+    },
+    "flow_color": {
+      "r": 0.3,
+      "g": 1,
+      "b": 0
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-hydrogen-chloride",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[hydrogen-chloride]",
+    "gas_temperature": -115,
+    "displayName": "Hydrogen chloride",
+    "description": "",
+    "tooltip": {
+      "title": "Hydrogen chloride",
+      "description": "",
+      "icon": "spritemap:fluid-bob-hydrogen-chloride",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-nitrogen-dioxide": {
+    "type": "fluid",
+    "name": "bob-nitrogen-dioxide",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0.8,
+      "g": 0,
+      "b": 1
+    },
+    "flow_color": {
+      "r": 0.8,
+      "g": 0,
+      "b": 1
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-nitrogen-dioxide",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[nitrogen-dioxide]",
+    "gas_temperature": -12,
+    "displayName": "Nitrogen dioxide",
+    "description": "",
+    "tooltip": {
+      "title": "Nitrogen dioxide",
+      "description": "",
+      "icon": "spritemap:fluid-bob-nitrogen-dioxide",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-sulfur-dioxide": {
+    "type": "fluid",
+    "name": "bob-sulfur-dioxide",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0.7,
+      "g": 0.7,
+      "b": 0
+    },
+    "flow_color": {
+      "r": 1,
+      "g": 0.5,
+      "b": 0
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-sulfur-dioxide",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[sulfur-dioxide]",
+    "gas_temperature": -72,
+    "displayName": "Sulfur dioxide",
+    "description": "",
+    "tooltip": {
+      "title": "Sulfur dioxide",
+      "description": "",
+      "icon": "spritemap:fluid-bob-sulfur-dioxide",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-nitric-acid": {
+    "type": "fluid",
+    "name": "bob-nitric-acid",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 1,
+      "g": 0.7,
+      "b": 0
+    },
+    "flow_color": {
+      "r": 0,
+      "g": 0,
+      "b": 1
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-nitric-acid",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[nitric-acid]",
+    "displayName": "Nitric acid",
+    "description": "",
+    "tooltip": {
+      "title": "Nitric acid",
+      "description": "",
+      "icon": "spritemap:fluid-bob-nitric-acid",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-ferric-chloride-solution": {
+    "type": "fluid",
+    "name": "bob-ferric-chloride-solution",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0.7,
+      "g": 0.6,
+      "b": 0.2
+    },
+    "flow_color": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-ferric-chloride-solution",
+    "icon_size": 32,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[ferric-chloride-solution]",
+    "displayName": "Ferric chloride solution",
+    "description": "",
+    "tooltip": {
+      "title": "Ferric chloride solution",
+      "description": "",
+      "icon": "spritemap:fluid-bob-ferric-chloride-solution",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-liquid-fuel": {
+    "type": "fluid",
+    "name": "bob-liquid-fuel",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 1,
+      "g": 0.9,
+      "b": 0.5
+    },
+    "flow_color": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-liquid-fuel",
+    "icon_size": 32,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[liquid-fuel]",
+    "emissions_multiplier": 0.8,
+    "fuel_value": "2.3MJ",
+    "displayName": "Liquid fuel",
+    "description": "",
+    "tooltip": {
+      "title": "Liquid fuel",
+      "description": "",
+      "icon": "spritemap:fluid-bob-liquid-fuel",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-heavy-water": {
+    "type": "fluid",
+    "name": "bob-heavy-water",
+    "icon": "spritemap:fluid-bob-heavy-water",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-a[water-heavy]",
+    "default_temperature": 15,
+    "max_temperature": 100,
+    "gas_temperature": 100,
+    "heat_capacity": "0.2kJ",
+    "base_color": {
+      "r": 0.1,
+      "g": 0.3,
+      "b": 0.5
+    },
+    "flow_color": {
+      "r": 0.7,
+      "g": 0.7,
+      "b": 0.4
+    },
+    "displayName": "Heavy water",
+    "description": "",
+    "tooltip": {
+      "title": "Heavy water",
+      "description": "",
+      "icon": "spritemap:fluid-bob-heavy-water",
+      "details": [
+        "Default temperature: 15°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-deuterium": {
+    "type": "fluid",
+    "name": "bob-deuterium",
+    "icon": "spritemap:fluid-bob-deuterium",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[deuterium]",
+    "default_temperature": 25,
+    "max_temperature": 100,
+    "gas_temperature": -251.02,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0.7,
+      "g": 0.7,
+      "b": 0.4
+    },
+    "flow_color": {
+      "r": 1,
+      "g": 1,
+      "b": 0.6
+    },
+    "fuel_value": "45kJ",
+    "emissions_multiplier": 0.1,
+    "displayName": "Deuterium",
+    "description": "",
+    "tooltip": {
+      "title": "Deuterium",
+      "description": "",
+      "icon": "spritemap:fluid-bob-deuterium",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-hydrogen-sulfide": {
+    "type": "fluid",
+    "name": "bob-hydrogen-sulfide",
+    "icon": "spritemap:fluid-bob-hydrogen-sulfide",
+    "icon_size": 64,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[hydrogen-sulfide]",
+    "default_temperature": 25,
+    "max_temperature": 100,
+    "gas_temperature": -60,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0.7,
+      "g": 0.7,
+      "b": 0
+    },
+    "flow_color": {
+      "r": 1,
+      "g": 1,
+      "b": 0.5
+    },
+    "displayName": "Hydrogen sulfide",
+    "description": "",
+    "tooltip": {
+      "title": "Hydrogen sulfide",
+      "description": "",
+      "icon": "spritemap:fluid-bob-hydrogen-sulfide",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  },
+  "bob-tungstic-acid": {
+    "type": "fluid",
+    "name": "bob-tungstic-acid",
+    "default_temperature": 25,
+    "heat_capacity": "1kJ",
+    "base_color": {
+      "r": 0,
+      "g": 0.2,
+      "b": 0.7
+    },
+    "flow_color": {
+      "r": 0.5,
+      "g": 0.5,
+      "b": 0.5
+    },
+    "max_temperature": 100,
+    "icon": "spritemap:fluid-bob-tungstic-acid",
+    "icon_size": 32,
+    "subgroup": "fluid",
+    "order": "a[fluid]-g[bob-tungstic-acid]",
+    "displayName": "Tungstic acid",
+    "description": "",
+    "tooltip": {
+      "title": "Tungstic acid",
+      "description": "",
+      "icon": "spritemap:fluid-bob-tungstic-acid",
+      "details": [
+        "Default temperature: 25°C",
+        "Max temperature: 100°C"
+      ]
+    }
+  }
+}
