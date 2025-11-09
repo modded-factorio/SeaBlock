@@ -8,67 +8,67 @@
 local knowningredients = {
   ["angels-electrolyser"] = {
     { "iron-plate", 10 },
-    { "basic-circuit-board", 5 },
+    { "bob-basic-circuit-board", 5 },
     { "iron-stick", 22 },
     { "stone-brick", 10 },
   },
-  ["liquifier"] = {
+  ["angels-liquifier"] = {
     { "iron-plate", 10 },
-    { "basic-circuit-board", 5 },
+    { "bob-basic-circuit-board", 5 },
     { "pipe-to-ground", 2 },
     { "stone-brick", 10 },
   },
   ["offshore-pump"] = {
-    { "basic-circuit-board", 2 },
+    { "bob-basic-circuit-board", 2 },
     { "pipe", 1 },
     { "iron-gear-wheel", 10 },
   },
-  ["crystallizer"] = {
+  ["angels-crystallizer"] = {
     { "iron-plate", 10 },
-    { "basic-circuit-board", 5 },
-    { "copper-pipe", 5 },
+    { "bob-basic-circuit-board", 5 },
+    { "bob-copper-pipe", 5 },
     { "stone-brick", 10 },
   },
-  ["algae-farm"] = {
+  ["angels-algae-farm"] = {
     { "iron-plate", 10 },
-    { "basic-circuit-board", 5 },
+    { "bob-basic-circuit-board", 5 },
     { "iron-stick", 10 },
     { "stone-brick", 25 },
   },
   ["angels-flare-stack"] = {
     { "iron-plate", 5 },
-    { "basic-circuit-board", 5 },
+    { "bob-basic-circuit-board", 5 },
     { "pipe", 10 },
     { "stone-brick", 10 },
   },
-  ["seafloor-pump"] = {
+  ["angels-seafloor-pump"] = {
     { "iron-plate", 5 },
-    { "basic-circuit-board", 2 },
+    { "bob-basic-circuit-board", 2 },
     { "pipe", 5 },
   },
-  ["washing-plant"] = {
+  ["angels-washing-plant"] = {
     { "iron-plate", 10 },
-    { "basic-circuit-board", 5 },
+    { "bob-basic-circuit-board", 5 },
     { "pipe", 10 },
     { "stone-brick", 10 },
   },
   ["angels-chemical-plant"] = {
     { "iron-plate", 5 },
     { "iron-gear-wheel", 5 },
-    { "basic-circuit-board", 5 },
+    { "bob-basic-circuit-board", 5 },
     { "pipe", 5 },
   },
-  ["filtration-unit"] = {
+  ["angels-filtration-unit"] = {
     { "iron-plate", 5 },
-    { "basic-circuit-board", 5 },
+    { "bob-basic-circuit-board", 5 },
     { "pipe", 10 },
     { "stone-brick", 10 },
   },
-  ["filter-frame"] = {
+  ["angels-filter-frame"] = {
     { "iron-plate", 1 },
     { "iron-stick", 2 },
   },
-  ["burner-ore-crusher"] = {
+  ["angels-burner-ore-crusher"] = {
     { "stone", 5 },
     { "stone-furnace", 1 },
   },
@@ -99,11 +99,13 @@ end
 
 if data.raw.technology["sct-automation-science-pack"] then
   bobmods.lib.tech.add_prerequisite("sct-automation-science-pack", "sct-lab-t1")
-  data.raw.technology["sct-automation-science-pack"].unit = {
-    count = 1,
-    ingredients = { { "sb-lab-tool", 1 } },
-    time = 1,
-  }
+  -- data.raw.technology["sct-automation-science-pack"].unit = {
+  --   count = 1,
+  --   ingredients = { { "sb-lab-tool", 1 } },
+  --   time = 1,
+  -- }
+  data.raw.technology["sct-automation-science-pack"].research_trigger = {type = "craft-item", item = "lab"}
+  data.raw.technology["sct-automation-science-pack"].unit = nil
   data.raw.technology["sct-lab-t1"].unit = {
     count = 1,
     ingredients = {},
@@ -133,7 +135,7 @@ local function ironrecipe(recipe)
     ["iron-stick"] = true,
     ["pipe"] = true,
     ["pipe-to-ground"] = true,
-    ["basic-circuit-board"] = true,
+    ["bob-basic-circuit-board"] = true,
     ["electronic-circuit"] = true,
     ["stone-brick"] = true,
     ["copper-plate"] = true,
@@ -156,6 +158,7 @@ local function ironrecipe(recipe)
   seablock.lib.iteraterecipes(recipe, scaningredients)
   return foundiron
 end
+
 
 -- Disable recipes that shouldn't consume startup items
 for k, v in pairs(data.raw.recipe) do
@@ -205,19 +208,27 @@ end
 -- Limit research required for startup techs.
 for k, v in pairs(seablock.startup_techs) do
   if data.raw.technology[k] then
-    if v[1] and data.raw.technology[k].unit.count > 20 then
-      data.raw.technology[k].unit.count = 20
-      data.raw.technology[k].unit.ingredients = { { "automation-science-pack", 1 } }
+    if data.raw.technology[k].unit then
+      if v[1] and data.raw.technology[k].unit.count > 20 then
+        data.raw.technology[k].unit.count = 20
+        data.raw.technology[k].unit.ingredients = { { "automation-science-pack", 1 } }
+      end
+      bobmods.lib.tech.ignore_tech_cost_multiplier(k, true)
+      data.raw.technology[k].unit.time = 15
     end
-    bobmods.lib.tech.ignore_tech_cost_multiplier(k, true)
-    data.raw.technology[k].unit.time = 15
   end
 end
 
 -- Make bio-wood-processing a startup tutorial tech
-data.raw.technology["bio-wood-processing"].prerequisites = { "sb-startup1" }
-data.raw.technology["bio-wood-processing"].unit = {
+data.raw.technology["angels-bio-wood-processing"].prerequisites = { "sb-startup1" }
+data.raw.technology["angels-bio-wood-processing"].unit = {
   count = 1,
   ingredients = {},
   time = 1,
 }
+
+-- Remove cycle introduced in the tech tree
+-- Sectoid upgraded angelsbioprocessing by renaming the old prerequisite "basic-automation" into "electronics"
+bobmods.lib.tech.remove_prerequisite("angels-basic-chemistry", "electronics")
+bobmods.lib.tech.remove_prerequisite("angels-bio-processing-brown", "electronics")
+bobmods.lib.tech.add_prerequisite("angels-bio-processing-brown", "automation")

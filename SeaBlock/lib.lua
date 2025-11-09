@@ -21,6 +21,8 @@ end
 
 function seablock.lib.takeeffect(tech, name)
   if not data.raw.technology[tech] then
+    log("Warning: seablock.lib.takeeffect - can't find technology : " .. tech)
+    log(debug.traceback())
     return nil
   end
   local effects = data.raw.technology[tech].effects or {}
@@ -42,7 +44,8 @@ end
 function seablock.lib.moveeffect(name, fromtech, totech, insertindex)
   local effect = seablock.lib.takeeffect(fromtech, name)
   if not effect then
-    log("Effect " .. name .. " not found in tech " .. fromtech)
+    log("Warning : seablock.lib.moveeffect - Effect " .. name .. " not found in tech " .. fromtech)
+    log(debug.traceback())
     return
   end
   if insertindex then
@@ -95,12 +98,6 @@ function seablock.lib.add_recipe_unlock(technology, recipe, insertindex)
 end
 
 function seablock.lib.iteraterecipes(recipe, func)
-  if recipe.normal then
-    func(recipe.normal)
-  end
-  if recipe.expensive then
-    func(recipe.expensive)
-  end
   if recipe.ingredients then
     func(recipe)
   end
@@ -138,6 +135,7 @@ function seablock.lib.substingredient(name, from, to, count)
     end
     seablock.lib.recipeforeach(name, from, dosubst, "ingredients")
   else
+    log("Warning : seablock.lib.substingredient - can't find recipe : " .. name)
     log(debug.traceback())
   end
 end
@@ -154,6 +152,9 @@ function seablock.lib.removeingredient(name, ingredient)
       end
     end
     seablock.lib.iteraterecipes(t, doremove)
+  else
+    log("Warning : seablock.lib.removeingredient - can't find recipe : " .. name)
+    log(debug.traceback())
   end
 end
 
@@ -169,6 +170,9 @@ function seablock.lib.substresult(name, from, to, count)
       end
     end
     seablock.lib.recipeforeach(name, from, dosubst, "results")
+  else
+    log("Warning : seablock.lib.substresult - can't find recipe : " .. name)
+    log(debug.traceback())
   end
 end
 
@@ -179,6 +183,9 @@ function seablock.lib.addresult(name, resulttable)
       table.insert(recipe.results, resulttable)
     end
     seablock.lib.iteraterecipes(t, doadd)
+  else
+    log("Warning: seablock.lib.addresult - can't find recipe : " .. name)
+    log(debug.traceback())
   end
 end
 
@@ -213,6 +220,9 @@ function seablock.lib.unhide_recipe(recipe_name)
     if not recipe.normal and not recipe.expensive then
       recipe.hidden = false
     end
+  else
+    log("Warning: seablock.lib.unhide_recipe - can't find recipe : " .. recipe_name)
+    log(debug.traceback())
   end
 end
 
@@ -231,6 +241,9 @@ function seablock.lib.hide_technology(technology_name)
       technology.hidden = true
       technology.enabled = false
     end
+  else
+    log("Warning: seablock.lib.hide_technology - Hide non existing tech : " .. technology_name)
+    log(debug.traceback())
   end
 end
 
@@ -246,27 +259,33 @@ end
 function seablock.lib.hide_item(item_name)
   local item = data.raw.item[item_name]
   if item then
-    if not item.flags then
-      item.flags = {}
-    end
-    if not seablock.lib.tablefind(item.flags, "hidden") then
-      table.insert(item.flags, "hidden")
-    end
+    item.hidden = true
+    -- if not item.flags then
+    --   item.flags = {}
+    -- end
+    -- if not seablock.lib.tablefind(item.flags, "hidden") then
+    --   table.insert(item.flags, "hidden")
+    -- end
   else
     item = data.raw.fluid[item_name]
     if item then
       item.hidden = true
+    else
+      log("Warning: seablock.lib.hide_item - can't find item or fluid : " .. item_name)
+      log(debug.traceback())
     end
   end
 end
 
 function seablock.lib.hide(type_name, name)
   if not data.raw[type_name] then
-    log("Unknown type: " .. type_name)
+    log("Warning: seablock.lib.hide - Unknown type: " .. type_name)
+    log(debug.traceback())
   else
     local item = data.raw[type_name][name]
     if not item then
-      log("Unknown " .. type_name .. ": " .. name)
+      log("Warning: seablock.lib.hide - Unknown " .. type_name .. ": " .. name)
+      log(debug.traceback())
     else
       if type_name == "fluid" then
         item.hidden = true
@@ -274,9 +293,10 @@ function seablock.lib.hide(type_name, name)
         if not item.flags then
           item.flags = {}
         end
-        if not seablock.lib.tablefind(item.flags, "hidden") then
-          table.insert(item.flags, "hidden")
-        end
+        -- if not seablock.lib.tablefind(item.flags, "hidden") then
+        --   table.insert(item.flags, "hidden")
+        -- end
+        item.hidden = true
 
         if type_name == "item" then
           table.insert(item.flags, "hide-from-bonus-gui")
@@ -291,7 +311,8 @@ end
 function seablock.lib.remove_effect(technology_name, effect_type, effect_key, effect_value)
   local tech = data.raw.technology[technology_name]
   if not tech then
-    log("Unknown technology: " .. technology_name)
+    log("Warning: seablock.lib.remove_effect - Unknown technology: " .. technology_name)
+    log(debug.traceback())
     return
   end
 
@@ -307,13 +328,15 @@ end
 
 function seablock.lib.add_flag(type, name, flag)
   if not data.raw[type] then
-    log("Unknown type: " .. type)
+    log("Warning : seablock.lib.add_flag - Unknown type: " .. type)
+    log(debug.traceback())
     return
   end
 
   local item = data.raw[type][name]
   if not item then
-    log("Unknown " .. type .. ": " .. name)
+    log("Warning : seablock.lib.add_flag - Unknown " .. type .. ": " .. name)
+    log(debug.traceback())
     return
   end
 

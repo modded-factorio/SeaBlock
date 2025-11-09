@@ -1,19 +1,19 @@
 data:extend({
   {
     type = "recipe-category",
-    name = "crafting-handonly",
+    name = "sb-crafting-handonly",
   },
   {
     type = "recipe-category",
-    name = "thermal-bore",
+    name = "sb-thermal-bore",
   },
   {
     type = "recipe-category",
-    name = "thermal-extractor",
+    name = "sb-thermal-extractor",
   },
   {
     type = "recipe-category",
-    name = "petrochem-electrolyser-4",
+    name = "sb-petrochem-electrolyser-4",
   },
 })
 

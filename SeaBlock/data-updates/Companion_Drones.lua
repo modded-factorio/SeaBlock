@@ -1,7 +1,7 @@
 if mods["Companion_Drones"] then
-  bobmods.lib.tech.add_recipe_unlock("electronics", "companion")
-  bobmods.lib.tech.add_recipe_unlock("electronics", "companion-roboport-equipment")
-  bobmods.lib.tech.add_recipe_unlock("electronics", "companion-reactor-equipment")
+  bobmods.lib.tech.add_recipe_unlock("bob-electronics", "companion")
+  bobmods.lib.tech.add_recipe_unlock("bob-electronics", "companion-roboport-equipment")
+  bobmods.lib.tech.add_recipe_unlock("bob-electronics", "companion-reactor-equipment")
   bobmods.lib.tech.add_recipe_unlock("energy-shield-mk2-equipment", "companion-shield-equipment")
 
   bobmods.lib.recipe.set_ingredient("companion-shield-equipment", { "energy-shield-mk2-equipment", 1 })

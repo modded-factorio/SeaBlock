@@ -1,0 +1,25 @@
+{
+    "entity": 
+    [
+      ["rock-chest", "sb-rock-chest"]
+    ],
+    "item":
+    [
+      ["stone-crushed", "stone"],
+      ["catalyst-metal-purple", "sb-catalyst-metal-purple"]
+    ],
+    "recipe":
+    [
+      ["thermal-bore-water", "sb-thermal-bore-water"],
+      ["thermal-extractor-water", "sb-thermal-extractor-water"],
+      ["crafting-handonly", "sb-crafting-handonly"],
+      ["catalyst-metal-purple", "sb-catalyst-metal-purple"]
+    ],
+    "recipe-category": 
+    [
+      ["crafting-handonly", "sb-crafting-handonly"],
+      ["thermal-bore", "sb-thermal-bore"],
+      ["thermal-extractor", "sb-thermal-extractor"],
+      ["petrochem-electrolyser-4", "sb-petrochem-electrolyser-4"]
+    ]
+}

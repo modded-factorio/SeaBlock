@@ -4,7 +4,7 @@
 seablock.scripted_techs = {
   ["sb-startup1"] = true,
   ["sb-startup2"] = true,
-  ["bio-wood-processing"] = true,
+  ["angels-bio-wood-processing"] = true,
   ["sb-startup3"] = true,
   ["sb-startup4"] = true,
 }
@@ -25,16 +25,16 @@ seablock.startup_techs = {
   ["angels-fluid-control"] = { true },
   ["angels-sulfur-processing-1"] = { true },
   ["automation"] = { true },
-  ["basic-chemistry"] = { true },
+  ["angels-basic-chemistry"] = { true },
   -- Don't reduce the science pack cost of green algae
-  ["bio-processing-green"] = { false },
-  ["bio-wood-processing-2"] = { true },
-  ["long-inserters-1"] = { true },
+  ["angels-bio-processing-green"] = { false },
+  ["angels-bio-wood-processing-2"] = { true },
+  ["bob-long-inserters-1"] = { true },
   ["military"] = { true },
-  ["optics"] = { true },
-  ["slag-processing-1"] = { true },
+  ["lamp"] = { true },
+  ["angels-slag-processing-1"] = { true },
   ["steam-power"] = { true },
-  ["water-washing-1"] = { true },
+  ["angels-water-washing-1"] = { true },
 }
 
 if data.raw.technology["logistics-0"] then
@@ -48,26 +48,26 @@ end
 seablock.startup_recipes = {
   ["angels-electrolyser"] = true,
   ["angels-flare-stack"] = true,
-  ["burner-ore-crusher"] = true,
-  ["crystallizer"] = true,
-  ["dirt-water-separation"] = true,
-  ["liquifier"] = true,
+  ["angels-burner-ore-crusher"] = true,
+  ["angels-crystallizer"] = true,
+  ["angels-dirt-water-separation"] = true,
+  ["angels-liquifier"] = true,
   ["offshore-pump"] = true,
   ["sb-wood-foraging"] = true,
   ["sb-water-mineralized-crystallization"] = true,
-  ["slag-processing-stone"] = true,
-  ["stone-pipe"] = true,
-  ["stone-pipe-to-ground"] = true,
+  ["angels-stone-from-crushed-stone"] = true,
+  ["angels-stone-pipe"] = true,
+  ["angels-stone-pipe-to-ground"] = true,
   ["stone-brick"] = true,
-  ["stone-crushed"] = true,
-  ["water-mineralized"] = true,
+  ["angels-stone-crushed"] = true,
+  ["angels-water-mineralized"] = true,
 }
 
 if
   settings.startup["bobmods-assembly-multipurposefurnaces"]
   and settings.startup["bobmods-assembly-multipurposefurnaces"].value
 then
-  seablock.startup_recipes["stone-mixing-furnace"] = true
+  seablock.startup_recipes["bob-stone-mixing-furnace"] = true
 end
 
 -- seablock.final_scripted_tech
@@ -77,4 +77,4 @@ if data.raw.technology["sct-automation-science-pack"] then
   seablock.final_scripted_tech = "sct-automation-science-pack"
 end
 
-seablock.final_startup_tech = "slag-processing-1"
+seablock.final_startup_tech = "angels-slag-processing-1"

@@ -4,8 +4,8 @@ local mil_items = {
   { type = "ammo-turret", name = "bob-gun-turret-4" },
   { type = "ammo-turret", name = "bob-gun-turret-5" },
   { type = "ammo-turret", name = "bob-sniper-turret-3" },
-  { type = "armor", name = "heavy-armor-2" },
-  { type = "armor", name = "heavy-armor-3" },
+  --{ type = "armor", name = "modular-armor" },
+  --{ type = "armor", name = "heavy-armor-3" },
   { type = "artillery-turret", name = "bob-artillery-turret-3" },
   { type = "artillery-wagon", name = "bob-artillery-wagon-3" },
   { type = "car", name = "bob-tank-2" },
@@ -26,16 +26,16 @@ local mil_items = {
   { type = "fluid-wagon", name = "bob-armoured-fluid-wagon-2" },
   { type = "fluid-wagon", name = "bob-armoured-fluid-wagon" },
   { type = "fluid", name = "alien-acid" },
-  { type = "fluid", name = "alien-explosive" },
-  { type = "fluid", name = "alien-fire" },
-  { type = "fluid", name = "alien-poison" },
-  { type = "fluid", name = "liquid-glycerol" },
-  { type = "fluid", name = "liquid-toluene" },
-  { type = "fluid", name = "nitroglycerin" },
+  { type = "fluid", name = "bob-alien-explosive" },
+  { type = "fluid", name = "bob-alien-fire" },
+  { type = "fluid", name = "bob-alien-poison" },
+  { type = "fluid", name = "angels-liquid-glycerol" },
+  { type = "fluid", name = "angels-liquid-toluene" },
+  { type = "fluid", name = "bob-nitroglycerin" },
   { type = "gun", name = "combat-shotgun" },
   { type = "gun", name = "flamethrower" },
-  { type = "gun", name = "laser-rifle" },
-  { type = "gun", name = "rifle" },
+  { type = "gun", name = "bob-laser-rifle" },
+  { type = "gun", name = "bob-rifle" },
   { type = "gun", name = "shotgun" },
   { type = "item-with-entity-data", name = "bob-armoured-cargo-wagon-2" },
   { type = "item-with-entity-data", name = "bob-armoured-cargo-wagon" },
@@ -46,17 +46,17 @@ local mil_items = {
   { type = "item-with-entity-data", name = "bob-artillery-wagon-3" },
   { type = "item-with-entity-data", name = "bob-tank-2" },
   { type = "item-with-entity-data", name = "bob-tank-3" },
-  { type = "item", name = "acid-bullet-projectile" },
-  { type = "item", name = "acid-bullet" },
-  { type = "item", name = "acid-rocket-warhead" },
-  { type = "item", name = "alien-acid-barrel" },
-  { type = "item", name = "alien-blue-alloy" },
-  { type = "item", name = "alien-explosive-barrel" },
-  { type = "item", name = "alien-fire-barrel" },
-  { type = "item", name = "alien-orange-alloy" },
-  { type = "item", name = "alien-poison-barrel" },
-  { type = "item", name = "ap-bullet-projectile" },
-  { type = "item", name = "ap-bullet" },
+  { type = "item", name = "bob-acid-bullet-projectile" },
+  { type = "item", name = "bob-acid-bullet" },
+  { type = "item", name = "bob-acid-rocket-warhead" },
+  { type = "item", name = "bob-alien-acid-barrel" },
+  { type = "item", name = "bob-alien-blue-alloy" },
+  { type = "item", name = "bob-alien-explosive-barrel" },
+  { type = "item", name = "bob-alien-fire-barrel" },
+  { type = "item", name = "bob-alien-orange-alloy" },
+  { type = "item", name = "bob-alien-poison-barrel" },
+  { type = "item", name = "bob-ap-bullet-projectile" },
+  { type = "item", name = "bob-ap-bullet" },
   { type = "item", name = "bob-artillery-turret-3" },
   { type = "item", name = "bob-gun-turret-3" },
   { type = "item", name = "bob-gun-turret-4" },
@@ -73,65 +73,65 @@ local mil_items = {
   { type = "item", name = "bob-robot-laser-drone" },
   { type = "item", name = "bob-robot-plasma-drone" },
   { type = "item", name = "bob-sniper-turret-3" },
-  { type = "item", name = "bullet-casing" },
-  { type = "item", name = "bullet-projectile" },
-  { type = "item", name = "bullet" },
+  { type = "item", name = "bob-bullet-casing" },
+  { type = "item", name = "bob-bullet-projectile" },
+  { type = "item", name = "bob-bullet" },
   { type = "item", name = "combat-robot-dispenser-equipment" },
-  { type = "item", name = "cordite" },
+  { type = "item", name = "bob-cordite" },
   { type = "item", name = "discharge-defense-equipment" },
-  { type = "item", name = "distractor-mine" },
-  { type = "item", name = "electric-bullet-projectile" },
-  { type = "item", name = "electric-bullet" },
-  { type = "item", name = "electric-rocket-warhead" },
+  { type = "item", name = "bob-distractor-mine" },
+  { type = "item", name = "bob-electric-bullet-projectile" },
+  { type = "item", name = "bob-electric-bullet" },
+  { type = "item", name = "bob-electric-rocket-warhead" },
   { type = "item", name = "explosive-rocket-warhead" },
-  { type = "item", name = "flame-bullet-projectile" },
-  { type = "item", name = "flame-bullet" },
+  { type = "item", name = "bob-flame-bullet-projectile" },
+  { type = "item", name = "bob-flame-bullet" },
   { type = "item", name = "flame-rocket-warhead" },
   { type = "item", name = "flamethrower-turret" },
-  { type = "item", name = "gun-cotton" },
-  { type = "item", name = "gunmetal-alloy" },
-  { type = "item", name = "he-bullet-projectile" },
-  { type = "item", name = "he-bullet" },
-  { type = "item", name = "lab-alien" },
+  { type = "item", name = "bob-gun-cotton" },
+  { type = "item", name = "bob-gunmetal-alloy" },
+  { type = "item", name = "bob-he-bullet-projectile" },
+  { type = "item", name = "bob-he-bullet" },
+  { type = "item", name = "bob-lab-alien" },
   { type = "item", name = "land-mine" },
-  { type = "item", name = "laser-rifle-battery-case" },
-  { type = "item", name = "liquid-glycerol-barrel" },
-  { type = "item", name = "liquid-toluene-barrel" },
-  { type = "item", name = "magazine" },
-  { type = "item", name = "nitroglycerin-barrel" },
-  { type = "item", name = "petroleum-jelly" },
-  { type = "item", name = "piercing-rocket-warhead" },
-  { type = "item", name = "plasma-bullet-projectile" },
-  { type = "item", name = "plasma-bullet" },
-  { type = "item", name = "plasma-rocket-warhead" },
-  { type = "item", name = "poison-bullet-projectile" },
-  { type = "item", name = "poison-bullet" },
-  { type = "item", name = "poison-mine" },
-  { type = "item", name = "poison-rocket-warhead" },
-  { type = "item", name = "robot-drone-frame-large" },
-  { type = "item", name = "robot-drone-frame" },
-  { type = "item", name = "rocket-body" },
-  { type = "item", name = "rocket-warhead" },
-  { type = "item", name = "shot" },
-  { type = "item", name = "shotgun-shell-casing" },
-  { type = "item", name = "slowdown-mine" },
-  { type = "item", name = "uranium-bullet-projectile" },
-  { type = "item", name = "uranium-bullet" },
-  { type = "lab", name = "lab-alien" },
-  { type = "land-mine", name = "distractor-mine" },
-  { type = "land-mine", name = "land-mine" },
-  { type = "land-mine", name = "poison-mine" },
-  { type = "land-mine", name = "slowdown-mine" },
+  { type = "item", name = "bob-laser-rifle-battery-case" },
+  { type = "item", name = "angels-liquid-glycerol-barrel" },
+  { type = "item", name = "angels-liquid-toluene-barrel" },
+  { type = "item", name = "bob-magazine" },
+  { type = "item", name = "bob-nitroglycerin-barrel" },
+  { type = "item", name = "bob-petroleum-jelly" },
+  { type = "item", name = "bob-piercing-rocket-warhead" },
+  { type = "item", name = "bob-plasma-bullet-projectile" },
+  { type = "item", name = "bob-plasma-bullet" },
+  { type = "item", name = "bob-plasma-rocket-warhead" },
+  { type = "item", name = "bob-poison-bullet-projectile" },
+  { type = "item", name = "bob-poison-bullet" },
+  { type = "item", name = "bob-poison-mine" },
+  { type = "item", name = "bob-poison-rocket-warhead" },
+  { type = "item", name = "bob-robot-drone-frame-large" },
+  { type = "item", name = "bob-robot-drone-frame" },
+  { type = "item", name = "bob-rocket-body" },
+  { type = "item", name = "bob-rocket-warhead" },
+  { type = "item", name = "bob-shot" },
+  { type = "item", name = "bob-shotgun-shell-casing" },
+  { type = "item", name = "bob-slowdown-mine" },
+  { type = "item", name = "bob-uranium-bullet-projectile" },
+  { type = "item", name = "bob-uranium-bullet" },
+  { type = "lab", name = "bob-lab-alien" },
+  { type = "land-mine", name = "bob-distractor-mine" },
+  { type = "land-mine", name = "bob-land-mine" },
+  { type = "land-mine", name = "bob-poison-mine" },
+  { type = "land-mine", name = "bob-slowdown-mine" },
   { type = "locomotive", name = "bob-armoured-locomotive-2" },
   { type = "locomotive", name = "bob-armoured-locomotive" },
-  { type = "tool", name = "alien-science-pack-blue" },
-  { type = "tool", name = "alien-science-pack-green" },
-  { type = "tool", name = "alien-science-pack-orange" },
-  { type = "tool", name = "alien-science-pack-purple" },
-  { type = "tool", name = "alien-science-pack-red" },
-  { type = "tool", name = "alien-science-pack-yellow" },
-  { type = "tool", name = "alien-science-pack" },
-  { type = "tool", name = "science-pack-gold" },
+  { type = "tool", name = "bob-alien-science-pack-blue" },
+  { type = "tool", name = "bob-alien-science-pack-green" },
+  { type = "tool", name = "bob-alien-science-pack-orange" },
+  { type = "tool", name = "bob-alien-science-pack-purple" },
+  { type = "tool", name = "bob-alien-science-pack-red" },
+  { type = "tool", name = "bob-alien-science-pack-yellow" },
+  { type = "tool", name = "bob-alien-science-pack" },
+  { type = "tool", name = "bob-science-pack-gold" },
   { type = "unit", name = "bob-robot-flamethrower-drone" },
   { type = "unit", name = "bob-robot-gun-drone" },
   { type = "unit", name = "bob-robot-laser-drone" },
@@ -139,13 +139,13 @@ local mil_items = {
 }
 
 local mil_tech = {
-  "alien-blue-research",
-  "alien-green-research",
-  "alien-orange-research",
-  "alien-purple-research",
-  "alien-red-research",
-  "alien-research",
-  "alien-yellow-research",
+  "bob-alien-blue-research",
+  "bob-alien-green-research",
+  "bob-alien-orange-research",
+  "bob-alien-purple-research",
+  "bob-alien-red-research",
+  "bob-alien-research",
+  "bob-alien-yellow-research",
   "angels-explosives-1",
   "angels-explosives-2",
   "bob-acid-bullets",
@@ -209,12 +209,12 @@ local mil_tech = {
   "bob-turrets-3",
   "bob-turrets-4",
   "bob-turrets-5",
-  "cordite-processing",
+  "bob-cordite-processing",
   "defender",
   "destroyer",
   "discharge-defense-equipment",
   "distractor",
-  "distractor-mine",
+  "bob-distractor-mine",
   "energy-weapons-damage-7", -- Infinite
   "explosive-rocketry",
   "flamethrower",
@@ -227,9 +227,9 @@ local mil_tech = {
   "follower-robot-count-7", -- Infinite
   "land-mine",
   "laser-shooting-speed-7",
-  "nitroglycerin-processing",
+  "bob-nitroglycerin-processing",
   "physical-projectile-damage-7", -- Infinite
-  "poison-mine",
+  "bob-poison-mine",
   "refined-flammables-1",
   "refined-flammables-2",
   "refined-flammables-3",
@@ -240,15 +240,15 @@ local mil_tech = {
   "sct-alien-science-pack",
   "sct-lab-alien",
   "sct-science-pack-gold",
-  "slowdown-mine",
+  "bob-slowdown-mine",
   "stronger-explosives-7", -- Infinite
   "uranium-ammo",
 }
 
 local mil_ammo = {
-  { type = "ammo", name = "acid-bullet-magazine" },
-  { type = "ammo", name = "ap-bullet-magazine" },
-  { type = "ammo", name = "better-shotgun-shell" },
+  { type = "ammo", name = "bob-acid-bullet-magazine" },
+  { type = "ammo", name = "bob-ap-bullet-magazine" },
+  { type = "ammo", name = "bob-better-shotgun-shell" },
   { type = "ammo", name = "bob-acid-rocket" },
   { type = "ammo", name = "bob-electric-rocket" },
   { type = "ammo", name = "bob-explosive-rocket" },
@@ -257,73 +257,73 @@ local mil_ammo = {
   { type = "ammo", name = "bob-plasma-rocket" },
   { type = "ammo", name = "bob-poison-rocket" },
   { type = "ammo", name = "bob-rocket" },
-  { type = "ammo", name = "bullet-magazine" },
-  { type = "ammo", name = "distractor-artillery-shell" },
-  { type = "ammo", name = "electric-bullet-magazine" },
+  { type = "ammo", name = "bob-bullet-magazine" },
+  { type = "ammo", name = "bob-distractor-artillery-shell" },
+  { type = "ammo", name = "bob-electric-bullet-magazine" },
   { type = "ammo", name = "explosive-artillery-shell" },
   { type = "ammo", name = "explosive-rocket" },
-  { type = "ammo", name = "explosive-uranium-cannon-shell" },
-  { type = "ammo", name = "fire-artillery-shell" },
-  { type = "ammo", name = "flame-bullet-magazine" },
+  { type = "ammo", name = "bob-explosive-uranium-cannon-shell" },
+  { type = "ammo", name = "bob-fire-artillery-shell" },
+  { type = "ammo", name = "bob-flame-bullet-magazine" },
   { type = "ammo", name = "flamethrower-ammo" },
-  { type = "ammo", name = "he-bullet-magazine" },
-  { type = "ammo", name = "laser-rifle-battery-amethyst" },
-  { type = "ammo", name = "laser-rifle-battery-diamond" },
-  { type = "ammo", name = "laser-rifle-battery-emerald" },
-  { type = "ammo", name = "laser-rifle-battery-ruby" },
-  { type = "ammo", name = "laser-rifle-battery-sapphire" },
-  { type = "ammo", name = "laser-rifle-battery-topaz" },
-  { type = "ammo", name = "laser-rifle-battery" },
+  { type = "ammo", name = "bob-he-bullet-magazine" },
+  { type = "ammo", name = "bob-laser-rifle-battery-amethyst" },
+  { type = "ammo", name = "bob-laser-rifle-battery-diamond" },
+  { type = "ammo", name = "bob-laser-rifle-battery-emerald" },
+  { type = "ammo", name = "bob-laser-rifle-battery-ruby" },
+  { type = "ammo", name = "bob-laser-rifle-battery-sapphire" },
+  { type = "ammo", name = "bob-laser-rifle-battery-topaz" },
+  { type = "ammo", name = "bob-laser-rifle-battery" },
   { type = "ammo", name = "piercing-shotgun-shell" },
-  { type = "ammo", name = "plasma-bullet-magazine" },
-  { type = "ammo", name = "poison-artillery-shell" },
-  { type = "ammo", name = "poison-bullet-magazine" },
-  { type = "ammo", name = "scatter-cannon-shell" },
-  { type = "ammo", name = "shotgun-acid-shell" },
-  { type = "ammo", name = "shotgun-ap-shell" },
-  { type = "ammo", name = "shotgun-electric-shell" },
-  { type = "ammo", name = "shotgun-explosive-shell" },
-  { type = "ammo", name = "shotgun-flame-shell" },
-  { type = "ammo", name = "shotgun-plasma-shell" },
-  { type = "ammo", name = "shotgun-poison-shell" },
+  { type = "ammo", name = "bob-plasma-bullet-magazine" },
+  { type = "ammo", name = "bob-poison-artillery-shell" },
+  { type = "ammo", name = "bob-poison-bullet-magazine" },
+  { type = "ammo", name = "bob-scatter-cannon-shell" },
+  { type = "ammo", name = "bob-shotgun-acid-shell" },
+  { type = "ammo", name = "bob-shotgun-ap-shell" },
+  { type = "ammo", name = "bob-shotgun-electric-shell" },
+  { type = "ammo", name = "bob-shotgun-explosive-shell" },
+  { type = "ammo", name = "bob-shotgun-flame-shell" },
+  { type = "ammo", name = "bob-shotgun-plasma-shell" },
+  { type = "ammo", name = "bob-shotgun-poison-shell" },
   { type = "ammo", name = "shotgun-shell" },
-  { type = "ammo", name = "shotgun-uranium-shell" },
-  { type = "ammo", name = "uranium-cannon-shell" },
+  { type = "ammo", name = "bob-shotgun-uranium-shell" },
+  { type = "ammo", name = "bob-uranium-cannon-shell" },
   { type = "ammo", name = "uranium-rounds-magazine" },
   { type = "capsule", name = "cluster-grenade" },
   { type = "capsule", name = "defender-capsule" },
   { type = "capsule", name = "destroyer-capsule" },
   { type = "capsule", name = "discharge-defense-remote" },
   { type = "capsule", name = "distractor-capsule" },
-  { type = "capsule", name = "fire-capsule" },
+  { type = "capsule", name = "bob-fire-capsule" },
   { type = "capsule", name = "poison-capsule" },
   { type = "capsule", name = "slowdown-capsule" },
 }
 
 local mil_recipes = {
-  "acid-bullet",
-  "acid-bullet-magazine",
-  "acid-bullet-projectile",
-  "acid-rocket-warhead",
-  "alien-acid",
-  "alien-blue-alloy",
-  "alien-explosive",
-  "alien-fire",
-  "alien-orange-alloy",
-  "alien-poison",
-  "alien-science-pack",
-  "alien-science-pack-blue",
-  "alien-science-pack-green",
-  "alien-science-pack-orange",
-  "alien-science-pack-purple",
-  "alien-science-pack-red",
-  "alien-science-pack-yellow",
-  "angels-chemical-void-liquid-glycerol",
-  "angels-chemical-void-liquid-toluene",
-  "ap-bullet",
-  "ap-bullet-magazine",
-  "ap-bullet-projectile",
-  "better-shotgun-shell",
+  "bob-acid-bullet",
+  "bob-acid-bullet-magazine",
+  "bob-acid-bullet-projectile",
+  "bob-acid-rocket-warhead",
+  "bob-alien-acid",
+  "bob-alien-blue-alloy",
+  "bob-alien-explosive",
+  "bob-alien-fire",
+  "bob-alien-orange-alloy",
+  "bob-alien-poison",
+  "bob-alien-science-pack",
+  "bob-alien-science-pack-blue",
+  "bob-alien-science-pack-green",
+  "bob-alien-science-pack-orange",
+  "bob-alien-science-pack-purple",
+  "bob-alien-science-pack-red",
+  "bob-alien-science-pack-yellow",
+  "angels-chemical-void-angels-liquid-glycerol",
+  "angels-chemical-void-angels-liquid-toluene",
+  "bob-ap-bullet",
+  "bob-ap-bullet-magazine",
+  "bob-ap-bullet-projectile",
+  "bob-better-shotgun-shell",
   "bob-acid-rocket",
   "bob-armoured-cargo-wagon",
   "bob-armoured-cargo-wagon-2",
@@ -347,7 +347,6 @@ local mil_recipes = {
   "bob-plasma-rocket",
   "bob-plasma-turret-3",
   "bob-plasma-turret-4",
-  "bob-plasma-turret-5",
   "bob-poison-rocket",
   "bob-robot-flamethrower-drone",
   "bob-robot-gun-drone",
@@ -357,115 +356,114 @@ local mil_recipes = {
   "bob-sniper-turret-3",
   "bob-tank-2",
   "bob-tank-3",
-  "bullet",
-  "bullet-casing",
-  "bullet-magazine",
-  "bullet-projectile",
+  "bob-bullet",
+  "bob-bullet-casing",
+  "bob-bullet-magazine",
+  "bob-bullet-projectile",
   "cluster-grenade",
   "combat-shotgun",
-  "cordite",
+  "bob-cordite",
   "defender-capsule",
   "destroyer-capsule",
   "discharge-defense-equipment",
-  "discharge-defense-remote",
-  "distractor-artillery-shell",
+  "bob-distractor-artillery-shell",
   "distractor-capsule",
-  "distractor-mine",
-  "electric-bullet",
-  "electric-bullet-magazine",
-  "electric-bullet-projectile",
+  "bob-distractor-mine",
+  "bob-electric-bullet",
+  "bob-electric-bullet-magazine",
+  "bob-electric-bullet-projectile",
   "electric-energy-interface",
-  "electric-rocket-warhead",
-  "empty-alien-acid-barrel",
-  "empty-alien-explosive-barrel",
-  "empty-alien-fire-barrel",
-  "empty-alien-poison-barrel",
-  "empty-liquid-glycerol-barrel",
-  "empty-liquid-toluene-barrel",
-  "empty-nitroglycerin-barrel",
-  "explosive-artillery-shell",
+  "bob-electric-rocket-warhead",
+  "empty-bob-alien-acid-barrel",
+  "empty-bob-alien-explosive-barrel",
+  "empty-bob-alien-fire-barrel",
+  "empty-bob-alien-poison-barrel",
+  "empty-angels-liquid-glycerol-barrel",
+  "empty-angels-liquid-toluene-barrel",
+  "empty-bob-nitroglycerin-barrel",
+  "bob-explosive-artillery-shell",
   "explosive-rocket",
-  "explosive-rocket-warhead",
+  "bob-explosive-rocket-warhead",
   "explosive-uranium-cannon-shell",
-  "fill-alien-acid-barrel",
-  "fill-alien-explosive-barrel",
-  "fill-alien-fire-barrel",
-  "fill-alien-poison-barrel",
-  "fill-liquid-glycerol-barrel",
-  "fill-liquid-toluene-barrel",
-  "fill-nitroglycerin-barrel",
-  "fire-artillery-shell",
-  "fire-capsule",
-  "flame-bullet",
-  "flame-bullet-magazine",
-  "flame-bullet-projectile",
-  "flame-rocket-warhead",
+  "bob-alien-acid-barrel",
+  "bob-alien-explosive-barrel",
+  "bob-alien-fire-barrel",
+  "bob-alien-poison-barrel",
+  "angels-liquid-glycerol-barrel",
+  "angels-liquid-toluene-barrel",
+  "bob-nitroglycerin-barrel",
+  "bob-fire-artillery-shell",
+  "bob-fire-capsule",
+  "bob-flame-bullet",
+  "bob-flame-bullet-magazine",
+  "bob-flame-bullet-projectile",
+  "bob-flame-rocket-warhead",
   "flamethrower",
   "flamethrower-ammo",
   "flamethrower-turret",
-  "gas-fractioning-residual",
-  "gun-cotton",
-  "gunmetal-alloy",
-  "he-bullet",
-  "he-bullet-magazine",
-  "he-bullet-projectile",
-  "heavy-armor-2",
-  "heavy-armor-3",
-  "lab-alien",
+  "angels-gas-fractioning-residual",
+  "bob-gun-cotton",
+  "bob-gunmetal-alloy",
+  "bob-he-bullet",
+  "bob-he-bullet-magazine",
+  "bob-he-bullet-projectile",
+  --"modular-armor",
+  --"heavy-armor-3",
+  "bob-lab-alien",
   "land-mine",
-  "laser-rifle",
-  "laser-rifle-battery",
-  "laser-rifle-battery-amethyst",
-  "laser-rifle-battery-case",
-  "laser-rifle-battery-diamond",
-  "laser-rifle-battery-emerald",
-  "laser-rifle-battery-ruby",
-  "laser-rifle-battery-sapphire",
-  "laser-rifle-battery-topaz",
-  "liquid-glycerol",
-  "liquid-toluene-from-benzene",
-  "liquid-toluene-from-naphtha",
-  "magazine",
-  "nitroglycerin",
-  "petroleum-jelly",
-  "piercing-rocket-warhead",
+  "bob-laser-rifle",
+  "bob-laser-rifle-battery",
+  "bob-laser-rifle-battery-amethyst",
+  "bob-laser-rifle-battery-case",
+  "bob-laser-rifle-battery-diamond",
+  "bob-laser-rifle-battery-emerald",
+  "bob-laser-rifle-battery-ruby",
+  "bob-laser-rifle-battery-sapphire",
+  "bob-laser-rifle-battery-topaz",
+  "angels-liquid-glycerol",
+  "angels-liquid-toluene-from-benzene",
+  "angels-liquid-toluene",
+  "bob-magazine",
+  "bob-nitroglycerin",
+  "bob-petroleum-jelly",
+  "bob-piercing-rocket-warhead",
   "piercing-shotgun-shell",
-  "plasma-bullet",
-  "plasma-bullet-magazine",
-  "plasma-bullet-projectile",
-  "plasma-rocket-warhead",
-  "poison-artillery-shell",
-  "poison-bullet",
-  "poison-bullet-magazine",
-  "poison-bullet-projectile",
+  "bob-plasma-bullet",
+  "bob-plasma-bullet-magazine",
+  "bob-plasma-bullet-projectile",
+  "bob-plasma-rocket-warhead",
+  "bob-poison-artillery-shell",
+  "bob-poison-bullet",
+  "bob-poison-bullet-magazine",
+  "bob-poison-bullet-projectile",
   "poison-capsule",
-  "poison-mine",
-  "poison-rocket-warhead",
-  "rifle",
-  "robot-drone-frame",
-  "robot-drone-frame-large",
-  "rocket-body",
-  "rocket-warhead",
-  "scatter-cannon-shell",
-  "science-pack-gold",
-  "shot",
+  "bob-poison-mine",
+  "bob-poison-rocket-warhead",
+  "bob-rifle",
+  "bob-robot-drone-frame",
+  "bob-robot-drone-frame-large",
+  "bob-rocket-body",
+  "bob-rocket-warhead",
+  "bob-scatter-cannon-shell",
+  "bob-science-pack-gold",
+  "bob-shot",
   "shotgun",
-  "shotgun-acid-shell",
-  "shotgun-ap-shell",
-  "shotgun-electric-shell",
-  "shotgun-explosive-shell",
-  "shotgun-flame-shell",
-  "shotgun-plasma-shell",
-  "shotgun-poison-shell",
+  "bob-shotgun-acid-shell",
+  "bob-shotgun-ap-shell",
+  "bob-shotgun-electric-shell",
+  "bob-shotgun-explosive-shell",
+  "bob-shotgun-flame-shell",
+  "bob-shotgun-plasma-shell",
+  "bob-shotgun-poison-shell",
   "shotgun-shell",
-  "shotgun-shell-casing",
-  "shotgun-uranium-shell",
+  "bob-shotgun-shell-casing",
+  "bob-shotgun-uranium-shell",
   "slowdown-capsule",
-  "slowdown-mine",
-  "solid-nitroglycerin",
-  "solid-trinitrotoluene",
-  "uranium-bullet",
-  "uranium-bullet-projectile",
+  "bob-slowdown-mine",
+  "angels-solid-nitroglycerin",
+  "angels-solid-trinitrotoluene",
+  "bob-uranium-bullet",
+  "bob-uranium-bullet-projectile",
   "uranium-cannon-shell",
   "uranium-rounds-magazine",
 }
@@ -483,9 +481,32 @@ for _, v in pairs(mil_ammo) do
   end
 end
 
+-- except = {
+--   ["follower-robot-count-1"] = true,
+--   ["follower-robot-count-2"] = true,
+--   ["follower-robot-count-3"] = true,
+--   ["follower-robot-count-4"] = true,
+--   ["follower-robot-count-5"] = true,
+--   ["follower-robot-count-6"] = true,
+--   ["follower-robot-count-7"] = true,
+--   ["energy-weapons-damage-7"] = true,
+--   ["physical-projectile-damage-7"] = true,
+--   ["refined-flammables-1"] = true,
+--   ["refined-flammables-2"] = true,
+--   ["refined-flammables-3"] = true,
+--   ["refined-flammables-4"] = true,
+--   ["refined-flammables-5"] = true,
+--   ["refined-flammables-6"] = true,
+--   ["refined-flammables-7"] = true,
+--   ["stronger-explosives-7"] = true,
+--   ["laser-shooting-speed-7"] = true,
+-- }
 for _, v in pairs(mil_tech) do
   if data.raw.technology[v] then
     seablock.lib.hide_technology(v)
+    -- if not except[v] then
+    --   data.raw.technology[v].unit.ingredients = {} --remove 
+    -- end
   end
 end
 
@@ -493,45 +514,56 @@ for _, v in pairs(mil_recipes) do
   bobmods.lib.recipe.hide(v)
 end
 
+-- Remove hidden upgrade
+if mods["bobwarfare"] then
+  data.raw["ammo-turret"]["bob-gun-turret-2"].next_upgrade = nil
+  data.raw["ammo-turret"]["bob-sniper-turret-2"].next_upgrade = nil
+  data.raw["electric-turret"]["bob-plasma-turret-2"].next_upgrade = nil
+  data.raw["artillery-turret"]["bob-artillery-turret-2"].next_upgrade = nil
+  data.raw["artillery-wagon"]["bob-artillery-wagon-2"].next_upgrade = nil
+end
+data.raw["electric-turret"]["laser-turret"].next_upgrade = nil
+
+
 bobmods.lib.tech.remove_recipe_unlock("angels-advanced-gas-processing", "gas-fractioning-residual")
-bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "empty-liquid-glycerol-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "empty-liquid-toluene-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "empty-nitroglycerin-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "fill-liquid-glycerol-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "fill-liquid-toluene-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-barrel-processing", "fill-nitroglycerin-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-canister-processing", "empty-alien-acid-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-canister-processing", "empty-alien-explosive-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-canister-processing", "empty-alien-fire-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-canister-processing", "empty-alien-poison-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-canister-processing", "fill-alien-acid-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-canister-processing", "fill-alien-explosive-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-canister-processing", "fill-alien-fire-barrel")
-bobmods.lib.tech.remove_recipe_unlock("fluid-canister-processing", "fill-alien-poison-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "empty-liquid-glycerol-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "empty-liquid-toluene-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "empty-bob-nitroglycerin-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "liquid-glycerol-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "liquid-toluene-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "bob-nitroglycerin-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-canister-processing", "empty-bob-alien-acid-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-canister-processing", "empty-bob-alien-explosive-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-canister-processing", "empty-bob-alien-fire-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-canister-processing", "empty-bob-alien-poison-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-canister-processing", "bob-alien-acid-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-canister-processing", "bob-alien-explosive-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-canister-processing", "bob-alien-fire-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-canister-processing", "bob-alien-poison-barrel")
 bobmods.lib.tech.remove_recipe_unlock("military", "shotgun")
 bobmods.lib.tech.remove_recipe_unlock("military", "shotgun-shell")
 bobmods.lib.tech.remove_recipe_unlock("military-3", "combat-shotgun")
-bobmods.lib.tech.remove_recipe_unlock("military-3", "fire-capsule")
+bobmods.lib.tech.remove_recipe_unlock("military-3", "bob-fire-capsule")
 bobmods.lib.tech.remove_recipe_unlock("military-3", "poison-capsule")
-bobmods.lib.tech.remove_recipe_unlock("military-3", "rifle")
+bobmods.lib.tech.remove_recipe_unlock("military-3", "bob-rifle")
 bobmods.lib.tech.remove_recipe_unlock("military-3", "slowdown-capsule")
-bobmods.lib.tech.remove_recipe_unlock("military-3", "sniper-rifle") -- Unlocked by it's own earlier tech
+bobmods.lib.tech.remove_recipe_unlock("military-3", "bob-sniper-rifle") -- Unlocked by it's own earlier tech
 bobmods.lib.tech.remove_recipe_unlock("military-4", "cluster-grenade")
 bobmods.lib.tech.remove_recipe_unlock("military-4", "piercing-shotgun-shell")
-bobmods.lib.tech.remove_recipe_unlock("robotics", "robot-drone-frame")
-bobmods.lib.tech.remove_recipe_unlock("robotics", "robot-drone-frame-large")
+bobmods.lib.tech.remove_recipe_unlock("robotics", "bob-robot-drone-frame")
+bobmods.lib.tech.remove_recipe_unlock("robotics", "bob-robot-drone-frame-large")
 bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "explosive-uranium-cannon-shell")
-bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "shotgun-uranium-shell")
-bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "uranium-bullet")
-bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "uranium-bullet-projectile")
+bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "bob-shotgun-uranium-shell")
+bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "bob-uranium-bullet")
+bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "bob-uranium-bullet-projectile")
 bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "uranium-cannon-shell")
 bobmods.lib.tech.remove_recipe_unlock("uranium-ammo", "uranium-rounds-magazine")
-bobmods.lib.tech.remove_recipe_unlock("zinc-processing", "gunmetal-alloy")
+bobmods.lib.tech.remove_recipe_unlock("bob-zinc-processing", "bob-gunmetal-alloy")
 
-seablock.lib.substresult("nutrients-refining-2", "liquid-glycerol", "water", nil)
-if data.raw.recipe["nutrients-refining-2"] then
-  data.raw.recipe["nutrients-refining-2"].icons = angelsmods.functions.create_liquid_recipe_icon({
-    "liquid-fuel-oil",
+seablock.lib.substresult("angels-nutrients-refining-2", "angels-liquid-glycerol", "water", nil)
+if data.raw.recipe["angels-nutrients-refining-2"] then
+  data.raw.recipe["angels-nutrients-refining-2"].icons = angelsmods.functions.create_liquid_recipe_icon({
+    "angels-liquid-fuel-oil",
     { "__base__/graphics/icons/fluid/water.png", 64 },
   }, { { 214, 146, 040 }, { 169, 130, 039 }, { 120, 083, 004 } })
 end
@@ -542,10 +574,10 @@ for i = 1, 6 do
   seablock.lib.remove_effect("physical-projectile-damage-" .. i, "turret-attack", "turret_id", "bob-gun-turret-5")
   seablock.lib.remove_effect("physical-projectile-damage-" .. i, "turret-attack", "turret_id", "bob-sniper-turret-3")
   seablock.lib.remove_effect("physical-projectile-damage-" .. i, "ammo-damage", "ammo_category", "shotgun-shell")
-  seablock.lib.remove_effect("energy-weapons-damage-" .. i, "ammo-damage", "ammo_category", "laser-rifle")
-  seablock.lib.remove_effect("energy-weapons-damage-" .. i, "ammo-damage", "ammo_category", "beam")
+  seablock.lib.remove_effect("laser-weapons-damage-" .. i, "ammo-damage", "ammo_category", "bob-laser-rifle")
+  seablock.lib.remove_effect("laser-weapons-damage-" .. i, "ammo-damage", "ammo_category", "beam")
   seablock.lib.remove_effect("weapon-shooting-speed-" .. i, "gun-speed", "ammo_category", "shotgun-shell")
-  seablock.lib.remove_effect("laser-shooting-speed-" .. i, "gun-speed", "ammo_category", "laser-rifle")
+  seablock.lib.remove_effect("laser-shooting-speed-" .. i, "gun-speed", "ammo_category", "bob-laser-rifle")
   seablock.lib.remove_effect("stronger-explosives-" .. i, "ammo-damage", "ammo_category", "landmine")
 end
 
@@ -569,7 +601,7 @@ local mil_techswap = {
       { "logistic-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
     },
   },
   -- 250 Red, Green, Blue, Purple, Pink, Yellow
@@ -580,7 +612,7 @@ local mil_techswap = {
       { "logistic-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
@@ -593,7 +625,7 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
     },
   },
   -- 250 Red, Green, Military, Blue, Purple, Pink, Yellow
@@ -605,7 +637,7 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
@@ -618,7 +650,7 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
       { "space-science-pack", 1 },
     },
@@ -631,7 +663,7 @@ local mil_techswap = {
       { "logistic-science-pack", 1 },
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
-      { mods["bobtech"] and "advanced-logistic-science-pack" or "production-science-pack", 1 },
+      { mods["bobtech"] and "bob-advanced-logistic-science-pack" or "production-science-pack", 1 },
     },
   },
   -- 250 Red, Green, Military, Blue, Purple, Pink, Yellow
@@ -643,7 +675,7 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
@@ -656,46 +688,46 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
       { "space-science-pack", 1 },
     },
   },
   -- 250 Red, Green, Military, Blue, Purple, Pink
   {
-    tech_name = "fusion-reactor-equipment-2",
+    tech_name = "bob-fission-reactor-equipment-2",
     science_packs = {
       { "automation-science-pack", 1 },
       { "logistic-science-pack", 1 },
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
     },
   },
   -- 300 Red, Green, Military, Blue, Purple, Pink, Yellow
   {
-    tech_name = "fusion-reactor-equipment-3",
+    tech_name = "bob-fission-reactor-equipment-3",
     science_packs = {
       { "automation-science-pack", 1 },
       { "logistic-science-pack", 1 },
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
   -- 350 Red, Green, Military, Blue, Purple, Pink, Yellow, White
   {
-    tech_name = "fusion-reactor-equipment-4",
+    tech_name = "bob-fission-reactor-equipment-4",
     science_packs = {
       { "automation-science-pack", 1 },
       { "logistic-science-pack", 1 },
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
       { "space-science-pack", 1 },
     },
@@ -718,7 +750,7 @@ local mil_techswap = {
       { "logistic-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
     },
   },
   -- 250 Red, Green, Blue, Purple, Pink, Yellow
@@ -729,7 +761,7 @@ local mil_techswap = {
       { "logistic-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
@@ -742,7 +774,7 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
     },
   },
   -- 250 Red, Green, Military, Blue, Purple, Pink, Yellow
@@ -754,7 +786,7 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
@@ -767,7 +799,7 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
       { "space-science-pack", 1 },
     },
@@ -791,7 +823,7 @@ local mil_techswap = {
       { "logistic-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
@@ -803,7 +835,7 @@ local mil_techswap = {
       { "logistic-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
       { "space-science-pack", 1 },
     },
@@ -839,7 +871,7 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
     },
   },
   -- 400 Red, Green, Military, Blue, Purple, Pink, Yellow
@@ -851,13 +883,13 @@ local mil_techswap = {
       { "military-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
   -- 350 Red, Green, Blue, Purple, Yellow
   {
-    tech_name = "vehicle-fusion-reactor-equipment-4",
+    tech_name = "bob-vehicle-fission-reactor-equipment-4",
     science_packs = {
       { "automation-science-pack", 1 },
       { "logistic-science-pack", 1 },
@@ -868,25 +900,25 @@ local mil_techswap = {
   },
   -- 400 Red, Green, Blue, Purple, Pink, Yellow
   {
-    tech_name = "vehicle-fusion-reactor-equipment-5",
+    tech_name = "bob-vehicle-fission-reactor-equipment-5",
     science_packs = {
       { "automation-science-pack", 1 },
       { "logistic-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
     },
   },
   -- 450 Red, Green, Blue, Purple, Pink, Yellow, White
   {
-    tech_name = "vehicle-fusion-reactor-equipment-6",
+    tech_name = "bob-vehicle-fission-reactor-equipment-6",
     science_packs = {
       { "automation-science-pack", 1 },
       { "logistic-science-pack", 1 },
       { "chemical-science-pack", 1 },
       { "production-science-pack", 1 },
-      { "advanced-logistic-science-pack", 1 },
+      { "bob-advanced-logistic-science-pack", 1 },
       { "utility-science-pack", 1 },
       { "space-science-pack", 1 },
     },
@@ -949,16 +981,16 @@ if mods["bobwarfare"] then
   bobmods.lib.tech.add_prerequisite("bob-plasma-turrets-1", "military-3")
   bobmods.lib.tech.add_prerequisite("bob-plasma-turrets-1", "angels-cobalt-steel-smelting-1")
   seablock.lib.substingredient("bob-plasma-turret-1", "electronic-circuit", "advanced-circuit", 40)
-  seablock.lib.substingredient("bob-plasma-turret-1", "steel-plate", "cobalt-steel-alloy", nil)
+  seablock.lib.substingredient("bob-plasma-turret-1", "steel-plate", "bob-cobalt-steel-alloy", nil)
 
   bobmods.lib.tech.add_new_science_pack("bob-plasma-turrets-2", "chemical-science-pack", 1)
   bobmods.lib.tech.add_new_science_pack("bob-plasma-turrets-2", "production-science-pack", 1)
   bobmods.lib.tech.add_prerequisite("bob-plasma-turrets-2", "military-4")
-  bobmods.lib.tech.add_prerequisite("bob-plasma-turrets-2", "battery-2")
+  bobmods.lib.tech.add_prerequisite("bob-plasma-turrets-2", "bob-battery-2")
   bobmods.lib.tech.add_prerequisite("bob-plasma-turrets-2", "angels-titanium-smelting-1")
-  seablock.lib.substingredient("bob-plasma-turret-2", "battery", "lithium-ion-battery", nil)
+  seablock.lib.substingredient("bob-plasma-turret-2", "battery", "bob-lithium-ion-battery", nil)
   seablock.lib.substingredient("bob-plasma-turret-2", "advanced-circuit", "processing-unit", 40)
-  seablock.lib.substingredient("bob-plasma-turret-2", "steel-plate", "titanium-plate", nil)
+  seablock.lib.substingredient("bob-plasma-turret-2", "steel-plate", "bob-titanium-plate", nil)
 
   -- Make Military 4 take Purple science rather than Yellow science
   bobmods.lib.tech.remove_science_pack("military-4", "utility-science-pack")
@@ -966,7 +998,7 @@ if mods["bobwarfare"] then
   bobmods.lib.tech.replace_prerequisite("military-4", "utility-science-pack", "production-science-pack")
 
   -- Walking Vehicle (Antron) can now depend on Military 4
-  bobmods.lib.tech.replace_prerequisite("walking-vehicle", "military-3", "military-4")
+  bobmods.lib.tech.replace_prerequisite("bob-walking-vehicle", "military-3", "military-4")
 
   -- Move Artillery later
   bobmods.lib.tech.remove_science_pack("bob-artillery-turret-2", "utility-science-pack", 1)
@@ -974,26 +1006,21 @@ if mods["bobwarfare"] then
   bobmods.lib.tech.add_new_science_pack("bob-artillery-turret-2", "production-science-pack", 1)
   bobmods.lib.tech.add_new_science_pack("bob-artillery-wagon-2", "production-science-pack", 1)
   bobmods.lib.tech.add_prerequisite("artillery", "military-3")
-  bobmods.lib.tech.add_prerequisite("artillery", "cobalt-processing")
+  bobmods.lib.tech.add_prerequisite("artillery", "bob-cobalt-processing")
   bobmods.lib.tech.add_prerequisite("artillery", "angels-stone-smelting-2")
-  seablock.lib.substingredient("artillery-turret", "iron-gear-wheel", "cobalt-steel-gear-wheel", nil)
-  seablock.lib.substingredient("artillery-turret", "concrete", "concrete-brick", nil)
-  seablock.lib.substingredient("artillery-turret", "steel-plate", "cobalt-steel-alloy", nil)
-  seablock.lib.substingredient("artillery-wagon", "iron-gear-wheel", "cobalt-steel-gear-wheel", nil)
-  seablock.lib.substingredient("artillery-wagon", "pipe", "brass-pipe", nil)
-  seablock.lib.substingredient("artillery-wagon", "steel-plate", "cobalt-steel-alloy", nil)
+  seablock.lib.substingredient("artillery-turret", "iron-gear-wheel", "bob-cobalt-steel-gear-wheel", nil)
+  seablock.lib.substingredient("artillery-turret", "concrete", "angels-concrete-brick", nil)
+  seablock.lib.substingredient("artillery-turret", "steel-plate", "bob-cobalt-steel-alloy", nil)
+  seablock.lib.substingredient("artillery-wagon", "iron-gear-wheel", "bob-cobalt-steel-gear-wheel", nil)
+  seablock.lib.substingredient("artillery-wagon", "pipe", "bob-brass-pipe", nil)
+  seablock.lib.substingredient("artillery-wagon", "steel-plate", "bob-cobalt-steel-alloy", nil)
 
-  bobmods.lib.tech.add_prerequisite("artillery", "radars-3")
-  seablock.lib.substingredient("artillery-targeting-remote", "radar", "radar-3")
+  bobmods.lib.tech.add_prerequisite("artillery", "bob-radar-3")
 
-  bobmods.lib.tech.add_prerequisite("spidertron", "radars-5")
-  seablock.lib.substingredient("spidertron-remote", "radar", "radar-5")
-
-  -- Remove prerequisite as gunmetal smelting tech won't exist as we have disabled the trigger
-  bobmods.lib.tech.remove_prerequisite("bob-armor-making-3", "angels-gunmetal-smelting-1")
+  bobmods.lib.tech.add_prerequisite("spidertron", "bob-radar-5")
 
   -- Remove dependencies on Alien Research
-  bobmods.lib.tech.remove_prerequisite("bob-power-armor-3", "alien-research")
+  --bobmods.lib.tech.remove_prerequisite("bob-power-armor-3", "alien-research")
 
   -- Adjust Power Armor
   bobmods.lib.tech.remove_science_pack("power-armor", "chemical-science-pack")
@@ -1001,18 +1028,18 @@ if mods["bobwarfare"] then
   bobmods.lib.tech.add_prerequisite("power-armor", "military-science-pack")
   bobmods.lib.tech.set_science_pack_count("power-armor", 150)
   bobmods.lib.recipe.replace_ingredient("power-armor", "processing-unit", "advanced-circuit")
-  bobmods.lib.tech.remove_prerequisite("power-armor", "advanced-electronics-2")
+  bobmods.lib.tech.remove_prerequisite("power-armor", "processing-unit")
 
   bobmods.lib.tech.remove_science_pack("power-armor-mk2", "utility-science-pack")
   bobmods.lib.tech.remove_prerequisite("power-armor-mk2", "utility-science-pack")
   bobmods.lib.tech.add_prerequisite("power-armor-mk2", "low-density-structure")
-  bobmods.lib.tech.add_prerequisite("power-armor-mk2", "advanced-electronics-2")
+  bobmods.lib.tech.add_prerequisite("power-armor-mk2", "processing-unit")
   bobmods.lib.tech.set_science_pack_count("power-armor-mk2", 200)
   bobmods.lib.tech.replace_prerequisite("power-armor-mk2", "military-4", "military-3")
 
   if mods["bobtech"] then
     bobmods.lib.tech.remove_prerequisite("bob-power-armor-3", "production-science-pack")
-    bobmods.lib.tech.add_prerequisite("bob-power-armor-3", "advanced-logistic-science-pack")
+    bobmods.lib.tech.add_prerequisite("bob-power-armor-3", "bob-advanced-logistic-science-pack")
   else
     bobmods.lib.tech.add_prerequisite("bob-power-armor-3", "military-4")
   end
@@ -1022,51 +1049,51 @@ end
 if mods["bobequipment"] then
   -- Batteries
   bobmods.lib.tech.remove_prerequisite("battery-mk2-equipment", "power-armor")
-  bobmods.lib.tech.add_prerequisite("battery-mk2-equipment", "advanced-electronics-2")
+  bobmods.lib.tech.add_prerequisite("battery-mk2-equipment", "processing-unit")
   if mods["bobtech"] then
-    bobmods.lib.tech.add_prerequisite("bob-battery-equipment-5", "advanced-logistic-science-pack")
+    bobmods.lib.tech.add_prerequisite("bob-battery-equipment-5", "bob-advanced-logistic-science-pack")
   end
 
   -- Personal Laser Defense
-  bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-5", "utility-science-pack")
-  bobmods.lib.tech.add_prerequisite("personal-laser-defense-equipment-6", "space-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-personal-laser-defense-equipment-5", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-personal-laser-defense-equipment-6", "space-science-pack")
 
   -- Energy Shield
-  bobmods.lib.tech.add_prerequisite("energy-shield-mk2-equipment", "advanced-electronics-2")
+  bobmods.lib.tech.add_prerequisite("energy-shield-mk2-equipment", "processing-unit")
 
   -- Remove dependencies on Alien Research
-  bobmods.lib.tech.remove_prerequisite("bob-energy-shield-equipment-4", "alien-research")
-  bobmods.lib.tech.remove_prerequisite("bob-battery-equipment-4", "alien-research")
-  bobmods.lib.tech.remove_prerequisite("fusion-reactor-equipment-2", "alien-research")
-  bobmods.lib.tech.remove_prerequisite("personal-laser-defense-equipment-6", "alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-energy-shield-equipment-4", "bob-alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-battery-equipment-4", "bob-alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-fission-reactor-equipment-2", "bob-alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-personal-laser-defense-equipment-6", "bob-alien-research")
 end
 
 if mods["bobvehicleequipment"] then
   -- Remove dependencies on Alien Research
-  bobmods.lib.tech.remove_prerequisite("vehicle-battery-equipment-4", "alien-research")
-  bobmods.lib.tech.remove_prerequisite("vehicle-big-turret-equipment-4", "alien-research")
-  bobmods.lib.tech.remove_prerequisite("vehicle-energy-shield-equipment-4", "alien-research")
-  bobmods.lib.tech.remove_prerequisite("vehicle-fusion-cell-equipment-4", "alien-research")
-  bobmods.lib.tech.remove_prerequisite("vehicle-fusion-reactor-equipment-4", "alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-vehicle-battery-equipment-4", "bob-alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-vehicle-big-turret-equipment-4", "bob-alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-vehicle-shield-equipment-4", "bob-alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-vehicle-fission-cell-equipment-4", "bob-alien-research")
+  bobmods.lib.tech.remove_prerequisite("bob-vehicle-fission-reactor-equipment-4", "bob-alien-research")
 
-  bobmods.lib.tech.add_prerequisite("vehicle-big-turret-equipment-4", "military-4")
-  bobmods.lib.tech.add_prerequisite("vehicle-laser-defense-equipment-5", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-big-turret-equipment-4", "military-4")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-laser-defense-equipment-5", "utility-science-pack")
 
   if mods["bobtech"] then
-    bobmods.lib.tech.add_prerequisite("vehicle-battery-equipment-5", "advanced-logistic-science-pack")
-    bobmods.lib.tech.add_prerequisite("vehicle-big-turret-equipment-5", "advanced-logistic-science-pack")
-    bobmods.lib.tech.add_prerequisite("vehicle-energy-shield-equipment-4", "advanced-logistic-science-pack")
-    bobmods.lib.tech.add_prerequisite("vehicle-fusion-cell-equipment-4", "advanced-logistic-science-pack")
-    bobmods.lib.tech.add_prerequisite("vehicle-fusion-reactor-equipment-4", "advanced-logistic-science-pack")
+    bobmods.lib.tech.add_prerequisite("bob-vehicle-battery-equipment-5", "bob-advanced-logistic-science-pack")
+    bobmods.lib.tech.add_prerequisite("bob-vehicle-big-turret-equipment-5", "bob-advanced-logistic-science-pack")
+    bobmods.lib.tech.add_prerequisite("bob-vehicle-shield-equipment-4", "bob-advanced-logistic-science-pack")
+    bobmods.lib.tech.add_prerequisite("bob-vehicle-fission-cell-equipment-4", "bob-advanced-logistic-science-pack")
+    bobmods.lib.tech.add_prerequisite("bob-vehicle-fission-reactor-equipment-4", "bob-advanced-logistic-science-pack")
   end
 
-  bobmods.lib.tech.add_prerequisite("vehicle-battery-equipment-6", "utility-science-pack")
-  bobmods.lib.tech.add_prerequisite("vehicle-big-turret-equipment-6", "utility-science-pack")
-  bobmods.lib.tech.add_prerequisite("vehicle-energy-shield-equipment-5", "utility-science-pack")
-  bobmods.lib.tech.add_prerequisite("vehicle-fusion-cell-equipment-5", "utility-science-pack")
-  bobmods.lib.tech.add_prerequisite("vehicle-fusion-reactor-equipment-5", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-battery-equipment-6", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-big-turret-equipment-6", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-shield-equipment-5", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-fission-cell-equipment-5", "utility-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-fission-reactor-equipment-5", "utility-science-pack")
 
-  bobmods.lib.tech.add_prerequisite("vehicle-energy-shield-equipment-6", "space-science-pack")
-  bobmods.lib.tech.add_prerequisite("vehicle-fusion-cell-equipment-6", "space-science-pack")
-  bobmods.lib.tech.add_prerequisite("vehicle-fusion-reactor-equipment-6", "space-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-shield-equipment-6", "space-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-fission-cell-equipment-6", "space-science-pack")
+  bobmods.lib.tech.add_prerequisite("bob-vehicle-fission-reactor-equipment-6", "space-science-pack")
 end
