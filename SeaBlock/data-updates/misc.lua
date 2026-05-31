@@ -250,13 +250,27 @@ bobmods.lib.tech.remove_recipe_unlock("angels-titanium-casting-3", "molten-titan
 bobmods.lib.tech.remove_prerequisite("angels-titanium-casting-3", "angels-chrome-smelting-1")
 
 -- Buff bob's silicon and tungsten recipes
+local function set_result_amount(recipe_name, amount)
+  local recipe = data.raw.recipe[recipe_name]
+  if not recipe then
+    return
+  end
+  if recipe.results and recipe.results[1] then
+    recipe.results[1].amount = amount
+  elseif recipe.result then
+    recipe.results = { { type = "item", name = recipe.result, amount = amount } }
+    recipe.result = nil
+  end
+  recipe.result_count = nil
+end
+
 seablock.lib.substingredient("silicon-carbide", "silicon-powder", nil, 10)
 seablock.lib.substingredient("silicon-carbide", "carbon", nil, 10)
-data.raw.recipe["silicon-carbide"].result_count = 20
+set_result_amount("silicon-carbide", 20)
 
 seablock.lib.substingredient("silicon-nitride", "silicon-powder", nil, 10)
 seablock.lib.substingredient("silicon-nitride", "gas-nitrogen", nil, 130)
-data.raw.recipe["silicon-nitride"].result_count = 10
+set_result_amount("silicon-nitride", 10)
 
 seablock.lib.substingredient("tungsten-carbide", "tungsten-oxide", nil, 10)
 seablock.lib.substingredient("tungsten-carbide", "carbon", nil, 10)

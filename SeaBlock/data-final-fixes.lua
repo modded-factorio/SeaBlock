@@ -39,4 +39,13 @@ for _, v in pairs(data.raw.character) do
   end
 end
 
-bobmods.lib.tech.prerequisite_cleanup()
+-- Bob's dev branch does not always expose every 1.1 helper that SeaBlock used.
+-- The cleanup is useful when present, but it is no longer safe to call blindly.
+if bobmods.lib.tech.prerequisite_cleanup then
+  bobmods.lib.tech.prerequisite_cleanup()
+end
+
+-- Run the 2.0 compatibility pass again after final fixes.  Several Angel/Bob
+-- helpers mutate prototypes late, so the second pass catches new legacy shapes
+-- created after data.lua required the shim.
+seablock.factorio_2_0_compat()

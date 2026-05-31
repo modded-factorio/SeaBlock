@@ -17,3 +17,8 @@ require("data/misc")
 require("data/ScienceCostTweakerM")
 require("data/recipe")
 require("data/tech-tree")
+
+-- Centralized Factorio 2.0 data-stage compatibility pass.  It normalizes
+-- legacy recipe, collision mask, map-gen, technology, and Bob 2.0 naming
+-- differences before Factorio performs strict prototype validation.
+require("compat/factorio-2-0")

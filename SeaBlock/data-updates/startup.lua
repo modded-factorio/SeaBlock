@@ -204,13 +204,14 @@ end
 
 -- Limit research required for startup techs.
 for k, v in pairs(seablock.startup_techs) do
-  if data.raw.technology[k] then
-    if v[1] and data.raw.technology[k].unit.count > 20 then
-      data.raw.technology[k].unit.count = 20
-      data.raw.technology[k].unit.ingredients = { { "automation-science-pack", 1 } }
+  local tech = data.raw.technology[k]
+  if tech and tech.unit then
+    if v[1] and tech.unit.count and tech.unit.count > 20 then
+      tech.unit.count = 20
+      tech.unit.ingredients = { { "automation-science-pack", 1 } }
     end
     bobmods.lib.tech.ignore_tech_cost_multiplier(k, true)
-    data.raw.technology[k].unit.time = 15
+    tech.unit.time = 15
   end
 end
 

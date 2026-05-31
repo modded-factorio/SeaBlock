@@ -1,5 +1,10 @@
 require("__core__/lualib/util")
 
+-- Factorio 2.0 renamed script-global persistent state to `storage`.  SeaBlock's
+-- remote interface is part of its public mod API, so keep the old internal
+-- field names while binding them to the new runtime table in one obvious place.
+local global = storage
+
 local function get_unlocks()
   return util.table.deepcopy(global.unlocks)
 end

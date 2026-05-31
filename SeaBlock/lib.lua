@@ -246,12 +246,7 @@ end
 function seablock.lib.hide_item(item_name)
   local item = data.raw.item[item_name]
   if item then
-    if not item.flags then
-      item.flags = {}
-    end
-    if not seablock.lib.tablefind(item.flags, "hidden") then
-      table.insert(item.flags, "hidden")
-    end
+    item.hidden = true
   else
     item = data.raw.fluid[item_name]
     if item then
@@ -270,16 +265,14 @@ function seablock.lib.hide(type_name, name)
     else
       if type_name == "fluid" then
         item.hidden = true
+      elseif type_name == "item" then
+        item.hidden = true
       else
         if not item.flags then
           item.flags = {}
         end
         if not seablock.lib.tablefind(item.flags, "hidden") then
           table.insert(item.flags, "hidden")
-        end
-
-        if type_name == "item" then
-          table.insert(item.flags, "hide-from-bonus-gui")
         end
 
         item.next_upgrade = nil

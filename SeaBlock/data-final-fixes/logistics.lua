@@ -35,12 +35,16 @@ set_speed("splitter", "ultimate-splitter", 75)
 -- Also reduce module slots and effectivity
 if data.raw.beacon["beacon-2"] then
   data.raw.beacon["beacon-2"].energy_usage = "960kW"
-  data.raw.beacon["beacon-2"].module_specification.module_slots = 2
+  if data.raw.beacon["beacon-2"].module_specification then
+    data.raw.beacon["beacon-2"].module_specification.module_slots = 2
+  end
   data.raw.beacon["beacon-2"].distribution_effectivity = 0.5
 end
 if data.raw.beacon["beacon-3"] then
   data.raw.beacon["beacon-3"].energy_usage = "1920kW"
-  data.raw.beacon["beacon-3"].module_specification.module_slots = 2
+  if data.raw.beacon["beacon-3"].module_specification then
+    data.raw.beacon["beacon-3"].module_specification.module_slots = 2
+  end
   data.raw.beacon["beacon-3"].distribution_effectivity = 0.5
 end
 

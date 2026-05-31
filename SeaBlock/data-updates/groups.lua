@@ -12,7 +12,7 @@ if not mods["angelsindustries"] then
     end
   end
 
-  move_item("battery", "bob-intermediates", "f-cba[battery]")
+  move_item("battery", "intermediate-product", "f-cba[battery]")
   move_item("iron-gear-wheel", "bob-gears", "aa[iron-gear-wheel]")
   move_item("thorium-processing", "bob-nuclear", "l[thorium-processing]", "recipe")
 end

@@ -1,5 +1,15 @@
 seablock = seablock or {}
 
+-- Factorio 2.0 renamed the persistent runtime table from `global` to `storage`.
+-- Keep a local `global` alias so the old SeaBlock control code can keep its
+-- existing data layout while making the runtime API change explicit here.
+local global = storage
+
+-- Runtime prototype access moved off `game` in 2.0.  SeaBlock uses prototype
+-- tables during init/configuration changes to seed starting items and restore
+-- technology state, so read from the new `prototypes` namespace once up front.
+local runtime_prototypes = prototypes or {}
+
 require("starting-items")
 require("remote")
 
@@ -51,7 +61,11 @@ end
 
 local function init()
   set_pvp()
-  global.starting_items = seablock.populate_starting_items(game.item_prototypes)
+
+  -- `game.item_prototypes` was removed in 2.0; the equivalent table is
+  -- `prototypes.item`.  Passing an empty table is safer than failing init if a
+  -- future scenario calls this before runtime prototypes are available.
+  global.starting_items = seablock.populate_starting_items(runtime_prototypes.item or {})
   if remote.interfaces.freeplay then
     if remote.interfaces.freeplay.set_disable_crashsite then
       remote.call("freeplay", "set_disable_crashsite", true)
@@ -61,7 +75,9 @@ local function init()
     ["angels-ore3-crushed"] = { "sb-startup1", "bio-wood-processing" },
     ["basic-circuit-board"] = { "sb-startup3", "sct-lab-t1" },
   }
-  if game.technology_prototypes["sct-automation-science-pack"] then
+  -- Same 2.0 prototype move for technologies: choose the startup lab unlock
+  -- based on the runtime `prototypes.technology` table instead of `game`.
+  if runtime_prototypes.technology and runtime_prototypes.technology["sct-automation-science-pack"] then
     global.unlocks["lab"] = { "sct-automation-science-pack" }
   else
     global.unlocks["lab"] = { "sb-startup4" }
@@ -155,11 +171,19 @@ script.on_configuration_changed(function(cfg)
       if tech.researched then
         for tech_name, effect in pairs(tech.effects) do
           if effect.type == "unlock-recipe" then
-            force.recipes[effect.recipe].enabled = true
+            -- Some unlock effects are pruned by the 2.0 data-stage
+            -- compatibility pass.  Keep migration replay tolerant of recipe
+            -- references that were intentionally removed.
+            if force.recipes[effect.recipe] then
+              force.recipes[effect.recipe].enabled = true
+            end
           end
         end
       end
-      if game.technology_prototypes[tech_name].enabled then
+      -- `game.technology_prototypes` moved to `prototypes.technology` in 2.0.
+      -- Guard the lookup because generated compatibility cleanup can remove
+      -- technologies that still exist in an old save's force table.
+      if runtime_prototypes.technology and runtime_prototypes.technology[tech_name] and runtime_prototypes.technology[tech_name].enabled then
         force.technologies[tech_name].enabled = true
       end
     end
