@@ -121,14 +121,20 @@ local function milestones_presets()
     -- Vanilla modules
     grouped_milestones["modules"] = {
       { type = "item", name = "productivity-module", quantity = 1 },
+      { type = "item", name = "bob-productivity-module-4", quantity = 1 },
+      { type = "item", name = "bob-productivity-module-5", quantity = 1 },
+    }
+  elseif script.active_mods["CircuitProcessing"] then
+    -- Circuit Processing modules
+    grouped_milestones["modules"] = {
       { type = "item", name = "productivity-module-2", quantity = 1 },
-      { type = "item", name = "productivity-module-3", quantity = 1 },
+      { type = "item", name = "bob-productivity-module-4", quantity = 1 },
+      { type = "item", name = "bob-productivity-module-5", quantity = 1 },
     }
   else
     -- Bob's Modules
     grouped_milestones["modules"] = {
       { type = "item", name = "productivity-module", quantity = 1 },
-      { type = "item", name = "productivity-module-3", quantity = 1 },
       { type = "item", name = "bob-productivity-module-5", quantity = 1 },
     }
   end

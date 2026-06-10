@@ -20,16 +20,6 @@ if mods["SpaceMod"] then
     bobmods.lib.tech.add_prerequisite("space-assembly", "bob-robots-4")
   end
 
-  if not mods["bobmodules"] then
-    -- Do nothing
-  elseif mods["CircuitProcessing"] then
-    bobmods.lib.tech.add_prerequisite("space-assembly", "effectivity-module-4")
-    bobmods.lib.tech.add_prerequisite("space-assembly", "productivity-module-4")
-    bobmods.lib.tech.add_prerequisite("space-assembly", "speed-module-4")
-  else
-    bobmods.lib.tech.add_prerequisite("space-assembly", "productivity-module-8")
-  end
-
   if mods["bobpower"] and settings.startup["bobmods-power-solar"].value == true then
     bobmods.lib.tech.add_prerequisite("space-construction", "bob-solar-energy-3")
   end

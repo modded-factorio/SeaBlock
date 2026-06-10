@@ -13,19 +13,19 @@ for k, v in pairs(itemrename) do
     data.raw.item[v] = item
   end
 end
+
 local function updateline(line)
   local item = line.name
   if itemrename[item] then
     line.name = itemrename[item]
   end
+
 end
 for _, recipe in pairs(data.raw.recipe) do
-  for _, v in pairs(recipe.ingredients) do
+  for _, v in pairs(recipe.ingredients or {}) do
     updateline(v)
   end
-  if recipe.result and itemrename[recipe.result] then
-    recipe.result = itemrename[recipe.result]
-  end
+
   for _, v in pairs(recipe.results or {}) do
     updateline(v)
   end
@@ -131,8 +131,7 @@ for k, v in pairs(data.raw.technology) do
   end
 end
 
-for k, v in pairs(recipes) do
-  for _, recipe in pairs(v) do
+for k, recipe in pairs(recipes) do
     local items = {}
     if recipe.ingredients then
       for _, ingredient in pairs(recipe.ingredients) do
@@ -161,7 +160,6 @@ for k, v in pairs(recipes) do
         unobtainable[r] = nil
       end
     end
-  end
 end
 
 local work = true
@@ -186,6 +184,19 @@ end
 for k, _ in pairs(unobtainable) do
   seablock.lib.hide_item(k)
 end
+
+local keep_unobtainable_recipes = {
+  ["parameter-0"] = true,
+  ["parameter-1"] = true,
+  ["parameter-2"] = true,
+  ["parameter-3"] = true,
+  ["parameter-4"] = true,
+  ["parameter-5"] = true,
+  ["parameter-6"] = true,
+  ["parameter-7"] = true,
+  ["parameter-8"] = true,
+  ["parameter-9"] = true
+}
 
 -- Remove any recipe that uses an unobtainable ingredient
 for recipe_name, recipe in pairs(data.raw.recipe) do
@@ -225,3 +236,34 @@ end
 if data.raw.lab["bob-lab-alien"] then
   data.raw.lab["bob-lab-alien"].inputs = {}
 end
+
+-- We now need a dummy lab that can take all the science packs or else some techs can't load (even if hidden), (we could also use "bob-lab-alien" which is hidden in data-updates/military.lua)
+local dummyLab = table.deepcopy(data.raw.lab["lab"])
+dummyLab.name = "dummy-lab"
+dummyLab.hidden = true
+--dummyLab.hidden_in_factoriopedia = true
+bobmods.lib.safe_insert(dummyLab.inputs, "space-science-pack")
+if data.raw.tool["sct-bio-science-pack"] then
+  bobmods.lib.safe_insert(dummyLab.inputs, "sct-bio-science-pack")
+end
+bobmods.lib.safe_insert(dummyLab.inputs, "automation-science-pack")
+bobmods.lib.safe_insert(dummyLab.inputs, "logistic-science-pack")
+bobmods.lib.safe_insert(dummyLab.inputs, "chemical-science-pack")
+bobmods.lib.safe_insert(dummyLab.inputs, "production-science-pack")
+bobmods.lib.safe_insert(dummyLab.inputs, "utility-science-pack")
+bobmods.lib.safe_insert(dummyLab.inputs, "military-science-pack")
+
+if mods["bobtech"] and mods["bobenemies"] then
+  bobmods.lib.safe_insert(dummyLab.inputs, "bob-science-pack-gold")
+  bobmods.lib.safe_insert(dummyLab.inputs, "bob-alien-science-pack-purple")
+  bobmods.lib.safe_insert(dummyLab.inputs, "bob-alien-science-pack-blue")
+  bobmods.lib.safe_insert(dummyLab.inputs, "bob-alien-science-pack-red")
+  bobmods.lib.safe_insert(dummyLab.inputs, "bob-alien-science-pack-green")
+  bobmods.lib.safe_insert(dummyLab.inputs, "bob-alien-science-pack-orange")
+  bobmods.lib.safe_insert(dummyLab.inputs, "bob-alien-science-pack-yellow")
+  bobmods.lib.safe_insert(dummyLab.inputs, "bob-alien-science-pack")
+  if bobmods.tech and bobmods.tech.advanced_logistic_science then
+    bobmods.lib.safe_insert(dummyLab.inputs, "bob-advanced-logistic-science-pack")
+  end
+end
+data:extend({dummyLab})

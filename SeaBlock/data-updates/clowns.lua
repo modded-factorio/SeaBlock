@@ -25,7 +25,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore1", amount = 1 },
@@ -46,7 +46,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore2", amount = 1 },
@@ -67,7 +67,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore3", amount = 1 },
@@ -88,7 +88,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore4", amount = 1 },
@@ -109,7 +109,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore5", amount = 1 },
@@ -130,7 +130,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore6", amount = 1 },
@@ -151,7 +151,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore7", amount = 1 },
@@ -172,7 +172,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore8", amount = 1 },
@@ -193,7 +193,7 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "fluid", name = "mineral-sludge", amount = 25 },
+        { type = "fluid", name = "angels-mineral-sludge", amount = 25 },
       },
       results = {
         { type = "item", name = "clowns-ore9", amount = 1 },
@@ -210,8 +210,8 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "item", name = "solid-sand", amount = 1 },
-        { type = "item", name = "stone-crushed", amount = 6 },
+        { type = "item", name = "angels-solid-sand", amount = 1 },
+        { type = "item", name = "stone", amount = 6 },
       },
       results = {
         { type = "item", name = "clowns-resource1", amount = 1 },
@@ -228,8 +228,8 @@ if mods["Clowns-Extended-Minerals"] then
       allow_decomposition = false,
       energy_required = 4,
       ingredients = {
-        { type = "item", name = "solid-sand", amount = 5 },
-        { type = "item", name = "blue-cellulose-fiber", amount = 1 },
+        { type = "item", name = "angels-solid-sand", amount = 5 },
+        { type = "item", name = "angels-blue-cellulose-fiber", amount = 1 },
       },
       results = {
         { type = "item", name = "clowns-resource2", amount = 5 },

@@ -12,8 +12,8 @@ seablock.scripted_techs = {
 if data.raw.technology["sct-lab-t1"] then
   seablock.scripted_techs["sct-lab-t1"] = true
 end
-if data.raw.technology["sct-automation-science-pack"] then
-  seablock.scripted_techs["sct-automation-science-pack"] = true
+if data.raw.technology["automation-science-pack"] then
+  seablock.scripted_techs["automation-science-pack"] = true
 end
 
 -- seablock.startup_techs
@@ -56,8 +56,8 @@ seablock.startup_recipes = {
   ["sb-wood-foraging"] = true,
   ["sb-water-mineralized-crystallization"] = true,
   ["angels-stone-from-crushed-stone"] = true,
-  ["angels-stone-pipe"] = true,
-  ["angels-stone-pipe-to-ground"] = true,
+  ["sb-stone-pipe"] = true,
+  ["sb-stone-pipe-to-ground"] = true,
   ["stone-brick"] = true,
   ["angels-stone-crushed"] = true,
   ["angels-water-mineralized"] = true,
@@ -73,8 +73,8 @@ end
 -- seablock.final_scripted_tech
 -- Startup techs will depend on this tech
 seablock.final_scripted_tech = "sb-startup4"
-if data.raw.technology["sct-automation-science-pack"] then
-  seablock.final_scripted_tech = "sct-automation-science-pack"
+if data.raw.technology["automation-science-pack"] then
+  seablock.final_scripted_tech = "automation-science-pack"
 end
 
 seablock.final_startup_tech = "angels-slag-processing-1"

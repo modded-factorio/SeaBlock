@@ -122,3 +122,30 @@ table.insert(data.raw["assembling-machine"]["angels-electrolyser-4"].crafting_ca
 bobmods.lib.recipe.set_category("angels-ore8-anode-sludge", "sb-petrochem-electrolyser-4")
 bobmods.lib.recipe.set_category("angels-ore9-anode-sludge", "sb-petrochem-electrolyser-4")
 bobmods.lib.tech.add_prerequisite("angels-ore-electro-whinning-cell", "angels-advanced-chemistry-3")
+
+-- This was changed by Angelsmods in 2.0
+local OV = angelsmods.functions.OV
+OV.patch_recipes({
+  {
+    name = "bob-tin-plate",
+    ingredients = {
+      { name = "bob-tin-ore", type = "item", amount = "+3" },
+    },
+    results = {
+      { name = "bob-tin-plate", type = "item", amount = "+2" },
+    },
+    localised_name = { "item-name.bob-tin-plate" },
+    subgroup = "angels-tin-casting"
+  },
+  {
+    name = "bob-lead-plate",
+    ingredients = {
+      { name = "bob-lead-ore", type = "item", amount = "+3" },
+    },
+    results = {
+      { name = "bob-lead-plate", type = "item", amount = "+2" },
+    },
+    localised_name = { "item-name.bob-lead-plate" },
+    subgroup = "angels-lead-casting"
+  }
+})

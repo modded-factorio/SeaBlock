@@ -3,11 +3,11 @@ for _, force in pairs(game.forces) do
     force.technologies["fluid-chemical-furnace"].researched = false
     force.technologies["fluid-chemical-furnace"].enabled = false
   end
-  if force.technologies["steel-chemical-furnace"].researched then
+  if force.technologies["steel-chemical-furnace"] and force.technologies["steel-chemical-furnace"].researched then
     force.technologies["steel-chemical-furnace"].researched = false
     force.technologies["steel-chemical-furnace"].enabled = false
   end
-  if force.technologies["electric-chemical-furnace"].researched then
+  if force.technologies["electric-chemical-furnace"] and force.technologies["electric-chemical-furnace"].researched then
     force.technologies["electric-chemical-furnace"].researched = false
     force.technologies["electric-chemical-furnace"].enabled = false
   end

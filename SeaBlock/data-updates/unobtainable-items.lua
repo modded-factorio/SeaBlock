@@ -116,12 +116,45 @@ bobmods.lib.recipe.hide("bob-liquid-fuel")
 seablock.lib.hide("fluid", "bob-liquid-fuel")
 seablock.lib.hide("item", "bob-liquid-fuel-barrel")
 
--- Swap out Nickel and Zinc plates
-seablock.lib.substingredient("bob-roboport-antenna-3", "bob-nickel-plate", "bob-titanium-plate", nil)
+-- Swap out Nickel plates
+local nickel_swap_list = {
+  ["bob-boiler-3"] = "bob-invar-alloy",
+  ["bob-oil-boiler-2"] = "bob-invar-alloy",
+  ["bob-burner-reactor-2"] = "bob-invar-alloy",
+  ["bob-fluid-reactor-2"] = "bob-invar-alloy",
+  ["bob-heat-pipe-2"] = "bob-invar-alloy",
+  ["bob-heat-exchanger-2"] = "bob-invar-alloy",
+  ["bob-roboport-antenna-2"] = "bob-aluminium-plate",
+  ["bob-roboport-antenna-3"] = "bob-titanium-plate",
+  ["bob-roboport-chargepad-2"] = "bob-invar-alloy",
+  ["bob-plasma-turret-1"] = "bob-cobalt-steel-alloy",
+}
+
+for recipe_name, replacement_ingr in pairs(nickel_swap_list) do
+  if data.raw.recipe[recipe_name] then
+    seablock.lib.substingredient(recipe_name, "bob-nickel-plate", replacement_ingr, nil)
+  end
+end
 bobmods.lib.recipe.remove_ingredient("bob-roboport-antenna-4", "bob-nickel-plate")
-seablock.lib.substingredient("bob-silver-zinc-battery", "bob-zinc-plate", "angels-solid-zinc-oxide", nil)
-seablock.lib.substingredient("angels-thorium-fuel-cell", "bob-zinc-plate", "steel-plate", nil)
-seablock.lib.substingredient("angels-deuterium-fuel-cell", "bob-zinc-plate", "steel-plate", nil)
+seablock.lib.hide_item("bob-nickel-plate")
+
+-- Swap out Zinc plates
+local zinc_swap_list = {
+  ["bob-silver-zinc-battery"] = "angels-solid-zinc-oxide",
+  ["angels-thorium-fuel-cell"] = "bob-lead-plate",
+  ["angels-deuterium-fuel-cell"] = "bob-lead-plate",
+  ["bob-battery-3"] = "angels-solid-zinc-oxide",
+}
+
+for recipe_name, replacement_ingr in pairs(zinc_swap_list) do
+  if data.raw.recipe[recipe_name] then
+    seablock.lib.substingredient(recipe_name, "bob-zinc-plate", replacement_ingr, nil)
+  end
+end
+
+seablock.lib.hide_item("bob-zinc-plate")
+bobmods.lib.recipe.hide("bob-zinc-plate")
+bobmods.lib.tech.remove_recipe_unlock("bob-zinc-processing", "bob-zinc-plate")
 
 seablock.lib.unhide_recipe("angels-solid-zinc-oxide")
 bobmods.lib.tech.add_recipe_unlock("angels-zinc-smelting-2", "angels-solid-zinc-oxide")
@@ -135,14 +168,6 @@ if data.raw.recipe["angels-pellet-zinc-smelting"] then
     angelsmods.smelting.number_tint
   )
 end
-
-seablock.lib.substingredient("angels-thorium-fuel-cell", "angels-plate-zinc", "bob-lead-plate", nil)
-seablock.lib.substingredient("angels-deuterium-fuel-cell", "angels-plate-zinc", "bob-lead-plate", nil)
-
-seablock.lib.hide_item("bob-nickel-plate")
-seablock.lib.hide_item("bob-zinc-plate")
-bobmods.lib.recipe.hide("bob-zinc-plate")
-bobmods.lib.tech.remove_recipe_unlock("bob-zinc-processing", "bob-zinc-plate")
 
 if mods["cargo-ships"] then
   seablock.lib.hide_item("oil_rig")

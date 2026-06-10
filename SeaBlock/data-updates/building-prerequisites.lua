@@ -56,7 +56,7 @@ bobmods.lib.tech.add_prerequisite("angels-slag-processing-3", "angels-stone-smel
 bobmods.lib.tech.add_prerequisite("angels-water-treatment-4", "angels-stone-smelting-3")
 
 -- Copper tungsten / tungsten carbide prerequisites
-bobmods.lib.tech.add_prerequisite("angels-ore-processing-5", "bob-tungsten-alloy-processing")
+bobmods.lib.tech.add_prerequisite("angels-ore-processing-5", "bob-tungsten-processing")
 
 -- Nitinol prerequisites
 bobmods.lib.tech.add_prerequisite("angels-ore-processing-5", "bob-nitinol-processing")

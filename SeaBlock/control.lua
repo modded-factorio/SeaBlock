@@ -66,8 +66,8 @@ local function init()
     ["angels-ore3-crushed"] = { "sb-startup1", "angels-bio-wood-processing" },
     ["bob-basic-circuit-board"] = { "sb-startup3", "sct-lab-t1" },
   }
-  if prototypes.technology["sct-automation-science-pack"] then
-    storage.unlocks["lab"] = { "sct-automation-science-pack" }
+  if prototypes.technology["automation-science-pack"] then
+    storage.unlocks["lab"] = { "automation-science-pack" }
   else
     storage.unlocks["lab"] = { "sb-startup4" }
   end
@@ -173,12 +173,12 @@ script.on_configuration_changed(function(cfg)
     end
 
     if
-      force.technologies["sct-automation-science-pack"]
+      force.technologies["automation-science-pack"]
       and force.technologies["sb-startup4"]
       and force.technologies["sb-startup4"].researched
     then
       force.technologies["sct-lab-t1"].researched = true
-      force.technologies["sct-automation-science-pack"].researched = true
+      force.technologies["automation-science-pack"].researched = true
     end
   end
 end)
@@ -188,47 +188,11 @@ script.on_load(function()
 end)
 
 script.on_event(defines.events.on_player_created, function(e)
-  if global.starting_items and game.is_multiplayer() then
-    local inv = game.players[e.player_index].get_main_inventory()
-    for item, quantity in pairs(global.starting_items) do
-      if quantity > 0 then
-        inv.insert({ name = item, count = quantity })
-      end
-    end
-  end
-end)
+  local player = game.get_player(e.player_index)
+  local inv = player.get_main_inventory()
+  inv.remove("angels-burner-ore-crusher")
 
-if script.active_mods["Companion_Drones"] then
-  script.on_event(defines.events.on_player_created, function(e)
-    local s = game.surfaces["nauvis"]
-    if s then
-      local companions = s.find_entities_filtered({ name = "companion" })
-      for _, companion in pairs(companions) do
-        local inventory = companion.get_main_inventory()
-        local i = companion.remove_item("coal")
-        -- Only do drone inventory cleanup if coal is found
-        -- Else players will get free wood pellets any time a new player joins
-        if i > 0 then
-          companion.insert("wood-pellets")
-          local grid = companion.grid
-          for _, item in pairs(grid.equipment) do
-            if (item.name == "companion-defense-equipment") or (item.name == "companion-shield-equipment") then
-              grid.take({ equipment = item })
-            end
-          end
-        end
-      end
-    end
-  end)
-end
-
-script.on_load(function()
-  set_pvp()
-end)
-
-script.on_event(defines.events.on_player_created, function(e)
   if storage.starting_items and game.is_multiplayer() then
-    local inv = game.get_player(e.player_index).get_main_inventory()
     for item, quantity in pairs(storage.starting_items) do
       if quantity > 0 then
         inv.insert({ name = item, count = quantity })

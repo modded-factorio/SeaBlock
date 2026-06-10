@@ -108,3 +108,34 @@ if data.raw.technology["bob-gem-processing-3"] then
   bobmods.lib.tech.add_prerequisite("productivity-module-3", "bob-gem-processing-3")
   bobmods.lib.tech.add_prerequisite("efficiency-module-3", "bob-gem-processing-3")
 end
+
+bobmods.lib.tech.remove_prerequisite("automation-science-pack", "electronics")
+seablock.lib.hide_technology("automation-science-pack")
+
+seablock.lib.hide_technology("electronics") --new trigger tech in base game, we don't want it in seablock
+data.raw["technology"]["electronics"].research_trigger = nil
+data.raw["technology"]["electronics"].unit = {time = 1, count = 1, ingredients = {}}
+bobmods.lib.tech.remove_prerequisite("bob-electronics", "electronics")
+bobmods.lib.tech.remove_prerequisite("bob-electronics", "automation-science-pack")
+
+seablock.lib.hide_technology("electric-mining-drill")
+seablock.lib.hide_technology("repair-pack")
+
+bobmods.lib.tech.add_prerequisite("radar", "military")
+bobmods.lib.tech.remove_prerequisite("military", "automation-science-pack")
+bobmods.lib.tech.remove_prerequisite("gun-turret", "automation-science-pack")
+bobmods.lib.tech.remove_prerequisite("stone-wall", "automation-science-pack")
+bobmods.lib.tech.remove_prerequisite("radar", "automation-science-pack")
+bobmods.lib.tech.remove_prerequisite("automation", "automation-science-pack")
+
+-- Change order for esthetics of the tech tree 
+data.raw["technology"]["military"].order = "z-[military]"
+
+if data.raw["technology"]["logistics-0"] then
+  data.raw["technology"]["logistics-0"].research_trigger = nil
+  data.raw["technology"]["logistics-0"].unit = {
+    ingredients = {{"automation-science-pack", 1}},
+    time = 5,
+    count = 10
+  }
+end

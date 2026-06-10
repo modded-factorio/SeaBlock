@@ -38,3 +38,42 @@ if data.raw.recipe["angels-stone-crushed-dissolution"] then
     { "stone" }
   )
 end
+
+-- Recipe gets changed by bobwarfare to include coal which is unobtainable
+bobmods.lib.recipe.set_ingredients("firearm-magazine", {{ type = "item", name = "iron-plate", amount = 4}}) --this function automatically clears previous ingredients
+
+-- angelspetrochem changes petroleum-gas to angels-gas-methane
+bobmods.lib.recipe.remove_ingredient("sct-t3-flash-fuel", "angels-gas-methane")
+
+-- bobmods switched plastic-bar for steel-plate in 2.0
+if settings.startup["bobmods-plates-batteryupdate"].value == true then
+  bobmods.lib.recipe.replace_ingredient("battery", "steel-plate", "plastic-bar")
+else
+  bobmods.lib.recipe.replace_ingredient("battery", "iron-plate", "plastic-bar")
+end
+bobmods.lib.tech.add_prerequisite("battery", "plastics")
+
+if (mods["blueprint-shotgun"]) then
+  seablock.lib.unhide_recipe("shotgun")
+  seablock.lib.unhide_recipe("shotgun-shell")
+
+  seablock.lib.unhide("gun", "shotgun")
+  seablock.lib.unhide("ammo", "shotgun-shell")
+
+  bobmods.lib.tech.add_recipe_unlock("military", "shotgun")
+  bobmods.lib.tech.add_recipe_unlock("military", "shotgun-shell")
+end
+
+-- bob-alien-x-alloy is hidden by Sea Block
+bobmods.lib.recipe.replace_ingredient("bob-fission-reactor-equipment-4", "bob-alien-blue-alloy", "bob-cobalt-steel-alloy")
+bobmods.lib.recipe.replace_ingredient("bob-fission-reactor-equipment-4", "bob-alien-fire", "angels-liquid-naphtha")
+
+bobmods.lib.recipe.replace_ingredient("bob-exoskeleton-equipment-3", "bob-alien-blue-alloy", "bob-cobalt-steel-alloy")
+
+bobmods.lib.recipe.replace_ingredient("bob-personal-laser-defense-equipment-6", "bob-alien-blue-alloy", "bob-cobalt-steel-alloy")
+bobmods.lib.recipe.replace_ingredient("bob-personal-laser-defense-equipment-6", "bob-alien-orange-alloy", "bob-gold-plate")
+bobmods.lib.recipe.replace_ingredient("bob-personal-laser-defense-equipment-6", "bob-alien-poison", "angels-liquid-nitric-acid")
+
+-- No longer needed for rockets
+bobmods.lib.recipe.hide("bob-rocket-engine")
+bobmods.lib.item.hide("bob-rocket-engine")

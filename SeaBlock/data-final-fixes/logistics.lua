@@ -31,6 +31,9 @@ set_speed("transport-belt", "bob-ultimate-transport-belt", 75)
 set_speed("underground-belt", "bob-ultimate-underground-belt", 75)
 set_speed("splitter", "bob-ultimate-splitter", 75)
 
+-- Change base game beacon
+data.raw.beacon["beacon"].distribution_effectivity = 1
+
 -- Increase energy consumption of bob's extra beacons
 -- Also reduce module slots and effectivity
 if data.raw.beacon["bob-beacon-2"] then

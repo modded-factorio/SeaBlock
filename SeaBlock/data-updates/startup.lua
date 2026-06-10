@@ -87,16 +87,17 @@ end
 -- unlock lab and optional components with Basic Circuit Board
 if data.raw.technology["sct-lab-t1"] then
   bobmods.lib.tech.add_prerequisite("sct-lab-t1", "sb-startup3")
+  bobmods.lib.tech.remove_prerequisite("sct-lab-t1", "electronics")
 else
   bobmods.lib.tech.add_recipe_unlock("sb-startup3", "lab")
   bobmods.lib.recipe.enabled("lab", false)
 end
 
-if data.raw.technology["sct-automation-science-pack"] then
-  bobmods.lib.tech.add_prerequisite("sct-automation-science-pack", "sct-lab-t1")
+if data.raw.technology["automation-science-pack"] then
+  bobmods.lib.tech.add_prerequisite("automation-science-pack", "sct-lab-t1")
 
-  data.raw.technology["sct-automation-science-pack"].research_trigger = { type = "craft-item", item = "lab" }
-  data.raw.technology["sct-automation-science-pack"].unit = nil
+  data.raw.technology["automation-science-pack"].research_trigger = { type = "craft-item", item = "lab" }
+  data.raw.technology["automation-science-pack"].unit = nil
   data.raw.technology["sct-lab-t1"].unit = {
     count = 1,
     ingredients = {},
@@ -104,6 +105,8 @@ if data.raw.technology["sct-automation-science-pack"] then
   }
   seablock.lib.hide_technology("sb-startup4")
 end
+
+bobmods.lib.tech.remove_prerequisite("sct-lab-t1", "steam-power")
 
 local movedrecipes = table.deepcopy(seablock.startup_recipes)
 for k, v in pairs(seablock.scripted_techs) do
@@ -133,7 +136,7 @@ local function consumes_startup_item(recipe)
     ["copper-cable"] = true,
     ["stone-furnace"] = true,
   }
-  for k, v in pairs(recipe.ingredients) do
+  for k, v in pairs(recipe.ingredients or {}) do
     if ironnames[v.name] then
       found = true
       break
@@ -207,3 +210,9 @@ data.raw.technology["angels-bio-wood-processing"].unit = {
   ingredients = {},
   time = 1,
 }
+
+-- Remove cycle introduced in the tech tree
+-- Sectoid upgraded angelsbioprocessing by renaming the old prerequisite "basic-automation" into "electronics"
+bobmods.lib.tech.remove_prerequisite("angels-basic-chemistry", "electronics")
+bobmods.lib.tech.remove_prerequisite("angels-bio-processing-brown", "electronics")
+bobmods.lib.tech.add_prerequisite("angels-bio-processing-brown", "automation")

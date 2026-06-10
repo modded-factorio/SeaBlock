@@ -13,7 +13,7 @@ data.raw.technology["angels-bio-processing-green"].localised_name = { "technolog
 -- Move Lithia Salt to Thermal Water Extraction
 seablock.lib.moveeffect(
   "angels-algae-brown-burning",
-  "angels-bio-processing-green",
+  "bob-lithium-processing",
   "angels-thermal-water-extraction",
   2
 )

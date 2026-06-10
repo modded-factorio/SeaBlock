@@ -2,9 +2,30 @@
 Version: 0.6.0
 Date: ??.??.??
   Changes:
-    - Factorio 2.0 update
-    - Added "angels-" prefix to all AngelsMods related prototypes
-    - Added "bob-" prefix to all BobsMods related prototypes
+    - Basegame 2.0 changes
+      - Added/Modified library functions to include better warnings/new 2.0 code
+      - Removed all references of normal/expensive recipes
+      - Crafting category "electronics" is no longer craftable by hand (see Fulgora changes) and must thus be readded to handcrafting
+      - Updated the mapgen to implement the new 2.0 mapgen functions
+      - Added "tile_condition" to landfill (2.0)
+      - Replaced old research trigger with new 2.0 trigger tech
+      - Added incompatibility condition with "space-age" and "quality" for SeaBlockMetaPack
+    - BobsMods 2.0 changes
+      - Reimplemented "item-group": "bob-gems" since it is quite fitting in SB
+      - bobwarfare 2.0 now includes "coal" in "firearm-magazine" which is unobtainable so this change is reverted
+      - bobplates 2.0 uses "steel-plate"/"iron-plate" instead of "plastic-bar" in batteries, this change is reverted
+      - "bob-alien-x-alloy" is hidden in SB and must be removed from the equipment recipes
+      - "bob-rocket-engine" is no longer needed
+    - AngelsMods 2.0 changes
+      - The ore amount for tin and lead were changed in 2.0, this was reverted
+    - SpaceMod 2.0 changes
+      - None of the listed recipes took one of the listed upgrades or were already applied
+      - Because of the changes of bobmodules and circuitprocessing the tech prerequisites changed as well
+    - Miscellaneous 2.0 changes
+      - control.lua cleanup
+      - data-final-fixes.lua cleanup
+      - Added "shotgun" recipe if "blueprint-shotgun" is enabled
+      - Changed the volume of the "wind-turbine-2" as it is way too loud
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.17
 Date: ??.??.??

@@ -7,7 +7,7 @@ if mods["bobenemies"] then
   seablock.lib.substingredient("bob-alien-explosive", "coal", "angels-wood-charcoal")
 end
 seablock.lib.substingredient("angels-filter-coal", "coal", "angels-wood-charcoal")
-seablock.lib.substingredient("bob-carbon", "coal", "angels-wood-charcoal")
+seablock.lib.substingredient("carbon", "coal", "angels-wood-charcoal")
 if mods["Transport_Drones"] then
   seablock.lib.substingredient("road", "coal", "angels-wood-charcoal")
 end
@@ -18,14 +18,15 @@ end
 
 -- Disable coal cracking technology
 seablock.lib.hide_technology("angels-coal-cracking")
-seablock.lib.moveeffect("angels-pellet-coke", "angels-coal-cracking", "angels-coal-processing-2")
+seablock.lib.moveeffect("angels-pellet-coke", "angels-coal-processing-3", "angels-coal-processing-2")
 angelsmods.functions.move_item("angels-pellet-coke", "angels-bio-processing-wood", "f[pellet-coke]")
 angelsmods.functions.move_item("angels-pellet-coke", "angels-bio-processing-wood", "f[pellet-coke]", "recipe")
+data.raw.recipe["angels-pellet-coke"].localised_name = { "item-name.angels-pellet-charcoal" }
 
 -- Clear fuel value so these don't appear in Helmod's fuel picker
-data.raw.item["bob-carbon"].fuel_emissions_multiplier = nil
-data.raw.item["bob-carbon"].fuel_value = nil
-data.raw.item["bob-carbon"].fuel_category = nil
+data.raw.item["carbon"].fuel_emissions_multiplier = nil
+data.raw.item["carbon"].fuel_value = nil
+data.raw.item["carbon"].fuel_category = nil
 data.raw.item["coal"].fuel_emissions_multiplier = nil
 data.raw.item["coal"].fuel_value = nil
 data.raw.item["coal"].fuel_category = nil

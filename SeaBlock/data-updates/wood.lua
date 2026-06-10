@@ -2,13 +2,6 @@
 seablock.lib.removeingredient("bob-basic-underground-belt", "wood")
 seablock.lib.removeingredient("bob-basic-splitter", "wood")
 
--- Can always apply productivity modules to furnace recipes, so make it official
-for k, v in pairs(data.raw.module) do
-  if v.effect and v.effect.productivity and v.limitation then
-    table.insert(v.limitation, "sb-wood-bricks-charcoal")
-  end
-end
-
 bobmods.lib.recipe.enabled("wooden-chest", false)
 bobmods.lib.recipe.enabled("bob-wooden-board", false)
 bobmods.lib.recipe.enabled("angels-cellulose-fiber-raw-wood", false)
