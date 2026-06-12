@@ -1,13 +1,6 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.6.0
-Date: ??.??.??
-  Changes:
-    - Factorio 2.0 update
-    - Added "angels-" prefix to all AngelsMods related prototypes
-    - Added "bob-" prefix to all BobsMods related prototypes
----------------------------------------------------------------------------------------------------
-Version: 0.5.17
-Date: ??.??.??
+Version: 2.0.0
+Date: ???
   Changes:
     - Petrochem Cleanup #207
       - Changed Blue Algae Liquefaction recipe to produce Crude Oil instead of Multi-phase Oil
@@ -30,6 +23,9 @@ Date: ??.??.??
       - Hid Desert / Swamp / Temperate environment kits
     - Changed recipe icon for Slag 1 and Slag 2 #335
     - Buffed the output of recipe Carbon 2 #336
+    - Updated for Factorio 2.0 #339
+    - Marked Quality and Space Age as incompatible
+    - Allow tiles from Landfill Painting mod to be mined
   Bugfixes:
     - Fixed tech steam-power missing a locale in some mod configurations #332
     - Fixed missing starting items in multiplayer games when Companion Drones mod is enabled #337

@@ -2,6 +2,35 @@ seablock = seablock or {}
 seablock.lib = {}
 seablock.reskins = {}
 
+---Sets a tile restriction on any specified prototype
+---does not replace existing autoplace dict but creates if it doesnt exist
+---@param ptype string "tile", "entity", ...
+---@param name string name of prototype
+---@param restriction string|table string for singular restrict, table for multiple restrictions
+function seablock.lib.set_tile_restriction(ptype, name, restriction)
+    if (not data.raw[ptype]) then error ("Tried to set tile restriction on "..ptype.." "..name..": type does not exist") end
+    if (not data.raw[ptype][name]) then error("Tried to set tile restriction on "..ptype.." "..name..": "..name.." does not exist") end
+
+    data.raw[ptype][name].autoplace = data.raw[ptype][name].autoplace or {}
+
+    if (type(restriction) == "string") then restriction = { restriction } end
+
+    data.raw[ptype][name].autoplace["tile_restriction"] = restriction
+end
+
+---Sets a probability expression on any specified prototype
+---does not replace existing autoplace dict but creates if it doesnt exist
+---@param ptype string "tile", "entity", ...
+---@param name string name of prototype
+---@param expression string expression
+function seablock.lib.set_probability_expression(ptype, name, expression)
+    if (not data.raw[ptype]) then error ("Tried to set probability expression on "..ptype.." "..name..": type does not exist") end
+    if (not data.raw[ptype][name]) then error("Tried to set probability expression on "..ptype.." "..name..": "..name.." does not exist") end
+
+    data.raw[ptype][name].autoplace = data.raw[ptype][name].autoplace or {}
+    data.raw[ptype][name].autoplace["probability_expression"] = expression
+end
+
 function seablock.lib.findname(t, name)
   for i, v in ipairs(t) do
     if v.name == name then
@@ -21,6 +50,8 @@ end
 
 function seablock.lib.takeeffect(tech, name)
   if not data.raw.technology[tech] then
+    log("Warning: seablock.lib.takeeffect - can't find technology : " .. tech)
+    log(debug.traceback())
     return nil
   end
   local effects = data.raw.technology[tech].effects or {}
@@ -39,10 +70,29 @@ function seablock.lib.findeffectidx(effects, name)
   end
 end
 
+---Inserts recipe into tech at index
+---@param recipe_name string
+---@param tech_name string
+---@param index integer
+function seablock.lib.insert_effect(recipe_name, tech_name, index)
+  local tech = data.raw.technology[tech_name]
+
+  if not tech then
+    return
+  end
+
+  if index then
+    table.insert(tech.effects, index, { type = "unlock-recipe", recipe = recipe_name })
+  else
+    table.insert(tech.effects, { type = "unlock-recipe", recipe = recipe_name })
+  end
+end
+
 function seablock.lib.moveeffect(name, fromtech, totech, insertindex)
   local effect = seablock.lib.takeeffect(fromtech, name)
   if not effect then
-    log("Effect " .. name .. " not found in tech " .. fromtech)
+    log("Warning : seablock.lib.moveeffect - Effect " .. name .. " not found in tech " .. fromtech)
+    log(debug.traceback())
     return
   end
   if insertindex then
@@ -101,6 +151,7 @@ function seablock.lib.substingredient(name, from, to, count)
       end
     end
   else
+    log("Warning : seablock.lib.substingredient - can't find recipe : " .. name)
     log(debug.traceback())
   end
 end
@@ -114,6 +165,9 @@ function seablock.lib.removeingredient(name, ingredient)
         return
       end
     end
+  else
+    log("Warning : seablock.lib.removeingredient - can't find recipe : " .. name)
+    log(debug.traceback())
   end
 end
 
@@ -130,6 +184,9 @@ function seablock.lib.substresult(name, from, to, count)
         end
       end
     end
+  else
+    log("Warning : seablock.lib.substresult - can't find recipe : " .. name)
+    log(debug.traceback())
   end
 end
 
@@ -138,6 +195,9 @@ function seablock.lib.addresult(name, resulttable)
   if recipe then
     recipe.results = recipe.results or {}
     table.insert(recipe.results, resulttable)
+  else
+    log("Warning: seablock.lib.addresult - can't find recipe : " .. name)
+    log(debug.traceback())
   end
 end
 
@@ -160,11 +220,22 @@ function seablock.lib.tablefind(table, item)
   return nil
 end
 
-function seablock.lib.unhide_recipe(recipe_name)
-  local recipe = data.raw.recipe[recipe_name]
-  if recipe then
-    recipe.hidden = false
+function seablock.lib.unhide(type_name, name)
+  if not data.raw[type_name] then
+    log("Warning: seablock.lib.unhide - unknown type: " .. type_name)
+    log(debug.traceback())
+    return
   end
+
+  local prototype = data.raw[type_name][name]
+
+  if not prototype then
+    log("Warning: seablock.lib.unhide - unknown " .. type_name .. ": " .. name)
+    log(debug.traceback())
+    return
+  end
+
+  prototype.hidden = false
 end
 
 function seablock.lib.hide_technology(technology_name)
@@ -172,6 +243,9 @@ function seablock.lib.hide_technology(technology_name)
   if technology then
     technology.hidden = true
     technology.enabled = false
+  else
+    log("Warning: seablock.lib.hide_technology - Hide non existing tech : " .. technology_name)
+    log(debug.traceback())
   end
 end
 
@@ -184,46 +258,30 @@ function seablock.lib.copy_icon(to, from)
   end
 end
 
-function seablock.lib.hide_item(item_name)
-  local item = data.raw.item[item_name]
-  if item then
-    if not item.flags then
-      item.flags = {}
-    end
-    if not seablock.lib.tablefind(item.flags, "hidden") then
-      table.insert(item.flags, "hidden")
-    end
-  else
-    item = data.raw.fluid[item_name]
-    if item then
-      item.hidden = true
-    end
-  end
-end
-
 function seablock.lib.hide(type_name, name)
   if not data.raw[type_name] then
-    log("Unknown type: " .. type_name)
+    log("Warning: seablock.lib.hide - Unknown type: " .. type_name)
+    log(debug.traceback())
   else
-    local item = data.raw[type_name][name]
-    if not item then
-      log("Unknown " .. type_name .. ": " .. name)
+    local prototype = data.raw[type_name][name]
+    if not prototype then
+      log("Warning: seablock.lib.hide - Unknown " .. type_name .. ": " .. name)
+      log(debug.traceback())
     else
       if type_name == "fluid" then
-        item.hidden = true
+        prototype.hidden = true
       else
-        if not item.flags then
-          item.flags = {}
-        end
-        if not seablock.lib.tablefind(item.flags, "hidden") then
-          table.insert(item.flags, "hidden")
-        end
+        prototype.hidden = true
 
         if type_name == "item" then
-          table.insert(item.flags, "hide-from-bonus-gui")
+          if not prototype.flags then
+            prototype.flags = {}
+          end
+          
+          table.insert(prototype.flags, "hide-from-bonus-gui")
         end
 
-        item.next_upgrade = nil
+        prototype.next_upgrade = nil
       end
     end
   end
@@ -232,7 +290,8 @@ end
 function seablock.lib.remove_effect(technology_name, effect_type, effect_key, effect_value)
   local tech = data.raw.technology[technology_name]
   if not tech then
-    log("Unknown technology: " .. technology_name)
+    log("Warning: seablock.lib.remove_effect - Unknown technology: " .. technology_name)
+    log(debug.traceback())
     return
   end
 
@@ -246,22 +305,24 @@ function seablock.lib.remove_effect(technology_name, effect_type, effect_key, ef
   end
 end
 
-function seablock.lib.add_flag(type, name, flag)
-  if not data.raw[type] then
-    log("Unknown type: " .. type)
+function seablock.lib.add_flag(type_name, name, flag)
+  if not data.raw[type_name] then
+    log("Warning : seablock.lib.add_flag - Unknown type: " .. type_name)
+    log(debug.traceback())
     return
   end
 
-  local item = data.raw[type][name]
-  if not item then
-    log("Unknown " .. type .. ": " .. name)
+  local prototype = data.raw[type_name][name]
+  if not prototype then
+    log("Warning : seablock.lib.add_flag - Unknown " .. type_name .. ": " .. name)
+    log(debug.traceback())
     return
   end
 
-  if item.flags then
-    table.insert(item.flags, flag)
+  if prototype.flags then
+    table.insert(prototype.flags, flag)
   else
-    item.flags = { flag }
+    prototype.flags = { flag }
   end
 end
 

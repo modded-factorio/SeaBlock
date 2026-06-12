@@ -2,12 +2,12 @@ seablock = seablock or {}
 
 if mods["LandfillPainting"] then
   local tiletypes = {
-    "landfill-dirt-4",
+    "landfill-dirt",
     "landfill-dry-dirt",
-    "landfill-grass-1",
+    "landfill-grass",
     "landfill",
-    "landfill-red-desert-1",
-    "landfill-sand-3",
+    "landfill-red-desert",
+    "landfill-sand",
   }
 
   data:extend({

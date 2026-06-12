@@ -89,7 +89,7 @@ local elevation = data.raw["noise-expression"]["elevation"]
 
 elevation.local_expressions = {
   base = "basis_noise{x = x, y = y, seed0 = map_seed, seed1 = 5, input_scale = 1/32, output_scale = 6}",
-  starting_tile = "if(x = 1 and y = 1, 100, 0)",
+  starting_tile = "if(distance <= 1, 100, 0)",
 }
 
 elevation.expression = "if(distance <= starting_area_radius/2, min(base - waterline, 0), base - waterline) + starting_tile + distance_sigmoid+1"
