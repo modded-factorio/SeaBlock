@@ -35,13 +35,13 @@ for _, v in pairs(data.raw.tile) do
   v.autoplace = nil
 end
 
-data.raw.cliff["cliff"].collision_mask = { not_colliding_with_itself = true, layers = { object = true, train = true}}
+data.raw.cliff["cliff"].collision_mask = { not_colliding_with_itself = true, layers = { object = true, train = true } }
 
 data:extend({
   {
     type = "noise-expression",
     name = "waterline",
-    expression = "10"
+    expression = "10",
   },
   {
     type = "noise-expression",
@@ -49,7 +49,7 @@ data:extend({
     local_expressions = {
       amount = "2",
       offset = "500",
-      scale = "300"
+      scale = "300",
     },
     expression = "amount/(1+e^(-(distance-offset)/scale))",
   },
@@ -57,7 +57,7 @@ data:extend({
     type = "noise-function",
     name = "shifted_hyperbolic_rational",
     parameters = { "amplitude", "offset", "squish" },
-    expression = "(amplitude*4)/(distance*squish-offset*squish) - (amplitude*4)/((distance*squish-offset*squish)^2)"
+    expression = "(amplitude*4)/(distance*squish-offset*squish) - (amplitude*4)/((distance*squish-offset*squish)^2)",
   },
   {
     type = "noise-function",
@@ -65,7 +65,7 @@ data:extend({
     parameters = { "seed", "noise_seed", "frequency", "limit" },
     local_expressions = {
       base = "basis_noise{x = x, y = y, seed0 = map_seed, seed1 = noise_seed, input_scale = 1.99995}",
-      multoctave = "multioctave_noise{x = x, y = y, persistence = 0.75, seed0 = map_seed, seed1 = seed, octaves = 3, input_scale = 1/32, output_scale = 10} * (1+frequency+shifted_hyperbolic_rational(200, 0, 0.7))"
+      multoctave = "multioctave_noise{x = x, y = y, persistence = 0.75, seed0 = map_seed, seed1 = seed, octaves = 3, input_scale = 1/32, output_scale = 10} * (1+frequency+shifted_hyperbolic_rational(200, 0, 0.7))",
     },
     expression = "if(multoctave >= limit, base, -inf)",
   },
@@ -78,10 +78,10 @@ data:extend({
       _falloff = "if(falloff == 1, clamp(((other_distance+2)*128-d)/128, 0, 1), 1)",
       _waterline = "clamp(waterline-elevation, 0, 1)",
       prob = "clamp((d-other_distance*128)/128, 0, 1) * _falloff * _waterline * probability",
-      pen = "random_penalty(x, y, prob, seed, probability*0.5)"
+      pen = "random_penalty(x, y, prob, seed, probability*0.5)",
     },
     expression = "pen",
-  }
+  },
 })
 
 -- cant put that in data:extend since elevation exists in base game
@@ -92,7 +92,8 @@ elevation.local_expressions = {
   starting_tile = "if(x = 1 and y = 1, 100, 0)",
 }
 
-elevation.expression = "if(distance <= starting_area_radius/2, min(base - waterline, 0), base - waterline) + starting_tile + distance_sigmoid+1"
+elevation.expression =
+  "if(distance <= starting_area_radius/2, min(base - waterline, 0), base - waterline) + starting_tile + distance_sigmoid+1"
 
 ------- Tiles -------
 -- Water
@@ -139,7 +140,15 @@ local function worm_autoplace(distance, probability, order, falloff, control_nam
     control = control_name,
     order = order,
     force = "enemy",
-    probability_expression = "worm_autoplace("..distance..","..probability..","..falloff..","..new_random_seed()..")",
+    probability_expression = "worm_autoplace("
+      .. distance
+      .. ","
+      .. probability
+      .. ","
+      .. falloff
+      .. ","
+      .. new_random_seed()
+      .. ")",
     richness_expression = 1,
   }
 end

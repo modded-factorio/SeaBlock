@@ -8,14 +8,20 @@ seablock.reskins = {}
 ---@param name string name of prototype
 ---@param restriction string|table string for singular restrict, table for multiple restrictions
 function seablock.lib.set_tile_restriction(ptype, name, restriction)
-    if (not data.raw[ptype]) then error ("Tried to set tile restriction on "..ptype.." "..name..": type does not exist") end
-    if (not data.raw[ptype][name]) then error("Tried to set tile restriction on "..ptype.." "..name..": "..name.." does not exist") end
+  if not data.raw[ptype] then
+    error("Tried to set tile restriction on " .. ptype .. " " .. name .. ": type does not exist")
+  end
+  if not data.raw[ptype][name] then
+    error("Tried to set tile restriction on " .. ptype .. " " .. name .. ": " .. name .. " does not exist")
+  end
 
-    data.raw[ptype][name].autoplace = data.raw[ptype][name].autoplace or {}
+  data.raw[ptype][name].autoplace = data.raw[ptype][name].autoplace or {}
 
-    if (type(restriction) == "string") then restriction = { restriction } end
+  if type(restriction) == "string" then
+    restriction = { restriction }
+  end
 
-    data.raw[ptype][name].autoplace["tile_restriction"] = restriction
+  data.raw[ptype][name].autoplace["tile_restriction"] = restriction
 end
 
 ---Sets a probability expression on any specified prototype
@@ -24,11 +30,15 @@ end
 ---@param name string name of prototype
 ---@param expression string expression
 function seablock.lib.set_probability_expression(ptype, name, expression)
-    if (not data.raw[ptype]) then error ("Tried to set probability expression on "..ptype.." "..name..": type does not exist") end
-    if (not data.raw[ptype][name]) then error("Tried to set probability expression on "..ptype.." "..name..": "..name.." does not exist") end
+  if not data.raw[ptype] then
+    error("Tried to set probability expression on " .. ptype .. " " .. name .. ": type does not exist")
+  end
+  if not data.raw[ptype][name] then
+    error("Tried to set probability expression on " .. ptype .. " " .. name .. ": " .. name .. " does not exist")
+  end
 
-    data.raw[ptype][name].autoplace = data.raw[ptype][name].autoplace or {}
-    data.raw[ptype][name].autoplace["probability_expression"] = expression
+  data.raw[ptype][name].autoplace = data.raw[ptype][name].autoplace or {}
+  data.raw[ptype][name].autoplace["probability_expression"] = expression
 end
 
 function seablock.lib.findname(t, name)
@@ -277,7 +287,7 @@ function seablock.lib.hide(type_name, name)
           if not prototype.flags then
             prototype.flags = {}
           end
-          
+
           table.insert(prototype.flags, "hide-from-bonus-gui")
         end
 

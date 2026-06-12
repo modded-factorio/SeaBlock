@@ -10,14 +10,14 @@ data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings = {
       water = {},
       ["sand-4"] = {},
       ["sand-5"] = {},
-    }
+    },
   },
   entity = {
     settings = {
       ["angels-desert-garden"] = {},
       ["angels-temperate-garden"] = {},
       ["angels-swamp-garden"] = {},
-      
+
       ["angels-desert-tree"] = {},
       ["angels-temperate-tree"] = {},
       ["angels-swamp-tree"] = {},
@@ -32,17 +32,23 @@ data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings = {
       ["angels-alien-fish-2"] = {},
       ["angels-alien-fish-3"] = {},
 
-      ["fish"] = {}
-    }
-  }
+      ["fish"] = {},
+    },
+  },
 }
 data.raw["planet"]["nauvis"].map_gen_settings.autoplace_controls = nil
 
 -- Enemies
-for _,name in pairs({ "bob-big-explosive-worm-turret", "bob-big-fire-worm-turret", "bob-big-poison-worm-turret", "bob-big-piercing-worm-turret", "bob-giant-worm-turret" }) do
-    if (data.raw.turret[name]) then
-        data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings.entity.settings[name] = {}
-    end
+for _, name in pairs({
+  "bob-big-explosive-worm-turret",
+  "bob-big-fire-worm-turret",
+  "bob-big-poison-worm-turret",
+  "bob-big-piercing-worm-turret",
+  "bob-giant-worm-turret",
+}) do
+  if data.raw.turret[name] then
+    data.raw["planet"]["nauvis"].map_gen_settings.autoplace_settings.entity.settings[name] = {}
+  end
 end
 
 -- No spawners

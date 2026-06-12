@@ -1,5 +1,5 @@
 -- Will need a lot of landfill
-bobmods.lib.recipe.set_ingredients("landfill", {{ type = "item", name = "angels-stone-crushed", amount = 10 }})
+bobmods.lib.recipe.set_ingredients("landfill", { { type = "item", name = "angels-stone-crushed", amount = 10 } })
 for k, v in pairs(data.raw.item) do
   if string.sub(k, 1, 8) == "landfill" then
     v.stack_size = 1000
@@ -35,8 +35,8 @@ if mods["LandfillPainting"] then
     local recipe = data.raw.recipe["landfill"]
     if data.raw.item[stripped] and default_landfill ~= stripped then
       default_landfill = stripped
-      recipe.results = {{ type = "item", name = default_landfill, amount = 1 }}
-      recipe.localised_name = { "item-name."..default_landfill }
+      recipe.results = { { type = "item", name = default_landfill, amount = 1 } }
+      recipe.localised_name = { "item-name." .. default_landfill }
     else
       recipe.always_show_products = true
     end
@@ -48,7 +48,7 @@ if mods["LandfillPainting"] then
   BuffLandfill("landfill-red-desert")
   BuffLandfill("landfill-sand")
 
-  -- Adds SeaBlock tiles to tile condition so they can be replaced with landfill when placing 
+  -- Adds SeaBlock tiles to tile condition so they can be replaced with landfill when placing
   local sounds = require("__base__/prototypes/entity/sounds")
   for _, item_name in pairs({
     "landfill-dry-dirt",
