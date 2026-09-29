@@ -121,3 +121,20 @@ bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "empty-ange
 bobmods.lib.tech.remove_recipe_unlock("bob-gas-canisters", "angels-gas-chlor-methane-barrel")
 bobmods.lib.tech.remove_recipe_unlock("military", "pistol")
 bobmods.lib.tech.remove_recipe_unlock("angels-bio-arboretum-1", "angels-cellulose-fiber-raw-wood")
+
+if mods["bobwarfare"] then
+  bobmods.lib.tech.add_prerequisite("sb-sniper-rifle", "bob-brass-processing")
+  bobmods.lib.tech.add_prerequisite("sb-sniper-rifle", "angels-glass-smelting-1")
+end
+
+if mods["bobpower"] then
+  bobmods.lib.tech.add_prerequisite("bob-boiler-3", "angels-invar-smelting-1")
+  bobmods.lib.tech.add_prerequisite("bob-heat-pipe-2", "angels-invar-smelting-1")
+  bobmods.lib.tech.add_prerequisite("bob-oil-boiler-2", "angels-invar-smelting-1")
+  bobmods.lib.tech.add_prerequisite("bob-burner-reactor-2", "angels-invar-smelting-1")
+  bobmods.lib.tech.add_prerequisite("bob-heat-exchanger-2", "angels-invar-smelting-1")
+  bobmods.lib.tech.add_prerequisite("bob-exoskeleton-equipment-3", "angels-cobalt-steel-smelting-1")
+  bobmods.lib.tech.add_prerequisite("fusion-reactor", "angels-fusion-power-1")
+  bobmods.lib.tech.add_prerequisite("life-support-systems", "bob-productivity-module-5")
+  bobmods.lib.tech.add_prerequisite("spaceship-command", "bob-productivity-module-5")
+end

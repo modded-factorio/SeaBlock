@@ -169,6 +169,10 @@ if data.raw.recipe["angels-pellet-zinc-smelting"] then
   )
 end
 
+if mods["bobwarfare"] then
+  seablock.lib.substingredient("bob-sniper-rifle", "bob-gunmetal-alloy", "steel-plate")
+end
+
 if mods["cargo-ships"] then
   seablock.lib.hide_item("oil_rig")
 end
