@@ -22,14 +22,6 @@ bobmods.lib.tech.add_prerequisite("bob-lithium-processing", "angels-thermal-wate
 bobmods.lib.tech.remove_recipe_unlock("angels-water-treatment-3", "angels-solid-lithium")
 bobmods.lib.recipe.hide("angels-solid-lithium") -- TODO: move angels-solid-lithium to the same group as the recipe or the other way around
 
--- Move Sodium Carbonate from Brown Algae to Sodium processing 2
-seablock.lib.moveeffect(
-  "angels-algae-brown-burning-wash",
-  "angels-bio-processing-green",
-  "angels-sodium-processing-2",
-  nil
-)
-
 -- Move Methanol from Cellulose Fibre to Advanced chemistry 1
 seablock.lib.moveeffect(
   "angels-gas-methanol-from-wood",

@@ -65,8 +65,8 @@ end
 
 -- Tidy up ore silo prerequisites
 if mods["angelsaddons-storage"] then
-  bobmods.lib.tech.remove_prerequisite("ore-silos", "angels-coal-processing")
-  bobmods.lib.tech.replace_prerequisite("ore-silos", "angels-ore-crushing", "angels-ore-advanced-crushing")
+  bobmods.lib.tech.remove_prerequisite("angels-ore-silos", "angels-coal-processing")
+  bobmods.lib.tech.replace_prerequisite("angels-ore-silos", "angels-ore-crushing", "angels-ore-advanced-crushing")
 end
 
 -- Logistic System prerequisite of Pink Science

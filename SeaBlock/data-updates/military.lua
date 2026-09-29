@@ -374,7 +374,6 @@ local mil_recipes = {
   "bob-electric-bullet",
   "bob-electric-bullet-magazine",
   "bob-electric-bullet-projectile",
-  "electric-energy-interface",
   "bob-electric-rocket-warhead",
   "empty-bob-alien-acid-barrel",
   "empty-bob-alien-explosive-barrel",

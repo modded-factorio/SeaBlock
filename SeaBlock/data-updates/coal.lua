@@ -40,7 +40,4 @@ bobmods.lib.tech.add_science_pack("angels-coal-processing-3", "production-scienc
 bobmods.lib.tech.remove_prerequisite("angels-sodium-processing-2", "angels-coal-processing-3")
 bobmods.lib.tech.add_prerequisite("angels-coal-processing-3", "angels-sodium-processing-2")
 
--- Buff the Carbon 2 recipe to make it a bit more worthwhile
-bobmods.lib.recipe.set_result("angels-coke-purification-2", { type = "item", name = "angels-solid-carbon", amount = 8 })
-
 data.raw.recipe["angels-filter-coal"].localised_name = { "item-name.angels-filter-charcoal" }

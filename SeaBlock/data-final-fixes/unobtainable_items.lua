@@ -73,9 +73,6 @@ for _, v in ipairs({
   "petroleum-generator",
   "protection-field-goopless", --comes from spacemod
   "pumpjack",
-  "angels-slag-processing-7",
-  "angels-slag-processing-8",
-  "angels-slag-processing-9",
   "angels-solid-coke",
   "angels-solid-coke-sulfur",
   "bob-solid-fuel-from-sour-gas",

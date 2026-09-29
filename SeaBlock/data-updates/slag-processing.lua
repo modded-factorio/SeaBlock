@@ -48,8 +48,6 @@ bobmods.lib.tech.remove_recipe_unlock("angels-ore-crushing", "angels-ore2-crushe
 bobmods.lib.tech.remove_recipe_unlock("angels-ore-crushing", "angels-ore4-crushed-processing")
 bobmods.lib.recipe.hide("angels-ore2-crushed-processing")
 bobmods.lib.recipe.hide("angels-ore4-crushed-processing")
-bobmods.lib.recipe.hide("angels-ore5-crushed-smelting")
-bobmods.lib.recipe.hide("angels-ore6-crushed-smelting")
 
 -- Add prerequisites
 bobmods.lib.tech.add_prerequisite("angels-ore-floatation", "angels-ore-advanced-crushing")
