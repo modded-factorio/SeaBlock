@@ -468,6 +468,10 @@ local mil_recipes = {
   "uranium-rounds-magazine",
 }
 
+local mil_entities = {
+  { type = "land-mine", name = "land-mine" },
+}
+
 for _, v in pairs(mil_items) do
   if data.raw[v.type] and data.raw[v.type][v.name] then
     seablock.lib.hide(v.type, v.name)
@@ -489,6 +493,12 @@ end
 
 for _, v in pairs(mil_recipes) do
   bobmods.lib.recipe.hide(v)
+end
+
+for _, v in pairs(mil_entities) do
+  if data.raw[v.type] and data.raw[v.type][v.name] then
+    seablock.lib.hide(v.type, v.name)
+  end
 end
 
 -- Remove hidden upgrade

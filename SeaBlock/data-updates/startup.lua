@@ -98,11 +98,15 @@ if data.raw.technology["automation-science-pack"] then
 
   data.raw.technology["automation-science-pack"].research_trigger = { type = "craft-item", item = "lab" }
   data.raw.technology["automation-science-pack"].unit = nil
-  data.raw.technology["sct-lab-t1"].unit = {
-    count = 1,
-    ingredients = {},
-    time = 1,
-  }
+
+  if data.raw.technology["sct-lab-t1"] then
+    data.raw.technology["sct-lab-t1"].unit = {
+      count = 1,
+      ingredients = {},
+      time = 1,
+    }
+  end
+
   seablock.lib.hide_technology("sb-startup4")
 end
 

@@ -50,6 +50,7 @@ data:extend({
     icon_size = 128,
     order = "c-a",
     prerequisites = {
+      "angels-aluminium-smelting-1",
       "angels-bio-processing-red",
       "advanced-circuit",
       "angels-stone-smelting-2",

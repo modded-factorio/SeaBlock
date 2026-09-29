@@ -95,3 +95,29 @@ bobmods.lib.tech.remove_prerequisite("angels-bio-wood-processing-3", "angels-sto
 bobmods.lib.tech.remove_recipe_unlock("angels-bio-wood-processing-3", "angels-bio-processor")
 
 data.raw.shortcut["give-copper-wire"].technology_to_unlock = "bob-electronics"
+
+bobmods.lib.tech.remove_prerequisite("automation-science-pack", "steam-power")
+bobmods.lib.tech.add_prerequisite("automation-science-pack", "sb-startup3")
+
+bobmods.lib.tech.add_prerequisite("angels-bio-wood-processing-3", "logistic-science-pack")
+bobmods.lib.tech.add_prerequisite("angels-basic-chemistry-2", "angels-steel-smelting-1")
+bobmods.lib.tech.add_prerequisite("angels-water-treatment-2", "steel-processing")
+bobmods.lib.tech.add_prerequisite("angels-themral-water-extraction", "steel-processing")
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-1", "angels-stone-smelting-1")
+bobmods.lib.tech.add_prerequisite("angels-advanced-ore-refining-1", "steel-processing")
+bobmods.lib.tech.add_prerequisite("angels-advanced-ore-refining-1", "steel-processing")
+bobmods.lib.tech.add_prerequisite("chemical-science-pack", "engine")
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-3", "processing-unit")
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-4", "bob-advanced-processing-unit")
+bobmods.lib.tech.add_prerequisite("angels-advanced-chemistry-4", "bob-tungsten-processing")
+bobmods.lib.tech.add_prerequisite("angels-electric-boiler-3", "bob-advanced-processing-unit")
+
+bobmods.lib.tech.remove_recipe_unlock("angels-advanced-gas-processing", "angels-gas-fractioning-residual")
+bobmods.lib.tech.remove_recipe_unlock("bob-lithium-processing", "angels-solid-lithium")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "angels-liquid-toluene-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "empty-angels-liquid-toluene-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "angels-liquid-glycerol-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-fluid-barrel-processing", "empty-angels-liquid-glycerol-barrel")
+bobmods.lib.tech.remove_recipe_unlock("bob-gas-canisters", "angels-gas-chlor-methane-barrel")
+bobmods.lib.tech.remove_recipe_unlock("military", "pistol")
+bobmods.lib.tech.remove_recipe_unlock("angels-bio-arboretum-1", "angels-cellulose-fiber-raw-wood")

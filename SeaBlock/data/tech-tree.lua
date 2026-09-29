@@ -110,7 +110,7 @@ if data.raw.technology["bob-gem-processing-3"] then
 end
 
 bobmods.lib.tech.remove_prerequisite("automation-science-pack", "electronics")
-seablock.lib.hide_technology("automation-science-pack")
+-- seablock.lib.hide_technology("automation-science-pack")
 
 seablock.lib.hide_technology("electronics") --new trigger tech in base game, we don't want it in seablock
 data.raw["technology"]["electronics"].research_trigger = nil
