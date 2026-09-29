@@ -78,6 +78,7 @@ for _, v in ipairs({
   "angels-slag-processing-9",
   "angels-solid-coke",
   "angels-solid-coke-sulfur",
+  "bob-solid-fuel-from-sour-gas",
   "angels-thermal-water-filtering-1",
   "angels-thermal-water-filtering-2",
   "angels-wood-charcoal",
