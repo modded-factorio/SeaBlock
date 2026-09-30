@@ -138,3 +138,9 @@ if mods["bobpower"] then
   bobmods.lib.tech.add_prerequisite("life-support-systems", "bob-productivity-module-5")
   bobmods.lib.tech.add_prerequisite("spaceship-command", "bob-productivity-module-5")
 end
+
+bobmods.lib.tech.add_recipe_unlock("angels-ore-crushing", "sb-iron-plate-from-ore")
+bobmods.lib.tech.add_recipe_unlock("angels-ore-crushing", "sb-copper-plate-from-ore")
+bobmods.lib.tech.add_recipe_unlock("angels-ore-crushing", "sb-bob-lead-plate-from-ore")
+bobmods.lib.tech.add_recipe_unlock("angels-ore-crushing", "sb-bob-tin-plate-from-ore")
+bobmods.lib.tech.add_recipe_unlock("angels-ore-crushing", "sb-glass-from-ore")
